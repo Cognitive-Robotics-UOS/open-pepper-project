@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="5" localization="8" tooltip="tags:&#x0A;something; see; floor; object" x="206" y="69">
+        <bitmap>media/images/box/movement/move.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        pass
+
+    def onLoad(self):
+        self.oldfps = self.getTimeline().getFPS()
+        pass
+
+    def onUnload(self):
+        self.getTimeline().setFPS(self.oldfps)
+        pass
+
+    def onInput_onStart(self):
+        newfps = (self.oldfps * self.getParameter("FPS (%)")) / 100
+        self.getTimeline().setFPS(newfps)
+        pass
+
+    def onInput_onStop(self):
+        onUnload()
+        pass]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" />
+        <Parameter name="FPS (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="20" max="200" tooltip="" id="5" />
+        <Timeline enable="1" fps="25" start_frame="0" end_frame="-1" size="300">
+            <BehaviorLayer name="LED">
+                <BehaviorKeyframe name="happy" index="71">
+                    <Diagram>
+                        <Box name="Light_AmusedEyes" id="1" localization="8" tooltip="Set An Animated Gaze Which Expresses Amusement&#x0A;*** ref box in: ./4_localize/animation/Lights/Pleasant/Light_AmusedEyes.xar ***&#x0A;*** last modification date(svn): 2009-09-25 16:26:32 +0200 (ven, 25 sep 2009) ***" x="154" y="57">
+                            <bitmap>media/images/box/interaction/LED.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+  def __init__(self):
+    GeneratedClass.__init__(self);
+    self.bMustStop = False;
+    self.bIsRunning = False;
+
+  def onUnload(self):
+    self.onInput_onStop(); # will stop current loop execution
+
+  def onInput_onStart(self):
+    #self.log( self.getName() + ": start - begin" );
+    
+    if( self.bIsRunning ):
+      #print( self.getName() + ": already started => nothing" );
+      return;
+
+    self.bIsRunning = True;
+    self.bMustStop = False;
+    
+    rDuration = 0.2;
+    ALLeds.post.fadeRGB( "FaceLedsTop", 0x000000, rDuration );
+    ALLeds.post.fadeRGB( "FaceLedsInternal", 0x00ff00, rDuration );
+    ALLeds.post.fadeRGB( "FaceLedsBottom", 0x000000, rDuration );
+    ALLeds.fadeRGB( "FaceLedsExternal", 0x00ff00, rDuration );
+    
+    while( not self.bMustStop ):
+      rTime=0.2
+      ALLeds.fadeRGB( "FaceLed7", 0x000000, rTime );
+      if( self.bMustStop ):
+        break;       
+      ALLeds.fadeRGB( "FaceLed7", 0x00ffff, rTime );      
+
+    # end while
+    self.bIsRunning = False;
+    self.onStopped();
+
+  def onInput_onStop(self):
+    self.bMustStop = True; # will stop current loop execution]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                        </Box>
+                        <Link inputowner="1" indexofinput="2" outputowner="0" indexofoutput="1" />
+                    </Diagram>
+                </BehaviorKeyframe>
+                <BehaviorKeyframe name="normal" index="142">
+                    <Diagram>
+                        <Box name="FaceLeds" id="1" localization="8" tooltip="FaceLeds" x="159" y="73">
+                            <bitmap>media/images/box/box-diagram.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        ALLeds.fadeRGB("FaceLeds", 0xFFFFFF, 1)
+        pass
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is usually a good idea to call onUnload of this box in a onStop method, as the code written in onUnload is used to finish the working of the box as well
+        pass]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                        </Box>
+                        <Link inputowner="1" indexofinput="2" outputowner="0" indexofoutput="1" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+            <ActuatorList model="Juliette">
+                <ActuatorCurve name="value" actuator="HeadYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="36" value="34.8906" />
+                    <Key frame="65" value="-18.8991" />
+                    <Key frame="79" value="10.6325" />
+                    <Key frame="115" value="14.6755" />
+                    <Key frame="149" value="15.2908" />
+                    <Key frame="178" value="-0.090296" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="HeadPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="36" value="2.5993" />
+                    <Key frame="65" value="13.41" />
+                    <Key frame="79" value="17.8925" />
+                    <Key frame="115" value="18.1561" />
+                    <Key frame="149" value="18.7714" />
+                    <Key frame="178" value="-18.93417" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LShoulderPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="32" value="87.2741" />
+                    <Key frame="73" value="90.0866" />
+                    <Key frame="87" value="94.3054" />
+                    <Key frame="111" value="85.5163" />
+                    <Key frame="145" value="76.7271" />
+                    <Key frame="174" value="87.0983" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LShoulderRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="32" value="13.6208" />
+                    <Key frame="73" value="11.5114" />
+                    <Key frame="87" value="13.6208" />
+                    <Key frame="111" value="10.8962" />
+                    <Key frame="145" value="7.55628" />
+                    <Key frame="174" value="6.58948" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LElbowYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="32" value="-67.5033" />
+                    <Key frame="73" value="-73.3041" />
+                    <Key frame="87" value="-62.845" />
+                    <Key frame="111" value="-54.3" />
+                    <Key frame="145" value="-56.5" />
+                    <Key frame="174" value="-71.7" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LElbowRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="32" value="-19.158" />
+                    <Key frame="73" value="-19.158" />
+                    <Key frame="87" value="-38.5821" />
+                    <Key frame="111" value="-63.5433" />
+                    <Key frame="145" value="-59.6" />
+                    <Key frame="174" value="-26.1893" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LWristYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="73" value="-13.0983" />
+                    <Key frame="111" value="-13.0983" />
+                    <Key frame="145" value="-13.0983" />
+                    <Key frame="174" value="7.55628" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LHand" recordable="1" mute="0" unit="1">
+                    <Key frame="73" value="0.0422082" />
+                    <Key frame="111" value="0.0422082" />
+                    <Key frame="145" value="0.0422082" />
+                    <Key frame="174" value="0.3004" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RShoulderPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="88.4215" />
+                    <Key frame="69" value="86.4" />
+                    <Key frame="83" value="88.4215" />
+                    <Key frame="107" value="84.5542" />
+                    <Key frame="141" value="74.2709" />
+                    <Key frame="170" value="87.7183" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RShoulderRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="-6.59428" />
+                    <Key frame="69" value="-6.06693" />
+                    <Key frame="83" value="-10.6373" />
+                    <Key frame="107" value="-5.53958" />
+                    <Key frame="141" value="-4.74856" />
+                    <Key frame="170" value="-8.6" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RElbowYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="84.9889" />
+                    <Key frame="69" value="86.7467" />
+                    <Key frame="83" value="66.5316" />
+                    <Key frame="107" value="63" />
+                    <Key frame="141" value="63" />
+                    <Key frame="170" value="66.7" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RElbowRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="27.4246" />
+                    <Key frame="69" value="27.0731" />
+                    <Key frame="83" value="35.3349" />
+                    <Key frame="107" value="58.7141" />
+                    <Key frame="141" value="56.3" />
+                    <Key frame="170" value="24.7" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RWristYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="69" value="-8.08844" />
+                    <Key frame="107" value="-8.61579" />
+                    <Key frame="141" value="-8.61579" />
+                    <Key frame="170" value="9.92936" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RHand" recordable="1" mute="0" unit="1">
+                    <Key frame="69" value="0.238935" />
+                    <Key frame="107" value="0.235662" />
+                    <Key frame="141" value="0.233116" />
+                    <Key frame="170" value="0.3016" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="HipPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="-0.000714748" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="HipRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="-3.81678e-17" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="KneePitch" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="-4.00067" />
+                </ActuatorCurve>
+            </ActuatorList>
+        </Timeline>
+        <Resource name="Standing" type="Lock" timeout="1" />
+        <Resource name="Left eye leds" type="Lock" timeout="1" />
+        <Resource name="Right eye leds" type="Lock" timeout="1" />
+        <Resource name="All motors" type="Lock" timeout="1" />
+    </Box>
+</ChoregrapheProject>

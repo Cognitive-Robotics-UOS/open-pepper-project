@@ -1,0 +1,120 @@
+topic: ~dlg_move_arms ^noPick()
+language: jpj
+
+include: lexicon_jpj.top
+
+
+#==================================================================#
+# Move - Arms
+#==================================================================#
+
+# move your arm
+u:("[腕 うで]{を}["[動かして 動かせて]{~-kudasai ~-choudai ~-hoshii ~-moraeru ~-mimashou}" 動かせ 動かせろ]")
+\vct=130\\rspd=110\どっちの腕を動かしますか？
+
+    u1:(左{腕})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm
+    
+    u1:(右{腕})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+    u1:([両方　両腕 りょううで　両方の腕　両方とも　どっちも　二つとも])
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+    
+    u1:([どっちでも　どっちでもいい　どちらでも　どちらでもいい　好きな方 すきなほう　すきなやつ])
+    ^rand
+    [
+    "じゃぁ左で、^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm"
+    "じゃぁ右で、^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm"
+    "じゃぁりょうほうで、^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms"
+    ]
+    
+    #add "as you wish"
+    
+# raise your hand
+u:("手{を}{上に　上の方に} ~raise_please")
+どっちの手をあげますか？
+
+    u1:(左{手})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm
+    
+    u1:(右{手})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+    u1:([両方　両手　両方の手　両方とも　どっちも　二つとも])
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+    
+    u1:([どっちでも　どっちでもいい　どちらでも　どちらでもいい　好きな方 すきなほう　すきなやつ])
+    ^rand
+    [
+    "じゃぁ右で、^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm" 
+    "じゃぁ左で、^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm"
+    "せっかくなんでりょうほういっときますね。　^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+    "
+    ]
+    
+ 
+
+#raise your left arm
+u:([
+    "[左腕 ひだりうで]{だけ}{を}["[動かして 動かせて]{~-kudasai ~-choudai ~-hoshii ~-moraeru ~-mimashou}" 動かせ]"
+    "左手{だけ}{を}{上に　上の方に} ~raise_please"
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/UpLArm)
+$RobotLastAnim=dialog_move_arms/animations/UpLArm
+  
+#raise your right arm
+u:([
+    "[右腕 みぎうで]{だけ}{を}["[動かして 動かせて]{~-kudasai ~-choudai ~-hoshii ~-moraeru ~-mimashou}" 動かせ]"
+    "右手{だけ}{を}{上に　上の方に} ~raise_please"
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/UpRArm)
+$RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+#raise your arms
+u:([
+    "両腕{を}["[動かして 動かせて]{~-kudasai ~-choudai ~-hoshii ~-moraeru ~-mimashou}" 動かせ]"
+    "両方の腕{を}["[動かして 動かせて]{~-kudasai ~-choudai ~-hoshii ~-moraeru ~-mimashou}" 動かせ]"
+    "両手{だけ}{を}{上に　上の方に}　~raise_please"
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな。　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/UpBothArms)
+$RobotLastAnim=dialog_move_arms/animations/UpBothArms
+
+# spread your arms
+u:(" [うで 腕]{を}　~spread_please ")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/StretchBothArms)
+$RobotLastAnim=dialog_move_arms/animations/StretchBothArms
+
+# spread your left arm
+u:("[左　左の　左の方の][うで 腕]{を　だけ　のみ}　[~stretch_please ~spread_please]")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/StretchLArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchLArm
+
+# spread your right arm
+u:(" [右　右の　右の方の][うで 腕]{を　だけ　のみ}　[~stretch_please ~spread_please]")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_arms/animations/StretchRArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchRArm

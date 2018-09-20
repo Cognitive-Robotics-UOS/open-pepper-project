@@ -1,0 +1,157 @@
+# Configuration file for signs and feedback
+# -----------------------------------------
+# an expressive bit is an action (movemements, LEDs, sounds) to be played by the robot
+# an expressive recipe makes an expressive bit be triggered when some event happens
+# for full explanation, see:
+# gitlab.aldebaran.lan/naoqi/signs-and-feedback/blob/team/monkey/dev/README.md
+---
+
+# ASR/TTS Signs and Feedbacks
+
+- expressive_bit: ShoulderBlue
+  lib_call: setShoulderBlue
+
+- expressive_bit: ResetShoulderLeds
+  lib_call: setShoulderOff
+
+- expressive_recipe: Listening
+  trigger: ALSignsAndFeedback/Listening
+  bit: ShoulderBlue
+
+- expressive_recipe: Speaking
+  trigger: ALSignsAndFeedback/Speaking
+  bit: ResetShoulderLeds
+
+- expressive_recipe: DialogReset
+  trigger: ALSignsAndFeedback/ASRStop
+  bit: ResetShoulderLeds
+
+# the bits triggered in the ASR module are left empty here
+- expressive_bit: BeginSpeechRecognitionBip
+  lib_call: nothing
+
+- expressive_bit: EndSpeechRecognitionBip
+  lib_call: nothing
+
+- expressive_bit: BeginSpeechRecognitionEars
+  lib_call: nothing
+
+- expressive_bit: EndSpeechRecognitionEars
+  lib_call: nothing
+
+- expressive_bit: BeginSpeechRecognitionEyes
+  lib_call: nothing
+
+- expressive_bit: EndSpeechRecognitionEyes
+  lib_call: nothing
+
+- expressive_bit: InitSpeechRecognitionEyes
+  lib_call: nothing
+
+- expressive_bit: BlinkWithShadow
+  lib_call: nothing
+
+# dialog start
+
+- expressive_bit: OpenArmsDialog
+  lib_call: runOpenArmsDialog
+
+- expressive_bit: SoundDialogStart
+  lib_call: playSoundDialogStart
+
+- expressive_bit: DialogStartBit
+  simultaneous:
+    - OpenArmsDialog
+    - SoundDialogStart
+
+# The following recipe has been put directly in Dialog start to ensure a
+# blocking behavior
+# - expressive_recipe: DialogStart
+#   trigger: ALSignsAndFeedback/DialogStart
+#   bit: DialogStartBit
+
+# dialog stop
+
+- expressive_bit: CloseArmsDialog
+  lib_call: runCloseArmsDialog
+
+- expressive_bit: SoundDialogStop
+  lib_call: playSoundDialogStop
+
+- expressive_bit: DialogStopBit
+  simultaneous:
+    - CloseArmsDialog
+    - SoundDialogStop
+
+- expressive_recipe: DialogStop
+  trigger: ALSignsAndFeedback/DialogStop
+  bit: DialogStopBit
+
+# Life states changes
+
+- expressive_bit: EyesWhite
+  lib_call: setEyesWhite
+
+- expressive_bit: EarsOff
+  lib_call: setEarsOff
+
+- expressive_bit: ResetEyesAndEars
+  simultaneous:
+    - EyesWhite
+    - EarsOff
+
+- expressive_bit: ResetNormalBlink
+  lib_call: resetNormalBlink
+
+- expressive_bit: AllLedsReset
+  serialize:
+    - ResetEyesAndEars
+    - ResetShoulderLeds
+    - ResetNormalBlink
+
+# in naoqicore, there is a triggerBit(NAOqiReadyLedsReset)
+- expressive_bit: NAOqiReadyLedsReset
+  serialize:
+    - AllLedsReset
+
+- expressive_recipe: ResetLedsInitialization
+  trigger: ALSignsAndFeedback/Initialization
+  bit: AllLedsReset
+
+  # In AutonmousLife config, the bit: AllLedsReset is triggered
+  # via triggerBit.
+
+- expressive_recipe: ResetShoulderDefaultManualAppStop
+  trigger: ALSignsAndFeedback/ManualStopReleased
+  bit: ResetShoulderLeds
+
+# Notifications
+
+- expressive_bit: setShoulderInfoBit
+  lib_call: setShoulderInfo
+
+- expressive_bit: setShoulderWarningBit
+  lib_call: setShoulderWarning
+
+- expressive_bit: setShoulderErrorBit
+  lib_call: setShoulderError
+
+- expressive_recipe: StartNotificationBlinkInfo
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Info
+  bit: setShoulderInfoBit
+
+- expressive_recipe: StartNotificationBlinkWarning
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Warning
+  bit: setShoulderWarningBit
+
+- expressive_recipe: StartNotificationBlinkError
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Error
+  bit: setShoulderErrorBit
+
+- expressive_recipe: StopNotificationBlinkListening
+  trigger: ALSignsAndFeedback/StopNotificationBlink/Listening
+  bit: ShoulderBlue
+
+- expressive_recipe: StopNotificationBlinkNotListening
+  trigger: ALSignsAndFeedback/StopNotificationBlink/NotListening
+  bit: ResetShoulderLeds

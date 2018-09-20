@@ -1,0 +1,34 @@
+topic: ~dlg_battery_capacity()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### General information about the battery #####
+#==================================================================#
+
+u:(how long [
+    "do you take to {fully} charge"
+    "does a full charge take"
+    "it takes you to charge"
+])
+^first[
+    "$Dialog/RobotName==nao It takes a little less than 3 hours for me to be fully charged."
+    "$Dialog/RobotName==pepper It takes about 6 hours for me to be fully charged."
+    "Sorry, I don't know how long it takes me to charge!"
+]
+
+u:([
+    "~what_is your autonomy"
+    "how much autonomy do you have"
+    "how long can you go without a charge"
+    "how often do you need to be charged"
+    "how long does your battery last"
+    "how long can you operate without being charged"
+    "how long can you last on your battery"
+])
+^first[
+    "$Dialog/RobotName==nao When I'm very active, my battery lasts for about 60 minutes, and 90 minutes otherwise."
+    "$Dialog/RobotName==pepper My battery lasts for about 12 hours!"
+    "Sorry, I don't know how long my battery lasts!"
+]

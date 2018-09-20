@@ -1,0 +1,12 @@
+{
+    "BTN_RESET": "Reset",
+    "TITLE_CHARGING": "Charging station manager",
+    "MES_CHARGING_AVAILABLE": "Charging station required",
+    "MES_CHARGING_AUTO": "Automatically go charging:",
+    "MES_CHARGING_AUTO2": "when battery level is below",
+    "MES_CHARGING_AUTO3": "At",
+    "MES_CHARGING_AUTO4": "and then leave at",
+    "MES_CHARGING_MIN": "only if battery level reached",
+    "MES_CHARGING_TRY": "Give up seeking the station after",
+    "MES_CHARGING_TRY2": "attempts"
+}

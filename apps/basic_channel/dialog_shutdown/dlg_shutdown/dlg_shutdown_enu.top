@@ -1,0 +1,67 @@
+topic: ~dlg_shutdown()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+# Shutdown/Reboot the robot
+#==================================================================#
+
+#PEPPER SHUTODOWN
+u:(~ald_robots [shutdown "switch off" "turn yourself off"])
+Alright, bye bye! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+#CAN YOU SHUTDOWN
+u:([~can_you please] [shutdown "switch off" "turn yourself off"]) %shutdown
+^pCall(ALTabletService.showWebview("http://198.18.0.1/apps/reboot_shutdown/indexen.html"))
+Do you really want me to shutdown?
+
+    u1:(~yes)
+    $RebootShutDown/DialogAnswerYes=1
+    Okay! Bye bye! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+    u1:(~no)
+    $RebootShutDown/DialogAnswerNo=1
+    Okay, no shutdown! 
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+    
+    #TABLET YES
+    u1:(e:RebootShutDown/TabletAnswerYes)
+    Okay! Bye bye! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown)) \pau=1000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+    
+    #TABLET NO
+    u1:(e:RebootShutDown/TabletAnswerNo)
+    Okay, no shutdown!
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+    
+#PEPPER REBOOT
+u:(~ald_robots [reboot restart])
+Okay, see you in a minute! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+#CAN YOU REBOOT
+u:([~can_you please] _[reboot restart])
+^pCall(ALTabletService.showWebview("http://198.18.0.1/apps/reboot_shutdown/indexen.html"))
+Do you really want me to $1 ?
+
+    u1:(~yes)
+    $RebootShutDown/DialogAnswerYes=1
+    Okay, see you in a minute! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+    u1:(~no)
+    $RebootShutDown/DialogAnswerNo=1
+    Okay, no reboot! 
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+    
+    #TABLET YES
+    u1:(e:RebootShutDown/TabletAnswerYes)
+    OOkay, see you in a minute! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+    
+    #TABLET NO
+    u1:(e:RebootShutDown/TabletAnswerNo)    
+    Okay, no reboot! 
+    ^pCall(ALTabletService.hideWebview()) 
+    ^releaseFocus
+       

@@ -1,0 +1,94 @@
+topic: ~dlg_adjust_volume ^noPick()
+language: jpj
+
+include:lexicon_jpj.top
+
+#==================================================================#
+# Adjust the robot's volume
+#==================================================================#
+
+###############################################################################################################################
+#KEEP YOUR VOICE DOWN(VOLUME DOWN)
+###############################################################################################################################
+
+u:([音量 ボリューム]{を}{"{もう}~chotto-{だけ}"}[
+    "下げて{~-moraeru ~-kudasai ~-hoshii ~-choudai}"　
+    下げろ　
+    "落として{~-moraeru ~-kudasai ~-hoshii ~-choudai}"　
+    落とせ　
+    "低くして{~-moraeru ~-kudasai ~-hoshii ~-choudai}" 
+    低くしろ　
+    "[小さく ちっちゃく]して{~-moraeru ~-kudasai ~-hoshii ~-choudai}" 
+    "[小さく ちっちゃく]しろ"
+    ])
+^gotoReactivate(volume_down)
+
+u:([声 音]{を}["[小さく ちっちゃく]して{~-moraeru ~-kudasai ~-hoshii ~-choudai}" "[小さく ちっちゃく]しろ"])
+^gotoReactivate(volume_down)            
+            
+########################
+#SPEAK LOUDER(VOLUME UP)
+########################
+            
+u:("{声の}[音量 ボリューム]{を}{"{もう}~chotto-{だけ}"}["上げて{~-kudasai ~-hoshii ~-choudai ~-moraeru}" 上げろ　"大きくして{~-kudasai ~-hoshii ~-choudai ~-moraeru}" 大きくしろ　"アップ{"して{~-kudasai ~-hoshii ~-choudai ~-moraeru}" しろ}"]")            
+^gotoReactivate(volume_up)   
+                  
+u:("声{を}{"{もう}~chotto-{だけ}"}["[大きく でかく　でっかく　おっきく]して{~-kudasai ~-hoshii ~-choudai ~-moraeru}" [大きく でかっく　でかく　おっきく]しろ]")
+^gotoReactivate(volume_up)     
+            
+        
+#↑↑↑↑↑VOLUME UP↑↑↑↑↑#
+        
+u:($empty) %volume_up
+     ^call(ALVolumeSlider.increaseVolume())
+         c1:(false) ^rand[" \vct=145\\rspd=105\ これ以上はボリュームを上げれないんだ。" " \vct=145\\rspd=105\ 音量は最大になっているから、これ以上は上げれないよー！"　"　\vct=145\\rspd=105\　ごめん、これ以上は無理なんだ。"]
+         c1:(true) ^rand[" \vct=145\\rspd=105\ 音量を上げテミタよ？これでどうーお？" " \vct=145\\rspd=105\ 音量を上げたよ？こんなもんでどうーお？"　" \vct=145\\rspd=105\ 音量上げたよ？こレくらいかな？"]
+         
+            u2:("[もっと もっともっと]{"[大きく おっきく　でかく]["して{~-kudasai ~-hoshii ~-choudai ~-moraeru}"]" "上げて{~-kudasai ~-hoshii ~-choudai ~-moraeru　~-mimashou}"　上げろ}")
+            ^gotoReactivate(volume_up)
+
+            u2:([はい　いい感じ　いい感じかな　いいじゃないかな　いいんじゃない　いいんじゃね　おっけー　大丈夫　はいばっちり　バッチリ　ばっちし　完璧　ありがとう　あんがと　サンキュ　オッケー そうね　そうだね　悪くない　いいね　ばっちし　さんきゅー])
+    ^rand[
+    " \vct=145\\rspd=105\ 尾ッケーだね？ \rspd=100\\emph=200\\vct=130\ よっっっ \rspd=400\ \emph=10\ し \emph=100\\rspd=100\。\vct=145\\rspd=105\ "
+    " \vct=145\\rspd=105\ 了解。" 
+    " \vct=155\\rspd=105\ 葉亜ぃ！\vct=145\\rspd=105\音量を変えたいときはいつでも言ってね。"]
+    ^pCall(ALVolumeSlider.hideTablet())
+            
+
+#↓↓↓↓↓VOLUME DOWN↓↓↓↓↓#
+    
+u:($empty) %volume_down
+    ^call(ALVolumeSlider.decreaseVolume())
+        c1:(false) \vct=130\^rand[" \vct=145\\rspd=105\ これ以上は下げれないんだ。無音にしたかったらタブレットで設定してよ！" " \vct=145\\rspd=105\ これ以上下げると、何も聞こえなくなるよ？それでもいいなら、タブレットで操作してよ。"]
+        c1:(true)  \vct=130\^rand[" \vct=145\\rspd=105\ 音量を下げたよ？これくらいでどうーお？" " \vct=145\\rspd=105\ 音量を下げたよ。てす、テス。こんなもんかな？"]
+            u2:([
+                "もっと{"下げて{~-kudasai ~-hoshii ~-choudai ~-moraeru }" 下げろ "小さく{して{~-kudasai ~-hoshii ~-choudai ~-moraeru}}" "ちっちゃく{して{~-kudasai ~-hoshii ~-choudai ~-moraeru ~-mimashou}}" "ちっちゃめで{お願い　お願いします}"　"小さめで{お願い　お願いします}"}"
+                "もっともっと{"下げて{~-kudasai ~-hoshii ~-choudai ~-moraeru　~-mimashou}" 下げろ "小さく{して{~-kudasai ~-hoshii ~-choudai ~-moraeru}}" "ちっちゃく{して{~-kudasai ~-hoshii ~-choudai ~-moraeru ~-mimashou}}" "ちっちゃめで{お願い　お願いします}"　"小さめで{お願い　お願いします}"}"
+                ])
+            ^gotoReactivate(volume_down)
+            
+            u2:([はい　いい感じ　いい感じかな　いいじゃないかな　いいんじゃない　いいんじゃね　おっけー　大丈夫　はいばっちり　バッチリ　ばっちし　完璧　ありがとう　あんがと　サンキュ　オッケー そうね　そうだね　悪くない　いいよ　ナイス　グッジョブ　いいね　ばっちし　さんきゅー])
+            ^rand[
+            " \vct=145\\rspd=105\ 尾ッケーだね？\rspd=100\\emph=200\\vct=130\ よっっっ \rspd=400\ \emph=10\ し \emph=100\\rspd=100\。" 
+            " \vct=145\\rspd=105\ 葉亜ぃ！ 音量を変えたいときはいつでも言ってね。"
+            ]
+            ^pCall(ALVolumeSlider.hideTablet())
+  
+  
+#THANKS
+        
+u:^private([ありがとう　サンキュー　サンキュ　おおきに　やるじゃん])
+\vct=145\\rspd=105\ ^rand["どういたしまして！" "任せて！"]
+^pCall(ALVolumeSlider.hideTablet())
+
+
+
+proposal: %SAYVOLUME
+現在の音量は $dialog_adjust_volume/currentVolume です。
+          
+          
+          
+         
+        
+    
+

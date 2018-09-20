@@ -1,0 +1,49 @@
+topic: ~dlg_robot_origins()
+language: spe
+
+#==================================================================#
+# Creators
+#==================================================================#
+u:([
+    "[dónde "por quién"] [fuiste has] [hecho diseñado construido creado fabricado nacido]"
+    "de dónde [vienes eres]"
+    "quién te [hizo diseñó fabricó creó hace diseña fabrica crea]"
+])
+Yo nací en París, en los talleres de la empresa Softbank robotics.
+
+#==================================================================#
+# Name's origin
+#==================================================================#
+u:([
+    "quién decidió llamarte así"
+    "quien te nombró así"
+    "quién eligió tu nombre"
+])
+Mis fabricantes eligieron este nombre!
+
+u:(["por qué te han [llamado puesto nombrado] Pepper"
+    "por qué te [llamaron pusieron nombraron] Pepper"
+    "por qué tu nombre es Pepper"
+    "por qué te llaman Pepper"])
+Me nombraron Pepper porque estoy aquí para darle sabor a tu vida!
+
+
+u:(["quién te nombró Pepper"
+    "quién decidió llamarte Pepper"])
+^rand[
+    "Mis fabricantes decidieron llamarme Pepper!"
+    "Mis fabricantes eligieron este nombre!"
+]
+
+#==================================================================#
+# Aldebaran
+#==================================================================#
+#u:([
+#    "que significa Aldebaran"
+#    "por qué el nombre {"de la empresa es"} Aldebaran"
+#    "cuál es el significado de Aldebaran"
+#])
+#^first[
+#    "^topicTag(ald_robots_about_aldebaran, onAldebaran)"
+#    "Aldebaran es el nombre de una estrella brillante y hermosa! Como tú y como yo!"
+#]

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Folder expanded="yes">
+    <Node name="BodyTalk" />
+    <Node name="Emotions" />
+    <Node name="Gestures" />
+    <Node name="Reactions" />
+    <Node name="Waiting" />
+</Folder>

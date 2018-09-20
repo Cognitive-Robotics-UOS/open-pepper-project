@@ -1,0 +1,131 @@
+topic: ~dlg_battery_level()
+language: jpj
+
+include:lexicon_jpj.top
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+#u:([
+    
+#    "バッテリー{の}残量{は　って}{あと}[どれくらい どんくらい　どれほど　どれぐらい]{~desuka 残ってますか　残ってる　ある　ありますか}"
+#    "バッテリーの[残量　容量]{は　って}まだ[ありますか　ある　残ってる 残ってますか]"
+#    "バッテリー{って　は}{後}[どれくらい　どれほど　どんだけ　どんくらい][残ってる　残ってますか]"
+#    "バッテリー{の}残量{を}教えて{~-kudasai}"
+#])
+#\vct=130\
+#^first[
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 \vct=130\ ^rand["ばッ照りぃはフル充電されています。" "満たんに充電されています！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 \vct=130\ばッ照りぃはほぼ、フル充電されています。"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 \vct=130\ばッ照りぃはほぼ、フル充電されています。"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 \vct=130\ ^rand["ざんりょーは半分くらいですね。" "班文ほど残っています。"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 \vct=130\ ^rand["ざんりょーは半分くらいですね。" "班文ほど残っています。"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 \vct=130\ ざんりょーが40パーセント以下なのでそろそろ充電してもらえるとありがたいです。"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 \vct=130\ 20パーセントしか残っていないので、充電してもらえるとありがたいです！"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 \vct=130\ 電池が切れそうなので、充電していただけると助かります！"
+#    "\vct=130\ 申し訳ないんですが、センサーが無効になっているため、情報を取得できません。"
+#]
+
+u:([
+    "バッテリー{ってまだ　わまだ}[ありますか　ある　残ってる 残ってますか]"
+    "バッテリー{って　は}{後}[どれくらい　どれぐらい どれほど　どんだけ　どんくらい]{残ってる　残ってますか}"
+    
+])
+^pCall(ALBatteryDisplay.show())
+\vct=130\
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 \vct=130\ ^rand["ばッ照りぃはフル充電されています。" "満たんに充電されています！"]"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 \vct=130\ばッ照りぃはほぼ、フル充電されています。"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 \vct=130\ばッ照りぃはほぼ、フル充電されています。"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 \vct=130\ ^rand["ざんりょーは半分くらいですね。" "班文ほど残っています。"]"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 \vct=130\ ^rand["ざんりょーは半分くらいですね。" "班文ほど残っています。"]"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 \vct=130\ ざんりょーが40パーセント以下なのでそろそろ充電してもらえるとありがたいです。"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 \vct=130\ 20パーセントしか残っていないので、充電してもらえるとありがたいです！"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 \vct=130\ 電池が切れそうなので、充電していただけると助かります！"
+    "\vct=130\ 申し訳ないんですが、センサーが無効になっているため、情報を取得できません。"
+]
+
+
+
+#u:([   
+#    "充電[する　しますか　しましょうか　しようか　しよっか　したほうがいい]"
+#    "{まだ}充電{とか}[しないで　しなくて][平気　大丈夫　いいの いいん]{~desuka}"
+#    "充電{とか　は}{まだ}[しないで　しないでも　しなくて　しなくても][平気　大丈夫　いいの いいん]{~desuka}"
+#    "バッテリーの残量{って　は}{まだ}[大丈夫　平気　ある　ありますか]"
+#])
+#\vct=130\
+#^first[
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"] ^rand["満たんに充電されてるので、ぜんぜん大丈夫ですよ？" "満たんに充電されてるので、大丈夫です。"　"ばッ照りぃは現在満たんなので大丈夫です！"] "
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"] ^rand["ほとんどまんたんなので大丈夫ですよ？"　"ばッ照りぃのざんりょーはまだ８０パーセント以上あるので、大丈夫です！"　"まだ８０パーセント以上のざんりょーがあるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["ほとんどまんたんなので大丈夫ですよ？"　"ばッ照りぃのざんりょーはまだ８０パーセントあるので、大丈夫です！"　"まだ８０パーセントのざんりょーがあるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["まだハンブン以上ばッ照りぃのざんりょーがあるので、大丈夫です！"　"ばッ照りぃのざんりょーがまだ半分以上あるので大丈夫ですよ？" "ばッ照りぃのざんりょーはまだハンブン以上あるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["ばッ照りぃのざんりょーはまだ半分くらいなので大丈夫ですよ？" "まだばッ照りぃのざんりょーは半分くらいなので大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 \vct=130\ ^rand["あ、そうですねぇ。そろそろ繋いでもらえると助かります！"　"おお尾尾！まさに今、そろそろ充電したほうがいいかなあ？って、思っていたとこなんです！繋いでもらえると助かります！" "そうですね、そろそろ繋いでもらえるとありがたいです！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 \vct=130\ ^rand["そろそろ疲れてきたので、繋いでもらえると助かります！"　"おお尾尾！まさに今、そろそろ充電しないと倒れそうだなあ？って、思っていたとこなんです！繋いでもらえると助かります！" "大ブ疲れてきたので、繋いでもらえると助かります！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 \vct=130\\rspd=110\あ、ちょうどよかった！充電器に繋いでもらえますか？ねおちしちゃいそうです\rspd=100\ "
+#    "センサーが無効になっているので、ばッ照りぃ残量の情報が取得出来ません！充電器につなげる状況でしたら、ネンノ田メに繋いでおいてください。"
+#]
+
+
+#uncertain sentence
+#u:(
+#[
+#"バッテリー{は　の方は}{まだ}[残ってる　残ってますか]"
+#"バッテリー[は って]{後}{残り}どれくらい{~desuka}"
+#"バッテリー{の調子}はどう{~desuka}"
+#"充電{は　の方は}{まだ}[残ってる　残ってますか]"
+#"{まだ}[充電 バッテリー]{は　の方は}[残ってる　残ってますか]"
+#]
+#)
+#バッテリー残量のことですか？
+    
+#    u1:([はい　そうです　そうだよ　そうそう　イエス　イェス　その通り　それ以外何がある　うん])
+#    ^first
+#    [
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"] ^rand["満たんに充電されてるので、ぜんぜん大丈夫ですよ？" "満たんに充電されてるので、大丈夫です。"　"ばッ照りぃは現在満たんなので大丈夫です！"] "
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"] ^rand["ほとんどまんたんなので大丈夫ですよ？"　"ばッ照りぃのざんりょーはまだ８０パーセント以上あるので、大丈夫です！"　"まだ８０パーセント以上のざんりょーがあるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["ほとんどまんたんなので大丈夫ですよ？"　"ばッ照りぃのざんりょーはまだ８０パーセントあるので、大丈夫です！"　"まだ８０パーセントのざんりょーがあるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["まだハンブン以上ばッ照りぃのざんりょーがあるので、大丈夫です！"　"ばッ照りぃのざんりょーがまだ半分以上あるので大丈夫ですよ？" "ばッ照りぃのざんりょーはまだハンブン以上あるので、大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 \vct=130\ ^rand["お気遣いありがとうございます。"　"ありがとうございます！"　"気にしていただいてありがとうございます！"　"あ、"]^rand["ばッ照りぃのざんりょーはまだ半分くらいなので大丈夫ですよ？" "まだばッ照りぃのざんりょーは半分くらいなので大丈夫です！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 \vct=130\ ^rand["あ、そうですねぇ。そろそろ繋いでもらえると助かります！"　"おお尾尾！まさに今、そろそろ充電したほうがいいかなあ？って、思っていたとこなんです！繋いでもらえると助かります！" "そうですね、そろそろ繋いでもらえるとありがたいです！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 \vct=130\ ^rand["そろそろ疲れてきたので、繋いでもらえると助かります！"　"おお尾尾！まさに今、そろそろ充電しないと倒れそうだなあ？って、思っていたとこなんです！繋いでもらえると助かります！" "大ブ疲れてきたので、繋いでもらえると助かります！"]"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 \vct=130\\rspd=110\あ、ちょうどよかった！充電器に繋いでもらえますか？ねおちしちゃいそうです\rspd=100\ "
+#    "センサーが無効になっているので、ばッ照りぃ残量の情報が取得出来ません！充電器につなげる状況でしたら、ネンノ田メに繋いでおいてください。"
+#    ]
+
+#    u1:([違う　いいえ　じゃなくて　そうじゃない])
+#    すみません、僕の知識の領域を越えた質問だとおもいます。
+    
+
+#u:("お腹{は}すいて[いませんか いますか　る]")
+#\vct=130\ 僕、お腹はすきませんよ？
+#^first[
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 \vct=130\ ばッ照りぃの事でしたら、まだ満たんなので大丈夫です！"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 \vct=130\ ばッ照りぃの事でしたら、ほとんど満たんなので大丈夫です！"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 \vct=130\ ばッ照りぃの事でしたら、まだ８０パーセントくらいざんりょーがあるので大丈夫です！"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4  \vct=130\ ばッ照りぃの事でしたら、まだざんりょーは半分くらいあるので、平気ですよ？"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 \vct=130\ ばッ照りぃの事でしたら、まだ半分くらいざんりょーがあるので、平気ですよ？"
+#    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 \vct=130\ ただ電気は少し足りないみたいなので、そろそろ充電器に繋いでもらえるとありがたいです！"
+#    " \vct=130\ ちなみにばッ照りぃの事でしたら、センサーが無効になっているので、ザん了の情報が取得出来ません！充電器につなげる状況でしたら、ネンノ田メに繋いでおいてもらえますか？"
+#]
+
+#u:({正確な}バッテリー{の}レベル{を}教えて{~-kudasai ~-choudai ~-hoshii ~-moraeru})
+#\vct=130\
+#^first[
+#    " \vct=130\ 現在のバッテリーレベルは $BatteryChargeChanged パーセントです。"
+#    " \vct=130\ センサーが無効になってるので、わからないです！すみません！"
+#]
+
+#u:({今}["充電中[ですか　でしょうか　なの　かな]" "充電[してる　してますか　してるの]"]) 
+#\vct=130\
+#^first[
+#    " \vct=130\ $BatteryChargingFlagChanged==true はい、只今充電中です。" 
+#    " \vct=130\ いや？充電器には繋がってないですよ？"
+#]
+
+#u:^private("{正確には}{後}[どれくらい どんだけ　どんくらい　どれだけ][あるの　残ってますか　残ってるの　残ってるんですか]")
+#\vct=130\ $BatteryChargeChanged パーセントですね。
+
+#u:^private(何パーセント)
+#\vct=130\ $BatteryChargeChanged パーセントですね。

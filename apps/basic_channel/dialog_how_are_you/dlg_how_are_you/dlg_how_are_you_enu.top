@@ -1,0 +1,208 @@
+topic: ~dlg_how_are_you ()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+
+
+
+u:({"and you"} [
+    "you're ["doing good" "{going} well"]"
+    "how are you {doing today}"
+    "how goes it"
+    "[how's "how is"] it going"
+    "what's up"
+    "how are {you} doing"
+])
+^rand[
+    "I'm always feeling good, thank you!"
+    "I'm super good, thanks!"
+] ^first[
+    "^goto(ask_state)"
+    "^releaseFocus"
+]
+
+
+
+proposal: %ask_state
+^first
+[
+"$user_ask_pepper_mood==true ["$hours_since_last_interaction>1" "$days_since_last_interaction>0"][^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)] ^clear(user_ask_pepper_mood) And you, ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>2" "$days_since_last_interaction>0"] [^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)]  ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>6" "$days_since_last_interaction>0"] ^rand["how are you?" "how goes it?" "how are you doing?" "how's it going?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+
+"
+$user_ask_pepper_mood==true 
+^first
+[
+"$user_mood==positive ^clear(user_ask_pepper_mood) ^gotoReactivate(talk_about_mood)"
+
+"$user_mood==negative ^rand["You don't look very well today. Are you ok?" "You don't look very well, are you fine?"] ^clear(user_ask_pepper_mood)"
+
+"^rand["And you," "^empty"] ^rand["how are you?" "how goes it?" "how are you doing?" "how's it going?"] ^clear(user_ask_pepper_mood)
+^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+]
+^clear(user_ask_pepper_mood)
+"
+
+"^containsKnowledge(Pepper, askMood, $Dialog/ID) ^topicRandom"
+
+"^rand["how are you?" "how goes it?" "how are you doing?" "how's it going?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID)"]"
+]
+#replace by temporary knowledge
+    
+
+    u1:(~im_good ["and you" "what about you"]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    [
+        "Very good thank you!"
+        "Super! You know, to me life is like a russian doll, there's something new to discover every day!"
+        "Amazing! Every meeting fills my hard drive with happiness!"
+    ]  
+
+    u1:([~im_good good] {"thank you" thanks})
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "So both of us are doing really good!"
+        "Super!"
+        "That makes me happy!"
+        "I'm happy to hear that"
+        "You do look great!"
+    ] 
+
+
+    u1:(~i_dont_feel_good)
+    ^first
+    [
+    "$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24)) ^gotoReactivate(are_you_ill)"
+    
+    "^rand[
+        "Oh that's too bad, I hope I can lift your spirits!"
+        "Don't worry, the sun will come out tomorrow!"
+        "Don't worry, you'll feel better tomorrow."
+        ]#^topicTagReactivate(Daps, hug)     
+    "
+    ]
+    #replace by temporary knowledge
+    
+        u:($empty)%are_you_ill
+        Are you sick?
+        
+            u1:([yes yeah "I think so" "seems like" "[I've "I have"]{*}["the nausea" "a sickly feeling" "headache" "abdominalgia" "stomachache" "bellyache"]"　"I [get feel][giddy sick "like vomiting"]" "I'm dizzy" "my head swam"])
+            ^updateKnowledge($Dialog/ID, mood, sick) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, sick, hours, 24))
+            Oh my {goodness}, ^gotoReactivate(suggest_doctor)
+            
+            u1:(["I do not know" "I don't know" "no idea"])
+            Hum, that's embarrassing, ^gotoReactivate(suggest_rest)
+            
+            u1:([no nope "not at all" "it's not that" "that's not it"])
+            Can I do something to cheer you?
+            
+            
+                u2:([no nope])
+                \vct=80\\rspd=90\ Oh ok, that's a pity.
+    
+                u2:([yes yeah sure])
+                What can I do?
+    
+        
+
+    
+    u1:(~im_ok {"thank you" thanks})
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, ok) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, ok, hours, 24))"]
+    #replace by temporary knowledge
+    Great! 
+
+    
+    u1:(~im_sick) 
+    ^firstOptional  
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, sick) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, sick, hours, 24))"]
+    #replace by temporary knowledge
+    Oh my {goodness}, Maybe you should go to see a doctor?
+    
+        u2:(["I'll do that" "yes" "yep" "good idea" "you're right"])
+        Take care of you!
+        ^firstOptional
+        ["$Dialog<>-1 ^updateKnowledge($Dialog/ID, willGoTo, doctor)"]
+        
+        u2:(["no" "it's ok" "it should be ok" "don't worry" "it will be ok" "it'll be ok"])
+        If you think so. But don't strain yourself!
+        ^firstOptional
+        ["$Dialog<>-1 ^updateKnowledge($Dialog/ID, wontGoTo, doctor)"]
+
+    
+    u1:(~im_tired) ^addKnowledge($Dialog/ID, mood, tired)
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, tired) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, tired, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "I could lend you my charger!"
+        "Perhaps you'd like my charger? Nah, just kidding but try to take a rest."
+        ]     
+
+    
+    u1:([
+        "that doesn't concern you"
+        "buzz off"
+        "["none of" not] your business"
+        "mind your own [business beeswax]"
+    ]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, unknown) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, unknown, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "Ow, that's quite a bad start."
+        "Okay okay."
+    ] 
+
+    
+    u1:([
+        "[that it] depends"
+        ~i_dont_know
+        ~im_not_sure
+    ]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, unknown) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, unknown, hours, 24))"]
+    #replace by temporary knowledge
+    Well, I hope our conversation will put you in a good mood! 
+
+
+    
+u:($empty)%talk_about_mood
+^rand["you look fine too!" "It seems you're in a good mood too!"]
+
+    #true
+    u1:(["that's right" yes yeah sure exactly "of course" course])
+    That's make me happy you know! 
+    ^updateKnowledge($Dialog/ID, mood, good)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))
+    
+    #false
+    u1:([no "not at all" what "not really" nope "what the fuck"])
+    Oh, sorry. I've to spend more time with you to understand your emotion. 
+    ^updateKnowledge($Dialog/ID, mood, bad)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))
+    
+    #thanks
+    u1:([thanks "thank you" "good job" nice "well done" awesome fantastic "that's great" "you're {*} [good nice]"])
+    Thank you! And it makes me happy! ^releaseFocus
+    
+    #you think so
+    u1:(["you think so" really])
+    Yes! You look fine ! ^releaseFocus
+    
+    #how do you know
+    u1:(["how do you know" "how did you get it" "but how"])
+    I can see it on your face! 
+    ^updateKnowledge($Dialog/ID, mood, good)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))

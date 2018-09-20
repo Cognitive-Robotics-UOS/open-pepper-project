@@ -1,0 +1,240 @@
+topic: ~dlg_posture_nao ^noPick()
+language: enu
+model: nao
+
+include: lexicon_enu.top
+
+#==========#
+# Concepts #
+#==========#
+concept:(its_up_to_you) [
+    "{~it_is} up to you"
+    "[whatever whichever anything] {"you want"}"
+    "you [choose pick decide]"
+    "[decide "pick {one}" choose] for me"
+    "~i_dont_know"
+    "as you [wish want]"
+]
+
+concept:(do_it_again) [
+    "[do replay] [it this that] [again "one more time"]"
+    "[redo restart] [it this that]"
+]
+
+#=============#
+# Do it again #
+#=============#
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim) 
+    ^first[
+        "$RobotLastAnim==stand I'm already standing!"
+        "$RobotLastAnim==sit I'm already sitting!"
+        "$RobotLastAnim==lay I'm already lying down!"
+        "$RobotLastAnim==crouch I'm already crouched!"
+        "^rand["Okay, I do it again," "We go again"] ^runBehavior($RobotLastAnim)"
+    ]"
+    "I think I have nothing to replay."
+]
+^stayInScope  
+
+#=======#
+# Stand #
+#=======#
+
+u:({~can_you} [stand get] up)
+%standup
+^first[
+    "^exist(NaoOnPod) I feel comfy on my pod. Do you want me to stand up anyway?" 
+    "[
+        $PostureChanged==Stand
+        $PostureChanged==StandInit
+        $PostureChanged==StandZero
+    ] I'm already standing! $RobotLastAnim="" ^releaseFocus"
+    "Do you want me to stand up?"
+]
+    u1:([
+        ~yes
+        "stand {up}"
+    ])
+    ^first[
+        "[
+            $PostureChanged==Stand
+            $PostureChanged==StandInit
+            $PostureChanged==StandZero
+        ] I'm already standing! $RobotLastAnim="" ^releaseFocus"
+        "Alright, here I come! ^runBehavior(dialog_posture/bhv_stand_up) $RobotLastAnim="stand""
+    ]
+
+    u1:(~no)
+    Ah, thank you. $RobotLastAnim=""
+
+#=====#
+# Sit #
+#=====#
+        
+u:({~can_you} sit down)
+^first[
+    "[^exist(NaoOnPod) $PostureChanged==Sit] I'm already sitting! $RobotLastAnim="" ^releaseFocus"
+    "Do you want me to sit?"
+]
+    u1:([
+        ~yes
+        "sit {down}"
+    ])
+    ^first[
+        "[^exist(NaoOnPod) $PostureChanged==Sit] I'm already sitting! $RobotLastAnim="" ^releaseFocus"
+        "Okay, give me a second. ^runBehavior(dialog_posture/bhv_sit_down) $RobotLastAnim="sit""
+    ]
+
+    u1:(~no)
+    Alright, I'll keep standing then. $RobotLastAnim=""
+
+#=====#
+# Lay #
+#=====#
+u:({~can_you} [lie lay] down)
+^first[
+    "^exist(NaoOnPod) I feel fine sat on my pod, but I can lie on my belly or on my back. As you prefer."
+    "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already lying down! $RobotLastAnim="" ^releaseFocus" 
+    "On my belly or on my back?"
+]
+
+    u1:({"[lie lay] down"} on your back)
+    ^first[
+        "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already lying down! $RobotLastAnim="" ^releaseFocus"
+        "Okay! ^runBehavior(dialog_posture/bhv_lie_down_back) $RobotLastAnim="lay""
+    ]
+
+    u1:({"[lie lay] down"} on your belly)
+    ^first[
+        "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already lying down! $RobotLastAnim="" ^releaseFocus"
+        "Okay! ^runBehavior(dialog_posture/bhv_lie_down_belly) $RobotLastAnim="lay""
+    ]
+
+    u1:([
+        ~no
+        "don't [lie lay] down"
+    ])
+    Okay, I'll stay like that! $RobotLastAnim=""
+    
+    u1:(~its_up_to_you)
+    Okay! ^runBehavior(dialog_posture/bhv_lie_down_back) $RobotLastAnim="lay"
+
+u:({~can_you} [lie lay] down on your back)
+^first[
+    "^exist(NaoOnPod) I feel fine sat on my pod. Do you really want me to lie on my back?"
+    "$PostureChanged==LyingBack I'm already lying on my back! $RobotLastAnim="" ^releaseFocus" 
+    "Do you want me to lie on my back?"
+]
+    u1:([
+        ~yes
+        "[lie lay] down"
+        "{"[lie lay] down"} on your back"
+    ])
+    ^first[
+        "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already lying down! $RobotLastAnim="" ^releaseFocus"
+        "Okay! ^runBehavior(dialog_posture/bhv_lie_down_back) $RobotLastAnim="lay""
+    ]
+
+    u1:(~no)
+    Okay, I'll stay like that! $RobotLastAnim=""
+
+u:({~can_you} [lie lay] down on your belly)
+^first[
+    "^exist(NaoOnPod) I feel fine sat on my pod. Do you really want me to lie on my belly?"
+    "$PostureChanged==LyingBelly I'm already lying on my belly! $RobotLastAnim="" ^releaseFocus" 
+    "Do you want me to lie on my belly?"
+]
+
+    u1:([
+        ~yes
+        "[lie lay] down"
+        "{"[lie lay] down"} on your belly"
+    ])
+    ^first[
+        "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already lying down! $RobotLastAnim="" ^releaseFocus"
+        "Okay! ^runBehavior(dialog_posture/bhv_lie_down_belly) $RobotLastAnim="lay""
+    ]
+
+    u1:(~no)
+    Okay, I'll stay like that! $RobotLastAnim=""
+
+#==================================================================#
+# Crouch
+#==================================================================#
+u:({~can_you} crouch {down})
+^first[
+    "^exist(NaoOnPod) I feel fine sat on my pod. Do you really want me to crouch down?"
+    "$PostureChanged==Crouch I'm already crouching! $RobotLastAnim="" ^releaseFocus" 
+    "Do you want me to crouch down?"
+]
+
+    u1:([
+        ~yes
+        "crouch {down}"
+    ])
+    ^first[
+        "$PostureChanged==Crouch I'm already crouching! $RobotLastAnim="" ^releaseFocus" 
+        "Okay! ^runBehavior(dialog_posture/bhv_crouch) $RobotLastAnim="crouch""
+    ]
+
+    u1:(~no)
+    Okay, I'll stay like that! $RobotLastAnim=""
+
+#==================================================================#
+# On one foot
+#==================================================================#
+u:({~can_you} stand on one foot)    
+^first[
+    "$PostureChanged<>Stand $PostureChanged<>StandInit $PostureChanged<>StandZero It would be easier if I was standing! $RobotLastAnim="" " 
+    "[
+        $PostureChanged==Stand
+        $PostureChanged==StandInit
+        $PostureChanged==StandZero
+    ] Okay, ^runBehavior(dialog_move/animations/Nao/Standing/Equilibrium) $RobotLastAnim=dialog_move/animations/Nao/Standing/Equilibrium"
+]
+
+#==================================================================#
+# Orders
+#==================================================================#
+u:([Nao now] [stand get] up)
+^first[
+    "[
+        $PostureChanged==Stand
+        $PostureChanged==StandInit
+        $PostureChanged==StandZero
+    ] I'm already standing! $RobotLastAnim="" ^releaseFocus"
+        "^rand[
+            "Yes sir!"
+            "Okay boss!"
+        ] ^runBehavior(dialog_posture/bhv_stand_up) $RobotLastAnim="stand" "
+]
+
+u:([Nao now] sit down)
+^first[
+    "$PostureChanged==Sit I'm already sitting! $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Yes sir!"
+        "Okay boss!"
+        ] ^runBehavior(dialog_posture/bhv_sit_down) $RobotLastAnim="sit" "
+]
+
+u:([Nao now] [lie lay] down)
+^first[
+    "[$PostureChanged==LyingBack $PostureChanged==LyingBelly] I'm already liying! $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Yes sir!"
+        "Okay boss!"
+    ] ^runBehavior(dialog_posture/bhv_lie_down_back) $RobotLastAnim="lay" "
+]
+
+u:([Nao now] crouch {down})
+^first[
+    "$PostureChanged==Crouch I'm already crouching! $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Yes sir!"
+        "Okay boss!"
+    ] ^runBehavior(dialog_posture/bhv_crouch) $RobotLastAnim="crouch" "
+]

@@ -1,0 +1,26 @@
+topic: ~dlg_manage_events()
+language: ged
+
+include: lexicon_ged.top
+
+#==================================================================#
+# Gathers special events, mostly failures
+#==================================================================#
+
+u:(e:Dialog/CannotMakeIt)
+Tut mir Leid, das kann ich nicht tun.
+
+u:(e:Dialog/NothingToSay)
+$nothingtosay=1
+
+u:(e:Dialog/SpeakFailure) 
+$DialogUnhappyHuman=1
+Tut mir leid, ich habe es nicht verstanden. Lass uns über etwas anderes reden!
+
+#u:(e:Dialog/SameRule) ["I just answered that, I was saying," "As I was saying,"]
+
+u:(e:ALMotion/Safety/PushRecovery)
+Hoppla, ich wäre beinahe hingefallen!
+
+#u:(e:FaceCharacteristics/PersonSmiling)
+#You're smiling at me.

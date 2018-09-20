@@ -1,0 +1,101 @@
+topic: ~dlg_engines()
+language: spe
+
+include: lexicon_spe.top
+
+
+#==================================================================#
+# Do it again
+#==================================================================#
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^first[
+        "$RobotLastAnim==rest Mis motores ya están apagados."
+        "$RobotLastAnim==wakeup Mis motores ya están encendidos"
+        "^rand["Está bien, lo haré de nuevo!" "Aquí vamos de nuevo!"] ^runBehavior($RobotLastAnim)"
+    ]"
+    "Creo que no tengo nada que reproducir."
+]
+^stayInScope
+
+##==================================================================#
+# Engines off
+#==================================================================#
+
+u:([
+    "[elimina desactiva apaga desconecta suelta relaja] tu rigidez"
+    "toma un descanso"
+    descansa
+    relajate
+    "[elimina apaga desactiva desconecta suelta relaja] tus [motores servomotores]"
+    "deja muertos tus [motores servomotores]"
+])
+^first[
+    "$robotIsWakeUp==false Mis motores ya están apagados. $RobotLastAnim="" ^releaseFocus"
+    "Estás seguro? No podré moverme más. Y estaré en una posición que no es muy estable."
+]
+
+    u1:([
+        ~yes
+        hazlo
+        "haz lo que te ordeno"
+        "es una orden"
+        "te lo ordeno"
+    ])
+    De acuerdo! ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest"
+
+    u1:([
+        ~no
+        "no lo hagas"
+    ])
+    Creo que es una decisión acertada. $RobotLastAnim=""
+
+u:(~ald_robots [
+    "[elimina desactiva apaga desconecta suelta relaja] tu rigidez"
+    "toma un descanso"
+    descansa
+    relajate
+    "[elimina apaga desactiva desconecta suelta relaja] tus [motores servomotores]"
+    "deja muertos tus [motores servomotores]"
+])
+^first[
+    "$robotIsWakeUp==false Mis motores ya están apagados. $RobotLastAnim="" ^releaseFocus"
+    "^rand[
+        "Sí, señor!"
+        "De acuerdo, jefe!"
+    ] ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest" "
+]
+
+#==================================================================#
+# Engines on
+#==================================================================#
+
+u:([
+    "[enciende activa initia conecta] tu rigidez"
+    "[inicia activa enciende conecta] tus [motores servomotores]"
+    "deja [vivos animados] tus [motores servomotores]"
+])
+^first[
+    "$robotIsWakeUp==false De acuerdo! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Mis motores ya están encendidos. $RobotLastAnim="" "
+    "De acuerdo! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]
+
+u:(~ald_robots [
+    "[enciende activa initia conecta] tu rigidez"
+    "[inicia activa enciende conecta] tus [motores servomotores]"
+    "deja [vivos animados] tus [motores servomotores]"
+])
+^first[
+    "$robotIsWakeUp==false ^rand[
+        "Sí, señor!"
+        "De acuerdo, jefe!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Mis motores ya están encendidos. $RobotLastAnim="" "
+    "^rand[
+        "Sí, señor!"
+        "De acuerdo, jefe!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]

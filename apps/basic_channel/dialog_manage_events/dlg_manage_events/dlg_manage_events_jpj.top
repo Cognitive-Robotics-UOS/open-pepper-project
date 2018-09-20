@@ -1,0 +1,24 @@
+topic: ~dlg_manage_events()
+language: jpj
+
+include: lexicon_jpj.top
+
+
+#==================================================================#
+# Gathers special events, mostly failures
+#==================================================================#
+
+#u:(e:Dialog/CannotMakeIt)
+
+u:(e:Dialog/NothingToSay)
+$nothingtosay=1
+
+#u:(e:Dialog/SpeakFailure)
+#$DialogUnhappyHuman=1
+
+u:(e:ALMotion/Safety/PushRecovery) 
+^rand[
+    "\vct=160\ひゃあああ\vct=120\\rspd=120\びっくりしタ阿あ！" 
+    "\vct=120\奈。っ菜。奈。\rspd=200\くうう！\rspd=140\\vct=120\こらこら、いいかげんにしないと、\rspd=110\おこっちゃぅ\vct=90\ぞ\vct=100\尾尾？" 
+    "\rspd=120\\vct=130\ だれ蚊誰\vct=150\か！\vct=160\こ、こっちに、僕をいじめる人が居ます！"
+]

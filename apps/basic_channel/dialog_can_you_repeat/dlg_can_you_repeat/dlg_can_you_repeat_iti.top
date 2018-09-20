@@ -1,0 +1,44 @@
+topic: ~dlg_can_you_repeat()
+language: iti
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+u:([
+    "cosa ho [detto chiesto]"
+    "cosa hai [sentito capito]"
+    "qual era la domanda che ho fatto?"
+])
+^rand[
+    "Mi sembra che hai detto $Dialog/MatchedInput ."
+    "Ti ho sentito dire $Dialog/MatchedInput ."
+] ^stayInScope
+
+
+#repeat
+u:([
+    ripeti
+    "non ho capito {"quello che hai detto"}"
+    "non ti ho sentito"
+    "cosa hai detto"
+])
+^rand[
+    "ripeterò, "
+    "dicevo, "
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([
+    ripeti
+    "non ho capito {"quello che hai detto"}"
+    "non ti ho sentito"
+    "cosa hai detto"
+])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "
+" \rspd=50\ $RobotRepeat \rspd=100\ "
+" \rspd=300\ $RobotRepeat \rspd=100\ "
+]
+^stayInScope

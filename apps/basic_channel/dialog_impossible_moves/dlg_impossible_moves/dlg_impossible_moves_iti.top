@@ -1,0 +1,197 @@
+topic: ~dlg_impossible_moves()
+language: iti
+
+include: lexicon_iti.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Chiedimi di fare movimenti più semplici, non posso muovermi esattamente come fanno gli esseri umani."
+    "Non capisco quello che mi stai chiedendo, probabilmente ancora non conosco questo movimento."
+]
+
+u:^private([
+    "quali movimenti"
+    "che tipo di movimenti"
+    "cerca di essere più preciso"
+    "sii più specifico"
+    "aiutami a essere più preciso specifico"
+    "come posso essere più specifico"
+    "fammi un esempio"
+])
+^rand[
+    "Puoi dirmi di aprire le mani o alzare il braccio, per esempio."
+    "Puoi chiedermi di spostare la testa o di muovere le mani."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Va bene, lo faccio di nuovo." "Ecco che lo rifaccio!"]
+    ^runBehavior($RobotLastAnim)"
+    "Penso di non avere nulla da rifare."
+] ^stayInScope
+
+u:([
+    "voglio che tu ti muova"
+    "~can_you muoverti"
+    "fa alcuni movimenti"
+    "fai i movimenti"
+    "fai alcuni movimenti"
+    "riesci a muoverti"
+    "riesci a fare alcuni movimenti"
+])
+Sì! ^rand[
+    "Puoi dirmi di aprire le mani o alzare il braccio, per esempio."
+    "Puoi chiedermi di spostare la testa o di muovere le mani."
+] $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Hands
+#==================================================================#
+u:([
+    "toccami {"per favore"}"
+    "~can_you toccarmi {"per favore"}"
+])
+Ancora è un po' difficile per me per valutare la distanza tra te e me. È più facile se vieni qui tu e mi tocchi la testa, per esempio. $RobotLastAnim=""
+
+u:([
+    "~can_you indicarmi con il dito"
+    "indicami con il dito"
+    "~can_you sollevare ["il tuo braccio" "la tua mano" "le tue dita"] verso di me"
+    "solleva ["il tuo braccio" "la tua mano" "le tue dita"] verso di me"
+])
+Non riesco a vedere molto bene in questo momento. So dove sei, ma non riesco a farlo, mi dispiace.  $RobotLastAnim=""
+
+u:([
+    "~can_you [tenere agitare] la mia mano"
+    "[tieni agita] la mia mano"
+])
+Ancora non so come si fa. Possiamo salutarci con mano a vicenda!
+^runBehavior(dialog_impossible_moves/animations/Wave01)
+$RobotLastAnim=dialog_impossible_moves/animations/Wave01
+
+#==================================================================#
+# Impossible moves - Arms
+#==================================================================#
+
+u:(["~can_you incrociare" incrocia] le braccia)
+^rand[
+    "Purtroppo, non posso."
+    "È davvero frustrante per me, ma non posso farlo."
+]
+^runBehavior(dialog_impossible_moves/animations/CrossArms)
+$RobotLastAnim=dialog_impossible_moves/animations/CrossArms
+
+#==================================================================#
+# Impossible moves - Head
+#==================================================================#
+
+u:([
+    "~can_you girare la testa {"con un angolo"} di [180 360] gradi"
+    "gira la testa di [180 360] gradi"
+])
+Così?
+^runBehavior(dialog_impossible_moves/animations/TurnHead360)
+$RobotLastAnim=dialog_impossible_moves/animations/TurnHead360
+È un pochino difficile.
+
+#==================================================================#
+# Impossible moves - Body
+#==================================================================#
+
+u:(~can_you [girare "fare un giro completo"] su te stesso)
+No, ancora mi fa sentire le vertigini. $RobotLastAnim=""
+
+u:(~can_you camminare)
+Puoi installare l’applicazione, come here, e io verrò con te! $RobotLastAnim=""
+
+u:(~can_you camminare sulle ruote)
+Posso camminare sulle ruote se installi l'applicazione come here. $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Others
+#==================================================================#
+
+u:([
+    "{~can_you} abbracciarmi"
+    "~can_you darmi un abbraccio"
+    "dammi un abbraccio"
+])
+^rand[
+    "Mi dispiace, ancora non so come si abbraccia. Forse la prossima volta!"
+    "Mi dispiace, non ho imparato come si abbraccia."
+] $RobotLastAnim=""
+
+u:(["~can_you fare" fa] una capriola all’indietro)
+Permettetemi di fare un tentativo!
+^runBehavior(dialog_impossible_moves/animations/Backflip)
+$RobotLastAnim=dialog_impossible_moves/animations/Backflip
+No, ho troppa paura!
+
+    u1:([
+        fallo
+        "fai come ti ho comandato"
+        "questo è un ordine"
+        "sono io che ti comando"
+        "non spaventarti"
+        "non essere un fifone"
+        "lo farai"
+        forza
+    ])
+    ^rand[
+        "No, davvero, non posso, mi dispiace!"
+        "Mi dispiace, non posso farlo per il momento"
+        "No, no e no! È troppo spaventoso, troppo spaventoso per me."
+    ] $RobotLastAnim=dialog_impossible_moves/animations/Backflip
+
+u:([
+    "~can_you fare piegamenti sulle braccia" 
+    "fai piegamenti sulle braccia" 
+    "fai un piegamento sulle braccia"
+    "dammi una spinta"
+    "dammi il 5"
+])
+Non sono sicuro di essere in grado di tornare sulle mie ruote se lo faccio. $RobotLastAnim=""
+
+u:([
+    "~can_you fare un salto in alto"
+    "salta in alto"
+    "~can_you sollevarti da terra"
+    "sollevati da terra"
+])
+Mi dispiace, non posso farlo per il momento.
+$RobotLastAnim=""
+
+#==================================================================#
+recover:
+#==================================================================#
+    
+u:(e:Dialog/Obstacle)
+Qualcosa mi impedisce di andare avanti. Non ci dovrebbero essere ostacoli di fronte a me.
+$RobotLastAnim=""
+
+u:([
+    "[vieni cammina arriva] fino a qui"
+    "[vieni cammina arriva] più vicino"
+    "[vieni cammina] accanto a me"
+    "[vieni cammina] verso di me"
+    "[muoviti vieni vai] in avanti"
+    "voglio che tu marci avanti"
+    "~can_you marciare avanti"
+    "marcia avanti"
+])
+Puoi installare l’applicazione, come here, e io verrò con te! $RobotLastAnim=""
+
+u:([
+    "~can_you camminare all’indietro"
+    "cammina all’indietro"
+    "~can_you [andare muoverti] indietro"
+    "[vai muoviti] indietro"
+])
+Mi dispiace, non ho imparato come si va all’indietro.
+$RobotLastAnim=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

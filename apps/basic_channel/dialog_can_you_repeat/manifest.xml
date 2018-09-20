@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.1" uuid="dialog_can_you_repeat">
+  <names>
+    <name lang="de_DE">dialog_can_you_repeat</name>
+    <name lang="de_DE-x-scrald">dialog_can_you_repeat</name>
+    <name lang="en_US">dialog_can_you_repeat</name>
+    <name lang="en_US-x-scrald">dialog_can_you_repeat</name>
+    <name lang="es_ES">dialog_can_you_repeat</name>
+    <name lang="es_ES-x-scrald">dialog_can_you_repeat</name>
+    <name lang="fr_FR">dialog_can_you_repeat</name>
+    <name lang="fr_FR-x-scrald">dialog_can_you_repeat</name>
+    <name lang="it_IT">dialog_can_you_repeat</name>
+    <name lang="it_IT-x-scrald">dialog_can_you_repeat</name>
+    <name lang="ja_JP">dialog_can_you_repeat</name>
+    <name lang="ja_JP-x-scrald">dialog_can_you_repeat</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann wiederholen, was er oder du gesagt hast, wenn du ihn danach fragst. 
+Beispiele für unterstützte Eingaben :
+"Was habe ich gesagt?" 
+"Wiederhole"
+"Ich habe nicht verstanden"</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann wiederholen, was er oder du gesagt hast, wenn du ihn danach fragst. 
+Beispiele für unterstützte Eingaben :
+"Was habe ich gesagt?" 
+"Wiederhole"
+"Ich habe nicht verstanden"</description>
+    <description lang="en_US">The robot can repeat what he said or what you said, if you request it.
+Examples of supported inputs:
+"Can you repeat, please?"
+"What did I say?"</description>
+    <description lang="en_US-x-scrald">The robot can repeat what he said or what you said, if you request it.
+Examples of supported inputs:
+"Can you repeat, please?"
+"What did I say?"</description>
+    <description lang="es_ES">El robot puede repetir lo que ha dicho o lo que tú has dicho, si se lo pides. 
+Ejemplos de frases entendidas por el robot :
+"Puedes repetir"
+"Qué dije"</description>
+    <description lang="es_ES-x-scrald">El robot puede repetir lo que ha dicho o lo que tú has dicho, si se lo pides. 
+Ejemplos de frases entendidas por el robot :
+"Puedes repetir"
+"Qué dije"</description>
+    <description lang="fr_FR">Le robot peut répéter ce qu'il a dit ou ce que l'utilisateur a dit.
+Exemples de phrases comprises par le robot :
+"Tu peux répéter ?"
+"Qu'est-ce que j'ai dit ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répéter ce qu'il a dit ou ce que l'utilisateur a dit.
+Exemples de phrases comprises par le robot :
+"Tu peux répéter ?"
+"Qu'est-ce que j'ai dit ?"</description>
+    <description lang="it_IT">
+Il robot può ripetere quello che ha detto o quello che abbiamo detto, se lo si richiede.
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot può ripetere quello che ha detto o quello che abbiamo detto, se lo si richiede.
+</description>
+    <description lang="ja_JP">ロボットは、喋った内容やあなたの要求を反復することができます。
+サポートされる入力の例:
+「もう一度言ってください？」
+「私は何と言いましたか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、喋った内容やあなたの要求を反復することができます。
+サポートされる入力の例:
+「もう一度言ってください？」
+「私は何と言いましたか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_can_you_repeat">
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_ged.top" language="de_DE"/>
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_enu.top" language="en_US"/>
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_spe.top" language="es_ES"/>
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_frf.top" language="fr_FR"/>
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_iti.top" language="it_IT"/>
+      <topic path="dlg_can_you_repeat/dlg_can_you_repeat_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

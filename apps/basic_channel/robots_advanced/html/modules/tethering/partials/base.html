@@ -1,0 +1,35 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1>{{'TETHERING' | translate }}</h1>
+        <div class="col-md-8" class="table-responsive" ng-show="interface_list">
+            <table class="table table-striped table-condensed table-hover">
+                <thead>
+                    <td>Device Name</td>
+                    <td>IP Address</td>
+                    <td>Mac Address</td>
+                    <td>Tethering</td>
+                    <td>Activate Tethering</td>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="elem in interface_list | orderBy:'type'">
+                        <td>{{ elem.type }}</td>
+                        <td>{{ elem.IP }}</td>
+                        <td>{{ elem.mac }}</td>
+                        <td>
+                            <strong ng-show="elem.TethAc && elem.TethEn">
+                                Enabled
+                            </strong>
+                            <strong ng-show="elem.TethAc && !elem.TethEn">
+                                Disabled
+                            </strong>
+                        </td>
+                        <td>
+                            <button ng-show="elem.TethAc && !elem.TethEn" ng-click="openAskTethering('md', elem.type)">Enabled</button>
+                            <button ng-show="elem.TethAc && elem.TethEn" ng-click="disable(elem.type)">Disabled</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

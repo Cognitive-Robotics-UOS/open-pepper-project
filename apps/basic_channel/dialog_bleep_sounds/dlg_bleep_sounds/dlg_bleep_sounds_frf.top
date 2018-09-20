@@ -1,0 +1,22 @@
+topic: ~dlg_bleep_sounds()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+# Activate/Deactivate ASR's bleep sounds
+#==================================================================#
+
+u:({~ald_robots} [
+    "["[désactive enlève arrête stoppe retire] les" "plus de"] _[bouloupes bloups bips blips bilips]"
+    "[arrête cesse] de [bipper boulouper bloupper]"
+    "ne _[bouloupe bloup bippe blip bilip] plus"
+    "~can_you [désactiver enlever arrêter stopper retirer] les _[bouloupes bloups bips blips bilips]"
+]) $Dialog/Bouloupe=0 ^pCall(ALSpeechRecognition.setAudioExpression(false)) Je ne [$1 bouloupe] plus!
+
+u:({~ald_robots} [
+    "[réactive refaits remets] les _[bouloupes bloups bips blips bilips]"
+    "recommence à [bipper boulouper bloupper]"
+    "_[bouloupe bloup bippe blip bilip] de nouveau"
+    "~can_you [réactiver remettre refaire] les _[bouloupse bloups bips blips bilip]"
+]) $Dialog/Bouloupe=1 ^pCall(ALSpeechRecognition.setAudioExpression(true)) Je [$1 bouloupe] de nouveau!

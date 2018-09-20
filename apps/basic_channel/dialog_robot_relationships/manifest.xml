@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_robot_relationships" version="2.5.2">
+  <names>
+    <name lang="de_DE">dialog_robot_relationships</name>
+    <name lang="de_DE-x-scrald">dialog_robot_relationships</name>
+    <name lang="en_US">dialog_robot_relationships</name>
+    <name lang="en_US-x-scrald">dialog_robot_relationships</name>
+    <name lang="es_ES">dialog_robot_relationships</name>
+    <name lang="es_ES-x-scrald">dialog_robot_relationships</name>
+    <name lang="fr_FR">dialog_robot_relationships</name>
+    <name lang="fr_FR-x-scrald">dialog_robot_relationships</name>
+    <name lang="it_IT">dialog_robot_relationships</name>
+    <name lang="it_IT-x-scrald">dialog_robot_relationships</name>
+    <name lang="ja_JP">dialog_relationships</name>
+    <name lang="ja_JP-x-scrald">dialog_relationships</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann Fragen in Bezug auf die Familie beantworten.</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann Fragen in Bezug auf die Familie beantworten.</description>
+    <description lang="en_US">The robot can answer family-related questions.
+Examples of supported inputs:
+"Do you have a family?"
+"Do you have any friends?"</description>
+    <description lang="en_US-x-scrald">The robot can answer family-related questions.
+Examples of supported inputs:
+"Do you have a family?"
+"Do you have any friends?"</description>
+    <description lang="es_ES">El robot puede responder a preguntas relacionadas a la familia.
+Ejemplo de frase entendida por el robot :
+- " ¿ Tienes familia ?"</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a preguntas relacionadas a la familia.
+Ejemplo de frase entendida por el robot :
+- " ¿ Tienes familia ?"</description>
+    <description lang="fr_FR">Le robot peut répondre à des questions liées au thème de la famille.
+Exemples de phrases comprises par le robot :
+"As-tu de la famille ?"
+"As-tu des amis ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des questions liées au thème de la famille.
+Exemples de phrases comprises par le robot :
+"As-tu de la famille ?"
+"As-tu des amis ?"</description>
+    <description lang="it_IT">Il robot può rispondere a domande relative alla famiglia.</description>
+    <description lang="it_IT-x-scrald">Il robot può rispondere a domande relative alla famiglia.</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_robot_relationships" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_robot_relationships/dlg_robot_relationships_ged.top"/>
+      <topic language="en_US" path="dlg_robot_relationships/dlg_robot_relationships_enu.top"/>
+      <topic language="es_ES" path="dlg_robot_relationships/dlg_robot_relationships_spe.top"/>
+      <topic language="fr_FR" path="dlg_robot_relationships/dlg_robot_relationships_frf.top"/>
+      <topic language="it_IT" path="dlg_robot_relationships/dlg_robot_relationships_iti.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

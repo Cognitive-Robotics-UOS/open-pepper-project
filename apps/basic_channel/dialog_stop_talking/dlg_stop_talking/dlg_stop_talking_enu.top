@@ -1,0 +1,26 @@
+topic: ~dlg_stop_talking()
+language: enu
+
+include: lexicon_enu.top
+
+#==================================================================#
+# Robot will stop talking and being proactive
+#==================================================================#
+
+
+u:(^repeat[
+    "{~ald_robots} {~can_you} [
+        "stop talking"
+        "shut [up "your mouth"]"
+        "be quiet"
+    ]"
+]) I'm sorry human. I'll never be quiet. $pushMode=0
+
+#u:(^repeat[
+#    "{~ald_robots}{~can_you} [
+#        "arrête de parler"
+#        "tais-toi"
+#        "ta gueule"
+#        "~can_you fermer ta gueule"
+#    ]"
+#]) Okay, je me tais. $pushMode=0

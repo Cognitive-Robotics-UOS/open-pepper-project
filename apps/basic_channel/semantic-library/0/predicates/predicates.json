@@ -1,0 +1,62 @@
+[
+{
+  "predicate": "hasType",
+  "subject": ["any"],
+  "object": ["any"],
+},
+{
+  "predicate": "hasName",
+  "subject": ["robot", "person"],
+  "object": ["ne_name"]
+},
+{
+  "predicate": "isSmiling",
+  "subject": ["person"],
+  "object": ["bool"]
+},
+{
+  "predicate": "hasAge",
+  "subject": ["robot", "person"],
+  "object": ["number"]
+},
+{
+  "predicate": "hasGender",
+  "subject": ["person"],
+  "object": ["~gender"]
+},
+{
+  "predicate": "likes",
+  "subject": ["robot", "person"],
+  "object": ["any"]
+},
+{
+  "predicate": "launchApp",
+  "subject": ["robot"],
+  "object": ["app"]
+},
+{
+  "predicate": "isAbleTo",
+  "subject": ["robot"],
+  "object": ["app"]
+},
+{
+  "predicate": "goToPosture",
+  "subject": ["robot"],
+  "object": ["posture"]
+},
+{
+  "predicate": "follow",
+  "subject": ["robot"],
+  "object": ["any"]
+},
+{
+  "predicate": "hasMood",
+  "subject": ["robot", "person"],
+  "object": ["~mood"]
+},
+{
+  "predicate": "hasSibling",
+  "subject": ["person"],
+  "object": ["person"]
+}
+]

@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.6" uuid="dialog_move_head">
+  <names>
+    <name lang="en_US">dialog_move_head</name>
+    <name lang="en_US-x-scrald">dialog_move_head</name>
+    <name lang="es_ES">dialog_move_head</name>
+    <name lang="es_ES-x-scrald">dialog_move_head</name>
+    <name lang="fr_FR">dialog_move_head</name>
+    <name lang="fr_FR-x-scrald">dialog_move_head</name>
+    <name lang="it_IT">dialog_move_head</name>
+    <name lang="it_IT-x-scrald">dialog_move_head</name>
+    <name lang="ja_JP">dialog_move_head</name>
+    <name lang="ja_JP-x-scrald">dialog_move_head</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can move his head according to the user's request.
+Examples of supported inputs:
+"Can you turn your head?"
+"Can you look up?"</description>
+    <description lang="en_US-x-scrald">The robot can move his head according to the user's request.
+Examples of supported inputs:
+"Can you turn your head?"
+"Can you look up?"</description>
+    <description lang="es_ES">El robot puede mover su cabeza a las solicitudes del usuario.
+Ejemplo de frase ententdida por el robot :
+"mueve tu cabeza"</description>
+    <description lang="es_ES-x-scrald">El robot puede mover su cabeza a las solicitudes del usuario.
+Ejemplo de frase ententdida por el robot :
+"mueve tu cabeza"</description>
+    <description lang="fr_FR">Le robot peut bouger sa tête en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Tourne la tête."
+"Lève la tête."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut bouger sa tête en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Tourne la tête."
+"Lève la tête."</description>
+    <description lang="it_IT">Il robot può muovere la testa in base alla richiesta dell'utente.</description>
+    <description lang="it_IT-x-scrald">Il robot può muovere la testa in base alla richiesta dell'utente.</description>
+    <description lang="ja_JP">ロボットはユーザの要求に応じて、頭を動かすことができます。
+サポートされる入力の例:
+「頭を動かせますか？」
+「見上げてくれますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットはユーザの要求に応じて、頭を動かすことができます。
+サポートされる入力の例:
+「頭を動かせますか？」
+「見上げてくれますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="animations/TurnHead360">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/LookDown">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/LookUp">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/LookRight">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/LookLeft">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_move_head" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_move_head/dlg_move_head_ged.top"/>
+      <topic language="en_US" path="dlg_move_head/dlg_move_head_enu.top"/>
+      <topic language="es_ES" path="dlg_move_head/dlg_move_head_spe.top"/>
+      <topic language="fr_FR" path="dlg_move_head/dlg_move_head_frf.top"/>
+      <topic language="it_IT" path="dlg_move_head/dlg_move_head_iti.top"/>
+      <topic language="ja_JP" path="dlg_move_head/dlg_move_head_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

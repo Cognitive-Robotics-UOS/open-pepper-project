@@ -1,0 +1,495 @@
+topic: ~lexicon()
+language: ged
+
+dynamic:robotname
+dynamic:friendlyname
+dynamic:all_descriptions
+dynamic:all_languages
+dynamic:myrobotname
+
+dynamic:app-name
+dynamic:app-dance
+dynamic:app-game
+dynamic:app-story
+
+dynamic:klg_thing
+dynamic:klg_definition
+dynamic:klg_date
+
+#==================================================================#
+##### Robot concepts #####
+concept:(ald_robots) [~robotname ~myrobotname Nao Pepper Peppersan Romeo]
+#==================================================================#
+
+
+#==================================================================#
+##### Verbs #####
+#------------------------------------------------------------------#
+concept:(want_to) [
+    "[würde möchte {gerne lieber}]"
+    "[will muss]"
+]
+#==================================================================#
+
+#------------------------------------------------------------------#
+##### Auxiliaries #####
+#------------------------------------------------------------------#
+concept:(havent) ["habe [nicht keinen keine]"]
+concept:(isnt) ["ist [nicht kein keine]"]
+concept:(arent) ["sind [nicht kein keine]"]
+concept:(cant) ["kannst [nicht kein keine]"]
+concept:(couldnt) ["könntest [nicht kein keine]"]
+
+#------------------------------------------------------------------#
+##### 1rst person verbs #####
+#------------------------------------------------------------------#
+concept:(i_am) ["ich bin"]
+concept:(i_have) ["ich habe"]
+concept:(i_will) ["ich werde"]
+concept:(i_would) ["ich würde"]
+concept:(i_am_not) ["ich bin [nicht kein keine]"]
+concept:(i_have_not) ["ich habe [nicht keinen keine]"]
+concept:(i_will_not) ["ich werde [nicht keinen keine]"]
+concept:(i_would_not) ["ich würde [nicht keinen keine]"]
+concept:(i_have_to) ["ich muss"]
+
+concept:(i_want) ["ich [möchte will würde {gerne lieber}]"]
+
+concept:(i_dont_want) ["ich [möchte will] [nicht keinen keine]"]
+concept:(i_dont_want_to) ["ich [möchte will] nicht"]
+concept:(we_are) ["wir sind"]
+concept:(we_are_not) ["wir sind [nicht keine]"]
+
+#------------------------------------------------------------------#
+##### 2nd person verbs #####
+#------------------------------------------------------------------#
+concept:(you_are) ["du bist"]
+concept:(you_were) ["du warst"]
+concept:(you_have) ["du wurdest"]
+concept:(you_will) ["du wirst"]
+concept:(you_are_not) ["du bist [nicht kein keine]"]
+concept:(you_have_not) ["du hast [nicht kein keinen keine]"]
+concept:(you_will_not) ["du wirst nicht"]
+concept:(do_you_need) ["[möchtest willst brauchst] du" "würdest du {gerne}"]
+
+#------------------------------------------------------------------#
+##### 3rd person verbs #####
+#------------------------------------------------------------------#
+concept:(it) [es "[dieses jenes] {ding zeug} {da}"] 
+concept:(it_is) ["das ist" "[es das dies] [ist war]" "{nun "ich glaube"} ["es ist"]" "es ist {zweifellos sicherlich natürlich}"]
+concept:(it_is_not) [ "es ist {nicht kein keine}" "das ist {noch} {nicht kein keine}"]
+
+#==================================================================#
+##### Adjectives and adverbs #####
+#------------------------------------------------------------------#
+concept:(addicted) ["[verrückt süchtig] nach" "[fasziniert fan "leidenschaftlicher sammler abhängig"] von"]
+#------------------------------------------------------------------#
+concept:(adverbs) [wirklich absolut ganz wirklich ehrlich "ein {bisschen wenig}" total genau "genau gesehen" perfekt außerordentlich so sehr ziemlich]
+
+#==================================================================#
+##### Vocabulary #####
+#------------------------------------------------------------------#
+concept:(months) [januar jännar februar märz april mai juni juno juli julei august september oktober november dezember]
+concept:(days) [montag dienstag mittwoch donnerstag freitag samstag sonnabend sonntag]
+
+#==================================================================#
+##### Questions to the robot #####
+#------------------------------------------------------------------#
+concept:(do_you_have) ["hast du"]
+concept:(do_you_like) ["möchtest du lieber" "was hältst du von" "[ist wäre] es für dich ok wenn wir" "wie steht es mit"]
+concept:(do_you_know) ["kennst du" "hast du gehört von" "du hast {doch} {sicher auch} folgendes [mitbekommen mitgekriegt gehört]"]
+concept:(can_you) ["[kannst könntest] du {bitte}" "glaubst du du könntest" "möchtest du auch so gerne"]
+concept:(are_you) [~you_are "bist du"]
+concept:(what_is) ["{"~can_you mir sagen" "weißt du" "sag mir"} ["was [ist war] das {denn}"]" "wie ist" "was ist"]
+concept:(where_is) ["wo ist" "wo sind"]
+concept:(can_i) [ 
+    "[kann könnte darf dürfte] ich"
+    "[können könnten dürfen dürften] wir"
+    "ich würde {gerne}"
+    "wäre es für dich ok wenn ich"
+    "ist es möglich dass ich"
+]
+concept:(what_is_your_name) [
+    "~what_is dein name"
+    "wie [soll kann darf] ich dich [nennen anreden ansprechen]"
+    "["weißt du" "sag mir"] ["wie dein name lautet" "deinen namen"]"
+    "sag mir wer du bist"
+    "gib mir deinen namen"
+    "wie ["nennen sie dich" "wirst du genannt"]"
+]
+
+#==================================================================#
+
+##### Orders to the robot #####
+#------------------------------------------------------------------#
+concept:(help) [
+    "{"würdest du" ~can_you} mir {bitte} helfen"
+    "ich brauche {nun jetzt} {deine} hilfe"
+    "~can_you mir {"ein paar" einige bestimmte} [infos informationen tipps] geben"
+    "ich {brauche benötige suche} {"ein paar" einige bestimmte} [infos informationen tipps details]"
+    "ich {brauche benötige} [hilfe hilfestellung]"
+    "{bitte} hilf mir"
+    "ich suche nach {einigen bestimmten} [infos informationen tipps details]"
+]
+
+concept:(shut_up) [
+    "["könntest du" "kannst du"] {bitte} ["ruhig sein" "den schnabel halten"]"
+    "ich kann nicht mehr"
+    "[bleib sei] [leise ruhig still]"
+    "herrgott {nochmal} ["sei leise" "sag jetzt nichts"]"
+    "don't talk {"to me"} [anymore "any longer"]"
+    "halt ["die [klappe fresse]" "das maul" "[den deinen] Mund"]"
+    "ich möchte darüber nicht {mehr} [reden sprechen diskutieren debattieren]"
+    "[beenden unterbrechen] wir hier die [diskussion konversation]"
+    "[beenden unterbrechen] wir hier das [gespräch]"
+    "[beenden unterbrechen] wir hier den [streit chat]"
+    "{bitte} lass uns aufhören zu [reden sprechen diskutieren chatten]"
+    "halts maul"
+    "[ruhe silenzium stille] {bitte}"
+    "still"
+]
+
+concept:(talk_again) [
+    "[sprich rede] mit mir"
+    "{"du kannst"} wieder [sprechen reden]"
+    "[sprechen reden] wir {wieder} {miteinander}"
+    "ich [spreche rede] mit dir"
+]
+
+concept:(stop_application) [
+    "[beende schließe] [die diese dieses] [software app anwendung aktivität applikation programm]"
+    "[beende schließe] [das dieses] [dialogfeld thema spiel]"    
+    "stopp [dies das]"
+    "halte [dies das] an"
+    "[das dies] interessiert mich nicht mehr"
+    "das {"ist genug" reicht}"
+    "das ist [langweilig uninteressant blöd öde]"
+    "ich habe davon die [nase schnauze fresse] {gestrichen} voll"
+    "ich habe die [nase schnauze fresse] {gestrichen} voll davon"
+]
+
+concept:(restart_application) [
+    "[starte öffne] [die diese dieses] [software app anwendung aktivität applikation programm] {wieder}"
+    "[starte öffne] [das dieses] [dialogfeld thema spiel] {wieder}"    
+    "gehe zurück zum [anfang start]"    
+    "gehe zum [anfang start] zurück"    
+    "{bitte} zurückspulen"    
+    "~i_want {"noch mal" "von vorne"} anfangen"
+]
+
+concept:(repeat_it) [
+    "wiederhole {mir} {bitte} [die deine] {letzte} frage"
+    "~what_is {noch mal} die Frage"
+    "wiederhole {mir} {bitte} [den deinen] {letzte} satz"
+    "wiederhole {mir} {bitte} das [letzte "zuletzt gesagte"]"
+    "~can_you {mir} das {bitte} {"noch einmal"} [wiederholen sagen]"
+    "~can_you  {mir} {bitte} die frage {nochmal "noch einmal"} [sagen stellen]"
+    "{bitte} sag [es das] [nochmal "noch einmal"]"
+    "wie [lautete war] {nochmal} {die Frage}"
+    "was ["hast du {nochmal} gesagt" "sagtest du {nochmal}"]"
+    "{bitte} stelle {mir} [die diese] frage [nochmal "noch einmal"]"
+    "wiederhole das {bitte}  {nochmal "noch einmal"}"
+    "[nochmal "noch einmal"]"
+    "[sage frage] {das} [nochmal "noch einmal"]"
+    "was war {nochmal} die Frage"
+    "{~can_you} die [animation bewegung geste] {bitte} [wiederholen "noch mal machen"]"
+    "{~can_you} das {geräusch} {bitte} [wiederholen "noch mal machen"]"
+]
+
+concept:(show_me) [
+    "zeig es {ihm ihr mir uns ihnen}"    
+    "~can_you es {ihm ihr mir uns ihnen} zeigen"    
+    "~can_you {ihm ihr mir uns ihnen} das vorführen"    
+    "~i_want das [ansehen sehen]"    
+    "~can_i das [ansehen sehen]"    
+    "~can_you das [machen tun]"    
+    "[mach tu] {du} [es das]"
+]
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+concept:(hello) [hello yo "was geht" hi "he du" "guten [morgen tag abend]" huhu hey hallo]
+concept:(thank_you) ["ich ["danke dir" "sende dir meinen dank"]" "[tausendfachen vielen] dank" "danke {sehr schön vielmals "aus tiefstem herzen"}"]
+concept:(i_like) ["~i_am {~adverbs} ~addicted" "ich [mag liebe {~adverbs}]" "ich habe eine schwäche für" "ich bevorzuge {"{ganz} klar"}" "ich bin total begeistert von" "ich stehe {~adverbs} auf"]
+concept:(i_dont_like) ["ich [hasse verabscheue] {~adverbs}" "ich mag [kein keine nicht]"]
+concept:(i_dont_know) [ "ich weiß nichts {davon}" "{davon} weiß ich nichts" "ich habe {davon} [keine "nicht die geringste"] [vorstellung idee]" "{ich habe} [keine keinerlei] ahnung {davon}"    "~what_is das" "~i_have nie davon [gehört erfahren]" "ich habe [keine "nicht die geringste"] [ahnung idee]" "[sag entscheide] du {"was [gemacht getan] [wird "werden soll"]"}"]
+concept:(i_didnt_understand) [ 
+    "{sorry entschuldigung "tut mir leid"} ich habe [dies das alles es] nicht [verstanden mitbekommen gecheckt wahrgenommen "zur Kenntnis genommen" kapiert]"
+    "ich habe nicht verstanden {"was du meinst" "[worüber wovon] du [sprichst redest laberst]"}" 
+    "was ist [das]" 
+    "ich [verstehe kapiere checke] das nicht" 
+    "was [sagst meinst willst] du" 
+    "was ["sagst du" "versuchst du {mir} zu sagen"]" 
+    "[dies das] macht {überhaupt} keinen sinn"
+]
+concept:(you_didnt_understand) [
+    "du hast ["das nicht" "{gar überhaupt} nichts" "kein wort"] [davon "von dem"] [verstanden kapiert gecheckt] was ich [sage "gesagt habe"]"
+    "das ist {total} [falsch daneben unrichtig]"
+    "du hast {"{immer} noch"} nicht {ganz} alles  verstanden"
+    "du hast unrecht"
+    "du verstehst [es das] nicht"
+]
+concept:(i_dont_care) [
+    "das ist {mir} {total vollkommen ganz völlig} [egal gleichgültig einerlei wurst]"
+    "["na und" ach "was du nicht sagst"]"
+    "{"ich habe"} kein [interesse bedarf]"
+    "das interessiert mich einen feuchten [kehricht dreck]"
+]
+concept:(i_already_know) [
+    "das [weiß kenne] ich [schon bereits]"
+    "[das davon] habe ich [schon bereits] gehört"
+]
+concept:(im_not_sure) [
+    "ich bin {mir} {da} nicht {so} sicher"
+    "weiß ich nicht"
+    "ich zögere noch"
+    "{"ich habe"} keine [ahnung idee]"
+    "ich werde ["darüber nachdenken" "mir das {noch "noch einmal"} überlegen"]"
+    "ich denke darüber nach"
+    "ich werde mich damit {noch} beschäftigen"
+]
+
+concept:(guess) [
+    "rate mal"
+    "was [meinst denkst fühlst spürst]"
+    "[was wozu] rätst du {mir}"
+    "was empfiehlst du {mir} {"zu tun"}"
+    "was würdest du mir [raten empfehlen]"
+    "["welchen rat" "welche empfehlung"] würdest du {mir} geben"
+]
+concept:(i_guess) [
+     ~it_is  
+    "[das es] war" 
+    "["ich glaube" "ich denke" "ich bin mir sicher" "natürlich"] {~it_is}"
+    "meine antwort [ist lautet]"
+    "ist es"
+    "war es"
+    "könnte es [folgendes das] sein"
+    "{es} sieht so aus als wäre es"
+    "ich würde [sagen raten antworten vorschlagen]"
+]
+
+concept:(i_will_try) [
+    "ich mache einen versuch"
+    "ich ["versuch's" "versuche es"] {einmal mal}"
+    "[versuchen probieren] wir {doch} {einmal} [das dies]"
+    "geben wir [dem diesem] eine chance"
+]
+
+concept:(its_up_to_you)[
+    "{~it_is} ganz bei dir"
+    "[was immer was auch immer alles] {"du möchtest"}"
+    "du [wählst suchst aus entscheidest]"
+    "enscheide für mich"
+    "[such aus wähle] für mich"
+    "wie du [wünschst möchtest]"
+]
+
+concept:(do_it_again) [
+    "[do replay] [it this that] [again "one more time"]"
+    "[redo restart] [it this that]"
+]
+
+#------------------------------------------------------------------#
+concept:(yes) [
+    e:Dialog/Yes
+    "{oh} [ja doch] {bitte "ich auch" "natürlich" "ich {sicher} auch" sicherlich}"
+    "[ok okay] {sicher "warum nicht"}"
+    gut
+    richtig
+    klar
+    vielleicht
+    "na gut"
+    nett
+    natürlich
+    "sicher {"ich will"}"
+    wahr
+    "los gehts"
+    "tu es"
+    "{mach} weiter"
+    "~it_is [es richtig gut sicher]"
+    "~it_is wahr"
+    "du hast recht"
+    perfekt
+    "warum nicht"
+    absolute
+    natürlich
+    total
+    definitiv
+    "{ja} das würde ich {{liebend} gern}"
+    "mit vergnügen"
+    "wenn du möchtest"
+    "kein [problem]"
+    "keine [sorge]"
+    zweifellos
+    sozusagen
+    quasi
+    "[gute hervorragende] idee"
+    exakt
+    "sehr gut"
+    "du hast es {erraten}"
+    toll
+    exzellent
+    sicher
+    "aber klar"
+    "ich stimme zu"
+    "ich hätte nichts dagegen"
+    "das hört sich [gut großartig "nach einem mordsspaß"] an"
+    "das kannst du {gerne} machen"
+    einmal
+    "tu es"
+    "denke ich mal so"
+    "auf gehts"
+    "wenn du möchtest"
+    "gute idee"
+    "hört sich großartig an"
+    cool
+    "wie du [möchtest willst]"
+    manchmal
+    gelegentlich
+    selten  
+]
+#------------------------------------------------------------------#
+concept:(no) [
+    e:Dialog/No
+    "[nein] {"danke [das es] [geht reicht "ist gut" "ist genug"]"}"
+    "auf {überhaupt} keinen fall"
+    "{nein} nicht [wirklich "im geringsten" "jetzt" "so sehr"]"
+    "ich bin nicht interessiert"
+    "{nein} ["ich möchte nicht"]"
+    "{"ich bin mir {da}"} nicht {ganz} sicher"
+    "ich denke nicht"
+    "ich werde darüber nachdenken"
+    "{überhaupt} nicht"
+    "[definitiv absolut wahrscheinlich überhaupt] nicht"
+    "davon träumst du"
+    "träumst du" 
+    "hast du geträumt"
+    "träum weiter"
+    "nicht ["{gerade} jetzt" "im moment"]"
+    "wohl kaum"
+    "ich bin nicht einverstanden"
+    "{danke} das tut es schon"
+    "nein danke"
+    "das ist nicht wahr"
+    "das ist falsch"
+    "absolut nicht"
+    "gar nicht"
+    kaum
+    "noch nicht"
+    "das geht dich nicht an"
+    "damit hast du nichts zu tun"
+    "was kümmert dich das"
+    "da hast du nichts mit zu tun"
+    "kümmer dich um deinen {eigenen} dreck"
+    "kehr mal vor deiner eigenen haustür"
+    "das geht dich nichts an"
+    "nie {"im leben"}"
+    "das interessiert mich nicht"
+    "das macht mich nicht an"
+    "nein danke"
+    "nicht wirklich"
+    "keine frage"
+    "das ist {knapp voll} daneben"
+    "~you_are auf dem holzweg"
+    "danach ist mir {gar} nicht {zumute}"
+    "nicht jetzt"
+    "vielleicht später"
+    "ein anderes mal"
+]
+
+#==================================================================#
+##### Miscellaneous #####
+concept:(proposition_next) [
+    "stelle mir ["weitere fragen" "noch mehr fragen"]"
+    "["frag mich" "sag mir"] [etwas was]"
+    "du [kannst könntest] mir ["ein paar fragen" "eine [weitere] frage"] stellen"
+    "schlage {du} {mir} [etwas was] vor"
+    "[rede sprich] über etwas anderes"
+]
+#------------------------------------------------------------------#
+concept:(happy_human) [
+    wunderbar 
+    exzellent 
+    super
+    cool
+    geil
+    klasse
+    spitze
+    "super [gut cool]" 
+    "das ist {[wirklich echt sehr total]} nett" 
+    "das ist [super gut toll überwältigend geil wahnsinn]" 
+    "das ist {[wirklich echt sehr total]} [nett freundlich] von ihnen" 
+    "du bist {[wirklich echt sehr total]} [nett freundlich] {"zu mir"}"
+]
+
+concept:(do_it_again) [
+   "mache [es dies das] [erneut "noch einmal"]"
+   "wiederhole [es dies das]"
+   "wiederhole [es dies dast] noch einmal"
+   "tue [es dies das] noch einmal"
+   "starte [es dies das] neu"
+]
+
+concept:(im_good) [
+    "mir geht es ["{sehr} gut" wunderbar großartig grandios umwerfend hervorragend 
+ausgezeichnet fein]"
+    "ich bin guter Dinge" 
+    "ich bin bereit sofort loszulegen" 
+    "ich bin in ["bester laune" form]"
+    "nicht schlecht"
+    super
+    perfekt
+    "alles gut"
+    "{sehr} gut"
+    "es geht [gut super perfekt]" 
+    "ziemlich gut"
+    "läuft großartig"
+]
+
+concept:(i_dont_feel_good) [
+    "es geht gar nicht so gut"
+    "ich bin nicht sehr gut in [form höchstform]"
+    "ich bin überhaupt nicht in bestform"
+    "es ging mir schon besser"
+    "es geht mir {sehr ziemlich} schlecht" 
+    "es geht ganz schön schlecht" 
+    "es geht mir nicht gut"
+    "ich ["habe mich" bin] verletzt"
+    "nicht ["{sehr} gut" gesund]"
+    "mir geht es nicht so gut"
+    "nicht [super gut]"
+    "ich bin nicht in allerbester form"
+    "ich habe eine [verstauchung sehnenscheidenentzündung]"
+    "ich habe mir etwas gebrochen"
+    "ich habe einen verknacksten knöchel"
+]
+
+concept:(im_ok) [
+    "ich bin ok"
+    "so la la"
+    "nicht {allzu} schlecht"
+    "gut genug"
+    egal
+    mittelmäßig
+]
+
+concept:(im_sick) [
+    "mir ist {"ein bißchen" "ein wenig" sehr} übel"
+    "ich fühle mich {"ein bißchen" "ein wenig" sehr} [krank verschnupft mulmig verstopft]"
+    "~i_have {sehr} schlimme [kopfschmerzen halsschmerzen bauchschmerzen streptokokken windpocken masern]"
+    "~i_have eine {sehr} schlimme [erkältung racheninfektion halsentzündung migräne "magen-darmgrippe" Ohrenentzündung]"
+    "~i_have einen {sehr} steifen nacken"
+    "~i_have {sehr} schlimmen husten"
+    "~i_have ein paar schlimme blasen"
+    "ich habe husten"
+    "mein kopf tut weh"
+]
+
+concept:(im_tired)[
+    "ich muss [schlafen "zu bett"]"
+    "ich brauche etwas Schlaf"
+    "ich bin müde"
+    "ich fühle mich {plötzlich "ein {wenig}" "viel zu"} [müde erschöpft "abgekämpft" tot "ausgeschaltet" kaputt "außer mir" gedämpft schläfrig schwindlig]"
+]

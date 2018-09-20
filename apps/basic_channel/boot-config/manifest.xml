@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="5.0.220" uuid="boot-config">
+ <names>
+  <name lang="en_US">boot-config</name>
+  <name lang="fr_FR">Réglages</name>
+  <name lang="ja_JP">設定</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">Run at robot launch, but depending on your preferences, may not do anything.&#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
+  </description>
+  <description lang="fr_FR">Pour le démarrage du robot, mais en fonction des préferences, ne fera peut-être rien. &#xd;&#xd;&#xd;&#xd;&#xd;&#xd;
+  </description>
+  <description lang="ja_JP">ロボットの構造：言語、無線LAN、など</description>
+ </descriptions>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>fr_FR</language>
+  <language>ja_JP</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path=".">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <names>
+    <name lang="en_US">Settings</name>
+    <name lang="fr_FR">Réglages</name>
+    <name lang="ja_JP">設定</name>
+   </names>
+   <triggerSentences>
+    <sentence lang="en_US">Show me your settings</sentence>
+    <sentence lang="ja_JP">設定を開いて</sentence>
+   </triggerSentences>
+   <permissions>
+    <canRunOnPod/>
+   </permissions>
+  </behaviorContent>
+  <behaviorContent path="animations/onNextPage">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/onPrevPage">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/poseInit">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/ok">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/success">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/poseInitUp">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/turnTabletOn_end">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/turnTabletOn_start">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/warning">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/warningValidate">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/nok">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/updateLoop">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/updateOut">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/networkLoop">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/networkOut">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/inviteTablet">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/hello">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/updateFailed">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/finishWizard">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/onPlugged">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/onUnPlugged">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/shutdown">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/bipGentle">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="animations/endReco">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement minVersion="2.5.0" maxVersion="2"/>
+  <robotRequirement/>
+ </requirements>
+ <services>
+  <service autorun="false" name="ALBootConfig" execStart="/usr/bin/python2 services/albootconfig.py"/>
+  <service autorun="false" name="ALQRCodeWifiConfigurator" execStart="/usr/bin/python2 services/alqrcodewificonfigurator.py"/>
+ </services>
+</package>

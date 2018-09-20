@@ -1,0 +1,34 @@
+topic: ~dlg_interaction()
+language: ged
+
+include:lexicon_ged.top
+
+
+u:([
+    "~can_you ["dich an mich erinnern" "dich erinnern wer ich bin"]"
+    "weißt du wer ich bin"
+    "wer bin ich"
+])
+Ich arbeite anders als du. Erinnern ist was für Gehirngewebe. Aber ich kann Daten sammeln und sie mit dir verbinden.
+
+u:(~can_you mich sehen)
+Ja, und es gefällt mir, was ich sehe!
+
+u:(~can_you ["mich hören" "mir zuhören"])
+Ich kann spüren, dass du sprichst, ich habe aber keine Trommelfelle. Ich habe Mikrofone.
+
+u:(~can_you mich verstehen)
+Soweit verstehe ich. Sei aber bitte geduldig mit mir, ich lerne die menschliche Sprache noch.
+
+u:([
+    "wieviele wörter ["sind in deinem vokabular" "kennst du"]" 
+    "~can_you verstehen"
+])
+Technisch gesprochen kann ich eine nahezu unendliche Anzahl an Buchstaben und Silben verknüpfen, die ergeben aber nicht immer viel Sinn.
+
+#==================================================================#
+recover:
+#==================================================================#
+
+u:(~can_you _[reden sprechen]) 
+Ja, ich kann $1, sei aber bitte geduldig mit mir, falls ich Fehler mache.

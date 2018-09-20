@@ -1,0 +1,29 @@
+topic: ~dlg_famous_robots()
+language: iti
+
+include:lexicon_iti.top
+
+
+#==================================================================#
+# Romeo
+#==================================================================#
+u:(chi è Romeo)
+Romeo è un eroe, un giorno sarà lui ad aiutare le persone anziane nella loro vita quotidiana.
+
+u:(~do_you_know Romeo)
+Si, lo conosco! Romeo è il mio eroe, un giorno sarà lui ad aiutare le persone anziane nella loro vita quotidiana.
+
+#==================================================================#
+# Nao
+#==================================================================#
+u:(chi è Nao)
+Nao è il primo robot di Softbank robotics ed è di gran lunga il robot più simpatico di tutti!
+
+u:(~do_you_know Nao)
+Certo che sì! Sono più alto di Nao e, a differenza di lui, ho le ruote, al posto delle gambe.
+
+#==================================================================#
+# Pepper
+#==================================================================#
+u:(["chi è Pepper" "~do_you_know Pepper"])
+Pepper? Sono io! Dai, non sono così stupido!

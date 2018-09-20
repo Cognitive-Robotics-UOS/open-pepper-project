@@ -1,0 +1,107 @@
+topic: ~dlg_clock()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+
+u:([
+    "Wie spät ist es"
+    "kannst du mir die Uhrzeit sagen"
+    "kannst du mir sagen wie spät es ist" 
+    "sag mir die Uhrzeit"
+    "sag mir wie spät es ist" 
+    "weißt du wie spät es ist"
+    "weißt du die Uhrzeit"
+    "hast du die Uhrzeit" 
+    "kennst du die Uhrzeit" 
+    "gib mir die Uhrzeit"
+] {bitte})
+^first[
+    "Es ist $Dialog/Hour $Dialog/Minute ."
+    "Ich weiß es nicht, tut mir leid."
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+u:([
+    "welches Datum haben wir heute" 
+    "welches Datum ist heute" 
+    "hast du das Datum $dlg_clock/ask=yes"
+    "hast du das heutige Datum $dlg_clock/ask=yes"
+    "welchen Tag haben wir" 
+    "welcher Tag ist {heute}"
+    "gib mir das Datum"
+    "sag [mir uns ihm ihr ihnen] welcher Tag ist heute $dlg_clock/ask=yes"
+    "Erinnere [mich uns ihn sie sie] welcher Tag ist heute $dlg_clock/ask=yes"
+] {bitte})
+^first[
+    "$dlg_clock/ask==yes ^rand[
+        "Allerdings!"
+        "Of course!"
+    ] Heute ist"
+    "Heute ist"
+] 
+^first[
+    "$Dialog/Weekday==1 Montag," 
+    "$Dialog/Weekday==2 Dienstag,"
+    "$Dialog/Weekday==3 Mittwoch,"
+    "$Dialog/Weekday==4 Donnerstag,"
+    "$Dialog/Weekday==5 Freitag,"
+    "$Dialog/Weekday==6 Samstag,"
+    "$Dialog/Weekday==7 Sonntag,"
+]
+
+^first[
+    "$Dialog/Month==1 Januar"
+    "$Dialog/Month==2 Februar"
+    "$Dialog/Month==3 März"
+    "$Dialog/Month==4 April"
+    "$Dialog/Month==5 Mai"
+    "$Dialog/Month==6 Juni"
+    "$Dialog/Month==7 Juli"
+    "$Dialog/Month==8 August"
+    "$Dialog/Month==9 September"
+    "$Dialog/Month==10 Oktober"
+    "$Dialog/Month==11 November"
+    "$Dialog/Month==12 Dezember"
+]
+
+^first[
+    "$Dialog/Day==1 erste."
+    "$Dialog/Day==2 zweite."
+    "$Dialog/Day==3 dritte."
+    "$Dialog/Day==4 vierte."
+    "$Dialog/Day==5 fünfte."
+    "$Dialog/Day==6 sechste."
+    "$Dialog/Day==7 siebte."
+    "$Dialog/Day==8 achte."
+    "$Dialog/Day==9 neunte."
+    "$Dialog/Day==10 zehnte."
+    "$Dialog/Day==11 elfte."
+    "$Dialog/Day==12 zwölfte."
+    "$Dialog/Day==13 dreizehnte."
+    "$Dialog/Day==14 vierzehnte."
+    "$Dialog/Day==15 fünfzehnte."
+    "$Dialog/Day==16 sechzehnte."
+    "$Dialog/Day==17 siebzehnte."
+    "$Dialog/Day==18 achzehnte."
+    "$Dialog/Day==19 neunzehnte."
+    "$Dialog/Day==20 zwanzigste."
+    "$Dialog/Day==21 einundzwanzigste."
+    "$Dialog/Day==22 zweiundzwanzigste."
+    "$Dialog/Day==23 dreiundzwanzigste."
+    "$Dialog/Day==24 vierundzwanzigste."
+    "$Dialog/Day==25 fünfundzwanzigste."
+    "$Dialog/Day==26 sechsundzwanzigste."
+    "$Dialog/Day==27 siebenundzwanzigste."
+    "$Dialog/Day==28 achtundzwanzigste."
+    "$Dialog/Day==29 neunundzwanzigste."
+    "$Dialog/Day==30 dreißigsteundzwanzigste."
+    "$Dialog/Day==31 einunddreißigste."
+]
+^clear(dlg_clock/ask)

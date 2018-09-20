@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.27" uuid="push-recovered">
+  <names>
+    <name lang="en_US">Push Recovered</name>
+    <name lang="fr_FR">Solitary Poussée</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot has a fear/relief reaction after recovering from a push.</description>
+    <description lang="fr_FR">Le robot reagit aprés avoir réussi à récupérer son équilibre alors qu'il a été poussé.</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="animations/pushed_0">
+      <nature></nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/pushed_1">
+      <nature></nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/pushed_2">
+      <nature></nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="solitary">
+      <nature>solitary</nature>
+      <autonomous>
+        <condition purpose="launchTrigger"><![CDATA['Launchpad/RobotPushedRecently' &&
+(('Launchpad/FocusedActivity' != "push-recovered/solitary") ~ 8)]]></condition>
+      </autonomous>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/searchHumans_1">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.0.1"/>
+    <robotRequirement model="JULIETTE_Y20"/>
+  </requirements>
+</package>

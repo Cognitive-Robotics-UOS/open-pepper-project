@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s project. Highest level possible." x="0" y="0">
+        <bitmap>media/images/box/root.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Timeline enable="0">
+            <BehaviorLayer name="behavior_layer1">
+                <BehaviorKeyframe name="keyframe1" index="1">
+                    <Diagram scale="100">
+                        <Box name="Animation Mode" id="2" localization="8" tooltip='This box activates the animation mode.&#x0A;- Disable the fall manager.&#x0A;- Control motor stiffness with the speech recognition saying motor&apos;s &#x0A;name (e.g. &quot;head&quot;, &quot;left arm&quot; or &quot;right leg&quot;).&#x0A;- Control motor stiffness also with bumpers and tactile sensors:&#x0A;    - Right arm with front head tactile sensor or right arm tactile sensor.&#x0A;    - Left arm with rear head tactile sensor or left arm tactile sensor.&#x0A;    - Head with middle head tactile sensor.&#x0A;    - Right leg with right bumper.&#x0A;    - Left leg with left bumper.&#x0A;- Display stiffness state of each motor:&#x0A;    - Leds of the eye top for head motors.&#x0A;    - Eye leds for the arms.&#x0A;    - Feet leds for the legs.&#x0A;- Store positions of the robot in a timeline if used from the record&#x0A;mode of Choregraphe.' x="264" y="47">
+                            <bitmap>media/images/box/movement/animation_mode.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        #~ self.onStopped() #~ activate output of the box
+        pass
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is recommanded to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+        self.onStopped()]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Timeline enable="0">
+                                <BehaviorLayer name="behavior_layer1">
+                                    <BehaviorKeyframe name="connected" index="1">
+                                        <Diagram scale="100">
+                                            <Box name="Enable Animation Mode" id="5" localization="8" tooltip="Enable the Animation Mode. It is disabled again when the behavior is stopped." x="115" y="23">
+                                                <bitmap>media/images/box/movement/animation_mode.png</bitmap>
+                                                <script language="4">
+                                                    <content>
+                                                        <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        import threading
+        self.locker = threading.RLock()
+        with self.locker:
+            self.motion = ALProxy("ALMotion")
+            self.awareness = None
+            try:
+                self.awareness = ALProxy("ALBasicAwareness")
+            except:
+                pass
+            self.wasAware = False
+            self.autonomousMoves = None
+            try:
+                self.autonomousMoves = ALProxy("ALAutonomousMoves")
+            except:
+                pass
+            self.wasBreathing = False
+
+    def onUnload(self):
+        with self.locker:
+            self.motion._setAnimationModeEnabled(False)
+            if self.awareness and self.wasAware:
+                self.awareness.startAwareness()
+            if self.autonomousMoves and self.wasBreathing:
+                self.autonomousMoves.setBackgroundStrategy("backToNeutral")
+
+    def onInput_onStart(self):
+        with self.locker:
+            self.motion._setAnimationModeEnabled(True)
+            if self.awareness and self.awareness.isAwarenessRunning():
+                self.wasAware = True
+                self.awareness.stopAwareness()
+            if self.autonomousMoves and self.autonomousMoves.getBackgroundStrategy() == "backToNeutral":
+                self.wasBreathing = True
+                self.autonomousMoves.setBackgroundStrategy("none")
+
+    def onInput_onStop(self):
+        with self.locker:
+            self.onUnload() #~ it is recommanded to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+            self.onStopped()]]>
+</content>
+                                                </script>
+                                                <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is stopped." id="4" />
+                                            </Box>
+                                            <Box name="Store Keyframe" id="8" localization="8" tooltip='Managing the &quot;store position&quot; event.' x="522" y="118">
+                                                <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                <script language="4">
+                                                    <content>
+                                                        <![CDATA[]]>
+</content>
+                                                </script>
+                                                <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                                                <Timeline enable="0">
+                                                    <BehaviorLayer name="behavior_layer1">
+                                                        <BehaviorKeyframe name="keyframe1" index="1">
+                                                            <Diagram scale="100">
+                                                                <Box name="Ears LEDs" id="1" localization="8" tooltip="Set the intensity of all the LEDs of one of or both of NAO&apos;s ears." x="94" y="41">
+                                                                    <bitmap>media/images/box/interaction/LED.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        self.ids = []
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        if( self.getParameter("Side") == "Left" ):
+            sGroup = "LeftEarLeds"
+        elif( self.getParameter("Side") == "Right" ):
+            sGroup = "RightEarLeds"
+        else:
+            sGroup = "EarLeds"
+        id = ALLeds.post.fade(sGroup, self.getParameter("Intensity (%)")/100., self.getParameter("Duration (s)"))
+        self.ids.append(id)
+        ALLeds.wait(id, 0)
+        self.ids.remove(id)
+        if( self.ids == [] ):
+            self.onDone() # activate output of the box]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                                    <Output name="onDone" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" />
+                                                                    <Parameter name="Side" inherits_from_parent="0" content_type="3" value="Both" default_value="Both" custom_choice="0" tooltip="Choose the ear where the LED light is set." id="4">
+                                                                        <Choice value="Both" />
+                                                                        <Choice value="Left" />
+                                                                        <Choice value="Right" />
+                                                                    </Parameter>
+                                                                    <Parameter name="Intensity (%)" inherits_from_parent="0" content_type="1" value="100" default_value="100" min="0" max="100" tooltip="LEDs intensity, from 0 (off) to 100 (max)." id="5" />
+                                                                    <Parameter name="Duration (s)" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.1" min="0" max="5" tooltip="Transition&apos;s duration in seconds." id="6" />
+                                                                </Box>
+                                                                <Box name="Ears LEDs" id="10" localization="8" tooltip="Set the intensity of all the LEDs of one of or both of NAO&apos;s ears." x="234" y="41">
+                                                                    <bitmap>media/images/box/interaction/LED.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        self.ids = []
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        if( self.getParameter("Side") == "Left" ):
+            sGroup = "LeftEarLeds"
+        elif( self.getParameter("Side") == "Right" ):
+            sGroup = "RightEarLeds"
+        else:
+            sGroup = "EarLeds"
+        id = ALLeds.post.fade(sGroup, self.getParameter("Intensity (%)")/100., self.getParameter("Duration (s)"))
+        self.ids.append(id)
+        ALLeds.wait(id, 0)
+        self.ids.remove(id)
+        if( self.ids == [] ):
+            self.onDone() # activate output of the box]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                                    <Output name="onDone" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" />
+                                                                    <Parameter name="Side" inherits_from_parent="0" content_type="3" value="Both" default_value="Both" custom_choice="0" tooltip="Choose the ear where the LED light is set." id="4">
+                                                                        <Choice value="Both" />
+                                                                        <Choice value="Left" />
+                                                                        <Choice value="Right" />
+                                                                    </Parameter>
+                                                                    <Parameter name="Intensity (%)" inherits_from_parent="0" content_type="1" value="0" default_value="100" min="0" max="100" tooltip="LEDs intensity, from 0 (off) to 100 (max)." id="5" />
+                                                                    <Parameter name="Duration (s)" inherits_from_parent="0" content_type="2" value="1" default_value="0.1" min="0" max="5" tooltip="Transition&apos;s duration in seconds." id="6" />
+                                                                </Box>
+                                                                <Box name="raiseEvent" id="11" localization="8" tooltip="Raises the event which name is given as a parameter when onStart is triggered." x="95" y="165">
+                                                                    <bitmap>media/images/box/sensors/STM.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        ALProxy("ALMemory").raiseEvent(self.getParameter("Event Name"), None)
+        self.onStopped() #~ activate output of the box
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is recommended to call onUnload of this box in a onStop method, as the code written in onUnload is used to stop the box as well
+        pass]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                                    <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                                    <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                                                                    <Parameter name="Event Name" inherits_from_parent="0" content_type="3" value="ALMotionRecorder/StorePositionRequested" default_value="" custom_choice="0" tooltip="" id="5" />
+                                                                </Box>
+                                                                <Link inputowner="10" indexofinput="2" outputowner="1" indexofoutput="3" />
+                                                                <Link inputowner="11" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                                                <Link inputowner="1" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                                            </Diagram>
+                                                        </BehaviorKeyframe>
+                                                    </BehaviorLayer>
+                                                </Timeline>
+                                            </Box>
+                                            <Box name="Touch Control +" id="1" localization="8" tooltip="Enter tooltip here" x="329" y="69">
+                                                <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                <script language="4">
+                                                    <content>
+                                                        <![CDATA[]]>
+</content>
+                                                </script>
+                                                <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                <Input name="RearTactilTouched" type="0" type_size="1" nature="4" stm_value_name="RearTactilTouched" inner="1" tooltip="RearTactilTouched desc" id="4" />
+                                                <Input name="MiddleTactilTouched" type="0" type_size="1" nature="4" stm_value_name="MiddleTactilTouched" inner="1" tooltip="MiddleTactilTouched desc" id="5" />
+                                                <Input name="FrontTactilTouched" type="0" type_size="1" nature="4" stm_value_name="FrontTactilTouched" inner="1" tooltip="FrontTactilTouched desc" id="6" />
+                                                <Input name="HandRightLeftTouched" type="0" type_size="1" nature="4" stm_value_name="HandRightLeftTouched" inner="1" tooltip="HandRightLeftTouched desc" id="7" />
+                                                <Input name="HandRightBackTouched" type="0" type_size="1" nature="4" stm_value_name="HandRightBackTouched" inner="1" tooltip="HandRightBackTouched desc" id="8" />
+                                                <Input name="HandRightRightTouched" type="0" type_size="1" nature="4" stm_value_name="HandRightRightTouched" inner="1" tooltip="HandRightRightTouched desc" id="9" />
+                                                <Input name="HandLeftLeftTouched" type="0" type_size="1" nature="4" stm_value_name="HandLeftLeftTouched" inner="1" tooltip="HandLeftLeftTouched desc" id="10" />
+                                                <Input name="HandLeftRightTouched" type="0" type_size="1" nature="4" stm_value_name="HandLeftRightTouched" inner="1" tooltip="HandLeftRightTouched desc" id="11" />
+                                                <Input name="HandLeftBackTouched" type="0" type_size="1" nature="4" stm_value_name="HandLeftBackTouched" inner="1" tooltip="HandLeftBackTouched desc" id="12" />
+                                                <Input name="LeftBumperPressed" type="0" type_size="1" nature="4" stm_value_name="LeftBumperPressed" inner="1" tooltip="LeftBumperPressed desc" id="13" />
+                                                <Input name="RightBumperPressed" type="0" type_size="1" nature="4" stm_value_name="RightBumperPressed" inner="1" tooltip="RightBumperPressed desc" id="14" />
+                                                <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="15" />
+                                                <Output name="storingKeyframe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="16" />
+                                                <Timeline enable="0">
+                                                    <BehaviorLayer name="behavior_layer1">
+                                                        <BehaviorKeyframe name="keyframe1" index="1">
+                                                            <Diagram>
+                                                                <Box name="Touch Control" id="3" localization="8" tooltip="Enter tooltip here" x="551" y="121">
+                                                                    <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        pass
+
+    def onLoad(self):
+        self.stiffOnColor = 0xFF5500
+        self.stiffOffColor = 0x00FF00
+        self.stiffnesses = dict()
+        self.stiffnesses['Head'] = -1
+        self.stiffnesses['LArm'] = -1
+        self.stiffnesses['RArm'] = -1
+        self.stiffnesses['LHand'] = -1
+        self.stiffnesses['RHand'] = -1
+        self.stiffnesses['LLeg'] = -1
+        self.stiffnesses['RLeg'] = -1
+        self.updatingStiffness = False
+        self.updateTimer = None
+        self.front = False
+        self.middle = False
+        self.rear = False
+        self.left = False
+        self.right = False
+        self.motion = ALProxy("ALMotion")
+        self.handsThread = None
+        self.headTouchTimer = None
+
+    def onUnload(self):
+        while self.updatingStiffness:
+            time.sleep(0.1)
+        if self.updateTimer:
+            self.updateTimer.cancel()
+            self.updateTimer = None
+        nColor = 0xFFFFFF
+        ALLeds.post.fadeRGB( "FeetLeds", nColor, 0.1 )
+        ALLeds.post.fadeRGB( "FaceLeds", nColor, 0.1 )
+        ALLeds.post.fadeRGB( "ChestLeds", nColor, 0.1 )
+
+        if self.headTouchTimer is not None:
+            self.headTouchTimer.cancel()
+            self.headTouchTimer = None
+
+    def onInput_onStart(self):
+        self.updateStiffnesses()
+
+    def onInput_onStop(self):
+        self.onUnload()
+        self.onStopped()
+
+    def onInput_rear(self, p):
+        self.rear = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        if self.unwatchHeadTouchTimeout():
+            return
+
+        if self.rear:
+            if self.left or self.right:
+                if not self.handsThread:
+                    import threading
+                    self.handsThread = threading.Thread(target=self.handsLoop)
+                    self.handsThread.start()
+
+    def onInput_middle(self, p):
+        self.middle = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        if self.unwatchHeadTouchTimeout():
+            return
+
+        if not self.middle:
+            self.toggleStiffness('Head')
+
+    def onInput_front(self, p):
+        self.front = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        if self.unwatchHeadTouchTimeout():
+            return
+
+        if self.front:
+            if self.left or self.right:
+                if not self.handsThread:
+                    import threading
+                    self.handsThread = threading.Thread(target=self.handsLoop)
+                    self.handsThread.start()
+
+    def onInput_left(self, p):
+        self.left = bool(p)
+        if self.left:
+            if self.front or self.rear:
+                if not self.handsThread:
+                    import threading
+                    self.handsThread = threading.Thread(target=self.handsLoop)
+                    self.handsThread.start()
+            else:
+                self.motion.setStiffnesses("LArm", 0.0)
+        else:
+            self.motion.setStiffnesses("LArm", 1.0)
+
+    def onInput_right(self, p):
+        self.right = bool(p)
+        if self.right:
+            if self.front or self.rear:
+                if not self.handsThread:
+                    import threading
+                    self.handsThread = threading.Thread(target=self.handsLoop)
+                    self.handsThread.start()
+            else:
+                self.motion.setStiffnesses("RArm", 0.0)
+        else:
+            self.motion.setStiffnesses("RArm", 1.0)
+
+    def onInput_leftBumper(self, p):
+        if p:
+            self.toggleStiffness('LLeg')
+
+    def onInput_rightBumper(self, p):
+        if p:
+            self.toggleStiffness('RLeg')
+
+    def toggleStiffness(self, chain):
+        try:
+            if self.stiffnesses[chain] > 0.4:
+                self.motion.setStiffnesses(chain, 0.0)
+            else:
+                self.motion.setStiffnesses(chain, 1.0)
+        except Exception as e:
+            self.logger.warn("Could not toggle stiffness for chain %s, error: %s" % (chain, e))
+
+    def updateStiffnesses(self):
+        self.updatingStiffness = True
+        for k,v in self.stiffnesses.iteritems():
+            try:
+                self.stiffnesses[k] = max(self.motion.getStiffnesses(k))
+            except:
+                pass
+
+        self.refreshLED()
+
+        import threading
+        self.updateTimer = threading.Timer(self.getParameter("LED refresh period"), self.updateStiffnesses)
+        self.updateTimer.start()
+        self.updatingStiffness = False
+
+    def refreshLED(self):
+        for k,v in self.stiffnesses.iteritems():
+            if( v > 0.4 ):
+                nColor = self.stiffOnColor
+            else:
+                nColor = self.stiffOffColor
+            if( k == 'LLeg' ):
+                ALLeds.post.fadeRGB( "LeftFootLeds", nColor, 0.1 )
+            if( k == 'RLeg' ):
+                ALLeds.post.fadeRGB( "RightFootLeds", nColor, 0.1 )
+            if( k == 'Head' ):
+                ALLeds.post.fadeRGB( "FaceLedsTop", nColor, 0.1 )
+            if( k == 'LArm' ):
+                ALLeds.post.fadeRGB( "FaceLedsLeftExternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsLeftInternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsLeftBottom", nColor, 0.1 )
+            if( k == 'RArm' ):
+                ALLeds.post.fadeRGB( "FaceLedsRightExternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsRightInternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsRightBottom", nColor, 0.1 )
+
+
+    def handsLoop(self):
+        while (self.left or self.right) and (self.front or self.rear):
+            try:
+                if self.front and self.rear:
+                    time.sleep(0.1)
+                    continue
+
+                if self.left:
+                    if self.stiffnesses['LHand'] <= 0.4:
+                        self.motion.setStiffnesses('LHand', 1.0)
+                    if self.front:
+                        self.motion.changeAngles('LHand', 0.1, 0.1)
+                    else: # if self.rear
+                        self.motion.changeAngles('LHand', -0.1, 0.1)
+
+                if self.right:
+                    if self.stiffnesses['RHand'] <= 0.4:
+                        self.motion.setStiffnesses('RHand', 1.0)
+                    if self.front:
+                        self.motion.changeAngles('RHand', 0.1, 0.1)
+                    else: # if self.rear
+                        self.motion.changeAngles('RHand', -0.1, 0.1)
+
+            except Exception as e:
+                self.logger.error(e)
+
+        self.handsThread = None
+        self.onInput_left(self.left)
+        self.onInput_right(self.right)
+
+    def watchHeadTouchTimeout(self):
+        if self.headTouchTimer is not None:
+            return
+        import threading
+        self.headTouchTimer = threading.Timer(2, self.onHeadTouchTimeout)
+        self.headTouchTimer.start()
+
+    def unwatchHeadTouchTimeout(self):
+        """
+        Returns True if storingKeyframe is emitted
+        """
+        if self.headTouchTimer is None:
+            return False
+        self.headTouchTimer.cancel()
+        self.headTouchTimer = None
+        self.storingKeyframe()
+        return True
+
+    def onHeadTouchTimeout(self):
+        self.headTouchTimer.cancel()
+        self.headTouchTimer = None
+        self.onInput_onStop()]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                                    <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                                    <Input name="rear" type="0" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                                                                    <Input name="middle" type="0" type_size="1" nature="1" inner="0" tooltip="" id="5" />
+                                                                    <Input name="front" type="0" type_size="1" nature="1" inner="0" tooltip="" id="6" />
+                                                                    <Input name="right" type="0" type_size="1" nature="1" inner="0" tooltip="" id="7" />
+                                                                    <Input name="left" type="0" type_size="1" nature="1" inner="0" tooltip="" id="8" />
+                                                                    <Input name="leftBumper" type="0" type_size="1" nature="1" inner="0" tooltip="" id="9" />
+                                                                    <Input name="rightBumper" type="0" type_size="1" nature="1" inner="0" tooltip="" id="10" />
+                                                                    <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="11" />
+                                                                    <Output name="storingKeyframe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="12" />
+                                                                    <Parameter name="LED refresh period" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.25" min="0.05" max="1" tooltip="" id="13" />
+                                                                </Box>
+                                                                <Box name="OR" id="1" localization="8" tooltip="Outputs the OR combination of the inputs." x="145" y="204">
+                                                                    <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        self.first = False
+        self.second = False
+        self.third = False
+        self.value = False
+
+    def onUnload(self):
+        pass
+
+    def onInput_first(self, p):
+        self.first = bool(p)
+        self.compute()
+
+    def onInput_second(self, p):
+        self.second = bool(p)
+        self.compute()
+
+    def onInput_third(self, p):
+        self.third = bool(p)
+        self.compute()
+
+    def compute(self):
+        old = self.value
+        self.value = self.first or self.second or self.third
+        if old != self.value:
+            self.result(self.value)]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="first" type="0" type_size="1" nature="1" inner="0" tooltip="" id="2" />
+                                                                    <Input name="second" type="0" type_size="1" nature="1" inner="0" tooltip="" id="3" />
+                                                                    <Input name="third" type="0" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                                                                    <Output name="result" type="0" type_size="1" nature="2" inner="0" tooltip="" id="5" />
+                                                                </Box>
+                                                                <Box name="OR" id="2" localization="8" tooltip="Outputs the OR combination of the inputs." x="146" y="124">
+                                                                    <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+
+    def onLoad(self):
+        self.first = False
+        self.second = False
+        self.third = False
+        self.value = False
+
+    def onUnload(self):
+        pass
+
+    def onInput_first(self, p):
+        self.first = bool(p)
+        self.compute()
+
+    def onInput_second(self, p):
+        self.second = bool(p)
+        self.compute()
+
+    def onInput_third(self, p):
+        self.third = bool(p)
+        self.compute()
+
+    def compute(self):
+        old = self.value
+        self.value = self.first or self.second or self.third
+        if old != self.value:
+            self.result(self.value)]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="first" type="0" type_size="1" nature="1" inner="0" tooltip="" id="2" />
+                                                                    <Input name="second" type="0" type_size="1" nature="1" inner="0" tooltip="" id="3" />
+                                                                    <Input name="third" type="0" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                                                                    <Output name="result" type="0" type_size="1" nature="2" inner="0" tooltip="" id="5" />
+                                                                </Box>
+                                                                <Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                                                <Link inputowner="1" indexofinput="4" outputowner="0" indexofoutput="12" />
+                                                                <Link inputowner="1" indexofinput="3" outputowner="0" indexofoutput="11" />
+                                                                <Link inputowner="1" indexofinput="2" outputowner="0" indexofoutput="10" />
+                                                                <Link inputowner="2" indexofinput="4" outputowner="0" indexofoutput="9" />
+                                                                <Link inputowner="2" indexofinput="3" outputowner="0" indexofoutput="8" />
+                                                                <Link inputowner="2" indexofinput="2" outputowner="0" indexofoutput="7" />
+                                                                <Link inputowner="3" indexofinput="9" outputowner="0" indexofoutput="13" />
+                                                                <Link inputowner="3" indexofinput="10" outputowner="0" indexofoutput="14" />
+                                                                <Link inputowner="3" indexofinput="4" outputowner="0" indexofoutput="4" />
+                                                                <Link inputowner="3" indexofinput="5" outputowner="0" indexofoutput="5" />
+                                                                <Link inputowner="3" indexofinput="6" outputowner="0" indexofoutput="6" />
+                                                                <Link inputowner="3" indexofinput="8" outputowner="1" indexofoutput="5" />
+                                                                <Link inputowner="3" indexofinput="7" outputowner="2" indexofoutput="5" />
+                                                                <Link inputowner="0" indexofinput="15" outputowner="3" indexofoutput="11" />
+                                                                <Link inputowner="0" indexofinput="16" outputowner="3" indexofoutput="12" />
+                                                            </Diagram>
+                                                        </BehaviorKeyframe>
+                                                    </BehaviorLayer>
+                                                </Timeline>
+                                            </Box>
+                                            <Box name="Touch Control -" id="2" localization="8" tooltip="Enter tooltip here" x="330" y="177">
+                                                <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                <script language="4">
+                                                    <content>
+                                                        <![CDATA[]]>
+</content>
+                                                </script>
+                                                <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                <Input name="RearTactilTouched" type="0" type_size="1" nature="4" stm_value_name="RearTactilTouched" inner="1" tooltip="RearTactilTouched desc" id="4" />
+                                                <Input name="MiddleTactilTouched" type="0" type_size="1" nature="4" stm_value_name="MiddleTactilTouched" inner="1" tooltip="MiddleTactilTouched desc" id="5" />
+                                                <Input name="FrontTactilTouched" type="0" type_size="1" nature="4" stm_value_name="FrontTactilTouched" inner="1" tooltip="FrontTactilTouched desc" id="6" />
+                                                <Input name="LeftBumperPressed" type="0" type_size="1" nature="4" stm_value_name="LeftBumperPressed" inner="1" tooltip="LeftBumperPressed desc" id="7" />
+                                                <Input name="RightBumperPressed" type="0" type_size="1" nature="4" stm_value_name="RightBumperPressed" inner="1" tooltip="RightBumperPressed desc" id="8" />
+                                                <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="9" />
+                                                <Output name="storingKeyframe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="10" />
+                                                <Timeline enable="0">
+                                                    <BehaviorLayer name="behavior_layer1">
+                                                        <BehaviorKeyframe name="keyframe1" index="1">
+                                                            <Diagram scale="100">
+                                                                <Box name="Touch Control" id="3" localization="8" tooltip="Enter tooltip here" x="141" y="50">
+                                                                    <bitmap>media/images/box/box-diagram.png</bitmap>
+                                                                    <script language="4">
+                                                                        <content>
+                                                                            <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        pass
+
+    def onLoad(self):
+        self.stiffOnColor = 0xFF5500
+        self.stiffOffColor = 0x00FF00
+        self.stiffnesses = dict()
+        self.stiffnesses['Head'] = -1
+        self.stiffnesses['LArm'] = -1
+        self.stiffnesses['RArm'] = -1
+        self.stiffnesses['LHand'] = -1
+        self.stiffnesses['RHand'] = -1
+        self.stiffnesses['LLeg'] = -1
+        self.stiffnesses['RLeg'] = -1
+        self.updatingStiffness = False
+        self.updateTimer = None
+        self.frontClickTimer = None
+        self.rearClickTimer = None
+        self.front = False
+        self.middle = False
+        self.rear = False
+        self.motion = ALProxy("ALMotion")
+        self.handsThread = None
+        self.headTouchTimer = None
+
+    def onUnload(self):
+        while self.updatingStiffness:
+            time.sleep(0.1)
+        if self.updateTimer:
+            self.updateTimer.cancel()
+            self.updateTimer = None
+        if self.frontClickTimer:
+            self.frontClickTimer.cancel()
+            self.frontClickTimer = None
+        if self.rearClickTimer:
+            self.rearClickTimer.cancel()
+            self.rearClickTimer = None
+        nColor = 0xFFFFFF
+        ALLeds.post.fadeRGB( "FeetLeds", nColor, 0.1 )
+        ALLeds.post.fadeRGB( "FaceLeds", nColor, 0.1 )
+        ALLeds.post.fadeRGB( "ChestLeds", nColor, 0.1 )
+
+        if self.headTouchTimer is not None:
+            self.headTouchTimer.cancel()
+            self.headTouchTimer = None
+
+    def onInput_onStart(self):
+        self.updateStiffnesses()
+
+    def onInput_onStop(self):
+        self.onUnload()
+        self.onStopped()
+
+    def onInput_rear(self, p):
+        self.rear = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        self.unwatchHeadTouchTimeout()
+
+        if self.rear:
+            if self.rearClickTimer:
+                self.rearClickTimer.cancel()
+                self.rearClickTimer = None
+                self.rearDoubleClick()
+            else:
+                import threading
+                self.rearClickTimer = threading.Timer(0.5, self.rearClick)
+                self.rearClickTimer.start()
+
+    def rearClick(self):
+        self.toggleStiffness('LArm')
+        self.rearClickTimer.cancel()
+        self.rearClickTimer = None
+
+    def rearDoubleClick(self):
+        originalStiffness = self.stiffnesses['LHand']
+        if originalStiffness < 0.4:
+            self.motion.setStiffnesses('LHand', 1.0)
+        if max(self.motion.getAngles('LHand', False)) > 0.5:
+            self.motion.closeHand("LHand")
+        else:
+            self.motion.openHand("LHand")
+        if originalStiffness < 0.4:
+            self.motion.setStiffnesses('LHand', originalStiffness)
+
+    def onInput_middle(self, p):
+        self.middle = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        self.unwatchHeadTouchTimeout()
+
+        if self.middle:
+            self.toggleStiffness('Head')
+
+    def onInput_front(self, p):
+        self.front = bool(p)
+        if self.rear and self.middle and self.front:
+            self.watchHeadTouchTimeout()
+            return
+
+        # else
+        self.unwatchHeadTouchTimeout()
+
+        if self.front:
+            if self.frontClickTimer:
+                self.frontClickTimer.cancel()
+                self.frontClickTimer = None
+                self.frontDoubleClick()
+            else:
+                import threading
+                self.frontClickTimer = threading.Timer(0.5, self.frontClick)
+                self.frontClickTimer.start()
+
+    def frontClick(self):
+        self.toggleStiffness('RArm')
+        self.frontClickTimer.cancel()
+        self.frontClickTimer = None
+
+    def frontDoubleClick(self):
+        originalStiffness = self.stiffnesses['RHand']
+        if originalStiffness < 0.4:
+            self.motion.setStiffnesses('RHand', 1.0)
+        if max(self.motion.getAngles('RHand', False)) > 0.5:
+            self.motion.closeHand("RHand")
+        else:
+            self.motion.openHand("RHand")
+        if originalStiffness < 0.4:
+            self.motion.setStiffnesses('RHand', originalStiffness)
+
+    def onInput_leftBumper(self, p):
+        if p:
+            self.toggleStiffness('LLeg')
+
+    def onInput_rightBumper(self, p):
+        if p:
+            self.toggleStiffness('RLeg')
+
+    def toggleStiffness(self, chain):
+        try:
+            if self.stiffnesses[chain] > 0.4:
+                self.motion.setStiffnesses(chain, 0.0)
+            else:
+                self.motion.setStiffnesses(chain, 1.0)
+        except Exception as e:
+            self.logger.warn("Could not toggle stiffness for chain %s, error: %s" % (chain, e))
+
+    def updateStiffnesses(self):
+        self.updatingStiffness = True
+        for k,v in self.stiffnesses.iteritems():
+            try:
+                self.stiffnesses[k] = max(self.motion.getStiffnesses(k))
+            except:
+                pass
+
+        self.refreshLED()
+
+        import threading
+        self.updateTimer = threading.Timer(self.getParameter("LED refresh period"), self.updateStiffnesses)
+        self.updateTimer.start()
+        self.updatingStiffness = False
+
+    def refreshLED(self):
+        for k,v in self.stiffnesses.iteritems():
+            if( v > 0.4 ):
+                nColor = self.stiffOnColor
+            else:
+                nColor = self.stiffOffColor
+            if( k == 'LLeg' ):
+                ALLeds.post.fadeRGB( "LeftFootLeds", nColor, 0.1 )
+            if( k == 'RLeg' ):
+                ALLeds.post.fadeRGB( "RightFootLeds", nColor, 0.1 )
+            if( k == 'Head' ):
+                ALLeds.post.fadeRGB( "FaceLedsTop", nColor, 0.1 )
+            if( k == 'LArm' ):
+                ALLeds.post.fadeRGB( "FaceLedsLeftExternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsLeftInternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsLeftBottom", nColor, 0.1 )
+            if( k == 'RArm' ):
+                ALLeds.post.fadeRGB( "FaceLedsRightExternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsRightInternal", nColor, 0.1 )
+                ALLeds.post.fadeRGB( "FaceLedsRightBottom", nColor, 0.1 )
+
+    def watchHeadTouchTimeout(self):
+        if self.headTouchTimer is not None:
+            return
+        import threading
+        self.headTouchTimer = threading.Timer(2, self.onHeadTouchTimeout)
+        self.headTouchTimer.start()
+
+    def unwatchHeadTouchTimeout(self):
+        if self.headTouchTimer is None:
+            return
+        self.headTouchTimer.cancel()
+        self.headTouchTimer = None
+        self.storingKeyframe()
+
+    def onHeadTouchTimeout(self):
+        self.headTouchTimer.cancel()
+        self.headTouchTimer = None
+        self.onInput_onStop()]]>
+</content>
+                                                                    </script>
+                                                                    <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                                    <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                                    <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                                                                    <Input name="rear" type="0" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                                                                    <Input name="middle" type="0" type_size="1" nature="1" inner="0" tooltip="" id="5" />
+                                                                    <Input name="front" type="0" type_size="1" nature="1" inner="0" tooltip="" id="6" />
+                                                                    <Input name="leftBumper" type="0" type_size="1" nature="1" inner="0" tooltip="" id="7" />
+                                                                    <Input name="rightBumper" type="0" type_size="1" nature="1" inner="0" tooltip="" id="8" />
+                                                                    <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="9" />
+                                                                    <Output name="storingKeyframe" type="1" type_size="1" nature="2" inner="0" tooltip="" id="10" />
+                                                                    <Parameter name="LED refresh period" inherits_from_parent="0" content_type="2" value="0.1" default_value="0.25" min="0.05" max="1" tooltip="" id="11" />
+                                                                </Box>
+                                                                <Link inputowner="3" indexofinput="4" outputowner="0" indexofoutput="4" />
+                                                                <Link inputowner="3" indexofinput="7" outputowner="0" indexofoutput="7" />
+                                                                <Link inputowner="3" indexofinput="8" outputowner="0" indexofoutput="8" />
+                                                                <Link inputowner="3" indexofinput="6" outputowner="0" indexofoutput="6" />
+                                                                <Link inputowner="3" indexofinput="5" outputowner="0" indexofoutput="5" />
+                                                                <Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                                                <Link inputowner="0" indexofinput="9" outputowner="3" indexofoutput="9" />
+                                                                <Link inputowner="0" indexofinput="10" outputowner="3" indexofoutput="10" />
+                                                            </Diagram>
+                                                        </BehaviorKeyframe>
+                                                    </BehaviorLayer>
+                                                </Timeline>
+                                            </Box>
+                                            <Box name="Has Hand Tactile Sensors" id="3" localization="8" tooltip='Outputs &quot;hasHandTactileSensors&quot; if true, &quot;hasNotHandTactileSensors&quot; otherwise.' x="120" y="165">
+                                                <bitmap>media/images/box/movement/move_leftarm.png</bitmap>
+                                                <script language="4">
+                                                    <content>
+                                                        <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #put initialization code here
+        pass
+
+    def onUnload(self):
+        #put clean-up code here
+        pass
+
+    def onInput_onStart(self):
+        robotModel = ALProxy("ALRobotModel")
+        if robotModel._hasTouchSensorInHands():
+            self.hasHandTactileSensors()
+        else:
+            self.hasNotHandTactileSensors()]]>
+</content>
+                                                </script>
+                                                <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                                                <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                                                <Output name="hasHandTactileSensors" type="1" type_size="1" nature="1" inner="0" tooltip="Outputted if a tactile sensors in the hands were found." id="3" />
+                                                <Output name="hasNotHandTactileSensors" type="1" type_size="1" nature="1" inner="0" tooltip="Outputted if no tactile sensor in the hands was found." id="4" />
+                                            </Box>
+                                            <Link inputowner="5" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                            <Link inputowner="0" indexofinput="4" outputowner="2" indexofoutput="9" />
+                                            <Link inputowner="0" indexofinput="4" outputowner="1" indexofoutput="15" />
+                                            <Link inputowner="8" indexofinput="2" outputowner="2" indexofoutput="10" />
+                                            <Link inputowner="8" indexofinput="2" outputowner="1" indexofoutput="16" />
+                                            <Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" />
+                                            <Link inputowner="1" indexofinput="2" outputowner="3" indexofoutput="3" />
+                                            <Link inputowner="2" indexofinput="2" outputowner="3" indexofoutput="4" />
+                                        </Diagram>
+                                    </BehaviorKeyframe>
+                                </BehaviorLayer>
+                            </Timeline>
+                            <Resource name="All motors" type="Lock" timeout="0" />
+                        </Box>
+                        <Box name="Choregraphe Connection" id="4" localization="8" tooltip="Check if NAO is connected to Choregraphe and warn when it gets connected or gets&#x0A;disconnected." x="107" y="45">
+                            <bitmap>media/images/box/interaction/choregraphe.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        try: # disable autoBind
+          GeneratedClass.__init__(self, False)
+        except TypeError: # if NAOqi < 1.14
+          GeneratedClass.__init__( self )
+        self.BIND_PYTHON(self.getName(), "myDataChangedConnect")
+        self.BIND_PYTHON(self.getName(), "myDataChangedDisconnect")
+
+
+    def onLoad(self):
+        self.bIsRunning = False
+        self.strVarName = 'ClientConnected'
+        self.strVarNameDisconnect = 'ClientDisconnected'
+
+    def isChoregraphePresent(self):
+        try:
+            ALProxy( 'ALChoregraphe' )
+            return True
+        except BaseException, err:
+            return False
+
+    def onUnload(self):
+        ALMemory.unsubscribeToMicroEvent( self.strVarName, self.getName() )
+        ALMemory.unsubscribeToMicroEvent( self.strVarNameDisconnect, self.getName() )
+        self.bIsRunning = False
+
+    def onInput_onStart(self):
+        if( self.bIsRunning ):
+            return
+        self.bIsRunning = True
+        ALMemory.subscribeToMicroEvent( self.strVarName, self.getName(), "", "myDataChangedConnect" )
+        ALMemory.subscribeToMicroEvent( self.strVarNameDisconnect, self.getName(), "", "myDataChangedDisconnect" )
+        if( self.isChoregraphePresent() ):
+            self.output_connected()
+        else:
+            self.output_not_connected()
+
+    def onInput_onStop(self):
+        self.onUnload()
+        self.onStopped()
+
+    def myDataChangedConnect(self, pDataName, pValue, pMessage):
+        if( pValue == 'Choregraphe' ):
+            self.output_connected()
+
+    def myDataChangedDisconnect(self, pDataName, pValue, pMessage):
+        if( pValue == 'Choregraphe' ):
+            self.output_not_connected()]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Output name="output_connected" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" />
+                            <Output name="output_not_connected" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" />
+                        </Box>
+                        <Link inputowner="0" indexofinput="4" outputowner="2" indexofoutput="4" />
+                        <Link inputowner="2" indexofinput="2" outputowner="4" indexofoutput="5" />
+                        <Link inputowner="2" indexofinput="3" outputowner="4" indexofoutput="6" />
+                        <Link inputowner="4" indexofinput="2" outputowner="0" indexofoutput="2" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+        </Timeline>
+    </Box>
+</ChoregrapheProject>

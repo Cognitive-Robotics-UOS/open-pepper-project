@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_hello" version="2.5.3">
+  <names>
+    <name lang="de_DE">dialog_hello</name>
+    <name lang="de_DE-x-scrald">dialog_hello</name>
+    <name lang="en_US">dialog_hello</name>
+    <name lang="en_US-x-scrald">dialog_hello</name>
+    <name lang="es_ES">dialog_hello</name>
+    <name lang="es_ES-x-scrald">dialog_hello</name>
+    <name lang="fr_FR">dialog_hello</name>
+    <name lang="fr_FR-x-scrald">dialog_hello</name>
+    <name lang="it_IT">dialog_hello</name>
+    <name lang="it_IT-x-scrald">dialog_hello</name>
+    <name lang="ja_JP">dialog_hello</name>
+    <name lang="ja_JP-x-scrald">dialog_hello</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann einfache Grußformeln beanworten. 
+Beispiele für unterstützte Eingaben :
+"Hallo !"
+"Guten Morgen !"
+</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann einfache Grußformeln beanworten. 
+Beispiele für unterstützte Eingaben :
+"Hallo !"
+"Guten Morgen !"
+</description>
+    <description lang="en_US">The robot can answer simple greetings.
+Examples of supported inputs:
+"Hello!"
+"Good morning!"</description>
+    <description lang="en_US-x-scrald">The robot can answer simple greetings.
+Examples of supported inputs:
+"Hello!"
+"Good morning!"</description>
+    <description lang="es_ES">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas por el robot :
+"Hola" !
+"Buenos días !"
+""
+" ¡Hola! "
+" ¡Buenos días! "</description>
+    <description lang="es_ES-x-scrald">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas por el robot :
+"Hola" !
+"Buenos días !"
+""
+" ¡Hola! "
+" ¡Buenos días! "</description>
+    <description lang="fr_FR">Le robot peut répondre à des salutations simples.
+Exemples de phrases comprises par le robot :
+"Bonjour !"
+"Bonsoir !"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des salutations simples.
+Exemples de phrases comprises par le robot :
+"Bonjour !"
+"Bonsoir !"</description>
+    <description lang="it_IT">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia.
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia.
+</description>
+    <description lang="ja_JP">ロボットは、単純な挨拶を交わすことができます。
+サポートされる入力の例:
+「こんにちは！」
+「おはようございます！」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、単純な挨拶を交わすことができます。
+サポートされる入力の例:
+「こんにちは！」
+「おはようございます！」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_hello" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_hello/dlg_hello_ged.top"/>
+      <topic language="en_US" path="dlg_hello/dlg_hello_enu.top"/>
+      <topic language="es_ES" path="dlg_hello/dlg_hello_spe.top"/>
+      <topic language="fr_FR" path="dlg_hello/dlg_hello_frf.top"/>
+      <topic language="it_IT" path="dlg_hello/dlg_hello_iti.top"/>
+      <topic language="ja_JP" path="dlg_hello/dlg_hello_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

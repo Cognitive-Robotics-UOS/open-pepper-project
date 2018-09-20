@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="4.0.1" uuid="animationMode">
+ <names>
+  <name lang="en_US">Animation mode</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">Puts the robot in puppet-like mode, in which you can manipulate it. When used with Choregraphe, it helps you record motion easily.</description>
+ </descriptions>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path=".">
+   <nature>interactive</nature>
+   <names>
+    <name lang="en_US">Animation mode</name>
+   </names>
+   <descriptions>
+    <description lang="en_US">Puts the robot in a state where it stops moving and lets you manipulate it.</description>
+   </descriptions>
+   <tags>
+    <tag lang="en_US">animation</tag>
+    <tag lang="en_US">puppet</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+</package>

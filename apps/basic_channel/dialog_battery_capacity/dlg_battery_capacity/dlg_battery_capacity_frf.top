@@ -1,0 +1,32 @@
+topic: ~dlg_battery_capacity()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+##### General information about the battery #####
+#==================================================================#
+
+u:([
+    "combien de temps ["tu mets à" "il {te} faut pour" "te faut-il pour"] {te} [charger recharger] {entièrement complètement} {"ta batterie"}"
+    "ta batterie met combien de temps [à pour] se [charger recharger] {entièrement complètement}"
+])
+^first[
+    "$Dialog/RobotName==nao Il me faut un peu moins de 3 heures pour être complètement rechargé."
+    "$Dialog/RobotName==pepper Il me faut environ 6 heures pour être complètement rechargé."
+    "Désolé, je ne sais pas combien de temps il me faut pour être complètement rechargé!"
+]
+
+u:([
+    "~what_is ton autonomie"
+    "combien ~do_you_have d'autonomie"
+    "combien de temps dure ta [charge batterie]"
+    "combien de temps tu peux [fonctionner durer] sans te recharger"
+    "combien de temps tu peux [fonctionner durer] sur ta batterie"
+    "tu peux [fonctionner durer] combien de temps sur ta batterie"
+])
+^first[
+    "$Dialog/RobotName==nao Quand je suis très actif, ma batterie dure environ 60 minutes, et sinon 90 minutes."
+    "$Dialog/RobotName==pepper Ma batterie dure environ 12 heures!"
+    "Désolé, je ne sais pas combien de temps ma batterie dure!"
+]

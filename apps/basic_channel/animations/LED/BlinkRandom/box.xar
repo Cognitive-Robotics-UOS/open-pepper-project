@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheBox xar_version="3">
+    <Box name="root" id="7" localization="8" tooltip="tags:&#x0A;LED" x="528" y="362">
+        <bitmap>media/images/box/interaction/LED.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="The max number of the random (excluded)" id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="" id="3" />
+        <Timeline enable="0">
+            <BehaviorLayer name="behavior_layer1">
+                <BehaviorKeyframe name="keyframe1" index="1">
+                    <Diagram>
+                        <Box name="RandomInt" id="2" localization="8" tooltip="Generate a random number between 0 and a max number." x="236" y="248">
+                            <bitmap>media/images/box/box-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[import random;
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        # attributes needed in shuffle mode
+        self.nMax = 1
+        self.nIndex = -1
+        self.aShuffled = []
+        pass
+        
+    def onUnload(self):
+         #puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        nMax = self.getParameter("max")
+        if(self.getParameter("shuffle")):
+            self.nIndex +=1
+            if nMax != self.nMax or self.nIndex == self.nMax:
+                if self.nIndex == self.nMax:
+                    self.nIndex = 0
+                self.nMax = nMax
+                self.aShuffled = []
+                for i in xrange(nMax):
+                    self.aShuffled.insert(random.randint(0, len(self.aShuffled)), i)
+            self.output_RandomValue(self.aShuffled[self.nIndex])
+        else: #random is much simpler
+            if nMax > 0:
+                nVal = random.randint( 0, nMax - 1 )
+            else: # nMax should be = 0
+                nVal = 0                  
+            self.output_RandomValue(nVal)]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="The max number of the random (excluded)" id="2" />
+                            <Output name="output_RandomValue" type="2" type_size="1" nature="2" inner="0" tooltip="The random value outputted" id="3" />
+                            <Parameter name="max" inherits_from_parent="0" content_type="1" value="10" default_value="10" min="0" max="1000000000" tooltip="Output will stimulate a random number (integer) between 0 and max !" id="4" />
+                            <Parameter name="shuffle" inherits_from_parent="0" content_type="0" value="0" default_value="0" tooltip="Is it a real random, or do we want to shuffle ? (meaning the box will give all the number between 0 and max before giving the same number twice)." id="5" />
+                        </Box>
+                        <Box name="Wait" id="3" localization="8" tooltip="The wait that can be stopped immediately and reset at any time.&#x0A;&#x0A;Stopping the box won&apos;t output a signal.&#x0A;*** ref box in: ./4_localize/Time/Wait/ExampleWait.xar ***&#x0A;*** last modification date(svn): Version it! ***" x="242" y="56">
+                            <bitmap>media/images/box/wait.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[import threading # opkg install python-threading
+class MyClass(GeneratedClass):
+  def __init__(self):
+    GeneratedClass.__init__(self)
+    self.tb = False;
+  
+  def onUnload(self):
+    self.onInput_onStop();
+    
+  def triggerOutput( self, rPeriod = 1 ):
+    self.timerOutput();
+    self.onInput_onStop(); # to clean everything
+  
+  def startTimer( self, rPeriod = 1 ):
+    if( self.tb ):
+      self.tb.cancel();
+    self.tb = threading.Timer( rPeriod, self.triggerOutput, [rPeriod] );
+    self.tb.start();
+
+  def onInput_onStart(self):
+    self.startTimer( self.getParameter("timeout") );
+  
+  def onInput_onStop(self):
+    if( self.tb ):
+      self.tb.cancel();
+      self.tb = False;]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Start the timer with a specified period value (in seconds)" id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Stop the timer" id="3" />
+                            <Output name="timerOutput" type="1" type_size="1" nature="2" inner="0" tooltip="send a bang after a certain amount of time.&#x0A;Warning: not outputted if stopped before time lapse." id="4" />
+                            <Parameter name="timeout" inherits_from_parent="0" content_type="2" value="1" default_value="1" min="0" max="5000" tooltip="After how many seconds the box will timeout and stimulate its ouput." id="5" />
+                        </Box>
+                        <Box name="blink" id="1" localization="8" tooltip="blink" x="419" y="58">
+                            <bitmap>media/images/box/box-diagram.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        rDuration = 0.05;
+        ALLeds.post.fadeRGB( "FaceLed0", 0x000000, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed1", 0x000000, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed2", 0xffffff, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed3", 0x000000, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed4", 0x000000, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed5", 0x000000, rDuration );
+        ALLeds.post.fadeRGB( "FaceLed6", 0xffffff, rDuration );
+        ALLeds.fadeRGB( "FaceLed7", 0x000000, rDuration );
+
+        time.sleep( 0.1 );
+        
+        rDuration = 0.05;
+        ALLeds.fadeRGB( "FaceLeds", 0xffffff, rDuration );
+        
+        self.onStopped()
+        
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is usually a good idea to call onUnload of this box in a onStop method, as the code written in onUnload is used to finish the working of the box as well
+        pass]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                        </Box>
+                        <Link inputowner="1" indexofinput="2" outputowner="3" indexofoutput="4" />
+                        <Link inputowner="2" indexofinput="2" outputowner="3" indexofoutput="4" />
+                        <Link inputowner="3" indexofinput="5" outputowner="2" indexofoutput="3" />
+                        <Link inputowner="3" indexofinput="2" outputowner="2" indexofoutput="3" />
+                        <Link inputowner="2" indexofinput="2" outputowner="0" indexofoutput="2" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+        </Timeline>
+        <Resource name="Left eye leds" type="Lock" timeout="1" />
+        <Resource name="Right eye leds" type="Lock" timeout="1" />
+    </Box>
+</ChoregrapheBox>

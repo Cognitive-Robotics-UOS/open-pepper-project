@@ -1,0 +1,142 @@
+topic: ~dlg_clock()
+language: frf
+
+include:lexicon_frf.top
+
+
+concept:(minutes_frf)[
+    "$Dialog/Minute==0 pile"
+    "$Dialog/Minute==1 une"
+    "$Dialog/Minute==2 2"
+    "$Dialog/Minute==3 3"
+    "$Dialog/Minute==4 4"
+    "$Dialog/Minute==5 5"
+    "$Dialog/Minute==6 6"
+    "$Dialog/Minute==7 7"
+    "$Dialog/Minute==8 8"
+    "$Dialog/Minute==9 9"
+    "$Dialog/Minute==10 10"
+    "$Dialog/Minute==11 11"
+    "$Dialog/Minute==12 12"
+    "$Dialog/Minute==13 13"
+    "$Dialog/Minute==14 14"
+    "$Dialog/Minute==15 15"
+    "$Dialog/Minute==16 16"
+    "$Dialog/Minute==17 17"
+    "$Dialog/Minute==18 18"
+    "$Dialog/Minute==19 19"
+    "$Dialog/Minute==20 20"
+    "$Dialog/Minute==21 vingt-et-une"
+    "$Dialog/Minute==22 22"
+    "$Dialog/Minute==23 23"
+    "$Dialog/Minute==24 24"
+    "$Dialog/Minute==25 25"
+    "$Dialog/Minute==26 26"
+    "$Dialog/Minute==27 27"
+    "$Dialog/Minute==28 28"
+    "$Dialog/Minute==29 29"
+    "$Dialog/Minute==30 30"
+    "$Dialog/Minute==31 trente-et-une"
+    "$Dialog/Minute==32 32"
+    "$Dialog/Minute==33 33"
+    "$Dialog/Minute==34 34"
+    "$Dialog/Minute==35 35"
+    "$Dialog/Minute==36 36"
+    "$Dialog/Minute==37 37"
+    "$Dialog/Minute==38 38"
+    "$Dialog/Minute==39 39"
+    "$Dialog/Minute==40 40"
+    "$Dialog/Minute==41 quarante-et-une"
+    "$Dialog/Minute==42 42"
+    "$Dialog/Minute==43 43"
+    "$Dialog/Minute==44 44"
+    "$Dialog/Minute==45 45"
+    "$Dialog/Minute==46 46"
+    "$Dialog/Minute==47 47"
+    "$Dialog/Minute==48 48"
+    "$Dialog/Minute==49 49"
+    "$Dialog/Minute==50 50"
+    "$Dialog/Minute==51 cinquante-et-une"
+    "$Dialog/Minute==52 52"
+    "$Dialog/Minute==53 53"
+    "$Dialog/Minute==54 54"
+    "$Dialog/Minute==55 55"
+    "$Dialog/Minute==56 56"
+    "$Dialog/Minute==57 57"
+    "$Dialog/Minute==58 58"
+    "$Dialog/Minute==59 59"
+]
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+
+u:([
+    "quelle heure [est-il "il est"]"
+    "il est quelle heure"
+    "je [veux voudrais] {savoir connaître} l'heure {"qu'il est"}"
+    "[~do_you_know donne-moi] l'heure {"qu'il est"}"
+    "~do_you_have l'heure"
+    "~can_you me [donner dire] l'heure {"qu'il est"}"
+])
+^first[
+    "$Dialog/Hour==1 Il est une heure ~minutes_frf ."
+    "Il est $Dialog/Hour heures ~minutes_frf ."
+    "Je ne sais pas, désolé."
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+u:([
+    "quelle est la date [d'aujourd'hui aujourd'hui]"
+    "~do_you_know la date [d'aujourd'hui aujourd'hui]"
+    "quel jour ["on est" est-on sommes-nous]"
+    "on est quel jour"
+    "[donne-moi donne-nous] la date {d'aujourd'hui} $dlg_clock_ask=yes"
+    "~do_you_know quel jour on est $dlg_clock_ask=yes"
+])
+^first[
+    "$dlg_clock_ask==yes ^rand[
+        "Bien sûr!"
+        "Pas de problème!"
+    ] Nous sommes le" 
+    "Nous sommes le"
+]
+^first[
+    "$Dialog/Weekday==1 Lundi" 
+    "$Dialog/Weekday==2 Mardi"
+    "$Dialog/Weekday==3 Mercredi"
+    "$Dialog/Weekday==4 Jeudi"
+    "$Dialog/Weekday==5 Vendredi"
+    "$Dialog/Weekday==6 Samedi"
+    "$Dialog/Weekday==7 Dimanche"
+]
+
+^first[
+    "$Dialog/Day==1 premier"
+    "$Dialog/Day"
+]
+
+^first[
+    "$Dialog/Month==1 Janvier."
+    "$Dialog/Month==2 Février."
+    "$Dialog/Month==3 Mars."
+    "$Dialog/Month==4 Avril."
+    "$Dialog/Month==5 Mai."
+    "$Dialog/Month==6 Juin."
+    "$Dialog/Month==7 Juillet."
+    "$Dialog/Month==8 Août."
+    "$Dialog/Month==9 Septembre."
+    "$Dialog/Month==10 Octobre."
+    "$Dialog/Month==11 Novembre."
+    "$Dialog/Month==12 Décembre."
+]
+^clear(dlg_clock_ask)
+
+u:([
+    "{en} quelle année ["nous sommes" sommes-nous est-on "on est"]"
+    "["On est" "nous sommes"] en quelle année"
+])
+^rand["On est en $Dialog/Year !" "On dirait la question d'une personne qui aurait voyagé dans le temps! Nous sommes en $Dialog/Year" "$Dialog/Year"]

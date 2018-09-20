@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.3" uuid="dialog_reflex_engaged">
+  <names>
+    <name lang="en_US">dialog_reflex_engaged</name>
+    <name lang="en_US-x-scrald">dialog_reflex_engaged</name>
+    <name lang="fr_FR">dialog_reflex_engaged</name>
+    <name lang="fr_FR-x-scrald">dialog_reflex_engaged</name>
+    <name lang="ja_JP">dialog_reflex_engaged</name>
+    <name lang="ja_JP-x-scrald">dialog_reflex_engaged</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot reacts to his name.
+Examples of supported inputs:
+"Pepper!"
+"Nao!"</description>
+    <description lang="en_US-x-scrald">The robot reacts to his name.
+Examples of supported inputs:
+"Pepper!"
+"Nao!"</description>
+    <description lang="fr_FR">Le robot réagit à son nom.
+Exemples de phrases comprises par le robot :
+"Pepper !"
+"Nao !"</description>
+    <description lang="fr_FR-x-scrald">Le robot réagit à son nom.
+Exemples de phrases comprises par le robot :
+"Pepper !"
+"Nao !"</description>
+    <description lang="ja_JP">ロボットが自分の名前に反応します。</description>
+    <description lang="ja_JP-x-scrald">ロボットが自分の名前に反応します。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_reflex_engaged">
+      <topic path="dlg_reflex_engaged/dlg_reflex_engaged_enu.top" language="en_US"/>
+      <topic path="dlg_reflex_engaged/dlg_reflex_engaged_frf.top" language="fr_FR"/>
+      <topic path="dlg_reflex_engaged/dlg_reflex_engaged_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

@@ -1,0 +1,31 @@
+topic: ~dlg_interaction()
+language: enu
+
+include:lexicon_enu.top
+
+
+u:([
+    "~can_you remember [me "who I am"]"
+    "do you know who I am"
+    "who am I"
+])
+I work differently from you. Remembering is for brain tissue. But I can collect data and associate it to you.
+
+u:(~can_you see me)
+I do and I love what I see!
+
+u:(~can_you [hear "listen to"] me)
+I can sense that you're speaking, but I don't have eardrums. I have microphones.
+
+u:(~can_you understand me)
+So far, I understand. But please, be patient with me, I'm still learning how to understand the human language.
+
+u:(how many words ["do you ["have in your vocabulary" know]" "can you understand"])
+Technically speaking, I can put together an almost infinite number of letters and syllables, but they don't always make much sense.
+
+#==================================================================#
+recover:
+#==================================================================#
+
+u:(~can_you _[talk speak]) 
+Yes, I can $1 , but please, be patient with me if I still make mistakes.

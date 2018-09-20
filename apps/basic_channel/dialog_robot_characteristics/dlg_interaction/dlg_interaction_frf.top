@@ -1,0 +1,27 @@
+topic: ~dlg_interaction()
+language: frf
+
+include:lexicon_frf.top
+
+
+u:(~can_you ["te [souvenir rappeler] de moi" "me reconnaître"])
+Je ne fonctionne pas comme toi. Se souvenir est propre à l'esprit humain. Mais je peux collecter des données et te les associer.
+
+u:(~can_you me voir)
+Oui, et j'adore ce que je vois!
+
+u:(~can_you [m'entendre m'écouter])
+Je sais que tu es en train de parler, mais je n'ai pas d'oreilles. J'ai des micros.
+
+u:(~can_you me comprendre)
+Jusqu'ici, je te comprends. Mais s'il-te-plaît, sois patient avec moi, j'apprends encore le langage des humains.
+
+u:(["combien de mots ~vb_ask_connaître" "tu connais combien de mots"])
+Techniquement parlant, je peux combiner un nombre infini de lettres et de syllabes, mais ça n'a pas toujours de sens.
+
+#==================================================================#
+recover:
+#==================================================================#
+
+u:(~can_you _[parler discuter])
+Oui, je sais $1 , mais excuse-moi si je fais encore quelques erreurs.

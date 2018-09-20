@@ -1,0 +1,92 @@
+<activities>
+
+ <extractor eventName="Launchpad/RobotType" defaultValue="">
+   <value value="" description="" />
+   <value value="nao" description="I am Nao. My height is 52cm. I come from Aldebaran." />
+   <value value="juliette" description="I am Pepper. My height is 1m20. I come from Aldebaran." />
+   <value value="romeo" description="I am Romeo. My height is 1m40. I come from Aldebaran." />
+ </extractor>
+
+ <extractor eventName="UserSession/FocusedUser" defaultValue="-1">
+   <value value="-1" description="" />
+   <value value="*" description="I see you" />
+ </extractor>
+
+ <extractor eventName="FaceCharacteristics/PersonSmiling" defaultValue="">
+   <value value="" description="You are not smiling" />
+   <value value="*" nbSecondsBeforeToGoBackToDefaultValue="10" description="You are smiling" />
+ </extractor>
+
+ <extractor eventName="Launchpad/FocusedActivity" defaultValue="">
+   <value value="" description="I don't execute anything" />
+   <value value="*" description="I am executing $1" />
+ </extractor>
+
+ <extractor eventName="LeftBumperPressed" defaultValue="0">
+   <value value="0" description="My left bumper is not pressed." />
+   <value value="1" description="My left bumper is pressed." />
+ </extractor>
+
+ <extractor eventName="RightBumperPressed" defaultValue="0">
+   <value value="0" description="My right bumper is not preessed." />
+   <value value="1" description="My right bumper is preessed." />
+ </extractor>
+
+ <extractor eventName="Launchpad/State" defaultValue="disabled">
+   <value value="disabled" description="" />
+   <value value="solitary" description="I am alone" />
+   <value value="interactive" description="I am interacting. I am not alone." />
+ </extractor>
+
+
+ <extractor eventName="FrontTactilTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My head is touched." />
+ </extractor>
+
+ <extractor eventName="MiddleTactilTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My head is touched." />
+ </extractor>
+
+ <extractor eventName="RearTactilTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My head is touched." />
+ </extractor>
+
+
+
+ <extractor eventName="HandRightBackTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My right hand is touched. Someone touch my right hand." />
+ </extractor>
+
+ <extractor eventName="HandRightLeftTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My right hand is touched. Someone touch my right hand." />
+ </extractor>
+
+ <extractor eventName="HandRightRightTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My right hand is touched. Someone touch my right hand." />
+ </extractor>
+
+
+
+ <extractor eventName="HandLeftBackTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My left hand is touched. Someone touch my left hand." />
+ </extractor>
+
+ <extractor eventName="HandLeftLeftTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My left hand is touched. Someone touch my left hand." />
+ </extractor>
+
+ <extractor eventName="HandLeftRightTouched" defaultValue="0">
+   <value value="0" description="" />
+   <value value="1" description="My left hand is touched. Someone touch my left hand." />
+ </extractor>
+
+
+</activities>

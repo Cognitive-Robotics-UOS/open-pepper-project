@@ -1,0 +1,62 @@
+ topic: ~dlg_hello ^noPick()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+#### Robot greets back when it matches one of the inputs ####
+#==================================================================#
+
+proposal: %hello
+^first[
+"$Dialog/ID<>-1 ^containsKnowledge(Pepper, greetings, $Dialog/ID) ^empty " 
+"$Dialog/ID<>-1 salut ^first[^queryKnowledge($Dialog/ID, name, ?) ^empty] ^addKnowledge(Pepper, greetings, $Dialog/ID) ^call(briefKnowledge.knowledge_delay(Pepper, greetings, $Dialog/ID, hours, 6))"
+"^containsKnowledge(Pepper, greetings, someone) ^empty"
+"^rand[coucou salut] ^addKnowledge(Pepper, greetings, someone) ^call(briefKnowledge.knowledge_delay(Pepper, greetings, someone, hours, 6))"
+] 
+^first
+[
+"^containsKnowledge($Dialog/ID, comeBackDateTime, unknown) $minutes_since_last_interaction>10 $days_since_last_interaction<1 ^topic(dlg_did_you_come_back)"
+"\pau=1000\ ^containsKnowledge($Dialog/ID, comeBackDateTime, ?) ^topic(dlg_did_you_come_back)"
+"\pau=1000\ ^topicRandom"
+]
+
+
+#^topicTagReactivate(use_characteristics, checkbirthday) %greetings
+
+
+#u:(prout) ^queryKnowledge($Dialog/ID, name, ?)
+
+u:(_[
+    salut
+    bonjour
+    coucou
+    hello
+])
+^first
+[
+"^containsKnowledge($Dialog/ID, greetings, Pepper) ^rand[coucou hello salut yo] ^firstOptional[^queryKnowledge($Dialog/ID, name, ?)]" 
+"$Dialog/ID<>-1 $1 ^firstOptional[^queryKnowledge($Dialog/ID, name, ?)] ^addKnowledge($Dialog/ID, greetings, Pepper) ^call(briefKnowledge.knowledge_delay($Dialog/ID, greetings, Pepper, hours, 3))"
+"$1"
+] 
+
+
+
+#$1 {$user/name} !
+
+u:(_[
+    salut
+    bonjour
+    coucou
+    hello
+] ~ald_robots)
+$1 [{$user/name} humain] !
+
+u:(bonsoir {~ald_robots})
+^first[
+    "$Dialog/Hour>16 Bonsoir {$user/name} !"
+    "C'est déjà le soir {$user/name} ? Bonsoir alors!"
+]
+
+#u:(e:Dialog/NoOneSpeak5 $Dialog/ID<>-1)
+#^topicRandom

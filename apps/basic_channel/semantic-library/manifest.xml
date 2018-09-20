@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="1.0.7" uuid="semantic-library">
+ <names>
+  <name lang="en_US">Semantic Library</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">This package contains the databases used by ALNaturalLanguageExtractor module. It's necessary for a correct use of ALNaturalLanguageExtractor, ALAnimatedSpeech and ALKnowledge.</description>
+ </descriptions>
+ <requirements>
+  <naoqiRequirement maxVersion="2.5" minVersion="2.3.0"/>
+  <robotRequirement/>
+ </requirements>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents/>
+</package>

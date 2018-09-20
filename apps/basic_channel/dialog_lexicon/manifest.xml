@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_lexicon" version="2.5.16">
+  <names>
+    <name lang="de_DE">dialog_lexicon</name>
+    <name lang="de_DE-x-scrald">dialog_lexicon</name>
+    <name lang="en_US">dialog_lexicon</name>
+    <name lang="en_US-x-scrald">dialog_lexicon</name>
+    <name lang="es_ES">dialog_lexicon</name>
+    <name lang="es_ES-x-scrald">dialog_lexicon</name>
+    <name lang="fr_FR">dialog_lexicon</name>
+    <name lang="fr_FR-x-scrald">dialog_lexicon</name>
+    <name lang="it_IT">dialog_lexicon</name>
+    <name lang="it_IT-x-scrald">dialog_lexicon</name>
+    <name lang="ja_JP">dialog_lexicon</name>
+    <name lang="ja_JP-x-scrald">dialog_lexicon</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Hilfsanwendung: Konzeptwörterbuch, um die Erstellung von Dialogen zu beschleunigen und effizienter zu machen.
+Das Konzept „~“ subsummiert alle Möglichkeiten, bejahend auf eine der Fragen des Bots zu antworten:
+Robot: Magst du Sport?
+Mensch: ~yes
+Robot: Super!</description>
+    <description lang="de_DE-x-scrald">Hilfsanwendung: Konzeptwörterbuch, um die Erstellung von Dialogen zu beschleunigen und effizienter zu machen.
+Das Konzept „~“ subsummiert alle Möglichkeiten, bejahend auf eine der Fragen des Bots zu antworten:
+Robot: Magst du Sport?
+Mensch: ~yes
+Robot: Super!</description>
+    <description lang="en_US">Utility application: dictionary of concepts making the writing of dialogs faster and more efficient.
+For instance, the "~yes" concept lists all the ways to answer positively to one of the robot's questions:
+Robot: Do you like sports?
+Human: ~yes
+Robot: Great!</description>
+    <description lang="en_US-x-scrald">Utility application: dictionary of concepts making the writing of dialogs faster and more efficient.
+For instance, the "~yes" concept lists all the ways to answer positively to one of the robot's questions:
+Robot: Do you like sports?
+Human: ~yes
+Robot: Great!</description>
+    <description lang="es_ES">Aplicación de utilidad: diccionario de conceptos que hacen la escritura de los diálogos de manera más rápida y más eficiente.
+Por ejemplo, el concepto "~sí" enumera todas las formas de responder positivamente a una de las preguntas del robot:
+Robot: ¿Te gustan los deportes?
+Humano: ~sí
+Robot: ¡Genial! </description>
+    <description lang="es_ES-x-scrald">Aplicación de utilidad: diccionario de conceptos que hacen la escritura de los diálogos de manera más rápida y más eficiente.
+Por ejemplo, el concepto "~sí" enumera todas las formas de responder positivamente a una de las preguntas del robot:
+Robot: ¿Te gustan los deportes?
+Humano: ~sí
+Robot: ¡Genial! </description>
+    <description lang="fr_FR">Application utilitaire : dictionnaire qui regroupe un ensemble de concepts permettant de rédiger du dialogue plus rapidement et efficacement.
+Par exemple, le concept "~yes" regroupe toutes les façons de répondre positivement à une question du robot :
+Robot : Aimes-tu faire du sport ?
+Humain : ~yes
+Robot : Super!</description>
+    <description lang="fr_FR-x-scrald">Application utilitaire : dictionnaire qui regroupe un ensemble de concepts permettant de rédiger du dialogue plus rapidement et efficacement.
+Par exemple, le concept "~yes" regroupe toutes les façons de répondre positivement à une question du robot :
+Robot : Aimes-tu faire du sport ?
+Humain : ~yes
+Robot : Super!</description>
+    <description lang="it_IT">Applicazione Utility: il dizionario dei concetti che rende la scrittura dei dialoghi più veloce ed efficiente.
+Per esempio, il concetto "~sì" elenca tutti i modi per rispondere positivamente a una delle domande del robot:
+Robot: Ti piacciono gli sport?
+Umano: ~sì
+Robot: Grande!</description>
+    <description lang="it_IT-x-scrald">Applicazione Utility: il dizionario dei concetti che rende la scrittura dei dialoghi più veloce ed efficiente.
+Per esempio, il concetto "~sì" elenca tutti i modi per rispondere positivamente a una delle domande del robot:
+Robot: Ti piacciono gli sport?
+Umano: ~sì
+Robot: Grande!</description>
+    <description lang="ja_JP">すべてのダイアログのための用語集</description>
+    <description lang="ja_JP-x-scrald">すべてのダイアログのための用語集</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="behavior_1">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent typeVersion="1.0" topicName="lexicon">
+      <topic language="de_DE" path="./lexicon_ged.top"/>
+      <topic language="en_US" path="./lexicon_enu.top"/>
+      <topic language="es_ES" path="./lexicon_spe.top"/>
+      <topic language="fr_FR" path="./lexicon_frf.top"/>
+      <topic language="it_IT" path="./lexicon_iti.top"/>
+      <topic language="ja_JP" path="./lexicon_jpj.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="skin_B2B">
+      <topic language="en_US" path="skin_B2B/skin_B2B_enu.top"/>
+      <topic language="fr_FR" path="skin_B2B/skin_B2B_frf.top"/>
+      <topic language="ja_JP" path="skin_B2B/skin_B2B_jpj.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="lexicon_names">
+      <topic language="en_US" path="./lexicon_names_enu.top"/>
+      <topic language="fr_FR" path="./lexicon_names_frf.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="lexicon_geography">
+      <topic language="en_US" path="./lexicon_geography_enu.top"/>
+      <topic language="fr_FR" path="./lexicon_geography_frf.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="skin_tmp_tweak">
+      <topic language="en_US" path="skin_tmp_tweak/skin_tmp_tweak_enu.top"/>
+      <topic language="fr_FR" path="skin_tmp_tweak/skin_tmp_tweak_frf.top"/>
+      <topic language="ja_JP" path="skin_tmp_tweak/skin_tmp_tweak_jpj.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="lexicon_time">
+      <topic language="en_US" path="./lexicon_time_enu.top"/>
+      <topic language="fr_FR" path="./lexicon_time_frf.top"/>
+      <topic language="ja_JP" path="./lexicon_time_jpj.top"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="skin_B2C">
+      <topic language="ja_JP" path="skin_B2C/skin_B2C_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+  <services>
+    <service autorun="true" name="ALSetDateTime" execStart="/usr/bin/python2 ALSetDateTime.py"/>
+  </services>
+</package>

@@ -1,0 +1,7 @@
+multilanguage:dlg_shutdown
+  ged:dlg_shutdown_ged.top
+  enu:dlg_shutdown_enu.top
+  spe:dlg_shutdown_spe.top
+  frf:dlg_shutdown_frf.top
+  iti:dlg_shutdown_iti.top
+  jpj:dlg_shutdown_jpj.top

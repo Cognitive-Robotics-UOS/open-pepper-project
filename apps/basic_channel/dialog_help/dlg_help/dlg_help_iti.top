@@ -1,0 +1,11 @@
+topic: ~dlg_help()
+language: iti
+
+include: lexicon_iti.top
+
+#==================================================================#
+# User can request assistance from the robot
+#==================================================================#
+
+u:(~help)
+Farò del mio meglio per aiutarti!

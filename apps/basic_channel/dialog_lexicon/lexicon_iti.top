@@ -1,0 +1,360 @@
+topic: ~lexicon()
+language: iti
+
+
+dynamic:robotname
+dynamic:friendlyname
+dynamic:all_descriptions
+dynamic:all_languages
+dynamic:myrobotname
+
+dynamic:app-name
+dynamic:app-dance
+dynamic:app-game
+dynamic:app-story
+
+dynamic:klg_thing
+dynamic:klg_definition
+dynamic:klg_date
+
+#==================================================================#
+##### Robot concepts #####
+concept:(ald_robots) [~robotname ~myrobotname Nao Pepper Peppersan Romeo]
+#==================================================================#
+
+concept:(i_will)
+[
+    "in futuro io" 
+    "sto per"
+]
+
+concept:(i_have)
+[
+    "ho {avuto}"
+    avevo
+]
+
+concept:(i_have_not)
+"non ~i_have"
+
+concept:(i_have_to)
+[
+    devo
+    "ho dovuto"
+]
+
+concept:(i_want)
+[
+    "[voglio desidero] {davvero}"
+    vorrò
+    vorrei
+    "mi [piacerà piacerebbe "farebbe piacere"]"
+    "sono {impaziente} di"
+    "ho bisogno {di}"
+]
+
+concept:(i_dont_want)
+"non ~i_want"
+
+concept:(you_have)
+[
+    hai
+    avuto
+    avevi
+]
+
+concept:(you_have_not)
+"non ~you_have"
+
+concept:(do_you_need)
+[
+    "tu [vuoi desideri]"
+    "hai bisogno"
+    "ti [piace piacerebbe "farebbe piacere"]"
+]
+
+concept:(it_is)
+[
+    "[esso quello questo] è"
+    "[essa quella questa] è"
+    "[esso quello questo] era"
+    "[essa quella questa] era"
+]
+
+concept:(it_is_not)
+[
+    "[esso quello questo] non è"
+    "[essa quella questa] non è"
+    "[esso quello questo] non era"
+    "[essa quella questa] non era"
+]
+
+concept:(adverbs)
+[
+    davvero
+    assolutamente
+    completamente 
+    veramente
+    realmente
+    "un poco" 
+    totalmente
+    rigorosamente
+    perfettamente
+    enormemente
+    "davvero troppo" 
+    molto
+    piuttosto
+]
+
+concept:(do_you_have)
+"{tu} hai {avuto}"
+
+concept:(do_you_like)
+[
+    "ti piace"
+    ami
+    preferisci
+    "cosa pensi [del dello della dei delle]"
+]
+
+concept:(do_you_know)
+[
+    conosci
+    "sai [chi cosa] è"
+    "hai mai sentito parlare [di del dello della dei delle]"
+    "avevi mai sentito [di del dello della dei delle]"
+]
+
+concept:(can_you)
+[
+    puoi
+    potrai
+    potresti
+    "pensi di poter"
+    "sei [pronto "in grado"] di"
+    "sai come di fa a"
+]
+
+concept:(are_you)
+sei
+
+concept:(what_is)
+"{"puoi dirmi" sai dimmi} cosa [è sono era erano]"
+
+concept:(can_i)
+[
+    puoi
+    potresti
+    possiamo
+    potremmo
+    "mi piacerebbe"
+    "sei d'accorso se io"
+    "è possibile {"che io"}"
+]
+
+concept:(i_dont_know)
+ [
+    "non so {"niente {"al riguardo"}" nulla}"
+    "non ho la [minima "più pallida"] idea"
+    "non ho proprio idea"
+    "cos’è"
+    "non ho {mai} sentito parlare {"di quello"}"
+    "tu [decidi dimmi]"
+    "non ne ho idea"
+]
+
+concept:(i_didnt_understand)
+[
+    "non [ho avevo] [capito afferrato compreso] {questo questa quello quella niente nada "una cosa" "quello che hai {appena} detto"}"
+    "["non lo sapevo" "non [vedo comprendo capisco]"] ["cosa intendi dire" "di cosa tu stia parlando"]"
+    "cosa è [questo questa quello quella]"
+    "non [capisco comprendo] {questo questa quello quella}"
+    "cosa [intendi "vuoi dire"]"
+    "cosa stai [dicendo "cercando di dire"]"
+    "di cosa stai parlando"
+    "non ha senso"
+]
+
+concept:(i_dont_care)
+[
+    "non mi ["importa {"un fico secco"}" "frega un cazzo"]"
+    "qualsiasi cosa sia"
+    "non mi interessa"
+    "non ho alcun interesse"
+    "non potrebbe importarmi di meno"
+    "me ne ["frega un cazzo" sbatto]"
+]
+
+concept:(im_not_sure)
+[
+    "non sono [sicuro certo]"
+    "sono titubante"
+    "ci sto pensando"
+    "ci penserò"
+]
+
+concept:(yes)
+[
+    e:Dialog/Yes
+    "sì {"per favore" "anch’io"}"
+    ok
+    bene
+    giusto
+    d’accordo
+    forse
+    certamente
+    bello
+    "di sicuro"
+    "sicuro {"lo faccio"}"
+    vero
+    andiamo
+    fallo
+    "vai [avanti "per questo"]"
+    "è [giusto corretto certo vero]"
+    "hai ragione"
+    perfetto
+    "perché no"
+    assolutamente
+    naturalmente
+    totalmente
+    definitivamente
+    "vai avanti"
+    "{si} mi piacerebbe tanto farlo"
+    "con piacere"
+    "se vuoi"
+    "nessun problema"
+    "non c’è problema"
+    "senza dubbio"
+    "[bella eccellente] idea"
+    esattamente
+    "molto bene"
+    "ci hai preso"
+    grandioso
+    eccellente
+    "sono d’accordo"
+    "sembra [buono grande divertente]"
+    "sentiti libero {"di farlo"}"
+    "prima o poi"
+    "fatti sotto"
+    "credo di sì"
+    "forza fallo"
+    "bella idea"
+    forte
+]
+
+concept:(no)
+[
+    e:Dialog/No
+    "[no non] {"grazie {mille}"}"
+    "{no} non [proprio "per niente" "me ne sbatto" "adesso è giusto" esattamente "così tanto" ora]"
+    "non sono interessato"
+    "{no} ["non voglio" "non sono io" "non io"]"
+    "{io} non {sono} sicuro"
+    "non la penso così"
+    "ci penserò"
+    "per niente"
+    "[definitivamente assolutamente probabilmente totalmente] no"
+    "[stavi stai] sognando"
+    "sogna sogna"
+    "non [ora "per il momento"]"
+    "non così tanto"
+    "{io} ["non sono d’accordo" dissento]"
+    "{no} [andrà starà va] bene {grazie}"
+    "{questo} non è vero"
+    "{questo} è falso"
+    "non [esattamente ancora particolarmente]"
+    "{questi} non sono affari tuoi"
+    "non ti riguarda"
+    "ma a te che ti frega"
+    "che c’entri tu"
+    "pensa agli affari tuoi"
+    "cosa ti intrometti a fare"
+    "mai {"nella mia vita"}"
+    "non mi [interessa stuzzica]"
+    "nessuna domanda"
+    "non è {esattamente} così"
+    "ti ["stai sbagliando" sbagli]"
+    "non me la sento"
+    "forse più avanti"
+    "un’altra volta"
+    "non fallo"
+]
+
+concept:(help)
+[
+    "mi aiuteresti {"per favore"}"
+    "puoi aiutarmi {"per favore"}"
+    "la tua assistenza"
+    "come puoi aiutarmi"
+    "puoi darmi ["[una qualche] informazione" "{alcune} informazioni" "{"un po' di"} assistenza"]"
+    "ho bisogno di ["[una qualche] informazione" "{alcune} [informazioni dettagli]" "{"un po' di"} [aiuto assistenza]"]"
+    "sto cercando {alcune} informazioni"
+    "sto cercando {qualche} dettaglio" 
+    "sto cercando {"un po' di"} [aiuto assistenza]"
+]
+
+concept:(its_up_to_you) [
+    "[qualsiasi qualunque ogni] cosa che vuoi"
+    "[scegli fai decidi] tu"
+    "decidi per me"
+    "[fai scegli] al posto mio"
+    "come [desideri vuoi]"
+]
+
+concept:(do_it_again) [
+    "[fallo "fai [questo quello]"] di nuovo"
+    "[fallo "fai [questo quello]"] un’altra volta"
+    "[rifallo "rifai [questo quello]"] {"di nuovo" "ancora una volta"}"
+    "ricomincia a [farlo "fare [questo quello]"]"
+]
+
+concept:(im_good)[
+    "sto {molto} [bene benissimo "alla grande" "sorprendentemente bene" "superbamente bene" "splendidamente bene"]"
+    "sono [carico "pieno di voglia di fare" "di buon umore"]"
+    "non male"
+    "mi sento in forma"
+    "sto alla grande"
+    "sto benissimo"
+    "tutto bene"
+    "{molto} bene"
+    "me la passo bene"
+    "va [stupendamente bene]"
+    "piuttosto bene"
+    "va alla grande"
+]
+
+concept:(i_dont_feel_good)[
+    "non va tanto bene"
+    "non mi sento ["{molto} bene" "al meglio" "in forma" "al top" "in forma speciale"]"
+    "sono stato meglio"
+    "va ["malissimo" "[molto abbastanza piuttosto] male" "poco bene"]"
+    "mi sono fatto male"
+    "ho fatto male"
+    "non {molto} bene"
+    "non va bene"
+    "non sono al massimo"
+    "non sto benissimo"
+    "non sono al massimo della forma"
+    "ho una ["tendinite da distorsione" "distorsione alla caviglia"]"
+]
+
+concept:(im_ok)[
+    "io sto bene"
+    "così così"
+    "non {troppo} male"
+    "abbastanza bene"
+    mah
+    normale
+]
+
+concept:(im_sick)[
+    "sono {"un po'" "un pochino" molto} [malato raffreddato indisposto congestionato]"
+    "ho un ["mal di testa" "mal di gola" "mal di pancia" raffreddore torcicollo "mal di stomaco" morbillo] {"{molto} brutto"}"
+    "ho una [emicrania influenza tosse "infezione {"agli orecchi"}" varicella rosolia {"{molta} brutta"}]"
+    "mi sento la testa scoppiare"
+]
+
+concept:(im_tired) [
+    "ho bisogno di {"andarmi a fare" "farmi"} una dormita"
+    "["sto sentendo" "mi sento"] {improvvisamente "un po'" tanto} [stanco debilitato spossato morto sfinito stremato ko disorientato assonnato insonnolito]"
+]

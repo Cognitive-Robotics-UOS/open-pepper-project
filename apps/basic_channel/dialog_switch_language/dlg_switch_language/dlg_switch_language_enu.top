@@ -1,0 +1,253 @@
+topic: ~dlg_switch_language()
+language: enu
+
+include:lexicon_enu.top
+
+u:(e:Dialog/Language/English)
+I speak English now.
+
+u:(e:Dialog/noLangPack)
+I'm sorry, I can't speak that language.
+
+u:($empty) %switch_language
+^run(dialog_switch_language/bhr_switch_language)
+
+#==================================================================#
+# Switch to French language
+#==================================================================#
+
+u:(~ald_robots {~can_you} speak {in} french)
+^first[
+    "$Dialog/Language/LangFrench==1 Let's speak French! $Dialog/SwitchLanguage=french ^gotoReactivate(switch_language)"
+    "Sorry, I don't know how to speak French."
+]
+
+u:({~can_you} speak {in} french)
+^first[
+    "$Dialog/Language/LangFrench==1 Do you want to speak French?"
+    "Sorry, I don't know how to speak French. ^releaseFocus"
+]
+
+    u1:(~yes)
+    Okay, let's speak French! $Dialog/SwitchLanguage=french
+    ^gotoReactivate(switch_language)
+    
+    u1:(~no)
+    Okay, let me know if you want to speak French later on.
+    
+#==================================================================#
+# Switch to Japanese language
+#==================================================================#
+
+u:(~ald_robots {~can_you} speak {in} japanese)
+^first[
+    "$Dialog/Language/LangJapanese==1 Let's speak Japanese! $Dialog/SwitchLanguage=japanese ^gotoReactivate(switch_language)"
+    "Sorry, I don't know how to speak Japanese."
+]
+
+u:({~can_you} speak {in} japanese)
+^first[
+    "$Dialog/Language/LangJapanese==1 Do you want to speak Japanese?"
+    "Sorry, I don't know how to speak Japanese. ^releaseFocus"
+]
+
+    u1:(~yes)
+    Okay, so let's speak Japanese! $Dialog/SwitchLanguage=japanese
+    ^gotoReactivate(switch_language)
+    
+    u1:(~no)
+    Okay, let me know if you want to speak Japanese later on.
+    
+#==================================================================#
+# Switch to Chinese language
+#==================================================================#
+
+u:(~ald_robots {~can_you} speak {in} chinese)
+^first[
+    "$Dialog/Language/LangChinese==1 Let's speak Chinese! $Dialog/SwitchLanguage=chinese ^gotoReactivate(switch_language)"
+    "Sorry, I don't know how to speak Chinese."
+]
+
+u:({~can_you} speak {in} chinese)
+^first[
+    "$Dialog/Language/LangChinese==1 Do you want to speak Chinese?"
+    "Sorry, I don't know how to speak Chinese. ^releaseFocus"
+]
+
+    u1:(~yes)
+    Okay, so let's speak Chinese! $Dialog/SwitchLanguage=chinese
+    ^gotoReactivate(switch_language)
+    
+    u1:(~no)
+    Okay, let me know if you want to speak Chinese later on.
+
+    
+#==================================================================#
+# Switch to Italian language
+#==================================================================#
+
+#u:(~ald_robots {~can_you} speak {in} italian)
+#^first[
+#    "$Dialog/Language/LangItalian==1 Let's speak Italian! $Dialog/SwitchLanguage=italian ^gotoReactivate(switch_language)"
+#    "Sorry, I don't know how to speak Italian."
+#]
+
+#u:({~can_you} speak {in} italian)
+#^first[
+#    "$Dialog/Language/LangItalian==1 Do you want to speak Italian?"
+#    "Sorry, I don't know how to speak Italian. ^releaseFocus"
+#]
+
+#    u1:(~yes)
+#    Okay, so let's speak Italian! $Dialog/SwitchLanguage=italian
+#    ^gotoReactivate(switch_language)
+    
+#    u1:(~no)
+#    Okay, let me know if you want to speak Italian later on.
+
+#==================================================================#
+u:([which what] languages do you [speak know])
+$nb_lang="^size(~all_languages)"
+^first[
+    "$nb_lang==1 I only have the ^enumerate(~all_languages) language pack."
+    "I have the following language packs \pau=500\ ^enumerate(~all_languages)."
+]
+
+#==================================================================#
+# Switch to no content language
+recover:
+#==================================================================#
+
+u:({~can_you} [talk speak] {in} german)
+^first[
+    "$Dialog/Language/LangGerman==1 Sorry, I don't have any German topics installed at the moment."
+    "Sorry, I don't know how to speak German."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} italian)
+^first[
+    "$Dialog/Language/LangGerman==1 Sorry, I don't have any Italian topics installed at the moment."
+    "Sorry, I don't know how to speak Italian."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} spanish)
+^first[
+    "$Dialog/Language/LangSpanish==1 Sorry, I don't have any Spanish topics installed at the moment."
+    "Sorry, I don't know how to speak Spanish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} arabic)
+^first[
+    "$Dialog/Language/LangArabic==1 Sorry, I don't have any Arabic topics installed at the moment."
+    "Sorry, I don't know how to speak Arabic."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} greek)
+^first[
+    "$Dialog/Language/LangGreek==1 Sorry, I don't have any Greek topics installed at the moment."
+    "Sorry, I don't know how to speak Greek."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} korean)
+^first[
+    "$Dialog/Language/LangKorean==1 Sorry, I don't have any Korean topics installed at the moment."
+    "Sorry, I don't know how to speak Korean."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} portuguese)
+^first[
+    "$Dialog/Language/LangPortuguese==1 Sorry, I don't have any Portuguese topics installed at the moment."
+    "Sorry, I don't know how to speak Portuguese."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} brazilian)
+^first[
+    "$Dialog/Language/LangBrazilian==1 Sorry, I don't have any Brazilian topics installed at the moment."
+    "Sorry, I don't know how to speak Brazilian."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} turkish)
+^first[
+    "$Dialog/Language/LangTurkish==1 Sorry, I don't have any Turkish topics installed at the moment."
+    "Sorry, I don't know how to speak Turkish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} polish)
+^first[
+    "$Dialog/Language/LangPolish==1 Sorry, I don't have any Polish topics installed at the moment."
+    "Sorry, I don't know how to speak Polish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} czech)
+^first[
+    "$Dialog/Language/LangCzech==1 Sorry, I don't have any Czech topics installed at the moment."
+    "Sorry, I don't know how to speak Czech."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} dutch)
+^first[
+    "$Dialog/Language/LangDutch==1 Sorry, I don't have any Dutch topics installed at the moment."
+    "Sorry, I don't know how to speak Dutch."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} danish)
+^first[
+    "$Dialog/Language/LangDanish==1 Sorry, I don't have any Danish topics installed at the moment."
+    "Sorry, I don't know how to speak Danish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} finnish)
+^first[
+    "$Dialog/Language/LangFinnish==1 Sorry, I don't have any Finnish topics installed at the moment."
+    "Sorry, I don't know how to speak Finnish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} swedish)
+^first[
+    "$Dialog/Language/LangSwedish==1 Sorry, I don't have any Swedish topics installed at the moment."
+    "Sorry, I don't know how to speak Swedish."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} russian)
+^first[
+    "$Dialog/Language/LangRussian==1 Sorry, I don't have any Russian topics installed at the moment."
+    "Sorry, I don't know how to speak Russian."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} norwegian)
+^first[
+    "$Dialog/Language/LangNorwegian==1 Sorry, I don't have any Norwegian topics installed at the moment."
+    "Sorry, I don't know how to speak Norwegian."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} cantonese)
+^first[
+    "$Dialog/Language/LangCantoneseHK==1 Sorry, I don't have any Cantonese topics installed at the moment."
+    "Sorry, I don't know how to speak Cantonese."
+]
+
+#------------------------------------------------------------------#
+u:({~can_you} [talk speak] {in} Mandarin)
+^first[
+    "$Dialog/Language/LangMandarinTaiwan==1 Sorry, I don't have any Mandarin topics installed at the moment."
+    "Sorry, I don't know how to speak Mandarin."
+]
+
+

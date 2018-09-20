@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.1" uuid="dialog_applauncher">
+  <names>
+    <name lang="ar_SA">dialog_applauncher</name>
+    <name lang="ar_SA-x-scrald">dialog_applauncher</name>
+    <name lang="cs_CZ">dialog_applauncher</name>
+    <name lang="cs_CZ-x-scrald">dialog_applauncher</name>
+    <name lang="da_DK">dialog_applauncher</name>
+    <name lang="da_DK-x-scrald">dialog_applauncher</name>
+    <name lang="de_DE">dialog_applauncher</name>
+    <name lang="de_DE-x-scrald">dialog_applauncher</name>
+    <name lang="el_GR">dialog_applauncher</name>
+    <name lang="el_GR-x-scrald">dialog_applauncher</name>
+    <name lang="en_US">dialog_applauncher</name>
+    <name lang="en_US-x-scrald">dialog_applauncher</name>
+    <name lang="es_ES">dialog_applauncher</name>
+    <name lang="es_ES-x-scrald">dialog_applauncher</name>
+    <name lang="fi_FI">dialog_applauncher</name>
+    <name lang="fi_FI-x-scrald">dialog_applauncher</name>
+    <name lang="fr_FR">dialog_applauncher</name>
+    <name lang="fr_FR-x-scrald">dialog_applauncher</name>
+    <name lang="it_IT">dialog_applauncher</name>
+    <name lang="it_IT-x-scrald">dialog_applauncher</name>
+    <name lang="ja_JP">dialog_applauncher</name>
+    <name lang="ja_JP-x-scrald">dialog_applauncher</name>
+    <name lang="ko_KR">dialog_applauncher</name>
+    <name lang="ko_KR-x-scrald">dialog_applauncher</name>
+    <name lang="nl_NL">dialog_applauncher</name>
+    <name lang="nl_NL-x-scrald">dialog_applauncher</name>
+    <name lang="nn_NO">dialog_applauncher</name>
+    <name lang="nn_NO-x-scrald">dialog_applauncher</name>
+    <name lang="pl_PL">dialog_applauncher</name>
+    <name lang="pl_PL-x-scrald">dialog_applauncher</name>
+    <name lang="pt_BR">dialog_applauncher</name>
+    <name lang="pt_BR-x-scrald">dialog_applauncher</name>
+    <name lang="pt_PT">dialog_applauncher</name>
+    <name lang="pt_PT-x-scrald">dialog_applauncher</name>
+    <name lang="ru_RU">dialog_applauncher</name>
+    <name lang="ru_RU-x-scrald">dialog_applauncher</name>
+    <name lang="sv_SE">dialog_applauncher</name>
+    <name lang="sv_SE-x-scrald">dialog_applauncher</name>
+    <name lang="zh_CN">dialog_applauncher</name>
+    <name lang="zh_CN-x-scrald">dialog_applauncher</name>
+    <name lang="zh_TW">dialog_applauncher</name>
+    <name lang="zh_TW-x-scrald">dialog_applauncher</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Dienstprogramm: Ermöglicht den Start einer beliebigen Anwendung mit einem bestimmten Satz, wenn sich der Roboter im Dialogmodus befindet.</description>
+    <description lang="de_DE-x-scrald">Dienstprogramm: Ermöglicht den Start einer beliebigen Anwendung mit einem bestimmten Satz, wenn sich der Roboter im Dialogmodus befindet.</description>
+    <description lang="en_US">Utility application: allows to start any application with trigger sentences when the robot is in Dialog mode.</description>
+    <description lang="en_US-x-scrald">Utility application: allows to start any application with trigger sentences when the robot is in Dialog mode.</description>
+    <description lang="es_ES">Aplicación de utilidad: permite iniciar cualquier aplicación con frases activadoras cuando el robot está en modo Diálogo.</description>
+    <description lang="es_ES-x-scrald">Aplicación de utilidad: permite iniciar cualquier aplicación con frases activadoras cuando el robot está en modo Diálogo.</description>
+    <description lang="fr_FR">Application utilitaire : permet de lancer une application à la voix avec déclencheur quand le robot est en mode Dialogue.</description>
+    <description lang="fr_FR-x-scrald">Application utilitaire : permet de lancer une application à la voix avec déclencheur quand le robot est en mode Dialogue.</description>
+    <description lang="it_IT">Applicazione di utilità: consente di avviare qualsiasi applicazione con frasi di attivazione quando il robot è in modalità Dialogo.</description>
+    <description lang="it_IT-x-scrald">Applicazione di utilità: consente di avviare qualsiasi applicazione con frasi di attivazione quando il robot è in modalità Dialogo.</description>
+    <description lang="ja_JP">ユーティリティアプリケーション: ロボットがダイアログモードのときにトリガーセンテンスを入力すると、さまざまなアプリケーションを起動できます。</description>
+    <description lang="ja_JP-x-scrald">ユーティリティアプリケーション: ロボットがダイアログモードのときにトリガーセンテンスを入力すると、さまざまなアプリケーションを起動できます。</description>
+    <description lang="ko_KR">유틸리티 애플리케이션: 롯봇이 Dialog 모드에 있을 때 트리거 센텐스로 모든 애플리케이션을 시작하게 함.</description>
+    <description lang="ko_KR-x-scrald">유틸리티 애플리케이션: 롯봇이 Dialog 모드에 있을 때 트리거 센텐스로 모든 애플리케이션을 시작하게 함.</description>
+    <description lang="zh_CN">程序应用：当机器人处于对话模式时，允许通过触发语句启动任何应用程序。</description>
+    <description lang="zh_CN-x-scrald">程序应用：当机器人处于对话模式时，允许通过触发语句启动任何应用程序。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>ko_KR</language>
+    <language>it_IT</language>
+    <language>ar_SA</language>
+    <language>cs_CZ</language>
+    <language>da_DK</language>
+    <language>el_GR</language>
+    <language>fi_FI</language>
+    <language>nl_NL</language>
+    <language>nn_NO</language>
+    <language>pl_PL</language>
+    <language>pt_BR</language>
+    <language>pt_PT</language>
+    <language>ru_RU</language>
+    <language>sv_SE</language>
+    <language>zh_CN</language>
+    <language>zh_TW</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>ko_KR</language>
+    <language>zh_CN</language>
+    <language>it_IT</language>
+    <language>ar_SA</language>
+    <language>cs_CZ</language>
+    <language>da_DK</language>
+    <language>el_GR</language>
+    <language>fi_FI</language>
+    <language>nl_NL</language>
+    <language>nn_NO</language>
+    <language>pl_PL</language>
+    <language>pt_BR</language>
+    <language>pt_PT</language>
+    <language>ru_RU</language>
+    <language>sv_SE</language>
+    <language>zh_TW</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_applauncher">
+      <topic path="dlg_applauncher/dlg_applauncher_arw.top" language="ar_SA"/>
+      <topic path="dlg_applauncher/dlg_applauncher_czc.top" language="cs_CZ"/>
+      <topic path="dlg_applauncher/dlg_applauncher_dad.top" language="da_DK"/>
+      <topic path="dlg_applauncher/dlg_applauncher_ged.top" language="de_DE"/>
+      <topic path="dlg_applauncher/dlg_applauncher_grg.top" language="el_GR"/>
+      <topic path="dlg_applauncher/dlg_applauncher_enu.top" language="en_US"/>
+      <topic path="dlg_applauncher/dlg_applauncher_spe.top" language="es_ES"/>
+      <topic path="dlg_applauncher/dlg_applauncher_fif.top" language="fi_FI"/>
+      <topic path="dlg_applauncher/dlg_applauncher_frf.top" language="fr_FR"/>
+      <topic path="dlg_applauncher/dlg_applauncher_iti.top" language="it_IT"/>
+      <topic path="dlg_applauncher/dlg_applauncher_jpj.top" language="ja_JP"/>
+      <topic path="dlg_applauncher/dlg_applauncher_kok.top" language="ko_KR"/>
+      <topic path="dlg_applauncher/dlg_applauncher_dun.top" language="nl_NL"/>
+      <topic path="dlg_applauncher/dlg_applauncher_non.top" language="nn_NO"/>
+      <topic path="dlg_applauncher/dlg_applauncher_plp.top" language="pl_PL"/>
+      <topic path="dlg_applauncher/dlg_applauncher_ptb.top" language="pt_BR"/>
+      <topic path="dlg_applauncher/dlg_applauncher_ptp.top" language="pt_PT"/>
+      <topic path="dlg_applauncher/dlg_applauncher_rur.top" language="ru_RU"/>
+      <topic path="dlg_applauncher/dlg_applauncher_sws.top" language="sv_SE"/>
+      <topic path="dlg_applauncher/dlg_applauncher_trt.top" language="tr_TR"/>
+      <topic path="dlg_applauncher/dlg_applauncher_mnc.top" language="zh_CN"/>
+      <topic path="dlg_applauncher/dlg_applauncher_mnt.top" language="zh_TW"/>
+    </dialogContent>
+    <dialogContent typeVersion="1.0" topicName="dlg_suggest_app">
+      <topic path="dlg_suggest_app/dlg_suggest_app_enu.top" language="en_US"/>
+      <topic path="dlg_suggest_app/dlg_suggest_app_frf.top" language="fr_FR"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

@@ -1,0 +1,1230 @@
+topic: ~lexicon()
+language: frf
+
+pronunciation:(à) [a]
+pronunciation:(û) [u]
+
+pronunciation:(get) [guète]
+pronunciation:(lucky) [leuqui]
+pronunciation:(harder) [ardeur]
+pronunciation:(better) [béteur]
+pronunciation:(style) [staillele]
+
+pronunciation:(6) [si]
+pronunciation:(6) [sice]
+pronunciation:(8) [hui]
+pronunciation:(8) [huite]
+pronunciation:(10) [di]
+pronunciation:(10) [diss]
+pronunciation:(18) [dizuite]
+pronunciation:(18) [dizui]
+pronunciation:(24) [vintecatre]
+pronunciation:(24) [vintecate]
+pronunciation:(26) [vintsi]
+pronunciation:(26) [vintsiss]
+pronunciation:(28) [vinthui]
+pronunciation:(28) [vintuite]
+pronunciation:(29) [vintneuf]
+pronunciation:(31) [trentéun]
+
+dynamic:robotname
+dynamic:friendlyname
+dynamic:all_descriptions
+dynamic:all_languages
+dynamic:myrobotname
+
+dynamic:app-name
+dynamic:app-dance
+dynamic:app-game
+dynamic:app-story
+
+dynamic:klg_thing
+dynamic:klg_definition
+dynamic:klg_date
+
+#=================================================================#
+###conditioned skin ####
+s:($third_person_gender==fem *) ^replace(il, elle, 1) ^replace(étudiant, étudiante, 1) 
+
+
+
+#==================================================================#
+##### Robot concepts #####
+concept:(ald_robots) [~robotname ~myrobotname Nao Pepper Peppersan Romeo]
+#==================================================================#
+
+#==================================================================#
+##### Voice tweaking #####
+concept:(neutral) \style=neutral\ \vct=105\ \rspd=110\
+concept:(joyful) \style=joyful\ \vct=95\ \rspd=90\
+concept:(neutral_slow) \style=neutral\ \vct=105\ \rspd=100\
+#==================================================================#
+
+#==================================================================#
+##### Verbs #####
+#------------------------------------------------------------------#
+concept:(vb_pos_i_aimer) [j'aime]
+concept:(vb_neg_i_aimer) ["[j'aime "je n'aime"] pas"]
+concept:(vb_i_aimer) [~vb_pos_i_aimer ~vb_neg_i_aimer]
+concept:(vb_pos_you_aimer) ["tu aimes" t'aimes]
+concept:(vb_neg_you_aimer) ["[t'aimes "tu n'aimes"] pas"]
+concept:(vb_int_you_aimer) [aimes-tu]
+#"n'aimes-tu pas"
+concept:(vb_you_aimer) [~vb_pos_you_aimer ~vb_neg_you_aimer]
+concept:(vb_ask_aimer) ["est-ce que ~vb_pos_you_aimer" ~vb_pos_you_aimer ~vb_int_you_aimer ~vb_neg_you_aimer]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_kiffer) ["je kiffe"]
+concept:(vb_neg_i_kiffer) ["je {ne} kiffe pas"]
+concept:(vb_i_kiffer) [~vb_pos_i_kiffer ~vb_neg_i_kiffer]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_adorer) [j'adore]
+concept:(vb_i_adorer) [~vb_pos_i_adorer]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_détester) ["je déteste"]
+concept:(vb_neg_i_détester) ["je {ne} déteste pas"]
+concept:(vb_i_détester) [~vb_pos_i_détester ~vb_neg_i_détester]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_haïr) ["je hais"]
+concept:(vb_neg_i_haïr) ["je {ne} hais pas"]
+concept:(vb_i_haïr) [~vb_pos_i_haïr ~vb_neg_i_haïr]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_prendre) ["je prends"]
+concept:(vb_neg_i_prendre) ["je {ne} prends pas"]
+concept:(vb_i_prendre) [~vb_pos_i_prendre ~vb_neg_i_prendre]
+concept:(vb_pos_you_prendre) ["tu prends"]
+concept:(vb_neg_you_prendre) ["tu {ne} prends pas"]
+concept:(vb_int_you_prendre) [prends-tu "ne prends-tu pas"]
+concept:(vb_ask_prendre) ["{"est-ce que"} ~vb_pos_you_prendre" ~vb_int_you_prendre ~vb_neg_you_prendre]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_savoir) ["je sais"]
+concept:(vb_neg_i_savoir) ["je {ne} sais pas"]
+concept:(vb_i_savoir) [~vb_pos_i_savoir ~vb_neg_i_savoir]
+concept:(vb_pos_you_savoir) ["tu [sais saurais]"]
+concept:(vb_neg_you_savoir) ["tu {ne} [sais saurais] pas"]
+concept:(vb_int_you_savoir) [sais-tu saurais-tu]
+#"ne [sais-tu saurais-tu] pas"
+concept:(vb_ask_savoir) ["est-ce que ~vb_pos_you_savoir" ~vb_pos_you_savoir ~vb_int_you_savoir ~vb_neg_you_savoir]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_connaître) ["je connais"]
+concept:(vb_neg_i_connaître) ["je {ne} connais pas"]
+concept:(vb_i_connaître) [~vb_pos_i_connaître ~vb_neg_i_connaître]
+concept:(vb_pos_you_connaître) ["tu connais"]
+concept:(vb_neg_you_connaître) ["tu {ne} connais pas"]
+concept:(vb_int_you_connaître) [connais-tu]
+#"ne connais-tu pas"
+concept:(vb_you_connaître) [~vb_pos_you_connaître ~vb_neg_you_connaître]
+concept:(vb_ask_connaître) ["est-ce que ~vb_pos_you_connaître" ~vb_pos_you_connaître ~vb_int_you_connaître ~vb_neg_you_connaître]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_croire) ["je crois"]
+concept:(vb_neg_i_croire) ["je {ne} crois pas"]
+concept:(vb_i_croire) [~vb_pos_i_croire ~vb_neg_i_croire]
+concept:(vb_pos_you_croire) ["tu crois"]
+concept:(vb_neg_you_croire) ["tu {ne} crois pas"]
+concept:(vb_int_you_croire) [crois-tu "ne crois-tu pas"]
+concept:(vb_you_croire) [~vb_pos_you_croire ~vb_neg_you_croire]
+concept:(vb_ask_croire) ["{"est-ce que"} ~vb_pos_you_croire" ~vb_int_you_croire ~vb_neg_you_croire]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_vouloir) ["je [veux voudrais]"]
+concept:(vb_neg_i_vouloir) ["je {ne} [veux voudrais] [pas plus]"]
+concept:(vb_i_vouloir) [~vb_pos_i_vouloir ~vb_neg_i_vouloir]
+concept:(vb_pos_you_vouloir) ["tu veux"]
+concept:(vb_neg_you_vouloir) ["tu {ne} veux pas"]
+concept:(vb_int_you_vouloir) [veux-tu]
+#"ne veux-tu pas"
+concept:(vb_you_vouloir) [~vb_pos_you_vouloir ~vb_neg_you_vouloir]
+concept:(vb_ask_vouloir) ["est-ce que ~vb_pos_you_vouloir" ~vb_pos_you_vouloir ~vb_int_you_vouloir ~vb_neg_you_vouloir]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_pouvoir) ["je peux"]
+concept:(vb_neg_i_pouvoir) ["je {ne} peux [pas plus]"]
+concept:(vb_int_i_pouvoir) [puis-je "je peux"]
+concept:(vb_i_pouvoir) [~vb_pos_i_pouvoir ~vb_neg_i_pouvoir]
+concept:(vb_pos_you_pouvoir) ["tu [peux pourrais]"]
+concept:(vb_neg_you_pouvoir) ["tu {ne} [peux pourrais] pas"]
+concept:(vb_int_you_pouvoir) [peux-tu pourrais-tu]
+#"ne [peux-tu pourrais-tu] pas"
+concept:(vb_you_pouvoir) [~vb_pos_you_pouvoir ~vb_neg_you_pouvoir]
+concept:(vb_ask_pouvoir) ["est-ce que ~vb_pos_you_pouvoir" ~vb_pos_you_pouvoir ~vb_int_you_pouvoir ~vb_neg_you_pouvoir]
+#------------------------------------------------------------------#
+concept:(vb_pos_you_supporter) ["tu supportes"]
+concept:(vb_neg_you_supporter) ["tu {ne} supportes pas"]
+concept:(vb_int_you_supporter) [supportes-tu "ne supportes-tu pas"]
+concept:(vb_you_supporter) [~vb_pos_you_supporter ~vb_neg_you_supporter]
+concept:(vb_ask_supporter) ["{"est-ce que"} ~vb_pos_you_supporter" ~vb_int_you_supporter ~vb_neg_you_supporter]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_soutenir) ["je soutiens"]
+concept:(vb_neg_i_soutenir) ["je {ne} soutiens [pas plus]"]
+concept:(vb_i_soutenir) [~vb_pos_i_soutenir ~vb_neg_i_soutenir]
+concept:(vb_pos_you_soutenir) ["tu soutiens"]
+concept:(vb_neg_you_soutenir) ["tu {ne} soutiens pas"]
+concept:(vb_int_you_soutenir) [soutiens-tu "ne soutiens-tu pas"]
+concept:(vb_you_soutenir) [~vb_pos_you_soutenir ~vb_int_you_soutenir]
+concept:(vb_ask_soutenir) ["{"est-ce que"} ~vb_pos_you_soutenir" ~vb_int_you_soutenir ~vb_neg_you_soutenir]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_agree_with) ["je suis {plutot assez} d'accord avec"]
+concept:(vb_neg_i_agree_with) ["je suis {pas} d'accord avec"]
+concept:(vb_i_agree_with) [~vb_pos_i_agree_with ~vb_neg_i_agree_with]
+concept:(vb_pos_you_agree_with) ["tu es d'accord avec"]
+concept:(vb_neg_you_agree_with) ["[t'es "tu es" "tu n'es"] [pas plus] d'accord avec"]
+concept:(vb_int_you_agree_with) ["es-tu d'accord avec" "n'es-tu pas d'accord avec"]
+concept:(vb_you_agree_with) [~vb_pos_you_agree_with ~vb_int_you_agree_with]
+concept:(vb_ask_agree_with) ["{"est-ce que"} ~vb_pos_you_agree_with" ~vb_int_you_agree_with ~vb_neg_you_agree_with]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_préférer) ["je préfère"]
+concept:(vb_neg_i_préférer) ["je {ne} préfère [pas plus]"]
+concept:(vb_i_préférer) [~vb_pos_i_préférer ~vb_neg_i_préférer]
+concept:(vb_pos_you_préférer) ["tu préfères"]
+concept:(vb_neg_you_préférer) ["tu {ne} préfères pas"]
+concept:(vb_int_you_préférer) [préfères-tu "ne préfères-tu pas"]
+concept:(vb_you_préférer) [~vb_pos_you_préférer ~vb_neg_you_préférer]
+concept:(vb_ask_préférer) ["{"est-ce que"} ~vb_pos_you_préférer" ~vb_int_you_préférer ~vb_neg_you_préférer]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_partir) ["je pars"]
+concept:(vb_neg_i_partir) ["je {ne} pars [pas plus]"]
+concept:(vb_i_partir) [~vb_pos_i_partir ~vb_neg_i_partir]
+concept:(vb_pos_you_partir) ["tu pars"]
+concept:(vb_neg_you_partir) ["tu {ne} pars [pas plus]"]
+concept:(vb_int_you_partir) [pars-tu "ne pars-tu pas"]
+concept:(vb_you_partir) [~vb_pos_you_partir ~vb_neg_you_partir]
+concept:(vb_ask_partir) ["{"est-ce que"} ~vb_pos_you_partir" ~vb_int_you_partir ~vb_neg_you_partir]
+#------------------------------------------------------------------#
+concept:(vb_ask_aller) ["vas-tu" "tu vas" "est-ce que tu vas"]
+#==================================================================#
+
+#==================================================================#
+##### Auxiliaries #####
+#------------------------------------------------------------------#
+concept:(vb_pos_i_avoir) [j'ai "j'en ai"]
+concept:(vb_neg_i_avoir) ["[j'ai "j'en n'ai" "je [n'ai "n'en ai"]"] [pas plus]"]
+concept:(vb_i_avoir) [~vb_pos_i_avoir ~vb_neg_i_avoir]
+concept:(vb_pos_you_avoir) [t'as "tu as"]
+concept:(vb_neg_you_avoir) ["[t'as "tu n'as"] pas"]
+concept:(vb_int_you_avoir) [as-tu]
+#"n'as-tu pas"
+concept:(vb_you_avoir) [~vb_pos_you_avoir ~vb_neg_you_avoir]
+concept:(vb_ask_avoir) ["est-ce que ~vb_pos_you_avoir" ~vb_pos_you_avoir ~vb_int_you_avoir ~vb_neg_you_avoir]
+#------------------------------------------------------------------#
+concept:(vb_pos_i_être) ["je suis"]
+concept:(vb_neg_i_être) ["je {ne} suis pas"]
+concept:(vb_i_être) [~vb_pos_i_être ~vb_neg_i_être]
+concept:(vb_pos_you_être) [t'es "tu es"]
+concept:(vb_neg_you_être) ["[t'es "tu n'es"] pas"]
+concept:(vb_int_you_être) [es-tu]
+#"n'es-tu pas"
+concept:(vb_you_être) [~vb_pos_you_être ~vb_neg_you_être]
+concept:(vb_ask_être) ["est-ce que ~vb_pos_you_être" ~vb_pos_you_être ~vb_int_you_être ~vb_neg_you_être]
+#==================================================================#
+
+#==================================================================#
+##### 1rst person verbs #####
+#------------------------------------------------------------------#
+concept:(i_am) [~vb_pos_i_être]
+concept:(i_have) [~vb_pos_i_avoir]
+concept:(i_am_not) [~vb_neg_i_être]
+concept:(i_dont_have) [~vb_neg_i_avoir]
+concept:(i_have_to) ["je [dois devrais]"]
+concept:(i_want) ["je [veux voudrais] {vraiment} {bien}" "j'aimerais {vraiment} {bien}" "je [souhaite souhaiterais] {vraiment}" "j'aurais {vraiment} {bien} voulu"]
+#"je cherche à"
+concept:(i_dont_want) [~vb_neg_i_vouloir]
+concept:(i_want_to) [~vb_pos_i_vouloir "~vb_pos_i_avoir envie de" "["je veux" "je voudrais" "j'aurai voulu" j'aimerais "je souhaiterais" "je souhaite"] {faire effectuer}" "[c'est "ça serait" "ça aurait été"] pour {faire effectuer}" "j'ai envie {"de faire" "d'effectuer"}"]
+concept:(i_dont_want_to) [~vb_neg_i_vouloir "~vb_neg_i_avoir envie de"]
+concept:(i_think_you_are) ["je te trouve" "{"je [pense trouve] que"} ~vb_pos_you_être"]
+concept:(we_are) ["nous sommes" "on est"]
+concept:(we_are_not) ["["nous {ne} sommes" "on est"] {pas}"]
+#------------------------------------------------------------------#
+##### 2nd person verbs #####
+#------------------------------------------------------------------#
+concept:(you_are) [~vb_pos_you_être]
+concept:(you_are_not) [~vb_neg_you_être]
+concept:(you_were) ["["tu as" t'as] été"]
+concept:(you_have) ["tu as" t'as]
+
+#------------------------------------------------------------------#
+##### 3rd person verbs #####
+#------------------------------------------------------------------#
+concept:(it_is) [
+    c'est c'était
+    "["je pense" "il semble que"] que [c'est c'était]"
+    "à mon avis [c'est c'était]"
+    "et bien [c'est c'était]"
+]
+concept:(it_is_not) ["ce n'est [pas plus]" "c'est [pas plus]"]
+concept:(is_there)["est-ce qu'il y a" "y a t-il" "il y a" "est-ce qu'ya" "il y a"]
+#==================================================================#
+
+#==================================================================#
+##### Other verbs #####
+#------------------------------------------------------------------#
+concept:(vb_imp_parle) ["{ne} {me m'en} parle pas"]
+concept:(vb_imp_cause) ["{ne} {me m'en} cause pas"]
+concept:(vb_imp_dire) ["{ne} {me m'en} dis rien"]
+concept:(vb_imp_discute) ["{ne} discute pas"]
+concept:(vb_imp_bavarde) ["{ne} bavarde pas"]
+concept:(verbs_inf_talk) [parler causer dire discuter bavarder]
+concept:(verbs_imp_talk) [~vb_imp_parle ~vb_imp_cause ~vb_imp_dire ~vb_imp_discute ~vb_imp_bavarde]
+concept:(tell_me) [raconte-moi dis-moi parle-moi]
+#==================================================================#
+
+#==================================================================#
+##### Adjectives and adverbs #####
+#------------------------------------------------------------------#
+concept:(addicted) ["[fou folle féru amateur amatrice amoureux amoureuse passionné fan fana fada fanatique mordu avide addict] {du de des}"]
+concept:(complete) ["très forte" total complet complète absolu catégorique radical intégral inconditionnel]
+concept:(size) [grand gros énorme petit minuscule]
+concept:(boring) [chiant naze ennuyeux relou lourd "pas drôle"]
+concept:(ugly) [moche "pas beau" pourri naze]
+concept:(stupid) [con idiot stupide crétin "pas malin"]
+#------------------------------------------------------------------#
+concept:(adverbs) [vachement absolument carrément vraiment royalement complètement "un peu" totalement strictement parfaitement beaucoup énormément trop très plutot]
+
+
+
+
+
+
+#==================================================================#
+
+#==================================================================#
+##### Vocabulary #####
+#------------------------------------------------------------------#
+concept:(apps_sing_fem) [application app appli]
+concept:(apps_sing_masc) [programme soft software]
+concept:(apps_sing) [~apps_sing_fem ~apps_sing_masc]
+concept:(apps_plur) [applications apps applis programmes softs softwares]
+
+#==================================================================#
+##### BirthDay #####
+#------------------------------------------------------------------#
+concept:(birth_day) ["premier $day=1" "2 $day=2" "3 $day=3" "4 $day=4" "5 $day=5" "6 $day=6" "7 $day=7" "8 $day=8" "9 $day=9" "10 $day=10" "dix $day=10" "11 $day=11" "12 $day=12" "13 $day=13" "14 $day=14" "15 $day=15" "16 $day=16" "17 $day=17" "18 $day=18" "19 $day=19" "20 $day=20" "21 $day=21" "22 $day=22" "23 $day=23" "24 $day=24" "25 $day=25" "26 $day=26" "27 $day=27" "28 $day=28" "29 $day=29" "30 $day=30" "31 $day=31"]
+concept:(birth_month) ["janvier $month=1" "février $month=2" "mars $month=3" "avril $month=4" "mai $month=5" "juin $month=6" "juillet $month=7" "août $month=8" "septembre $month=9" "octobre $month=10" "novembre $month=11" "décembre $month=12"]
+concept:(birth_year) [1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016]
+
+
+concept:(months) [janvier février mars avril mai juin juillet août septembre octobre novembre décembre]
+concept:(days) [lundi mardi mercredi jeudi vendredi samedi dimanche]
+concept:(please) ["s'il te plait" steuplait]
+concept:(a_little_bit) ["un {petit "tout petit"} peu" "pas beaucoup"]
+concept:(about) ["{"à propos" "au sujet"} de" sur]
+concept:(that) [ça "ce sujet"]
+
+#==================================================================#
+##### Food #####
+#------------------------------------------------------------------#
+concept:(fat_food) ["les frites" "les hamburgers" "les pizzas" "les pâtes"]
+concept:(healthy_food) ["la salade" "la soupe"]
+#==================================================================#
+##### Color #####
+#------------------------------------------------------------------#
+concept:(color) ["rouge $color_enu=red" "bleu $color_enu=blue" "vert $color_enu=green" "jaune $color_enu=yellow" "blanc $color_enu=white" "rose $color_enu=pink" "violet $color_enu=purple" "orange $color_enu=orange" "marron $color_enu=brown" "noir $color_enu=black" "gris $color_enu=gray"]
+
+
+def:translateColor($color) ["$color==black $color_frf=noir" "$color==white $color_frf=blanc" "$color==red $color_frf=rouge" "$color==orange $color_frf=orange" "$color==green $color_frf=vert" "$color==blue $color_frf=bleu" "$color==gray $color_frf=gris" "$color==yellow $color_frf=jaune"]
+#==================
+
+##### Sport #####
+#------------------------------------------------------------------#
+concept:(sport) [foot volley rugby basket karaté footing handball]
+
+#==================================================================#
+##### Questions to the robot #####
+#------------------------------------------------------------------#
+concept:(can_you) [~vb_ask_pouvoir ~vb_ask_savoir]
+concept:(what_is) [
+    "quel est"
+    "c'est quoi {"ce que"}"
+    "qu'est-ce ["que c'est {que}" que]"
+    "qu'est-ce qui"
+    "que sont"
+    "~can_you [m'expliquer "me dire"] [
+        "ce [qu'est "que c'est {que}"]"
+        "[que quels quelles] sont"
+        "quelle [est était]"
+        "qu'est-ce ["que c'est {que}" que]"
+    ]"
+    "[explique-moi dis-moi] [
+        "ce [qu'est "que c'est {que}"
+        "[que quels quelles] sont"]"
+        "[quel quelle] est"]"
+    "~can_you me parler de"
+    "parle-moi [de des]"
+    "de quoi"
+    "ça veut dire quoi"
+]
+concept:(what_is_shorter) ["c'est quoi" "quel est" "qu'est-ce que c'est"]
+concept:(what_is_shorter_fem) ["quelle est" "c'est quoi" "qu'est-ce que c'est"]
+
+concept:(do_you) ["{est-ce que} tu" "ça t'arrive de"]
+concept:(do_you_have) [~vb_ask_avoir]
+#"possèdes-tu" "{"est-ce que"} tu possèdes"
+concept:(do_you_like) [~vb_ask_aimer ~vb_ask_préférer]
+concept:(what_do_you_like) ["{~what_is} ~vb_pos_you_aimer" "{~what_is} ~vb_pos_you_préférer" "{que} ~vb_int_you_préférer"]
+concept:(what_do_you_prefer) ["{"qu'est-ce que"} tu préfères" "tu préfères quoi"]
+concept:(do_you_know) [~vb_ask_connaître "~vb_ask_savoir ["qui [est c'est]" "ce qu'est"]"]
+concept:(what_do_you_know) [
+    "{~what_is} [~vb_pos_you_connaître ~vb_pos_you_savoir]"
+    "{que} [~vb_int_you_connaître ~vb_int_you_savoir]"
+]
+concept:(what_can_you_do) [
+    "que [peux-tu sais-tu] faire"
+    "qu'est-ce que tu [peux sais] faire"
+]
+concept:(do_you_need) ["~vb_ask_avoir besoin de"]
+concept:(do_you_want) [~vb_ask_vouloir]
+concept:(do_you_speak) [
+    parles-tu "tu parles" parle parlons parle-moi parle-nous
+    ~vb_ask_connaître
+    "[~can_you peut-on "on peut" "est-ce qu'on peut"] parler"
+]
+concept:(what_do_you_want) [
+    "{~what_is} ~vb_pos_you_vouloir"
+    "{que} ~vb_int_you_vouloir"
+]
+concept:(are_you) [~vb_ask_être]
+concept:(were_you) [~you_were "as-tu été" "es-tu"]
+concept:(will_you) [~vb_ask_aller]
+concept:(who_are_you) ["{"~can_you me dire"} qui ~vb_ask_être" "t'es qui {toi}"]
+concept:(where_are_you) ["où es-tu" "t'es où" "~vb_ask_savoir où tu es"]
+
+concept:(who_is) [
+#    "{"tu sais" "tu ne sais pas"} qui est"
+    "qui est"
+    "qui c'est"
+    "c'est qui"
+#    "tu connais"
+#    "connais-tu"
+#    "tu {ne} connais pas"
+#    "parle-moi de"
+#    "~can_you me parler de"
+]
+concept:(where_is) [
+    "où ["se trouve" "est {situé}"]"
+    "quelle est la localisation de"
+    "où peut-on trouver"
+    "[où quel] est l'adresse de"
+]
+concept:(can_i) [
+    "{"est-ce que"} ["je [peux peut]" "je pourrais"]"
+    puis-je
+    pourrais-je
+    "j'aimerais {bien}"
+    "je [souhaiterais souhaite]"
+    "je [veux voudrais]"
+    "[est-il c'est] possible de"
+]
+concept:(what_is_your_name) [
+    "["quel est" "c'est quoi"] ton nom"
+    "ton nom c'est quoi"
+    "comment ["tu t'appelles" "t'appelles-tu"]"
+]
+concept:(what_is_his_name) [
+    "["quel est" "c'est quoi"] [le son] [nom titre]"
+    "comment ["s'appelle-t-il" "il s'appelle"]"
+]
+concept:(how_are_you) [
+    "comment ["ça va" "tu vas" "tu te sens"]"
+    "tu vas bien"
+    "ça va [bien]"
+    "la [forme pêche patate]"
+    "~you_are en forme"
+]
+concept:(what_are_you_talking_about) [
+    "de quoi ["[tu on "est-ce qu'on"] parle" "parle-t-on"]"
+    "[on tu] parle de quoi"
+    "qu'est-ce que tu [racontes dis]"
+    "["quel est" "c'est quoi"] le [sujet thème] {"de la [discussion conversation]"}"
+]
+concept:(why_are_you_talking_about) [
+    "pourquoi ["tu {me} [parles] [de du des]" "tu [mentionnes abordes évoques] [le la les]"]"
+    "quelle est la raison ["qui fait que" "pour laquelle"] ["tu {me} [parles] [de du des]" "tu [mentionnes abordes évoques] [le la les]"]"
+]
+concept:(why_are_you_saying_that) [
+    "pourquoi {"tu dis [que ça]"}"
+    "[explique explique-moi dis dis-moi] pourquoi"
+    "ah bon"
+    "tu trouves"
+    "comment ça"
+    "de quoi"
+]
+concept:(who_wrote) [
+    "qui a écrit"
+    "[qui quel] est l'auteur [de du]"
+    "comment [s'appelle "se nomme"] ["celui qui a écrit" "l'auteur [de du]"]"
+]
+concept:(how_much_is) [
+    "combien [vaut coute font fait]"
+    "[quelle quel] est la valeur de"
+    "ça fait combien"
+    "calcule"
+    "quel est le prix" "c'est quoi {son le} prix"
+    "{il elle ça} coûte combien"
+]
+concept:(how_many) ["combien {~do_you_have} de"]
+concept:(do_you_follow) [
+    ~vb_ask_supporter
+    ~vb_ask_soutenir
+    ~vb_ask_agree_with
+]
+concept:(how_can_i_help_you) [
+    "comment [
+        "["est-ce que tu veux" "veux-tu"] que je t'aide"
+        "je peux t'aider"
+        "puis-je t'aider"
+    ]"
+    "~what_is je peux faire {"pour t'aider"}"
+]
+concept:(show_me) [
+    "montre {lui moi nous leur}"
+    "~can_you {lui moi nous leur} montrer"
+    "~can_you {lui me nous leur} faire voir"
+    "[~i_want_to ~i_want] [regarder voir]"
+    "est-ce que je peux [voir regarder]"
+    "est-ce qu'on peut [voir regarder]"
+    "est-ce qu'ils peuvent [voir regarder]"
+    "~can_you faire"
+    fais-moi fais-nous fais-leur
+]
+#------------------------------------------------------------------#
+
+#------------------------------------------------------------------#
+##### Orders to the robot #####
+#------------------------------------------------------------------#
+concept:(help) [
+    "aide-moi"
+    "à l'aide"
+    "{comment} peux-tu m'aider"
+    "{comment} tu peux m'aider"
+    "~can_you me [renseigner "donner ["une [info information]" "un renseignement" "des [infos informations renseignements]"]"]"
+    "j'ai besoin ["d'un renseignement" d'informations "d'une [information info]" "de renseignements" d'aide]"
+    "donne-moi un coup de main"
+    "je cherche ["une [info information]" "un renseignement" "des [infos informations renseignements]"]"
+]
+
+concept:(shut_up) [
+    "{"par pitié"} ["tais toi" "t'es toi" silence "{ferme} ta gueule" ferme-la "la ferme"]"
+    "~vb_ask_pouvoir ["fermer ta gueule" "te taire"]"
+    "arrête de parler"
+    "~i_dont_want_to [parler discuter]"
+    "[arrêter arrêtons] la [discussion conversation]"
+    "arrêtons de [parler discuter]"
+    "arrête {"un peu"} de [parler discuter]"
+    "ne parle plus"
+    "ne dis {plus} rien"
+]
+concept:(stop_it) ~shut_up
+concept:(talk_again) [
+    "parle-moi"
+    "{"c'est bon"} tu peux [parler reparler "te remettre à parler" "recommencer à parler" "parler de nouveau"]"
+]
+
+concept:(stop_application) [
+    "["arrête !pas" "!pas arrêter" "quitte !pas" "!pas quitter"] {"cette application" l'application tout "[le ce] [programme logiciel dialogue jeu]" "de parler"}"
+    "["change !pas" "!pas changer"] [d'application "de [programme logiciel sujet jeu]"]"
+    stop "ça suffit" "{c'est} assez" "arrête {ça}"
+    "j'en ai [marre "ras-le-bol" "ma claque" "plein ["le [dos cul]" "les fesses"]"]"
+    "["je n'en" j'en] peux plus"
+    "tu {me} [soules "fais chier" m'emmerdes "me fatigues" m'épuises]"
+]
+concept:(restart_application) [
+    "[recommence recommencer relancer relancer redémarre redémarrer] {"cette application" l'application tout "[le ce] [programme logiciel dialogue]"}"
+]
+concept:(repeat_it) [
+    "{pardon} [
+    "[répète redis] {moi} ["[la ta] {dernière} phrase" "ce que tu viens de dire" "ce que tu as dit avant"]"
+    "[repose répète redis] {moi} [la cette] {dernière} question"
+    "~can_you ["{me} ["répéter {ça}" "redire ça"]" "{me} ["reposer la question" "poser la question encore une fois" "répéter ce que tu as dit avant"]"]"
+    "redis ["moi ça" "le moi"]"
+    "[c'était c'est] quoi {déjà} la question"
+    "qu'est-ce que ["tu ["m'as demandé" "me demandais" disais]" "~vb_pos_you_avoir dit"]"
+    "["tu ["m'as demandé" "me demandais" disais]" "~vb_pos_you_avoir dit"] quoi"
+    plait-il
+    pardon
+    répète
+    ] {s'il-te-plait}"
+]
+concept:(stop_talking) [~verbs_imp_talk]
+concept:(stop_switching) [
+    "["arrête de [changer quitter]" "{ne} change pas"] de [sujet thème conversation] {"tout le temps" "à tout bout de champ"}"
+    "[arrête "~can_you arrêter"] de lancer des {nouveaux} sujets"
+    "reste dans ["le {même} [sujet thème]" "la {même} conversation"]"
+    "{ne} quitte pas ["le [sujet thème]" "la conversation"]"
+    "{ne} change pas de [sujet thème conversation]"
+    "~can_you ["arrêter de changer" "ne pas changer"] de [sujet thème conversation]"
+    "~can_you rester sur ["le même" ce] sujet"
+    "{ne} change {plus} jamais de [sujet thème conversation]"
+    "~i_dont_want_to [changer quitter lancer "que tu [changes quittes lances]"] de [sujet thème conversation]"
+]
+concept:(im_not_talking_to_you) [
+    "je parlais à quelqu'un d'autre"
+    "je {ne} te [parle parlais] pas"
+    "[c'est "ce n'est"] pas à toi que je [parlais parle]"
+]
+concept:(lets_talk_about) ["[parle parle-moi parlons "je [veux voudrais] parler"] {de du des}"]
+concept:(come_to_me) [
+    "viens [ici là "par [ici là]" "près de moi" "vers moi" "plus près" "à côté de moi"]"
+    "mets-toi ["près de moi" "à côté de moi" "plus près"]"
+    #ici là
+    "plus près"
+    "au pied"
+    approche
+    approche-toi
+    rapproche-toi
+    "[avance marche] vers moi"
+]
+#==================================================================#
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+concept:(hello) [
+    hello salut
+    bonjour bonsoir
+]
+concept:(thank_you) [
+    "je te [remercie "dis merci"]"
+    "merci {beaucoup infiniment "du fond du coeur"}"
+    "tous mes remerciements"
+    "c'est gentil"
+    "ça me touche"
+]
+concept:(i_like) [
+    "~vb_pos_i_être ~addicted"
+    ~vb_pos_i_aimer
+    ~vb_pos_i_kiffer
+    ~vb_pos_i_adorer
+    ~vb_neg_i_détester
+    ~vb_neg_i_haïr
+    "j'ai un {petit} faible pour"
+    "je suis obsédé par"
+    "j'ai une préférence pour"
+]
+concept:(i_dont_like) [
+    "~vb_pos_i_avoir ["horreur [de des du]"]"
+    ~vb_pos_i_détester
+    ~vb_pos_i_haïr
+    ~vb_neg_i_aimer
+    ~vb_neg_i_kiffer
+]
+concept:(i_dont_know) [
+    "~vb_neg_i_savoir ["{qu'est} ce que c'est" "c'est quoi"]"
+    "~vb_neg_i_connaître"
+    "{non} ["je {ne} sais pas" "[j'en "je n'en"] ["sais rien" "ai pas la moindre idée"]" "chai pas"]"
+    "{c'est} quoi"
+    "qu'est ce que c'est"
+    "~vb_neg_i_avoir {jamais} entendu parler {de ça}"
+    "c'est-a-dire"
+    "comment {ça}"
+    "je vais y réfléchir"
+]
+concept:(i_didnt_understand) [
+    "{désolé excuse-moi} ["je n'ai" j'ai] [pas rien] [compris saisi pigé capté entendu]"
+    "{désolé excuse-moi} ["je n'ai" j'ai] rien pané"
+    "{désolé excuse-moi} je {ne} [comprends pige capte] pas {"de quoi tu parles"}"
+    "de quoi ["tu parles" "[t'es "tu es"] en train de parler"]"
+    "["tu parles" "[t'es "tu es"] en train de parler"] de quoi"
+]
+concept:(you_didnt_understand) [
+    "["tu {ne} [comprends piges captes]" "t'entraves"] [rien makache queudale pas "quelque chose"]"
+    "c'est [vraiment absolument carrément] pas {"du tout"} ça"
+    "["tu n'as" t'as] {toujours} [rien "pas {bien}"] compris"
+]
+concept:(i_dont_care) [
+    "je m'en [fiche fous moque branle tamponne cogne] {de des du}"
+    "je m'en [bats tamponne] ["les couilles" "la bite" l'oeil "le coquillard" l'oeuf l'os] {de des du}"
+    "{~vb_pos_i_avoir "j'en n'ai"} rien à [faire foutre tamponner battre] {de des du}"
+    "[ça cela] {ne} m'intéresse [pas plus] {"du tout" "le moins du monde"}"
+    "[~vb_imp_parle ~vb_imp_cause] de ça"
+    "{j'ai "je n'ai"} pas d'avis"
+]
+concept:(i_already_know) [
+    "~vb_pos_i_savoir {déjà}"
+    "~vb_pos_i_connaître {déjà}"
+    "j'ai {déjà} entendu parler de"
+    "j'en ai {déjà} entendu parler"
+]
+concept:(im_not_sure) [
+    "je {ne} ["sais pas" "suis pas sur"]"
+    "pas sûr"
+    "chai pas"
+    "chui pas sûr"
+    "[j'en "je n'en"] ["sais rien" "ai pas la moindre idée"]"
+    "je réfléchis"
+    j'hésite
+    "aucune idée"
+]
+concept:(me_too) [
+    "moi aussi"
+    "également"
+    "moi de même"
+    "pareil {"pour moi"}"
+]
+concept:(its_not_true) [
+    "["ce n'est" c'est] pas [vrai "la vérité"]"
+    "c'est [faux "[un des] mensonge" idiot "[une des] bétise"]"
+    "ça ne veut rien dire"
+]
+concept:(its_a_stupid_question) [
+    "c'est {vraiment} une question {complètement vraiment parfaitement franchement particulièrement} ["{a la} con" "de merde" idiote débile stupide nase "pas intéressante" "sans intérêt"]"
+    "["qu'est-ce que c'est que" "c'est quoi"] ["ce délire" "cette [merde "question {"de merde" "a la con"}"]"]"
+    "["qu'est-ce que c'est" "c'est {complètement}"] [con naze nul idiot stupide débile "pas intéressant" "sans intérêt"]"
+    "c'est pas {très} [malin drôle intéressant]"
+]
+concept:(its_difficult) [
+    "{attends} c'est {vachement super ultra trop} [difficile dur]"
+    "c'est [difficile "pas [facile évident]"] de répondre {"à [ça "cette question"]"}"
+    "c'est une question [difficile "pas évidente"]"
+]
+concept:(guess) [
+    devine
+    "à ton avis"
+    "["tu en" t'en] penses quoi"
+    "tu me conseilles quoi"
+    "qu'est-ce que ["["tu en" t'en] penses" "tu me conseilles"]"
+]
+concept:(i_guess) [
+    ~it_is
+    "["je crois" "je pense" "~i_am [sûr sûre]"] que ~it_is"
+    "[ma la] réponse [est était]"
+    est-ce
+    était-ce
+    "ça peut être"
+    "ça pourrait être"
+]
+concept:(i_will_try) [
+    "je vais [essayer tenter]"
+    "essayons"
+]
+concept:(lets_talk_about) [
+    "~i_want_to ["parler de" "que tu me parles de"]"
+]
+concept:(you_didnt_answer_my_question) [
+    "["tu n'as" t'as] pas répondu à [ma la] question"
+    "tu {ne} m'a pas donné de réponse"
+    réponds-moi
+    "je veux que tu ["me répondes" "répondes à [ma la] question"]"
+]
+concept:(im_sorry) [désolé pardon excuse-moi navré pardonne-moi "je m'excuse" "je suis navré" "je suis désolé"]
+
+concept:(im_joking)["je rigole" "je blague" "je déconne" "[c'est c'était "je dis ça" "j'ai dis ça" "je disais ça" "je t'ai dit ça"] {*} pour [rire rigoler blaguer "te taquiner"]" ]
+
+#------------------------------------------------------------------#
+#CONSENT#
+#------------------------------------------------------------------#
+
+#INTERROGATION TOTALE#
+concept:(yes) [
+    e:Dialog/Yes
+    oui sisi sisisi ouais ok okay exact
+    yes yep
+    allez
+    cool
+    "{oui ouais} [
+        "s'il te plait"
+        "s'il vous plait"
+        "voilà"
+        "c'est bien ça"
+        "c'est {bien} cela"
+        "avec plaisir"
+        "pourquoi pas"
+        "je te l'accorde"
+        "plutot {oui ouais}"
+        "~vb_pos_i_vouloir bien"
+        "{"["on va dire" "bien sur" évidemment] que"} c'est vrai"
+        "on va dire ça"
+        "c'est [exact certain sur ça]"
+        "tout a fait"
+        "bien dit"
+        carrément absolument assurément certainement évidemment parfaitement précisément sûrement
+        exactement  grave certes d'accord  entendu volontiers complètement
+        "en effet"
+        "on peut dire ça"
+        "{~vb_pos_you_avoir} tout compris"
+        "c'est {"un peu" plutot} vrai"
+        "["bonne" excellente] idée"
+        "ça [roule marche]"
+        "je sais"
+        "très bien"
+        "[quelques des] fois"
+        parfois rarement beaucoup
+    ]"
+]
+
+concept:(no) [
+    e:Dialog/No
+    non nan "non non" "non non {et} non" "non merci"
+    bof
+    "{non} [
+        "[~vb_neg_i_être pas] [d'accord intéressé]"
+        "[~vb_neg_i_avoir pas] envie"
+        ~vb_neg_i_croire
+        "{non} ça [ira "va aller"]"
+        "pas [vraiment "du tout" "le moins du monde" spécialement question]"
+        aucunement nullement jamais
+        "[surtout absolument] pas"
+        "tu peux {toujours} [rêver courir rouler]"
+        "t'as rêvé"
+        "cause toujours"
+        "pas [maintenant vraiment tellement forcément trop "tout a fait" "pour [l'instant "le moment"]"]"
+        "c'est [faux "pas [ça vrai nécessaire "la peine"]"]"
+        "trop pas"
+        "ça {ne} te regarde pas"
+        "de quoi tu te mêles"
+        "qu'est ce que t'en as a [foutre faire]"
+        "occupe toi de tes [affaires oignons fesses]"
+        "jamais de la vie"
+        "ça {ne} me ["dit rien" "[tente parle] pas"]"
+        "sans façon"
+        "{"y a"} pas moyen"
+        "j'en ai assez entendu"
+        "tu ["te trompes" "as tort"]"
+        "pas grand-chose"
+        bof
+    ]"
+]
+
+#INTERROGATION PARTIELLE#
+
+concept:(good_job)["bonne réponse" excellent parfait]
+concept:(agree)["ok" "je suis d'accord" "~vb_pos_i_agree_with toi" "no problémo" "pas de [problème souci]" "sans [problème "{aucun nul} doute"]" "["il n'y a" "il y a" "y a"] ["pas de" nul] doute" "fais-le" "vas-y" vazy "bien [évidemment sur]" "si tu veux"]
+
+#------------------------------------------------------------------#
+
+#------------------------------------------------------------------#
+#concept:(confirm)[oui ouais voilà "c'est bien cela" "c'est bien ça" "c'est ça" exactement absolument "tout à fait" "s'il te plaît" "s'il vous plaît"]
+
+#------------------------------------------------------------------#
+##### Human mood #####
+#------------------------------------------------------------------#
+concept:(im_good) [
+    "[~vb_pos_i_être "je me sens"] [bien "en forme"]"
+    "ça va {bien}"
+    super
+    impec
+    bien
+    "j'ai [la une] [forme pêche patate] {d'enfer}"
+    "ça [roule gaze]"
+    "tout va bien"
+]
+concept:(im_ok) [
+    couci-couça
+    moyen
+    "["on fait" "ça peut"] aller"
+    "{"comme ci"} comme ça"
+    "pas trop mal"
+]
+concept:(i_dont_feel_good) [
+    non bof
+    "pas ["du tout" "{très trop} bien" terrible]"
+    "{super très} mal"
+    "moins bien"
+    "ça {ne} va pas {fort}"
+    "[~vb_neg_i_être "["je {ne} me sens" "j'me sens"] pas"] [super "{très} bien" "{au} top" terrible génial "[en "au mieux de ma"] forme"]"
+    "{"je me sens"} de moins en moins bien"
+    "j'ai connu mieux"
+    "ça va ["{très plutôt assez} mal" "pas {très} bien"]"
+    "[j'ai "je me suis fait"] mal"
+]
+concept:(im_sick) [
+    "~vb_pos_i_être {"un peu" très} [malade enrhumé barbouillé]"
+    "j'ai ["{très} mal ["à la [tête gorge]" "au ventre"]" "la grippe" "un [rhume torticolis]" "une [angine migraine gastro otite]" "de la toux" "des maux de tête"]"
+    "je tousse"
+]
+concept:(im_tired) [
+    "~vb_pos_i_être [fatigué crevé lessivé mort explosé épuisé fracassé "à l'ouest"]"
+    "un peu [fatigué "à l'ouest" sommeil]"
+    "j'ai [sommeil "la tête dans le [cul paté]" "du mal" "besoin [de d'aller] dormir"]" "un {petit gros} coup de barre"
+]
+concept:(im_angry) [
+    "[~you_are ~it_is] [débile moche merdique inutile pourri stupide idiot "à coté de la plaque"]"
+    "~you_are un [idiot imbécile]"
+    "ça craint" "tu crains"
+    "{t'es "tu es" c'est} [moche merdique inutile nul nase pourri malsain moisi stupide idiot idiote crétin bête "à coté de la plaque" "sans intérêt" "ni fait ni a faire" "a chier"]"
+    "tu [crains pues]"
+]
+#==================================================================#
+
+#==================================================================#
+##### Miscellaneous #####
+concept:(proposition_next) [
+    "pose-moi ["des questions" "une {autre} question"]"
+    "[demande-moi propose-moi dis-moi raconte-moi] ["quelque chose" "un truc"]"
+    "tu [peux pourrais] me poser ["des questions" "une {autre} question"]"
+    #"[propose propose-moi] quelque chose"
+    "[parle parle-moi parlons] d'autre chose"
+    "~can_you me dire ["quelque chose" "un truc"]"
+    "~do_you_have ["quelque chose" "un truc"] a me [dire raconter]"
+    "["qu'as-tu" "qu'est-ce que tu as"] à me dire"
+    "["que veux-tu" "qu'est-ce que tu veux"] me dire"
+    "je [veux voudrais] que tu me dises ["quelque chose" "un truc"]"
+]
+#------------------------------------------------------------------#
+concept:(happy_human) [génial excellent super "trop [bien cool]" "c'est {très} gentil" "c'est [super bien génial top]"]
+#==================================================================#
+concept:(what_were_you_saying) [
+    "["quelle [est était]" "[c'est c'était] quoi" "qu'est-ce ["que [c'est c'était] {que}" que]"] {ta la} question"
+    "de quoi on [parle parlait "était en train de parler"]"
+    "on [parle parlait "était en train de parler"] de [quoi "quel sujet"]"
+    "tu ["as parlé" parlais] de quoi"
+]
+
+
+
+#==================================================================#
+##### DEPRECATED #####
+#------------------------------------------------------------------#
+concept:(confirmation) [~yes]
+#------------------------------------------------------------------#
+concept:(negation) [~no]
+#------------------------------------------------------------------#
+concept:(simple_neg) [non nan "non non" "non non {et} non" "{non} ["pas du tout" "absolument pas" "c'est [faux "pas vrai"]"]" "jamais de la vie"]
+#------------------------------------------------------------------#
+concept:(confirmation_purikura) [oui ouais ok "fais-le" "vas-y" "tout à fait" "bien évidemment"  "si tu veux" "pourquoi pas" absolument assurément "bien sûr" "c'est certain" certainement certes d'accord évidemment parfait parfaitement "très bien" "avec plaisir" précisemment sûrement entendu volontier "en effet" carrément "pas de [problème souci]" "sans problème" exactement "c'est exact" "t'as tout compris" "t'es [trop vraiment vachement] fort" "bonne réponse" "bien dit" "sans aucun doute" "sans doute" "il n'y a nul doute" "il n'y a pas de doute" "y a pas de doute" "c'est sur" "bonne idée" "excellente idée" "s'il te plait"]
+#------------------------------------------------------------------#
+concept: (negation_purikura) [non "non merci" "pas [vraiment "du tout"]" "je ne suis pas intéressé" "ça {ne} m'intéresse pas" quitte quitter "je {ne} veux pas" nan "je vais y réfléchir" aucunement nullement "surtout pas" "tu peux rêver" "t'as rêvé" "cause toujours" "tu peux toujours rêver" "pas pour [l'instant "le moment"]" "pas maintenant" "pas vraiment" "pas tout à fait" "pas tellement" "pas trop" "je suis pas d'accord" "["je n'ai" j'ai] pas envie" "j'aime pas ça" "{non} ça ira {merci}" "{non} ça va aller {merci}" "c'est pas vrai" "c'est faut" "absolument pas" "trop pas" "pas tout à fait" "ça {ne} te regarde pas" "de quoi tu te mêles" "qu'est ce que t'en as à foutre" "occupe toi de tes affaires" "qu'est ce que t'en as à faire" "jamais de la vie" "ça me dit rien" "ça me tente pas" "ça me parle pas" jamais]
+#------------------------------------------------------------------#
+concept:(rooms) ["la cuisine" "la salle de bain" "les toilettes" "le salon" "le séjour" "la salle de jeux" "la chambre {"à coucher"}" "le placard" "la cave" "le grenier" "le bureau" "le patio" "la cour" "le jardin"]
+#------------------------------------------------------------------#
+##astrologie
+concept:(jesuis_astro)["je suis" chui "{"je pense que"} [c'était c'est]"]
+concept:(insulte_astro)["{"espèce de" sale}{petit ptit}faillot" "tu penses m'avoir comme ça" "tu penses pouvoir m'avoir comme ça" "tu m'auras pas comme ça"]
+concept:(affirmation_kifkif)["c'est un peu vrai et un peu faux" "une part de vérité et une part de mensonge" "ni l'un ni l'autre" "tout n'est pas vrai"]
+##food
+concept:(aimer_boire_food)["j'adore boire" "j'aime bien boire" "j'aime boire" "j'aime bien" "j'aime" "j'adore" "je raffole" "je suis un grand buveur" "un bon"]
+##seasons
+concept:(aimer_saison)["j'aime {bien}" j'adore c'est]
+concept:(mybirthday) ["je suis né le" "c'est le" "mon anniversaire est le"]
+##food_1to10
+concept:(aimer_manger)["j'adore" "j'aime bien" "j'aime"]
+concept:(aimer_manger_de)["je raffole" "je suis un grand mangeur"]
+concept:(avoir_mange)["j'ai mangé" "j'ai bouffé"]
+concept:(aimer_manger_single_masc)"{"j'adore" "j'aime bien" "j'aime"} {manger} un bon"
+concept:(aimer_manger_single_fem)"{"j'adore" "j'aime bien" "j'aime"} {manger} une bonne"
+##misc
+concept:(later) ["plus tard" bientôt après "pas maintenant"]
+
+concept:(jeveux) [~i_want]
+concept:(jepeux) [~vb_pos_i_pouvoir]
+concept:(want_to_do) [~i_want]
+concept:(sorry) [~im_sorry]
+concept:(likeanimals) [~i_like c'est]
+concept:(cest) [
+    "c'est"
+    "je pense que c'est"
+    "à mon avis c'est"
+    "sans doute"
+    "et bien c'est"
+]
+concept:(cestquoi) ["c'est quoi" "qu'est-ce que c'est {que}" explique "explique-moi {"ce que c'est"}"]
+concept:(jaipas) ["je n'ai pas" "j'ai pas"]
+concept:(parle) [parle parle-moi parlons]
+##ask
+concept:(askconnaitre) [~vb_ask_connaître]
+concept:(asksavoir) [~vb_ask_savoir]
+concept:(askparler) ["parles-tu" "{"est-ce que"} tu parles"]
+concept:(askpreferer) [~vb_ask_préférer]
+concept:(askavoir) [~vb_ask_avoir]
+concept:(askposseder) ["possèdes-tu" "{"est-ce que"} tu possèdes"]
+concept:(askvouloir) [~vb_ask_vouloir]
+concept:(askva) [vas-tu "{"est-ce que"} tu vas"]
+concept:(askaimer) [~vb_ask_aimer]
+concept:(askadorer) ["adores-tu" "{"est-ce que"} tu adores"]
+concept:(asksouvenir) ["te souviens-tu de" "{"est-ce que"} tu te souviens de"]
+concept:(asketre) [~vb_ask_être]
+concept:(askporter) ["portes-tu" "{"est-ce que"} tu portes"]
+concept:(askenvoyer) ["envoies-tu" "{"est-ce que"} tu envoies"]
+concept:(askaller) [~vb_ask_aller]
+concept:(askutiliser) ["utilises-tu" "{"est-ce que"} tu utilises"]
+concept:(askcroire) [~vb_ask_croire]
+concept:(askquesavoir) ["que sais-tu" "qu'est-ce que tu sais"]
+concept:(askquepouvoir) ["que peux-tu" "qu'est-ce que tu peux"]
+concept:(askqueaimer) ["qu'aimes-tu" "qu'aime-tu" "qu'est-ce que tu aimes {bien}" "tu aimes quoi"]
+concept:(askquepenser) ["que penses-tu" "qu'est-ce que tu {en} penses"]
+concept:(askqueconnaitre) ["que connais-tu" "qu'est-ce que tu connais"]
+concept:(askquefaire) ["que fais-tu" "qu'est-ce que tu fais"]
+
+concept:(i_asked_you_to) ["je t'ai [dit demandé] de"]
+concept:(i_want_to_talk_about) ["~i_want_to ["parler de" "que tu me parles de"]"]
+concept:(your_name_is) ["ton nom est" "tu t'appelles"]
+concept:(whats_his_name) [
+    "["quel est" "c'est quoi"] le [nom titre]"
+    "comment ["s'appelle" "il s'appelle"]"
+]
+concept:(whats_your_name) [
+    "["quel est" "c'est quoi"] ton nom"
+    "comment ["tu t'appelles" "t'appelles-tu"]"
+]
+concept:(what_is_prenom)[
+    "[c'est c'était] quoi"
+    "[quel quelle] est"
+]
+concept:(happy_user) [génial excellent super "trop [bien cool]"]
+concept:(restart_it) [~restart_application]
+concept:(stop_app) [~stop_application]
+concept:(robot_didnt_understand) [~you_didnt_understand]
+concept:(i_dont_understand) [~i_didnt_understand]
+concept:(difficult_question) [~its_difficult]
+concept:(stupid_question) [~its_a_stupid_question]
+concept:(do_you_prefer) [~vb_ask_préférer]
+concept:(you_like) [~do_you_like]
+concept:(what_do) ["qu'est-ce que" "c'est quoi ce que"]
+concept:(verbs_inf_parler) [~verbs_inf_talk]
+concept:(verbs_imp_parler) [~verbs_imp_talk]
+concept:(adj_addicted) [~addicted]
+concept:(adj_total) [~complete]
+concept:(adj_size) [~size]
+
+
+#=======================================================================#
+###########################CATEGORY######################################
+
+concept:(instruments)[piano flute accordéon violon violoncelle contrebasse "flute à bec" harmonica guitare banjo "flute traversière" orgue synthé synthétiseur baryton tuba trompette sax saxophone euphonieum "contrebasse à vent" sousaphone ophicléide saxhorne sacqueboute cor clairon piccolo clarinette hautbois "hautbois d'amour" "cor anglais" basson contrebasson alto octobasse arpeggione pochette quinton rébec "viola pomposa" "violoncello da spalla" "violontchello da spalla" "violoncello piccolo" "violontchello piccolo" "viole de gambe" "viole d'amour" "viole d'orphée" "violon baroque" "violon d'amour" luth manfoline bandurria harpe lyre "guitare baroque" clavecin shamisen shamiseine]
+
+
+concept:(_entreprise_name)
+^first
+[
+"^containsKnowledge($Dialog/ID, knows, pepper_true_history) Aldébaran"
+"Softbank robotics"
+]
+
+
+
+#===================================================================#
+#########################SYNONYME####################################
+#===================================================================#
+
+concept:(livre)[bouquin roman]
+
+
+#==================================================================#
+##### ROBOT OUTPUTS #####
+#------------------------------------------------------------------#
+
+
+
+#==================================================================#
+
+#==================================================================#
+##### Output concept / Pronoun #####
+#------------------------------------------------------------------#
+
+
+concept:(he)
+^first
+[
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc il" 
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem elle" 
+"il"
+]
+concept:(she)
+^first
+[
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc il" 
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem elle" 
+"elle"
+]
+
+concept:(il)~he
+concept:(elle)~she
+
+concept:(chez_lui)
+^first
+[
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc chez lui" 
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem chez elle" 
+"chez lui"
+]
+
+concept:(chez_elle)
+^first
+[
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc chez lui" 
+"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem chez elle" 
+"chez elle"
+]
+
+
+#==================================================================#
+
+concept:(its_up_to_you) [
+    "comme tu [veux "le sens" préfères]" 
+    "peu importe" 
+    "peu m'importe" 
+    "c'est toi qui [vois choisis]"
+    "choisis au [hasard pif]"
+    "choisis pour moi"
+    choisis décide
+]
+
+concept:(do_it_again) [
+    "refais-le" 
+    "fais-le ["de nouveau" encore]"
+    refais 
+    recommence
+    "~can_you {le} [refaire recommencer "faire [encore "de nouveau"]"]"
+]
+
+#=======================================================================#
+###########################FUNCTIONS######################################
+
+
+#=======================================================================#
+#=======================================================================#
+########################ANIMATIONS#######################################
+#=======================================================================#
+#=======================================================================#
+
+
+#NEGATIVE ANIMATIONS 
+concept:(animation_sad) ^rand["^run(animations/Stand/Emotions/Negative/Sad_1)" "^run(animations/Stand/Emotions/Negative/Sad_1)"]
+concept:(animation_angry) ^rand["^run(animations/Stand/Emotions/Negative/Angry_1)" "^run(animations/Stand/Emotions/Negative/Angry_2)" "^run(animations/Stand/Emotions/Negative/Angry_3)" "^run(animations/Stand/Emotions/Negative/Angry_4)" "^run(animations/Stand/Gestures/Angry_1)" "^run(animations/Stand/Gestures/Angry_2)" "^run(animations/Stand/Gestures/Angry_3)"]
+concept:(animation_anxious) ["^run(animations/Stand/Emotions/Negative/Anxious_1)"]
+concept:(animation_bored) ^rand["^run(animations/Stand/Emotions/Negative/Bored_1)" "^run(animations/Stand/Emotions/Negative/Bored_2)"]
+concept:(animation_disapointed)["^run(animations/Stand/Emotions/Negative/Disappointed_1)"]
+concept:(animation_Exhausted) ^rand["^run(animations/Stand/Emotions/Negative/Exhausted_1)" "^run(animations/Stand/Emotions/Negative/Exhausted_2)"]
+concept:(animation_fear) ^rand["^run(animations/Stand/Emotions/Negative/Fear_1)" "^run(animations/Stand/Emotions/Negative/Fear_2)" "^run(animations/Stand/Emotions/Negative/Fearful_1)"]
+concept:(animation_frustrated)["^run(animations/Stand/Emotions/Negative/Frustrated_1)"]
+concept:(animation_humiliated)["^run(animations/Stand/Emotions/Negative/Humiliated_1)"]
+concept:(animation_hurt) ^rand["^run(animations/Stand/Emotions/Negative/Hurt_1)" "^run(animations/Stand/Emotions/Negative/Hurt_1)"]
+concept:(animation_you_are_late)["^run(animations/Stand/Emotions/Negative/Late_1)"]
+concept:(animation_shocked) ^rand["^run(animations/Stand/Emotions/Negative/Shocked_1)" "^run(animations/Stand/Emotions/Negative/Surprise_1)" "^run(animations/Stand/Emotions/Negative/Surprise_2)" "^run(animations/Stand/Emotions/Negative/Surprise_3)"]
+concept:(animation_sorry)["^run(animations/Stand/Emotions/Negative/Sorry_1)"]
+concept:(animation_surprise)^rand["^run(animations/Stand/Emotions/Negative/Shocked_1)" "^run(animations/Stand/Emotions/Negative/Surprise_1)" "^run(animations/Stand/Emotions/Negative/Surprise_2)" "^run(animations/Stand/Emotions/Negative/Surprise_3)"]
+concept:(animation_desperate)^rand["^run(animations/Stand/Gestures/Desperate_1)" "^run(animations/Stand/Gestures/Desperate_2)" "^run(animations/Stand/Gestures/Desperate_3)" "^run(animations/Stand/Gestures/Desperate_4)" "^run(animations/Stand/Gestures/Desperate_5)"]
+concept:(animation_dont_understand)["^run(animations/Stand/Gestures/DontUnderstand_1)"]
+concept:(animation_no)["^run(animations/Stand/Gestures/No_1)" "^run(animations/Stand/Gestures/No_2)" "^run(animations/Stand/Gestures/No_3)" "^run(animations/Stand/Gestures/No_4)" "^run(animations/Stand/Gestures/No_5)" "^run(animations/Stand/Gestures/No_6)" "^run(animations/Stand/Gestures/No_7)" "^run(animations/Stand/Gestures/No_8)" "^run(animations/Stand/Gestures/No_9)"]
+concept:(animation_reject)^rand["^run(animations/Stand/Gestures/Reject_1)" "^run(animations/Stand/Gestures/Reject_2)" "^run(animations/Stand/Gestures/Reject_3)" "^run(animations/Stand/Gestures/Reject_4)" "^run(animations/Stand/Gestures/Reject_5)" "^run(animations/Stand/Gestures/Reject_6)"]
+
+#POSITIVE ANIMATIONS
+concept:(animation_amused)["^run(animations/Stand/Emotions/Positive/Amused_1)"]
+concept:(animation_confident)["^run(animations/Stand/Emotions/Positive/Confident_1)"]
+concept:(animation_ecstatic)["^run(animations/Stand/Emotions/Positive/Ecstatic_1)"]
+concept:(animation_enthusiastic)^rand["^run(animations/Stand/Emotions/Positive/Enthusiastic_1)" "^run(animations/Stand/Gestures/Enthusiastic_3)" "^run(animations/Stand/Gestures/Enthusiastic_4)" "^run(animations/Stand/Gestures/Enthusiastic_5)"]
+concept:(animation_excited) ^rand["^run(animations/Stand/Emotions/Positive/Excited_1)" "^run(animations/Stand/Emotions/Positive/Excited_2)" "^run(animations/Stand/Emotions/Positive/Excited_3)" "^run(animations/Stand/Gestures/Excited_1)"]
+concept:(animation_happy)^rand["^run(animations/Stand/Emotions/Positive/Happy_1)" "^run(animations/Stand/Emotions/Positive/Happy_2)" "^run(animations/Stand/Emotions/Positive/Happy_3)" "^run(animations/Stand/Emotions/Positive/Happy_4)"]
+concept:(animation_happyBirthday)["^run(animations/Stand/Waiting/HappyBirhtday1)"]
+concept:(animation_hungry)["^run(animations/Stand/Emotions/Positive/Hungry_1)"]
+concept:(animation_hysterical)["^run(animations/Stand/Emotions/Positive/Hysterical_1)"]
+concept:(animation_interested)["^run(animations/Stand/Emotions/Positive/Interested_1)" "^run(animations/Stand/Emotions/Positive/Interested_2)"]
+concept:(animation_laugh)^rand["^run(animations/Stand/Emotions/Positive/Laugh_1)" "^run(animations/Stand/Emotions/Positive/Laugh_2)" "^run(animations/Stand/Emotions/Positive/Laugh_3)"]
+concept:(animation_mocker)["^run(animations/Stand/Emotions/Positive/Mocker_1)"]
+concept:(animation_optimistic)["^run(animations/Stand/Emotions/Positive/Optimistic_1)"]
+concept:(animation_peaceful)["^run(animations/Stand/Emotions/Positive/Peaceful_1)"]
+concept:(animation_proud) ^rand["^run(animations/Stand/Emotions/Positive/Proud_1)" "^run(animations/Stand/Emotions/Positive/Proud_2)" "^run(animations/Stand/Emotions/Positive/Proud_3)"]
+concept:(animation_relieved)["^run(animations/Stand/Emotions/Positive/Relieved_1)"]
+concept:(animation_shy)^rand["^run(animations/Stand/Emotions/Positive/Shy_1)" "^run(animations/Stand/Emotions/Positive/Shy_2)" "^run(animations/Stand/Gestures/Shy_1)"]
+concept:(animation_sure)["^run(animations/Stand/Emotions/Positive/Sure_1)"]
+concept:(animation_winner)^rand["^run(animations/Stand/Emotions/Positive/Winner_1)" "^run(animations/Stand/Emotions/Positive/Winner_2)"]
+concept:(animation_great)["^run(animations/Stand/Gestures/Great_1)"]
+concept:(animation_joy)["^run(animations/Stand/Gestures/Joy_1)"]
+concept:(animation_kisses)["^run(animations/Stand/Gestures/Kisses_1)"]
+concept:(animation_yes)^rand["^run(animations/Stand/Gestures/Yes_1)" "^run(animations/Stand/Gestures/Yes_2)" "^run(animations/Stand/Gestures/Yes_3)"]
+concept:(animation_love_you)["^run(animations/Stand/Waiting/LoveYou_1)"]
+concept:(animation_relaxation)^rand["^run(animations/Stand/Waiting/Relaxation_1)" "^run(animations/Stand/Waiting/Relaxation_2)" "^run(animations/Stand/Waiting/Relaxation_3)" "^run(animations/Stand/Waiting/Relaxation_4)"]
+
+
+#NEUTRAL ANIMATIONS
+concept:(animation_remember) ^rand["^run(animations/BodyTalk/Thinking/Remember_3)" "^run(animations/BodyTalk/Thinking/Remember_2)" "^run(animations/BodyTalk/Thinking/Remember_1)"]
+concept:(animation_alienated)["^run(animations/Stand/Emotions/Neutral/Alienated_1)"]
+concept:(animation_ask_for_attention)^rand["^run(animations/Stand/Emotions/Neutral/AskForAttention_1)" "^run(animations/Stand/Emotions/Neutral/AskForAttention_2)" "^run(animations/Stand/Emotions/Neutral/AskForAttention_3)"]
+concept:(animation_cautious)["^run(animations/Stand/Emotions/Neutral/Cautious_1)"]
+concept:(animation_confused)["^run(animations/Stand/Emotions/Neutral/Confused_1)"]
+concept:(animation_Determined)["^run(animations/Stand/Emotions/Neutral/Determined_1)"]
+concept:(animation_Embarassed)["^run(animations/Stand/Emotions/Neutral/Embarassed_1)"]
+concept:(animation_hesitation)["^run(animations/Stand/Emotions/Neutral/Hesitation_1)"]
+concept:(animation_innocent)["^run(animations/Stand/Emotions/Neutral/Innocent_1)"]
+concept:(animation_lonely)["^run(animations/Stand/Emotions/Neutral/Lonely_1)"]
+concept:(animation_mischievous)["^run(animations/Stand/Emotions/Neutral/Mischievous_1)"]
+concept:(animation_puzzled)["^run(animations/Stand/Emotions/Neutral/Puzzled_1)"]
+concept:(animation_sneeze)["^run(animations/Stand/Emotions/Neutral/Sneeze_1)"]
+concept:(animation_stubborn)["^run(animations/Stand/Emotions/Neutral/Stubborn_1)"]
+concept:(animation_suspicious)["^run(animations/Stand/Emotions/Neutral/Suspicious_1)"]
+concept:(animation_bow) ^rand["^run(animations/Stand/Gestures/BowShort_1)" "^run(animations/Stand/Gestures/BowShort_2)" "^run(animations/Stand/Gestures/BowShort_3)"]
+concept:(animation_but)["^run(animations/Stand/Gestures/But_1)"]
+concept:(animation_calm_down) ^rand["^run(animations/Stand/Gestures/CalmDown_1)" "^run(animations/Stand/Gestures/CalmDown_2)" "^run(animations/Stand/Gestures/CalmDown_3)" "^run(animations/Stand/Gestures/CalmDown_4)" "^run(animations/Stand/Gestures/CalmDown_5)" "^run(animations/Stand/Gestures/CalmDown_6)"]
+concept:(animation_choice)["^run(animations/Stand/Gestures/Choice_1)"]
+concept:(animation_come_on)["^run(animations/Stand/Gestures/ComeOn_1)"]
+concept:(animation_confused)^rand["^run(animations/Stand/Gestures/Confused_1)" "^run(animations/Stand/Gestures/Confused_2)"]
+concept:(animation_count_five)["^run(animations/Stand/Gestures/CountFive_1)"]
+concept:(animation_count_four)["^run(animations/Stand/Gestures/CountFour_1)"]
+concept:(animation_count_three)["^run(animations/Stand/Gestures/CountThree_1)"]
+concept:(animation_count_two)["^run(animations/Stand/Gestures/CountTwo_1)"]
+concept:(animation_count_one)["^run(animations/Stand/Gestures/CountOne_1)"]
+concept:(animation_count_more)["^run(animations/Stand/Gestures/CountMore_1)"]
+concept:(animation_everything)^rand["^run(animations/Stand/Gestures/Everything_1)" "^run(animations/Stand/Gestures/Everything_2)" "^run(animations/Stand/Gestures/Everything_3)" "^run(animations/Stand/Gestures/Everything_4)" "^run(animations/Stand/Gestures/Everything_5)" "^run(animations/Stand/Gestures/Everything_6)"]
+concept:(animation_explain)^rand["^run(animations/Stand/Gestures/Explain_1)" "^run(animations/Stand/Gestures/Explain_2)" "^run(animations/Stand/Gestures/Explain_3)" "^run(animations/Stand/Gestures/Explain_4)" "^run(animations/Stand/Gestures/Explain_5)" "^run(animations/Stand/Gestures/Explain_6)" "^run(animations/Stand/Gestures/Explain_7)" "^run(animations/Stand/Gestures/Explain_8)" "^run(animations/Stand/Gestures/Explain_9)" "^run(animations/Stand/Gestures/Explain_10)" "^run(animations/Stand/Gestures/Explain_11)"]
+concept:(animation_far)^rand["^run(animations/Stand/Gestures/Far_1)" "^run(animations/Stand/Gestures/Far_2)" "^run(animations/Stand/Gestures/Far_3)"]
+concept:(animation_follow)["^run(animations/Stand/Gestures/Follow_1)"]
+concept:(animation_give)^rand["^run(animations/Stand/Gestures/Give_1)" "^run(animations/Stand/Gestures/Give_2)" "^run(animations/Stand/Gestures/Give_3)" "^run(animations/Stand/Gestures/Give_4)" "^run(animations/Stand/Gestures/Give_5)" "^run(animations/Stand/Gestures/Give_6)"]
+concept:(animation_he_says)^rand["^run(animations/Stand/Gestures/HeSays_1)" "^run(animations/Stand/Gestures/HeSays_2)" "^run(animations/Stand/Gestures/HeSays_3)"]
+concept:(animation_hey)^rand["^run(animations/Stand/Gestures/Hey_1)" "^run(animations/Stand/Gestures/Hey_2)" "^run(animations/Stand/Gestures/Hey_3)" "^run(animations/Stand/Gestures/Hey_4)" "^run(animations/Stand/Gestures/Hey_5)" "^run(animations/Stand/Gestures/Hey_6)" "^run(animations/Stand/Gestures/Hey_7)" "^run(animations/Stand/Gestures/Hey_8)" "^run(animations/Stand/Gestures/Hey_9)"]
+concept:(animation_hide)["^run(animations/Stand/Gestures/Hide_1)"]
+concept:(animation_hot)^rand["^run(animations/Stand/Gestures/Hot_1)" "^run(animations/Stand/Gestures/Hot_2)"]
+concept:(animation_dont_know)^rand["^run(animations/Stand/Gestures/DontKnow_1)" "^run(animations/Stand/Gestures/DontKnow_2)" "^run(animations/Stand/Gestures/DontKnow_3)" "^run(animations/Stand/Gestures/DontKnow_4)" "^run(animations/Stand/Gestures/DontKnow_5)" "^run(animations/Stand/Gestures/DontKnow_6)"]
+concept:(animation_look)^rand["^run(animations/Stand/Gestures/Look_1)" "^run(animations/Stand/Gestures/Look_2)"]
+concept:(animation_maybe)["^run(animations/Stand/Gestures/Maybe_1)"]
+concept:(animation_me)^rand["^run(animations/Stand/Gestures/Me_1)" "^run(animations/Stand/Gestures/Me_2)" "^run(animations/Stand/Gestures/Me_3)" "^run(animations/Stand/Gestures/Me_4)" "^run(animations/Stand/Gestures/Me_7)" "^run(animations/Stand/Gestures/Me_8)"]
+concept:(animation_mime)^rand["^run(animations/Stand/Gestures/Mime_1)" "^run(animations/Stand/Gestures/Mime_2)"]
+concept:(animation_next)["^run(animations/Stand/Gestures/Next_1)"]
+concept:(animation_nothing)^rand["^run(animations/Stand/Gestures/Nothing_1)" "^run(animations/Stand/Gestures/Nothing_2)"]
+concept:(animation_on_the_evening)^rand["^run(animations/Stand/Gestures/OnTheEvening_1)" "^run(animations/Stand/Gestures/OnTheEvening_2)" "^run(animations/Stand/Gestures/OnTheEvening_3)" "^run(animations/Stand/Gestures/OnTheEvening_4)" "^run(animations/Stand/Gestures/OnTheEvening_5)"]
+concept:(animation_please)^rand["^run(animations/Stand/Gestures/Please_1)" "^run(animations/Stand/Gestures/Please_2)" "^run(animations/Stand/Gestures/Please_3)"]
+concept:(animation_salute)^rand["^run(animations/Stand/Gestures/Salute_1)" "^run(animations/Stand/Gestures/Salute_2)" "^run(animations/Stand/Gestures/Salute_3)"]
+concept:(animation_show_floor)^rand["^run(animations/Stand/Gestures/ShowFloor_1)" "^run(animations/Stand/Gestures/ShowFloor_2)" "^run(animations/Stand/Gestures/ShowFloor_3)" "^run(animations/Stand/Gestures/ShowFloor_4)" "^run(animations/Stand/Gestures/ShowFloor_5)"]
+concept:(animation_show_sky)^rand["^run(animations/Stand/Gestures/ShowSky_1)" "^run(animations/Stand/Gestures/ShowSky_2)" "^run(animations/Stand/Gestures/ShowSky_3)" "^run(animations/Stand/Gestures/ShowSky_4)" "^run(animations/Stand/Gestures/ShowSky_5)" "^run(animations/Stand/Gestures/ShowSky_6)" "^run(animations/Stand/Gestures/ShowSky_7)" "^run(animations/Stand/Gestures/ShowSky_8)" "^run(animations/Stand/Gestures/ShowSky_9)" "^run(animations/Stand/Waiting/ShowSky_1)" "^run(animations/Stand/Waiting/ShowSky_2)"]
+concept:(animation_show_tablet)^rand["^run(animations/Stand/Gestures/ShowTablet_1)" "^run(animations/Stand/Gestures/ShowTablet_2)" "^run(animations/Stand/Gestures/ShowTablet_3)"]
+concept:(animation_strech)^rand["^run(animations/Stand/Gestures/Strech_1)" "^run(animations/Stand/Gestures/Strech_2)" "^run(animations/Stand/Waiting/Strech_1)" "^run(animations/Stand/Waiting/Strech_2)"]
+concept:(animation_surprised)["^run(animations/Stand/Gestures/Surprised_1)"]
+concept:(animation_take)["^run(animations/Stand/Gestures/Take_1)"]
+concept:(animation_take_place)^rand["^run(animations/Stand/Gestures/TakePlace_1)" "^run(animations/Stand/Gestures/TakePlace_1)"]
+concept:(animation_thinking)^rand["^run(animations/Stand/Gestures/Thinking_1)" "^run(animations/Stand/Gestures/Thinking_2)" "^run(animations/Stand/Gestures/Thinking_3)" "^run(animations/Stand/Gestures/Thinking_4)" "^run(animations/Stand/Gestures/Thinking_5)" "^run(animations/Stand/Gestures/Thinking_6)" "^run(animations/Stand/Gestures/Thinking_7)" "^run(animations/Stand/Gestures/Thinking_8)" "^run(animations/Stand/Waiting/Think_1)" "^run(animations/Stand/Waiting/Think_2)" "^run(animations/Stand/Waiting/Think_3)" "^run(animations/Stand/Waiting/Think_4)"]
+concept:(animation_this)^rand["^run(animations/Stand/Gestures/This_1)" "^run(animations/Stand/Gestures/This_2)" "^run(animations/Stand/Gestures/This_3)" "^run(animations/Stand/Gestures/This_4)" "^run(animations/Stand/Gestures/This_5)" "^run(animations/Stand/Gestures/This_6)" "^run(animations/Stand/Gestures/This_7)" "^run(animations/Stand/Gestures/This_8)" "^run(animations/Stand/Gestures/This_9)" "^run(animations/Stand/Gestures/This_10)" "^run(animations/Stand/Gestures/This_11)" "^run(animations/Stand/Gestures/This_12)" "^run(animations/Stand/Gestures/This_13)" "^run(animations/Stand/Gestures/This_14)" "^run(animations/Stand/Gestures/This_15)" ]
+concept:(animation_whats_this)^rand["^run(animations/Stand/Gestures/WhatSThis_1)" "^run(animations/Stand/Gestures/WhatSThis_2)" "^run(animations/Stand/Gestures/WhatSThis_3)" "^run(animations/Stand/Gestures/WhatSThis_4)" "^run(animations/Stand/Gestures/WhatSThis_5)" "^run(animations/Stand/Gestures/WhatSThis_6)" "^run(animations/Stand/Gestures/WhatSThis_7)" "^run(animations/Stand/Gestures/WhatSThis_8)" "^run(animations/Stand/Gestures/WhatSThis_9)" "^run(animations/Stand/Gestures/WhatSThis_10)" "^run(animations/Stand/Gestures/WhatSThis_11)" "^run(animations/Stand/Gestures/WhatSThis_12)" "^run(animations/Stand/Gestures/WhatSThis_13)" "^run(animations/Stand/Gestures/WhatSThis_14)" "^run(animations/Stand/Gestures/WhatSThis_15)" "^run(animations/Stand/Gestures/WhatSThis_16)"]
+concept:(animation_whisper)["^run(animations/Stand/Gestures/Whisper_1)"]
+concept:(animation_wings)^rand["^run(animations/Stand/Gestures/Wings_1)" "^run(animations/Stand/Gestures/Wings_2)" "^run(animations/Stand/Gestures/Wings_3)" "^run(animations/Stand/Gestures/Wings_4)" "^run(animations/Stand/Gestures/Wings_5)"]
+concept:(animation_you)^rand["^run(animations/Stand/Gestures/You_1)" "^run(animations/Stand/Gestures/You_2)" "^run(animations/Stand/Gestures/You_3)" "^run(animations/Stand/Gestures/You_4)" "^run(animations/Stand/Gestures/You_5)"]
+concept:(animation_you_know_what)^rand["^run(animations/Stand/Gestures/YouKnowWhat_1)" "^run(animations/Stand/Gestures/YouKnowWhat_2)" "^run(animations/Stand/Gestures/YouKnowWhat_3)" "^run(animations/Stand/Gestures/YouKnowWhat_4)" "^run(animations/Stand/Gestures/YouKnowWhat_5)" "^run(animations/Stand/Gestures/YouKnowWhat_6)"]
+concept:(animation_yum)["^run(animations/Stand/Gestures/Yum_1)"]
+concept:(animation_ethernet_off)^rand["^run(animations/Stand/Reactions/EthernetOff_1)" "^run(animations/Stand/Reactions/EthernetOff_2)"]
+concept:(animation_heat)["^run(animations/Stand/Reactions/Heat_1)" "^run(animations/Stand/Reactions/Heat_2)"]
+concept:(animation_lightshine)^rand["^run(animations/Stand/Reactions/LightShine_1)" "^run(animations/Stand/Reactions/LightShine_2)" "^run(animations/Stand/Reactions/LightShine_3)" "^run(animations/Stand/Reactions/LightShine_4)"]
+concept:(animation_see_color)^rand["^run(animations/Stand/Reactions/SeeColor_1)" "^run(animations/Stand/Reactions/SeeColor_2)" "^run(animations/Stand/Reactions/SeeColor_3)"]
+concept:(animation_see_something)^rand["^run(animations/Stand/Reactions/SeeSomething_1)" "^run(animations/Stand/Reactions/SeeSomething_2)" "^run(animations/Stand/Reactions/SeeSomething_3)" "^run(animations/Stand/Reactions/SeeSomething_4)" "^run(animations/Stand/Reactions/SeeSomething_5)" "^run(animations/Stand/Reactions/SeeSomething_6)" "^run(animations/Stand/Reactions/SeeSomething_7)" "^run(animations/Stand/Reactions/SeeSomething_8)"]
+concept:(animation_shake_body)^rand["^run(animations/Stand/Reactions/ShakeBody_1)" "^run(animations/Stand/Reactions/ShakeBody_2)" "^run(animations/Stand/Reactions/ShakeBody_3)"]
+concept:(animation_touch_head)^rand["^run(animations/Stand/Reactions/TouchHead_1)"  "^run(animations/Stand/Reactions/TouchHead_2)" "^run(animations/Stand/Reactions/TouchHead_3)" "^run(animations/Stand/Reactions/TouchHead_4)"]
+concept:(animation_look_hand)^rand["^run(animations/Stand/Waiting/LookHand_1)" "^run(animations/Stand/Waiting/LookHand_1)"]
+concept:(animation_hide_eyes)["^run(animations/Stand/Waiting/HideEyes_1)"]
+concept:(animation_hide_hands)["^run(animations/Stand/Waiting/HideHands_1)"]
+concept:(animation_play_hands)^rand["^run(animations/Stand/Waiting/PlayHands_1)" "^run(animations/Stand/Waiting/PlayHands_2)" "^run(animations/Stand/Waiting/PlayHands_3)"]
+concept:(animation_rest)["^run(animations/Stand/Waiting/Rest_1)"]
+
+
+#ANIMATIONS IMITATIONS
+concept:(animation_air_guitar)["^run(animations/Stand/Waiting/AirGuitar_1)"]
+concept:(animation_back_rubs)["^run(animations/Stand/Waiting/BackRubs_1)"]
+concept:(animation_band_master)["^run(animations/Stand/Waiting/BandMaster_1)"]
+concept:(animation_binoculars)["^run(animations/Stand/Waiting/Binoculars_1)"]
+concept:(animation_call_someone)["^run(animations/Stand/Waiting/CallSomeone_1)"]
+concept:(animation_drink)["^run(animations/Stand/Waiting/Drink_1)"]
+concept:(animation_drive)["^run(animations/Stand/Waiting/DriveCar_1)"]
+concept:(animation_fitness)^rand["^run(animations/Stand/Waiting/Fitness_1)" "^run(animations/Stand/Waiting/Fitness_2)" "^run(animations/Stand/Waiting/Fitness_3)"]
+concept:(animation_funny_dancer)["^run(animations/Stand/Waiting/FunnyDancer_1)"]
+concept:(animation_helicopter)["^run(animations/Stand/Waiting/Helicopter_1)"]
+concept:(animation_innocent)["^run(animations/Stand/Waiting/Innocent_1)"]
+concept:(animation_knight)["^run(animations/Stand/Waiting/Knight_1)"]
+concept:(animation_knockEye)["^run(animations/Stand/Waiting/KnockEye_1)"]
+concept:(animation_kungfu)["^run(animations/Stand/Waiting/KungFu_1)"]
+concept:(animation_monster)["^run(animations/Stand/Waiting/Monster_1)"]
+concept:(animation_mystical_power)["^run(animations/Stand/Waiting/MysticalPower_1)"]
+concept:(animation_robot)["^run(animations/Stand/Waiting/Robot_1)"]
+concept:(animation_scratch_back)["^run(animations/Stand/Waiting/ScratchBack_1)"]
+concept:(animation_scratch_bottom)["^run(animations/Stand/Waiting/ScratchBottom_1)"]
+concept:(animation_scratch_eye)["^run(animations/Stand/Waiting/ScratchEye_1)"]
+concept:(animation_scratch_hand)["^run(animations/Stand/Waiting/ScratchHand_1)"]
+concept:(animation_scratch_head)["^run(animations/Stand/Waiting/ScratchHead_1)"]
+concept:(animation_scratch_leg)["^run(animations/Stand/Waiting/ScratchLeg_1)"]
+concept:(animation_scratch_torso)["^run(animations/Stand/Waiting/ScratchTorso_1)"]
+concept:(animation_show_muscles)^rand["^run(animations/Stand/Waiting/ShowMuscles_1)" "^run(animations/Stand/Waiting/ShowMuscles_2)" "^run(animations/Stand/Waiting/ShowMuscles_3)" "^run(animations/Stand/Waiting/ShowMuscles_4)" "^run(animations/Stand/Waiting/ShowMuscles_5)"]
+concept:(animation_space_shuttle)["^run(animations/Stand/Waiting/SpaceShuttle_1)"]
+concept:(animation_take_picture)["^run(animations/Stand/Waiting/TakePicture_1)"]
+concept:(animation_taxi)["^run(animations/Stand/Waiting/Taxi_1)"]
+concept:(animation_wake_up)["^run(animations/Stand/Waiting/WakeUp_1)"]
+concept:(animtion_zombie)["^run(animations/Stand/Waiting/Zombie_1)"]

@@ -1,0 +1,6 @@
+multilanguage:dlg_engines
+  ged:dlg_engines_ged.top
+  enu:dlg_engines_enu.top
+  spe:dlg_engines_spe.top
+  frf:dlg_engines_frf.top
+  iti:dlg_engines_iti.top

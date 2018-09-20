@@ -1,0 +1,49 @@
+topic: ~dlg_internet_connection()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+##### IP adress #####
+#==================================================================#
+u:([
+    "[~what_is dame] tu {dirección} _[IP "de protocolo de Internet"]"
+    "[~what_is "dónde está"] tu [página sitio] web"
+])
+^run(dialog_internet_connection/bhr_IP_adress)
+
+u:(e:Dialog/sayIP)
+^first[
+    "Es $Dialog/IP ."
+    "No sé cuál es mi dirección [$1 IP], lo siento."
+]
+
+#==================================================================#
+##### WiFi Connection status #####
+#==================================================================#
+u:([~i_want_to "quiero que me ayudes a" "ayúdame a"] [configurar conectar] el [wifi internet wi-fi])
+Lo siento, no sé cómo hacer eso todavía. Por favor utiliza mi página web.
+
+
+
+u:([
+    "estás conectado a [wifi wi-fi internet "la web"]"
+    "tienes [wi-fi internet web]"
+    "{~ald_robots} [conéctame conéctate] a [wi-fi internet web]"
+])
+^run(dialog_internet_connection/bhr_network_status)
+
+u:(e:Dialog/Network/NoNetwork)
+No estoy conectado a Internet en este momento. Puedes conectarte a Internet a través de un cable Ethernet o wifi.
+
+u:(e:Dialog/Network/Ethernet)
+Estoy conectado a Internet mediante un cable Ethernet.
+
+u:(e:Dialog/Network/BlueTooth)
+Estoy conectado a Internet a través de una conexión Bluetooth.
+
+u:(e:Dialog/Network/WiFi)
+^first[
+    "Estoy conectado a Internet a través de wi-fi en una red llamada $Dialog/Network/WiFiSSID" 
+    "Estoy conectado a Internet a través de wi-wi en una red oculta".
+]

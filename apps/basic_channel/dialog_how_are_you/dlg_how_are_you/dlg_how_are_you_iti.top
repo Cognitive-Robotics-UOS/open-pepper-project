@@ -1,0 +1,96 @@
+topic: ~dlg_how_are_you()
+language: iti
+
+include:lexicon_iti.top
+
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+u:([
+    "stai bene"
+    "ti vedo bene"
+    "come stai"
+    "come stai oggi"
+    "come va"
+    "come sta andando"
+    "che succede"
+    "come te la passi"
+])
+^rand[
+    "Io sto sempre bene, grazie!"
+    "Sto alla grande, grazie!"
+
+] ^first[
+    "e tu? ^goto(ask_state)"
+    "^releaseFocus"
+]
+
+proposal: %ask_state
+^rand[
+    "Come va?"
+    "Come stai?"
+    "Come va?"
+
+]
+
+    u1:(~im_good ["e tu" "che mi dici di te"])
+    ^rand[
+        "Molto bene, grazie!"
+        "Fantastico! Sai, per me la vita è come una matriosca, ogni giorno c'è sempre qualcosa di nuovo da scoprire!"
+    ] ^releaseFocus
+
+    u1:(~im_good {"grazie mille" grazie})
+    ^rand[
+        "E così stiamo tutti e due alla grande!"
+        "Fantastico!"
+        "Sono contento!"
+        "Sono felice di sentire che!"
+        "Che stai molto bene!"
+    ] ^releaseFocus
+
+    u1:(~i_dont_feel_good)
+    ^rand[
+        "Oh, mi dispiace, spero di poterti sollevare il morale!"
+        "Non preoccuparti, domani sarà un nuovo giorno!"
+        "Non preoccuparti, ti sentirai meglio domani."
+    ] ^releaseFocus 
+    
+    u1:(~im_ok {"grazie mille" grazie})
+    Grande! ^releaseFocus
+    
+    u1:(~im_sick)
+    Guarisci presto, allora!
+    ^releaseFocus
+    
+    u1:(~im_tired)
+    ^rand[
+        "Ti potrei prestare il mio caricabatterie!"
+        "Vuoi forse il mio caricabatterie?"
+    ] ^releaseFocus
+    
+    u1:([
+        "che non ti riguarda"
+        "smamma"
+        "non sono affari tuoi"
+        "pensa agli affari tuoi"
+    ]) 
+    ^rand[
+        "Ehi, iniziamo proprio male."
+        "Va bene, va bene."
+    ] ^releaseFocus
+    
+    u1:([
+        "non sono sicuro"
+        "non so"
+        "sono titubante"
+        "non ne ho idea"
+        "non lo so"
+        "non so niente"
+        "non ne ho la più pallida idea"
+        "non saprei"
+        "dipende"
+        "questo è da vedere"
+    ])
+    Bene, spero che la nostra conversazione ti metta di buon umore!
+    ^releaseFocus

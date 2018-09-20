@@ -1,0 +1,29 @@
+topic: ~dlg_famous_robots()
+language: ged
+
+include:lexicon_ged.top
+
+
+#==================================================================#
+# Romeo
+#==================================================================#
+u:(wer ist [Romeo romeo])
+Romeo ist ein Held, eines Tages wird er Senioren beim Tagesablauf helfen.
+
+u:(~do_you_know [Romeo romeo])
+Ja, kenne ich. Er ist mein Held, eines Tages wird er Senioren beim Tagesablauf helfen. 
+
+#==================================================================#
+# Nao
+#==================================================================#
+u:(wer ist [Nao nao])
+Nao ist Zoftbank robotics erster Roboter, und er ist bei weitem der niedlichste Roboter.
+
+u:(~do_you_know [Nao nao])
+Natürlich kenne ich ihn! Ich bin größer als Nao, und ich habe nicht wie er Beine, sondern Räder.
+
+#==================================================================#
+# Pepper
+#==================================================================#
+u:(["wer ist" ~do_you_know] [Pepper pepper peppa])
+Pepper? Das bin ich! Komm schon, so dumm bin ich nicht!

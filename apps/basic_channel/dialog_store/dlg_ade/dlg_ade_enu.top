@@ -1,0 +1,65 @@
+topic: ~dlg_ade()
+language: enu
+
+include:lexicon_enu.top
+
+
+concept:(show_tablet) ^rand[
+    "^run(dialog_store/show_tablet/Show_tablet_1)"
+    "^run(dialog_store/show_tablet/Show_tablet_2)"
+    "^run(dialog_store/show_tablet/Show_tablet_3)"
+    "^run(dialog_store/show_tablet/Show_tablet_4)"
+    "^run(dialog_store/show_tablet/Show_tablet_5)"
+]
+
+###########################################################################################
+# How do I install an application?
+###########################################################################################
+u:(how ["[can do] I" to] install ["an [app application]" "apps applications"])
+It's simple, just login to the Aldebaran store and choose what applications you want to install.
+#It's easy, I'm going to open the Aldebaran store webpage on your computer. $webpage=ade_allapps ^runBehavior(abilities_split-285472/webpage)
+#Done, you can choose what you want to install.
+#messageIN: open store page
+
+#u:(I want to install a dance)
+#Ok, let's go on the dances page then. $webpage=ade_dances ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+#u:(I want to install a game)
+#Ok, let's go on the games page then. $webpage=ade_games ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+#u:(I want to install a story)
+#Ok, let's go on the stories page then. $webpage=ade_stories ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+###########################################################################################
+# How do I delete an application?
+###########################################################################################
+u:([
+    "how ["[can do] I" to] [uninstall delete remove] ["an [app application]" "apps applications"]"
+    "["I want to" "I'd like to" "I wish to"] [uninstall delete remove] ["an [app application]" "apps applications"]"
+])
+^first[
+    "$rundialogInstalled==1
+    It's simple, just login to the Aldebaran store, manage tab, and select me in your robot list. Then, go to installs, click on the activity's icon, and choose delete. If there's no delete option, it means that it's a default activity, and you cannot remove it."
+    
+    "^pCall(_ALAutonomousTablet.setMode(DisplayApplications))
+    ~show_tablet
+    It's simple, you just have to press the icon for a few seconds. Fill in your id and password, and voila!"
+]
+
+u:({"I want to" "I'd like to" "I wish to"} [uninstall delete remove] _~app-name)
+$delete_app=$1
+Are you sure you want to delete $delete_app ?
+    u1:(~yes)
+    ^first[
+        "$rundialogInstalled==1
+        To delete $delete_app , you just have to login to the Aldebaran store, manage tab, and select me in your robot list. Then, go to installs, click on the activity's icon, and choose delete. If there's no delete option, it means that it's a default activity, and you cannot remove it."
+        
+        "^call(ALRALManagerModule.removeApp($delete_app))
+        Okay, just fill in your id and password please!"
+    ]
+    
+    u1:(~no)
+    Okay! ^releaseFocus

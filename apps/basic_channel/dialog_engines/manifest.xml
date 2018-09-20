@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.1" uuid="dialog_engines">
+  <names>
+    <name lang="de_DE">dialog_engines</name>
+    <name lang="de_DE-x-scrald">dialog_engines</name>
+    <name lang="en_US">dialog_engines</name>
+    <name lang="en_US-x-scrald">dialog_engines</name>
+    <name lang="es_ES">dialog_engines</name>
+    <name lang="es_ES-x-scrald">dialog_engines</name>
+    <name lang="fr_FR">dialog_engines</name>
+    <name lang="fr_FR-x-scrald">dialog_engines</name>
+    <name lang="it_IT">dialog_engines</name>
+    <name lang="it_IT-x-scrald">dialog_engines</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">
+Die Roboterstarre kann mit Sprachbefehl an und aus geschaltet werden.
+</description>
+    <description lang="de_DE-x-scrald">
+Die Roboterstarre kann mit Sprachbefehl an und aus geschaltet werden.
+</description>
+    <description lang="en_US">The robot's stiffness can be verbally turned on and off.
+Examples of supported inputs:
+"Turn your engines on."
+"Turn your engines off."</description>
+    <description lang="en_US-x-scrald">The robot's stiffness can be verbally turned on and off.
+Examples of supported inputs:
+"Turn your engines on."
+"Turn your engines off."</description>
+    <description lang="es_ES">Los motores del robot se pueden encender y apagar verbalmente.
+Ejemplos de frases entendidas por el robot:
+"Apaga tus motores"
+"Enciende tus motores"</description>
+    <description lang="es_ES-x-scrald">Los motores del robot se pueden encender y apagar verbalmente.
+Ejemplos de frases entendidas por el robot:
+"Apaga tus motores"
+"Enciende tus motores"</description>
+    <description lang="fr_FR">Le robot peut activer ou désactiver la rigidité de ses moteurs en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Allume tes moteurs."
+"Éteins tes moteurs."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut activer ou désactiver la rigidité de ses moteurs en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Allume tes moteurs."
+"Éteins tes moteurs."</description>
+    <description lang="it_IT">La rigidità del robot può essere verbalmente attivata e disattivata.</description>
+    <description lang="it_IT-x-scrald">La rigidità del robot può essere verbalmente attivata e disattivata.</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="bhv_wake_up">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhv_rest">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent typeVersion="1.0" topicName="dlg_engines">
+      <topic path="dlg_engines/dlg_engines_ged.top" language="de_DE"/>
+      <topic path="dlg_engines/dlg_engines_enu.top" language="en_US"/>
+      <topic path="dlg_engines/dlg_engines_spe.top" language="es_ES"/>
+      <topic path="dlg_engines/dlg_engines_frf.top" language="fr_FR"/>
+      <topic path="dlg_engines/dlg_engines_iti.top" language="it_IT"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

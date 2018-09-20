@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_robots" version="0.0.6">
+ <names>
+  <name lang="en_US">dialog_robots</name>
+  <name lang="en_US-x-scrald">dialog_robots</name>
+  <name lang="fr_FR">dialog_robots</name>
+  <name lang="fr_FR-x-scrald">dialog_robots</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">The robot can answer several questions about robots and his buddies.
+
+Examples of supported inputs: "What is a robot?", "Do you know the laws of robotics", "Do you know Romeo".</description>
+  <description lang="en_US-x-scrald">The robot can answer several questions about robots and his buddies.
+
+Examples of supported inputs: "What is a robot?", "Do you know the laws of robotics", "Do you know Romeo".</description>
+  <description lang="fr_FR">Le robot peut répondre à des questions sur les robots et ses amis.
+
+Exemples de ce qu'il est possible de dire au robot : "C'est quoi un robot ?", "Connais-tu mes lois de la robotique ?", "Connais-tu Roméo ?".</description>
+  <description lang="fr_FR-x-scrald">Le robot peut répondre à des questions sur les robots et ses amis.
+
+Exemples de ce qu'il est possible de dire au robot : "C'est quoi un robot ?", "Connais-tu mes lois de la robotique ?", "Connais-tu Roméo ?".</description>
+ </descriptions>
+ <supportedLanguages>
+  <language>en_US</language>
+  <language>fr_FR</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>fr_FR</language>
+ </descriptionLanguages>
+ <contents>
+  <dialogContent topicName="dlg_robots" typeVersion="1.0">
+   <topic language="en_US" path="dlg_robots/dlg_robots_enu.top"/>
+   <topic language="fr_FR" path="dlg_robots/dlg_robots_frf.top"/>
+  </dialogContent>
+  <dialogContent topicName="dlg_asimov" typeVersion="1.0">
+   <topic language="en_US" path="dlg_asimov/dlg_asimov_enu.top"/>
+   <topic language="fr_FR" path="dlg_asimov/dlg_asimov_frf.top"/>
+  </dialogContent>
+  <dialogContent topicName="dlg_famous_robots" typeVersion="1.0">
+   <topic language="en_US" path="dlg_famous_robots/dlg_famous_robots_enu.top"/>
+   <topic language="fr_FR" path="dlg_famous_robots/dlg_famous_robots_frf.top"/>
+  </dialogContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement minVersion="2.1.2"/>
+  <robotRequirement model="JULIETTE"/>
+  <robotRequirement model="NAO"/>
+ </requirements>
+</package>

@@ -1,0 +1,11 @@
+topic: ~dlg_help()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+# User can request assistance from the robot
+#==================================================================#
+
+u:(~help)
+Je vais faire de mon mieux pour t'aider dans la limite de mes capacités!

@@ -1,0 +1,27 @@
+topic: ~dlg_robots()
+language: ged
+
+include:lexicon_ged.top
+
+u:(bist du ein roboter)
+Ja, ich bin ein humanoider Roboter!
+
+u:([
+    "~what_is ein humanoider roboter"
+    "was sind humanoide roboter"
+])
+Ein Roboter, der so gebaut wurde, dass er aussieht wie ein Mensch und sich auch so benimmt!
+
+u:([
+    "~what_is ein roboter"
+    "was sind roboter"
+])
+Wir sind Maschinen, die versuchen, den Menschen bei verschiedenen Aufgaben zu helfen!
+
+u:([
+    "~can_you menschen ersetzen?"
+    "werden roboter menschen ersetzen?"
+    "wirst du die menschen ersetzen?"
+    "werden roboter einmal die menschen ersetzen?"
+])
+Ich bin hier, um den Menschen zu dienen. Wenn es keine Menschen gibt, gibt es mich auch nicht.

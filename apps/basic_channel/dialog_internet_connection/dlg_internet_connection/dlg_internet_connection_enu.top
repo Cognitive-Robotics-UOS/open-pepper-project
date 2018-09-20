@@ -1,0 +1,48 @@
+topic: ~dlg_internet_connection()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### IP adress #####
+#==================================================================#
+u:([
+    "[~what_is "give me"] your _[IP "internet protocol"] {adress}"
+    "[~what_is "where is" where's] your web [page site]"
+])
+^run(dialog_internet_connection/bhr_IP_adress)
+
+u:(e:Dialog/sayIP)
+^first[
+    "It's $Dialog/IP ."
+    "I don't know what my [$1 IP] adress is, sorry."
+]
+
+#==================================================================#
+##### WiFi Connection status #####
+#==================================================================#
+
+u:([~i_want_to "help me"] [configure "connect to"] the [wifi wi-fi internet web])
+Sorry, I don't know how to do that yet. Please use my web page.
+
+u:([
+    "~are_you connected to the [wifi wi-fi internet web]"
+    "do you have ["the [wifi wi-fi web]" internet]"
+    "{~ald_robots} connect {me} to ["the [wifi wi-fi web]" internet]"
+])
+^run(dialog_internet_connection/bhr_network_status)
+
+u:(e:Dialog/Network/NoNetwork)
+I'm not connected to the Internet at the moment. You can connect me to the internet via an Ethernet cable or WiFi.
+
+u:(e:Dialog/Network/Ethernet)
+I'm connected to the Internet via an Ethernet cable.
+
+u:(e:Dialog/Network/BlueTooth)
+I'm connected to the Internet via a BlueTooth connection.
+
+u:(e:Dialog/Network/WiFi)
+^first[
+    "I'm connected to the Internet via WiFi on a network named $Dialog/Network/WiFiSSID"
+    "I'm connected to the Internet via WiFi on a hidden network."
+]

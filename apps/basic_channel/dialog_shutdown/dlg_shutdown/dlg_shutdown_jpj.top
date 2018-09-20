@@ -1,0 +1,35 @@
+topic: ~dlg_shutdown()
+language: jpj
+
+include:lexicon_jpj.top
+
+#shutdown Pepper
+u:(ペッパー電源切って)
+\vct=145\\rspd=105\ あ、はァいっ！ \pau=500\ 魔たネぇえ？　\pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+#shutdown
+u:([電源切って 電源オフにして])
+%shutdown
+\vct=145\\rspd=105\ 自分の電源を切ればいいの？
+
+    #confirmation
+    u1:(~yes)
+    \vct=145\\rspd=105\ 了解。 \pau=500\ 魔たネぇえ？　\pau=3000\　^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+    
+    u1:(~no)
+    \vct=145\\rspd=105\ あ、違った？ \pau=500\ ごめんごめん。 ^releaseFocus
+    
+#reboot pepper   
+u:(ペッパー再起動して)
+\vct=145\\rspd=105\ はァ意っ。 \pau=500\ 又あとでネ \pau=3000\　^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+#reboot
+u:(再起動して)
+\vct=145\\rspd=105\再起動すればいいんだね？
+
+    #confirmation
+    u1:(~yes)
+    \vct=145\\rspd=105\ 了解！ \pau=500\ 又あとでネ \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+    
+    u1:(~no)
+    \vct=145\\rspd=105\ あ、違った？ \pau=500\ ごめんごめん。 ^releaseFocus

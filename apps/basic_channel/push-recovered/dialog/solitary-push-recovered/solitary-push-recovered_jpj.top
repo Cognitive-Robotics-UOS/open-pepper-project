@@ -1,0 +1,8 @@
+topic: ~solitary-push-recovered()
+language: jpj
+
+proposal: %push ^rand[
+    "^start(push-recovered/animations/pushed_0) \rspd=120\ \vct=130\ だれ蚊誰\vct=150\か！ \vct=160\こ、こっちに、僕をいじめる人が居ます！ ^wait(push-recovered/animations/pushed_0)"
+    "^start(push-recovered/animations/pushed_1) \vct=120\ 奈。っ菜。奈。\rspd=200\ くうう！ \rspd=140\ \vct=120\ ちょっとちょっと、気をつけてくださいよ！ ^wait(push-recovered/animations/pushed_1)"
+    "^start(push-recovered/animations/pushed_2) \pau=300\もうー、\vct=120\ \rspd=100\なに\vct=110\してるの！ \pau=700\ 汚れるじゃない？ \pau=2000\ \rspd=110\ ロボットをオサナイデ。 ^wait(push-recovered/animations/pushed_2)"
+    ]

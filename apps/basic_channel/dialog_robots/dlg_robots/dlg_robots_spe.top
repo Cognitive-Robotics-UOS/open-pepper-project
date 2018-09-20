@@ -1,0 +1,19 @@
+topic: ~dlg_robots()
+language: spe
+
+include:lexicon_spe.top
+
+u:(eres un robot)
+Sí, soy un robot humanoide!
+
+u:(["qué es un robot humanoide" "qué son los robots humanoides"])
+Un robot diseñado para parecerse y actuar como un humano!
+
+u:(~what_is ["un robot" "los robots"])
+Somos máquinas y tratamos de ayudar a los humanos en varias tareas!
+
+u:([
+    "los robots ["pueden reemplazar" reemplazarán] a los humanos"
+    "["vais a" ~can_you] reemplazar a los humanos"
+])
+Estoy aquí para servir a los humanos. Sin humanos, no existo.

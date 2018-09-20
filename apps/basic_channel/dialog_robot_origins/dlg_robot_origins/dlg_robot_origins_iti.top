@@ -1,0 +1,61 @@
+topic: ~dlg_robot_origins()
+language: iti
+
+#==================================================================#
+# Creators
+#==================================================================#
+u:([
+    "dove sei stato [realizzato progettato costruito creato fabbricato]"
+    "da dove vieni" 
+    "di dove sei" 
+    "chi ti ha [realizzato progettato costruito creato]"
+    "da chi sei stato [realizzato progettato costruito creato]"
+    "chi è colui che ti ha [realizzato progettato costruito creato]"
+])
+^rand[
+    "Sono stato progettato nel quartiere di Softbank robotics, a Parigi."
+    "Sono stato creato ad Softbank robotics, a Parigi."
+]
+
+#==================================================================#
+# Name's origin
+#==================================================================#
+u:([
+    "chi ha deciso di chiamarti così"
+    "chi ti ha chiamato così"
+    "chi ha scelto il tuo nome"
+
+])
+I miei creatori hanno scelto questo nome!
+
+u:([
+    "perché ti hanno chiamato Pepper"
+    "perché ti chiami Pepper"
+    "perché è il tuo nome è Pepper"
+    "perché ti chiamano Pepper"
+])
+$Dialog/RobotName==pepper Sono stato chiamato Pepper per dare un po' di pepe alla tua vita!
+
+u:([
+    "chi ti ha chiamato Pepper"
+    "chi ha deciso di chiamarti Pepper"
+])
+[
+    "I miei creatori hanno deciso di chiamarmi Pepper"
+    "I miei creatori hanno scelto questo nome"
+]
+
+#==================================================================#
+# Aldebaran
+#==================================================================#
+#u:([
+#    "che cosa significa Aldebaran"
+#    "perché il nome Aldebaran"
+#    "perché è il nome della società Aldebaran"
+#    "qual è il significato di Aldebaran"
+
+#])
+#^first[
+#    "^topicTag(ald_robots_about_aldebaran, onAldebaran)"
+#    "Aldebaran è il nome di una stella luminosa e bella! Come te e me!"
+#]

@@ -1,0 +1,73 @@
+topic: ~dlg_posture_nao()
+language: jpj
+model: nao
+
+include: lexicon_jpj.top
+
+#=======#
+# Stand #
+#=======#
+
+u:([立ち上がって "立って{みて ください}"　立てる　立てますか　立て　立てんの　立ちなさい　立とうか　"立とう{ください　よ}"])
+%standup
+^first[
+    "^exist(NaoOnPod) えええ？ポッドに座ってるほうが楽なんで、本当に立つんですか？"
+    "[
+        $PostureChanged==Stand
+        $PostureChanged==StandInit
+        $PostureChanged==StandZero
+    ] 絵？僕、立ってますよ？ $RobotLastAnim="" ^releaseFocus"
+    "えええ？立つんですか？"
+]
+    u1:([~yes 立って　立つんです])
+    ^first[
+        "[
+            $PostureChanged==Stand
+            $PostureChanged==StandInit
+            $PostureChanged==StandZero
+        ] 絵？僕、立ってますよ？ $RobotLastAnim="" ^releaseFocus"
+        "^rand["ハ亜亜亜亜い？" "了解です！" "よし！ちょうどお尻が、痛くなってきてたんです！ありがとうございます！"]
+    ^runBehavior(dialog_posture/bhv_stand_up) $RobotLastAnim="stand""
+    ]
+    
+    u1:([~no やっぱいい　やっぱりいい　立たなくていい　立たないで　立たない])
+    ^rand["あ、ハ亜亜い。" "荒れ？そうなんですか？わかりました。"] $RobotLastAnim=""
+
+#"えええ？すみません、ポッドに座ってるほうがいいです。" "座ってるほうが楽なんで、今はいいです。"
+
+#=====#
+# Sit #
+#=====#
+
+u:({床に　下に　地面に　じべたに}[座って　座れ　座りなさい])
+^first[
+    "^exist(NaoOnPod) それなら、ポッドに戻してください！"
+    "$PostureChanged==Sit 絵？僕、座っテ升よ？"
+    "座ってもいいんですか？"
+]
+    u1:(~yes)
+    ^rand["ありがとうございます。" "やったああ、少し、休憩出来ます。"]
+    ^runBehavior(dialog_posture/bhv_sit_down) $RobotLastAnim="sit"
+    
+    u1:([~no 駄目　ダメ　よくない])
+    あ、そうですか、じゃぁ、このままでいますね。$RobotLastAnim=""
+#        u2:([冗談　うそうそ　座っていいよ　すわっていいです])
+#        うんもう！からかわないでくださいよお！\vct=110\\rspd=100\うふふふ\vct=110\\rspd=110\、ありがとうございます。
+#        ^runBehavior(dialog_posture/bhv_sit_down) $RobotLastAnim="sit"
+    
+
+#=====#
+# Lay #
+#=====#
+
+#========#
+# Crouch #
+#========#
+
+#==================================================================#
+# On one foot
+#==================================================================#
+
+#==================================================================#
+# Orders
+#==================================================================#

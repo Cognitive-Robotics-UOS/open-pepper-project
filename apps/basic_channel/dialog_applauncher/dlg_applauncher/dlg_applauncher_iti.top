@@ -1,0 +1,15 @@
+topic: ~dlg_applauncher()
+language: iti
+
+dynamic:app-trigger
+dynamic:app-name
+
+#==================================================================#
+##### Utilitary to launch applications #####
+#==================================================================#
+
+#u:(dimmi le tue applicazioni) ^enumerate(~app-name)
+u:([lancia comincia fai] _~app-name)
+$Dialog/StartApp=$1
+u:(_~app-trigger)
+$Dialog/StartApp=$1

@@ -1,0 +1,70 @@
+topic: ~dlg_goodbye()
+language: spe
+
+#include:lexicon_spe.top
+
+concept:(ald_robots_spe) [Pepper Peppersan]
+concept:(week_days) [lunes martes miércoles jueves viernes sábado domingo]
+
+#==================================================================#
+# Robot answers to goodbye
+#==================================================================#
+u:(_[
+    adiós 
+    "nos vemos" 
+    chao chau 
+    "hasta [luego pronto]"
+] {~ald_robots_spe})
+$1 !
+
+u:([
+    "me voy" 
+    "debo [marcharme irme]" 
+    "tengo que [marcharme irme]"
+    "me despido por ahora"
+] {~ald_robots_spe})
+Adiós!
+
+u:(hasta mañana {~ald_robots_spe})
+Hasta mañana!
+
+u:({"que tengas"} {un} [buen agradable] ["fin de semana" finde] {~ald_robots_spe})
+Buen fin de semana para ti también!
+
+u:(nos vemos el _~week_days {~ald_robots_spe})
+Nos vemos el $1 !
+
+u:([
+    "buenas noches"
+    "{me} voy a [acostarme acostar dormir "la cama" "[tomar echar] una siesta"]"
+    "tomaré una siesta"
+] {~ald_robots_spe})
+^first[
+    "$Dialog/Hour==0 Buenas noches {$user/name} !"
+    "$Dialog/Hour>0 $Dialog/Hour<4 Buenas noches {$user/name} !"
+    "$Dialog/Hour==4 Buenas noches {$user/name} !"
+    "$Dialog/Hour>4 $Dialog/Hour<12 Menuda fiesta ha tenido que ser la de anoche, {$user/name} ! Que duermas bien!"
+    "$Dialog/Hour==12 Que eches una buena siesta, {$user/name} !"
+    "$Dialog/Hour>12 $Dialog/Hour<17 Que eches una buena siesta, {$user/name} !"
+    "$Dialog/Hour==17 Que eches una buena siesta, {$user/name} !"
+    "$Dialog/Hour==18 Hoy te vas temprano a la cama {$user/name} Buenas noches!"
+    "$Dialog/Hour>18 $Dialog/Hour<20 Hoy te vas temprano a la cama {$user/name} Buenas noches!"
+    "$Dialog/Hour==20 Hoy te vas temprano a la cama {$user/name} Buenas noches!"
+    "$Dialog/Hour>20  Buenas noches {$user/name} !"
+]
+$go_to_sleep=1
+#u:({"see you"} later alligator)
+#In a while crocodile!
+
+u:([
+    "luego hablamos"
+    "[charlaremos habaremos conversaremos] más tarde"
+])
+De acuerdo! Fue agradable hablar contigo!
+
+u:(cuídate)
+Tú también cuídate!
+
+u:(a dormir)
+De acuerdo! Un poco de descanso vendrá bien! Nos vemos!
+$go_to_sleep_now=1

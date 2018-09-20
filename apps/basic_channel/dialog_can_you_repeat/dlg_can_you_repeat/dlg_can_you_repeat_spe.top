@@ -1,0 +1,58 @@
+topic: ~dlg_can_you_repeat()
+language: spe
+
+#include:lexicon_spe.top
+
+concept:(ald_robots) [Pepper Peppersan]
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+
+#repeat what I said#
+
+u:({~ald_robots} [
+    "qué {te} dije"
+    "qué {"crees que te"} he dicho"
+    "qué escuchaste"
+    "qué has [oído entendido]"
+    "qué entendiste"
+    "qué {"crees que"} te [pregunté "he preguntado" "he dicho"]"
+    "qué te pedí"
+])
+^rand[
+    "Creo que dijiste $Dialog/MatchedInput ."
+    "Escuché que dijiste $Dialog/MatchedInput ."
+] ^stayInScope
+
+
+#repeat#
+
+u:({~ald_robots} [
+    "repítelo {"por favor"}"
+    "puedes repetir {"lo que [dijiste "has dicho"]"} {"por favor"}"
+    "no [entendí "he entendido" oí "he oído"] {"lo que [dijiste "has dicho"]"}"
+    "no te [escuché "he escuchado"]"
+    "qué [dijiste "has dicho"]"
+])
+^rand[
+    "Lo repetiré,"
+    "Estaba diciendo,"
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([
+    "repítelo {"por favor"}"
+    "puedes repetir {"lo que [dijiste "has dicho"]"} {"por favor"}"
+    "no [entendí "he entendido" oí "he oído"] {"lo que [dijiste "has dicho"]"}"
+    "no te [escuché "he escuchado"]"
+    "qué [dijiste "has dicho"]"
+])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "    
+" \rspd=50\ $RobotRepeat \rspd=100\ "       
+" \rspd=300\ $RobotRepeat \rspd=100\ "        
+]     
+^stayInScope          

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package uuid="signs-and-feedback" version="0.1.2">
+    <services>
+        <service name="ALSignsAndFeedback" autorun="true" execStart="./python bin/signs_and_feedback" />
+        <executableFiles>
+            <file path="python" />
+        </executableFiles>
+    </services>
+    <requirements>
+        <naoqiRequirement minVersion="2.5" />
+        <robotRequirement model="JULIETTE"/>
+    </requirements>
+</package>
+
+

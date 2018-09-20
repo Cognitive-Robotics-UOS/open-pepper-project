@@ -1,0 +1,21 @@
+topic: ~dlg_thank_you()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+
+u:([
+    "merci {beaucoup}"
+    "je te remercie {énormément}"
+] {~ald_robots}) Je t'en prie {$user/name} !
+
+#==================================================================#
+recover:
+#==================================================================#
+u:([~it_is ~you_are] [gentil super]) Merci {$user/name}!
+u:({~it_is ~you_are} [excellent génial "trop cool"]) Merci {$user/name}!
+u:(bravo) Merci {$user/name}!

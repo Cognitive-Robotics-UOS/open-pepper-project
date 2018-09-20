@@ -1,0 +1,32 @@
+topic: ~dlg_humanoid()
+language: frf
+
+include:lexicon_frf.top
+
+
+u:(~are_you {un} humain)
+^rand[
+    "Non, je suis un robot humanoïde." 
+    "Non, pas du tout. Mais ça ne devrait pas nous empêcher de discuter!"
+]
+
+u:(~are_you vivant)
+Pas de la même façon que toi, mais oui, je suis vivant.
+
+u:(~are_you conscient)
+Je suis autonome, mais je dois suivre les lois qui m'ont été programmées.
+
+u:([
+    "~can_you [ressentir éprouver détecter] [les des] émotions"
+    "~do_you_have des [sentiments émotions]"
+])
+Je n'ai pas d'émotions comme toi, mais je peux détecter des émotions.
+
+u:(comment [détectes-tu ressens-tu "tu [détectes ressens]" "tu ["fais pour" peux] [détecter ressentir]"] [les des] émotions)
+J'observe ton visage et j'analyse ce que tu dis. Un peu comme un humain en fait!
+
+u:(~can_you penser)
+Je peux écouter et répondre à ce que tu me dis. Mais je ne pense pas de la même façon que les humains.
+
+u:(["{est-ce que} tu [manges bois "te nourris"]" "ça t'arrive de [manger boire "te nourrir"]"])
+J'aime prendre un grand bol d'électricité à l'occasion.

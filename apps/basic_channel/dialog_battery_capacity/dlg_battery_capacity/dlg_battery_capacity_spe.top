@@ -1,0 +1,29 @@
+topic: ~dlg_battery_capacity()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+##### General information about the battery #####
+#==================================================================#
+
+u:(["cuánto {tiempo}" "qué tanto"] {te} tardas en cargarte {"por completo" completamente})
+^first[
+    "$Dialog/RobotName==nao Necesito un poco menos de 3 horas para estar completamente cargado."
+    "$Dialog/RobotName==pepper Necesito aproximadamente 6 horas para estar completamente cargado."
+    "Lo siento, no sé cuánto tiempo tardo en cargar la batería!"
+]
+
+u:([
+    "~what_is tu autonomía"
+    "cuánta autonomía tienes"
+    "cuánto tiempo puedes [estar funcionar durar operar marchar] sin cargarte"
+    "con qué frecuencia te debes cargar"
+    "cuánto tiempo puedes [funcionar estar durar operar marchar] sin ser cargado"
+    "cuánto tiempo ["puede [durar marchar]" dura marcha] tu batería"
+])
+^first[
+    "$Dialog/RobotName==nao cuando estoy muy activo, mi batería dura aproximadamente 60 minutos, y 90 minutos sin tanta actividad."
+    "$Dialog/RobotName==pepper Mi batería tiene una duración de aproximadamente 12 horas!"
+    "Lo siento, no sé cuánto tiempo dura mi batería!"
+]

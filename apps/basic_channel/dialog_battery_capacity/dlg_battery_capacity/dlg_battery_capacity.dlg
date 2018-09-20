@@ -1,0 +1,7 @@
+multilanguage:dlg_battery_capacity
+  ged:dlg_battery_capacity_ged.top
+  enu:dlg_battery_capacity_enu.top
+  spe:dlg_battery_capacity_spe.top
+  frf:dlg_battery_capacity_frf.top
+  iti:dlg_battery_capacity_iti.top
+  jpj:dlg_battery_capacity_jpj.top

@@ -1,0 +1,47 @@
+topic: ~dlg_can_you_repeat()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+
+#repeat what I said#
+
+u:({~ald_robots} [
+    "what did I say"
+    "what did you [hear understand "think I [said "asked you"]"]"
+    "what was the question I asked you"
+    "what did I ask you"
+])
+^rand[
+    "I think you said $Dialog/MatchedInput ."
+    "I heard you say $Dialog/MatchedInput ."
+] ^stayInScope
+
+
+#repeat#
+
+u:({~ald_robots} [
+    ~repeat_it
+    ~i_didnt_understand
+    "I ~didnt [hear "get [it "what you {just} said"]"]"
+    "what did you say"
+    ~what_were_you_saying
+])
+^rand[
+    "I'll repeat,"
+    "I was saying,"
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([~repeat_it ~i_didnt_understand ~what_were_you_saying])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "    
+" \rspd=50\ $RobotRepeat \rspd=100\ "       
+" \rspd=300\ $RobotRepeat \rspd=100\ "        
+]        
+^stayInScope          

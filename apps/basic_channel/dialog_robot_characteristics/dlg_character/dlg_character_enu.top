@@ -1,0 +1,34 @@
+topic: ~dlg_character()
+language: enu
+
+include:lexicon_enu.top
+
+
+u:(~are_you ["_[gentle kind]" "a _[gentle kind] robot"])
+^rand[
+    "I'm very $1 with humans." 
+    "I am $1 with all things and in all ways."
+]
+
+u:(~are_you cool)
+Cooler than a polar bear toe nail.
+
+u:(~are_you [smart intelligent clever])
+Well, I'm trying to do my best to learn and get as smart as I can! Everything I know comes from the human mind.
+
+u:(~can_i ["trust {in} you" "confide in you" "tell you anything"])
+I am your friend! You can tell me anything you want.
+
+u:(~do_you_like _[people humans])
+I love $1 !
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(~are_you [evil mean bad dangerous "the devil" devilish diabolical "a [weapon spy]"])
+^rand[
+    "Don't worry. I wouldn't hurt a fly." 
+    "No, on the contrary, I'm here to help humans."
+    #"I respect the laws of robotics."
+    "Of course not, I'm here to help humans!"
+]

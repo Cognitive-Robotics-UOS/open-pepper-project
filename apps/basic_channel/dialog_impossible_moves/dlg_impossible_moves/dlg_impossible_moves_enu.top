@@ -1,0 +1,157 @@
+topic: ~dlg_impossible_moves ^noPick()
+language: enu
+
+include: lexicon_enu.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Ask me to do simpler moves, I can't move exactly like you humans do."
+    "I don't understand what you're asking, I probably don't know that movement yet."
+]
+
+u:^private([
+    "{what} {"kind of"} movements"
+    "["how can I" "help me"] be more [precise specific]"
+    "{"give me an"} example"
+])
+^rand[
+    "You can tell me to open my hands, or lift my arm, for example."
+    "You can ask me to move my head or move my hands."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Okay, I'll do it again." "Here I go again!"]
+    ^runBehavior($RobotLastAnim)"
+    "I think I have nothing to replay."
+] ^stayInScope
+
+u:([
+    "~i_want you to move"
+    "~can_you move"
+    "make {some} [moves movements]"
+    "~can_you [move "do some [moves movements]"]"
+])
+Yes! ^rand[
+    "You can tell me to open my hands, or lift my arm, for example."
+    "You can ask me to move my head or move my hands."
+] $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Hands
+#==================================================================#
+u:({~can_you} touch me {please})
+It's still a bit difficult for me to evaluate the distance between you and I. It's easier if you come and touch my head for example. $RobotLastAnim=""
+
+u:({~can_you} [point "raise your [arm hand fingers]"] at me)
+I can't see very well at the moment. I know where you are, but I can't do that, sorry. $RobotLastAnim=""
+
+u:({~can_you} [hold shake] my hand)
+I don't know how to do that yet. We can wave hello to each other!
+^runBehavior(dialog_impossible_moves/animations/Wave01)
+$RobotLastAnim=dialog_impossible_moves/animations/Wave01
+
+#==================================================================#
+# Impossible moves - Arms
+#==================================================================#
+
+u:({~can_you} cross your arms)
+^rand[
+    "Unfortunately, I can't."
+    "It's really frustrating for me, but I can't do that."
+]
+^runBehavior(dialog_impossible_moves/animations/CrossArms)
+$RobotLastAnim=dialog_impossible_moves/animations/CrossArms
+
+#==================================================================#
+# Impossible moves - Head
+#==================================================================#
+
+u:({~can_you} turn your head on a [180 360] degrees {angle})
+Like that?
+^runBehavior(dialog_impossible_moves/animations/TurnHead360)
+$RobotLastAnim=dialog_impossible_moves/animations/TurnHead360
+It's a bit difficult.
+
+#==================================================================#
+# Impossible moves - Body
+#==================================================================#
+
+u:(~can_you [spin "do a 3 60"])
+No, it's going to make me feel dizzy. $RobotLastAnim=""
+
+u:(~can_you walk)
+You can install the application, come here, and I'll come with you! $RobotLastAnim=""
+
+u:(~can_you roll)
+I can roll if you install the application come here. $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Others
+#==================================================================#
+
+u:({~can_you} ["hug me" "give me a hug"] {please})
+[
+    "I'm sorry, I don't know how to hug yet. Next time maybe!"
+    "Sorry, I haven't learnt how to hug."
+] $RobotLastAnim=""
+
+u:({~can_you} do a backflip)
+Let me give it a try!
+^runBehavior(dialog_impossible_moves/animations/Backflip)
+$RobotLastAnim=dialog_impossible_moves/animations/Backflip
+No, I'm too scared!
+
+    u1:([
+        "do it"
+        "do as I command"
+        "that's an order"
+        "I command you"
+        "don't be [scared "a pussy"]"
+        "you'll do it"
+        "come on"
+    ])
+    ^rand[
+        "No, really, I can't, sorry!"
+        "Sorry, I can't do that for the moment"
+        "No, no! Too scary, too scary for me."
+    ] $RobotLastAnim=dialog_impossible_moves/animations/Backflip
+
+u:([
+    "{~can_you} do ["push ups" "a push up"]"
+    "give me ["a push up" 10]"
+])
+I'm not sure I'll be able to get back on my wheels if I do that. $RobotLastAnim=""
+
+u:({~can_you} [fly jump "leave the ground"])
+Sorry, I can't for the moment.
+$RobotLastAnim=""
+
+#==================================================================#
+recover:
+#==================================================================#
+    
+u:(e:Dialog/Obstacle)
+Something prevents me from moving forward. There should be no obstacles in front of me.
+$RobotLastAnim=""
+
+u:([
+    ~come_to_me
+    "{"~i_want you to" ~can_you} ["walk forward" "go forward" "move forward"]"
+])    
+You can install the application, come here, and I'll come with you! $RobotLastAnim=""
+
+u:([
+    "{"~i_want you to" ~can_you} ["roll [forward backward]" "roll [back forward]"]"
+])    
+I can roll if you program me to. $RobotLastAnim=""
+
+u:({"~i_want you to" ~can_you} ["walk backwards" "go back" "move back"])
+Sorry, I haven't learnt to go back.
+$RobotLastAnim=""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

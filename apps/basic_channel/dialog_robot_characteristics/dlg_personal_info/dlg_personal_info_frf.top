@@ -1,0 +1,207 @@
+topic: ~dlg_personal_info()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Name
+#==================================================================#
+u:([
+    "comment ["tu t'appelles" "t'appelles-tu"]"
+    "tu t'appelles comment"
+    "["c'est quoi" "quel est" "qu'est-ce que c'est"] ton [nom prénom]"
+    "ton [nom prénom] c'est quoi"
+])
+^first[
+        "^exist(Dialog/RobotName) $saidName=1 ^rand[
+            "Je m'appelle $Dialog/RobotName !"
+            "Tu peux m'appeler $Dialog/RobotName !"
+            "Mon nom est $Dialog/RobotName !"
+        ]"
+    "Ça va peut-être te paraître étrange, mais je ne sais pas comment je m'appelle."
+]
+
+#==================================================================#
+# Nickname
+#==================================================================#
+u:({"~do_you_have un" "["c'est quoi" "quel est" "qu'est-ce que c'est"] ton"} _[surnom pseudo])
+$saidName=1 ^first[
+    "Mon _$1 est ~myrobotname ."
+    "Je suis juste $Dialog/RobotName ."
+    "Je ne sais pas, désolé."
+]
+
+#==================================================================#
+# Change name/nickname
+#==================================================================#
+u:(["je veux" "je voudrais" "j'aurais voulu" j'aimerais "je souhaiterais" "je souhaite" "j'ai envie de"] changer ton _[prénom nom pseudo])
+Pour l'instant, tu peux changer mon $1 en passant par ma page web.
+
+#==================================================================#
+# Composition
+#==================================================================#
+u:(~you_are [
+    "{fait} en quelle matière"
+    "fait en quoi"
+])
+Je suis principalement fait de plastique et de composants électroniques!
+
+#==================================================================#
+# Introduction
+#==================================================================#
+u:([
+    "parle moi {encore} de toi"
+    "dis m'en plus sur toi"
+    "["que peux-tu" "qu'est-ce que tu peux"] me dire sur toi"
+    "dis-moi ["quelque chose" "des [choses trucs]"] sur toi"
+    "donne-moi des [informations infos] sur toi"
+    présente-toi
+])
+%introduce_yourself
+$saidName=1
+^first
+[
+"^containsKnowledge(pepper, owner, ?) $owner_id=^queryKnowledge(pepper, owner, ?) je m'appelle $Dialog/MyRobotName et mon propiétaire est  ^queryKnowledge($owner_id, name, ?)"
+"je m'appelle $Dialog/MyRobotName je suis un robot humanoïde et je mesure 1 mètre 20. Je suis né dans les bureaux de Softbank robotics, à Paris."
+"Je m'appelle Pepper, je suis un robot humanoïde et je mesure 1 mètre 20. Je suis né dans les bureaux de Softbank robotics, à Paris."
+]
+^first[
+    "$talkedAboutBots==1 Et voilà! Tu sais tout!"
+    "^topicTag(ald_robots_share_about, about_my_buddies)"
+    "Tu peux me poser d'autres questions, si tu veux! $stopPush=1"
+]
+
+#==================================================================#
+# Size
+#==================================================================#
+u:([
+    "["c'est quoi" "quelle est" "qu'est-ce que c'est"] ta taille"
+    "combien [mesures-tu "tu [mesures mesure]"]"
+    "tu [mesures mesure] combien"
+    "quelle taille ["tu fais" fais-tu]"
+    "tu fais quelle taille" 
+])
+[
+    "Je mesure 1 mètre 20." 
+    "Ma taille est de 1 mètre 20."
+]
+
+#==================================================================#
+# Weight
+#==================================================================#
+u:([
+    "combien [pèses-tu "tu pèses"] {"en [kilos kilogrammes]"}" 
+    "quel poids [fais-tu "tu fais" pèses-tu "tu pèses"]"
+    "combien de _[kilos kilogrammes] [fais-tu "tu fais" pèses-tu "tu pèses"]"
+    "tu pèses combien"
+])
+Je pèse environ 29 [$1 kilogrammes].
+
+#==================================================================#
+# Age
+#==================================================================#
+u:([
+    "quel âge [t'as "tu as" as-tu]"
+    "["c'est quoi" "quel est" "qu'est-ce que c'est"] ton âge"
+    "~you_have quel âge"
+])
+
+En tant que Pepper le robot humanoïde, j'ai
+
+%script
+from datetime import *
+
+currentYear=datetime.now().year
+Pepper_age=currentYear-2014
+print Pepper_age
+
+%script
+
+ans.
+
+
+
+#==================================================================#
+# Birthday
+#==================================================================#
+u:([
+    "c'est quand {"le jour de"} ton anniversaire"
+    "ton anniversaire c'est quand"
+    "quand [est c'est] ton anniversaire"
+    "["c'est quoi" "quel est" "qu'est-ce que c'est"] ["ton anniversaire" "ta date [d'anniversaire anniversaire]"]"
+    "["quel jour" "en quelle année" quand] ~were_you [fait conçu construit créé inventé]"
+    "["quel jour" "en quelle année" quand] ~are_you né"
+    "~you_were [fait conçu construit créé inventé] ["quel jour" "en quelle année" quand]"
+    "~you_are né ["quel jour" "en quelle année" quand]"
+])
+Je suis né en 2014, mais je ne sais pas quel jour exactement. 
+
+#==================================================================#
+# Gender
+#==================================================================#
+u:([
+    "[~you_are es-tu] [
+        "un garçon ou une fille"
+        "une fille ou un garçon"
+        "un [garçon homme male]"
+        "une [fille femme femelle]"
+        "{"de sexe"} ["masculin ou féminin" "féminin ou masculin"]"
+    ]"
+    "["c'est quoi" "quel est" "qu'est-ce que c'est"] ton [sexe genre]"
+])
+^rand[
+    #"Au Japon, je suis considéré comme étant un garçon. Ailleurs, les gens me trouvent plutôt féminin. Au final, je suis juste un robot."
+    #"Tu peux me considérer comme un garçon ou une fille, mais dire que je suis un robot est plus sensé."
+    "Enfaite, je suis juste un robot!"
+]
+
+#==================================================================#
+# Color
+#==================================================================#
+u:([
+    "["c'est quoi" "quelle est" "qu'est-ce que c'est"] ta couleur"
+    "de quelle couleur [~you_are es-tu]"
+    "~you_are de quelle couleur"
+])
+^rand[
+    "Je suis tout de blanc vêtu!"
+    "Je suis tout en blanc. Le blanc, c'est chic!"
+]
+
+
+
+
+#==================================================================#
+# Tablet
+#==================================================================#
+u:([
+    "à quoi sert ta tablette"
+    "pourquoi ~do_you_have une tablette"
+    "[~what_can_you_do "qu'est-ce que je peux faire" "je peux faire quoi"] avec ta tablette"
+])
+Ma tablette est comme une fenêtre ouverte sur mon monde intérieur. Elle reflète mes émotions et mon état d'esprit. Si tu la touches, elle réagira.
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(~who_are_you)
+$saidName=1
+^first
+[
+"^containsKnowledge(pepper, owner, ?) $owner_id=^queryKnowledge(pepper, owner, ?) je m'appelle $Dialog/MyRobotName , je suis le robot de  ^queryKnowledge($owner_id, name, ?)"
+"Je suis Pepper. Mais tu peux m'appeler $Dialog/MyRobotName , c'est mon petit nom. Je suis le dernier né de softbank robotics!"
+"Je m'appelle Pepper et je suis le dernier né de softbank robotics!"]
+
+u:([
+    "~you_are quoi"
+    "qu'est-ce que ~you_are"
+])
+$saidName=1 Je m'appelle $Dialog/RobotName et je suis un robot humanoïde!
+
+u:([
+    "degrés de liberté"
+    "combien {de} degrés {de} liberté"
+    articulations
+])
+Grâce à toutes les articulations de mon corps, j'ai 20 degrés de liberté.

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.3" uuid="dialog_help">
+  <names>
+    <name lang="de_DE">dialog_help</name>
+    <name lang="de_DE-x-scrald">dialog_help</name>
+    <name lang="en_US">dialog_help</name>
+    <name lang="en_US-x-scrald">dialog_help</name>
+    <name lang="es_ES">dialog_help</name>
+    <name lang="es_ES-x-scrald">dialog_help</name>
+    <name lang="fr_FR">dialog_help</name>
+    <name lang="fr_FR-x-scrald">dialog_help</name>
+    <name lang="it_IT">dialog_help</name>
+    <name lang="it_IT-x-scrald">dialog_help</name>
+    <name lang="ja_JP">dialog_help</name>
+    <name lang="ja_JP-x-scrald">dialog_help</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann gebeten werden, Dem Benutzer zu helfen.
+Beispiel einer unterstützten Eingabe:
+"Kannst du mir helfen?"</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann gebeten werden, Dem Benutzer zu helfen.
+Beispiel einer unterstützten Eingabe:
+"Kannst du mir helfen?"</description>
+    <description lang="en_US">The robot can be asked to help the user.
+Example of supported input:
+"Can you help me?"</description>
+    <description lang="en_US-x-scrald">The robot can be asked to help the user.
+Example of supported input:
+"Can you help me?"</description>
+    <description lang="es_ES">Se le puede pedir al robot que ayude al usuario.
+Ejemplo de frases entendidas por el robot:
+"¿Puedes ayudarme por favor?"</description>
+    <description lang="es_ES-x-scrald">Se le puede pedir al robot que ayude al usuario.
+Ejemplo de frases entendidas por el robot:
+"¿Puedes ayudarme por favor?"</description>
+    <description lang="fr_FR">Le robot peut répondre à une demande d'aide de la part de l'utilisateur.
+Exemple de phrase comprise par le robot :
+"Peux-tu m'aider?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à une demande d'aide de la part de l'utilisateur.
+Exemple de phrase comprise par le robot :
+"Peux-tu m'aider?"</description>
+    <description lang="it_IT">Il robot può ricevere la richiesta di aiutare l'utente.
+Esempi di input supportati:
+"Mi puoi aiutare?"</description>
+    <description lang="it_IT-x-scrald">Il robot può ricevere la richiesta di aiutare l'utente.
+Esempi di input supportati:
+"Mi puoi aiutare?"</description>
+    <description lang="ja_JP">ロボットに手伝いを要求できます。
+サポートされる入力の例：
+「手伝ってくれますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットに手伝いを要求できます。
+サポートされる入力の例：
+「手伝ってくれますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_help" typeVersion="1.0">
+      <topic path="dlg_help/dlg_help_ged.top" language="de_DE"/>
+      <topic path="dlg_help/dlg_help_enu.top" language="en_US"/>
+      <topic path="dlg_help/dlg_help_spe.top" language="es_ES"/>
+      <topic path="dlg_help/dlg_help_frf.top" language="fr_FR"/>
+      <topic path="dlg_help/dlg_help_iti.top" language="it_IT"/>
+      <topic path="dlg_help/dlg_help_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

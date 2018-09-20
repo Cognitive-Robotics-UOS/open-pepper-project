@@ -1,0 +1,41 @@
+<form name="form" class="div-total">
+    <div class="div-size" ng-hide="saveInProgress">
+        <div class="subdiv-size-field"><span class="keytext text-large">{{ fieldName }}:</span></div>
+        <div class="subdiv-size-input" ng-click="enableEditor()" ng-hide="view.editorEnabled">
+            <span class="boldtext text-large">{{ value }}</span>
+            <img ng-src="img/header/edit_24.png" />
+            <img ng-show="saveSucceeded" width=40 src="img/checked120green.png">
+        </div>
+        <div class="subdiv-size-input" ng-show="view.editorEnabled">
+            <input type="text"
+                   name="fieldvalue"
+                   class="classic-input"
+                   ng-enter="form.fieldvalue.$invalid || save()"
+                   ng-escape="disableEditor(true)"
+                   ng-model="view.editableValue"
+                   required
+            />
+            <div ng-show="form.fieldvalue.$error.required"
+                 class="invalid-fields">*</div>
+        </div>
+    </div>
+    <div class="div-total" ng-show="!saveInProgress && view.editorEnabled">
+        <div class="invalid-fields classic text-block padding"
+             ng-show="form.fieldvalue.$error.required"
+        >*{{ 'MES_FIELD_REQUIRED' | translate }}</div>
+    <br>
+    </div>
+    <div class="div-size" ng-show="!saveInProgress && view.editorEnabled">
+        <div class="subdiv-size-field"></div>
+        <div class="subdiv-size-input" >
+            <div class="small-button inverse"
+                 ng-click="disableEditor(true)"
+            >{{ "BTN_CANCEL" | translate }}</div>
+            <div class="small-button right"
+                 ng-click="form.fieldvalue.$invalid ||
+                 save()"
+            >{{ "BTN_OK" | translate }}</div>
+        </div>
+    </div>
+    <div class ="div-total" style="text-align: center;" ng-show="saveInProgress" ng-include="'partials/shared/loader.html'"></div>
+</form>

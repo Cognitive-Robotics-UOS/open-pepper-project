@@ -1,0 +1,138 @@
+topic: ~dlg_move_hands ^noPick()
+language: jpj
+
+include: lexicon_jpj.top
+
+
+#==================================================================#
+# Move - Hands
+#==================================================================#
+
+# open your left hand
+u:("左手{を}~open_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+# open your right hand
+u:("右手{を}~open_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。] 
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+# open your hands
+u:("[両手 りょうて]{を}~open_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_hands/animations/OpenBothHands)
+$RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+
+# open your hand
+u:("手{を}~open_please")
+どっちの手でしょうか？
+
+
+    u1:(左{手}{っかわ　のほう　がわ}{~desu})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_hands/animations/OpenLHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+    u1:(右{手}{っかわ　のほう　がわ}{~desu})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+    u1:([両方　両手　どっちも])
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+    
+    u1:([どっちでもいい　どちらでもいい　好きな方　すきなほう　すきなやつ　選んで　勝手にきめて])
+    ^rand
+    [
+    "じゃぁ左で、^runBehavior(dialog_move_hands/animations/OpenLHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenLHand"
+    "じゃぁ右で、^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    "ではりょうほう開けますね。^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands"
+    ]
+    
+    
+# close your left hand
+u:("左手{を}~close_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_hands/animations/CloseLHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+# close your right hand
+u:("右手{を}~close_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_hands/animations/CloseRHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+# close your hands
+u:("両手{を}~close_please")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_hands/animations/CloseBothHands)
+$RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+# close your hand
+u:("手{を}~close_please")
+^rand["どっちの手でしょうか？" "どっちの手を閉じますか？"]
+
+    u1:(左{手}{っかわ　のほう　がわ}{~desu})
+    ^runBehavior(dialog_move_hands/animations/CloseLHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+    u1:(右{手}{っかわ　のほう　がわ}{~desu})
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+    u1:([両方　両手　どっちも])
+    ^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+    ^runBehavior(dialog_move_hands/animations/CloseBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+    
+    u1:([どっちでもいい　どちらでもいい　好きな方　すきなほう　すきなやつ　選んで　勝手にきめて])
+    ^rand
+    [
+    "じゃぁ右で、^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+    "じゃぁ左で、^runBehavior(dialog_move_hands/animations/CloseLHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseLHand"
+    "ではりょうほうで。　^runBehavior(dialog_move_hands/animations/CloseBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/CloseBothHands"
+    ]
+    
+    
+# move your hand
+u:(手{を}動かして)
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^rand[
+    "^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands"
+    "^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    "^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+]
+
+# add move left/right hand
+
+# add hands up
+
+# put your hands/arms behind your back
+u:([うで 手]{を}うしろに~turn_please)
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+\vct=130\よいしょっっっと。
+^runBehavior(dialog_move_hands/animations/HandsBack)
+$RobotLastAnim=dialog_move_hands/animations/HandsBack
+
+# wave hello
+u:(手{を}~shake_please)
+ハロー。
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+# add hide your eyes with your hands

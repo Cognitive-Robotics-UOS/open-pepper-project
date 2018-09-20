@@ -1,0 +1,29 @@
+topic: ~dlg_asimov()
+language: spe
+
+include:lexicon_spe.top
+
+u:([conoces "cuáles son"] las leyes {acerca} de ["los robot" robots "la robótica" Asimov])
+Sí. Te gustaría escucharlas?
+        u1:(~yes) La primera ley es, un robot no debe dañar a un ser humano o, por inacción, permitir que un ser humano sufra daño. Quieres escuchar la siguiente?
+        
+        u2:(~yes) La segunda ley es, un robot debe obedecer las órdenes dadas por los seres humanos, excepto cuando tales órdenes entren en conflicto con la primera ley. Quieres escuchar la última?
+
+            u3:(~yes) La tercera ley es, un robot debe proteger su propia existencia, hasta donde esta protección no entre en conflicto con la primera o la segunda ley. Eso está muy bien, pero Isaac Asimov olvidó algo. Sabes qué olvidó?
+
+                u4:(~yes) Soy todo oídos! ^stayInScope
+
+                u4:(~no) Los robots deben amar a los seres humanos!
+
+                u4:([amarme quererme
+                    "[amar querer] ["al ser humano" "a los humanos"]"
+                    "amar a la [humanidad "raza humana"]"
+                    ]) ¡Exactamente! ¡Los robots deben amar a los seres humanos!
+
+                u4:(*) Bueno, ¡creo que los robots deben amar a los seres humanos!
+            
+            u3:(~no) Muy bien!
+
+        u2:(~no) Muy bien!
+
+    u1:(~no) Muy bien!

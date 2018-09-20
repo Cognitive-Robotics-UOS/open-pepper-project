@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.6.17" uuid="run_dialog_dev">
+  <names>
+    <name lang="de_DE">Gespräch</name>
+    <name lang="de_DE-x-scrald">Gespräch</name>
+    <name lang="en_US">The dialog</name>
+    <name lang="en_US-x-scrald">The dialog</name>
+    <name lang="es_ES">diálogo</name>
+    <name lang="es_ES-x-scrald">diálogo</name>
+    <name lang="fr_FR">Le dialogue</name>
+    <name lang="fr_FR-x-scrald">Le dialogue</name>
+    <name lang="ja_JP">対話</name>
+    <name lang="ja_JP-x-scrald">対話</name>
+    <name lang="zh_CN">對話</name>
+    <name lang="zh_CN-x-scrald">對話</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Ist der launcher dialog kollaborativen Dialog</description>
+    <description lang="de_DE-x-scrald">Ist der launcher dialog kollaborativen Dialog</description>
+    <description lang="en_US">Utility application.
+
+It's the tool that launches dialog when the required conditions are met (user is in zone 1).</description>
+    <description lang="en_US-x-scrald">Utility application.
+
+It's the tool that launches dialog when the required conditions are met (user is in zone 1).</description>
+    <description lang="es_ES">run_dialog es lo que arranca el diálogo colaborativo.</description>
+    <description lang="es_ES-x-scrald">run_dialog es lo que arranca el diálogo colaborativo.</description>
+    <description lang="fr_FR">Cette application est un utilitaire.
+
+C'est l'outil permettant de lancer le dialogue une fois que les conditions requises sont réunies (l'utilisateur est en zone 1).</description>
+    <description lang="fr_FR-x-scrald">Cette application est un utilitaire.
+
+C'est l'outil permettant de lancer le dialogue une fois que les conditions requises sont réunies (l'utilisateur est en zone 1).</description>
+    <description lang="ja_JP">コラボレーションダイアログを再生するツール。</description>
+    <description lang="ja_JP-x-scrald">コラボレーションダイアログを再生するツール。</description>
+    <description lang="zh_CN">协同对话应用启动</description>
+    <description lang="zh_CN-x-scrald">协同对话应用启动</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>zh_CN</language>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>de_DE</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>zh_CN</language>
+    <language>fr_FR</language>
+    <language>de_DE</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path=".">
+      <nature>interactive</nature>
+      <autonomous>
+        <condition purpose="launchTrigger"><![CDATA[(type('rundialogInstalled') == "Invalid" && ('Launchpad/ZoneOfTrackedHuman' == 1) && ('UserSession/FocusedUser' >= 0)) || (('Launchpad/ZoneOfTrackedHuman' == 1) && ('UserSession/FocusedUser' >= 0) && 'rundialogInstalled'==1)]]></condition>
+      </autonomous>
+      <permissions>
+        <canRunOnPod/>
+      </permissions>
+    </behaviorContent>
+    <behaviorContent path="init">
+      <nature></nature>
+      <permissions/>
+    </behaviorContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.3"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="ROMEO"/>
+  </requirements>
+</package>

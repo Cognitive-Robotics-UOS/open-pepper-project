@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0">
+        <bitmap>media/images/box/root.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Timeline enable="0">
+            <BehaviorLayer name="behavior_layer1">
+                <BehaviorKeyframe name="keyframe1" index="1">
+                    <Diagram>
+                        <Box name="WakeUp Shake" id="5" localization="8" tooltip="" x="66" y="15">
+                            <bitmap>media/images/box/box-python-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        self.motion       = self.session().service("ALMotion")
+
+    def onUnload(self):
+        pass
+
+    def onInput_onStart(self):
+        import math
+
+        # shake head
+
+        headYaw, headPitch = self.motion.getAngles(["HeadYaw", "HeadPitch"], False)
+        joints = [
+            "HeadYaw",
+            "HeadPitch"
+        ]
+        times = [
+            [0.25, 0.5, 0.75, 1.0],
+            [0.25, 0.5, 0.75],
+        ]
+        moves = [
+            [headYaw + math.radians(7), headYaw - math.radians(9), headYaw + math.radians(8), headYaw],
+            [headPitch, headPitch - math.radians(5), headPitch - math.radians(8)],
+        ]
+
+        self.motion.angleInterpolationBezier(joints, times, moves)
+
+        # center head
+        joints = [ "HeadYaw", "HeadPitch" ]
+        headYaw, headPitch = self.motion.getAngles(joints, False)
+        headYaw = abs(headYaw)
+        headPitch = abs(-0.3 - headPitch)
+        greatestAngle = max(headYaw, headPitch)
+        # let's go at a speed of 3.0 seconds for 90 degrees (1.57 radians)
+        duration = greatestAngle * (3.0 / 1.57)
+        moves = [
+            [0],
+            [-0.3],
+        ]
+        times = [
+            [duration],
+            [duration],
+        ]
+
+        self.motion.angleInterpolationBezier(joints, times, moves)
+
+        self.onStopped()
+
+    def onInput_onStop(self):
+        self.onUnload()
+        self.onUnload()]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                            <Resource name="All motors" type="Lock" timeout="1" />
+                            <Resource name="Leds" type="Lock" timeout="1" />
+                            <Resource name="Speakers" type="Lock" timeout="1" />
+                            <Resource name="Stiffness" type="Lock" timeout="1" />
+                        </Box>
+                        <Link inputowner="5" indexofinput="2" outputowner="0" indexofoutput="2" />
+                        <Link inputowner="0" indexofinput="4" outputowner="5" indexofoutput="4" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+        </Timeline>
+    </Box>
+</ChoregrapheProject>

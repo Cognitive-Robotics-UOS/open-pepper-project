@@ -1,0 +1,262 @@
+topic: ~dlg_what_can_you_do()
+language: iti
+
+include:lexicon_iti.top
+
+
+concept:(ask_confirmation_after_comma) ^rand[
+    "va bene?"
+    "vado con questa?"
+    "vuoi provare questa?"
+    "vorresti che io lo faccia?"
+]
+
+concept:(show_tablet) ^rand[
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_1)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_2)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_3)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_4)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_5)"
+]
+
+concept:(enum) ^enumerate(~app-name, 3)
+
+###########################################################################################
+# Robot's function
+###########################################################################################
+u:([
+    "qual è ["il tuo scopo" "la tua funzione"]"
+    "hai ["uno scopo" "una funzione"]"
+])
+^rand[
+    "No, sono un robot umanoide."
+    "Sono qui per servire gli esseri umani."
+] ^gotoReactivate(display_store_or_nothing)
+
+###########################################################################################
+# What can you not do
+###########################################################################################
+u:(cosa non puoi fare)
+Beh, non posso fare una verticale!
+^gotoReactivate(display_store_or_nothing)
+
+###########################################################################################
+# What can you do: private
+###########################################################################################
+u:^private([
+    "questo è tutto"
+    "cos’altro"
+    "tutto il resto"
+])
+^gotoReactivate(display_store_or_list_apps)
+
+###########################################################################################
+# Utility: display store on tablet
+###########################################################################################
+u:($empty) %display_store
+^pCall(_ALAutonomousTablet.setMode(DisplayApplications))
+~show_tablet
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps<5 Questo è quello che posso fare, lascio a te la scelta!"
+    "Posso fare tutto questo! Prenditi un momento e scegli quale desideri lanciare!"
+]
+
+u:($empty) %display_store_or_nothing
+^first[
+    "$rundialogInstalled==1 \pau=1\ "
+    "^gotoReactivate(display_store)"
+]
+    
+u:($empty) %display_store_or_warning
+^first[
+    "$rundialogInstalled==1
+    AppLauncher non è installato, quindi non posso mostrarti le mie applicazioni sul mio tablet, mi dispiace."
+    "^gotoReactivate(display_store)"
+]
+    
+u:($empty) %display_store_or_list_apps
+^first[
+    "$rundialogInstalled==1 ^gotoReactivate(applauncher_nao)"
+    "^gotoReactivate(display_store)"
+]
+
+###########################################################################################
+# Utility: Nao version (no tablet)
+###########################################################################################
+u:($empty) %applauncher_nao
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps==1 ^goto(listoneapp)"
+    "[
+        "Sto per elencarti alcune delle mie applicazioni. Se ne vuoi una, dimmelo, la lancio e poi ti dico il suo nome. Ad esempio, lancia ^rand[~app-name]. Se ti piacciono le sorprese, puoi anche chiedermi di suggerire o scegliere un programma per te e farò del mio meglio!
+    ^goto(listapps)"
+    "^goto(listapps)"
+    "^goto(listapps)"
+    "^goto(listapps)"
+    ]"
+]
+
+#only 1 app
+u:($empty) %listoneapp
+$AppTmp="~app-name"
+^rand["Non è molto," "Non posso fare molto ancora," "Ancora sono un po' limitato,"]
+Posso solo  ["ballare ~app-dance" "giocare a ~app-game" "raccontarti ~app-story" "fare ~app-name"] in questo momento, ~ask_confirmation_after_comma
+    u1:(~yes)
+    Fantastico! $Dialog/StartApp=$AppTmp
+    ^clear(AppTmp)
+    u1:(~no)
+    Non esitare a dare un'occhiata al negozio Aldebaran per vedere se ce ne sono altre che desideri installare!
+
+#more than 1 app
+u:($empty) %listapps
+Ho ~enum .
+    u1:([
+        "scegli per me"
+        "come [vuoi preferisci]"
+        "[scegli decidi] tu"
+    ])
+    ^gotoReactivate(randlaunch)
+    u1:(nessuna {"di queste" "di loro"})
+    OK, nessun problema!
+    u1:([
+        "questo è tutto"
+        "cos’altro"
+        "tutto il resto"
+    ])
+    ^goto(listapps)
+    u1:(["la prima" "la {numero} uno"])
+    Ok! $Dialog/StartApp=$Dialog/Enumerate/1
+    u1:(["la seconda" "la {numero} due"])
+    Ok! $Dialog/StartApp=$Dialog/Enumerate/2
+    u1:(["la terza" "la {numero} tre"])
+    Ok! $Dialog/StartApp=$Dialog/Enumerate/3       
+    u1:(l'ultima)
+    Ok! $Dialog/StartApp=$Dialog/Enumerate/Last
+    u1:(e:Dialog/NotSpeaking5)
+    \pau=1\
+    
+###########################################################################################
+# What can you do
+###########################################################################################
+u:([
+    "cosa ~can_you fare"
+    "cosa [possiamo potremmo] fare"
+    "["quali sono" raccontami] le tue capacità"
+])
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 ^goto(abilities_complete)"
+    "Di solito posso ballare, giocare e raccontare storie, ma in questo momento non è installata alcuna applicazione."
+]
+
+u:($empty) %abilities_complete
+^first[
+    "$rundialogInstalled==1
+    Posso darti alcune informazioni utili sul mio livello di batteria, puoi anche chiedermi di ripetere o parlare più forte o più piano!
+    ^goto(applauncher_nao)"
+    "$randapp="^rand[~app-name]"
+    Posso darti alcune informazioni utili sul mio livello di batteria, puoi anche chiedermi di ripetere o parlare più forte o più piano!
+    Possiamo anche fare $randapp insieme per esempio. Se lo desideri, dimmelo: lancio $randapp. Se preferisci fare qualcosa di diverso, non c'è problema! Basta toccare il mio tablet per scegliere!"
+]
+
+###########################################################################################
+# What can you do: app-oriented
+###########################################################################################
+u:([
+    "fai qualcosa"
+    "~can_you fare [qualche "una cosa"]"
+    "{~can_you} mostrarmi qualcosa"
+    "cosa [facciamo faremo "possiamo fare"] {adesso}"
+    "cosa c’è {già} installato"
+    "cos’è {già} programmato"
+    "quali sono le tue [applicazioni app]"
+    "quali [applicazioni app] ["hai {installate}" "ci sono"]"
+    "che tipo di [applicazioni app] hai"
+    "hai qualche [applicazione app] installata"
+    "come [posso faccio a] [lanciare usare avviare] ["una [app applicazione]" "le [app applicazioni]"]"
+])
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 ^goto(abilities_apps)"
+    "Di solito posso ballare, giocare e raccontare storie, ma in questo momento non è installata alcuna applicazione."
+]
+
+u:($empty) %abilities_apps
+^first[
+    "$rundialogInstalled==1 ^goto(applauncher_nao)"
+    "$randapp="^rand[~app-name]"
+    Possiamo fare $randapp insieme. Se lo desideri, dimmelo: lancio $randapp. Se preferisci fare qualcosa di diverso, non c'è problema! Basta toccare il mio tablet per scegliere!"
+]
+
+###########################################################################################
+# What can you do: show all apps (+ shortcut to display store on tablet)
+###########################################################################################
+u:([
+    "mostrami tutte {"le tue"} [applicazioni app]"
+    "pepper tablet"
+])
+^goto(display_store_or_warning)
+
+u:([
+    "dimmi [tutto quello] [ogni cosa] che puoi fare"
+    "["dimmi {tutte} le tue" "[preparami dammi] una lista delle tue"] [applicazioni app]"
+])
+^goto(display_store_or_list_apps)
+
+###########################################################################################
+# What can you do: suggest an app
+###########################################################################################
+u:([lancia suggerisci mostrami] una [app applicazione attività]) %suggestapp
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 ^gotoReactivate(try_app)"
+    "Di solito posso ballare, giocare e raccontare storie, ma in questo momento non è installata alcuna applicazione."
+]
+
+u:($empty) %try_app
+$RandDance="^rand[~app-dance]"
+$RandGame="^rand[~app-game]"
+$RandStory="^rand[~app-story]"
+$randapp="^rand[~app-name]"
+^first[
+    "^rand[
+    "Posso ballare $RandDance , ~ask_confirmation_after_comma $AppTmp=$RandDance"
+    "Possiamo giocare a $RandGame , ~ask_confirmation_after_comma $AppTmp=$RandGame"
+    "Posso raccontarti $RandStory , ~ask_confirmation_after_comma $AppTmp=$RandStory"
+    ]"
+    "Posso fare $randapp , ~ask_confirmation_after_comma $AppTmp=$randapp"
+]
+    u1:(~yes)
+    Fantastico! $Dialog/StartApp=$AppTmp
+    ^clear(AppTmp)
+    u1:(~no)
+    Ok, nessun problema!
+    ^goto(display_store_or_nothing)
+
+###########################################################################################
+# What can you do: random app
+###########################################################################################
+u:([
+    "lancia una [app applicazione] casuale"
+    "lancia una [app applicazione] a caso"
+    "scegli una [app applicazione] per me"
+    "lancia la [app applicazione] che [vuoi preferisci]"
+]) %randlaunch
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 Sicuro che posso scegliere?"
+    "Mi dispiace, a quanto pare non ho alcuna applicazione al momento. ^releaseFocus"
+]
+    u1:(~yes)
+    $choose_app="^rand[~app-name]"
+    Fantastico! $Dialog/StartApp=$choose_app
+    u1:(~no)
+    Ok, nessun problema!
+    ^goto(display_store_or_nothing)
+    
+###########################################################################################
+# On pod
+###########################################################################################
+
+u:(e:Dialog/NotPossible $Dialog/NotPossible==canRunOnPod) Non posso avviare questa applicazione, mentre sono sul mio pod!

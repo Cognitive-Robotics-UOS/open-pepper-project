@@ -1,0 +1,19 @@
+topic: ~dlg_applauncher()
+language: non
+
+dynamic:app-trigger
+dynamic:app-name
+
+#==================================================================#
+##### Utilitary to launch applications #####
+#==================================================================#
+
+#su:(_~app-name)
+#$Dialog/StartApp=$1
+#su:(_~app-trigger)
+#$Dialog/StartApp=$1
+
+u:(_~app-name)
+$Dialog/StartApp=$1
+u:(_~app-trigger)
+$Dialog/StartApp=$1

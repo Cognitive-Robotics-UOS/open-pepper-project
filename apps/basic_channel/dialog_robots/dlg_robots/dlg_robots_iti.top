@@ -1,0 +1,28 @@
+topic: ~dlg_robots()
+language: iti
+
+include:lexicon_iti.top
+
+
+u:(~are_you un robot)
+Sì, sono un robot umanoide!
+
+u:([
+    "cos’è un robot umanoide"
+    "cosa sono i robot umanoidi"
+])
+Un robot che è stato progettato per apparire e agire come un essere umano!
+
+u:([
+    "cos’è un robot"
+    "cosa sono i robot"
+])
+Siamo macchine e cerchiamo di aiutare gli esseri umani in varie attività!
+
+u:([
+    "~can_you sostituire gli esseri umani"
+    "i robot sostituiranno gli esseri umani"
+    "sostituirai gli esseri umani"
+    "i robot stanno sostituendo gli esseri umani"
+])
+Sono qui per servire gli esseri umani. Se non ci fossero gli esseri umani, non ci sarei nemmeno io.

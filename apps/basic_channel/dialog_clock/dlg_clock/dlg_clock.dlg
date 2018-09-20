@@ -1,0 +1,7 @@
+multilanguage:dlg_clock
+  ged:dlg_clock_ged.top
+  enu:dlg_clock_enu.top
+  spe:dlg_clock_spe.top
+  frf:dlg_clock_frf.top
+  iti:dlg_clock_iti.top
+  jpj:dlg_clock_jpj.top

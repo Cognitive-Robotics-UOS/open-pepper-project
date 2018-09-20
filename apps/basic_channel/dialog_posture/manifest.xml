@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_posture" version="0.0.11">
+  <names>
+    <name lang="en_US">dialog_posture</name>
+    <name lang="en_US-x-scrald">dialog_posture</name>
+    <name lang="fr_FR">dialog_posture</name>
+    <name lang="fr_FR-x-scrald">dialog_posture</name>
+    <name lang="ja_JP">dialog_posture</name>
+    <name lang="ja_JP-x-scrald">dialog_posture</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can make general movements according to the user's request.
+Examples of supported inputs:
+"Can you sit?"
+"Can you stand?"</description>
+    <description lang="en_US-x-scrald">The robot can make general movements according to the user's request.
+Examples of supported inputs:
+"Can you sit?"
+"Can you stand?"</description>
+    <description lang="fr_FR">Le robot peut effectuer des mouvements généraux en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Assieds-toi."
+"Lève-toi."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut effectuer des mouvements généraux en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Assieds-toi."
+"Lève-toi."</description>
+    <description lang="ja_JP">ロボットはユーザの要求に応じて、一般的な動作を行うことができます。
+サポートされる入力の例:
+「すわってください！」
+「立ってください！」</description>
+    <description lang="ja_JP-x-scrald">ロボットはユーザの要求に応じて、一般的な動作を行うことができます。
+サポートされる入力の例:
+「すわってください！」
+「立ってください！」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="bhv_crouch">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhv_lie_down_back">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhv_lie_down_belly">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhv_sit_down">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhv_stand_up">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_posture_pepper" typeVersion="1.0">
+      <topic language="en_US" path="dlg_posture_pepper/dlg_posture_pepper_enu.top"/>
+      <topic language="fr_FR" path="dlg_posture_pepper/dlg_posture_pepper_frf.top"/>
+      <topic language="ja_JP" path="dlg_posture_pepper/dlg_posture_pepper_jpj.top"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_posture_nao" typeVersion="1.0">
+      <topic language="en_US" path="dlg_posture_nao/dlg_posture_nao_enu.top"/>
+      <topic language="fr_FR" path="dlg_posture_nao/dlg_posture_nao_frf.top"/>
+      <topic language="ja_JP" path="dlg_posture_nao/dlg_posture_nao_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.1"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+</package>

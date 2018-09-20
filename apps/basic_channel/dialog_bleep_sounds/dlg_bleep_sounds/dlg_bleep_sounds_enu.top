@@ -1,0 +1,29 @@
+topic: ~dlg_bleep_sounds()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+# Activate/Deactivate ASR's bleep sounds
+#==================================================================#
+
+u:({~ald_robots} {~can_you} [
+    "["deactivate [the your]" "no more"] _[bloops bips bleeps beeps beeping bleeping "{funny} noise" "[bippy beeping bleeping bloop] sounds"]"
+    "stop beeping"
+    "stop making that _[bloops bips bleeps beeps beeping bleeping "{funny} noise" "[bippy beeping bleeping bloop] sounds"]"
+    "stop [
+        "that [bippy bleeping bloop] sound"
+        "those [bippy bleeping bloop] sounds"
+    ]"
+]) $Dialog/Bouloupe=0 ^pCall(ALSpeechRecognition.setAudioExpression(false)) I've turned the [$1 bleeping] off!
+
+u:({~ald_robots} {~can_you} [
+    "reactivate [the your] _[bloops bips bleeps beeps beeping bleeping "[bippy beeping bleeping bloop] sounds"]"
+    "resume beeping"
+    "beep again"
+    "turn [the your] _[bloops bips bleeps beeps beeping bleeping "[bippy beeping bleeping bloop] sounds"] on"
+    "turn [
+        "that [bippy bleeping bloop] sound"
+        "those [bippy bleeping bloop] sounds"
+    ] back on"
+]) $Dialog/Bouloupe=1 ^pCall(ALSpeechRecognition.setAudioExpression(true)) I've turned the [$1 bleeping] back on!

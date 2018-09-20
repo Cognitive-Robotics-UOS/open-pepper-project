@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.6" uuid="dialog_set_offset">
+  <names>
+    <name lang="en_US">dialog_set_offset</name>
+    <name lang="en_US-x-scrald">dialog_set_offset</name>
+    <name lang="fr_FR">dialog_set_offset</name>
+    <name lang="fr_FR-x-scrald">dialog_set_offset</name>
+    <name lang="ja_JP">dialog_set_offset</name>
+    <name lang="ja_JP-x-scrald">dialog_set_offset</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can update his offset according to the user's instructions.
+Examples of supported inputs:
+"You are on the floor."
+"You are on the ground."</description>
+    <description lang="en_US-x-scrald">The robot can update his offset according to the user's instructions.
+Examples of supported inputs:
+"You are on the floor."
+"You are on the ground."</description>
+    <description lang="fr_FR">Le robot peut régler la hauteur à laquelle il doit regarder pour trouver un humain en suivant les instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Tu es sur une table."
+"Tu es par terre."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut régler la hauteur à laquelle il doit regarder pour trouver un humain en suivant les instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Tu es sur une table."
+"Tu es par terre."</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_set_offset" typeVersion="1.0">
+      <topic path="dlg_set_offset/dlg_set_offset_enu.top" language="en_US"/>
+      <topic path="dlg_set_offset/dlg_set_offset_frf.top" language="fr_FR"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.1"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+</package>

@@ -1,0 +1,103 @@
+<h1>{{'HARDWARE' | translate }}  <img width="24" src="img/print.png" Onclick="window.print();" class="pointer" /></h1>
+<div>
+    <h2 class="sub-header">Devices <img width="24" src="img/reload.png" ng-click="refreshDevices();" class="pointer" /></h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Device</th>
+                    <th>Ack</th>
+                    <th>Nack</th>
+                    <th>Version</th>
+                    <th>Error</th>
+                    <th>Address</th>
+                    <th>Bootloader</th>
+                    <th>BoardId</th>
+                    <th>Availability</th>
+                    <th>Bus</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="elem in deviceList">
+                    <td>{{ elem.title }}</td>
+                    <td>{{ elem.ack }}</td>
+                    <td>{{ elem.nack }}</td>
+                    <td>{{ elem.version }}</td>
+                    <td>{{ elem.error }}</td>
+                    <td>{{ elem.address }}</td>
+                    <td>{{ elem.bootloader }}</td>
+                    <td>{{ elem.boardid }}</td>
+                    <td>{{ elem.available }}</td>
+                    <td>{{ elem.bus }}</td>
+                    <td>{{ elem.type }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div>
+    <h2 class="sub-header">Joints <img width="24" src="img/reload.png" ng-click="refreshJoints();" class="pointer" /></h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Joint</th>
+                    <th>Temperature (degrees Celsius)</th>
+                    <th>Sensor (Radians)</th>
+                    <th>Actuator (Radians)</th>
+                    <th>Stiffness (Ratio)</th>
+                    <th>Electric Current (Amps)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="elem in jointList">
+                    <td>{{ elem.title }}</td>
+                    <td>{{ elem.temperature }}</td>
+                    <td>{{ elem.sensor }}</td>
+                    <td>{{ elem.actuator }}</td>
+                    <td>{{ elem.stiffness }}</td>
+                    <td>{{ elem.current }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div>
+    <h2 class="sub-header">Configurations <img width="24" src="img/reload.png" ng-click="refreshConfig();" class="pointer" /></h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="elem in configList">
+                    <td>{{ elem.title }}</td>
+                    <td>{{ elem.value }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2 class="sub-header">Head CPU<img width="24" src="img/reload.png" ng-click="refreshTemp();" class="pointer" /></h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>Temperature (degrees Celsius)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="elem in headTempList">
+                    <td>{{ elem.title }}</td>
+                    <td>{{ elem.value }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

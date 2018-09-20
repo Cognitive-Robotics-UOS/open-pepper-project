@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.5" uuid="dialog_robots">
+  <names>
+    <name lang="de_DE">dialog_robots</name>
+    <name lang="de_DE-x-scrald">dialog_robots</name>
+    <name lang="en_US">dialog_robots</name>
+    <name lang="en_US-x-scrald">dialog_robots</name>
+    <name lang="es_ES">dialog_robots</name>
+    <name lang="es_ES-x-scrald">dialog_robots</name>
+    <name lang="fr_FR">dialog_robots</name>
+    <name lang="fr_FR-x-scrald">dialog_robots</name>
+    <name lang="it_IT">dialog_robots</name>
+    <name lang="it_IT-x-scrald">dialog_robots</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann verschiedene Fragen über Roboter und seine Artgenossen beantworten.
+Beispiele für unterstützte Eingaben :
+"Kennst du die Robotergesetze?"
+"Kennst du Romeo?" </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann verschiedene Fragen über Roboter und seine Artgenossen beantworten.
+Beispiele für unterstützte Eingaben :
+"Kennst du die Robotergesetze?"
+"Kennst du Romeo?" </description>
+    <description lang="en_US">The robot can answer several questions about robots and his buddies.
+Examples of supported inputs:
+"What is a robot?"
+"Do you know the laws of robotics?"
+"Do you know Romeo?"</description>
+    <description lang="en_US-x-scrald">The robot can answer several questions about robots and his buddies.
+Examples of supported inputs:
+"What is a robot?"
+"Do you know the laws of robotics?"
+"Do you know Romeo?"</description>
+    <description lang="es_ES">El robot puede responder a preguntas sobre los robots y sus amigos.
+Ejemplos de frases entendidas por el robot :
+- " ¿eres un robot? "
+- " ¿qué es un robot humanoide? "</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a preguntas sobre los robots y sus amigos.
+Ejemplos de frases entendidas por el robot :
+- " ¿eres un robot? "
+- " ¿qué es un robot humanoide? "</description>
+    <description lang="fr_FR">Le robot peut répondre à des questions sur les robots et ses amis.
+Exemples de phrases comprises par le robot :
+"C'est quoi un robot ?"
+"Connais-tu les lois de la robotique ?"
+"Connais-tu Roméo ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des questions sur les robots et ses amis.
+Exemples de phrases comprises par le robot :
+"C'est quoi un robot ?"
+"Connais-tu les lois de la robotique ?"
+"Connais-tu Roméo ?"</description>
+    <description lang="it_IT">
+Il robot può rispondere ad alcune domande sul robot e sui suoi compagni.
+Esempi di input supportati:
+"Cos’è un robot?"
+"Conosci le leggi della robotica?"
+"Conosci Romeo?"
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot può rispondere ad alcune domande sul robot e sui suoi compagni.
+Esempi di input supportati:
+"Cos’è un robot?"
+"Conosci le leggi della robotica?"
+"Conosci Romeo?"
+</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_robots" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_robots/dlg_robots_ged.top"/>
+      <topic language="en_US" path="dlg_robots/dlg_robots_enu.top"/>
+      <topic language="es_ES" path="dlg_robots/dlg_robots_spe.top"/>
+      <topic language="fr_FR" path="dlg_robots/dlg_robots_frf.top"/>
+      <topic language="it_IT" path="dlg_robots/dlg_robots_iti.top"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_asimov" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_asimov/dlg_asimov_ged.top"/>
+      <topic language="en_US" path="dlg_asimov/dlg_asimov_enu.top"/>
+      <topic language="es_ES" path="dlg_asimov/dlg_asimov_spe.top"/>
+      <topic language="fr_FR" path="dlg_asimov/dlg_asimov_frf.top"/>
+      <topic language="it_IT" path="dlg_asimov/dlg_asimov_iti.top"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_famous_robots" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_famous_robots/dlg_famous_robots_ged.top"/>
+      <topic language="en_US" path="dlg_famous_robots/dlg_famous_robots_enu.top"/>
+      <topic language="es_ES" path="dlg_famous_robots/dlg_famous_robots_spe.top"/>
+      <topic language="fr_FR" path="dlg_famous_robots/dlg_famous_robots_frf.top"/>
+      <topic language="it_IT" path="dlg_famous_robots/dlg_famous_robots_iti.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

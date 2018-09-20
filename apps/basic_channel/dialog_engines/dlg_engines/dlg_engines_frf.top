@@ -1,0 +1,93 @@
+topic: ~dlg_engines()
+language: frf
+
+include: lexicon_frf.top
+
+   
+#==================================================================#
+# Do it again
+#==================================================================#
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim) 
+    ^first[
+        "$RobotLastAnim==rest Mes moteurs sont déjà éteints."
+        "$RobotLastAnim==wakeup Mes moteurs sont déjà allumés."
+        "^rand["Ok je recommence," "C'est reparti,"] ^runBehavior($RobotLastAnim)"
+    ]"
+    "Il me semble que je n'ai rien à recommencer."
+]
+^stayInScope    
+
+#==================================================================#
+# Engines off
+#==================================================================#
+
+u:([
+    désasservis-toi
+    détends-toi
+    repose-toi
+    "[coupe éteins] tes [moteurs "servos {moteurs}"]"
+    "stiffness off"
+])
+^first[
+    "$robotIsWakeUp==false Mes moteurs sont déjà éteints. ^releaseFocus $RobotLastAnim="" " 
+    "Tu es sûr? Je ne vais plus pouvoir bouger, et je resterai dans une position pas très stable."
+] 
+
+    u1:([
+        ~yes
+        "fais [le "ce que je {te} dis"]"
+        "c'est un ordre"
+        "je te l'ordonne"
+    ])
+    D'accord! ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest"
+    
+    u1:([
+        ~no
+        "{ne} le fais pas"
+        "{ne} fais pas ça"
+    ])
+    Je pense que c'est une sage décision de ta part. $RobotLastAnim=""
+
+u:(~ald_robots [
+    désasservis-toi
+    détends-toi
+    repose-toi
+    "[coupe éteins] tes [moteurs "servos {moteurs}"]"
+    "stiffness off"
+    "arrête de bouger"
+])
+^first[
+    "$robotIsWakeUp==false Mes moteurs sont déjà éteints. $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Oui chef!"
+        "Okay patron!"
+    ] ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest" "
+]
+
+#==================================================================#
+# Engines on
+#==================================================================#
+u:([
+    asservis-toi
+    "[mets remets] [tes les] [moteurs "servos {moteurs}"] en marche"
+    "[allume rallume "fais marcher"] tes [moteurs "servos {moteurs}"]"
+])
+^first[
+    "$robotIsWakeUp==false D'accord! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Mes moteurs sont déjà allumés. $RobotLastAnim="" "
+    "Okay! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]
+
+u:(~ald_robots [
+    asservis-toi
+    "[mets remets] [tes les] [moteurs "servos {moteurs}"] en marche"
+    "[allume rallume "fais marcher"] tes [moteurs "servos {moteurs}"]"
+])
+^first[
+    "$robotIsWakeUp==false ^rand["Oui chef!" "Okay patron!"] D'accord! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Mes moteurs sont déjà allumés. $RobotLastAnim="" "
+    " ^rand["Oui chef!" "Okay patron!"] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnio="wakeup" "
+]

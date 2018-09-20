@@ -1,0 +1,72 @@
+topic: ~dlg_goodbye ^noPick()
+language: enu
+
+include:lexicon_enu.top
+
+concept:(week_days) [monday tuesday wednesday thursday friday saturday sunday]
+
+#==================================================================#
+# Robot answers to goodbye
+#==================================================================#
+
+u:(_[
+    "bye bye"
+    "see you later"
+    "good bye"
+    goodbye
+] {~ald_robots})
+$1 !
+
+u:([
+    "I'm !not leaving"
+    "~i_have_to [go leave]"
+    "bye for now"
+] {~ald_robots})
+Bye bye!
+
+u:(see you [tomorrow morrow] {~ald_robots})
+See you tomorrow!
+
+u:({"have a"} [good nice] weekend {~ald_robots ~robotname ~myrobotname})
+A nice weekend to you too!
+
+u:(see you on _~week_days {~ald_robots})
+See you on $1 !
+
+u:([
+    "good night"
+    "~i_am going to [sleep bed "take a nap"]"
+    "~i_am off to bed"
+] {~ald_robots})
+^first[
+    "$Dialog/Hour==0 Good night {$user/name} !"
+    "$Dialog/Hour>0 $Dialog/Hour<4 Good night {$user/name} !"
+    "$Dialog/Hour==4 Good night {$user/name} !"
+    
+    "$Dialog/Hour>4 $Dialog/Hour<12 That must have been quite a party last night {$user/name} ! Sleep tight!"
+    
+    "$Dialog/Hour==12 Have a good nap {$user/name} !"
+    "$Dialog/Hour>12 $Dialog/Hour<17 Have a good nap {$user/name} !"
+    "$Dialog/Hour==17 Have a good nap {$user/name} !"
+    
+    "$Dialog/Hour==18 You're going to bed early today {$user/name} Good night!"
+    "$Dialog/Hour>18 $Dialog/Hour<20 You're going to bed early today {$user/name} Good night!"
+    "$Dialog/Hour==20 You're going to bed early today {$user/name} Good night!"
+    
+    "$Dialog/Hour>20  Good night {$user/name} !"
+]
+
+
+
+u:({"see you"} later alligator)
+In a while crocodile!
+
+u:([speak talk] to you later)
+Okay! It was nice talking to you!
+
+u:(take care)
+You take care too!
+
+u:(go to sleep)
+Ok! Little rest is nice! See ya!
+$go_to_sleep_now=1

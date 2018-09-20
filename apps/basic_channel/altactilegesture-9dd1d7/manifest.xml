@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="1.0.0" uuid="altactilegesture-9dd1d7">
+  <names>
+    <name lang="en_US">ALTactileGesture</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">Service that allows head-sensor tactile gestures to be detected and responded to by other apps via qi.signals (or events). 
+
+Simply subscribe to the signal:
+
+onGesture
+
+or the event:
+
+ALTactileGesture/Gesture
+
+Included gestures:
+ 
+SingleFront
+SingleMiddle
+SingleRear
+DoubleFront
+DoubleMiddle
+DoubleRear
+SingleTap
+DoubleTap
+CaressFtoR
+CaressRtoF
+ZoomIn
+ZoomOut
+SecretCode
+TheClaw
+SingleFrontHold
+SingleMiddleHold
+SingleRearHold
+SingleTapHold
+TheClawHold
+ 
+Additionally, you can define your own gestures via the defineGesture() API. 
+ 
+NOTE: Hold events will repeat until the hold is released or until the sensor determines it has been touched for long enough (about 40s)
+ 
+IMPORTANT: ALAdvancedTouch module is based on qimessaging, therefore session.service must be used (instead of ALProxy).</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+  </descriptionLanguages>
+  <contents/>
+  <requirements>
+    <naoqiRequirement minVersion="2.1"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+  <services>
+    <service autorun="true" execStart="/usr/bin/python2 lib/altactilegesture.py" name="ALTactileGesture-serv"/>
+  </services>
+</package>

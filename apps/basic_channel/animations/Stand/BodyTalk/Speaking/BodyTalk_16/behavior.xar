@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="16" localization="3" tooltip="tags: body language" x="487" y="117">
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Timeline enable="1" fps="25" start_frame="1" end_frame="-1" size="300">
+            <ActuatorList model="">
+                <ActuatorCurve name="value" actuator="HeadYaw" recordable="1" mute="1" unit="0" />
+                <ActuatorCurve name="value" actuator="HeadPitch" recordable="1" mute="1" unit="0" />
+                <ActuatorCurve name="value" actuator="LShoulderPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="89.1198" />
+                    <Key frame="45" value="88.6799" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LShoulderRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="6.67737" />
+                    <Key frame="45" value="7.64358" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LElbowYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="17" value="-82.6" />
+                    <Key frame="30" value="-64.5149" />
+                    <Key frame="45" value="-63" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LElbowRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="17" value="-17.5" />
+                    <Key frame="30" value="-44.3833" />
+                    <Key frame="45" value="-47.4" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LWristYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="30" value="5.79845" />
+                    <Key frame="45" value="5.79849" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LHand" recordable="1" mute="0" unit="1">
+                    <Key frame="30" value="0.183662" />
+                    <Key frame="45" value="0.16" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RShoulderPitch" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="88.6852" />
+                    <Key frame="43" value="88.0383" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RShoulderRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="-3.07861" />
+                    <Key frame="43" value="-4.36353" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RElbowYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="15" value="80.4" />
+                    <Key frame="28" value="71.7" />
+                    <Key frame="43" value="69.5" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RElbowRoll" recordable="1" mute="0" unit="0">
+                    <Key frame="15" value="19.9" />
+                    <Key frame="28" value="44.5246" />
+                    <Key frame="43" value="48.2" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RWristYaw" recordable="1" mute="0" unit="0">
+                    <Key frame="28" value="-13.3" />
+                    <Key frame="43" value="-13.3" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="RHand" recordable="1" mute="0" unit="1">
+                    <Key frame="28" value="0.162208" />
+                    <Key frame="43" value="0.1" />
+                </ActuatorCurve>
+                <ActuatorCurve name="value" actuator="LHipYawPitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="LHipRoll" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="LHipPitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="LKneePitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="LAnklePitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="LAnkleRoll" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="RHipRoll" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="RHipPitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="RKneePitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="RAnklePitch" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="RAnkleRoll" recordable="1" mute="1" unit="-1" />
+                <ActuatorCurve name="value" actuator="HipPitch" recordable="1" mute="1" unit="0" />
+                <ActuatorCurve name="value" actuator="HipRoll" recordable="1" mute="1" unit="0" />
+                <ActuatorCurve name="value" actuator="KneePitch" recordable="1" mute="1" unit="0" />
+            </ActuatorList>
+        </Timeline>
+        <Resource name="Standing" type="Lock" timeout="1" />
+        <Resource name="Arms" type="Lock" timeout="1" />
+        <bitmap>media/images/box/movement/move.png</bitmap>
+    </Box>
+</ChoregrapheProject>

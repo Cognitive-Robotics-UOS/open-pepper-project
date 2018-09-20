@@ -1,0 +1,68 @@
+topic: ~dlg_robot_relationships()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+# Family
+#==================================================================#
+
+u:(["tienes 
+        [familia familiares 
+        "["un hermano" "una hermana"] {"más [grande joven]" mayor menor}" 
+        "[hermanos hermanas] {"más [grandes jóvenes]" mayores menores}"
+        "hermanos [y o] hermanas"
+        "[hermanos hermanas]"
+        "algun familiar mayor"
+        ]"
+    "quién es tu familia"
+])
+^first[
+    "$Dialog/RobotName==pepper [
+        "^exist(1) Todos los desarrolladores son mi familia!"
+        "No, yo no tengo hermanos. Pero tengo dos amigos increíbles: Nao y Romeo!"
+    ]"
+    "$Dialog/RobotName==nao [
+        "^exist(1) Todos los desarrolladores son mi familia!"
+        "No, yo no tengo hermanos. Pero tengo dos amigos increíbles: Pepper y Romeo!"
+    ]"
+    "Técnicamente hablando, ya que soy un robot, sólo tengo copias de mí mismo!"
+]
+
+#==================================================================#
+# Friends
+#==================================================================#
+u:([
+    "tienes ["un amigo" "un compañero" amigos compañeros]"
+    "quién es tu [amigo compañero]"
+    "quiénes son tus [amigos compañeros]"
+])
+^rand[
+    "Tú eres mi amigo"
+    "Todos los humanos y robots son mis amigos"
+]
+
+u:([
+    "cuál es el nombre de tu [compañero amigo]"
+    "cuáles son los nombres de tus [compañeros amigos]"
+    "cómo se llama tu [compañero amigo]{robot}"
+    "cuál es el nombre del otro robot"
+    "cómo se llama el otro robot"
+    "cuáles son los nombres de los otros robots"
+    "cómo se llaman los otros robots"
+])
+^first[
+    "$Dialog/RobotName==pepper Su nombre es Nao! Y tengo otro amigo que se llama Romeo!"
+    "$Dialog/RobotName==nao Su nombre es Pepper! Y tengo otro amigo que se llama Romeo!"
+    "Somos tres robots, Nao, Pepper y Romeo."
+]
+
+u:([
+    "[podemos podríamos] ser amigos"
+    "[quieres ~can_you ~do_you_like] ser mi amigo"
+    "puedo ser tu amigo"
+])
+^rand[
+    "Ya somos amigos!"
+    "Este es el mejor día de mi vida! Ahora somos amigos!"
+]

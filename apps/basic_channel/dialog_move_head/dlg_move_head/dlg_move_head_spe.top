@@ -1,0 +1,146 @@
+topic: ~dlg_move_head()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Pídeme hacer movimientos simples, no puedo moverme exactamente como lo hacen los humanos."
+    "No entiendo lo que me estás pidiendo, probablemente no conozco ese movimiento todavía."
+]
+
+u:^private([
+    "qué {"tipo de"} movimientos"
+    "sé más [preciso específico]"
+    "ayúdame a ser más preciso [específico preciso]"
+    "cómo puedo ser más [específico preciso]"
+    "dame un ejemplo"
+])
+[
+    "Puedes pedirme que abra mis manos, o que levante el brazo, por ejemplo."
+    "Puedes pedirme que mueva la cabeza o las manos."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Está bien, lo haré de nuevo." "Aquí voy de nuevo!"]
+    ^runBehavior($RobotLastAnim)"
+    "Creo que no tengo nada que reproducir."
+] ^stayInScope
+  
+#==================================================================#
+# Head
+#==================================================================#
+
+
+u:([
+    "~can_you [girar voltear] [tu la] cabeza"
+    "[gira voltea] [tu la] cabeza"
+])
+De acuedo, como quieras.
+^rand[
+    "^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight"
+    "^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft"
+]
+
+u:([
+    "~can_you mirar a otro [sitio lado]"
+    "~can_you mirar a otra parte"
+    "mira a otro [sitio lado]"
+    "mira a otra parte"
+])
+De acuerdo!
+^runBehavior(dialog_move_head/animations/TurnHead360)
+$RobotLastAnim=dialog_move_head/animations/TurnHead360
+
+u:([
+    "~can_you mirar hacia abajo"
+    "mira hacia abajo"
+    "no me mires"
+    "deja de mirarme"
+])
+Sí, Señor.
+^runBehavior(dialog_move_head/animations/LookDown)
+$RobotLastAnim=dialog_move_head/animations/LookDown
+
+u:([
+    "[~can_you "se puede"] [mover sacudir] [tu la] cabeza"
+    "[mueve sacude] [tu la] cabeza"
+])
+Moviendo mi cabeza!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:([
+    "~can_you [girar voltear mover] [tu la] cabeza [a hacia] la derecha"
+    "~can_you mirar a la derecha"
+    "[~can_you puede] mirar hacia a la derecha"
+    "[gira voltea mueve] [tu la] cabeza [hacia a] la derecha"
+    "mira [hacia a] la derecha"
+])
+A la derecha!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+
+    u1:({"lo siento" "~i_want_to decir"} ["{al} otro lado" "{"a la"} ["mi derecha" izquierda]"])
+    De acuerdo!
+    ^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:([
+    "~can_you [girar voltear mover] [tu la] cabeza [a hacia] la izquierda"
+    "~can_you mirar a la izquierda"
+    "[~can_you puede] mirar hacia a la izquierda"
+    "[gira voltea mueve] [tu la] cabeza [hacia a] la izquierda"
+    "mira [hacia a] la izquierda"
+])
+A la izquierda!
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+    u1:({"lo siento" "~i_want_to decir"} ["{al} otro lado" "{"a la"} ["mi derecha" izquierda]"])
+    De acuerdo!
+    ^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight
+
+u:([
+    "~can_you mirar hacia arriba"
+    "mira hacia arriba"
+])
+Muy bien!
+^runBehavior(dialog_move_head/animations/LookUp)
+$RobotLastAnim=dialog_move_head/animations/LookUp
+
+    u1:([
+        "{eso} es todo"
+        "{"no puedes mirar" mira} más arriba"
+        "más"
+    ])
+    No, lo siento. Eso es lo mejor que puedo hacer por el momento. $RobotLastAnim=""
+
+u:([
+    "~can_you mirar [directo a] ["mis ojos" mi]"
+    "~can_you mirar [me "mis ojos"]"
+    "mira [directo a] ["mis ojos" mi]"
+    mírame
+])
+Te estoy mirando. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:([
+    "~can_you dejar de [mover agitar] [tu la] cabeza {"de esa manera" "todo el tiempo"}"
+    "deja de [mover agitar] [tu la] cabeza {"de esa manera" "todo el tiempo"}"
+])
+Lo siento. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:([agitas mueves] {demasiado} [tu la] cabeza)
+Lo siento, me emociono demasiado cuando hablo contigo! $Dialog/LookAtMe=1 $RobotLastAnim=""
+

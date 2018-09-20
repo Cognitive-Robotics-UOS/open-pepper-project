@@ -1,0 +1,111 @@
+topic: ~dlg_how_are_you ^noPick ()
+language: spe
+
+include:lexicon_spe.top
+
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+u:({"y tú"} [
+    "estás bien" 
+    "te va bien" 
+    "cómo estás {hoy}" 
+    "cómo va todo" 
+    "cómo te va" 
+    "qué hay de nuevo"
+    "cómo te encuentras"
+    "qué tal"
+])
+^rand[
+    "Yo siempre estoy muy bien, gracias!" 
+    "Estoy súper bien, gracias!"
+] ^first[
+    "Y tú? ^goto(ask_state)"
+    "^releaseFocus"
+]
+
+
+
+proposal: %ask_state
+^rand[
+    "Cómo te va?" 
+    "Cómo estás?" 
+    "Qué tal?" 
+    "Cómo va todo?"
+]
+
+    u1:(~im_good ["y tú" "y tú que tal"]) #^updateKnowledge($Dialog/ID, mood, good)
+    [
+        "Muy bien, gracias!"
+        #"Super! You know, to me life is like a russian doll, there's something new to discover every day!"
+        #"Amazing! Every meeting fills my hard drive with happiness!"
+    ] #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+
+    u1:([~im_good] {"{muchas} gracias"}) #^updateKnowledge($Dialog/ID, mood, good)
+    ^rand[
+        "Así que los dos estamos muy bien!"
+        "Súper!"
+        "Eso me hace feliz!"
+        #"Me alegra escucharlo!"
+        "Te ves muy bien!"
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+
+    u1:(~i_dont_feel_good) #^addKnowledge($Dialog/ID, mood, bad)
+    ^rand[
+        "Oh, qué mal, espero que pueda animarte!" 
+        "Oh, qué mal, espero poder animarte!"
+        "No te preocupes, mañana será otro día!"
+        "No te preocupes, te sentirás mejor mañana."
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus 
+    
+    u1:(~im_ok {"{muchas} gracias"}) #^addKnowledge($Dialog/ID, mood, ok)
+    Estupendo! 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:(~im_sick) #^addKnowledge($Dialog/ID, mood, sick)
+    Cuídate! 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:(~im_tired) #^addKnowledge($Dialog/ID, mood, tired)
+    ^rand[
+        "Podría prestarte mi cargador!"
+        "Quieres mi cargador?"
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:([
+        "no es de tu incumbencia"
+        lárgate
+        "{ese} no es asunto tuyo"
+        "preocúpate por tus {propios} [problemas asuntos]"
+    ]) 
+    #^addKnowledge($Dialog/ID, mood, none) 
+    ^rand[
+        "Ay, qué mal comienzo."
+        "Bien, de acuerdo."    
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:([
+        "no estoy seguro"
+        "no te preocupes"
+        "estoy indeciso"
+        "ni idea"
+        "no sé nada"
+        "no tengo la menor idea"
+        "{yo} [no sé "no lo sé"]"
+        "{eso} depende"
+    ]) #^addKnowledge($Dialog/ID, mood, unknown)
+    Bueno, espero que nuestra conversación te ponga de buen humor!    
+    #^addKnowledge(Pepper, askMood, $Dialog/ID)
+    ^releaseFocus

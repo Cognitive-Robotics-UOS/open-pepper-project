@@ -1,0 +1,123 @@
+topic: ~dlg_how_are_you　()
+language: jpj
+
+include:lexicon_jpj.top
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+
+u:([元気 調子どう　どうよ調子])
+\vct=150\\rspd=105\
+^rand[
+    "とっても元気だよ！"
+    "元気だよ！"
+    "元気万反だよ！"
+    "うん、いい感じだよ！"
+] 
+^first[
+    "^goto(ask_state)"
+    "^releaseFocus"
+]
+
+        
+        
+proposal: %ask_state
+\vct=150\\rspd=105\
+^first
+[
+"$user_ask_pepper_mood==true ["$hours_since_last_interaction>1" "$days_since_last_interaction>0"][^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)] ^clear(user_ask_pepper_mood) そういえば　{"$user/name は"}, ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>2" "$days_since_last_interaction>0"] [^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)]  ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>6" "$days_since_last_interaction>0"] ^rand["元気?" "調子はどう?" "ご機嫌いかが?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+
+"
+$user_ask_pepper_mood==true 
+^first
+[
+"$user_mood==positive ^gotoReactivate(talk_about_mood)"
+"$user_mood==negative ^rand["あんまり元気そうじゃないけど、大丈夫？" "疲れた顔してるけど、大丈夫？"] "
+"^rand["元気?" "調子はどう?" "ご機嫌いかが?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+]
+^clear(user_ask_pepper_mood)
+"
+
+"["^containsKnowledge(Pepper, askMood, $Dialog/ID)" "^containsKnowledge(Pepper, askMood, somebody)"] ^topicRandom"
+
+"^rand["元気?" "調子はどう?" "ご機嫌いかが?"] ^first["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID)" "^addKnowledge(Pepper, askMood, somebody) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, somebody, hours, 12))"]"
+]
+#replace by temporary knowledge
+        
+
+    u1:(["{ちょう　超　めっちゃ　ばりばり　とても　はい　うん}元気{です　だよ　でっせ}" はい])
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    \vct=150\\rspd=105\じゃぁお互い元気ってことだね？よかったぁ！ 
+    
+    u1:([まぁまぁ　まあまあ　まあ　まぁ　そこそこ　ぼちぼち 普通])
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, ok) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, ok, hours, 24))"]
+    #replace by temporary knowledge
+    \vct=150\\rspd=105\ 鳴るほどぉ。 
+    
+    u1:(["{ぜんぜん　まったく　ちっとも}元気[じゃない じゃねえ]" "微妙"　"[死にたい 最悪な　なにもかもどうでもいい]気分"])
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))"]
+    #replace by temporary knowledge
+    \vct=150\\rspd=105\ それは困ったね。なにか僕に出来ることがあったら、言ってね？ 
+        
+    u1:([疲れた　眠い　眠たい　ねみい　へとへと くたびれた])
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, tired) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, tired, hours, 24))"]
+    #replace by temporary knowledge
+    \vct=150\\rspd=105\　じゃぁ、ゆっくり休んでね！
+    
+    u1:([体がだるい　だるい　"頭{が}{ちょう}痛い"　"喉{が}{ちょう}痛い" しんどい　風邪ひいた 風邪 しんどい　"からだ{が}だるい"])
+    ^firstOptional  
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, sick) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, sick, hours, 24))"]
+    #replace by temporary knowledge
+    \vct=150\\rspd=105\それなら、僕と話してないで、早く横になって休んで！ 
+
+
+u:($empty) %talk_about_mood
+^first
+[
+"$user_mood==positive なんだか元気そうだねっ！"
+"$user_mood==negative　あんまり元気なさそうにみえるけど、 ^goto(ask_state)"
+"^goto(ask_state)"
+]
+^releaseFocus ^addKnowledge(Pepper, askMood, $Dialog/ID)
+
+    #true
+    u1:([そうね　元気だよ　元気　うん　はい])
+    僕までうれしくなるよ！ 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    
+    #false
+    u1:([全然　まったく　元気じゃない　元気ちゃう　元気ない そんなことない　そうでもない　別に])
+    荒れ?そんな気がしたんだけどね、ごめんごめん。 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))"]
+    #replace by temporary knowledge
+    
+    #thanks
+    u1:([ありがとう　あんがとう])
+    いやいや、元気そうでなにより！ 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    
+    #you think so
+    u1:([そう　そう思う　そうかい　そうかな　わかる　わかりますか　そう見える　みえる])
+    うん！いい顔してるよ？ ^addKnowledge(Pepper, goodmood, $Dialog/ID) ^releaseFocus
+    
+    #how do you know
+    u1:([どうやってわかった　どうしてわかった　なんでわかった　どうしてそう思う　なんでそう思う])
+    だって、顔に出てるよ？ 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge

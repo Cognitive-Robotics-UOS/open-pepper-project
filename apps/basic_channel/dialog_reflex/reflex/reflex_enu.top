@@ -1,0 +1,43 @@
+topic: ~reflex()
+language: enu
+
+# keep the concept implementations here to control the number of possible words
+concept:(reflex_robotName) [
+    "$Dialog/RobotModel==juliette [Pepper PepperSan]"
+    "$Dialog/RobotModel==nao [Nao]"
+]
+concept:(reflex_greetings) [hello hi "hey there" "good [morning afternoon evening]"]
+concept:(reflex_comeHere) ["come here" "come closer"]
+
+u: (~reflex_robotName)
+    ^runTag(DialogReflex/RobotName)
+    # no verbal reaction
+    $DialogReflex/UnengagedReaction="RobotName"
+
+u: (_~reflex_greetings)
+    ^runTag(DialogReflex/Greetings)
+    $1 # repeat the word
+    $DialogReflex/UnengagedReaction="GreetingsFromAfar"
+
+u: (~reflex_comeHere)  # confirmation is needed
+    ^runTag(DialogReflex/ComeHere)
+    ^call(PackageManager.hasPackage("come-here"))
+    c1:(true)
+        Who? Me?
+        u2: ([yes yep yeah sure])  # we can't use the lexicon's yes/no concepts with our limitations
+            ^call(ALBasicAwareness.setEngagementMode("FullyEngaged"))
+
+            Okay!
+            ^pCall(ALAutonomousLife.switchFocus(\"come-here/interactive/come-here\", 256))
+        u2: ([no nope nah])
+            Oh, sorry!
+
+u: (~reflex_robotName ~reflex_comeHere)  # confirmation is not needed
+    ^call(PackageManager.hasPackage("come-here"))
+    c1:(true)
+        ^call(ALBasicAwareness.setEngagementMode("FullyEngaged"))
+        ^runTag(DialogReflex/RobotNameAndComeHere)
+        Okay!
+        ^pCall(ALAutonomousLife.switchFocus(\"come-here/interactive/come-here\", 256))
+    c1:(false)
+        ^runTag(DialogReflex/RobotNameAndComeHere)

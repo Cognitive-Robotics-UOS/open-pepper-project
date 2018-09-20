@@ -1,0 +1,19 @@
+topic: ~dlg_applauncher()
+language: jpj
+
+include:lexicon_jpj.top
+dynamic:app-trigger
+
+#==================================================================#
+##### Utilitary to launch applications #####
+#==================================================================#
+
+#su:(_~app-name{を}[お願い　やりたい　起動]) 
+#\rspd=115\ \vct=125\ ロボアプリを起動します！ $Dialog/StartApp=$1
+#su:(_~app-trigger)
+#\rspd=115\ \vct=125\ ロボアプリを起動します！ $Dialog/StartApp=$1
+
+u:(_~app-name{を}[お願い　やりたい　起動]) 
+\rspd=115\ \vct=125\ ロボアプリを起動します！ $Dialog/StartApp=$1
+u:(_~app-trigger)
+\rspd=115\ \vct=125\ ロボアプリを起動します！ $Dialog/StartApp=$1

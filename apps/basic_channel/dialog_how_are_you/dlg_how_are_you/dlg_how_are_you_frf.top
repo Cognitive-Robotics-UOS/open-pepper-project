@@ -1,0 +1,240 @@
+topic: ~dlg_how_are_you ()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+
+
+
+u:([
+    "ça va {bien}"
+    "{"est-ce que"} tu vas bien"
+    "~do_you_have la [forme pêche patate]"
+    "~are_you en forme"
+    "comment ["ça va" "tu vas" "vas-tu"]"
+    "comment ["te sens tu" "tu te sens"]"
+    "tu te sens comment"
+]) $user_ask_pepper_mood=true
+^rand[
+    "Ça va super, merci!"
+    "Je suis en pleine forme, merci!"
+] 
+^first[
+    "^goto(ask_state)"
+    "^releaseFocus"
+]
+
+    
+proposal: %ask_state
+^first
+[
+"$user_ask_pepper_mood==true ["$hours_since_last_interaction>1" "$days_since_last_interaction>0"][^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)] ^clear(user_ask_pepper_mood) Et toi, ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>2" "$days_since_last_interaction>0"] [^containsKnowledge($Dialog/ID, mood, bad) ^containsKnowledge($Dialog/ID, mood, tired) ^containsKnowledge($Dialog/ID, mood, sick)]  ^topic(dlg_ask_state)"
+
+"["$hours_since_last_interaction>6" "$days_since_last_interaction>0"] ^rand["Comment ça va?" "Comment vas-tu?" "Ça va bien?" "ça va?" "la forme?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+
+"
+$user_ask_pepper_mood==true 
+^first
+[
+"$user_mood==positive ^gotoReactivate(talk_about_mood)"
+"$user_mood==negative ^rand["t'as pas l'air au top de ta forme aujourd'hui, ça va?" "T'as pas l'air super en forme, ça va bien?"] "
+"^rand["Et toi," "^empty"] ^rand["Comment ça va?" "Comment vas-tu?" "Ça va bien?" "ça va?" "la forme?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID) ^pCall(briefKnowledge.knowledge_delay(Pepper, askMood, $Dialog/ID, hours, 12))"]"
+]
+^clear(user_ask_pepper_mood)
+"
+
+"^containsKnowledge(Pepper, askMood, $Dialog/ID) ^topicRandom"
+
+"^rand["Comment ça va?" "Comment vas-tu?" "Ça va bien?" "ça va?" "la forme?"] ^firstOptional["$Dialog/ID<>-1 ^addKnowledge(Pepper, askMood, $Dialog/ID)"]"
+]
+#replace by temporary knowledge
+
+    u1:(~im_good ["et toi" "toi aussi"]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "Très bien aussi, merci!"
+        "Super! Tu sais, pour moi la vie c'est comme une poupée russe, il y a chaque jour quelque chose de nouveau à découvrir!"
+        "Au top! Chaque rencontre remplit mon disque dur de bonheur!"
+        #"Super bien! D'ailleurs, tu sais pas ce qui m'est arrivé ce matin? Vanecdote"
+        ] 
+    
+    u1:([~im_good ~yes]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, good) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "Alors nous allons tous les deux bien!"
+        "Super!"
+        "Je suis content!"
+        "Tu m'en vois ravi!"
+        "C'est vrai que tu as l'air en forme!"
+        ] 
+    
+    u1:([~i_dont_feel_good mal "pas bien" ~no]) 
+    ^first
+    [
+    "$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24)) ^gotoReactivate(are_you_ill)"
+    "^rand["repose-toi bien alors." "Mince, essaie de te reposer un peu." "Il faut que tu te reposes un peu."]"
+    ]
+    #replace by temporary knowledge
+
+    
+    u1:(~im_ok) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, ok) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, ok, hours, 24))"]
+    #replace by temporary knowledge
+    Super! 
+    
+    u1:(~im_sick)
+    ^firstOptional  
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, sick) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, sick, hours, 24))"]
+    #replace by temporary knowledge
+    Ah, mince, ^gotoReactivate(suggest_doctor)
+    
+    u1:(~im_tired) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, tired) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, tired, hours, 24))"]
+    #replace by temporary knowledge
+    Tu veux peut-être mon chargeur? Non, bon je rigole, mais repose-toi un peu alors. 
+    
+    
+    u1:([
+        "ça te regarde {pas}"
+        "c'est pas tes affaires"
+        "t'occupe"
+    ]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, unknown) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, unknown, hours, 24))"]
+    #replace by temporary knowledge
+    ^rand[
+        "Oh oh. Mauvais départ!"
+        "Ça commence bien!"
+    ] 
+    
+    u1:([
+        "ça dépend"
+        ~i_dont_know
+    ]) 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, unknown) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, unknown, hours, 24))"]
+    #replace by temporary knowledge
+    Et bien, j'espère que notre conversation t'aidera à choisir la bonne humeur! 
+
+    
+
+    u1:(ça va {très} mal) ha merde ça va mal, désolé. 
+    ^firstOptional
+    ["$Dialog/ID<>-1 ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))"]
+    #replace by temporary knowledge
+    
+    
+    
+
+u:($empty) %talk_about_mood
+^rand["Tu as l'air en forme aussi!" "T'as une bonne mine aussi!"]
+
+
+    #true
+    u1:(["c'est vrai" oui ouais "{c'est} pas faux" "exacte"])
+    Oui, ça se voit et ça fait plaisir! ^releaseFocus
+    ^updateKnowledge($Dialog/ID, mood, good)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))
+    
+    #false
+    u1:(["non" "pas du tout" "que dalle" "n'importe quoi" "pas [trop vraiment]" "pas tant que ça"])
+    Ah pardon, j'ai du mal voir. ^releaseFocus
+    ^updateKnowledge($Dialog/ID, mood, bad)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))
+    
+    #thanks
+    u1:([merci cimère sympa])
+    Merci à toi! ça me fait plaisir de te voir content! ^releaseFocus
+    
+    
+    #you think so
+    u1:(["tu trouves" "tu penses" "ah bon"])
+    oui! T'as l'air bien et ça me fait plaisir! ^releaseFocus
+    
+    #how do you know
+    u1:(["comment tu {le} sais" "comment t'as deviné" "t'es fort" "trop fort"])
+    ça se voit sur ton visage! ^releaseFocus
+    ^updateKnowledge($Dialog/ID, mood, good)
+    ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, good, hours, 24))
+    #replace by temporaly knowledge
+    
+    
+######################################
+#ROBOT SUGGEST TO SEE A DOCTOR
+######################################
+    
+u:($empty)%suggest_doctor
+Tu devrais peut-être aller voir un médecin non?
+    
+    u1:(["je vais faire ça" "ouais" "oui" "je vais y aller" "bonne idée" "c'est vrai"])
+    Prends bien soins de toi!
+    ^firstOptional
+    ["$Dialog<>-1 ^updateKnowledge($Dialog/ID, willGoTo, doctor)"]
+    
+    u1:(["non" "ça [devrait va] aller" "ça va aller" "ça va" "t'inquiète" "ça va passer" "ça passera" "je vais [voir réfléchir attendre]"])
+    Ok, si tu le dis, mais ne te force pas trop.
+    ^firstOptional
+    ["$Dialog<>-1 ^updateKnowledge($Dialog/ID, wontGoTo, doctor)"]
+    
+#######################################
+#ROBOT SUGGEST TO TAKE A REST
+#######################################
+
+u:($empty)%suggest_rest
+Tu devrais peut-être te reposer un peu?
+
+    u1:(["vais faire ça" ouais oui "[bonne excellente]idée" ok])
+    Repose-toi bien!
+    
+    u1:([non "ça ira" "ça devrait aller" "ça devrait passer" "ça va passer" "ça va aller" "t'inquiète {pas}"])
+    Si tu le dis, mais essaye de pas trop forcer!
+    
+    
+    
+##########################################
+#ROBOT ASK IF USER IS ILL
+##########################################
+ u:($empty)%are_you_ill
+    tu es malade? 
+        
+            u1:([oui ouais "je pense" "j'ai l'impression" "j'ai mal ["à la tête" "au crâne" "au ventre" "au bide"]" "j'ai la nausée" "j'ai le vertige" "j'ai la tête qui tourne"])
+            ^updateKnowledge($Dialog/ID, mood, bad) ^call(briefKnowledge.knowledge_delay($Dialog/ID, mood, bad, hours, 24))
+            Ah, mince, ^gotoReactivate(suggest_doctor)
+            
+            u1:(["je sais pas" "chais pas" "aucune idée" "j'en sais rien"])
+            C'est embêtant, ^gotoReactivate(suggest_rest)
+            
+            u1:([non "pas du tout" "que nenni" "trop pas" ])
+            Est-ce que je peux faire quelque chose pour te remonter le moral?
+            
+                u2:(non)
+                \vct=80\\rspd=90\ D'accord, mais n'hésite pas si je peux faire quelque chose.
+    
+                u2:(oui)
+                qu'est-ce que je peux faire?
+    
+    
+    
+#proposal: %ask_for_hug
+#    Ah mince. \pau=500\ On se fait un calin pour te remonter un peu le moral?
+    
+#    u1:([oui ouais "oh oui" "ah ouais" "t'es trop [chou mignon]" "t'es {trop} adorable" ok "d'accord" "trop bien" "merci {~ald_robots}"])
+#    Viens par ici! ~do_hug
+#        u2:(e:Daps/Failure) "^mode(disabled) ~failure ~pau" $Daps/Done=1 ^stayInScope
+#        u2:(e:Daps/Success) "^mode(disabled) ~hug_success ~pau" $Daps/Done=1 ^releaseFocus
+#        u2:(e:Daps/Warning) "^mode(disabled) ~warning " ^stayInScope
+#        u2:("$Daps/InProgress<>0 *") ^stayInScope
+    
+#    u1:([non "pas question" jamais "non merci" "non ça ira" "pas de calin"])
+#    Ah, j'espère que ça ira mieux alors. ^releaseFocus

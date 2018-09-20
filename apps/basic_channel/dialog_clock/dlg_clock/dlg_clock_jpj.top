@@ -1,0 +1,118 @@
+topic: ~dlg_clock()
+language: jpj
+
+include:lexicon_jpj.top
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+
+u:([
+    "今何時{~desuka}"
+    "{ねぇ　~ald_robots}{今}何時か[わかる　わかりますか　"教えて{~-kudasai}"]" "時間{を}教えて{~-kudasai}" "時間[わかる わかりますか]"
+])
+^first[
+    "^rand["時間ですね、今は $Dialog/Hour 時 $Dialog/Minute 分です。" "$Dialog/Hour 時 $Dialog/Minute 分です。" "えっっっっとですねぇ、$Dialog/Hour 時 $Dialog/Minute 分です。"]"
+    "時間、時間？えっっっっっっとお、すみません、時計がみつからないので、わかりません。"
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+u:([
+    "今日{は　って}何曜日{~desuka}"
+    "何曜日~desuka"
+])
+^rand["今日は" "、"]
+^first[
+    "$Dialog/Weekday==1 月曜日"
+    "$Dialog/Weekday==2 火曜日"
+    "$Dialog/Weekday==3 水曜日"
+    "$Dialog/Weekday==4 木曜日"
+    "$Dialog/Weekday==5 金曜日"
+    "$Dialog/Weekday==6 土曜日"
+    "$Dialog/Weekday==7 日曜日"
+]
+です。
+
+u:([
+    "明日{は　って}何曜日{~desuka}"
+])
+^rand["明日は" "、"]
+^first[
+    "$Dialog/Weekday==1 火曜日"
+    "$Dialog/Weekday==2 水曜日"
+    "$Dialog/Weekday==3 木曜日"
+    "$Dialog/Weekday==4 金曜日"
+    "$Dialog/Weekday==5 土曜日"
+    "$Dialog/Weekday==6 日曜日"
+    "$Dialog/Weekday==7 月曜日"
+]
+です。
+
+u:([
+    "明後日{は　って}何曜日{~desuka}"
+])
+^rand["あさっては" "、"]
+^first[
+    "$Dialog/Weekday==1 水曜日"
+    "$Dialog/Weekday==2 木曜日"
+    "$Dialog/Weekday==3 金曜日"
+    "$Dialog/Weekday==4 土曜日"
+    "$Dialog/Weekday==5 日曜日"
+    "$Dialog/Weekday==6 月曜日"
+    "$Dialog/Weekday==7 火曜日"
+]
+です。
+
+
+u:([
+    "今日{は って}[何日 何月何日]{~desuka}"
+    "何日~desuka"
+])
+今日は $Dialog/Month 月 $Dialog/Day 日 です。
+
+u:([今年 今]{って　は}なんねん{だっけ ですか　でしょうか　だったっけ　でしたっけ})
+\vct=130\ ^rand["え？だ、大丈夫ですか？　$Dialog/Year 年ですよ！"　" $Dialog/Year 年です！" "荒れ？僕も忘れちゃいました！"]
+
+u:([今年　今]{って　は}なにどし{だっけ　だったっけ　でしたっけ　ですか})
+^first
+[
+"$Dialog/Year==2015 \rspd=90\羊度氏です。\rspd=100\ "
+"すみません、僕も忘れてしまいました。"
+]
+
+u:(来年{って　は}なにどし{~desuka})
+^first
+[
+"$Dialog/Year==2015 来年は、さるどしです根。 "
+"すみません、僕も忘れてしまいました。"
+]
+
+
+u:(今年のえと{って　は}[なんだっけ　なんでしたっけ　なに　なにどしだっけ　なにどしでしたっけ　なんですか　なんでしょうか　なんやっけ　なんじゃっけ])
+^first
+[
+"$Dialog/Year==2015 \rspd=90\羊度氏です。\rspd=100\ "
+"すみません、僕も忘れてしまいました。"
+]
+
+u:([今　今年]{って　は}平成何年{~desuka})
+^first
+[
+"$Dialog/Year==2015 平成27年です。 "
+"すみません、僕も忘れてしまいました。"
+]
+
+u:^private(何年の何月何日{~desuka})
+今日は　$Dialog/Year 年、 $Dialog/Month 月 $Dialog/Day 日 です。
+
+u:^private("何日{~desuka}")
+$Dialog/Day 日 です。
+
+u:^private("何月何日{~desuka}")
+$Dialog/Month 月 $Dialog/Day 日 です。
+
+u:^private("何年{~desuka}")
+$Dialog/Year　年です。

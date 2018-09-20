@@ -1,0 +1,35 @@
+topic: ~dlg_battery_capacity()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+##### General information about the battery #####
+#==================================================================#
+
+u:(wie lang[
+    "dauert es bis du dich vollständig aufgeladen hast"
+    "dauert es bis du geladen bist"
+    "dauert ein vollständiger ladevorgang"
+    "brauchst zu zum laden"
+])
+^first[
+    "$Dialog/RobotName==nao Es dauert etwas weniger als 3 Stunden, mich vollständig aufzuladen."
+    "$Dialog/RobotName==pepper Es dauert ungefähr 6 Stunden, mich vollständig aufzuladen."    
+    "Tut mir leid, ich weiß nicht, wie lange es dauert, mich vollständig aufzuladen!"
+]
+
+u:(wie [
+    "sieht es mit deiner autonomie aus"
+    "viel autonomie hast du"
+    "lange kannst du ohne laden aktiv sein"
+    "oft musst du geladen werden"
+    "lang hält deine batterie"
+    "lang kannst du mitarbeiten, ohne geladen zu werden"
+    "lange hälst du es mit einer batterieladung aus"
+])
+^first[
+    "$Dialog/RobotName==nao Wenn ich sehr aktiv bin, hält meine Batteie für ungefähr 60 Minuten und andernfalls 90 Minuten."
+    "$Dialog/RobotName==pepper Meine Batterie hält für ungefähr 12 Stunden!"
+    "Tut mir leid, ich weiß nicht, wie lang meine Batterie hält!"
+]

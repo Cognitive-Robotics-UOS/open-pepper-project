@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3">
+    <Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0">
+        <bitmap>media/images/box/root.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Timeline enable="0">
+            <BehaviorLayer name="behavior_layer1">
+                <BehaviorKeyframe name="keyframe1" index="1">
+                    <Diagram>
+                        <Box name="Turn&amp;LookAt" id="9" localization="8" tooltip="" x="80" y="28">
+                            <bitmap>media/images/box/box-python-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[import almath
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        self.memory = ALProxy('ALMemory')
+        self.motion = ALProxy('ALMotion')
+        self.positionErrorThresholdPos = 0.01
+        self.positionErrorThresholdAng = 0.03
+
+    def onUnload(self):
+        self.motion._stopLookAt(True)
+        self.motion.stopMove()
+
+    def onInput_onStart(self):
+        try:
+            Wz = self.memory.getData('ALMotion/Safety/PushRecovery')
+        except:
+            qi.error("SolitaryActivity", "push-recovery/solitary", "Can't fetch push angle from 'ALMotion/Safety/PushRecovery', exiting...")
+            return self.onFailure()
+
+        if Wz is None:
+            qi.error("SolitaryActivity", "push-recovery/solitary", "Push angle is None, exiting...")
+            return self.onFailure()
+
+        # compute push origin world projected at x = 10m
+        p2DTorsoToPush = almath.Pose2D(0., 0., almath.modulo2PI(Wz))
+        tWorldToTorso = almath.Transform(self.motion.getTransform("Torso", 1, True))
+        tWorldToPush = tWorldToTorso * almath.transformFromPose2D(p2DTorsoToPush) * almath.Transform(10., 0., 0.)
+        p3DWorldToPush = almath.position3DFromTransform(tWorldToPush)
+
+
+        # get target position
+        initPosition = almath.Pose2D(self.motion.getRobotPosition(True))
+        targetDistance = almath.Pose2D(0.0, 0.0, Wz)
+        expectedEndPosition = initPosition * targetDistance
+
+        self.motion._lookAt(p3DWorldToPush.toVector(), 1, 0.5)
+        self.motion.moveTo(0., 0., Wz)
+        self.motion._stopLookAt(True)
+
+        # calculate if move was success
+        realEndPosition = almath.Pose2D(self.motion.getRobotPosition(False))
+        positionError = realEndPosition.diff(expectedEndPosition)
+        positionError.theta = almath.modulo2PI(positionError.theta)
+
+        if (abs(positionError.x) < self.positionErrorThresholdPos and abs(positionError.y) < self.positionErrorThresholdPos and abs(positionError.theta) < self.positionErrorThresholdAng):
+            return self.onSuccess()
+        else:
+            qi.warning("SolitaryActivity", "push-recovery/solitary", "Move failed, exiting...")
+            return self.onFailure()
+
+        self.onSuccess()
+
+    def onInput_onStop(self):
+        self.onUnload() #it is recommended to reuse the clean-up as the box is stopped
+        self.onStopped() #activate the output of the box]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                            <Output name="onSuccess" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="5" />
+                        </Box>
+                        <Box name="LoadTopic&amp;Say" id="2" localization="8" tooltip="" x="523" y="105">
+                            <bitmap>media/images/box/box-python-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        # load multilanguage topic
+        self.dialog = ALProxy('ALDialog')
+        self.frameManager = ALProxy('ALFrameManager')
+
+        behaviorPath = self.frameManager.getBehaviorPath(self.behaviorId)
+        topicPath = behaviorPath + self.getParameter('TopicPath')
+        self.topic = self.dialog._addDialogFromTopicBox(topicPath, behaviorPath)
+
+        # get tag
+        self.tag = self.getParameter('TagName')
+
+    def onUnload(self):
+        self.dialog.unloadTopic(self.topic)
+
+    def onInput_onStart(self):
+        self.dialog.gotoTag(self.tag, self.topic)
+        self.onStopped()
+
+    def onInput_onStop(self):
+        self.onUnload() #it is recommended to reuse the clean-up as the box is stopped
+        self.onStopped() #activate the output of the box]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Parameter name="TopicPath" inherits_from_parent="0" content_type="4" value="/../dialog/solitary-push-recovered/solitary-push-recovered.dlg" default_value="" tooltip="" id="5" />
+                            <Parameter name="TagName" inherits_from_parent="0" content_type="3" value="push" default_value="tagName" custom_choice="0" tooltip="" id="6" />
+                        </Box>
+                        <Box name="SearchHumans" id="5" localization="8" tooltip="" x="215" y="57">
+                            <bitmap>media/images/box/box-python-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[import qi
+import random
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        # proxies
+        self.memory = ALProxy("ALMemory")
+        self.bm = ALProxy("ALBehaviorManager")
+
+        # subscribed events
+        self.subscribedEvents = ["PeoplePerception/PeopleDetected", "BehaviorsRun"]
+
+        # datas
+        self.future = None
+        self.toggleSubscribtion = False
+        self.useDistanceThreshold = self.getParameter("useDistanceThreshold")
+        self.distanceThreshold = self.getParameter("distanceThreshold (m)")
+
+        self.useAnimations = self.getParameter("useAnimations")
+        self.animationsList = self.getParameter("animationsList").split(';')
+
+        self.useTimeout = self.getParameter("useTimeout")
+        self.delay = self.getParameter("timeout (s)") * 1000000 # µseconds
+
+    def onUnload(self):
+        # unsubscribe events
+        self.toggleSubscribtion = False
+
+        # kill any async
+        if self.future:
+            if self.future.isRunning():
+                self.future.cancel()
+
+        # make sure to kill all animations
+        for behavior in self.animationsList:
+            try:
+                self.bm.stopBehavior(behavior)
+            except:
+                pass
+
+        self.unsubscribeEvents(self.subscribedEvents)
+
+    def onInput_onStart(self):
+        # reset datas
+        self.useDistanceThreshold = self.getParameter("useDistanceThreshold")
+        self.distanceThreshold = self.getParameter("distanceThreshold (m)")
+        self.delay = self.getParameter("timeout (s)") * 1000000 # µseconds
+
+        # subscribe to event (with defaut period)
+        self.toggleSubscribtion = False
+        self.subscribeEvents(self.subscribedEvents)
+
+        # start timeout
+        if not self.useAnimations and self.useTimeout:
+            self.future = qi.async(self.timerReached, delay=self.delay)
+
+        elif not self.useTimeout and self.useAnimations:
+            self.selectedAnim = random.choice(self.animationsList)
+            self.bm.startBehavior(self.selectedAnim)
+
+        elif self.useTimeout and self.useAnimations:
+            self.selectedAnim = random.choice(self.animationsList)
+            self.bm.startBehavior(self.selectedAnim)
+            self.future = qi.async(self.timerReached, delay=self.delay)
+
+        self.toggleSubscribtion = True
+
+    def timerReached(self):
+        self.onUnload()
+        self.onFailure()
+
+    def eventHandler(self, key, value, message):
+        if self.toggleSubscribtion:
+            if key == "BehaviorsRun":
+                if self.useAnimations and self.selectedAnim not in value:
+                    self.onUnload()
+                    return self.onFailure()
+
+            elif key == "PeoplePerception/PeopleDetected":
+                self.onUnload()
+                timestamp, peopleDatas, camTorso, camRobot, camId = value
+                if not self.useDistanceThreshold:
+                    return self.onSuccess([id for id, distance, pitch, yaw in peopleDatas])
+                else:
+                    validIds = [id for id, distance, pitch, yaw in peopleDatas if distance <= self.distanceThreshold]
+                    if validIds:
+                        return self.onSuccess(validIds)
+                    else:
+                        return self.onFailure()
+
+    def onInput_onStop(self):
+        self.onUnload() #it is recommended to reuse the clean-up as the box is stopped
+        self.onFailure() #activate the output of the box
+
+    def declareEvents(self, eventList):
+        for event in eventList:
+            self.memory.declareEvent(event)
+
+    def resetEvents(self, eventList):
+        for event in eventList:
+            self.memory.raiseEvent(event, None)
+
+    def subscribeEvents(self, eventList):
+        for event in eventList:
+            if self.getName() not in self.memory.getSubscribers(event):
+                self.memory.subscribeToEvent(event, self.getName(), "eventHandler")
+
+    def unsubscribeEvents(self, eventList):
+        for event in eventList:
+            if self.getName() in self.memory.getSubscribers(event):
+                self.memory.unsubscribeToEvent(event, self.getName())]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+                            <Output name="onSuccess" type="0" type_size="1" nature="1" inner="0" tooltip="" id="5" />
+                            <Parameter name="timeout (s)" inherits_from_parent="0" content_type="1" value="3" default_value="4" min="0" max="100" tooltip="" id="6" />
+                            <Parameter name="useTimeout" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="7" />
+                            <Parameter name="distanceThreshold (m)" inherits_from_parent="0" content_type="2" value="1.2" default_value="1" min="0.1" max="10" tooltip="" id="8" />
+                            <Parameter name="useDistanceThreshold" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="" id="9" />
+                            <Parameter name="animationsList" inherits_from_parent="0" content_type="3" value="push-recovered/animations/searchHumans_1" default_value="uuid/anim_1;uuid/anim_2;" custom_choice="0" tooltip="" id="10" />
+                            <Parameter name="useAnimations" inherits_from_parent="0" content_type="0" value="1" default_value="0" tooltip="" id="11" />
+                        </Box>
+                        <Box name="forceEngage" id="3" localization="8" tooltip="Enter tooltip here" x="368" y="84">
+                            <bitmap>media/images/box/box-python-script.png</bitmap>
+                            <script language="4">
+                                <content>
+                                    <![CDATA[import random
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        self.ba = ALProxy('ALBasicAwareness')
+        self.mem = ALProxy('ALMemory')
+
+    def onUnload(self):
+        # reset BA to unengaged
+        self.ba.setEngagementMode('Unengaged')
+
+    def onInput_onStart(self, p):
+        if p:
+            if isinstance(p, list):
+                peopleId = p[0]
+            elif isinstance(p, int):
+                peopleId = p
+            else:
+                return self.onFailure()
+
+        # switch to fully engaged
+        self.ba.setEngagementMode('FullyEngaged')
+
+        # set to bodyRotation
+        self.ba.setTrackingMode('BodyRotation')
+
+        # engage people
+        ret = self.ba.engagePerson(peopleId)
+        if ret or (ret is None): # test for None as API not compatible yet
+            return self.onSuccess()
+        else:
+            qi.logWarning(self.getName(), "ALBasicAwareness.engageHuman returned False, exiting...")
+            return self.onFailure()
+
+    def onInput_onStop(self):
+        self.onUnload() #it is recommended to reuse the clean-up as the box is stopped
+        self.onFailure() #activate the output of the box]]>
+</content>
+                            </script>
+                            <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+                            <Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+                            <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+                            <Output name="onFailure" type="1" type_size="1" nature="1" inner="0" tooltip="" id="4" />
+                            <Output name="onSuccess" type="1" type_size="1" nature="1" inner="0" tooltip="" id="5" />
+                        </Box>
+                        <Link inputowner="9" indexofinput="2" outputowner="0" indexofoutput="2" />
+                        <Link inputowner="0" indexofinput="4" outputowner="2" indexofoutput="4" />
+                        <Link inputowner="3" indexofinput="2" outputowner="5" indexofoutput="5" />
+                        <Link inputowner="2" indexofinput="2" outputowner="3" indexofoutput="5" />
+                        <Link inputowner="0" indexofinput="4" outputowner="3" indexofoutput="4" />
+                        <Link inputowner="0" indexofinput="4" outputowner="5" indexofoutput="4" />
+                        <Link inputowner="0" indexofinput="4" outputowner="9" indexofoutput="4" />
+                        <Link inputowner="5" indexofinput="2" outputowner="9" indexofoutput="5" />
+                    </Diagram>
+                </BehaviorKeyframe>
+            </BehaviorLayer>
+        </Timeline>
+    </Box>
+</ChoregrapheProject>

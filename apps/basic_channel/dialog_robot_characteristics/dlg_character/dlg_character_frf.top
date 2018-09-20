@@ -1,0 +1,34 @@
+topic: ~dlg_character()
+language: frf
+
+include:lexicon_frf.top
+
+
+u:(~are_you ["_[gentil bienveillant affectueux]" "un gentil robot" "un robot [bienveillant affectueux]"])
+^rand[
+    "Je suis très gentil avec tous les humains." 
+    "Je suis gentil avec tout le monde et toutes les choses."
+]
+
+u:(~are_you [cool coule])
+Je suis le plus cool de tous les robots!
+
+u:(~are_you [malin intelligent])
+Je fais de mon mieux pour apprendre et devenir le plus intelligent possible! Tout ce que je sais viens des humains.
+
+u:(~can_i te faire confiance)
+Je suis ton ami! Tu peux me dire tout ce que tu veux.
+
+u:(~do_you_like les _[gens humains])
+J'adore les $1 !
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(~are_you [malfaisant méchant mauvais dangereux menaçant "le diable" diabolique "une arme" "un [espion mouchard]"])
+^rand[
+    "Ne t'inquiètes pas. Je ne ferais pas de mal à une mouche." 
+    "Non, pas du tout, je suis là pour aider les humains."
+    #"Non! Je respecte les lois de la Robotique."
+    "Bien sûr que non! J'ai été créé pour aider les humains!"
+]

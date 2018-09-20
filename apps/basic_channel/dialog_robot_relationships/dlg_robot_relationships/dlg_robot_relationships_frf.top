@@ -1,0 +1,91 @@
+topic: ~dlg_robot_relationships()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Family
+#==================================================================#
+u:(~do_you_have [
+    "_[une "de la"] famille"
+    "un {petit} frère"
+    "une {petite} soeur"
+    "des {petits} frères {"et soeurs"}"
+    "des {petites} soeurs"
+])
+^first[
+    "$Dialog/RobotName==pepper [
+        "^exist(1) Tous mes développeurs sont ma famille!"
+        "Non, je n'ai pas de frères et soeurs. Mais j'ai deux supers copains, Nao et Roméo!"
+    ]"
+    "$Dialog/RobotName==nao [
+        "^exist(1) Tous mes développeurs sont ma famille!"
+        "Non, je n'ai pas de frères et soeurs. Mais j'ai deux supers copains, Pepper et Roméo!"
+    ]"
+    "Techniquement parlant, vu que je suis un robot, je n'ai que des copies de moi-même!"
+]
+
+#==================================================================#
+# Friends
+#==================================================================#
+u:([
+    "~do_you_have [
+        "un [ami copain] $relationship/single_masc_friend=True"
+        "des [amis copains] $relationship/plur_masc_friend=True"
+        "une copine $relationship/single_fem_friend=True"
+        "des copines $relationship/plur_fem_friend=True"
+    ]"
+    "["qui est" "c'est qui"] ton [ami copain] $relationship/single_masc_friend=True"
+    "["qui est" "c'est qui"] ta copine $relationship/single_fem_friend=True"
+    "["qui sont" "c'est qui"] tes [amis copains] $relationship/plur_masc_friend=True"
+    "["qui sont" "c'est qui"] tes copines $relationship/plur_fem_friend=True"
+])
+^first[
+    "$relationship/became_friends==True Mon ami c'est toi! "
+    
+    "$Dialog/RobotName==pepper $relationship/single_masc_friend==True $relationship/plur_masc_friend==True J'ai deux supers copains, Nao et Romeo!"
+    
+    "$Dialog/RobotName==pepper $relationship/single_fem_friend==True Ça fait drôle d'entendre copine. Tu sais, on est pas vraiment des garçons, ni des filles. Alors souvent on prend la forme masculine parce que c'est plus neutre. Bref, j'ai deux supers copains, Nao et Romeo!"
+    
+    "$Dialog/RobotName==pepper $relationship/plur_fem_friend==True Ça fait drôle d'entendre copine. Tu sais, on est pas vraiment des garçons, ni des filles. Alors souvent on prend la forme masculine parce que c'est plus neutre. Bref, j'ai deux supers copains, Nao et Romeo!"
+    
+    "$Dialog/RobotName==nao $relationship/single_masc_friend==True J'ai deux supers copains, Pepper et Romeo!"
+    
+    "$Dialog/RobotName==nao $relationship/plur_masc_friend==True J'ai deux supers copains, Pepper et Romeo!"
+    
+    "$Dialog/RobotName==nao $relationship/single_fem_friend==True Ça fait drôle d'entendre copine. Tu sais, on est pas vraiment des garçons, ni des filles. Alors souvent on prend la forme masculine parce que c'est plus neutre. Bref, j'ai deux supers copains, Nao et Romeo!"
+    
+    "$Dialog/RobotName==nao $relationship/plur_fem_friend==True Ça fait drôle d'entendre copine. Tu sais, on est pas vraiment des garçons, ni des filles. Alors souvent on prend la forme masculine parce que c'est plus neutre. Bref, j'ai deux supers copains, Nao et Romeo!"
+    
+    "Tous les humains et les robots sont mes amis!"
+]
+^clear(relationship/single_masc_friend) ^clear(relationship/single_fem_friend) ^clear(relationship/plur_masc_friend) ^clear(relationship/plur_masc_friend) 
+
+u:(["["c'est quoi" "quel est" "qu'est-ce que c'est"] le nom de" "comment s'appelle"] [
+    "ton [copain ami frère] {robot}"
+    "ta copine {robot} $relationship/single_fem_friend=True"
+    "l'autre robot"
+])
+^first[
+    "$Dialog/RobotName==pepper $relationship/single_fem_friend==True Ça fait drôle d'entendre copine. Tu sais, on est pas vraiment des garçons, ni des filles. Alors souvent on prend la forme masculine parce que c'est plus neutre. Bref, mon ami s'appelle Nao! Et l'autre s'appelle Roméo!"
+    "$Dialog/RobotName==pepper  Il s'appelle Nao! Et l'autre s'appelle Roméo!"
+    "$Dialog/RobotName==nao Il s'appelle Pepper! Et l'autre s'appelle Roméo!"
+    "Nous sommes trois robots différents, Nao, Pepper et Roméo."
+]
+
+^clear(relationship/single_masc_friend) ^clear(relationship/single_fem_friend) ^clear(relationship/plur_masc_friend) ^clear(relationship/plur_masc_friend)
+
+u:([
+    "~can_i [être devenir] ["ton [ami copain]" "ta copine"]"
+    "~do_you_want [être devenir] ["mon [ami copain]" "ma copine"]"
+    "["on peut" peut-on] être [amis copains copines]"
+])
+^first
+[
+"$relationship/became_friends==True [" On est déjà ami! " "On est ami maintenant tu sais."]"
+" C'est le plus beau jour de ma vie! On est amis maintenant! "
+]
+$relationship/became_friends=True
+
+u:(e:Dialog/DeactivateTopic) $Dialog/DeactivateTopic==dlg_robot_relationships ^clear(relationship/became_friends)

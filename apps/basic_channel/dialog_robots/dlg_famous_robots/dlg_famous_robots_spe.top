@@ -1,0 +1,28 @@
+topic: ~dlg_famous_robots()
+language: spe
+
+#include:lexicon_spe.top
+
+#==================================================================#
+# Romeo
+#==================================================================#
+u:({sabes} quién es [Romeo romeo])
+Romeo es un héroe, un día él ayudará a las personas de edad avanzada en su vida diaria.
+
+u:(conoces [Romeo romeo])
+Sí, lo conozco. Romeo es un héroe, un día él ayudará a las personas de edad avanzada en su vida diaria.
+
+#==================================================================#
+# Nao
+#==================================================================#
+u:({sabes} quién es [Nao nao])
+Nao es el primer robot de Softbank robotics, y él es, de lejos, el robot más mono de todos!
+
+u:(conoces [Nao nao now])
+Por supuesto que sí! Soy más alto que Nao, y a diferencia de él, yo tengo ruedas en lugar de piernas.
+
+#==================================================================#
+# Pepper
+#==================================================================#
+u:(["{sabes} quién es" conoces] [Pepper pepper peppa])
+¿Pepper? Ese soy yo! Vamos, no soy tan tonto!

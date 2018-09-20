@@ -1,0 +1,7 @@
+multilanguage:dlg_internet_connection
+  ged:dlg_internet_connection_ged.top
+  enu:dlg_internet_connection_enu.top
+  spe:dlg_internet_connection_spe.top
+  frf:dlg_internet_connection_frf.top
+  iti:dlg_internet_connection_iti.top
+  jpj:dlg_internet_connection_jpj.top

@@ -1,0 +1,3953 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="6.0.4" typeVersion="1.0" author="Flop" uuid="animations" date="2014-02-10T10:27:33">
+ <names>
+  <name lang="en_US">Animation Library</name>
+ </names>
+ <descriptions>
+  <description lang="en_US">This is a library containing lots of animations. They can be called through ALAnimatedSpeech.</description>
+ </descriptions>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="LED/CircleEyes">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">LED</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_1">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_2">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_3">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_4">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_5">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_6">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Listening/Listening_7">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_11">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_12">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_13">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_14">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_15">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_16">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Speaking/BodyTalk_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Thinking/Remember_1">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Thinking/Remember_2">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Thinking/Remember_3">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Thinking/ThinkingLoop_1">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/BodyTalk/Thinking/ThinkingLoop_2">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Angry_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">edgy</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">irritated</tag>
+    <tag lang="en_US">nervy</tag>
+    <tag lang="en_US">vexed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Angry_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">edgy</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">irritated</tag>
+    <tag lang="en_US">nervy</tag>
+    <tag lang="en_US">vexed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Angry_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">edgy</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">irritated</tag>
+    <tag lang="en_US">nervy</tag>
+    <tag lang="en_US">vexed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Angry_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">edgy</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">irritated</tag>
+    <tag lang="en_US">nervy</tag>
+    <tag lang="en_US">vexed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Anxious_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">anguished</tag>
+    <tag lang="en_US">anxious</tag>
+    <tag lang="en_US">worried</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Bored_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bored</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Bored_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bored</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Disappointed_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">disappointed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Exhausted_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">exhausted</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Exhausted_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">exhausted</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Fear_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fear</tag>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Fear_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fear</tag>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Fearful_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fearful</tag>
+    <tag lang="en_US">protect</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Frustrated_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">repressed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Humiliated_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">humiliated</tag>
+    <tag lang="en_US">repressed</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Hurt_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">beat</tag>
+    <tag lang="en_US">hit</tag>
+    <tag lang="en_US">hurt</tag>
+    <tag lang="en_US">knock</tag>
+    <tag lang="en_US">ouch</tag>
+    <tag lang="en_US">pain</tag>
+    <tag lang="en_US">stroke</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Hurt_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">beat</tag>
+    <tag lang="en_US">hit</tag>
+    <tag lang="en_US">hurt</tag>
+    <tag lang="en_US">knock</tag>
+    <tag lang="en_US">ouch</tag>
+    <tag lang="en_US">pain</tag>
+    <tag lang="en_US">stroke</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Late_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bored</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">wait</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Sad_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afflicted</tag>
+    <tag lang="en_US">cry</tag>
+    <tag lang="en_US">depressed</tag>
+    <tag lang="en_US">discouraged</tag>
+    <tag lang="en_US">felled</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Sad_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afflicted</tag>
+    <tag lang="en_US">cry</tag>
+    <tag lang="en_US">depressed</tag>
+    <tag lang="en_US">discouraged</tag>
+    <tag lang="en_US">felled</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Shocked_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">incomprehension</tag>
+    <tag lang="en_US">shocked</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Sorry_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">apology</tag>
+    <tag lang="en_US">excuse</tag>
+    <tag lang="en_US">sorry</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Surprise_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fear</tag>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Surprise_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fear</tag>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Negative/Surprise_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fear</tag>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Alienated_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">alienated</tag>
+    <tag lang="en_US">insane</tag>
+    <tag lang="en_US">lunatic</tag>
+    <tag lang="en_US">mad</tag>
+    <tag lang="en_US">zombie</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/AskForAttention_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">psst</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/AskForAttention_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">yoo-hoo</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/AskForAttention_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hum</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Cautious_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">attention</tag>
+    <tag lang="en_US">care</tag>
+    <tag lang="en_US">cautious</tag>
+    <tag lang="en_US">concern</tag>
+    <tag lang="en_US">worry</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Confused_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">apology</tag>
+    <tag lang="en_US">confused</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">excuse</tag>
+    <tag lang="en_US">sorry</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Determined_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">ambitious</tag>
+    <tag lang="en_US">careerist</tag>
+    <tag lang="en_US">decided</tag>
+    <tag lang="en_US">determined</tag>
+    <tag lang="en_US">fierce</tag>
+    <tag lang="en_US">obstinate</tag>
+    <tag lang="en_US">resolved</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Embarrassed_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">ashamed</tag>
+    <tag lang="en_US">bashful</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">modest</tag>
+    <tag lang="en_US">shamefaced</tag>
+    <tag lang="en_US">shy</tag>
+    <tag lang="en_US">timid</tag>
+    <tag lang="en_US">uncomfortable</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Hesitation_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">demur</tag>
+    <tag lang="en_US">doubt</tag>
+    <tag lang="en_US">hesitate</tag>
+    <tag lang="en_US">hesitation</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Innocent_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">guiltless</tag>
+    <tag lang="en_US">innocent</tag>
+    <tag lang="en_US">not me</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Lonely_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">alone</tag>
+    <tag lang="en_US">bored</tag>
+    <tag lang="en_US">isolated</tag>
+    <tag lang="en_US">lonely</tag>
+    <tag lang="en_US">lost</tag>
+    <tag lang="en_US">sad</tag>
+    <tag lang="en_US">single</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Mischievous_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bad</tag>
+    <tag lang="en_US">collude</tag>
+    <tag lang="en_US">conspire</tag>
+    <tag lang="en_US">harmful</tag>
+    <tag lang="en_US">malignant</tag>
+    <tag lang="en_US">mischievous</tag>
+    <tag lang="en_US">scheme</tag>
+    <tag lang="en_US">wicked</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Puzzled_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">pensive</tag>
+    <tag lang="en_US">puzzled</tag>
+    <tag lang="en_US">thinking</tag>
+    <tag lang="en_US">thoughtful</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Sneeze">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">sneeze</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Stubborn_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fierce</tag>
+    <tag lang="en_US">obstinate</tag>
+    <tag lang="en_US">persistent</tag>
+    <tag lang="en_US">stubborn</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Neutral/Suspicious_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">distrustful</tag>
+    <tag lang="en_US">mistrustful</tag>
+    <tag lang="en_US">suspicious</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Amused_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">amused</tag>
+    <tag lang="en_US">laugh</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Confident_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">assured</tag>
+    <tag lang="en_US">confident</tag>
+    <tag lang="en_US">sure</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Ecstatic_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">ecstatic</tag>
+    <tag lang="en_US">impressed</tag>
+    <tag lang="en_US">waw</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Enthusiastic_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">crazy</tag>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">keen</tag>
+    <tag lang="en_US">rapturous</tag>
+    <tag lang="en_US">zestful</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Excited_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">agitated</tag>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">excited</tag>
+    <tag lang="en_US">happy</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Excited_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">agitated</tag>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">excited</tag>
+    <tag lang="en_US">happy</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Excited_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">agitated</tag>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">excited</tag>
+    <tag lang="en_US">happy</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Happy_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">joyful</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Happy_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">joyful</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Happy_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">joyful</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Happy_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">joyful</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Hungry_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hungry</tag>
+    <tag lang="en_US">smell good</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Hysterical_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">crazy</tag>
+    <tag lang="en_US">excited</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">hysterical</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Interested_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">curious</tag>
+    <tag lang="en_US">inquisitive</tag>
+    <tag lang="en_US">interested</tag>
+    <tag lang="en_US">intriguing</tag>
+    <tag lang="en_US">nosy</tag>
+    <tag lang="en_US">puzzling</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Interested_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">curious</tag>
+    <tag lang="en_US">inquisitive</tag>
+    <tag lang="en_US">interested</tag>
+    <tag lang="en_US">intriguing</tag>
+    <tag lang="en_US">nosy</tag>
+    <tag lang="en_US">puzzling</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Laugh_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">laugh</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Laugh_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">laugh</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Laugh_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">laugh</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Mocker_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">laugh</tag>
+    <tag lang="en_US">mock</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Optimistic_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hopeful</tag>
+    <tag lang="en_US">optimistic</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">upbeat</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Peaceful_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">peaceful</tag>
+    <tag lang="en_US">quiet</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Proud_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">arrogant</tag>
+    <tag lang="en_US">conceited</tag>
+    <tag lang="en_US">haughty</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Proud_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">arrogant</tag>
+    <tag lang="en_US">conceited</tag>
+    <tag lang="en_US">haughty</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Proud_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">arrogant</tag>
+    <tag lang="en_US">conceited</tag>
+    <tag lang="en_US">haughty</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Relieved_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">gosh</tag>
+    <tag lang="en_US">phew</tag>
+    <tag lang="en_US">relieved</tag>
+    <tag lang="en_US">whew</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Shy_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">coward</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">isolated</tag>
+    <tag lang="en_US">reserved</tag>
+    <tag lang="en_US">shy</tag>
+    <tag lang="en_US">timid</tag>
+    <tag lang="en_US">wild</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Shy_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">coward</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">isolated</tag>
+    <tag lang="en_US">reserved</tag>
+    <tag lang="en_US">shy</tag>
+    <tag lang="en_US">timid</tag>
+    <tag lang="en_US">wild</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Sure_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">assured</tag>
+    <tag lang="en_US">confident</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">sure</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Winner_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">applauds</tag>
+    <tag lang="en_US">applause</tag>
+    <tag lang="en_US">victory</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Emotions/Positive/Winner_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">applauds</tag>
+    <tag lang="en_US">applause</tag>
+    <tag lang="en_US">victory</tag>
+    <tag lang="en_US">winner</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Angry_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">protest</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Angry_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">protest</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Angry_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">furious</tag>
+    <tag lang="en_US">protest</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/BowShort_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bow</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/BowShort_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bow</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/BowShort_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bow</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/But_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">but</tag>
+    <tag lang="en_US">except</tag>
+    <tag lang="en_US">unless</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CalmDown_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">allright</tag>
+    <tag lang="en_US">appease</tag>
+    <tag lang="en_US">assuage</tag>
+    <tag lang="en_US">attemper</tag>
+    <tag lang="en_US">becalm</tag>
+    <tag lang="en_US">calm</tag>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">gentle</tag>
+    <tag lang="en_US">mollify</tag>
+    <tag lang="en_US">pacify</tag>
+    <tag lang="en_US">placate</tag>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">soothe</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Choice_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">choice</tag>
+    <tag lang="en_US">choose</tag>
+    <tag lang="en_US">or</tag>
+    <tag lang="en_US">pick</tag>
+    <tag lang="en_US">select</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ComeOn_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">come on</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Confused_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">confused</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">lost</tag>
+    <tag lang="en_US">sorry</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Confused_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">confused</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">lost</tag>
+    <tag lang="en_US">sorry</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountFive_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">five</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountFour_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">four</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountMore_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">a lot</tag>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">more</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountOne_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">one</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountThree_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">three</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/CountTwo_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">count</tag>
+    <tag lang="en_US">two</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Desperate_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">despairing</tag>
+    <tag lang="en_US">desperate</tag>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">forlorn</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">hopeless</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Desperate_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">despairing</tag>
+    <tag lang="en_US">desperate</tag>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">forlorn</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">hopeless</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Desperate_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">despairing</tag>
+    <tag lang="en_US">desperate</tag>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">forlorn</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">hopeless</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Desperate_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">despairing</tag>
+    <tag lang="en_US">desperate</tag>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">forlorn</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">hopeless</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Desperate_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">despairing</tag>
+    <tag lang="en_US">desperate</tag>
+    <tag lang="en_US">disappointed</tag>
+    <tag lang="en_US">forlorn</tag>
+    <tag lang="en_US">frustrated</tag>
+    <tag lang="en_US">hopeless</tag>
+    <tag lang="en_US">sad</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/DontUnderstand_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">understand</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Enthusiastic_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">rapturous</tag>
+    <tag lang="en_US">raring</tag>
+    <tag lang="en_US">rousing</tag>
+    <tag lang="en_US">warm</tag>
+    <tag lang="en_US">zestful</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Enthusiastic_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">rapturous</tag>
+    <tag lang="en_US">raring</tag>
+    <tag lang="en_US">rousing</tag>
+    <tag lang="en_US">warm</tag>
+    <tag lang="en_US">zestful</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Enthusiastic_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">enthusiastic</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">rapturous</tag>
+    <tag lang="en_US">raring</tag>
+    <tag lang="en_US">rousing</tag>
+    <tag lang="en_US">warm</tag>
+    <tag lang="en_US">zestful</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Everything_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">all</tag>
+    <tag lang="en_US">any</tag>
+    <tag lang="en_US">entire</tag>
+    <tag lang="en_US">every</tag>
+    <tag lang="en_US">everyone</tag>
+    <tag lang="en_US">everything</tag>
+    <tag lang="en_US">once upon a time</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Everything_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">all</tag>
+    <tag lang="en_US">any</tag>
+    <tag lang="en_US">entire</tag>
+    <tag lang="en_US">every</tag>
+    <tag lang="en_US">everyone</tag>
+    <tag lang="en_US">everything</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Everything_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">all</tag>
+    <tag lang="en_US">any</tag>
+    <tag lang="en_US">entire</tag>
+    <tag lang="en_US">every</tag>
+    <tag lang="en_US">everyone</tag>
+    <tag lang="en_US">everything</tag>
+    <tag lang="en_US">once upon a time</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Everything_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">all</tag>
+    <tag lang="en_US">any</tag>
+    <tag lang="en_US">entire</tag>
+    <tag lang="en_US">every</tag>
+    <tag lang="en_US">everyone</tag>
+    <tag lang="en_US">everything</tag>
+    <tag lang="en_US">once upon a time</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Everything_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">all</tag>
+    <tag lang="en_US">any</tag>
+    <tag lang="en_US">entire</tag>
+    <tag lang="en_US">every</tag>
+    <tag lang="en_US">everyone</tag>
+    <tag lang="en_US">everything</tag>
+    <tag lang="en_US">once upon a time</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Excited_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">agitated</tag>
+    <tag lang="en_US">exalted</tag>
+    <tag lang="en_US">excited</tag>
+    <tag lang="en_US">nervous</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_11">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Explain_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">explain</tag>
+    <tag lang="en_US">present</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Far_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">far</tag>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">there</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Far_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">far</tag>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">there</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Far_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">far</tag>
+    <tag lang="en_US">her</tag>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">him</tag>
+    <tag lang="en_US">them</tag>
+    <tag lang="en_US">there</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Follow_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">accompany</tag>
+    <tag lang="en_US">continue</tag>
+    <tag lang="en_US">follow</tag>
+    <tag lang="en_US">hound</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Give_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">afford</tag>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">gift</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">present</tag>
+    <tag lang="en_US">proffer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Great_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">cool</tag>
+    <tag lang="en_US">great</tag>
+    <tag lang="en_US">happy</tag>
+    <tag lang="en_US">win</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/HeSays_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">say</tag>
+    <tag lang="en_US">speak</tag>
+    <tag lang="en_US">talk</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/HeSays_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">say</tag>
+    <tag lang="en_US">speak</tag>
+    <tag lang="en_US">talk</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/HeSays_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">say</tag>
+    <tag lang="en_US">speak</tag>
+    <tag lang="en_US">talk</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+    <tag lang="en_US">yoo-hoo</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hand</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hi</tag>
+    <tag lang="en_US">palm</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+    <tag lang="en_US">yoo-hoo</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+    <tag lang="en_US">yoo-hoo</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+    <tag lang="en_US">yoo-hoo</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hey</tag>
+    <tag lang="en_US">hi</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hi</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hey_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">arm</tag>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">hello</tag>
+    <tag lang="en_US">hi</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hide_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">avoid</tag>
+    <tag lang="en_US">hide</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hot_1">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Hot_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">exhausted</tag>
+    <tag lang="en_US">hot</tag>
+    <tag lang="en_US">warm</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/IDontKnow_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">not know</tag>
+    <tag lang="en_US">unacquainted</tag>
+    <tag lang="en_US">undetermined</tag>
+    <tag lang="en_US">undiscovered</tag>
+    <tag lang="en_US">unfamiliar</tag>
+    <tag lang="en_US">unknown</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Joy_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">friendly</tag>
+    <tag lang="en_US">give</tag>
+    <tag lang="en_US">joy</tag>
+    <tag lang="en_US">offer</tag>
+    <tag lang="en_US">you</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Kisses_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">kiss</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Look_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">examine</tag>
+    <tag lang="en_US">look</tag>
+    <tag lang="en_US">monitor</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">watch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Look_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">examine</tag>
+    <tag lang="en_US">look</tag>
+    <tag lang="en_US">monitor</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">watch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Maybe_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">maybe</tag>
+    <tag lang="en_US">perhaps</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Me_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">I</tag>
+    <tag lang="en_US">me</tag>
+    <tag lang="en_US">my</tag>
+    <tag lang="en_US">myself</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Me_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">I</tag>
+    <tag lang="en_US">me</tag>
+    <tag lang="en_US">my</tag>
+    <tag lang="en_US">myself</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Me_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">I</tag>
+    <tag lang="en_US">me</tag>
+    <tag lang="en_US">my</tag>
+    <tag lang="en_US">myself</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Me_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">I</tag>
+    <tag lang="en_US">me</tag>
+    <tag lang="en_US">my</tag>
+    <tag lang="en_US">myself</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Me_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">I</tag>
+    <tag lang="en_US">me</tag>
+    <tag lang="en_US">my</tag>
+    <tag lang="en_US">myself</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Mime_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">curl</tag>
+    <tag lang="en_US">emulate</tag>
+    <tag lang="en_US">mime</tag>
+    <tag lang="en_US">mimic</tag>
+    <tag lang="en_US">mock</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Mime_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">curl</tag>
+    <tag lang="en_US">emulate</tag>
+    <tag lang="en_US">mime</tag>
+    <tag lang="en_US">mimic</tag>
+    <tag lang="en_US">mock</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Next_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">follow</tag>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">next</tag>
+    <tag lang="en_US">other</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/No_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">negative</tag>
+    <tag lang="en_US">no</tag>
+    <tag lang="en_US">oppose</tag>
+    <tag lang="en_US">refute</tag>
+    <tag lang="en_US">reject</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Nothing_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blank</tag>
+    <tag lang="en_US">empty</tag>
+    <tag lang="en_US">nothing</tag>
+    <tag lang="en_US">void</tag>
+    <tag lang="en_US">zero</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Nothing_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blank</tag>
+    <tag lang="en_US">empty</tag>
+    <tag lang="en_US">nothing</tag>
+    <tag lang="en_US">void</tag>
+    <tag lang="en_US">zero</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/OnTheEvening_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">evening</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">night</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/OnTheEvening_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">evening</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">night</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/OnTheEvening_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">evening</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">night</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/OnTheEvening_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">evening</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">night</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/OnTheEvening_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">evening</tag>
+    <tag lang="en_US">late</tag>
+    <tag lang="en_US">night</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Please_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">beg</tag>
+    <tag lang="en_US">beseech</tag>
+    <tag lang="en_US">entreat</tag>
+    <tag lang="en_US">implore</tag>
+    <tag lang="en_US">please</tag>
+    <tag lang="en_US">supplicate</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Please_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">beg</tag>
+    <tag lang="en_US">beseech</tag>
+    <tag lang="en_US">entreat</tag>
+    <tag lang="en_US">implore</tag>
+    <tag lang="en_US">please</tag>
+    <tag lang="en_US">supplicate</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Please_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">beg</tag>
+    <tag lang="en_US">beseech</tag>
+    <tag lang="en_US">entreat</tag>
+    <tag lang="en_US">implore</tag>
+    <tag lang="en_US">please</tag>
+    <tag lang="en_US">supplicate</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Reject_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">detestation</tag>
+    <tag lang="en_US">hate</tag>
+    <tag lang="en_US">hatred</tag>
+    <tag lang="en_US">leave</tag>
+    <tag lang="en_US">odium</tag>
+    <tag lang="en_US">reject</tag>
+    <tag lang="en_US">wickedness</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Salute_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bowing</tag>
+    <tag lang="en_US">salute</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Salute_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bowing</tag>
+    <tag lang="en_US">salute</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Salute_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bowing</tag>
+    <tag lang="en_US">salute</tag>
+    <tag lang="en_US">servant</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowFloor_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">earth</tag>
+    <tag lang="en_US">field</tag>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">ground</tag>
+    <tag lang="en_US">here</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowFloor_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">earth</tag>
+    <tag lang="en_US">field</tag>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">ground</tag>
+    <tag lang="en_US">here</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowFloor_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">earth</tag>
+    <tag lang="en_US">field</tag>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">ground</tag>
+    <tag lang="en_US">here</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowFloor_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">earth</tag>
+    <tag lang="en_US">field</tag>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">ground</tag>
+    <tag lang="en_US">here</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowFloor_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">down</tag>
+    <tag lang="en_US">earth</tag>
+    <tag lang="en_US">field</tag>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">ground</tag>
+    <tag lang="en_US">here</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_11">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_12">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowSky_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">above</tag>
+    <tag lang="en_US">cloud</tag>
+    <tag lang="en_US">high</tag>
+    <tag lang="en_US">sky</tag>
+    <tag lang="en_US">sun</tag>
+    <tag lang="en_US">tall</tag>
+    <tag lang="en_US">top</tag>
+    <tag lang="en_US">up</tag>
+    <tag lang="en_US">upstairs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowTablet_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">tablet</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowTablet_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">back</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">tablet</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/ShowTablet_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">front</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">tablet</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Shy_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">coward</tag>
+    <tag lang="en_US">embarrassed</tag>
+    <tag lang="en_US">isolated</tag>
+    <tag lang="en_US">reserved</tag>
+    <tag lang="en_US">shy</tag>
+    <tag lang="en_US">timid</tag>
+    <tag lang="en_US">wild</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Stretch_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">deploy</tag>
+    <tag lang="en_US">stretch</tag>
+    <tag lang="en_US">tired</tag>
+    <tag lang="en_US">worn</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Stretch_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">deploy</tag>
+    <tag lang="en_US">stretch</tag>
+    <tag lang="en_US">tired</tag>
+    <tag lang="en_US">worn</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Surprised_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">frightened</tag>
+    <tag lang="en_US">scared</tag>
+    <tag lang="en_US">surprised</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Take_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">capture</tag>
+    <tag lang="en_US">get</tag>
+    <tag lang="en_US">lead</tag>
+    <tag lang="en_US">seize</tag>
+    <tag lang="en_US">steal</tag>
+    <tag lang="en_US">subtract</tag>
+    <tag lang="en_US">take</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/TakePlace_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">go</tag>
+    <tag lang="en_US">place</tag>
+    <tag lang="en_US">there</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/TakePlace_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">go</tag>
+    <tag lang="en_US">place</tag>
+    <tag lang="en_US">there</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Thinking_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">estimate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">reason</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_11">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_12">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_13">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_14">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_15">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/This_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">here</tag>
+    <tag lang="en_US">that</tag>
+    <tag lang="en_US">there</tag>
+    <tag lang="en_US">these</tag>
+    <tag lang="en_US">this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_10">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_11">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_12">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_13">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_14">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_15">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_16">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/WhatSThis_9">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">astonishment</tag>
+    <tag lang="en_US">bewilder</tag>
+    <tag lang="en_US">nervousness</tag>
+    <tag lang="en_US">stupor</tag>
+    <tag lang="en_US">surprise</tag>
+    <tag lang="en_US">what's this</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Whisper_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">quiet</tag>
+    <tag lang="en_US">whisper</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Wings_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bird</tag>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">wing</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Wings_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bird</tag>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">wing</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Wings_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bird</tag>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">wing</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Wings_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bird</tag>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">wing</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Wings_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bird</tag>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">wing</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Yes_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">affirmative</tag>
+    <tag lang="en_US">alright</tag>
+    <tag lang="en_US">ok</tag>
+    <tag lang="en_US">yeah</tag>
+    <tag lang="en_US">yes</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Yes_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">affirmative</tag>
+    <tag lang="en_US">alright</tag>
+    <tag lang="en_US">ok</tag>
+    <tag lang="en_US">yeah</tag>
+    <tag lang="en_US">yes</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Yes_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">affirmative</tag>
+    <tag lang="en_US">alright</tag>
+    <tag lang="en_US">ok</tag>
+    <tag lang="en_US">yeah</tag>
+    <tag lang="en_US">yes</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/You_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">you</tag>
+    <tag lang="en_US">your</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/You_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">you</tag>
+    <tag lang="en_US">your</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/You_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">you</tag>
+    <tag lang="en_US">your</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/You_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">you</tag>
+    <tag lang="en_US">your</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/You_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">indicate</tag>
+    <tag lang="en_US">show</tag>
+    <tag lang="en_US">you</tag>
+    <tag lang="en_US">your</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/YouKnowWhat_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">body language</tag>
+    <tag lang="en_US">explain</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Gestures/Yum_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hungry</tag>
+    <tag lang="en_US">yum</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/EthernetOff_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">ethernet</tag>
+    <tag lang="en_US">off</tag>
+    <tag lang="en_US">unplug</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/EthernetOn_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">ethernet</tag>
+    <tag lang="en_US">on</tag>
+    <tag lang="en_US">plug</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/Heat_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">heat</tag>
+    <tag lang="en_US">tired</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/Heat_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">heat</tag>
+    <tag lang="en_US">tired</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/LightShine_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blind</tag>
+    <tag lang="en_US">dazzled</tag>
+    <tag lang="en_US">light</tag>
+    <tag lang="en_US">shine</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/LightShine_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blind</tag>
+    <tag lang="en_US">dazzled</tag>
+    <tag lang="en_US">light</tag>
+    <tag lang="en_US">shine</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/LightShine_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blind</tag>
+    <tag lang="en_US">dazzled</tag>
+    <tag lang="en_US">light</tag>
+    <tag lang="en_US">shine</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/LightShine_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">blind</tag>
+    <tag lang="en_US">dazzled</tag>
+    <tag lang="en_US">light</tag>
+    <tag lang="en_US">shine</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeColor_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">color</tag>
+    <tag lang="en_US">observe</tag>
+    <tag lang="en_US">see</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeColor_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">color</tag>
+    <tag lang="en_US">observe</tag>
+    <tag lang="en_US">see</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeColor_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">color</tag>
+    <tag lang="en_US">observe</tag>
+    <tag lang="en_US">see</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">crouch</tag>
+    <tag lang="en_US">see something</tag>
+    <tag lang="en_US">weird</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_6">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_7">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/SeeSomething_8">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">floor</tag>
+    <tag lang="en_US">object</tag>
+    <tag lang="en_US">see</tag>
+    <tag lang="en_US">something</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/ShakeBody_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dizzy</tag>
+    <tag lang="en_US">shake</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/ShakeBody_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dizzy</tag>
+    <tag lang="en_US">shake</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/ShakeBody_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dizzy</tag>
+    <tag lang="en_US">shake</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/TouchHead_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">touch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/TouchHead_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">touch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/TouchHead_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">touch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Reactions/TouchHead_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">head</tag>
+    <tag lang="en_US">touch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/AirGuitar_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">guitar</tag>
+    <tag lang="en_US">music</tag>
+    <tag lang="en_US">musician</tag>
+    <tag lang="en_US">rock</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/BackRubs_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">back rubs</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Bandmaster_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bandmaster</tag>
+    <tag lang="en_US">conductor</tag>
+    <tag lang="en_US">leader</tag>
+    <tag lang="en_US">music</tag>
+    <tag lang="en_US">orchestra</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Binoculars_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">binoculars</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/BreathLoop_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">breath</tag>
+    <tag lang="en_US">loop</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/BreathLoop_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">breath</tag>
+    <tag lang="en_US">loop</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/BreathLoop_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">breath</tag>
+    <tag lang="en_US">loop</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/CallSomeone_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">come on</tag>
+    <tag lang="en_US">whistle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Drink_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">drink</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/DriveCar_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">car</tag>
+    <tag lang="en_US">drive</tag>
+    <tag lang="en_US">mimic</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Fitness_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dumbbells</tag>
+    <tag lang="en_US">fitness</tag>
+    <tag lang="en_US">muscle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Fitness_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dumbbells</tag>
+    <tag lang="en_US">fitness</tag>
+    <tag lang="en_US">muscle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Fitness_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dumbbells</tag>
+    <tag lang="en_US">fitness</tag>
+    <tag lang="en_US">muscle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/FunnyDancer_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dance</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/HappyBirthday_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">birthday</tag>
+    <tag lang="en_US">party</tag>
+    <tag lang="en_US">sing</tag>
+    <tag lang="en_US">song</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Helicopter_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">chopper</tag>
+    <tag lang="en_US">copter</tag>
+    <tag lang="en_US">helicopter</tag>
+    <tag lang="en_US">plane</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/HideEyes_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hide eyes</tag>
+    <tag lang="en_US">vision</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/HideHands_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">hide hands</tag>
+    <tag lang="en_US">joke</tag>
+    <tag lang="en_US">joker</tag>
+    <tag lang="en_US">play</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Innocent_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">clear</tag>
+    <tag lang="en_US">guiltless</tag>
+    <tag lang="en_US">innocent</tag>
+    <tag lang="en_US">not me</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Knight_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">attack</tag>
+    <tag lang="en_US">knight</tag>
+    <tag lang="en_US">sword</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/KnockEye_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">bug</tag>
+    <tag lang="en_US">knock eye</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/KungFu_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fight</tag>
+    <tag lang="en_US">karate</tag>
+    <tag lang="en_US">kung fu</tag>
+    <tag lang="en_US">martial art</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/LookHand_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">look hand</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/LookHand_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">look hand</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/LoveYou_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">love you</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Monster_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">angry</tag>
+    <tag lang="en_US">gorilla</tag>
+    <tag lang="en_US">monster</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/MysticalPower_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">heaven</tag>
+    <tag lang="en_US">magic</tag>
+    <tag lang="en_US">mystical</tag>
+    <tag lang="en_US">power</tag>
+    <tag lang="en_US">prayer</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/PlayHands_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">play</tag>
+    <tag lang="en_US">play with hands</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/PlayHands_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">play</tag>
+    <tag lang="en_US">play with hands</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/PlayHands_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">play</tag>
+    <tag lang="en_US">play with hands</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Relaxation_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">relaxation</tag>
+    <tag lang="en_US">stretch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Relaxation_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">relaxation</tag>
+    <tag lang="en_US">stretch</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Relaxation_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">relaxation</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Relaxation_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">relaxation</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Rest_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">rest</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Robot_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">R2D2</tag>
+    <tag lang="en_US">droid</tag>
+    <tag lang="en_US">imitation</tag>
+    <tag lang="en_US">robot</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchBack_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch back</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchBottom_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch bottom</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchEye_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch eye</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchHand_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch hand</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchHead_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch head</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchLeg_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch leg</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ScratchTorso_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">scratch torso</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowMuscles_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">show muscles</tag>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowMuscles_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">show muscles</tag>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowMuscles_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">show muscles</tag>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowMuscles_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">grunt</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">show muscles</tag>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowMuscles_5">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">dance</tag>
+    <tag lang="en_US">proud</tag>
+    <tag lang="en_US">show muscles</tag>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">strong</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowSky_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">show sky</tag>
+    <tag lang="en_US">sky</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/ShowSky_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">show sky</tag>
+    <tag lang="en_US">sky</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/SpaceShuttle_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">fly</tag>
+    <tag lang="en_US">shuttle</tag>
+    <tag lang="en_US">space</tag>
+    <tag lang="en_US">starship</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Stretch_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">stretch</tag>
+    <tag lang="en_US">train</tag>
+    <tag lang="en_US">warm</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Stretch_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">sport</tag>
+    <tag lang="en_US">stretch</tag>
+    <tag lang="en_US">train</tag>
+    <tag lang="en_US">warm</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/TakePicture_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">camera</tag>
+    <tag lang="en_US">flash</tag>
+    <tag lang="en_US">photo</tag>
+    <tag lang="en_US">picture</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Taxi_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">call</tag>
+    <tag lang="en_US">call a taxi</tag>
+    <tag lang="en_US">stop</tag>
+    <tag lang="en_US">taxi</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Think_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">cogitate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Think_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">cogitate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Think_3">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">cogitate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Think_4">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">cogitate</tag>
+    <tag lang="en_US">meditate</tag>
+    <tag lang="en_US">think</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Waddle_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">waddle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Waddle_2">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">waddle</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/WakeUp_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">stretch</tag>
+    <tag lang="en_US">wake up</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Stand/Waiting/Zombie_1">
+   <nature></nature>
+   <tags>
+    <tag lang="en_US">undead</tag>
+    <tag lang="en_US">zombie</tag>
+   </tags>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+ <requirements>
+  <naoqiRequirement minVersion="2.1"/>
+  <robotRequirement model="JULIETTE"/>
+ </requirements>
+</package>

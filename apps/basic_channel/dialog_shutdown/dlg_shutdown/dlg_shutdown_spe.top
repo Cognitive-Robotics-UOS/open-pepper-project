@@ -1,0 +1,39 @@
+topic: ~dlg_shutdown()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+# Shutdown/Reboot the robot
+#==================================================================#
+u:(~ald_robots ["apágate {solo}" desconéctate])
+De acuerdo, adiós! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+u:([
+    "~can_you [apagar apagarte desconectar desconectarte]"
+    "{"por favor"} ["apágate {solo}" desconéctate]"
+]) 
+%shutdown
+De verdad deseas que me apague?
+
+    u1:(~yes)
+    De acuerdo, adiós! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+    u1:(~no)
+    De acuerdo! No me apagaré! ^releaseFocus
+
+u:(~ald_robots [reiníciate reactívate])
+Muy bien! Te veo en un rato! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+u:([
+    "~can_you [reiniciarte reactivarte]"
+    "{"por favor"} [reiníciate reactívate]"
+])
+De verdad deseas que me reinicie?
+
+    u1:(~yes)
+    Muy bien! Te veo en un rato! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+    u1:(~no)
+    De acuerdo! No me reiniciaré! ^releaseFocus
+

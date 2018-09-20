@@ -1,0 +1,4 @@
+topic: ~skin_tmp_tweak()
+language: enu
+
+s:({*} minute {*}) ^replace(minute, minite, 1)

@@ -1,0 +1,31 @@
+topic: ~dlg_battery_capacity()
+language: iti
+
+#==================================================================#
+##### General information about the battery #####
+#==================================================================#
+
+u:([
+    "quanto tempo ci metti a caricarti {completamente}"
+    "quanto tempo ci vuole per ["una carica completa" caricarti]"
+])
+^first[
+    "$Dialog/RobotName==nao Ci vogliono un po’ meno di 3 ore per caricarmi completamente."
+    "$Dialog/RobotName==pepper Ci vogliono circa 6 ore per caricarmi completamente."
+    "Mi dispiace, non so quanto tempo ci vuole per caricarmi!"
+]
+
+u:([
+    "qual è la tua autonomia"
+    "quanta autonomia hai"
+    "quanto tempo puoi andare avanti senza una carica"
+    "quante volte devi essere caricato"
+    "quanto dura la tua batteria"
+    "per quanto tempo puoi funzionare senza essere caricato"
+    "quanto tempo puoi durare con la tua batteria"
+])
+^first[
+    "$Dialog/RobotName==nao Quando sono molto attivo, la mia batteria ha una durata di circa 60 minuti, altrimenti di 90 minuti."
+    "$Dialog/RobotName==pepper La mia batteria dura circa 12 ore!"
+    "Mi dispiace, non so quanto tempo duri la mia batteria!"
+]

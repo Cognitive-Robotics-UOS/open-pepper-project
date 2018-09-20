@@ -1,0 +1,27 @@
+topic: ~dlg_manage_events()
+language: frf
+
+include: lexicon_frf.top
+
+
+#==================================================================#
+# Gathers special events, mostly failures
+#==================================================================#
+
+u:(e:Dialog/CannotMakeIt)
+Excuse moi, je ne peux pas ^rand["le faire" "faire ça"].
+
+u:(e:Dialog/NothingToSay)
+$nothingtosay=1
+
+u:(e:Dialog/SpeakFailure)
+$DialogUnhappyHuman=1
+Désolé, ça n'a pas de sens pour moi. Parlons d'autre chose! ^topicRandom
+
+#u:(e:Dialog/SameRule) ["Je crois que je vais me répéter, " "Il me semble que je disais," "Comme je disais,"]
+
+u:(e:ALMotion/Safety/PushRecovery)
+Oups, j'ai failli tomber!
+
+#u:(e:FaceCharacteristics/PersonSmiling)
+#Tu es en train de me sourire.

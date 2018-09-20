@@ -1,0 +1,8 @@
+topic: ~solitary-push-recovered()
+language: enu
+
+proposal: %push ^rand[
+    "^start(push-recovered/animations/pushed_0) \vct=120\ Someone, please! \vct=100\ There! there someone pushed me! ^wait(push-recovered/animations/pushed_0)"
+    "^start(push-recovered/animations/pushed_1) Hey! you there. Be more careful please ! ^wait(push-recovered/animations/pushed_1)"
+    "^start(push-recovered/animations/pushed_2) oh see what you are doing? really, you are going to stain my legs. \pau=1500\No robot pushing please! ^wait(push-recovered/animations/pushed_2)"
+    ]

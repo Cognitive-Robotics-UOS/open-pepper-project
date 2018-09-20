@@ -1,0 +1,29 @@
+topic: ~dlg_stop_talking()
+language: ged
+
+include: lexicon_ged.top
+
+#==================================================================#
+# Robot will stop talking and being proactive
+#==================================================================#
+
+
+u:(^repeat[
+    "{~ald_robots} [
+        "hör auf zu reden"
+        "halt den mund"
+        "halt's maul"
+        "sei still"
+    ]"
+]) Okay, ich bin still. $pushMode=0
+
+
+#u:(^repeat[
+#    "{~ald_robots}{~can_you} [
+#        "arrête de parler"
+#        "tais-toi"
+#        "ta gueule"
+#        "~can_you fermer ta gueule"
+#    ]"
+#]) Okay, je me tais. $pushMode=0
+

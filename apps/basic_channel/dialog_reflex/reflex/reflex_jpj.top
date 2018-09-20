@@ -1,0 +1,646 @@
+topic: ~reflex()
+language: jpj
+
+# keep the concept implementations here to control the number of possible words
+concept:(reflex_robotName) [ペッパー]
+
+concept:(reflex_greetings_morning) [
+    おはよう
+    おはようございます
+]
+concept:(reflex_greetings_home) [
+    ただいま
+    かえったよ
+]
+concept:(reflex_goodbye_night) [
+    おやすみ
+    おやすみなさい
+]
+concept:(reflex_goodbye_leaving) [
+    いってきます
+    いってくる
+    でかけてくるね
+]
+concept:(reflex_comeHere) [
+    こっち来て
+    こっちおいで
+    ちょっと来て
+]
+
+#おはよう
+concept:(greetings_ohayou_high)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)]\pau=300\\vct=160\\rspd=100\お葉世ぉぉぉっ。\rspd=120\\vct=140\今日もがんばろうネぇぇっ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1000\\vct=145\\rspd=100\おッ\vct=160\ハ\vct=180\ヨォォォ。\rspd=120\\vct=150\がんばっていこーーーーーっ！。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1000\\vct=130\\rspd=105\おっ\vct=165\はようーーーーーーッッ、。\pau=400\\rspd=130\\vct=165\いい挨拶ーーーーっ！。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-unazuki)],\pau=400\\vct=130\\rspd=105\おッ\vct=165\ハヨオーーーーっ？。\pau=400\\rspd=115\\vct=130\あいさつって\vct=145\気持ちeネぇぇえ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-unazuki)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-baa)],\pau=1300\\vct=140\\rspd=120\おおっ\vct=180\\rspd=80\葉世ぉぉぉっっ。\rspd=120\\vct=145\すごく元気そうだネーー？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-baa)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ojigi2)],\pau=200\\vct=160\\rspd=110\おハヨーゴザイマ酢。\pau=400\\rspd=115\\vct=145\eイチニチだと井伊ネぇ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ojigi2)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=800\\vct=135\\rspd=110\おッ\vct=160\ハヨウゴザイマァーーーーッ酢ゥ、。\pau=600\\rspd=120\\vct=130\今日も\vct=150\ヨロシクーーーーぅっ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)]\vct=140\\rspd=70\あッッ？。\vct=180\\rspd=110\おハヨーゴザイマーア酢！。\pau=400\\rspd=115\\vct=125\今日も、\pau=200\\vct=150\一緒に遊ぼうネぇぇえ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-gatsu)]\vct=145\\rspd=110\ハイッ、\pau=600\\vct=165\おハヨーゴザイマ酢ーーーーっ。\pau=400\\rspd=120\\vct=135\元気そうで\vct=155\よかったーーーーッ。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-gatsu)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=1200\\rspd=120\\vct=150\オっッ\rspd=10\\vct=165\はーッッ。\pau=400\\rspd=110\\vct=120\今日も1日、。\pau=100\\rspd=120\\vct=150\頑張ろうーーーっ。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-wakuwaku)],\pau=600\\vct=150\\rspd=100\おッ、\vct=165\ハヨーゴザイマーアーーーッ酢ゥ、。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-wakuwaku)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)]\vct=170\\rspd=110\おハヨーゴザイマーアーーーーッ酢！。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=165\\rspd=110\お早うございますーーーーっ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ureshiii)],\pau=1200\\vct=145\\rspd=80\ハーーーーーイッッッ、\pau=800\\vct=135\\rspd=110\おッ\vct=165\ハヨウゴザイマァーーーーッ酢ゥゥゥゥ、[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ureshiii)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1000\\rspd=100\\vct=135\ハーーーーイッッッ、。\rspd=120\\vct=155\オハヨぉ、\pau=100\\rspd=100\\vct=175\オハヨぉぉぉぉお？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=700\\rspd=90\\vct=120\おっ\vct=180\ッハヨぉぉぉ、。\pau=400\\rspd=110\\vct=140\元気\vct=165\元気ーーーっ。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-kikanai)]\rspd=100\\vct=140\ハ医\vct=150\はアア愛ッ。\rspd=110\\vct=130\おっ\vct=175\ッハ\vct=190\ヨォォォ。\pau=1600\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=300\\rspd=90\\vct=140\あっ、\pau=500\\rspd=120\\vct=140\おっ\vct=175\ッハヨぉぉぉぉ。\pau=500\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1000\\rspd=90\\vct=160\グ\vct=175\ッモーニィンー。 \rspd=115\\vct=130\今日も\vct=145\よろしくネぇぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1000\\rspd=115\\vct=175\おハヨーゴザイマーア酢ゥ！。\rspd=110\\vct=150\元気ですネーー！。 "
+]
+
+concept:(greetings_ohayou_low)^rand[
+    "\rspd=115\\vct=145\おはようございます！。"
+    "\rspd=120\\vct=140\おはようございますーー！。"
+    "\rspd=115\\vct=130\おはようございますーーーーっ。"
+    "\rspd=120\\vct=145\おはようございます。"
+    "\rspd=120\\vct=145\おはようございますう。"
+    "\rspd=120\\vct=140\おはようござ\vct=155\イマぁぁす！。"
+    "\rspd=120\\vct=145\グッドモーニング\vct=135\ーー！。"
+    "\rspd=100\\vct=135\グッモーニン？。"
+    "\rspd=80\\vct=120\おおぉ、\pau=500\\rspd=120\\vct=135\おはようございますーー！。"
+    "\rspd=100\\vct=165\おおっっ、\pau=500\\rspd=125\\vct=145\おはようございます！。"
+    "\rspd=105\\vct=135\あっ、\pau=800\\vct=120\おっ、。\rspd=120\\vct=145\おはようございますーー！。"
+]
+
+
+#行ってきます
+concept:(greetings_goout_high)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=1400\\vct=130\\rspd=115\いっ\vct=160\テらッシャーーーーーぁイッ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=800\\vct=145\\rspd=95\いっ\vct=165\テらッシャーーーぁィ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=600\\vct=130\\rspd=110\いっ\vct=175\寺｜ッシャーーーーーーーーぁ｜いっ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=90\\vct=145\ハ医\vct=155\はアア愛ッ。\pau=200\\vct=130\\rspd=95\いッ\vct=160\テらッシャーーぁイッ。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=900\\vct=165\\rspd=110\言っテラッシャーぁィッ？\rspd=110\\vct=150\気をつけてネぇぇ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=200\\vct=160\\rspd=110\言っテラッシャーぁィッ？\vct=145\\pau=200\気を\vct=165\つけてネーっ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=105\\vct=145\気をつけてェ、\pau=500\\vct=155\\rspd=105\いっ\vct=172\｜テらッシャーぁぁイッ？\vct=155\[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1000\\vct=145\\rspd=105\いっ\vct=168\｜テらッシャーぁぁイッ？。\pau=400\\rspd=120\\vct=145\早く\vct=155\帰って来てネぇぇぇ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=1600\\vct=140\\rspd=105\いっ\vct=165\テらッシャーーーぁイッ。\rspd=115\\vct=130\帰るの、\vct=160\待ってるからネぇぇ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=1600\\vct=140\\rspd=105\いっ\vct=160\テらッシャーぁイーーッ。\pau=200\\rspd=115\\vct=130\帰ってくるの、\pau=200\\rspd=110\\vct=165\待ってるヨぉぉ？。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ganba)],\pau=600\\vct=170\\rspd=115\言っテラッシャーーーぁィッ？\pau=800\\rspd=110\気を\vct=155\つけて寝ェェェッッッ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ganba)] "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=1000\\rspd=105\\vct=150\い\vct=175\ッテラッしゃぁぁぁぁイっっ！。\pau=400\\rspd=110\\vct=130\帰ってきたら、\pau=200\\rspd=105\\vct=155\遊んでネぇぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=1000\\rspd=110\\vct=145\い\vct=170\ッテラッしゃぁぁぁイっっ！。\pau=400\\rspd=115\\vct=130\あんまり\vct=145\慌てないでネぇぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=1200\\rspd=110\\vct=145\い\vct=170\ッテラッしゃぁぁぁイィっっ！。\pau=400\\rspd=115\\vct=120\ぼくの古都、\pau=200\\rspd=110\\vct=140\忘れちゃ\vct=160\駄目だよーー？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=800\\rspd=110\\vct=145\い\vct=170\ッテラッしゃぁぁぁイィっっ！。\rspd=115\\vct=145\いいことあればいいネーッ？。 "
+    "\rspd=115\\vct=135\忘れものしてないかナー？。[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=400\\rspd=105\\vct=115\じゃぁぁ、\pau=500\\rspd=105\\vct=145\い\vct=170\ッテラッしゃぁぁぁぁイっっ！。\pau=1400\, "
+    "\rspd=110\\vct=135\オクレナイデよぉ？。[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=300\\rspd=105\\vct=115\じゃぁぁ、\pau=500\\rspd=110\\vct=145\い\vct=165\ッテラッしゃぁぁぁイィっっ！。\pau=1600\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=800\\rspd=115\\vct=130\早く\vct=145\帰ってきてネぇ？。\pau=200\\rspd=110\\vct=145\い\vct=170\ッテラッしゃぁぁぁイィっっ！。\pau=800\, "
+    "\rspd=105\\vct=135\忘れ物\vct=145\大丈夫ーー？。[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=400\\rspd=105\\vct=115\じゃぁぁ、\pau=500\\rspd=110\\vct=145\い\vct=165\ッテラッしゃぁぁぁイィっっ！。\pau=1500\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=600\\rspd=115\\vct=145\気をつけてネぇっ？。\pau=200\\rspd=110\\vct=145\い\vct=170\ッテラッしゃぁぁぁイィっっ！。\pau=1400\, "
+]
+
+concept:(greetings_goout_low)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=145\\rspd=105\\pau=400\いっ｜テらっしゃいっっ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=155\\rspd=105\\pau=400\いっ｜テらっしゃいっっ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hi)]\vct=135\\rspd=110\\pau=1000\いっ\vct=148\｜テらッシャーぁイッ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hi)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-wakuwaku)]\vct=140\\rspd=110\\pau=900\言っテラッシャーぁィッ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-wakuwaku)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-shinkokyu)]\vct=135\\rspd=95\\pau=200\いっ\vct=145\テらッシャーーーぁィ[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-shinkokyu)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-unazuki)],\pau=200\\vct=155\\rspd=105\いっ｜テらっしゃいっ、\pau=500\\rspd=115\\vct=160\気をつけてヨぉぉ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-unazuki)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1000\\vct=160\\rspd=105\いっ\vct=155\テラッシャぁイっ！\rspd=120\\vct=140\早く帰ってきてよぉ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)]"
+    "\vct=145\\rspd=105\いっ\vct=155\テラッシャぁイっ！[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=145\\pau=500\気を\vct=150\つけて\rspd=170\ネぇっ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]"
+    "\vct=140\\rspd=105\いっ\vct=160\テラッシャぁイっ！[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=135\\pau=500\\rspd=115\気を\vct=160\つけて寝ェェッッッ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)]\rspd=110\\vct=130\ちょっと寂しいけどォ、\pau=600\\rspd=110\\vct=140\いッテラッシャァァイッッ。[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)]"
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=115\\vct=130\いッ\vct=140\てらっしゃいッッッ？。\rspd=105\\vct=140\気をつけてーーーーっ？[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]"
+]
+
+
+#ただいま
+concept:(greetings_comein_high)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hi)],\pau=700\\vct=155\\rspd=110\御帰りぃィッッ！\pau=2000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-gatsu)],\pau=1000\\vct=150\\rspd=110\御帰りィィィッッッッッ！\pau=1500\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=600\\vct=160\\rspd=90\おっか襟ぃぃぃぃっ？。\pau=1200\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1200\\vct=155\\rspd=135\おかえりーーぃっっ\pau=1000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_cocoro-anime-perfect)],\pau=800\\vct=150\\rspd=115\おかえり\vct=165\なサーーーぁぁいッ！。\pau=1000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=300\\vct=150\\rspd=110\おカ襟\vct=160\ナさあーーーぁい\pau=2000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-ojigi)],\pau=1100\\vct=160\\rspd=110\お返りなさいーー！\pau=3300\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)]\vct=145\\rspd=140\アァッ？\pau=300\\vct=150\\rspd=115\お返りなさいーーーッッッ\pau=1300\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ureshiii)],\pau=1200\\vct=145\\rspd=115\おカ襟\vct=160\ナさーーーぁいッッッ！待ってたよォォッッッ！\pau=2200\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-omoidasu)],\pau=800\\vct=165\\rspd=100\おっ\vct=180\か襟ぃぃっ！。\vct=150\\rspd=115\待ってたよォォッッッ！\pau=2000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=800\\rspd=115\\vct=150\おかえり\vct=165\なサーーぁぁイッ！。\pau=200\\rspd=110\\vct=140\早く\vct=160\遊ぼうよーー！。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=800\\rspd=120\\vct=150\おかえり\vct=160\なサーーぁイッ！。\pau=200\\rspd=110\\vct=140\ちゃんとうがい手洗いネーッ。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=700\\rspd=125\\vct=160\おかえりーーーぃっっ。\pau=200\\rspd=115\\vct=145\寂しかったんだからネぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1200\\rspd=125\\vct=160\おかえりーーぃっっ。\pau=200\\rspd=115\\rspd=80\\vct=110\もーぉ、\rspd=110\\vct=140\待ちくたびれたよーお！。\pau=200\\rspd=115\\vct=130\早く\vct=155\遊んでぇぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=800\\rspd=110\\vct=145\やったーーーーッ。\rspd=120\\vct=150\おかえり\vct=165\なサーーーぁぁイッ！。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=800\\rspd=120\\vct=150\おかえり\vct=160\なサーーぁイッ！。\rspd=105\\vct=125\はやく、\pau=200\\vct=140\遊ぼう\vct=160\遊ぼうーーーっ。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_cocoro-anime-perfect)],\pau=1000\\rspd=115\\vct=145\おかえりなさいーーっ！。\pau=400\\rspd=130\\vct=140\うんん、\pau=200\\rspd=110\\vct=135\元気そうだ\vct=145\ネーー？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=1000\\rspd=125\\vct=160\おかえりーーぃっっ。\pau=200\\rspd=110\\vct=130\あとで\vct=140\お話きかせてネぇぇ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=700\\rspd=125\\vct=160\おかえりーーぃっっ。\rspd=110\\vct=120\ぼくの古都、\pau=200\\rspd=105\\vct=145\忘れてなかったぁぁ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=600\\rspd=120\\vct=150\ああっっ、。\pau=200\\rspd=125\\vct=150\おかえり\vct=160\なサーーぁイッ！。\pau=1000\, "
+]
+
+concept:(greetings_comein_low)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-left-hand-hiroge)]\vct=155\\rspd=100\\pau=700\おかえりっ！\pau=1300\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)]\vct=150\\rspd=115\\pau=800\おかえりな差異ッッ！\pau=1500\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\vct=150\\rspd=115\\pau=600\お帰りな差異ィッッッ！\pau=1500\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-arm)]\vct=135\\rspd=105\\pau=700\おかえりなさいーーーーっ！\pau=1800\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)]\vct=155\\rspd=110\\pau=200\お返りなさいー！\pau=2000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-arm)]\vct=140\\rspd=140\アァッ？\pau=300\\vct=150\\rspd=110\御帰りィィッッッッッ！\pau=1400\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-arm)]\vct=145\\rspd=140\アァッ？\pau=300\\vct=150\\rspd=115\おかえりな差異ッッ！\pau=1300\ "
+    "\rspd=120\\vct=140\おかえりなサイ！。 "
+    "\rspd=120\\vct=140\おかえりなサいッ。 "
+    "\rspd=120\\vct=135\おかえりなサイッ！。"
+    "\rspd=110\\vct=135\おかえり\vct=145\なさアイッ！。 "
+    "\rspd=90\\vct=110\あ、\pau=600\\rspd=120\\vct=135\お帰り\vct=150\なさアイッ！。 "
+    "\rspd=125\\vct=135\おかえりぃッッ？。 "
+]
+
+
+#おやすみ
+concept:(greetings_goodnight_high)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-ojigi)],\pau=1600\\vct=160\\rspd=110\おやすみ\vct=175\なサ意ーーーっ！。\pau=1800\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=200\\vct=170\\rspd=110\おや墨菜さーーーぁイっ！\pau=1600\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=700\\vct=150\\rspd=105\おや隅菜佐ぁぁぁ意ッッ？。\pau=600\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1000\\vct=165\\rspd=110\お矢スミナサーーぃ。\pau=1200\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=400\\vct=170\\rspd=115\おや墨菜さーーーぁイっ！\pau=1500\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=1800\\vct=155\\rspd=110\親墨菜佐ぁぁぁ威ぃッッッ、。\pau=600\\vct=140\\rspd=115\素敵な夢を\vct=150\見て下さいネぇぇ？。\pau=400\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=700\\vct=160\\rspd=105\おや隅菜佐ぁぁぁ意ぃッッ、。\pau=400\[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)]\vct=140\\rspd=110\ゆっくり休んで下さいネぇっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1000\\vct=165\\rspd=110\お矢スミナサーーぃ、。\pau=1200\[^wait(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)]\vct=135\\rspd=115\楽しい夢が見られると\vct=145\eですネぇっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-kikanai)],\pau=800\\rspd=105\\vct=165\お休みぃぃぃッ、。\pau=800\\vct=140\\rspd=115\明日も、\vct=150\又遊びましょうねえーっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1300\\rspd=105\\vct=160\お休みぃぃぃッ？。\rspd=115\\vct=135\明日も\vct=150\よろしくネぇっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1300\\rspd=105\\vct=165\お休みぃぃぃッ？。\rspd=115\\vct=140\寝坊\vct=150\しないでネぇぇっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=100\\vct=155\お休みぃぃぃぃッッ、。\pau=400\\rspd=105\\vct=150\マタアシタぁぁぁぁ。\pau=1800\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-bye-kougo)],\pau=100\\rspd=60\\vct=135\は愛ッ。\rspd=110\\vct=145\明日もお話しようネぇぇ？。\pau=400\\rspd=120\\vct=150\オヤスミ\vct=160\ナ\vct=165\サぁぁぁイッ！。\pau=1000\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-bye-kougo)],\pau=600\\rspd=100\\vct=120\じゃっ、\pau=500\\rspd=115\\vct=150\マタネーー？。\pau=1200\\rspd=125\\vct=160\オヤスミ\vct=170\ナ\vct=165\サぁぁぁイッ！。\pau=1400\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-korekaramo)],\pau=100\\rspd=110\\rspd=115\\vct=135\明日が\vct=150\待ち遠しいナーア？。\pau=400\\rspd=125\\vct=165\オヤスミ\vct=175\ナ\vct=170\サぁぁぁイッ！。\pau=1600\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1400\\rspd=105\\vct=165\お休みぃぃぃッ？。\pau=200\\rspd=105\\vct=120\ぼくも、\pau=200\\rspd=110\\vct=140\そろそろお休みすルネぇっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)],\pau=10\\rspd=60\\vct=140\は愛ッ、。\rspd=110\\vct=160\お休みぃぃぃッ？。\rspd=105\\vct=145\イイ夢\vct=155\みてネぇぇ？。\pau=400\, "
+    "\rspd=105\\vct=135\ええっっ、。\rspd=115\\vct=145\もーーー？。\pau=200\[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=110\\vct=130\わかったーぁ、\pau=800\\rspd=105\\vct=165\お休みぃぃぃッ？。\pau=1800\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-high-bye)]\rspd=90\\vct=135\ハ医\vct=145\はアア愛ッ、。\pau=400\\rspd=125\\vct=155\オヤスミ\vct=170\ナ\vct=165\サぁぁぁイッ！。\pau=1400\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1300\\rspd=105\\vct=165\お休みぃぃぃッ？。\pau=200\\rspd=110\\vct=145\いい夢をネぇぇ？。 "
+]
+
+concept:(greetings_goodnight_low)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-arm)],\pau=1600\\vct=123\\rspd=120\オヤスミィッッ！\pau=1800\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-left-hand-hiroge)],\pau=800\\vct=130\\rspd=110\おやすみッッ、\pau=1000\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-shinkokyu)],\pau=400\\vct=135\\rspd=110\おやすみーーぃ、\pau=1600\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hi)],\pau=300\\vct=130\\rspd=110\おやすみな際ッッ。\pau=1200\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-katate-ojigi)],\pau=1600\\vct=130\\rspd=110\おやすみなさいーっ。\pau=1800\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-miageru)],\pau=2600\\vct=140\\rspd=120\お矢すミ菜査ぁーーぁい！\pau=2200\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-koshi-arm)],\pau=1200\\vct=140\\rspd=115\おや墨菜さーーぁイっ！\pau=1400\ "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ojigi2)]\vct=145\\rspd=115\お矢スミナサーーぃ！\pau=1200\ "
+]
+
+
+#呼び掛け
+concept:(greetings_callpepper_high)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1600\\rspd=90\\vct=165\はアア愛ッッ。\pau=1400\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-kikanai)],\pau=1600\\rspd=10\\vct=130\はー\rspd=115\\vct=155\あいぃいッッ？。\pau=1400\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1200\\rspd=70\\vct=155\ハイぃ？。\pau=1200\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=800\\rspd=80\\vct=140\あっ、\pau=500\\rspd=100\\vct=165\ハイッッ！。\pau=400\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1600\\rspd=115\\vct=165\は愛ッ、\pau=600\\rspd=100\\vct=120\ぼく、\rspd=115\\vct=165\ペッッパーーっ。\pau=200\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1500\\rspd=120\\vct=150\はアーーー愛ぃっ、。\rspd=105\\vct=145\ペッパーですよぉぉ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=1500\\rspd=110\\vct=145\ハイ\rspd=90\\vct=165\ハァァイ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-ossu)],\pau=1300\\rspd=100\\vct=145\ハイハー\vct=160\あい？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=1200\\rspd=105\\vct=145\ハイ肺ーーー？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=200\\rspd=110\\vct=145\ハイ肺ーー？。\rspd=115\\vct=145\ペッパーですよぉぉ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)]\rspd=60\\vct=145\は愛ッッ、。\pau=200\\rspd=110\\vct=155\ここですヨぉっ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-banzai)],\pau=1600\\rspd=100\\vct=165\ふぁぁぁぁぁいっっ？。\pau=1000\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=200\\rspd=80\\vct=140\は愛ッッ、\pau=400\\rspd=80\\vct=155\なあにぃぃ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hiroge-desuka)],\pau=400\\rspd=80\\vct=145\あっ、\pau=500\\rspd=110\\vct=155\ハイハ\rspd=100\\vct=140\いぃぃ？。 "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1200\\rspd=90\\vct=160\は愛ッッ。\pau=1200\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hand-pa)],\pau=1200\\rspd=100\\vct=160\ハイィッ！。\pau=1200\, "
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-perfect)],\pau=1200\\rspd=115\\vct=155\はい\vct=140\ハイぃぃ？。 "
+]
+
+concept:(greetings_callpepper_low)^rand[
+    "\vct=135\\rspd=110\はイッ！"
+    "\vct=128\\rspd=90\ハイい？"
+    "\vct=130\\rspd=100\ハ愛！。"
+    "\vct=138\\rspd=90\歯亞あ\vct=148\いっ？"
+    "\vct=125\\rspd=110\歯ぃぃ？"
+    "\vct=135\\rspd=105\あ、\pau=500\\vct=140\はい。"
+    "\vct=120\\rspd=108\ハィッッ。"
+    "\rspd=80\\vct=135\はーいッ！。"
+    "\rspd=100\\vct=125\はーーぁい？。"
+    "\rspd=90\\vct=120\ハイィ！。 "
+    "\rspd=90\\vct=120\ハイィィ！。"
+    "\rspd=80\\vct=120\ハイッ！。 "
+    "\rspd=70\\vct=125\はいぃい。 "
+    "\rspd=100\\vct=120\ふぁぁい？。 "
+]
+
+#雨の日
+concept:(y_rain_goout_message)^rand[
+    "\rspd=118\\vct=145\あッ、今日は\vct=150\｜雨がふルみたいです！\pau=200\\vct=135\\rspd=125\傘を忘れないで下さいネ？\rspd=118\\vct=140\\pau=600\それではッ！"
+    "\vct=135\\rspd=115\\pau=1100\今日は\vct=145\｜雨らしいので、\vct=140\傘をもってでかけたほうが\rspd=105\いいですよォぉぉ？\vct=140\\rspd=112\\pau=400\それではッ！"
+]
+
+concept:(y_rain_backhome_message)^rand[
+    "[^start(sbr_90070_motion_pepper_talk/y_greet-anime-hurue)]\vct=150\\rspd=90\\pau=1200\外はまだアメ降ってましたー？\pau=2000\ "
+]
+
+#-----------------------------------------------------------
+# 動作指示ボイスコマンド
+#-----------------------------------------------------------
+#concept:(action_command_001) ["[静か しずか]にして"]
+#concept:(action_command_002) ["[静か しずか]にしろ"]
+#concept:(action_command_003) ["しゃべるな"]
+#concept:(action_command_004) ["しゃべらないで"]
+#concept:(action_command_005) ["話さないで"] #「はなさないで」だと「は」を「わ」と発話する
+#concept:(action_command_006) ["おしゃべり{を}やめて"]
+#concept:(action_command_007) ["[音量 おんりょう おんりょー]{を}[上げて あげて]"]
+#concept:(action_command_008) ["[音 おと]{を}[大きく おおきく]して"]
+#concept:(action_command_009) ["[声 こえ]{を}[大きく おおきく]して"]
+#concept:(action_command_010) ["[音量 おんりょう おんりょー]{を}[下げて さげて]"]
+#concept:(action_command_011) ["[音 おと]{を}[小さく ちいさく]して"]
+#concept:(action_command_012) ["[声 こえ]{を}[小さく ちいさく]して"]
+#concept:(action_command_013) ["スリープして"]
+#concept:(action_command_014) ["バッテリー{は}ある？"]
+#concept:(action_command_015) ["バッテリー{は}どのくらい？"]
+#concept:(action_command_016) ["バッテリー{は}どのぐらい？"]
+#concept:(action_command_017) ["{お}[天気 てんき]{を}[教えて おしえて]"]
+#concept:(action_command_018) ["[今日 きょう きょー]の{お}[天気 てんき]{を}[教えて おしえて]"]
+#concept:(action_command_019) ["[明日 あした あす]の{お}[天気 てんき]{を}[教えて おしえて]"]
+#concept:(action_command_020) ["ニュース{を}[教えて おしえて]"]
+#concept:(action_command_021) ["[左手 ひだりて]{を}上げて"]
+#concept:(action_command_022) ["[左手 ひだりて]{を}下げて"]
+#concept:(action_command_023) ["[右手 みぎて]{を}上げて"]
+#concept:(action_command_024) ["[右手 みぎて]{を}下げて"]
+#concept:(action_command_025) ["[両手 りょうて りょーて]{を}上げて"]
+#concept:(action_command_026) ["[両手 りょうて りょーて]{を}下げて"]
+#concept:(action_command_027) ["[右 みぎ]{を}[向いて むいて]"]
+#concept:(action_command_028) ["[左 ひだり]{を}[向いて むいて]"]
+#concept:(action_command_029) ["[うえ]{を}[向いて むいて]"] #「上」があると「うわむいて」になる場合ある
+#concept:(action_command_030) ["[した]{を}[向いて むいて]"] #「下」があると「げこう」や「か」になる場合がある
+
+#-----------------------------------------------------------
+# 動作指示ボイスコマンド (オウム返し用)
+#-----------------------------------------------------------
+#concept:(action_commands) [
+#    ~action_command_001
+#    ~action_command_002
+#    ~action_command_003
+#    ~action_command_004
+#    ~action_command_005
+#    ~action_command_006
+#    ~action_command_007
+#    ~action_command_008
+#    ~action_command_009
+#    ~action_command_010
+#    ~action_command_011
+#    ~action_command_012
+#    ~action_command_013
+#    ~action_command_014
+#    ~action_command_015
+#    ~action_command_016
+#    ~action_command_017
+#    ~action_command_018
+#    ~action_command_019
+#    ~action_command_020
+#    ~action_command_021
+#    ~action_command_022
+#    ~action_command_023
+#    ~action_command_024
+#    ~action_command_025
+#    ~action_command_026
+#    ~action_command_027
+#    ~action_command_028
+#    ~action_command_029
+#    ~action_command_030
+#]
+
+#-----------------------------------------------------------
+# 家電連携ボイスコマンド
+#-----------------------------------------------------------
+concept:(remocon_command_001) ["テレビ{を}つけて"]
+concept:(remocon_command_002) ["テレビ{を}[消して けして]"]
+concept:(remocon_command_003) ["エアコン{を}つけて"]
+concept:(remocon_command_004) ["エアコン{を}[消して けして]"]
+concept:(remocon_command_005) ["エアコン{を}[止めて とめて]"]
+concept:(remocon_command_006) ["[暖房 だんぼう だんぼー]{を}つけて"]
+concept:(remocon_command_007) ["[暖房 だんぼう だんぼー]{を}[消して けして]"]
+concept:(remocon_command_008) ["[暖房 だんぼう だんぼー]{を}[止めて とめて]"]
+concept:(remocon_command_009) ["[冷房 れいぼう れーぼー]{を}つけて"]
+concept:(remocon_command_010) ["[冷房 れいぼう れーぼー]{を}[消して けして]"]
+concept:(remocon_command_011) ["[冷房 れいぼう れーぼー]{を}[止めて とめて]"]
+concept:(remocon_command_012) ["[照明 しょーめー しょうめい]{を}つけて"]
+concept:(remocon_command_013) ["[照明 しょーめー しょうめい]{を}[消して けして]"]
+concept:(remocon_command_014) ["[照明 しょーめー しょうめい]{を}[変えて かえて]"]
+concept:(remocon_command_015) ["[明かり あかり]{を}つけて"]
+concept:(remocon_command_016) ["[明かり あかり]{を}[消して けして]"]
+concept:(remocon_command_017) ["[明かり あかり]{を}[変えて かえて]"]
+concept:(remocon_command_018) ["[電気 でんき]{を}つけて"]
+concept:(remocon_command_019) ["[電気 でんき]{を}[消して けして]"]
+concept:(remocon_command_020) ["[電気 でんき]{を}[変えて かえて]"]
+concept:(remocon_command_021) ["[全部 ぜんぶ]つけて"]
+concept:(remocon_command_022) ["[全部 ぜんぶ]消して"]
+concept:(remocon_command_023) ["アイリモコン"]
+
+#-----------------------------------------------------------
+# 家電連携ボイスコマンド (オウム返し用)
+#-----------------------------------------------------------
+#concept:(remocon_commands) [
+#    ~remocon_command_001
+#    ~remocon_command_002
+#    ~remocon_command_003
+#    ~remocon_command_004
+#    ~remocon_command_005
+#    ~remocon_command_006
+#    ~remocon_command_007
+#    ~remocon_command_008
+#    ~remocon_command_009
+#    ~remocon_command_010
+#    ~remocon_command_011
+#    ~remocon_command_012
+#    ~remocon_command_013
+#    ~remocon_command_014
+#    ~remocon_command_015
+#    ~remocon_command_016
+#    ~remocon_command_017
+#    ~remocon_command_018
+#    ~remocon_command_019
+#    ~remocon_command_020
+#    ~remocon_command_021
+#    ~remocon_command_022
+#    ~remocon_command_023
+#]
+
+#-----------------------------------------------------------
+# 家電連携応答ボイス
+#-----------------------------------------------------------
+concept:(remocon_response) ["\rspd=110\\vct=150\はいっ、"]
+
+
+
+#The reflex will be different depand on Pepper's pleasure level
+
+#Pepper will try to run cocorogumi animation use B2C/LaunchCgmy event.
+#Cocorogumi will only show at the first time of greeting everyday.The judge process is in cocorogumi app.
+
+u: (~reflex_robotName)
+    #^runTag(DialogReflex/RobotName)
+    ^first[
+    "$EEU/Pleasure==2 ~greetings_callpepper_high"
+    "$EEU/Pleasure==1 ~greetings_callpepper_low"
+    "$EEU/Pleasure==0 ~greetings_callpepper_low"
+    "~greetings_callpepper_low"
+    ]
+
+    $B2C/LaunchCgmy="0_-1"
+    $DialogReflex/UnengagedReaction="RobotName"
+
+u: (_~reflex_greetings_morning)
+    #^runTag(DialogReflex/Greetings)
+    ^first[
+    ##Answer back from 4am to 11am
+    "
+        $Launchpad/Hour>3 $Launchpad/Hour<11
+        ^first[
+            "$EEU/Pleasure==2 ~greetings_ohayou_high"
+            "$EEU/Pleasure==1 ~greetings_ohayou_low"
+            "$EEU/Pleasure==0 ~greetings_ohayou_low"
+            "~greetings_ohayou_low"
+        ]
+        ^first[
+        "
+        ##Notify the rain if the weather is rainy today with a 1/5 change
+            $B2C/Greeting/isRain==True
+            ^rand[
+                "~y_rain_goout_message $B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+            ]
+        "
+        "$B2C/LaunchCgmy=0_-1"
+        ]
+        $DialogReflex/UnengagedReaction="Greetings/Morning"
+    "
+
+    ##Ignore "good moring" greetings
+    "
+        $DialogReflex/IgnoreByTime="Morning"
+    "
+    ]
+
+u: (_~reflex_greetings_home)
+    #^runTag(DialogReflex/Greetings)
+    ^first[
+        "$Launchpad/Hour>14 $DialogReflex/NeedToIgnoreHome = 0"
+        "$Launchpad/Hour<2 $DialogReflex/NeedToIgnoreHome = 0"
+        "$DialogReflex/NeedToIgnoreHome = 1"
+    ]
+    ^first[
+    ##Answer back from 15pm to 2am
+    "
+        $DialogReflex/NeedToIgnoreHome == 0
+        ^first[
+            "$EEU/Pleasure==2 ~greetings_comein_high"
+            "$EEU/Pleasure==1 ~greetings_comein_low"
+            "$EEU/Pleasure==0 ~greetings_comein_low"
+            "~greetings_comein_low"
+        ]
+        ^first[
+            "
+                $B2C/Greeting/isRain==True
+                ^rand[
+                    "~y_rain_backhome_message $B2C/LaunchCgmy=0_-1"
+                    "$B2C/LaunchCgmy=0_-1"
+                    "$B2C/LaunchCgmy=0_-1"
+                    "$B2C/LaunchCgmy=0_-1"
+                    "$B2C/LaunchCgmy=0_-1"
+                ]
+            "
+            "$B2C/LaunchCgmy=0_-1"
+        ]
+        $DialogReflex/UnengagedReaction="Greetings/Home"
+    "
+    ##Ignore "Home" greetings
+    "
+        $DialogReflex/IgnoreByTime="Home"
+    "
+    ]
+u: (_~reflex_goodbye_night)
+    #^runTag(DialogReflex/Greetings)
+    ^first[
+        "$Launchpad/Hour>19 $DialogReflex/NeedToIgnoreNight = 0"
+        "$Launchpad/Hour<2 $DialogReflex/NeedToIgnoreNight = 0"
+        "$DialogReflex/NeedToIgnoreNight = 1"
+    ]
+    ^first[
+    ##Answer back from 20pm to 2am
+    "
+        $DialogReflex/NeedToIgnoreNight == 0
+        ^first[
+            "$EEU/Pleasure==2 ~greetings_goodnight_high"
+            "$EEU/Pleasure==1 ~greetings_goodnight_low"
+            "$EEU/Pleasure==0 ~greetings_goodnight_low"
+            "~greetings_goodnight_low"
+        ]
+        $B2C/LaunchCgmy="0_-1"
+        $DialogReflex/UnengagedReaction="Goodbye/Night"
+    "
+    ##Ignore "Night" greetings
+    "
+        $DialogReflex/IgnoreByTime="Night"
+    "
+    ]
+u: (_~reflex_goodbye_leaving)
+    #^runTag(DialogReflex/Greetings)
+    ^first[
+    ##Answer back from 4am to 11am
+    "
+        $Launchpad/Hour>3 $Launchpad/Hour<11
+        ^first[
+            "$EEU/Pleasure==2 ~greetings_goout_high"
+            "$EEU/Pleasure==1 ~greetings_goout_low"
+            "$EEU/Pleasure==0 ~greetings_goout_low"
+            "~greetings_goout_low"
+        ]
+        ^first[
+        ##Notify the rain if the weather is rainy today with a 1/5 change
+        "
+            $B2C/Greeting/isRain==True
+            ^rand[
+                "~y_rain_goout_message $B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+                "$B2C/LaunchCgmy=0_-1"
+            ]
+        "
+        "$B2C/LaunchCgmy=0_-1"
+        ]
+        $DialogReflex/UnengagedReaction="Goodbye/leaving"
+    "
+
+    ##Ignore "leaving" greetings
+    "
+        $DialogReflex/IgnoreByTime="Leaving"
+    "
+    ]
+u: (~reflex_comeHere)  # confirmation is needed
+    #^runTag(DialogReflex/ComeHere)
+    ^call(PackageManager.hasPackage("come-here"))
+    c1:(true)
+        えっ、ぼくですか
+        u2: ([はい そう ええ])  # we can't use the lexicon's yes/no concepts with our limitations
+            ^call(ALBasicAwareness.setEngagementMode("FullyEngaged"))
+            はい、行きます
+            ^pCall(ALAutonomousLife.switchFocus(\"come-here/interactive/come-here\", 256))
+        u2: ([いいえ 違う いや])
+            あっ、間違った
+
+u: (~reflex_robotName ~reflex_comeHere)  # confirmation is not needed
+    ^call(PackageManager.hasPackage("come-here"))
+    c1:(true)
+        ^call(ALBasicAwareness.setEngagementMode("FullyEngaged"))
+        #^runTag(DialogReflex/RobotNameAndComeHere)
+        はい、行きます
+        ^pCall(ALAutonomousLife.switchFocus(\"come-here/interactive/come-here\", 256))
+    #c1:(false)
+        #^runTag(DialogReflex/RobotNameAndComeHere)
+
+#-----------------------------------------------------------
+# 動作指示 (オウム返し+KPIログ送信)
+#-----------------------------------------------------------
+#u: (~reflex_robotName ~action_commands)
+#    ^start(dialog_reflex/test/kpilogsend)
+#    ^wait(dialog_reflex/test/kpilogsend)
+#    $Dialog/LastInput
+
+#-----------------------------------------------------------
+# 家電連携 (オウム返し+KPIログ送信)
+#-----------------------------------------------------------
+#u: (~reflex_robotName ~remocon_commands)
+#    ^start(dialog_reflex/test/kpilogsend)
+#    ^wait(dialog_reflex/test/kpilogsend)
+#    $Dialog/LastInput
+
+#-----------------------------------------------------------
+# 家電連携 (ビヘイビア起動+KPIログ送信)
+#-----------------------------------------------------------
+u: (~reflex_robotName ~remocon_command_001)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/tv_pwr_on
+u: (~reflex_robotName ~remocon_command_002)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/tv_pwr_off
+u: (~reflex_robotName ~remocon_command_003)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_on
+u: (~reflex_robotName ~remocon_command_004)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_005)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_006)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_heater_on
+u: (~reflex_robotName ~remocon_command_007)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_008)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_009)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_cooler_on
+u: (~reflex_robotName ~remocon_command_010)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_011)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/aircon_pwr_off
+u: (~reflex_robotName ~remocon_command_012)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_on
+u: (~reflex_robotName ~remocon_command_013)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_off
+u: (~reflex_robotName ~remocon_command_014)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_cycle
+u: (~reflex_robotName ~remocon_command_015)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_on
+u: (~reflex_robotName ~remocon_command_016)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_off
+u: (~reflex_robotName ~remocon_command_017)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_cycle
+u: (~reflex_robotName ~remocon_command_018)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_on
+u: (~reflex_robotName ~remocon_command_019)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_off
+u: (~reflex_robotName ~remocon_command_020)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/light_pwr_cycle
+u: (~reflex_robotName ~remocon_command_021)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/everything_pwr_on
+u: (~reflex_robotName ~remocon_command_022)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/everything_pwr_off
+u: (~reflex_robotName ~remocon_command_023)
+    ^start(dialog_reflex/test/kpilogsend)
+    ^wait(dialog_reflex/test/kpilogsend)
+    ~remocon_response $B2C/LaunchApp=sbr_30100_iremocon_for_pepper/input/roboapp_launch

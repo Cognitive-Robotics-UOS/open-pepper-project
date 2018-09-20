@@ -1,0 +1,104 @@
+topic: ~dlg_move_arms ^noPick()
+language: frf
+
+include: lexicon_frf.top
+
+   
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Demande moi des mouvements plus simples, j'ai encore un peu de mal à bouger comme vous les humains."
+    "Je ne comprends pas très bien ta requête, je n'ai sûrement pas encore appris ce mouvement."
+]
+
+u:^private([
+    "[
+        "comment [
+            "puis-je {"faire pour"}"
+            "{"est-ce que"} je fais pour"
+        ]"
+        "aide-moi à"
+    ] préciser ma demande"
+    "donne-moi ["un exemple" "des exemples"]"
+])
+[
+    "Essaie de me dire \pau=500\ lève le bras, ou bouge la tête, par exemple."
+    "Et bien, tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Je peux bouger, mais il faut que tu sois un peu plus précis."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, je recommence." "C'est reparti!"]
+^runBehavior($RobotLastAnim)
+^stayInScope 
+
+#==================================================================#
+# Move - Arms
+#==================================================================#
+
+u:(["[lève bouge "~can_you bouger"] [le ton]" "[fais fait "~can_you faire"] bouger ton"] bras)
+Lequel?
+
+    u1:([
+        "{le ton} {bras} gauche"
+        "celui de gauche"
+    ])
+    Okay, je lève le bras si tu veux.
+    ^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm
+
+    u1:([
+        "{le ton} {bras} droit"
+        "celui de droite"
+    ])
+    Okay, je lève le bras si tu veux.
+    ^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+    u1:(les deux)
+    Et hop!
+    ^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+
+    u1:(~its_up_to_you)
+    ^rand[
+        "Alors, ce sera le gauche!
+        ^runBehavior(dialog_move_arms/animations/UpLArm)"
+        $RobotLastAnim=dialog_move_arms/animations/UpLArm
+        "Alors, ce sera le droit!
+        ^runBehavior(dialog_move_arms/animations/UpRArm)"
+        $RobotLastAnim=dialog_move_arms/animations/UpRArm
+    ]
+    
+u:(["[lève bouge "~can_you bouger"] [le ton]" "[fais fait "~can_you faire"] bouger ton"] bras gauche)
+Okay, je lève le bras gauche.
+^runBehavior(dialog_move_arms/animations/UpLArm)
+$RobotLastAnim=dialog_move_arms/animations/UpLArm
+
+u:(["[lève bouge "~can_you bouger"] [le ton]" "[fais fait "~can_you faire"] bouger ton"] bras droit)
+Okay, je lève le bras droit.
+^runBehavior(dialog_move_arms/animations/UpRArm)
+$RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+u:(["[lève bouge "~can_you bouger"] [les tes]" "[fais fait "~can_you faire"] bouger tes"] bras)
+C'est parti!
+^runBehavior(dialog_move_arms/animations/UpBothArms)
+$RobotLastAnim=dialog_move_arms/animations/UpBothArms
+    
+u:([tends "~can_you tendre" "ouvre {grand}"] [les tes] bras)
+Et hop là!
+^runBehavior(dialog_move_arms/animations/StretchBothArms)
+$RobotLastAnim=dialog_move_arms/animations/StretchBothArms
+
+u:(["[tends "~can_you tendre" dégourdis] [ton le]" "dégourdis-toi le"] bras gauche)
+Et voilà.
+^runBehavior(dialog_move_arms/animations/StretchLArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchLArm
+
+u:(["[tends "~can_you tendre" dégourdis] [ton le]" "dégourdis-toi le"] bras droit)
+Et voici.
+^runBehavior(dialog_move_arms/animations/StretchRArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchRArm

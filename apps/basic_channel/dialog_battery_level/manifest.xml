@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_battery_level" version="2.5.6">
+  <names>
+    <name lang="de_DE">dialog_battery_level</name>
+    <name lang="de_DE-x-scrald">dialog_battery_level</name>
+    <name lang="en_US">dialog_battery_level</name>
+    <name lang="en_US-x-scrald">dialog_battery_level</name>
+    <name lang="es_ES">dialog_battery_level</name>
+    <name lang="es_ES-x-scrald">dialog_battery_level</name>
+    <name lang="fr_FR">dialog_battery_level</name>
+    <name lang="fr_FR-x-scrald">dialog_battery_level</name>
+    <name lang="it_IT">dialog_battery_level</name>
+    <name lang="it_IT-x-scrald">dialog_battery_level</name>
+    <name lang="ja_JP">dialog_battery_level</name>
+    <name lang="ja_JP-x-scrald">dialog_battery_level</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann seinen aktuellen Bateriestand und Status anzeigen.</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann seinen aktuellen Bateriestand und Status anzeigen.</description>
+    <description lang="en_US">The robot can give his current battery level and status.
+Examples of supported inputs:
+"What is your battery level?"
+"Are you charging?"</description>
+    <description lang="en_US-x-scrald">The robot can give his current battery level and status.
+Examples of supported inputs:
+"What is your battery level?"
+"Are you charging?"</description>
+    <description lang="es_ES">El robot puede dar el nivel y estado actuales de su batería. 
+Ejemplos de frases entendidas por el robot:
+"¿ Necesitas cargarte ?"
+"¿ Cuál es el nivel de tu batería ?"
+"¿ Tienes hambre ?"</description>
+    <description lang="es_ES-x-scrald">El robot puede dar el nivel y estado actuales de su batería. 
+Ejemplos de frases entendidas por el robot:
+"¿ Necesitas cargarte ?"
+"¿ Cuál es el nivel de tu batería ?"
+"¿ Tienes hambre ?"</description>
+    <description lang="fr_FR">Le robot peut donner son niveau actuel de batterie, ainsi que son statut.
+Exemples de phrases comprises par le robot :
+"Quel est ton niveau de batterie ?"
+"Es-tu en charge ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut donner son niveau actuel de batterie, ainsi que son statut.
+Exemples de phrases comprises par le robot :
+"Quel est ton niveau de batterie ?"
+"Es-tu en charge ?"</description>
+    <description lang="it_IT">Il robot può fornire il suo livello di carica e lo stato corrente della batteria.
+</description>
+    <description lang="it_IT-x-scrald">Il robot può fornire il suo livello di carica e lo stato corrente della batteria.
+</description>
+    <description lang="ja_JP">ロボットのバッテリー残量および充電ステータスをお知らせします。
+サポートされる入力の例:
+「バッテリー残量は？」
+「充電されていますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットのバッテリー残量および充電ステータスをお知らせします。
+サポートされる入力の例:
+「バッテリー残量は？」
+「充電されていますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_battery_level" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_battery_level/dlg_battery_level_ged.top"/>
+      <topic language="en_US" path="dlg_battery_level/dlg_battery_level_enu.top"/>
+      <topic language="es_ES" path="dlg_battery_level/dlg_battery_level_spe.top"/>
+      <topic language="fr_FR" path="dlg_battery_level/dlg_battery_level_frf.top"/>
+      <topic language="it_IT" path="dlg_battery_level/dlg_battery_level_iti.top"/>
+      <topic language="ja_JP" path="dlg_battery_level/dlg_battery_level_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+  <services>
+    <service name="batterydisplay" autorun="true" execStart="/usr/bin/python2 scripts/batterydisplay.py"/>
+  </services>
+</package>

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_goodbye" version="2.5.3">
+  <names>
+    <name lang="de_DE">dialog_goodbye</name>
+    <name lang="de_DE-x-scrald">dialog_goodbye</name>
+    <name lang="en_US">dialog_goodbye</name>
+    <name lang="en_US-x-scrald">dialog_goodbye</name>
+    <name lang="es_ES">dialog_goodbye</name>
+    <name lang="es_ES-x-scrald">dialog_goodbye</name>
+    <name lang="fr_FR">dialog_goodbye</name>
+    <name lang="fr_FR-x-scrald">dialog_goodbye</name>
+    <name lang="it_IT">dialog_goodbye</name>
+    <name lang="it_IT-x-scrald">dialog_goodbye</name>
+    <name lang="ja_JP">dialog_goodbye</name>
+    <name lang="ja_JP-x-scrald">dialog_goodbye</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Beispiele für unterstützte Eingaben :
+"Tschüss !"
+"Wir sehen uns morgen"</description>
+    <description lang="de_DE-x-scrald">Beispiele für unterstützte Eingaben :
+"Tschüss !"
+"Wir sehen uns morgen"</description>
+    <description lang="en_US">The robot can answer simple greetings.
+Examples of supported inputs:
+"Goodbye!"
+"See you later!</description>
+    <description lang="en_US-x-scrald">The robot can answer simple greetings.
+Examples of supported inputs:
+"Goodbye!"
+"See you later!</description>
+    <description lang="es_ES">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas pour el robot :
+"Adiós !"
+"Hasta luego !"
+""</description>
+    <description lang="es_ES-x-scrald">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas pour el robot :
+"Adiós !"
+"Hasta luego !"
+""</description>
+    <description lang="fr_FR">Le robot peut répondre à des salutations simples.
+Exemples de phrases comprises par le robot :
+"Au revoir !"
+"À plus tard !"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des salutations simples.
+Exemples de phrases comprises par le robot :
+"Au revoir !"
+"À plus tard !"</description>
+    <description lang="it_IT">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia.
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia.
+</description>
+    <description lang="ja_JP">ロボットは、単純な挨拶を交わすことができます。
+サポートされる入力の例:
+「さようなら！」
+「またあとで！」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、単純な挨拶を交わすことができます。
+サポートされる入力の例:
+「さようなら！」
+「またあとで！」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_goodbye">
+      <topic language="de_DE" path="dlg_goodbye/dlg_goodbye_ged.top"/>
+      <topic language="en_US" path="dlg_goodbye/dlg_goodbye_enu.top"/>
+      <topic language="es_ES" path="dlg_goodbye/dlg_goodbye_spe.top"/>
+      <topic language="fr_FR" path="dlg_goodbye/dlg_goodbye_frf.top"/>
+      <topic language="it_IT" path="dlg_goodbye/dlg_goodbye_iti.top"/>
+      <topic language="ja_JP" path="dlg_goodbye/dlg_goodbye_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+  <services>
+    <service execStart="/usr/bin/python2 goToSleepAld.py" name="ALGoToSleepALD" autorun="true"/>
+  </services>
+</package>

@@ -1,0 +1,17 @@
+topic: ~dlg_stop_talking()
+language: frf
+
+include: lexicon_frf.top
+
+#==================================================================#
+# Robot will stop talking and being proactive
+#==================================================================#
+
+u:(^repeat[
+    "{~ald_robots} [
+        "arrête de parler"
+        "tais-toi"
+        "ta gueule"
+        "~can_you fermer ta gueule"
+    ]"
+]) Okay, je me tais. $pushMode=0

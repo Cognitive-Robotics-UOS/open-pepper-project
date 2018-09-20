@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_battery_capacity" version="2.5.2">
+  <names>
+    <name lang="de_DE">dialog_battery_capacity</name>
+    <name lang="de_DE-x-scrald">dialog_battery_capacity</name>
+    <name lang="en_US">dialog_battery_capacity</name>
+    <name lang="en_US-x-scrald">dialog_battery_capacity</name>
+    <name lang="es_ES">dialog_battery_capacity</name>
+    <name lang="es_ES-x-scrald">dialog_battery_capacity</name>
+    <name lang="fr_FR">dialog_battery_capacity</name>
+    <name lang="fr_FR-x-scrald">dialog_battery_capacity</name>
+    <name lang="it_IT">dialog_battery_capacity</name>
+    <name lang="it_IT-x-scrald">dialog_battery_capacity</name>
+    <name lang="ja_JP">dialog_battery_capacity</name>
+    <name lang="ja_JP-x-scrald">dialog_battery_capacity</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">
+Der Roboter kann technische Daten über seine Batterie geben.
+</description>
+    <description lang="de_DE-x-scrald">
+Der Roboter kann technische Daten über seine Batterie geben.
+</description>
+    <description lang="en_US">The robot can give his battery specifications.
+Examples of supported inputs:
+"What is your autonomy?"
+"How long does a full charge take?"</description>
+    <description lang="en_US-x-scrald">The robot can give his battery specifications.
+Examples of supported inputs:
+"What is your autonomy?"
+"How long does a full charge take?"</description>
+    <description lang="es_ES">El robot puede dar las especificaciones de su batería.
+Ejemplos de frases entendidas por el robot:
+"¿ Qué tanto tardas en cargarte completamente?"
+"¿ Cuánto tiempo tardas en cargarte?"
+"¿ Cuánta autonomía tienes?"</description>
+    <description lang="es_ES-x-scrald">El robot puede dar las especificaciones de su batería.
+Ejemplos de frases entendidas por el robot:
+"¿ Qué tanto tardas en cargarte completamente?"
+"¿ Cuánto tiempo tardas en cargarte?"
+"¿ Cuánta autonomía tienes?"</description>
+    <description lang="fr_FR">Le robot peut donner les spécifications de sa batterie.
+Exemples de phrases comprises par le robot :
+"Quelle est ton autonomie ?"
+"Combien de temps te faut-il pour te charger entièrement ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut donner les spécifications de sa batterie.
+Exemples de phrases comprises par le robot :
+"Quelle est ton autonomie ?"
+"Combien de temps te faut-il pour te charger entièrement ?"</description>
+    <description lang="it_IT">Il robot può fornire le specifiche della sua batteria.</description>
+    <description lang="it_IT-x-scrald">Il robot può fornire le specifiche della sua batteria.</description>
+    <description lang="ja_JP">バッテリーに関する情報をロボットに質問出来ます。
+質問例：
+"バッテリーは何時間くらいもつの？"
+"どれくらいで充電終わる？"</description>
+    <description lang="ja_JP-x-scrald">バッテリーに関する情報をロボットに質問出来ます。
+質問例：
+"バッテリーは何時間くらいもつの？"
+"どれくらいで充電終わる？"</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_battery_capacity" typeVersion="1.0">
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_ged.top" language="de_DE"/>
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_enu.top" language="en_US"/>
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_spe.top" language="es_ES"/>
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_frf.top" language="fr_FR"/>
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_iti.top" language="it_IT"/>
+      <topic path="dlg_battery_capacity/dlg_battery_capacity_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

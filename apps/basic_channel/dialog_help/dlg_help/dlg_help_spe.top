@@ -1,0 +1,23 @@
+topic: ~dlg_help()
+language: spe
+
+include:lexicon_spe.top
+
+concept:(help) [
+    "["me ayudarías" ayudame] {"por favor"}"
+    "~can_you ayudarme {"por favor"}"
+    "cómo ~can_you ayudarme"
+    "me puedes dar {"algún tipo de"} [información datos ayuda]"
+    "necesito [información datos detalles ayuda asistencia]"
+    "échame una mano"
+    "estoy buscando {cierta} información"
+    "estoy buscando más datos"
+    "estoy buscando {algo de} [ayuda asistencia]"
+]
+#==================================================================#
+# User can request assistance from the robot
+#==================================================================#
+
+u:(~help)
+Haré mi mejor esfuerzo por ayudarte!
+

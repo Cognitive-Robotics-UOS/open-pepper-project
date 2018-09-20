@@ -1,0 +1,6 @@
+multilanguage:dlg_character
+  ged:dlg_character_ged.top
+  enu:dlg_character_enu.top
+  spe:dlg_character_spe.top
+  frf:dlg_character_frf.top
+  iti:dlg_character_iti.top

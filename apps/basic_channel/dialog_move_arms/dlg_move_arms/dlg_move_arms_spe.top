@@ -1,0 +1,129 @@
+topic: ~dlg_move_arms()
+language: spe
+
+include: lexicon_spe.top
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Pídeme hacer movimientos simples, no puedo moverme exactamente como lo hacen los humanos."
+    "No entiendo lo que me estás pidiendo, probablemente no conozco ese movimiento todavía."
+]
+
+u:^private([
+    "qué {"tipo de"} movimientos"
+    "sé más [preciso específico]"
+    "ayúdame a ser más preciso [específico preciso]"
+    "cómo puedo ser más [específico preciso]"
+    "dame un ejemplo"
+])
+[
+    "Puedes pedirme que abra mis manos, o que levante el brazo, por ejemplo."
+    "Puedes pedirme que mueva la cabeza o las manos."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Está bien, lo haré de nuevo." "Aquí voy de nuevo!"]
+    ^runBehavior($RobotLastAnim)"
+    "Creo que no tengo nada que reproducir."
+] ^stayInScope
+
+#==================================================================#
+# Move - Arms
+#==================================================================#
+
+u:([
+    "[levanta mueve alza] [el tu] brazo"
+    "~can_you [levantar mover alzar] [el tu] brazo" 
+    "se puede [levantar mover alzar] [el tu] brazo"
+])
+Cual brazo debo levantar?
+
+    u1:([
+        "{el tu} {brazo} izquierdo"
+        "la izquierda"
+    ])
+    Vale, levanto el brazo si lo quieres.
+    ^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm
+
+    u1:([
+        "{el tu} {brazo} derecho"
+        "la derecha"
+    ])
+    Vale, levanto el brazo si lo quieres.
+    ^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+    u1:(["los dos" ambos "izquierdo y derecho" "derecho e izquierdo"])
+    Aúpa!
+    ^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+
+    u1:(~its_up_to_you)
+    ^rand[
+        "Pues, será la izquierda!
+        ^runBehavior(dialog_move_arms/animations/UpLArm)"
+        $RobotLastAnim=dialog_move_arms/animations/UpLArm
+        "Pues, será la derecha!
+        ^runBehavior(dialog_move_arms/animations/UpRArm)"
+        $RobotLastAnim=dialog_move_arms/animations/UpRArm
+    ]
+    
+u:([
+    "[levanta mueve alza] [el tu] brazo izquierdo"
+    "~can_you [levantar mover alzar] [el tu] brazo izquierdo" 
+    "se puede [levantar mover alzar] [el tu] brazo izquierdo"
+])
+Levantando el brazo izquierdo!
+^runBehavior(dialog_move_arms/animations/UpLArm)
+$RobotLastAnim=dialog_move_arms/animations/UpLArm
+
+u:([
+    "[levanta mueve alza] [el tu] brazo derecho"
+    "~can_you [levantar mover alzar] [el tu] brazo derecho" 
+    "se puede [levantar mover alzar] [el tu] brazo derecho"
+])
+Levantando el brazo derecho!
+^runBehavior(dialog_move_arms/animations/UpRArm)
+$RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+u:([
+    "[levanta mueve alza] ["los {dos}" ambos tus] brazos"
+    "~can_you [levantar mover alzar] ["los {dos}" ambos tus] brazos" 
+    "se puede [levantar mover alzar] ["los {dos}" ambos tus] brazos"
+])
+Ahí tienes!
+^runBehavior(dialog_move_arms/animations/UpBothArms)
+$RobotLastAnim=dialog_move_arms/animations/UpBothArms
+
+u:([
+    "[estira extiende alarga abre] ["los {dos}" ambos tus] brazos"
+    "~can_you [estirar extender alargar abrir] ["los {dos}" ambos tus] brazos" 
+    "se puede [estirar extender alargar abrir] ["los {dos}" ambos tus] brazos"
+])    
+Aúpa!
+^runBehavior(dialog_move_arms/animations/StretchBothArms)
+$RobotLastAnim=dialog_move_arms/animations/StretchBothArms
+
+u:([
+    "[estira extiende alarga abre] [el tu] brazo izquierdo"
+    "~can_you [estirar extender alargar abrir] [el tu] brazo izquierdo" 
+    "se puede [estirar extender alargar abrir] [el tu] brazo izquierdo"
+])  
+Ahí tienes!
+^runBehavior(dialog_move_arms/animations/StretchLArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchLArm
+
+u:([
+    "[estira extiende alarga abre] [el tu] brazo derecho"
+    "~can_you [estirar extender alargar abrir] [el tu] brazo derecho" 
+    "se puede [estirar extender alargar abrir] [el tu] brazo derecho"
+])  
+Ahí tienes!
+^runBehavior(dialog_move_arms/animations/StretchRArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchRArm

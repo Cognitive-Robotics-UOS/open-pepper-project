@@ -1,0 +1,66 @@
+topic: ~dlg_goodbye ^noPick()
+language: frf
+
+include:lexicon_frf.top
+
+concept:(week_days) [lundi mardi mercredi jeudi vendredi samedi dimanche]
+
+#==================================================================#
+##### Robot answers to goodbye #####
+#==================================================================#
+
+u:(_[
+    "[au en] revoir"
+    "bye bye"
+    "à [bientôt demain "plus tard"]"
+    "tchao"
+    "ciao"
+] {~ald_robots})
+$1 !
+
+u:([
+    "je !ne m'en vais !pas"
+    "j'y vais"
+    "je [dois vais] !pas y aller"
+    "on se [revoit voit verra reverra] plus tard"
+] {~ald_robots})
+À plus tard!
+
+u:([à a] demain {~ald_robots})
+À demain!
+
+u:(bon weekend {~ald_robots})
+Bon weekend!
+
+u:(bonne _[journée soirée])
+Bonne $1 !
+
+u:([à a] _~week_days {~ald_robots})
+À $1 !
+
+u:([
+    "bonne nuit"
+    "je [vais pars] [dormir "me coucher" "au [dodo lit]" "faire [dodo "la sieste"]"]"
+] {~ald_robots})
+^first[
+    "$Dialog/Hour==0 Bonne nuit {$user/name} !"
+    "$Dialog/Hour>0 $Dialog/Hour<4 Bonne nuit {$user/name} !"
+    "$Dialog/Hour==4 Bonne nuit {$user/name} !"
+    
+    "$Dialog/Hour>4 $Dialog/Hour<12 Tu as dû bien faire la fête cette nuit {$user/name} ! Dors bien!"
+
+    "$Dialog/Hour==12 Bonne sieste {$user/name} !"
+    "$Dialog/Hour>12 $Dialog/Hour<17 Bonne sieste {$user/name} !"
+    "$Dialog/Hour==17 Bonne sieste {$user/name} !"
+    "$Dialog/Hour>17 $Dialog/Hour<18 Bonne sieste {$user/name} !"
+
+    "$Dialog/Hour==18 Tu te couches tôt dis moi ! Bonne nuit alors!"
+    "$Dialog/Hour>18 $Dialog/Hour<20 Tu te couches tôt dis moi ! Bonne nuit alors!"
+    "$Dialog/Hour==20 Tu te couches tôt dis moi! {$user/name} ! Bonne nuit alors!"
+    
+    "$Dialog/Hour>20  Bonne nuit {$user/name} !"
+]
+
+
+u:(["va te coucher" "couche-toi" "mets-toi en {mode} veille"])
+$go_to_sleep_now=1

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_store" version="0.0.10">
+  <names>
+    <name lang="en_US">dialog_store</name>
+    <name lang="en_US-x-scrald">dialog_store</name>
+    <name lang="fr_FR">dialog_store</name>
+    <name lang="fr_FR-x-scrald">dialog_store</name>
+    <name lang="ja_JP">dialog_store</name>
+    <name lang="ja_JP-x-scrald">dialog_store</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can explain how to install and start an application.
+Examples of supported inputs:
+"How do I install an application?"
+"How do I start an application?"</description>
+    <description lang="en_US-x-scrald">The robot can explain how to install and start an application.
+Examples of supported inputs:
+"How do I install an application?"
+"How do I start an application?"</description>
+    <description lang="fr_FR">Le robot peut expliquer comment installer ou lancer une application.
+Exemples de phrases comprises par le robot :
+"Comment faire installer une application ?"
+"Comment faire pour lancer une application ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut expliquer comment installer ou lancer une application.
+Exemples de phrases comprises par le robot :
+"Comment faire installer une application ?"
+"Comment faire pour lancer une application ?"</description>
+    <description lang="ja_JP">ロボットは、アプリケーションのインストールや起動について話すことができます。
+サポートされる入力の例:
+「アプリケーションのインストール方法は？」
+「アプリケーションを起動しますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、アプリケーションのインストールや起動について話すことができます。
+サポートされる入力の例:
+「アプリケーションのインストール方法は？」
+「アプリケーションを起動しますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="show_tablet/Show_tablet_1">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_2">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_3">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_4">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_5">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent typeVersion="1.0" topicName="dlg_ade">
+      <topic language="en_US" path="dlg_ade/dlg_ade_enu.top"/>
+      <topic language="fr_FR" path="dlg_ade/dlg_ade_frf.top"/>
+      <topic language="ja_JP" path="dlg_ade/dlg_ade_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.1"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+</package>

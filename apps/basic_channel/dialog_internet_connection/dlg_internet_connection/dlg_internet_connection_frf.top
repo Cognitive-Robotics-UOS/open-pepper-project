@@ -1,0 +1,54 @@
+topic: ~dlg_internet_connection()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+##### IP adress #####
+#==================================================================#
+
+u:([
+    "quelle est"
+    donne-moi
+    donne-nous
+    "c'est quoi"
+    "~can_you me [donner dire]"
+    "je [veux voudrais] {savoir connaître}"
+    ~do_you_know
+    ]
+ton adresse [ip ipé "i p"])
+^run(dialog_internet_connection/bhr_IP_adress)
+
+u:(e:Dialog/sayIP)
+^first[
+    "C'est $Dialog/IP ."
+    "Je ne suis pas sûr, désolé."
+]
+
+#==================================================================#
+##### WiFi Connection status #####
+#==================================================================#
+
+u:([~i_want_to "aide-moi à"] ["[configurer paramétrer] le [wifi wi-fi]" "me connecter au [wifi wi-fi]"])
+Désolé, je ne sais pas encore faire ça. Il vaut mieux utiliser ma page web.
+
+u:([
+    "~are_you connecté ["au [wifi wi-fi]" "à internet"]"
+    "~do_you_have ["le [wifi wi-fi]" internet]"
+])
+^run(dialog_internet_connection/bhr_network_status)
+
+u:(e:Dialog/Network/NoNetwork)
+Je ne suis pas connecté à Internet pour le moment.
+
+u:(e:Dialog/Network/Ethernet)
+Je suis connecté à Internet via un câble Ethernet.
+
+u:(e:Dialog/Network/BlueTooth)
+Je suis connecté à Internet via BlueTooth.
+
+u:(e:Dialog/Network/WiFi)
+^first[
+    "Je suis connecté à Internet en WiFi sur le réseau $Dialog/Network/WiFiSSID"
+    "Je suis connecté à Internet en WiFi sur un réseau masqué."
+]

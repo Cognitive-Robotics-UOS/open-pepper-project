@@ -1,0 +1,235 @@
+topic: ~dlg_move_hands()
+language: iti
+
+include: lexicon_iti.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Chiedimi di fare movimenti più semplici, non posso muovermi esattamente come fanno gli esseri umani."
+    "Non capisco quello che mi stai chiedendo, probabilmente ancora non conosco questo movimento."
+]
+
+u:^private([
+    "quali movimenti"
+    "che tipo di movimenti"
+    "cerca di essere più preciso"
+    "sii più specifico"
+    "aiutami a essere più preciso specifico"
+    "come posso essere più specifico"
+    "fammi un esempio"
+])
+^rand[
+    "Puoi dirmi di aprire le mani o alzare il braccio, per esempio."
+    "Puoi chiedermi di spostare la testa o di muovere le mani."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Va bene, lo faccio di nuovo." "Ecco che lo rifaccio!"]
+    ^runBehavior($RobotLastAnim)"
+    "Penso di non avere nulla da rifare."
+] ^stayInScope
+
+u:([
+    "voglio che tu ti muova"
+    "~can_you muoverti"
+    "fa alcuni movimenti"
+    "fai i movimenti"
+    "fai alcuni movimenti"
+    "riesci a muoverti"
+    "riesci a fare alcuni movimenti"
+])
+Sì! ^rand[
+    "Puoi dirmi di aprire le mani o alzare il braccio, per esempio."
+    "Puoi chiedermi di spostare la testa o di muovere le mani."
+] $RobotLastAnim=""
+
+#==================================================================#
+# Move - Hands
+#==================================================================#
+
+u:([
+    "~can_you aprire {solo} la mano sinistra"
+    "apri {solo} la mano sinistra"
+])
+Va bene.
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:([
+    "~can_you aprire {solo} la mano destra"
+    "apri {solo} la mano destra"
+])
+Va bene.
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:([
+    "~can_you aprire le mani"
+    "apri le mani"
+])
+Sto aprendo le mani!
+^runBehavior(dialog_move_hands/animations/OpenBothHands)
+$RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+
+u:([
+    "~can_you aprire la mano"
+    "apri la mano"
+])
+Quale mano?
+
+    u1:({la tua} {mano} sinistra)
+    Va bene.
+    ^runBehavior(dialog_move_hands/animations/OpenLHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+    u1:({la tua} {mano} destra)
+    Va bene.
+    ^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand
+    
+    u1:(entrambe {"le mani"})
+    Sto aprendo le mani!
+    ^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+    
+    u1:(~its_up_to_you)
+    ^rand[
+        "Allora, ho scelto la mano sinistra!
+        ^runBehavior(dialog_move_hands/animations/OpenLHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenLHand"
+        "Allora, scelgo la mano destra!
+        ^runBehavior(dialog_move_hands/animations/OpenRHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    ]
+
+u:([
+    "~can_you chiudere la mano sinistra"
+    "chiudi la mano sinistra"
+])
+Nessun problema.
+^runBehavior(dialog_move_hands/animations/CloseLHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+u:([
+    "~can_you chiudere la mano destra"
+    "chiudi la mano destra"
+])
+Nessun problema.
+^runBehavior(dialog_move_hands/animations/CloseRHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+u:([
+    "~can_you chiudere le mani"
+    "chiudi le mani"
+])
+Sto chiudendo le mani!
+^runBehavior(dialog_move_hands/animations/CloseBothHands)
+$RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+u:([
+    "~can_you chiudere la mano"
+    "chiudi la mano"
+])
+Quale mano?
+
+    u1:({la tua} {mano} sinistra)
+    Va bene.
+    ^runBehavior(dialog_move_hands/animations/CloseLHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+    u1:({la tua} {mano} destra)
+    Va bene.
+    ^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+    u1:(entrambe {"le mani"})
+    Sto chiudendo le mani!
+    ^runBehavior(dialog_move_hands/animations/CloseBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+    u1:(~its_up_to_you)
+    ^rand[
+        "Va bene, la mia mano sinistra, allora
+        ^runBehavior(dialog_move_hands/animations/CloseLHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseLHand"
+        "Va bene, la mia mano destra, allora!
+        ^runBehavior(dialog_move_hands/animations/CloseRHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+    ]
+    
+u:([
+    "~can_you {far} muovere le mani"
+    "muovi le mani"
+    "fai muovere le mani"
+])
+Va bene, come desideri.
+^rand[
+    "^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands"
+    "^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    "^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+]
+
+u:([
+    "~can_you {far} muovere la mano sinistra"
+    "muovi la mano sinistra"
+    "fai muovere la mano sinistra"
+])
+Certo!
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:([
+    "~can_you {far} muovere la mano destra"
+    "muovi la mano destra"
+    "fai muovere la mano destra"
+])
+Certo!
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:(mani in alto)
+Mi arrendo!
+^runBehavior(dialog_move_hands/animations/UpBothArms)
+$RobotLastAnim=dialog_move_hands/animations/UpBothArms
+
+u:([
+    "~can_you mettere le mani dietro {"la schiena"}"
+    "metti le mani dietro {"la schiena"}"
+])
+Ecco qua.
+^runBehavior(dialog_move_hands/animations/HandsBack)
+$RobotLastAnim=dialog_move_hands/animations/HandsBack
+
+u:([
+    "~can_you [tenere agitare] la mia mano"
+    "[tieni agita] la mano"
+])
+Ancora non so come si fa. Possiamo salutarci con la mano a vicenda!
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+u:([
+    "~can_you [dire "agitare la mano per dire"] _[ciao "ciao ciao" addio "alla prossima" "ci vediamo"]"
+    "[dimmi "agita la mano per dire"] _[ciao "ciao ciao" addio "alla prossima" "ci vediamo"]"
+])
+$1 !
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+u:([
+    nasconditi
+    "metti le mani davanti agli occhi"
+    "copriti gli occhi"
+])
+Va bene! ^runBehavior(dialog_move_hands/animations/HandsOnEyes)
+$RobotLastAnim=dialog_move_hands/animations/HandsOnEyes

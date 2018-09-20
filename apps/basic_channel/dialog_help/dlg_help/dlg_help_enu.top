@@ -1,0 +1,11 @@
+topic: ~dlg_help()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+# User can request assistance from the robot
+#==================================================================#
+
+u:(~help)
+I'll try my best to help you!

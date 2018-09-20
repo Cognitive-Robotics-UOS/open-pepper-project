@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.7" uuid="dialog_shutdown">
+  <names>
+    <name lang="de_DE">dialog_shutdown</name>
+    <name lang="de_DE-x-scrald">dialog_shutdown</name>
+    <name lang="en_US">dialog_shutdown</name>
+    <name lang="en_US-x-scrald">dialog_shutdown</name>
+    <name lang="es_ES">dialog_shutdown</name>
+    <name lang="es_ES-x-scrald">dialog_shutdown</name>
+    <name lang="fr_FR">dialog_shutdown</name>
+    <name lang="fr_FR-x-scrald">dialog_shutdown</name>
+    <name lang="it_IT">dialog_shutdown</name>
+    <name lang="it_IT-x-scrald">dialog_shutdown</name>
+    <name lang="ja_JP">dialog_shutdown</name>
+    <name lang="ja_JP-x-scrald">dialog_shutdown</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann mit einem Sprachbefehl abgeschaltet werden.</description>
+    <description lang="de_DE-x-scrald">Der Roboter kann mit einem Sprachbefehl abgeschaltet werden.</description>
+    <description lang="en_US">The robot can be verbally turned off.
+Examples of supported inputs:
+"Turn yourself off."
+"Restart."</description>
+    <description lang="en_US-x-scrald">The robot can be verbally turned off.
+Examples of supported inputs:
+"Turn yourself off."
+"Restart."</description>
+    <description lang="es_ES">El robot se puede apagar verbalmente.
+Ejemplos de frases entendidas por el robot:
+"¿Puedes apagarte?"
+"¿Puedes reiniciarte?"</description>
+    <description lang="es_ES-x-scrald">El robot se puede apagar verbalmente.
+Ejemplos de frases entendidas por el robot:
+"¿Puedes apagarte?"
+"¿Puedes reiniciarte?"</description>
+    <description lang="fr_FR">Le robot peut être éteint oralement.
+Exemples de phrases comprises par le robot :
+"Éteins-toi."
+"Redémarre."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut être éteint oralement.
+Exemples de phrases comprises par le robot :
+"Éteins-toi."
+"Redémarre."</description>
+    <description lang="it_IT">Il robot può essere spento verbalmente.</description>
+    <description lang="it_IT-x-scrald">Il robot può essere spento verbalmente.</description>
+    <description lang="ja_JP">ボイスコマンドによりペッパーを再起動、又はペッパーの電源を切ることができます。
+コマンド例：
+ペッパー電源切って
+ペッパー再起動して</description>
+    <description lang="ja_JP-x-scrald">ボイスコマンドによりペッパーを再起動、又はペッパーの電源を切ることができます。
+コマンド例：
+ペッパー電源切って
+ペッパー再起動して</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="bhr_shutdown">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhr_reboot">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent typeVersion="1.0" topicName="dlg_shutdown">
+      <topic path="dlg_shutdown/dlg_shutdown_ged.top" language="de_DE"/>
+      <topic path="dlg_shutdown/dlg_shutdown_enu.top" language="en_US"/>
+      <topic path="dlg_shutdown/dlg_shutdown_spe.top" language="es_ES"/>
+      <topic path="dlg_shutdown/dlg_shutdown_frf.top" language="fr_FR"/>
+      <topic path="dlg_shutdown/dlg_shutdown_iti.top" language="it_IT"/>
+      <topic path="dlg_shutdown/dlg_shutdown_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

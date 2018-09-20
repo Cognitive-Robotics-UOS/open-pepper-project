@@ -1,0 +1,68 @@
+topic: ~dlg_adjust_volume ^noPick()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+# Adjust the robot's volume
+#==================================================================#
+
+u:([
+    "{~can_you} [talk speak] {"a little"} ["less loudly" softer]"
+    "{~can_you} [lower "turn down"] [the your] [volume sound]"
+    "~you_are talking too [loud loudly]"
+    "[your the] [voice's volume's "[voice volume] is"] too loud"
+])
+^gotoReactivate(decrease_volume)
+    
+    
+u:($empty) %decrease_volume
+^call(ALVolumeSlider.decreaseVolume())
+    c1:(false) Sorry I can't be quieter.
+    c1:(true) I've lowered my volume.
+
+        u2:([
+            again
+            lower
+            softer
+            "still too loud"
+            "{"a [bit little]"} more"
+            ])
+            ^gotoReactivate(decrease_volume)
+            
+        u2:(["{that's "that is"} perfect" "{that's "that is"}great" "thank you" thanks "well done" good yes "{that's "that is"} fine"])
+        ^rand["Right! Don't hesitate to ask if you need me to change it again!" "Oki doki" "Right!" "Ok!"]
+        ^pCall(ALVolumeSlider.hideTablet())
+
+        
+        
+u:([
+    "I can't hear you"
+    "{~can_you} [talk speak] {"a little"} louder {then}"
+    "{~can_you} [increase "turn up"] [your the] [volume sound]"
+    "~you_are talking too [softly low]"
+    "[your the] [voice's volume's "[voice volume] is"] is too soft"
+])
+^gotoReactivate(increase_volume)
+
+u:($empty) %increase_volume
+^call(ALVolumeSlider.increaseVolume())
+    c1:(false) I'm already at my loudest! I can't turn it up further!
+    c1:(true) I've turned up my volume.
+
+        u2:([
+            again
+            louder
+            "{still} can't hear {you}"
+            "still too [soft low]"
+            "{"a [bit little]"} more"
+            ])
+            ^gotoReactivate(increase_volume)
+        
+        u2:(["{that's "that is"} perfect" "{that's "that is"}great" "thank you" thanks "well done" good yes "{that's "that is"} fine"])
+        ^rand["Right! Don't hesitate to ask if you need me to change it again!" "Oki doki" "Right!" "Ok!"]
+        ^pCall(ALVolumeSlider.hideTablet())
+
+
+proposal: %SAYVOLUME
+My volume is now at $dialog_adjust_volume/currentVolume

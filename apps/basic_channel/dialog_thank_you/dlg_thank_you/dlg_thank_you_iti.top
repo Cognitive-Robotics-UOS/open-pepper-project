@@ -1,0 +1,22 @@
+topic: ~dlg_thank_you()
+language: iti
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+
+u:([
+    grazie
+    "grazie mille"
+    "mille grazie"
+]) Non c'è di che {$user/name}!
+
+#==================================================================#
+recover:
+#==================================================================#
+u:([
+    "{sei} [dolce carino gentile grande meraviglioso stupendo]" 
+    "è {così} [dolce carino gentile grande meraviglioso stupendo]"
+])
+Grazie {$user/name} !
+u:(bravo) Grazie {$user/name}!

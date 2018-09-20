@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.5" uuid="dialog_move_hands">
+  <names>
+    <name lang="de_DE">dialog_move_hands</name>
+    <name lang="de_DE-x-scrald">dialog_move_hands</name>
+    <name lang="en_US">dialog_move_hands</name>
+    <name lang="en_US-x-scrald">dialog_move_hands</name>
+    <name lang="es_ES">dialog_move_hands</name>
+    <name lang="es_ES-x-scrald">dialog_move_hands</name>
+    <name lang="fr_FR">dialog_move_hands</name>
+    <name lang="fr_FR-x-scrald">dialog_move_hands</name>
+    <name lang="it_IT">dialog_move_hands</name>
+    <name lang="it_IT-x-scrald">dialog_move_hands</name>
+    <name lang="ja_JP">dialog_move_hands</name>
+    <name lang="ja_JP-x-scrald">dialog_move_hands</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann seine Hände entsprechend den Wünschen des Benutzers bewegen. </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann seine Hände entsprechend den Wünschen des Benutzers bewegen. </description>
+    <description lang="en_US">The robot can move his hands according to the user's request.
+Examples of supported inputs:
+"Can you open your hands?"
+"Can you put your hands behind?"</description>
+    <description lang="en_US-x-scrald">The robot can move his hands according to the user's request.
+Examples of supported inputs:
+"Can you open your hands?"
+"Can you put your hands behind?"</description>
+    <description lang="es_ES">El robot puede mover sus manos a las solicitudes del usuario.
+Ejemplos de frases entendidas por el robot :
+"cierra tus manos"
+"pon tus manas atrás"</description>
+    <description lang="es_ES-x-scrald">El robot puede mover sus manos a las solicitudes del usuario.
+Ejemplos de frases entendidas por el robot :
+"cierra tus manos"
+"pon tus manas atrás"</description>
+    <description lang="fr_FR">Le robot peut bouger ses mains en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Peux-tu ouvrir les mains ?"
+"Mets les mains en arrière."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut bouger ses mains en fonction des instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Peux-tu ouvrir les mains ?"
+"Mets les mains en arrière."</description>
+    <description lang="it_IT">Il robot può muovere le mani in base alla richiesta dell'utente.</description>
+    <description lang="it_IT-x-scrald">Il robot può muovere le mani in base alla richiesta dell'utente.</description>
+    <description lang="ja_JP">ロボットはユーザの要求に応じて、手を動かすことができます。
+サポートされる入力の例:
+「手をひらけますか？」
+「手をうしろにまわしてくれますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットはユーザの要求に応じて、手を動かすことができます。
+サポートされる入力の例:
+「手をひらけますか？」
+「手をうしろにまわしてくれますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="animations/CloseBothHands">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/CloseLHand">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/CloseRHand">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/HandsBack">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/HandsOnEyes">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/OpenBothHands">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/OpenLHand">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/OpenRHand">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/UpBothArms">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/Wave01">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_move_hands" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_move_hands/dlg_move_hands_ged.top"/>
+      <topic language="en_US" path="dlg_move_hands/dlg_move_hands_enu.top"/>
+      <topic language="es_ES" path="dlg_move_hands/dlg_move_hands_spe.top"/>
+      <topic language="fr_FR" path="dlg_move_hands/dlg_move_hands_frf.top"/>
+      <topic language="it_IT" path="dlg_move_hands/dlg_move_hands_iti.top"/>
+      <topic language="ja_JP" path="dlg_move_hands/dlg_move_hands_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

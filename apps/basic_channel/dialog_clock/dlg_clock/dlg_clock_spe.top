@@ -1,0 +1,91 @@
+topic: ~dlg_clock()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+#TODO : menos cuarto, en punto... mediodia, medianoche
+
+u:([
+    "qué hora es"
+    "~i_want [conocer saber] la hora"
+    "~can_you [decirme darme] la hora"
+    "~can_you decirme qué hora es"
+    "dime la hora"
+    "dime qué hora es"
+    "sabes que hora es"
+    "sabes la hora"
+    "tienes {la} hora"
+    "dame la hora"
+])
+^first[
+    "$Dialog/Hour==1 Es la $Dialog/Hour \pau=50\ y $Dialog/Minute de la madrugada."
+    "$Dialog/Hour==14 Son las doce \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==13 Es la una \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==14 Son las dos \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==15 Son las tres \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==16 Son las cuatro \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==17 Son las cinco \pau=50\ y $Dialog/Minute de la tarde."    
+    "$Dialog/Hour==18 Son las seis \pau=50\ y $Dialog/Minute de la tarde."    
+    "$Dialog/Hour==19 Son las siete \pau=50\ y $Dialog/Minute de la tarde."    
+    "$Dialog/Hour==20 Son las ocho \pau=50\ y $Dialog/Minute de la tarde."
+    "$Dialog/Hour==21 Son las nueve \pau=50\ y $Dialog/Minute de la noche."    
+    "$Dialog/Hour==22 Son las diez \pau=50\ y $Dialog/Minute de la noche."    
+    "$Dialog/Hour==23 Son las once \pau=50\ y $Dialog/Minute de la noche." 
+    "$Dialog/Hour==24 Son las doce \pau=50\ y $Dialog/Minute de la noche."
+    "Son las $Dialog/Hour \pau=50\ y $Dialog/Minute ."
+    "No sé, lo siento."
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+
+u:([
+    "qué [día fecha] es {hoy}"
+    "hoy es qué día"
+    "a qué estamos hoy"
+    "["cuál es" tienes sabes] la fecha {"de hoy"}"
+    "[en a] qué día estamos"
+    "qué día es {hoy este}"
+    "[dame dime] la fecha"
+])
+#^first[
+#    "$ask==yes ^rand[
+#        "Bien sûr!"
+#        "Pas de problème!"
+#    ] Hoy es el" 
+    Hoy es el
+#]
+^first[
+    "$Dialog/Weekday==1 Lunes" 
+    "$Dialog/Weekday==2 Martes"
+    "$Dialog/Weekday==3 Miércoles"
+    "$Dialog/Weekday==4 Jueves"
+    "$Dialog/Weekday==5 Viernes"
+    "$Dialog/Weekday==6 Sábado"
+    "$Dialog/Weekday==7 Domingo"
+]
+
+^first[
+    "$Dialog/Day==1 primero de"
+    "$Dialog/Day \pau=50\ de "
+]
+
+^first[
+    "$Dialog/Month==1 Enero."
+    "$Dialog/Month==2 Febrero."
+    "$Dialog/Month==3 Marzo."
+    "$Dialog/Month==4 Abril."
+    "$Dialog/Month==5 Mayo."
+    "$Dialog/Month==6 Junio."
+    "$Dialog/Month==7 Julio."
+    "$Dialog/Month==8 Agosto."
+    "$Dialog/Month==9 Septiembre."
+    "$Dialog/Month==10 Octubre."
+    "$Dialog/Month==11 Noviembre."
+    "$Dialog/Month==12 Diciembre."
+]

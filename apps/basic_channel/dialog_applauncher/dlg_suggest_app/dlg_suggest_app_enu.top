@@ -1,0 +1,5 @@
+topic: ~dlg_suggest_app ^noPick()
+language: enu
+
+proposal: %suggestapp you could also say to me $Dialog/Trigger
+Magic trick: you can also say $Dialog/Trigger to launch $Dialog/AppName !

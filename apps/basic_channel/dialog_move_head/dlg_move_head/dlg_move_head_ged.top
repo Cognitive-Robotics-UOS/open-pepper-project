@@ -1,0 +1,153 @@
+topic: ~dlg_move_head()
+language: ged
+
+include: lexicon_ged.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+   "Bitte mich, einfachere Bewegungen durchzuführen, ich kann mich nicht genau so wie ein Mensch bewegen."
+   "Ich verstehe nicht, worum du mich bittest, ich kenne diese Bewegung bis jetzt vielleicht noch nicht."
+]
+
+u:^private([
+    "welche bewegungen"
+    "welche art von bewegung"
+    "sei bitte genauer"
+    "sei bitte konkreter"
+    "hilf mir, [genauer konkreter] zu sein"
+    "wie kann ich konkreter werden"
+    "gib mir ein beispiel"
+])
+^rand[
+    "Du kannst mir sagen, ich soll meine Hände öffnen oder den Arm heben, zum Beispiel."
+    "Du kannst mich bitten, meinen Kopf zu bewegen oder meine Hände zu bewegen."
+]
+
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Okay, ich werde es noch einmal machen." "Jetzt geht es wieder los"]
+    ^runBehavior($RobotLastAnim)"
+    "Ich glaube, ich habe nichts zum Wiederholen."
+] ^stayInScope
+
+#==================================================================#
+# Head
+#==================================================================#
+u:([
+    "~can_you deinen kopf drehen"
+    "drehe deinen kopf"
+])
+Okay, wenn du möchtest.
+^rand[
+    "^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight"
+    "^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft"
+]
+
+u:([
+    "~can_you [woanders anderswo] hinschauen" 
+    "schaue [woanders anderswo] hin" 
+])
+Okay.
+^runBehavior(dialog_move_head/animations/TurnHead360)
+$RobotLastAnim=dialog_move_head/animations/TurnHead360
+
+u:([
+    "~can_you nach unten schauen"
+    "schau nach unten"
+    "schau mich nicht an"
+    "hör auf mich anzuschauen"
+])
+Ja, Sir.
+^runBehavior(dialog_move_head/animations/LookDown)
+$RobotLastAnim=dialog_move_head/animations/LookDown
+
+u:([
+    "~can_you deinen kopf [bewegen schütteln]"
+    "[bewege schüttle] deinen kopf"
+])
+Ich bewege meinen Kopf! 
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:([
+    "~can_you deinen Kopf nach rechts {hinüber} [drehen bewegen]"
+    "~can_you nach rechts {hinüber} schauen"
+    "[drehe bewege] deinen kopf nach rechts {hinüber}"
+    "schau nach rechts {hinüber}"
+])
+Nach rechts!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+
+    u1:([
+        "zur anderen Seite hinüber" 
+        "andere Seite"
+        "nach links {hinüber}" 
+    ])
+    In Ordnung.
+    ^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:(["~can_you deinen Kopf nach links {hinüber} [drehen bewegen]"
+    "~can_you nach links {hinüber} schauen"
+    "[drehe bewege] deinen kopf nach links {hinüber}"
+    "schau nach links {hinüber}"])
+Nach links!
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+    u1:([
+        "zur anderen Seite hinüber" 
+        "andere Seite"
+        "nach links {hinüber}" 
+    ])
+    In Ordnung.
+    ^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight
+
+u:([
+    "~can_you nach oben schauen"
+    "schau nach oben"
+])
+Okay.
+^runBehavior(dialog_move_head/animations/LookUp)
+$RobotLastAnim=dialog_move_head/animations/LookUp
+
+    u1:([
+        "das ist [alles es]"
+        "kannst du nicht höher schauen" 
+        "höher" 
+        "mehr"
+    ])
+    Nein, tut mir leid, das ist das Beste, was ich momentan tun kann. $RobotLastAnim=""
+
+u:([
+    "~can_you mir in die augen schauen"
+    "~can_you in richtung meiner augen schauen"
+    "~can_you mich anschauen"
+    "~can_you in meine richtung schauen"
+    "schau in meine [augen richtung]"
+    "schau mich an"
+    "schau in meine richtung"
+])
+Ich schaue dich an. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:([
+    "~can_you damit aufhören deinen kopf {"die ganze zeit"} {so} zu [bewegen schütteln]"
+    "hör auf deinen kopf {"die ganze zeit"} {so} zu [bewegen schütteln]"
+])
+Tut mir leid. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:(du schüttelst deinen Kopf {"zu sehr"})
+Tut mir leid, ich bin ganz aufgeregt, wenn ich mit dir rede!  $Dialog/LookAtMe=1 $RobotLastAnim=""

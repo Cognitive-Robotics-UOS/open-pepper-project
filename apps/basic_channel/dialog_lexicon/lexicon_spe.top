@@ -1,0 +1,833 @@
+topic: ~lexicon()
+language: spe
+
+#pronunciation:(I) [i]
+
+dynamic:robotname
+dynamic:friendlyname
+dynamic:all_descriptions
+dynamic:all_languages
+dynamic:myrobotname
+
+dynamic:app-name
+dynamic:app-dance
+dynamic:app-game
+dynamic:app-story
+
+#dynamic:klg_thing
+#dynamic:klg_definition
+#dynamic:klg_date
+
+#==================================================================#
+##### Robot concepts #####
+concept:(ald_robots) [~robotname ~myrobotname Nao Pepper Peppersan Romeo]
+#==================================================================#
+
+#==================================================================#
+##### Voice tweaking #####
+concept:(neutral) \style=neutral\ \rspd=100\ \vct=110\
+concept:(neutral_slow) \style=neutral\ \vct=105\ \rspd=100\
+concept:(joyful) \style=joyful\ \rspd=90\ \vct=95\
+concept:(didactic) \style=didactic\ \rspd=105\ \vct=110\
+#==================================================================#
+
+#==================================================================#
+##### Verbs #####
+#------------------------------------------------------------------#
+concept:(want_to) [quiero deseo gustaría encantaría necesito]
+#==================================================================#
+
+#==================================================================#
+##### Auxiliaries #####
+#------------------------------------------------------------------#
+#concept:(dont) [don't "do not"]
+#concept:(didnt) [didn't "did not"]
+#concept:(havent) [haven't "have not"]
+#concept:(doesnt) [doesn't "does not"]
+#concept:(isnt) [isn't "is not"]
+#concept:(arent) [aren't "are not"]
+#concept:(cant) [can't cannot "can not"]
+#concept:(couldnt) [couldn't "could not"]
+#==================================================================#
+
+#==================================================================#
+##### 1rst person verbs #####
+#------------------------------------------------------------------#
+#concept:(i_am) [I'm "I am"]
+concept:(i_have) [tengo]
+concept:(i_will) ["voy a"]
+#concept:(i_would) [I'd "I would"]
+#concept:(i_am_not) ["I'm not" "I am not" "I ain't"]
+concept:(i_have_not) ["no tengo"]
+#concept:(i_dont_have) ["I don't have" "I do not have"]
+#concept:(i_do_not) ["I do not" "I don't"]
+#concept:(i_did_not) ["I did not" "I didn't"]
+#concept:(i_will_not) ["I will not" "I won't"]
+#concept:(i_would_not) ["I would not" "I'd not" "I wouldn't"]
+concept:(i_have_to) ["tengo {que}"]
+concept:(i_want) [quiero deseo "me [gustará encantará]" "me [gustaría encantaría]"]
+concept:(i_dont_want) ["no ~i_want"]
+concept:(i_want_to) ["[deseo quiero] {poder}" "me [gustará encantará]" "me [gustaría encantaría]" "en verdad quiero"]
+#concept:(i_dont_want_to) ["I [don't "do not"] want to"]
+#concept:(we_are) [we're "we are"]
+#concept:(we_are_not) ["we're not" "we [are were] not" "we aren't"]
+
+#------------------------------------------------------------------#
+##### 2nd person verbs #####
+#------------------------------------------------------------------#
+#concept:(you_are) [you're "you are"]
+#concept:(you_were) ["you were"]
+concept:(you_have) [tienes]
+#concept:(you_will) [you'll "you will"]
+#concept:(you_are_not) ["you're not" "you are not" "you aren't"]
+concept:(you_have_not) ["no ~you_have"]
+#concept:(you_do_not) ["you do not" "you don't"]
+#concept:(you_did_not) ["you did not" "you didn't"]
+#concept:(you_will_not) ["you will not" "you won't"]
+concept:(do_you_need) [quieres deseas necesitas "quisieras te [gustaría encantaría]"]
+
+#------------------------------------------------------------------#
+##### 3rd person verbs #####
+#------------------------------------------------------------------#
+concept:(it) [esto eso aquello "[esta esa] actividad" "[esta esa] {cosa}"] #add any synonym of "stuff" in the list
+concept:(it_is) ["[esto eso aquello] [es era]" "[creo bueno "en mi opinión"] es" "lo es sin ninguna duda"]
+concept:(it_is_not) ["[esto eso aquello] no [es era]"]
+#==================================================================#
+
+#==================================================================#
+##### Other verbs #####
+#------------------------------------------------------------------#
+#concept:(vb_imp_talk) "~dont talk {"to me"} {about}"
+#concept:(vb_imp_chat) "~dont chat with me {about}"
+#concept:(vb_imp_say) "~dont say anything {"about it"}"
+#concept:(vb_imp_discuss) "~dont discuss it"
+#concept:(vb_imp_gossip) "~dont gossip {"about it"}"
+#concept:(verbs_inf_talk) "to [talk discuss gossip chat say]"
+#concept:(verbs_imp_talk) [~vb_imp_talk ~vb_imp_chat ~vb_imp_say ~vb_imp_discuss ~vb_imp_gossip]
+#concept:(tell_me) ["tell me"]
+#==================================================================#
+
+
+#==================================================================#
+##### Pronouns #####
+#------------------------------------------------------------------#
+#concept:(he)
+#^first
+#[
+#$"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc he" 
+#"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem she" 
+#"he"
+#]
+#concept:(she)
+#^first
+#[
+#"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?) $Dialog/requested_user_genre==masc he" 
+#"$Dialog/requested_user_genre=^queryKnowledge($requested_user_id, gender, ?)  $Dialog/requested_user_gender==fem she" 
+#"she"
+#]
+
+#==================================================================#
+
+#==================================================================#
+##### Adjectives and adverbs #####
+#------------------------------------------------------------------#
+#concept:(addicted) [
+#    "[crazy passionate fanatical avid] about"
+#    "keen on"
+#    "["in love" enamored] with"
+#    "addicted [with to]"
+#]
+#concept:(complete) ["very strongly" total complete absolute categorical radical integral unconditional]
+#concept:(big) [big fat enormous]
+#concept:(tiny) [tiny small minuscule]
+#concept:(size) [~big ~tiny]
+#------------------------------------------------------------------#
+concept:(adverbs) [realmente absolutamente completamente verdaderamente genuinamente "un poco" totalmente estrictamente perfectamente enormemente mucho  muy bastante]
+#==================================================================#
+
+#==================================================================#
+##### Vocabulary #####
+#------------------------------------------------------------------#
+#concept:(apps_sing) [application app activity program software]
+#concept:(apps_plur) [applications apps activities programs softwares]
+#concept:(months) [january february march april may june july august september october november december]
+#concept:(about) [about]
+#concept:(days) [monday tuesday wednesday thursday friday saturday sunday]
+#==================================================================#
+
+#==================================================================#
+##### BirthDay #####
+#------------------------------------------------------------------#
+#concept:(birth_day) ["[1st 1] $day=1" "[2nd 2] $day=2" "[3rd 3] $day=3" "[4th 4] $day=4" "[5th 5] $day=5" "[6th 6] $day=6" "[7th 7] $day=7" "[8th 8] $day=8" "[9th 9] $day=9" "[10th 10] $day=10" "[11th 11] $day=11" "[12th 12] $day=12" "[13th 13] $day=13" "[14th 14] $day=14" "[15th 15] $day=15" "[16th 16] $day=16" "[17th 17] $day=17" "[18th 18] $day=18" "[19th 19] $day=19" "[20th 20] $day=20" "[21st 21] $day=21" "[22nd 22] $day=22" "[23rd 23] $day=23" "[24th 24] $day=24" "[25th 25] $day=25" "[26th 26] $day=26" "[27th 27] $day=27" "[28th 28] $day=28" "[29th 29] $day=29" "[30th 30] $day=30" "[31st 31] $day=31"]
+#concept:(birth_month) ["january $month=1" "february $month=2" "march $month=3" "april $month=4" "may $month=5" "june $oonth=6" "july $month=7" "august $month=8" "september $month=9" "october $month=10" "november $month=11" "december $month=12"]
+#concept:(birth_year) [1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970 1971 1972 1973 1974 1975 1976 1977 1978 1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016]
+#==================================================================#
+##### Food #####
+#------------------------------------------------------------------#
+#concept:(fat_food) ["fries" "french fries" "chips" "hamburgers" "pizzas" "pasta"]
+#concept:(healthy_food) ["salad" "soup"]
+#==================================================================#
+##### Color #####
+#------------------------------------------------------------------#
+#concept:(color) [red blue green yellow white pink violte orange brown black white gray]
+
+
+#==================================================================#
+##### Sport #####
+#------------------------------------------------------------------#
+#concept:(sport) [football volley rugby basket karate footing handball]
+
+
+#==================================================================#
+##### Questions to the robot #####
+#------------------------------------------------------------------#
+concept:(do_you_have) [tienes]
+concept:(do_you_like) [
+    "te [gusta encanta]"
+    prefieres
+    "qué piensas sobre"
+    "cómo te llevas con"
+    "cómo van las cosas con"
+]
+concept:(do_you_know) ["sabes {"[quién qué] es"}" "has oído [de sobre]"]
+concept:(can_you) [
+    "[puedes podrías harías] {por favor}"
+    "{por favor} [puedes podrías harías]"
+    "crees que podrías"
+    "estás [listo disponible] para"
+    "sabes cómo"
+]
+concept:(are_you) [eres estás]
+#concept:(were_you) [~you_were "were you"]
+#concept:(where_are_you) ["where are you" "do you know where you are"]
+#concept:(who_are_you) ["who are you" "do you know who you are"]
+concept:(what_is) ["{"~can_you decirme" sabes dime} [qué cuál] [es era son eran]"]
+#concept:(who_is) [
+#    who's
+#    "{"do you know" "can you tell me"} who [is was]"
+#    "do you know"
+#    "are you familiar with"
+#]
+#concept:(who_are) [
+#    "who are"
+#    "{"do you know" "can you tell me"} who [are were]"
+#    "do you know"
+#    "are you familiar with"
+#]
+#concept:(where_is) ["where is" where's "where are"]
+concept:(can_i) [
+    "[puedo podría podemos podríamos]"
+    "me gustaría"
+    "estás de acuerdo si"
+    "es posible [que "que yo"]"
+]
+#concept:(what_is_your_name) [
+#    "~what_is your name"
+#    "how [do should can] I call you"
+#    "["do you know" "tell me"] {what} your name {is}"
+#    "tell me who you are"
+#    "give me your name"
+#    "what do they call you"
+#]
+#concept:(what_is_his_name) [
+#    "~what_is the [name title] of {the this that}"
+#    "~what_is [his her its] [name title]"
+#]
+#concept:(what_are_you_talking_about) [
+#    "what are you taking about"
+#    "what are you ["telling me" saying]"
+#    "~what_is the [subject topic] {"of the [discussion conversation]"}"
+#]
+#concept:(who_wrote) [
+#    "who wrote"
+#    "who is the author of"
+#]
+#concept:(how_much_is) [
+#    "how much ["does it cost" "is that {worth}" "is it" is]"
+#    "[what's "what is"] the [value price] of"
+#]
+#------------------------------------------------------------------#
+
+#------------------------------------------------------------------#
+##### Orders to the robot #####
+#------------------------------------------------------------------#
+#concept:(help) [
+#    "{"would you" ~can_you} help me {please}"
+#    "your assistance please"
+#    "how ~can_you me"
+#    "~can_you give me {some} [information informations assistance]"
+#    "I need {some} [information informations details help assistance]"
+#    "give me a hand"
+#    "~i_am looking for {some} [info information "more details" help assistance]"
+
+#]
+
+#concept:(shut_up) [
+#    "cut it out"
+#    "knock it off"
+#    "["could you" "can you"] {please} ["be quiet" "shut up"]"
+#    "I can't take it any more"
+#    "[keep remain] [quiet silent]"
+#    "{please} {god} ["shut up" "be quiet"]"
+#    "don't talk {"to me"} [anymore "any longer"]"
+#    shush
+#    "fuck off"
+#    "I don't want to [speak talk "discuss {it}"]  anymore"
+#    "["let's stop" stop end] the [discussion conversation chat]"
+#    "{let's please} stop [talking speaking discussing chatting]"
+#    "keep it quiet"
+#    "be quiet {please}"
+#    "shut [it "your mouth"]"
+#]
+#concept:(stop_it) ~shut_up
+#concept:(talk_again) [
+#    "[talk speak] to me"
+#    "{"you can"} [talk speak] again"
+#    "let's talk"
+#    "~i_am talking to you"
+#]
+
+#concept:(stop_application) [
+#    "[stop quit leave close] [this the that] [software app application program dialog topic activity game]"
+#    "stop [it this that]"
+#    "[that it] no longer interests me"
+#    "that's enough"
+#    "that's ["a pain" "not interesting" useless boring]"
+#    "["I've" "I have"] ["had it" "had enough" "had it up to here" "have had a belly full of it"]"
+#]
+#concept:(restart_application) [
+#    "[restart "start again" reboot replay] [this the that] [software app application program dialog topic activity]"
+#    "go back to the [beginning start]"
+#    "rewind please"
+#    "~i_want_to start again"
+#]
+#concept:(repeat_it) [
+#    "[restate repeat] {me} [the your] {last} question"
+#    "~what_is the question {again}"
+#    "repeat ["the sentence" "your last sentence" "what you just said"] {again} {please}"
+#    "{~can_you} repeat {please}"
+#    "{~can_you} ask {me} the question {again}"
+#    "{~can_you} ask {me} the question one more time"
+#    "tell ["it to me" me] again"
+#    "what [is was] the question {again}"
+#    "what ["did you say" "were you [saying "asking me"]"] {again}"
+#    "ask {me} [the that] question {again}"
+#    "repeat [it please]"
+#    "come again"
+#    "[say ask] {that} again"
+#    "what was the question"
+#    "{~can_you} do [it that "[the this that] [animation motion movement thing sound noise]"] again {please}"
+#]
+#concept:(stop_talking) [~vb_imp_talk ~vb_imp_chat ~vb_imp_say ~vb_imp_discuss ~vb_imp_gossip "stop talking"]
+#concept:(lets_talk_about) [talk "talk to me" "let's talk"]
+#concept:(come_to_me) [
+#    "[come walk] [here closer "{next} to me"]"
+#    "get [here closer]"
+#    "[move come go] forward"
+#]
+#concept:(show_me) [
+#"show {him her me us them}"
+#"~can_you show {him her me us them}"
+#"~can_you make {him her me us them} [see watch]"
+#"~i_want_to [see watch]"
+#"~can_i [see watch]"
+#"~can_you do"
+#do
+#]
+#==================================================================#
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+#concept:(hello) [
+#    hello howdy hiya hi morning
+#    "hey there"
+#    "{good} [morning afternoon evening]"
+##    "how's it [going hanging]"
+##    "you [alright "doing ok"]"
+#]
+#concept:(thank_you) [
+#    "I ["thank you" "give you my thanks"]"
+#    "thank you {"very much" "a [million lot]" "from the bottom of my heart"}"
+#    "thanks {"a lot"}"
+#]
+#concept:(i_like) [
+#    "~i_am {~adverbs} ~addicted"
+#    "I {~adverbs} [like love adore dig worship prefer]"
+#    "I have an affinity for"
+#    "I have a {"little bit of a"} preference for"
+#    "I'm {"a bit"} weak for"
+#    "I'm obsessed with"
+#    "I'm {~adverbs} into"
+#]
+#concept:(i_dont_like) [
+#    "I {~adverbs} [detest hate despise]"
+#    "~i_do_not like"
+#]
+concept:(i_dont_know) [
+    "no sé {"nada sobre eso"}"
+    "no sé nada"
+    "no tengo ni la menor idea"
+    "no lo sé"
+    "qué es eso"
+    "{nunca} oí nada {"sobre eso"}"
+    "no tengo idea"
+    "{tú} [decide dime]"
+]
+concept:(i_didnt_understand) [
+    "{lo siento} no [entiendo entendí] {"nada ["de nada" "ni una cosa" "de lo que dijiste"]" "lo que dijiste"}"
+    "{lo siento} no te [entiendo entendí]"
+    "["no sé" "no lo [veo comprendo entiendo]"] ["a qué te refieres" "qué quieres decir" "de qué estás hablando"]"
+    "no [veo comprendo entiendo] ["a lo qué te refieres" "lo qué quieres decir" "de qué estás hablando"]"
+    "qué es [esto eso aquello]"
+    "no [entiendo comprendo] {eso esto aquello}"
+    "qué ["quieres decir" quieres dices]"
+    "qué estás [diciendo "["tratando de" intentando] decir" hablando]"
+    "[eso esto] no tiene sentido"
+]
+#concept:(you_didnt_understand) [
+#    "you [~didnt ~dont] [understand grasp get] [anything {"at all"} "a thing" "{"a word of"} what ["I say" "I'm saying"]" zilch nada]"
+#    "it's not that {"at all"}"
+#    "you {still} [~didnt ~havent ~dont] understand [anything "very well"]"
+#    "you're wrong"
+#    "you [~didnt ~dont] get it"
+#]
+concept:(i_dont_care) [
+    "no me [importa interesa]" 
+    "no me importa un carajo"
+    "como sea"
+    "no tengo interés"
+    "no podría importarme menos"
+    "{"de verdad"} me importa [un una] [carajo mierda]"
+    "{esto eso aquello} no me interesa {más "para nada" "en lo absoluto"}"
+    "a quién le importa"
+]
+#concept:(i_already_know) [
+#    "I already know"
+#    "I'm already familiar with"
+#    "I already heard about"
+#]
+concept:(im_not_sure) [
+    "no [estoy soy] seguro"
+    "tengo {mis} dudas"
+    "ni idea"
+    "lo pensaré" "voy a pensarlo"
+]
+#concept:(its_not_true) [
+#    "[it's that's "this is" "[it that is]"] ["not true" "a lie" false fake bullshit "{a} nonsense"]"
+#    "{it that this} ain't true"
+#]
+#concept:(its_a_stupid_question) [
+#    "that's {really} a {completely truly perfectly frankly particularly} ["damn lousy" "shitty" idiotic imbecile stupid "uninteresting" question]"
+#    "~what_is ["this ["piece of shit" "{shitty lousy} question"]"]"
+#    "~it_is {completely} [stupid lousy imbecile crap]"
+#    "~it_is_not {very} [clever fun interesting]"
+#]
+#concept:(guess) [
+#    guess
+#    "what do you [think]"
+#    "what do you advise me"
+#    "what do you recommend"
+#    "what would you [advise recommend]"
+#    "what is your advice"
+#]
+#concept:(i_guess) [
+#    ~it_is
+#    "it was"
+#    "[
+#        "i guess"
+#        "i think"
+#        "~i_am sure"
+#        "of course"
+#    ] {~it_is}"
+#    "my answer is"
+#    "is it"
+#    "was it"
+#    "could it be"
+#    "it looks like {~it_is}"
+#    "i would [
+#        say
+#        guess
+#        answer
+#        offer
+#    ]"
+#]
+#concept:(i_will_try) [
+#    "I'm going to [try attempt "take a shot"]"
+#    "let's try [it this]"
+#    "let's take a shot at [it this]"
+#]
+#------------------------------------------------------------------#
+concept:(yes) [
+    e:Dialog/Yes
+    "sí {"por favor" "yo también" "claro" "por supuesto" seguro}"
+    "sí yo [estoy soy]" #[soy hago hice]"
+    "["muy bien" "de acuerdo"] {seguro "por qué no"}"
+    bien
+    "de acuerdo"
+    "tal vez"
+    "por supuesto"
+    "claro"
+    "seguro"
+    "{de} verdad"
+    "vamos"
+    "hazlo"
+    "ve y hazlo"
+    "~it_is [cierto bien correcto]"
+    "~it_is verdad"
+    "tienes razón"
+    perfecto
+    "por qué no"
+    absolutamente
+    naturalmente
+    totalmente
+    definitivamente
+    adelante
+    "{sí} me [encantaría gustaría] hacerlo"
+    "[es será] un placer"
+    "si quieres"
+    "de hecho"
+    "no hay [problema]"
+    "no es ningún problema"
+    "sin ninguna duda"
+    "[buena excelente] idea"
+    exactamente
+    "lo tienes"
+    súper
+     excelente
+    "{estoy} de acuerdo"
+    "{eso} suena [bien genial divertido]"
+    "siéntete libre {"de hacerlo"}"
+    "una vez"
+    "hazlo"
+    "si quieres"
+    "eso creo"
+    "hagámoslo"
+    "[gran buena] idea"
+    "genial"
+]
+#------------------------------------------------------------------#
+concept:(no) [
+    e:Dialog/No
+    "no {gracias suficiente bien "de acuerdo"}"
+    "de ninguna {puta} manera"
+    "{no} no [realmente "para nada" "en absoluto" "ahora mismo" exactamente " mucho"]"
+    "no me interesa"
+    "{no} ["no quiero" "yo no" "no"]"
+    "no estoy seguro"
+    "no lo creo"
+    "lo pensaré"
+    "para nada"
+    "[definitivamente absolutamente probablemente totalmente] no"
+    "en tus sueños"
+    "[estabas estas] soñando"
+    "sigue soñando"
+    "no por [ahora "el momento"]"
+    "no mucho"
+    "no [estoy soy] de acuerdo"
+    "no, eso servirá {gracias}"
+    "no, estaré bien {gracias}"
+    "no, está bien"
+    "eso no es verdad"
+    "eso es falso"
+    "absolutamente no"
+    "no realmente"
+    "no exactamente"
+    "todavia no"
+    "no es asunto tuyo"
+    "eso no te incumbe"
+    "por qué te importa"
+    "por qué te estás metiendo"
+    "a ti qué te importa"
+    "ocúpate de tus {propios} asuntos"
+    "qué tiene que ver contigo"
+    "nunca {"en mi vida"}"
+    "no estoy interesado"
+    "eso se me antoja"
+    "no gracias"
+    "no especialmente"
+    "otra vez"
+    "a lo mejor ["otra vez" "más tarde"]"
+    "[hoy ya ahora] no"
+    "ne me gusta [eso esto]"
+]
+#------------------------------------------------------------------#
+##### Human mood #####
+#------------------------------------------------------------------#
+#concept:(im_good) [
+#    "{~i_am} {very} [well wonderful great terrific amazing superb splendid fine]"
+#    "~i_am [good "full of get up and go" "in a great mood"]"
+#    "not bad"
+#    "I feel in shape"
+#    super
+#    perfect
+#    "all's well"
+#    "{very} good {thanks}"
+#    "doing well {thanks}"
+#    "it goes [well super perfect]"
+#    "hey yeah I'm good"
+#    "rather well"
+#    "goes great"
+#]
+#concept:(im_ok) [
+#    "~i_am ok"
+#    "so so"
+#    "not {too} bad"
+#    "well enough"
+#    meh
+#    average
+#]
+#concept:(i_dont_feel_good) [
+#    "it's not going so well"
+#    "I don't feel ["{very} well" good "at my best" special great "in "the best" shape"]"
+#    "I've been better"
+#    "it goes ["{very rather pretty} poorly" "not {very} well"]"
+#    "I hurt myself"
+#    "I hurt {myself}"
+#    "not {very} well"
+#    "not good"
+#    "~i_am_not so good"
+#    "not super"
+#    "I'm not in the best shape"
+#    "I have a [sprain tendonitis break "twisted ankle"]"
+#    "I [open cut broke] {my}"
+#]
+#concept:(im_sick) [
+#    "~i_am {"a little" "a bit" very feeling} [ill sick snuffly queasy congested]"
+#    "~i_have ["a {"{very} bad"} [headache "sore throat" "stomach ache" cold "stiff neck" "throat infection" "sore throat" strep migraine "stomach [flu ache]" cough]" "an {ear} infection" "the flu" blisters "chicken pox" measles]"
+#    "~i_am coughing"
+#    "my head hurts"
+#]
+#concept:(im_tired) [
+#    "I need to {"go to" "get some"} sleep"
+#    "["~i_am {feeling}" "I feel"] {suddenly "a [little bit]" very super too} [
+#        tired
+#        exhausted 
+#        "worn out"
+#        dead
+#        "knocked out"
+#        knackered
+#        "out of it"
+#        spacey
+#        sleepy
+#        drowsy
+#    ]"
+#]
+#concept:(im_angry) [
+#    "[~you_are ~it_is] [crazy ugly shitty useless rubbish crap rotten sick stupid idiotic moronic "wide off the mark" "completely mistaken" "half-assed"]
+#    "~you_are ["an [idiot imbecile]" "a [moron pain numbskull]"]
+#    "[it that this] sucks"
+#    "you stink"
+#]
+##==================================================================#
+
+##==================================================================#
+###### Miscellaneous #####
+#concept:(proposition_next) ["ask me ["some questions" "another question"]" "["ask me" suggest "tell me"] something" "you [can could] ask me ["some questions" "[a another] question"]" "suggest something {to me}" "talk about something else"]
+##------------------------------------------------------------------#
+#concept:(happy_human) [wonderful excellent super "too [good cool]" "that's {really} nice" "that's [super good marvelous magnificent awesome]" "it's {very} nice of you" "you're {really very} nice"]
+##==================================================================#
+#concept:(what_were_you_saying) [
+#    "what was [the your] question"
+#    "what were [we you] [talking chatting speaking] about"
+#]
+
+
+
+##==================================================================#
+###### DEPRECATED #####
+##------------------------------------------------------------------#
+#concept:(confirmation) [~yes]
+##------------------------------------------------------------------#
+#concept:(negation) [~no]
+##------------------------------------------------------------------#
+#concept:(simple_neg) [no nah "no no" "no no {and} no" "{no} ["not at all" "absolutely not" "that's [false "not true"]"]" "never {"in my life"}"]
+##------------------------------------------------------------------#
+#concept:(confirmation_purikura) [yes yeah ok "do it" "go on" "exactly" "of course" "if you'd like" "why not" absolutely assuredly "that's [certain right]" certainly obviously perfect perfectly "very good" "with pleasure" precisely surely understood gladly indeed exactly  "no [problem worries problemo]" exactly "you got it" "you're [too really] good" "good answer" "well [said spoken]" "without a doubt" "no doubt" "not a single doubt" "that's sure" "good idea" "excellent idea" please]
+##------------------------------------------------------------------#
+#concept: (negation_purikura) ["no {thanks}" "not [really "at all" exactly]" "I'm not interested" "that doesn't interest me" quit stop "I dont [want "want to" wanna]" nah "I'll think about it" "[definitely absolutely] not" "in your dreams" "dream on" "not for ["the time being" "the moment"]" "not right now" "I don't agree" "I don't like [it that]" "{no} ["that'll do" "that will do"] {thanks}" "{no} ["it'll be fine" "it will be fine"] {thanks}" "that's not true" "that's false" "it doesn't concern you" "what are you meddling in" "why does it concern you" "mind your own business" "what's it got to do with you" "never {"in my life"}" "it doesn't tempt me" "I can't relate to that"]
+##------------------------------------------------------------------#
+#concept:(rooms) [kitchen bathroom toilets "[living dining rec recreational rumpus] room" bedroom closet basement attic den office foyer patio backyard front yard room]
+##------------------------------------------------------------------#
+#concept:(its_difficult) "{wait "hold on"} [it's "this is"] {super ultra too} [difficult hard]"
+##------------------------------------------------------------------#
+###verbs
+#concept:(lets_talk_about) [talk "talk to me" "let's talk"]
+#concept:(what_is_that) ["what's that" "what is {that}" explain "explain to me {"what that is"}"]
+###astrology
+#concept:(I_am_astro) ["I am" I'm "{"I think"} ["that was" "it was" "that is" that's "it is" it's]"]
+#concept:(insult_astro) ["you {little dirty} [boot-licker suck-up toadie]" "don't think you can fool me like that" "you think you've got me" "you won't fool me like that"]
+#concept:(affirmation_soso) ["that's a half truth" "one part truth one part lie" "not one or the other" "not entirely true"]
+###food
+#concept:(like_drink_food) ["I [love "{really} like"] {drinking "to drink"}" "I'm crazy about" "I'm nuts about" "I'm a big drinker"]
+###seasons
+#concept:(to_like_season) ["I {really} like" "I'm crazy about" it's "it is" that's "that is"]
+#concept:(mybirthday) ["I was born {on the "on the"}" "it's {on the "on the"}" "my birthday is {on the "on the"}"]
+###food_1to10
+#concept:(like_to_eat) "["I adore" "I really like" "I love" "I'm nuts about eating" "I'm a big eater of" "I'm crazy about"] {[a some] good}"
+#concept:(have_eaten) ["I ate" "I've eaten" "I scarfed" "I stuffed my pie hole" "I threw down"]
+#concept:(how_about) "[what how "tell me more"] about"
+#concept:(what_is_the_meaning_of) "what ["is the [meaning definition] of" "do you mean by" "does it mean" means]"
+#concept:(why) ["why {"on earth"}" "how comes" "how ["is it" "can it be"] possible that"]
+###sports
+#concept:(sportslist) [dance volleyball handball soccer football basketball swimming skiing "{stationary} bike" gymnastics gym weightlifting cardio stepclass pilates yoga jazzercise "body pump" "strength training" cycling]
+#concept:(sportplaces) [beach mountains mountain ocean sea seaside ski resort forest woods "{swimming} pool" fishing vacation]
+###miscellaneous
+#concept:(music) "{classical} music"
+#concept:(instrument)[violin drums cello piano battery "{double} bass {recorder}" "{transverse} flute" piccolo clarinet saxophone trumpet harp alto harpsichord harp "{electric} guitar" kettledrum organ accordion harmonica bassoon viola]
+
+#concept:(want_to_do)[~i_want]
+#concept:(likeanimals)[~i_like it's "that is"]
+#concept:(its_long) [~it_is]
+#concept:(difficult) [~its_difficult]
+#concept:(whatsthat) [~what_is_that]
+#concept:(idonthave) [~i_have_not]
+#concept:(talk) [~lets_talk_about]
+#concept:(different) [different another]
+#concept:(wanna) [
+#    "[want wish "would [like love]"] to"
+#    wanna
+#]
+#concept:(notmyname) [
+#    "you [misunderstood "didn't [get understand]"] ["my name" "what my name is"]"
+#    "[that's "this is" "that is"] not my name"
+#    "~i_am not named"
+#    "~i_am not known as"
+#    "{no} ["that isn't" "that's not" "it's not"] my name"
+#    "{no} my name {still} [isn't "is not"]"
+#    "{"I [want "would like"] to"} [change modify fix correct] my name"
+#    "you got my name wrong"
+#]
+#concept:(myname)[
+#    "my [name "first name"] is"
+#    "you [can could] call me"
+#    "~i_am named"
+#    "~i_am known as"
+#]
+#concept:(myname_shorter)[
+#    "{"as for me"} it's"
+#    "{please} call me"
+#    "~i_am"
+#]
+#concept:(whatprice_of) [~how_much_is]
+#concept:(whatpricce) [~how_much_is]
+#concept:(nice) [~happy_human]
+#concept:(too) [
+#    "me too"
+#    equally
+#    "me the same"
+#    "same {"for me"}"
+#]
+#concept:(whats_his_name) [
+#    "~what_is the [name title] of {the this that}"
+#    "what ["is the name of" "is [his her its] name"]"
+#]
+#concept:(whats_your_name) [~what_is_your_name]
+#concept:(ask_to_be_familiar_with) [~who_is]
+#concept:(happy_user) [~happy_human]
+#concept:(restart_it) [~restart_application]
+#concept:(i_dont_understand) [~i_didnt_understand]
+#concept:(robot_didnt_understand) [~you_didnt_understand]
+#concept:(stupid_question) [~its_a_stupid_question]
+#concept:(a_little_bit) [
+#    "a {little "really little"} bit"
+#    "not a lot"
+#]
+#concept:(adj_addicted) [~addicted]
+#concept:(adj_total) [~complete]
+#concept:(adj_size) [~size]
+#concept:(its) [~it_is]
+#concept:(itsnot) [~it_is_not]
+#concept:(cannot) [~cant]
+#concept:(couldnot) [~couldnt]
+#concept:(whats) [~what_is]
+#concept:(whos) [~who_is]
+#concept:(where_are) ["where are"]
+#concept:(thats) ["that is" that's]
+#concept:(thatsnot) ["that is not" "that's not" "that isn't"]
+#concept:(weare) [~we_are]
+#concept:(wearenot) [~we_are_not]
+#concept:(iam) [~i_am]
+#concept:(ive) [~i_have]
+#concept:(iamnot) [~i_am_not]
+#concept:(ivenot) [~i_have_not]
+#concept:(ididnot) [~i_did_not]
+#concept:(ihaveto) [~i_have_to]
+#concept:(youve)[~you_have]
+#concept:(youll)[~you_will]
+#concept:(youvenot) [~you_have_not]
+#concept:(youdonot) [~you_do_not]
+#concept:(youdidnot) [~you_did_not]
+#concept:(youwillnot) [~you_will_not]
+
+
+##=======================================================================#
+############################FUNCTIONS######################################
+
+concept:(its_up_to_you) [
+    "como quieras" 
+    "no me importa"  
+    "elige tú"
+    "elige al azar"
+    "elige elegido para mí"
+]
+
+concept:(do_it_again) [
+    "haz [lo esto eso] ["de nuevo" "una vez más"]"
+    "reproduce [lo esto eso] ["de nuevo" "una vez más"]"
+    "vuelve a hacer [lo esto eso]"
+    "reanuda [lo esto eso]"
+]
+
+concept:(im_good) [
+    "estoy [bien estupendo "de maravilla" genial "súper {bien}" espléndido excelente "lleno de energía" "de muy buen humor"]"
+    "me siento en forma"
+    "súper {bien}"
+    perfecto
+    "todo está bien"
+    "{muy} bien"
+    "todo [bien súper perfecto]"
+    "estupendo"
+]
+
+concept:(i_dont_feel_good)[
+    "no muy bien"
+    "no me siento ["{muy especialmente super} bien" "en mi mejor momento" "a gusto" "en la mejor forma"]"
+    "he estado mejor"
+    "la cosa va ["{muy bastante} mal" pésima "no demasiado bien"]"
+    "me he hecho daño"
+    "estoy dolido"
+    "no muy bien"
+    "nada bien"
+    malamente
+    "no es mi mejor día"
+    "no estoy en la mejor forma"
+    "tengo un [esguince "tobillo torcido"]"
+]
+
+concept:(im_ok) [
+    "regular"
+    "no muy mal"
+    "nada mal"
+    "bastante bien"
+    aburrido
+    "más o menos"
+    "ni fu ni fa"
+    "ando así así"
+    "más o menos"
+    "no tan bien"
+]
+
+concept:(im_sick) [
+    "me siento {"un poco" "un poquito" muy} [indispuesto enfermo mareado congestionado]"
+    "tengo un ["{"{muy} fuerte"} ["dolor de [cabeza garganta estómago cuello]" resfriado catarro sarampión]"]"
+    "tengo una ["infección {"en la garganta" "en el oído" viral}" migraña  gripe varicela]"
+    "tengo tos"
+     "estoy tosiendo"
+     "me duele la cabeza"
+]
+
+concept:(im_tired) [
+    "necesito {"irme a" "ir a"} dormir"
+    "["me estoy sintiendo" "me siento"] {repentinamente "de repente" "un [poco poquito]" muy súper demasiado} [cansado quemado agotado desgastado muerto noqueado acabado "fuera de [circulación juego]" lento somnoliento]"
+]

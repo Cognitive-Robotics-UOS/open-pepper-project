@@ -1,0 +1,87 @@
+topic: ~dlg_can_you_repeat()
+language: jpj
+
+
+include:lexicon_jpj.top
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+#add what did I say
+
+#u:(応答せよ応答せよ)
+#はい、聞こえてます、聞こえてます。
+#$Dialog/Answered ^stayInScope
+
+#u:({~ald_robots} [
+#    "qu'est-ce que j'ai dit"
+#    "qu'est-ce que je viens de dire"
+#    "j'ai dit quoi"
+#    "je viens de dire quoi"
+#    "qu'est-ce que ["tu as compris" "je t'ai demandé" "je t'ai posé comme question"]"
+#    "["tu as" t'as] compris quoi"
+#])
+#^rand[
+#    "Il me semble que tu as dis $Dialog/MatchedInput ."
+#    "J'ai entendu $Dialog/MatchedInput ."
+#] ^stayInScope
+
+
+#repeat please#
+
+u:([繰り替えして　"[もう一回 もういっぺん　もう一度 もっぺん　もっかい]言って"　もういっかいいって　なんて言った　なんて言いました])
+^rand[
+    "ええっっっトですねェ、" 
+    "もう一回言いますね、" 
+    "もう一度言いますね、"　
+    "繰り返しますね、"
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([繰り替えして　"[もう一回 もういっぺん　もう一度 もっぺん　もっかい]言って"　もういっかいいって　なんて言った　なんて言いました])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "
+" \rspd=50\ $RobotRepeat \rspd=100\ "
+" \rspd=300\ $RobotRepeat \rspd=100\ "
+]
+^stayInScope
+    
+
+#what was the question#
+    
+u:([
+    "何の話[だったっけ　でしたっけ　してたっけ　してたんだっけ　だっけ　ですか　でしょうか　だった]" 
+    "何話して[たんだっけ　いたっけ　たっけ いましたっけ]"　
+    "何の話題[だったっけ でしたっけ ですか　でしょうか　だった だっけ　してたんだっけ]" 
+    "話の内容なん[だったっけ でしたっけ]"　
+    "質問{は}なん[だっけ でしたっけ　だったっけ]"　
+    "質問は[何 なんですか]"
+    "もう[一度 一回]質問して"
+])
+^rand[
+    "一つ前の質問に戻りますね、"　
+    "さっき言ってたことを繰り返しますね、"　
+    "えっとですね、"
+]　
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+
+
+u:^private([
+    "何の話[だったっけ　でしたっけ　してたっけ　してたんだっけ　だっけ　ですか　でしょうか　だった]" 
+    "何話して[たんだっけ　いたっけ　たっけ いましたっけ]"　
+    "何の話題[だったっけ でしたっけ ですか　でしょうか　だった だっけ　してたんだっけ]" 
+    "話の内容なん[だったっけ でしたっけ]"　
+    "質問{は}なん[だっけ でしたっけ　だったっけ]"　
+    "質問は[何 なんですか]"
+    "もう[一度 一回]質問して"
+])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "
+" \rspd=50\ $RobotRepeat \rspd=100\ "
+" \rspd=300\ $RobotRepeat \rspd=100\ "
+]
+^stayInScope

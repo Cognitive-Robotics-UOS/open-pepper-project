@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Folder expanded="no">
+    <Node name="Angry" />
+    <Node name="Blink" />
+    <Node name="BlinkRandom" />
+    <Node name="Cautious" />
+    <Node name="CircleEyes" />
+    <Node name="EyesOnOff" />
+    <Node name="Happy" />
+    <Node name="Laugh" />
+    <Node name="Mischievous" />
+    <Node name="Sad" />
+    <Node name="Shy" />
+    <Node name="Sick" />
+    <Node name="Thinking" />
+    <Node name="Zen" />
+</Folder>

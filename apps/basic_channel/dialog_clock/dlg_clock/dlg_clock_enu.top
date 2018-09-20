@@ -1,0 +1,104 @@
+topic: ~dlg_clock()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+
+u:([
+    "what time is it"
+    "["{~can_you} tell me" "do you know"] ["the time" "what time it is"]"
+    "~what_is the time"
+    "["do you have" "have you got" "give me"] the time"
+] {please})
+^first[
+    "It is $Dialog/Hour $Dialog/Minute ."
+    "I don't know, sorry."
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+u:([
+    "~what_is [the today's] date" 
+    "do you have [the today's] date"
+    "what day ["are we" "is [it this]"] {again}"
+    "give me the date {please}"
+    "[tell remind] [me us him her them] what date [it this] is $dlg_clock/ask=yes"
+    "remind [me us him her them] of [the today's] date $dlg_clock/ask=yes"
+] {please})
+^first[
+    "$dlg_clock/ask==yes ^rand[
+        "Sure!"
+        "Of course!"
+    ] Today is"
+    "Today is"
+] 
+^first[
+    "$Dialog/Weekday==1 Monday," 
+    "$Dialog/Weekday==2 Tuesday,"
+    "$Dialog/Weekday==3 Wednesday,"
+    "$Dialog/Weekday==4 Thursday,"
+    "$Dialog/Weekday==5 Friday,"
+    "$Dialog/Weekday==6 Saturday,"
+    "$Dialog/Weekday==7 Sunday,"
+]
+
+^first[
+    "$Dialog/Month==1 January"
+    "$Dialog/Month==2 February"
+    "$Dialog/Month==3 March"
+    "$Dialog/Month==4 April"
+    "$Dialog/Month==5 May"
+    "$Dialog/Month==6 June"
+    "$Dialog/Month==7 July"
+    "$Dialog/Month==8 August"
+    "$Dialog/Month==9 September"
+    "$Dialog/Month==10 October"
+    "$Dialog/Month==11 November"
+    "$Dialog/Month==12 December"
+]
+
+^first[
+    "$Dialog/Day==1 the first."
+    "$Dialog/Day==2 the second."
+    "$Dialog/Day==3 the third."
+    "$Dialog/Day==4 the fourth."
+    "$Dialog/Day==5 the fifth."
+    "$Dialog/Day==6 the sixth."
+    "$Dialog/Day==7 the seventh."
+    "$Dialog/Day==8 the 8th."
+    "$Dialog/Day==9 the ninth."
+    "$Dialog/Day==10 the tenth."
+    "$Dialog/Day==11 the 11th."
+    "$Dialog/Day==12 the 12th."
+    "$Dialog/Day==13 the 13th."
+    "$Dialog/Day==14 the 14th."
+    "$Dialog/Day==15 the 15th."
+    "$Dialog/Day==16 the 16th."
+    "$Dialog/Day==17 the 17th."
+    "$Dialog/Day==18 the 18th."
+    "$Dialog/Day==19 the 19th."
+    "$Dialog/Day==20 the 20th."
+    "$Dialog/Day==21 the 21st."
+    "$Dialog/Day==22 the 22nd."
+    "$Dialog/Day==23 the 23rd."
+    "$Dialog/Day==24 the 24th."
+    "$Dialog/Day==25 the 25th."
+    "$Dialog/Day==26 the 26th."
+    "$Dialog/Day==27 the 27th."
+    "$Dialog/Day==28 the 28th."
+    "$Dialog/Day==29 the 29th."
+    "$Dialog/Day==30 the 30th."
+    "$Dialog/Day==31 the 31st."
+]
+^clear(dlg_clock/ask)
+
+u:([
+"tell me {the} current year"
+"what year are we in"
+])
+^rand["We are in $Dialog/Year" "$Dialog/Year"]

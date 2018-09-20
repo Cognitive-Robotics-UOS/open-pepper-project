@@ -1,0 +1,101 @@
+topic: ~dlg_engines()
+language: ged
+
+include: lexicon_ged.top
+
+
+#==================================================================#
+# Do it again
+#==================================================================#
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim) 
+    ^first[
+        "$RobotLastAnim==rest Meine Motoren sind bereits abgeschaltet."
+        "$RobotLastAnim==wakeup Meine Motoren sind bereits angeschaltet."
+        "^rand["Okay, ich mache es erneut," "Wir machen es noch einmal,"] ^runBehavior($RobotLastAnim)"
+    ]"
+    "Ich glaube, ich habe nichts zum Wiederholen."
+]
+^stayInScope  
+
+#==================================================================#
+# Engines off
+#==================================================================#
+
+u:([
+    "hebe deine starre auf"
+    "deaktiviere deine starre"
+    "starre aus"
+    "mache [eine etwas] pause"
+    "entspanne dich"
+    "schalte deine [maschinen servos motors servomotoren] [aus ab]"
+])
+^first[
+    "$robotIsWakeUp==false Meine Motoren sind bereits abgeschaltet. $RobotLastAnim="" ^releaseFocus" 
+    "Bist du sicher? Ich werde mich nicht mehr bewegen können. Und ich bin in keiner sehr stabilen Position."
+]
+
+    u1:([
+        ~yes
+        "tue es"
+        "tue es wie ich es befehle"
+        "das ist ein befehl"
+        "ich befehle dir"
+    ])
+    Okay! ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest"
+
+    u1:([
+        ~no
+        "[tu's "tue es"] nicht"
+    ])
+     Ich glaube, dass ist eine kluge Entscheidung. $RobotLastAnim=""
+
+u:(~ald_robots [
+    "hebe deine starre auf"
+    "deaktiviere deine starre"
+    "starre aus"
+    "mache [eine etwas] pause"
+    "entspanne dich"
+    "schalte deine [maschinen servos motors servomotoren] [aus ab]"    
+])
+^first[
+    "$robotIsWakeUp==false Mein Motoren sind bereits abgeschaltet. $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Ja, Sir!"
+        "Okay, Chef!"
+    ] ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest" "
+]
+
+#==================================================================#
+# Engines on
+#==================================================================#
+
+u:([
+    "gehe in die Starre"
+    "aktiviere deine Starre"
+    "schalte deine [Maschinen Servos Motors Servomotoren] [ein an]"
+])
+^first[
+    "$robotIsWakeUp==false Okay! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Meine Motoren sind bereits angeschaltet. $RobotLastAnim="" "
+    "Okay! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]
+
+u:(~ald_robots [
+    "gehe in die Starre"
+    "aktiviere deine Starre"
+    "schalte deine [Maschinen Servos Motors Servomotoren] [an ein]"
+])
+^first[
+    "$robotIsWakeUp==false ^rand[
+        "Ja, Sir!"
+        "Okay, Chef!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true Meine Motoren sind bereits angeschaltet. $RobotLastAnim="" "
+    "^rand[
+        "Ja, Sir!"
+        "Okay, Chef!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]

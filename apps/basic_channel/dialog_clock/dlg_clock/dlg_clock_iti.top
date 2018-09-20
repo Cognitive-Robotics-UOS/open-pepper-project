@@ -1,0 +1,70 @@
+topic: ~dlg_clock()
+language: iti
+
+#==================================================================#
+##### Time #####
+#==================================================================#
+
+u:([
+    "che ore sono"
+    "sai dirmi l’ora"
+    "sai dirmi che ore sono" 
+    "dimmi che ore sono"
+    "dimmi che ora è" 
+    "sai che ore sono"
+    "sai che ora è"
+    "sai l’ora" 
+    "mi diresti che sono sono" 
+    "dimmi che ore sono"
+])
+^first[
+    "Sono le $Dialog/Hour $Dialog/Minute ."
+    "Non so, mi dispiace."
+]
+
+#==================================================================#
+##### Date #####
+#==================================================================#
+
+u:([
+    "che giorno è {oggi}"
+    "quanti ne abbiamo"
+    "che giorno è {questo}"
+    "sai la data $dlg_clock/ask=yes"
+    "sai qual è la data di oggi $dlg_clock/ask=yes"
+    "dimmi la data $dlg_clock/ask=yes"
+])
+^first[
+    "$dlg_clock/ask==yes Si! Oggi è"
+    "Oggi è"
+]
+^first[
+    "$Dialog/Weekday==1 lunedì" 
+    "$Dialog/Weekday==2 martedì"
+    "$Dialog/Weekday==3 mercoledì"
+    "$Dialog/Weekday==4 giovedì"
+    "$Dialog/Weekday==5 venerdì"
+    "$Dialog/Weekday==6 sabato"
+    "$Dialog/Weekday==7 domenica"
+]
+
+^first[
+    "$Dialog/Day==1 primo"
+    "$Dialog/Day"
+]
+
+^first[
+    "$Dialog/Month==1 gennaio."
+    "$Dialog/Month==2 febbraio."
+    "$Dialog/Month==3 marzo."
+    "$Dialog/Month==4 aprile."
+    "$Dialog/Month==5 maggio."
+    "$Dialog/Month==6 giugno."
+    "$Dialog/Month==7 luglio."
+    "$Dialog/Month==8 agosto."
+    "$Dialog/Month==9 settembre."
+    "$Dialog/Month==10 ottobre."
+    "$Dialog/Month==11 novembre."
+    "$Dialog/Month==12 dicembre."
+]
+^clear(dlg_clock/ask)

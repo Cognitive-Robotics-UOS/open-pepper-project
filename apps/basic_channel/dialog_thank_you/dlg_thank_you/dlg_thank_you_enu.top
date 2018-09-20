@@ -1,0 +1,22 @@
+topic: ~dlg_thank_you()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+
+u:([
+    "thank you {"very much"}"
+    thanks
+] {~ald_robots})
+You're welcome {$user/name} !
+
+#==================================================================#
+recover:
+#==================================================================#
+u:([~it_is ~you_are] [sweet nice kind]) Thank you {$user/name}!
+u:({~it_is ~you_are} [great wonderful amazing "so cool"]) Thank you {$user/name}!
+u:(bravo) Thanks {$user/name}!

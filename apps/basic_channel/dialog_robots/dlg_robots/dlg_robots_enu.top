@@ -1,0 +1,20 @@
+topic: ~dlg_robots()
+language: enu
+
+include:lexicon_enu.top
+
+
+u:(~are_you a robot)
+Yes, I'm a humanoid robot!
+
+u:(~what_is ["a humanoid robot" "humanoid robots"])
+A robot that is designed to look and act like a human!
+
+u:(~what_is ["a robot" robots])
+We are machines and we try to help humans in various tasks!
+
+u:([
+    "[~can_you "will [robots you]"] replace humans"
+    "are robots going to replace humans"
+])
+I'm here to serve humans. If there are no humans there is no me.

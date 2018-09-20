@@ -1,0 +1,32 @@
+topic: ~dlg_shutdown()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+# Shutdown/Reboot the robot
+#==================================================================#
+
+u:({Pepper} ["fahre dich herunter" "schalte dich aus" "schalte dich selbst ab"])
+In Ordnung, tschüss! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+u:(~can_you dich [herunterfahren ausschalten "selbst abschalten"]) %shutdown
+Möchtest du wirklich, dass ich mich herunterfahre?
+
+    u1:(~yes)
+    Okay, tschüss! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+    u1:(~no)
+    Okay, nicht herunterfahren! ^releaseFocus
+
+u:({Pepper} ["fahre dich neu hoch" "starte dich neu"])
+Okay, bis in einer Minute! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+u:(~can_you dich ["neu hochfahren" "neu starten"])
+Möchtest du wirklich, dass ich mich neu hochfahre?
+
+    u1:(~yes)
+    Okay, bis in einer Minute! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+    u1:(~no)
+    Okay, nicht neu hochfahren! ^releaseFocus

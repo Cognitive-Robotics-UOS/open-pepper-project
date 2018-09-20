@@ -1,0 +1,24 @@
+topic: ~dlg_stop_talking()
+language: spe
+
+include: lexicon_spe.top
+
+#==================================================================#
+# Robot will stop talking and being proactive
+#==================================================================#
+
+
+u:(^repeat[
+    "{~ald_robots} ["deja de hablar" "guarda silencio" "cállate"]"
+    "~can_you ["dejar de hablar" "guardar silencio" "callarte"]"
+    ]
+) De acuerdo, guardaré silencio. $pushMode=0
+
+#u:(^repeat[
+#    "{~ald_robots}{~can_you} [
+#        "arrête de parler"
+#        "tais-toi"
+#        "ta gueule"
+#        "~can_you fermer ta gueule"
+#    ]"
+#]) Okay, je me tais. $pushMode=0

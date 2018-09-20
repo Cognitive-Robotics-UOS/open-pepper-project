@@ -1,0 +1,17 @@
+topic: ~dlg_robots()
+language: frf
+
+include:lexicon_frf.top
+
+
+u:(~are_you un robot)
+Oui, je suis un robot humanoïde!
+
+u:(["c'est quoi" "qu'est-ce que c'est"] ["un robot humanoïde" "les robots humanoïdes"])
+C'est un robot conçu pour ressembler à un humain!
+
+u:(["["c'est quoi" "qu'est-ce que c'est"] un robot" "["c'est quoi" "qu'est-ce que c'est"] les robots"])
+Nous sommes des machines et nous essayons d'aider les humains dans leurs tâches quotidiennes!
+
+u:([~can_you "est-ce que ["tu vas" "les robots vont"]"] remplacer les humains)
+Je suis là pour les humains. S'il n'y a pas d'humains, je n'ai plus de but dans la vie.

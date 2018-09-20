@@ -1,0 +1,266 @@
+topic: ~dlg_switch_language()
+language: frf
+
+include:lexicon_frf.top
+
+u:(e:Dialog/Language/French)
+Je parle français maintenant.
+
+u:(e:Dialog/noLangPack)
+Je suis désolé, je ne sais pas parler cette langue.
+
+u:($empty) %switch_language
+^run(dialog_switch_language/bhr_switch_language)
+
+#==================================================================#
+# Switch to English language
+#==================================================================#
+
+u:(~ald_robots ~do_you_speak ["l'anglais" "{en} anglais"])
+^first[
+    "$Dialog/Language/LangEnglish==1 Okeille, letse spyke ineglish! $Dialog/SwitchLanguage=english ^gotoReactivate(switch_language)"
+    "Désolé, je ne sais pas parler Anglais. ^releaseFocus"
+]
+
+
+u:(~do_you_speak ["l'anglais" "{en} anglais"])
+^first[
+    "$Dialog/Language/LangEnglish==1 Tu veux qu'on parle Anglais?"
+    "Désolé, je ne sais pas parler Anglais. ^releaseFocus"
+]
+
+    u1:(~yes)
+    Okeille, letse spyke ineglish! $Dialog/SwitchLanguage=english
+    ^gotoReactivate(switch_language)
+
+    u1:(~no)
+    Okay, n'hésite pas à me le demander plus tard!
+    
+#==================================================================#
+# Switch to Japanese language
+#==================================================================#
+
+u:(~ald_robots ~do_you_speak {le en} japonais)
+^first[
+    "$Dialog/Language/LangJapanese==1 Itomo. $Dialog/SwitchLanguage=japanese ^gotoReactivate(switch_language)"
+    "Désolé, je ne sais pas parler Japonais."
+]
+
+u:(~do_you_speak {le en} japonais)
+^first[
+    "$Dialog/Language/LangJapanese==1 Tu veux qu'on parle Japonais?"
+    "Désolé, je ne sais pas parler Japonais. ^releaseFocus"
+]
+
+    u1:(~yes)
+    Liookaïdéssou. $Dialog/SwitchLanguage=japanese
+    ^gotoReactivate(switch_language)
+
+    u1:(~no)
+    Okay, n'hésite pas à me le demander plus tard!
+
+#==================================================================#
+# Switch to Chinese language
+#==================================================================#
+
+u:(~ald_robots ~do_you_speak {le en} chinois)
+^first[
+    "$Dialog/Language/LangChinese==1 D'accord, parlons en chinois. $Dialog/SwitchLanguage=chinese ^gotoReactivate(switch_language)"
+    "Désolé, je ne sais pas parler Chinois."
+]
+
+u:(~do_you_speak {le en} chinois)
+^first[
+    "$Dialog/Language/LangChinese==1 Tu veux qu'on parle Chinois?"
+    "Désolé, je ne sais pas parler Chinois. ^releaseFocus"
+]
+
+    u1:(~yes)
+    D'accord, parlons en chinois. $Dialog/SwitchLanguage=chinese
+    ^gotoReactivate(switch_language)
+
+    u1:(~no)
+    Okay, n'hésite pas à me le demander plus tard!
+    
+#==================================================================#
+# Switch to Italian language
+#==================================================================#
+
+#u:(~ald_robots ~do_you_speak ["l'italien" "{en} italien"])
+#^first[
+#    "$Dialog/Language/LangItalian==1 Va bene ! Parliamo in Itali ano ! $Dialog/SwitchLanguage=italian ^gotoReactivate(switch_language)"
+#    "Désolé, je ne sais pas parler Italien. ^releaseFocus"
+#]
+
+
+#u:(~do_you_speak ["l'italien" "{en} italien"])
+#^first[
+#    "$Dialog/Language/LangItalian==1 Tu veux qu'on parle Italien?"
+#    "Désolé, je ne sais pas parler Italien. ^releaseFocus"
+#]
+
+#    u1:(~yes)
+#    Va bene ! Parliamo in Itali ano ! $Dialog/SwitchLanguage=italian
+#    ^gotoReactivate(switch_language)
+
+#    u1:(~no)
+#    Okay, n'hésite pas à me le demander plus tard!
+
+#==================================================================#
+u:([
+    "quelles langues ["{"est-ce que"} tu [parles connais]" parles-tu connais-tu]"
+    "tu [parles connais "[sais peux] parler"] ["quoi comme" quelles] langues"
+    "tu [parles connais "[sais peux] parler"] ["quoi comme" quelle] langue"
+    "quelles langues ["{"est-ce que"} tu [sais saurais peux pourrais]" sais-tu saurais-tu] parler"
+])
+$nb_lang="^size(~all_languages)"
+^first[
+    "$nb_lang==1 Je n'ai que le paquet de langue ^enumerate(~all_languages)."
+    "Je dispose des paquets de langue suivants \pau=500\ ^enumerate(~all_languages)."
+]
+
+#==================================================================#
+# Switch to no content language
+recover:
+#==================================================================#
+
+u:(~can_you _[parler discuter] ["{en} allemand" l'allemand])
+^first[
+    "$Dialog/Language/LangGerman==1 Désolé, je n'ai pas encore de dialogue développé en Allemand."
+    "Désolé, je ne sais pas parler Allemand."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] ["{en} italien" l'italien])
+^first[
+    "$Dialog/Language/LangGerman==1 Désolé, je n'ai pas encore de dialogue développé en Italien."
+    "Désolé, je ne sais pas parler Italien."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] ["{en} espagnol" l'espagnol])
+^first[
+    "$Dialog/Language/LangSpanish==1 Désolé, je n'ai pas encore de dialogue développé en Espagnol."
+    "Désolé, je ne sais pas parler Espagnol."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} mexicain)
+^first[
+    "$Dialog/Language/LangSpanishMexico==1 Désolé, je n'ai pas encore de dialogue développé en Mexicain."
+    "Désolé, je ne sais pas parler Mexicain."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] ["{en} arabe" l'arabe])
+^first[
+    "$Dialog/Language/LangArabic==1 Désolé, je n'ai pas encore de dialogue développé en Arabe."
+    "Désolé, je ne sais pas parler Arabe."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} grec)
+^first[
+    "$Dialog/Language/LangGreek==1 Désolé, je n'ai pas encore de dialogue développé en Grec."
+    "Désolé, je ne sais pas parler Grec."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} coréen)
+^first[
+    "$Dialog/Language/LangKorean==1 Désolé, je n'ai pas encore de dialogue développé en Coréen."
+    "Désolé, je ne sais pas parler Coréen."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} portugais)
+^first[
+    "$Dialog/Language/LangPortuguese==1 Désolé, je n'ai pas encore de dialogue développé en Portugais."
+    "Désolé, je ne sais pas parler Portugais."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} brésilien)
+^first[
+    "$Dialog/Language/LangBrazilian==1 Désolé, je n'ai pas encore de dialogue développé en Brésilien."
+    "Désolé, je ne sais pas parler Brésilien."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} turc)
+^first[
+    "$Dialog/Language/LangTurkish==1 Désolé, je n'ai pas encore de dialogue développé en Turc."
+    "Désolé, je ne sais pas parler Turc."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} polonais)
+^first[
+    "$Dialog/Language/LangPolish==1 Désolé, je n'ai pas encore de dialogue développé en Polonais."
+    "Désolé, je ne sais pas parler Polonais."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} tchèque)
+^first[
+    "$Dialog/Language/LangCzech==1 Désolé, je n'ai pas encore de dialogue développé en Tchèque."
+    "Désolé, je ne sais pas parler Tchèque."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} _[hollandais néerlandais flammand])
+^first[
+    "$Dialog/Language/LangDutch==1 Désolé, je n'ai pas encore de dialogue développé en $1 ."
+    "Désolé, je ne sais pas parler $1 ."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} danois)
+^first[
+    "$Dialog/Language/LangDanish==1 Désolé, je n'ai pas encore de dialogue développé en Danois."
+    "Désolé, je ne sais pas parler Danois."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} finnois)
+^first[
+    "$Dialog/Language/LangFinnish==1 Désolé, je n'ai pas encore de dialogue développé en Finnois."
+    "Désolé, je ne sais pas parler Finnois."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} suédois)
+^first[
+    "$Dialog/Language/LangSwedish==1 Désolé, je n'ai pas encore de dialogue développé en Suédois."
+    "Désolé, je ne sais pas parler Suédois."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} russe)
+^first[
+    "$Dialog/Language/LangRussian==1 Désolé, je n'ai pas encore de dialogue développé en Russe."
+    "Désolé, je ne sais pas parler Russe."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} norvégien)
+^first[
+    "$Dialog/Language/LangNorwegian==1 Désolé, je n'ai pas encore de dialogue développé en Norvégien."
+    "Désolé, je ne sais pas parler Norvégien."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} cantonais)
+^first[
+    "$Dialog/Language/LangCantoneseHK==1 Désolé, je n'ai pas encore de dialogue développé en Cantonais."
+    "Désolé, je ne sais pas parler Cantonais."
+]
+
+#------------------------------------------------------------------#
+u:(~can_you _[parler discuter] {en le} mandarin)
+^first[
+    "$Dialog/Language/LangMandarinTaiwan==1 Désolé, je n'ai pas encore de dialogue développé en Mandarin."
+    "Désolé, je ne sais pas parler Mandarin."
+]
+
+

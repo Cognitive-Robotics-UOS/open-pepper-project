@@ -1,0 +1,37 @@
+topic: ~dlg_set_offset ^noPick()
+language: frf
+
+include: lexicon_frf.top
+
+#==================================================================#
+##### Set the robot's offset #####
+#==================================================================#
+
+proposal: %offset
+^first[
+    "$Dialog/RobotName==nao Hey! Est-ce que je suis par terre ou bien en hauteur?"
+    "^releaseFocus"
+]
+    u1:(par terre)
+    Okay, merci! ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0))
+
+    u1:([
+        "en hauteur"
+        table
+        bureau
+    ])
+    Okay merci! ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0.90))
+
+#==================================================================#
+
+u:({~ald_robots} ~you_are ["par terre" "["sur le" au] sol"])
+Okay, merci! ^first[
+    "$Dialog/RobotName==nao ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0))"
+    "^releaseFocus"
+] ^releaseFocus
+
+u:({~ald_robots} ~you_are sur ["une table" "un bureau"])
+Okay, merci! ^first[
+    "$Dialog/RobotName==nao ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0.90))"
+    "Mais je suis fait pour être sur le sol!"
+] ^releaseFocus

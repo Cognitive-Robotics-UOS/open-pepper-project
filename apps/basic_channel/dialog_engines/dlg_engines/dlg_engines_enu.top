@@ -1,0 +1,102 @@
+topic: ~dlg_engines()
+language: enu
+
+include: lexicon_enu.top
+
+
+#==================================================================#
+# Do it again
+#==================================================================#
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim) 
+    ^first[
+        "$RobotLastAnim==rest My motors are already off."
+        "$RobotLastAnim==wakeup My motors are already on."
+        "^rand["Okay, I do it again," "We go again"] ^runBehavior($RobotLastAnim)"
+    ]"
+    "I think I have nothing to replay."
+]
+^stayInScope  
+
+#==================================================================#
+# Engines off
+#==================================================================#
+
+u:([
+    "[remove deactivate] your stiffness"
+    "stiffness off"
+    "take [a some] rest"
+    relax
+    "[turn switch] your [engines servos motors "servo motors"] off"
+])
+^first[
+    "$robotIsWakeUp==false My motors are already off. $RobotLastAnim="" ^releaseFocus" 
+    "Are you sure? I won't be able to move anymore. And I'll be in a position that is not very stable."
+]
+
+    u1:([
+        ~yes
+        "do it"
+        "do as I command"
+        "that's an order"
+        "I command you"
+    ])
+    Okay! ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest"
+
+    u1:([
+        ~no
+        "don't {"do it"}"
+    ])
+    I think that's a wise decision. $RobotLastAnim=""
+
+u:(~ald_robots [
+    "[remove deactivate] your stiffness"
+    "stiffness off"
+    "take [a some] rest"
+    relax
+    "[turn switch] your [engines servos "servo motors"] off"
+])
+^first[
+    "$robotIsWakeUp==false My motors are already off. $RobotLastAnim="" ^releaseFocus" 
+    "^rand[
+        "Yes sir!"
+        "Okay boss!"
+    ] ^runBehavior(dialog_engines/bhv_rest) $RobotLastAnim="rest" "
+]
+
+#==================================================================#
+# Engines on
+#==================================================================#
+
+u:([
+    "stiffness on"
+    "activate your stiffness"
+    "start your [engines servos "servo motors"]"
+    "[turn switch] your [engines servos motors "servo motors"] on"
+])
+^first[
+    "$robotIsWakeUp==false Okay! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true My motors are already on. $RobotLastAnim="" "
+    "Okay! ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]
+
+u:(~ald_robots [
+    "stiffness on"
+    "activate your stiffness"
+    "start your [engines servos "servo motors"]"
+    "[turn switch] your [engines servos "servo motors"] on"
+    "stop moving"
+])
+^first[
+    "$robotIsWakeUp==false ^rand[
+        "Yes sir!"
+        "Okay boss!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+    "$robotIsWakeUp==true My motors are already on. $RobotLastAnim="" "
+    "^rand[
+        "Yes sir!"
+        "Okay boss!"
+    ] ^runBehavior(dialog_engines/bhv_wake_up) $RobotLastAnim="wakeup" "
+]

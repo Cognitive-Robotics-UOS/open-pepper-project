@@ -1,0 +1,77 @@
+topic: ~dlg_goodbye()
+language: ged
+
+include:lexicon_ged.top
+
+concept:(week_days) [monday tuesday wednesday thursday friday saturday sunday]
+
+#==================================================================#
+# Robot answers to goodbye
+#==================================================================#
+
+u:(_[
+    "tschüss"
+    "wir sehen uns später"
+    "auf Wiedersehen"
+    "bis bald"
+    "bis später"
+    "adieu"
+] {~ald_robots})
+$1 !
+
+u:([
+    "ich gehe los"
+    "ich muss los"
+    "ich muss gehen"
+    "tschüss erstmal"
+] {~ald_robots})
+Tschüss!
+
+u:(wir sehen uns morgen {~ald_robots})
+Wir sehen uns morgen!
+
+u:(ich wünsche dir ein schönes wochenende {~ald_robots ~robotname ~myrobotname})
+Dir auch ein schönes Wochenende!
+
+u:(wir sehen uns [am bis] _~days {~ald_robots})
+Wir sehen uns am $1 !
+
+u:([
+    "gute nacht"
+    "ich gehe schlafen"
+    "ich gehe [zu ins] bett"
+    "ich mache ein ickerchen"
+] {~ald_robots})
+^first[
+    "$Dialog/Hour==0 Gute Nacht! {$user/name} !"
+    "$Dialog/Hour>0 $Dialog/Hour<4 Gute Nacht! {$user/name} !"
+    "$Dialog/Hour==4 Gute Nacht! {$user/name} !"
+    
+    "$Dialog/Hour>4 $Dialog/Hour<12 Das muss eine ganz tolle Party gestern Abend gewesen sein, {$user/name} ! Schlaf gut!"
+    
+    "$Dialog/Hour==12 Mach ein schönes Nickerchen, {$user/name} !"
+    "$Dialog/Hour>12 $Dialog/Hour<17 Mach ein schönes Nickerchen, {$user/name} !"
+    "$Dialog/Hour==17 Mach ein schönes Nickerchen, {$user/name} !"
+    
+    "$Dialog/Hour==18 Du gehst heute früh zu Bett, {$user/name}. Gute Nacht!"
+    "$Dialog/Hour>18 $Dialog/Hour<20 Du gehst heute früh zu Bett, {$user/name}. Gute Nacht!"
+    "$Dialog/Hour==20 Du gehst heute früh zu Bett, {$user/name}. Gute Nacht!"
+    
+    "$Dialog/Hour>20 Gute Nacht! {$user/name} !"
+]
+
+
+
+#u:({"see you"} later alligator)
+#In a while crocodile!
+
+u:(["wir sprechen später noch"
+    "ich spreche später mit dir"])
+Okay! Es war nett, mit dir zu reden!
+
+u:(pass auf dich auf)
+Pass du auch auf dich auf!
+
+u:(geh jetzt schlafen)
+Ok! Ein wenig Ruhe ist schön. Wir seh'n uns!
+$go_to_sleep_now=1

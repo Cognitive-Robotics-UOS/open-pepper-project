@@ -1,0 +1,33 @@
+topic: ~dlg_touch_head()
+language: ged
+
+include:lexicon_ged.top
+
+
+#==================================================================#
+# Touch the robot's head
+#==================================================================#
+
+u:(e:FrontTactilTouched $FrontTactilTouched==1)
+^rand[
+    "aah! ^rand[
+        "Ich fühle mich wie eine Katze!"
+        "Ich mag es, wenn du meinen Kopf berührst!"
+        "Miau!"
+    ]"
+    "^runBehavior(dialog_touch/animations/head_touched) ^rand[
+        "Es kitzelt!"
+        "Ich bin heute kitzelig!"
+    ]"
+]
+^stayInScope
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(_[berühre streichle]) Du kannst zum Beispiel meinen Kopf oder meine Hände $1 .
+u:(["[berühre streichle] ["die hand" "deine Hand" "die Hände" "deine Hände" "den Kopf" "deinen Kopf"]" "~can_i berühren dich"]) 
+[
+    "Natürlich!"
+    "Kein Problem."
+]

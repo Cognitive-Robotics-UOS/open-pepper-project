@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_stop_talking" version="2.5.2">
+  <names>
+    <name lang="de_DE">dialog_stop_talking</name>
+    <name lang="de_DE-x-scrald">dialog_stop_talking</name>
+    <name lang="en_US">dialog_stop_talking</name>
+    <name lang="en_US-x-scrald">dialog_stop_talking</name>
+    <name lang="es_ES">dialog_stop_talking</name>
+    <name lang="es_ES-x-scrald">dialog_stop_talking</name>
+    <name lang="fr_FR">dialog_stop_talking</name>
+    <name lang="fr_FR-x-scrald">dialog_stop_talking</name>
+    <name lang="it_IT">dialog_stop_talking</name>
+    <name lang="it_IT-x-scrald">dialog_stop_talking</name>
+    <name lang="ja_JP">dialog_stop_talking</name>
+    <name lang="ja_JP-x-scrald">dialog_stop_talking</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann zum Schweigen gebracht werden. </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann zum Schweigen gebracht werden. </description>
+    <description lang="en_US">The robot can be silenced.
+Example of supported input:
+"Stop talking."</description>
+    <description lang="en_US-x-scrald">The robot can be silenced.
+Example of supported input:
+"Stop talking."</description>
+    <description lang="es_ES">El usuario puede mandar callar al robot. 
+Ejemplo de frase entendida por el robot:
+"¡Cállate! "</description>
+    <description lang="es_ES-x-scrald">El usuario puede mandar callar al robot. 
+Ejemplo de frase entendida por el robot:
+"¡Cállate! "</description>
+    <description lang="fr_FR">Le robot se taira si l'utilisateur le lui demande.
+Exemple de phrase comprise par le robot :
+"Arrête de parler."</description>
+    <description lang="fr_FR-x-scrald">Le robot se taira si l'utilisateur le lui demande.
+Exemple de phrase comprise par le robot :
+"Arrête de parler."</description>
+    <description lang="it_IT">Il robot può essere silenziato.</description>
+    <description lang="it_IT-x-scrald">Il robot può essere silenziato.</description>
+    <description lang="ja_JP">ユーザーの要求により、ロボットが能動的に話すことを止めます。</description>
+    <description lang="ja_JP-x-scrald">ユーザーの要求により、ロボットが能動的に話すことを止めます。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_stop_talking" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_stop_talking/dlg_stop_talking_ged.top"/>
+      <topic language="en_US" path="dlg_stop_talking/dlg_stop_talking_enu.top"/>
+      <topic language="es_ES" path="dlg_stop_talking/dlg_stop_talking_spe.top"/>
+      <topic language="fr_FR" path="dlg_stop_talking/dlg_stop_talking_frf.top"/>
+      <topic language="it_IT" path="dlg_stop_talking/dlg_stop_talking_iti.top"/>
+      <topic language="ja_JP" path="dlg_stop_talking/dlg_stop_talking_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

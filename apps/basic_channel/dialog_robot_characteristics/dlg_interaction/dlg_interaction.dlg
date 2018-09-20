@@ -1,0 +1,6 @@
+multilanguage:dlg_interaction
+  ged:dlg_interaction_ged.top
+  enu:dlg_interaction_enu.top
+  spe:dlg_interaction_spe.top
+  frf:dlg_interaction_frf.top
+  iti:dlg_interaction_iti.top

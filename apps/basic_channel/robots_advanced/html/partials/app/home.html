@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-4">
+        <h1>{{'HOME' | translate }}</h1>
+        <div ng-repeat="info in infoList">
+            <h3>{{ info.title }} </h3>
+            <div class="row" ng-repeat="elem in info.list">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-3">
+                    {{elem.title}}:
+                </div>
+                <div class="col-sm-3">
+                    <img src="img/load-120px.gif" width="20" ng-hide="elem.value"/>
+                    {{ elem.value }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <img src="img/BigROBOT.png"/ ng-click="showBubble=!showBubble;">
+        <div ng-show="showBubble" class="bubble">
+          <input ng-enter="sayIt(textToSay)" type='text' class="bubble-input" ng-model="textToSay" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+        <div ng-repeat="info in buildList">
+            <h3>{{ info.title }} </h3>
+            <div class="row" ng-repeat="elem in info.list">
+                <div class="col-sm-10">
+                    {{elem.title}}: {{ elem.value }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

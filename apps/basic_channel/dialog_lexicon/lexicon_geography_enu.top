@@ -1,0 +1,259 @@
+topic: ~lexicon_geography()
+language: enu
+
+include:lexicon_enu.top
+
+#------------------------------------------------------------------#
+concept:(countries) [
+    afghanistan
+    albania
+    algeria
+    andorra
+    angola
+    "antigua and barbuda"
+    argentina
+    armenia
+    australia
+    austria
+    azerbaijan
+    bahrain
+    bangladesh
+    barbados
+    belarus
+    belgium
+    belarus
+    belize
+    benin
+    bhutan
+    birma
+    bolivia
+    "bosnia {herzegovina}"
+    botswana
+    brasil
+    brunei
+    bulgaria
+    "burkina {faso}"
+    burundi
+    cambodia
+    cameroon
+    canada
+    "cap vert"
+    "central african republic"
+    "central africa"
+    chad
+    chile
+    colombia
+    congo
+    "costa rica"
+    croatia
+    cuba
+    cyprus
+    "czech republic"
+    czechoslovakia
+    denmark
+    djibouti
+    dominica
+    "dominican republic"
+    ecuador
+    egypt
+    england
+    "{equatorial} guinea {bissau}"
+    eritrea
+    estonia
+    ethiopia
+    finland
+    gabon
+    gambia
+    georgia
+    germany
+    ghana
+    greece
+    grenada
+    guatemala
+    guyana
+    haïti
+    honduras
+    hungary
+    iceland
+    india
+    indonesia
+    iran
+    iraq
+    ireland
+    israel
+    italy
+    "ivory coast"
+    jamaica
+    jordan
+    kazakhstan
+    kenya
+    kiribati
+    kuwait
+    kirghizistan
+    laos
+    lesotho
+    latvia
+    liban
+    liberia
+    lichtenstein
+    lithunia
+    luxembourg
+    lybia
+    macedonia
+    madagascar
+    malawi
+    mali
+    malta
+    malaysia
+    mauritanius
+    mauritius
+    mexico
+    micronesia
+    moldavia
+    monaco
+    mongolia
+    montenegro
+    morocco
+    mozambique
+    myanmar
+    namibia
+    nauru
+    nepal
+    nicaragua
+    niger
+    nigeria
+    niue
+    "new zealand"
+    "{north south} korea"
+    norway
+    norwegia
+    oman
+    pakistan
+    palestine
+    panama
+    paraguay
+    peru
+    "{papua} new guinea"
+    poland
+    portugal
+    "principality of andorra"
+    qatar
+    romania
+    russia
+    rwanda
+    "saint christopher and nevis"
+    "saint lucia"
+    "saint martin"
+    "saint vincent and the grenadines"
+    salvador
+    samoa
+    "sao tomé and principe"
+    "saudia arabia"
+    senegal
+    serbia
+    "sierra leone"
+    singapore
+    slovakia
+    slovenia
+    somalia
+    "{south} africa"
+    "{south southern} sudan"
+    spain
+    "sri lanka"
+    suriname
+    swaziland
+    sweden
+    switzerland
+    syria
+    salvador
+    samoa
+    senegal
+    "sri lanka"
+    suriname
+    swaziland
+    tajikistan
+    tanzania
+    thailand
+    "timor-leste"
+    togo
+    tonga
+    "trinity and tobago"
+    tunisia
+    turkey
+    turkmenistan
+    tuvalu
+    uganda
+    uzbekistan
+    ukraine
+    uruguay
+    vanuatu
+    vatican
+    venezuela
+    vietnam
+    yemen
+    zambia
+    zimbabwe
+    "the [
+        bahamas comores "cook islands" "dominican republic" equateur "[fiji maldives marshall solomon] {islands}"
+        palaos
+        "principality of andora" netherlands philippines seychelles "united arab emirates"
+    ]"
+]
+#------------------------------------------------------------------#
+concept:(american_cities) [
+    Montgomery
+    Juneau
+    Phoenix
+    "Little Rock"
+    Sacramento
+    Denver
+    Hartford
+    Dover
+    Tallahassee
+    Atlanta
+    Honolulu
+    Boise
+    Springfield
+    Indianapolis
+    Des Moines
+    Topeka
+    Frankfort
+    Baton Rouge
+    Augusta
+    Annapolis
+    Boston
+    Lansing
+    Saint Paul
+    Jackson
+    "Jefferson City"
+    Helena
+    Lincoln
+    Carson City
+    Concord
+    Trenton
+    Santa Fe
+    Albany
+    Raleigh
+    Bismarck
+    Columbus
+    "Oklahoma City"
+    Salem
+    Harrisburg
+    Providence
+    Columbia
+    Pierre
+    Nashville
+    Austin
+    "Salt Lake City"
+    Montpelier
+    Richmond
+    Olympia
+    Charleston
+    Madison
+    Cheyenne
+    Washington
+    "New York {City}"
+    Seattle
+    Chicago
+]
+#------------------------------------------------------------------#

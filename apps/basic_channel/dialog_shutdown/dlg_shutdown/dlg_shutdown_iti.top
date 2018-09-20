@@ -1,0 +1,33 @@
+topic: ~dlg_shutdown()
+language: iti
+
+include:lexicon_iti.top
+
+
+#==================================================================#
+# Shutdown/Reboot the robot
+#==================================================================#
+
+u:(Pepper ["spegniti {"da solo"}" disattivati])
+Va bene, ciao ciao! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+u:(~can_you [arrestarti disattivarti "spegnerti da solo"]) %shutdown
+Vuoi davvero che mi arresti?
+
+    u1:(~yes)
+    Perfetto! Ciao! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+    u1:(~no)
+    Va bene, nessun arresto! ^releaseFocus
+
+u:(Pepper [riavviati riparti])
+Va bene, ci si vede tra un minuto! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+u:(~can_you [riavviarti ripartire])
+Vuoi davvero che esegua il riavvio?
+
+    u1:(~yes)
+    Va bene, ci si vede tra un minuto! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+    u1:(~no)
+    Va bene, nessun riavvio! ^releaseFocus

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ChoregrapheBox xar_version="3">
+    <Box name="root" id="17" localization="8" tooltip="tags:&#x0A;LED" x="755" y="439">
+        <bitmap>media/images/box/interaction/LED.png</bitmap>
+        <script language="4">
+            <content>
+                <![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        #~ puts code for box initialization here
+        pass
+
+    def onUnload(self):
+        #~ puts code for box cleanup here
+        pass
+
+    def onInput_onStart(self):
+        rDuration = self.getParameter('Timing')
+        
+        self.log(self.getParameter('Eyes'))
+        
+        if(self.getParameter('Eyes') == 'On'):
+            nColor = 0xFFFFFF
+        else:
+            nColor = 0x000000
+
+        ALLeds.fadeRGB( "FaceLeds", nColor, rDuration );
+        
+        self.onStopped()
+
+    def onInput_onStop(self):
+        self.onUnload() #~ it is usually a good idea to call onUnload of this box in a onStop method, as the code written in onUnload is used to finish the working of the box as well
+        pass]]>
+</content>
+        </script>
+        <Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" />
+        <Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" />
+        <Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" />
+        <Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" />
+        <Parameter name="Eyes" inherits_from_parent="0" content_type="3" value="On" default_value="On" custom_choice="0" tooltip="" id="5">
+            <Choice value="On" />
+            <Choice value="Off" />
+        </Parameter>
+        <Parameter name="Timing" inherits_from_parent="0" content_type="2" value="0.5" default_value="0.5" min="0.05" max="10.05" tooltip="" id="6" />
+        <Resource name="Left eye leds" type="Lock" timeout="1" />
+        <Resource name="Right eye leds" type="Lock" timeout="1" />
+    </Box>
+</ChoregrapheBox>

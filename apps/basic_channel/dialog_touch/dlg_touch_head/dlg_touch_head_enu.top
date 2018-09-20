@@ -1,0 +1,38 @@
+topic: ~dlg_touch_head()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Touch the robot's head
+#==================================================================#
+
+u:(e:FrontTactilTouched $FrontTactilTouched==1)
+^rand[
+    "ah! ^rand[
+        "I feel like a cat!"
+        "I like it when you touch my head!"
+        "Meow!"
+    ]"
+    "^runBehavior(dialog_touch/animations/head_touched) ^rand[
+        "It tickles!"
+        "I'm ticklish today!"
+    ]"
+]
+^stayInScope
+
+u:(~can_i touch [you {*}]) Of course.
+
+    u1:(e:FrontTactilTouched $FrontTactilTouched==1) ^runBehavior(dialog_touch/headster_egg) Sorry, this happens sometimes when you touch my head.
+
+    u1:(e:Dialog/Notspeaking5) ^releaseFocus
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(_[touch caress]) You can $1 my head or hands for example.
+u:([touch caress] [the your] [hand hands head]) [
+    "Of course!"
+    "No problem."
+]

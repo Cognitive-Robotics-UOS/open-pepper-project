@@ -1,0 +1,29 @@
+topic: ~skin_tmp_tweak()
+language: frf
+
+s:({*} n'est-ce pas {*}) ^replace(n'est-ce pas, nesse pas, 1)
+
+s:({*} veux essayer {*}) ^replace(veux essayer, veu essayer, 1)
+
+s:({*} chatouilleux aujourd'hui {*}) ^replace(chatouilleux aujourd'hui, chatouilleu aujourd'hui, 1)
+
+s:({*} pourras aller {*}) ^replace(pourras aller, pourra aller, 1)
+
+s:({*} mieux utiliser {*}) ^replace(mieux utiliser, mieu utiliser, 1)
+
+s:({*} applications installées {*}) ^replace(applications installées, application installées, 1)
+
+s:({*} autres à {*}) ^replace(autres à, autre à, 1)
+
+s:({*} applications installées {*}) ^replace(applications installées, application installées, 1)
+
+s:({*} Tai Chi {*}) ^replace(Tai Chi, Taille Chi, 1)
+
+s:({*} sûr {*}) ^replace(sûr, sur, 1)
+
+s:({*} gangnam style {*}) ^replace(gangnam style, gangnam staïle, 1)
+s:({*} get lucky {*}) ^replace(get lucky, guette leuki, 1)
+s:({*} harder better {*}) ^replace(harder better, ardeur bèteur, 1)
+
+s:({*} ethernet {*}) ^replace(ethernet, éternette, 1)
+s:({*} Ethernet {*}) ^replace(Ethernet, éternette, 1)

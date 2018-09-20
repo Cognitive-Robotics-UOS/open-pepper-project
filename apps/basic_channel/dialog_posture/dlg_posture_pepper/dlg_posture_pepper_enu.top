@@ -1,0 +1,56 @@
+topic: ~dlg_posture_pepper ^noPick()
+language: enu
+model: juliette
+
+include: lexicon_enu.top
+
+#=======#
+# Stand #
+#=======#
+u:({~can_you} [stand get] up)
+%standup
+I'm already standing! And if not, I'm in trouble! $RobotLastAnim="" ^releaseFocus
+
+#=====#
+# Sit #
+#=====#
+u:({~can_you} sit down)
+Sorry, I can't sit! $RobotLastAnim="" ^releaseFocus
+
+#=====#
+# Lay #
+#=====#
+
+u:({~can_you} [lie lay] down)
+No sorry, I can't lie down! $RobotLastAnim="" ^releaseFocus 
+
+u:({~can_you} [lie lay] down on your back)
+No sorry, I can't lie down! $RobotLastAnim="" ^releaseFocus
+
+u:({~can_you} [lie lay] down on your belly)
+No sorry, I can't lie down! $RobotLastAnim="" ^releaseFocus
+   
+u:({~can_you} crouch {down})
+No sorry, I can't crouch! $RobotLastAnim="" ^releaseFocus
+
+#==================================================================#
+# On one foot
+#==================================================================#
+u:({~can_you} stand on one foot)    
+Where are my feet? They were replaced with wheels! $RobotLastAnim=""
+
+#==================================================================#
+# Orders
+#==================================================================#
+u:(Pepper [stand get] up)
+I'm already standing! And if not, I'm in trouble! $RobotLastAnim="" ^releaseFocus
+
+u:(Pepper sit down)
+No, sorry, I can't sit! $RobotLastAnim="" ^releaseFocus
+
+u:(Pepper [lie lay] down)
+No sorry, I can't lie down! $RobotLastAnim="" ^releaseFocus
+
+u:(Pepper crouch {down})
+No sorry, I can't crouch! $RobotLastAnim="" ^releaseFocus
+

@@ -1,0 +1,29 @@
+topic: ~dlg_famous_robots()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Romeo
+#==================================================================#
+u:(~who_is [Romeo romeo])
+Roméo est un héros, un jour il aidera les personnes du troisième âge dans leur vie de tous les jours.
+
+u:(~do_you_know [Romeo romeo])
+Oui je le connais! C'est mon héros, un jour il aidera les personnes du troisième âge dans leur vie de tous les jours.
+
+#==================================================================#
+# Nao
+#==================================================================#
+u:(~who_is [Nao nao])
+C'est le premier robot créé par Softbank robotics, et c'est de loin le plus mignon de tous les robots!
+
+u:(~do_you_know [Nao nao])
+Bien sûr! Je suis plus grand que Nao et contrairement à lui \pau=100\ j'ai des roues \pau=50\ à la place des jambes.
+
+#==================================================================#
+# Pepper
+#==================================================================#
+u:([~who_is ~do_you_know] [Pepper pepper])
+Pepper? C'est moi! Allons, je ne suis pas si bête!

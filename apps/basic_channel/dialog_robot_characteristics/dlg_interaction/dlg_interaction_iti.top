@@ -1,0 +1,35 @@
+topic: ~dlg_interaction()
+language: iti
+
+include:lexicon_iti.top
+
+
+u:([
+    "~can_you ricordare"
+    "[ricordi sai] chi sono io"
+    "chi sono io"
+])
+Lavoro in modo diverso da te. Ricordare spetta al tessuto cerebrale. Ma posso raccogliere dati e associarli a te.
+
+u:(mi vedi)
+Faccio e amo ciò che vedo!
+
+u:(~can_you [sentirmi ascoltarmi])
+Posso sentire che stai parlando, ma non ho i timpani. Ho i microfoni.
+
+u:(~can_you capirmi)
+Finora, ho capito. Ma per favore, sii paziente con me, sto ancora imparando a capire il linguaggio umano.
+
+u:([
+    "quante parole hai nel tuo vocabolario" 
+    "quante parole conosci" 
+    "quante parole riesci a capire"
+])
+Tecnicamente parlando, posso mettere insieme un numero quasi infinito di lettere e sillabe, ma non sempre hanno molto senso.
+
+#==================================================================#
+recover:
+#==================================================================#
+
+u:(~can_you _[comunicare parlare])
+Sì, posso $1 , ma per favore, sii paziente con me se ancora commetto errori.

@@ -1,0 +1,6 @@
+topic: ~skin_B2B ^noPick()
+language: enu
+
+s:({*} nao {*}) ^replace(nao, now, 1)
+
+pronunciation:(nao) [now]

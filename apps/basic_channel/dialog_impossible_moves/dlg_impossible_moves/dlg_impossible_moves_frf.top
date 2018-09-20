@@ -1,0 +1,197 @@
+topic: ~dlg_impossible_moves ^noPick()
+language: frf
+
+include: lexicon_frf.top
+
+  
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Demande moi des mouvements plus simples, j'ai encore un peu de mal à bouger comme vous les humains."
+    "Je ne comprends pas très bien ta requête, je n'ai sûrement pas encore appris ce mouvement."
+]
+
+u:^private([
+    "[
+        "comment [
+            "puis-je {"faire pour"}"
+            "{"est-ce que"} je fais pour"
+        ]"
+        "aide-moi à"
+    ] préciser ma demande"
+    "donne-moi ["un exemple" "des exemples"]"
+])
+[
+    "Essaie de me dire lève le bras, ou bouge la tête, par exemple."
+    "Et bien, tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Je peux bouger, mais il faut que tu sois un peu plus précis."
+]
+
+u:^private (~do_it_again)
+^first[
+    "^exist(RobotLastAnim)
+    ^rand["Okay, je recommence." "C'est reparti!"]
+    ^runBehavior($RobotLastAnim)"
+    "Il me semble que je n'ai rien à recommencer."
+] ^stayInScope
+
+u:([
+    "~i_want que tu ["{te} bouges" "fasses ["un mouvement" "des mouvements"]"]"
+    "~can_you bouger"
+    "fais ["un mouvement" "des mouvements"]"
+])
+Oui! [
+    "Essaie de me dire \pau=500\ lève le bras, ou bouge la tête, par exemple."
+    "Tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Mais il faut que tu sois un peu plus précis."
+] $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Hands
+#==================================================================#
+u:([
+    "touche-moi"
+    "~can_you me toucher"
+])
+J'ai encore du mal avec la distance qui nous sépare, mais si tu veux, tu peux poser tes mains sur ma tête, on se sera touché! $RobotLastAnim=""
+
+u:(montre-moi du doigt)
+Je ne vois pas encore très bien. Je sais où tu es, mais te montrer du doigt c'est difficile pour moi. $RobotLastAnim=""
+
+u:([
+    "~can_you me _[tenir toucher prendre serrer] la main"
+    "~can_you _[tenir toucher prendre serrer] ma main"
+    "["tiens ma" "["tiens-moi" "serre-moi" "prends-moi"] la"]  main"
+])
+^first[
+    "Je ne sais pas encore te $1 la main, désolé."
+    "Je ne sais pas encore te serrer la main, désolé."
+] Mais on peut se faire coucou!
+^runBehavior(dialog_impossible_moves/animations/Wave01)
+$RobotLastAnim=dialog_impossible_moves/animations/Wave01
+
+#==================================================================#
+# Impossible moves - Arms
+#==================================================================#
+u:([croise "~can_you croiser"] [les tes] bras)
+^rand[
+    "Je ne peux pas. Regarde!"
+    "Malheureusement, je ne peux pas prendre cette pose héroïque."
+]
+^runBehavior(dialog_impossible_moves/animations/CrossArms)
+$RobotLastAnim=dialog_impossible_moves/animations/CrossArms
+
+#==================================================================#
+# Impossible moves - Head
+#==================================================================#
+
+u:(["fais tourner ta" "tourne [ta la]" "~can_you tourner [ta la]"] tête de [180 360] degrés)
+Comme ça?
+^runBehavior(dialog_impossible_moves/animations/TurnHead360)
+$RobotLastAnim=dialog_impossible_moves/animations/TurnHead360
+C'est un peu difficile.
+
+#==================================================================#
+# Impossible moves - Body
+#==================================================================#
+
+u:([fait fais "~can_you faire"] un tour sur toi même)
+Excuse-moi, je ne suis pas très doué pour ça. $RobotLastAnim=""
+
+u:(~can_you marcher)
+Si tu installes l'application, comme hire, je pourrais venir vers toi! $RobotLastAnim=""
+
+u:(~can_you rouler)
+Je peux rouler si tu installes l'application comme hire! $RobotLastAnim=""
+
+#==================================================================#
+# Impossible moves - Others
+#==================================================================#
+
+u:([
+    "on ["peut {se} faire" "{se} fait"]"
+    "fais-moi"
+    "~can_you {me} faire"
+] un câlin)
+[
+    "Désolé, je n'ai pas encore appris à faire les câlins!"
+    "Je ne peux pas encore faire un câlin, j'espère apprendre vite!"
+    "Je ne sais pas comment on fait les câlins désolé, une autre fois!"
+] $RobotLastAnim=""
+
+u:(["[fais fais-moi fais-nous montre-moi montre-nous]" "~can_you ["{me nous} faire" "[me nous] montrer"]"] ["un [salto "saut périlleux"] {arrière avant}" "une galipette" "un backflip"])
+Houla! Je veux bien essayer mais je ne te promets rien.
+^runBehavior(dialog_moves/animations/Backflip)
+$RobotLastAnim=dialog_moves/animations/Backflip
+Non, ça fait trop peur!
+
+    u1:([
+        allez vas-y
+        "fais-le"
+        "tu le fais"
+        "[c'est ceci] un ordre"
+        "je te l'ordonne"
+        essaye essaie
+        "faut pas avoir peur"
+        "tu peux le faire"
+        "n'ai pas peur"
+    ])
+    ^rand[
+        "Non, je peux vraiment pas, excuse-moi."
+        "Non désolé, ce n'est pas possible."
+        "Non non et non!"
+    ] $RobotLastAnim=dialog_impossible_moves/animations/Backflip
+    
+u:([fais "~can_you faire"] des pompes)
+Je ne suis pas très doué pour ça, désolé. $RobotLastAnim=""
+
+u:(~can_you sauter)
+^rand[
+    "Je n'y arrive pas encore, je préfère ne pas prendre trop de risques."
+    "Pour l'instant je ne peux pas encore sauter, désolé."
+] $RobotLastAnim=""
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(e:DialogObstacle)
+Quelque chose m'empèche d'avancer. Je dois être debout et sans obstacles devant moi. $RobotLastAnim=""
+
+u:([
+    ~come_to_me
+    "~i_want que tu [avances "ailles en avant"]"
+    "~can_you avancer"
+    avance
+])
+Si tu installes l'application, comme hire, je pourrais venir vers toi! $RobotLastAnim=""
+
+u:([
+    "~i_want que tu roules {"vers moi" "en avançant" "en avant"}"
+    roule
+])
+Si tu me programmes, je pourrais rouler! $RobotLastAnim=""
+
+u:([
+    "~i_want que tu [recules "ailles en arrière"]"
+    "~can_you reculer"
+    recule
+])
+Désolé, je n'ai pas encore appris à reculer. $RobotLastAnim=""
+
+u:([
+    "~i_want que tu roules ["en arrière" "vers l'arrière"]"
+    "~can_you rouler ["en arrière" "vers l'arrière"]"
+    "roule ["en arrière" "vers l'arrière"]"
+])
+Si tu me programmes, je pourrais rouler en arrière! $RobotLastAnim=""
+
+u:(bouge)
+[
+    "Essaie de me dire \pau=500\ lève le bras, ou bouge la tête, par exemple."
+    "Tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Mais il faut que tu sois un peu plus précis."
+]
+$RobotLastAnim=""

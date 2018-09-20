@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_what_can_you_do" version="2.5.2">
+  <names>
+    <name lang="de_DE">dialog_what_can_you_do</name>
+    <name lang="de_DE-x-scrald">dialog_what_can_you_do</name>
+    <name lang="en_US">dialog_what_can_you_do</name>
+    <name lang="en_US-x-scrald">dialog_what_can_you_do</name>
+    <name lang="es_ES">dialog_what_can_you_do</name>
+    <name lang="es_ES-x-scrald">dialog_what_can_you_do</name>
+    <name lang="fr_FR">dialog_what_can_you_do</name>
+    <name lang="fr_FR-x-scrald">dialog_what_can_you_do</name>
+    <name lang="it_IT">dialog_what_can_you_do</name>
+    <name lang="it_IT-x-scrald">dialog_what_can_you_do</name>
+    <name lang="ja_JP">dialog_what_can_you_do</name>
+    <name lang="ja_JP-x-scrald">dialog_what_can_you_do</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot gives a list of what he can do: abilities, applications...
+
+Examples of triggers: "What can you do?", "Tell me all can you do".</description>
+    <description lang="en_US-x-scrald">The robot gives a list of what he can do: abilities, applications...
+
+Examples of triggers: "What can you do?", "Tell me all can you do".</description>
+    <description lang="es_ES">El robot da una lista de lo que puede hacer: habilidades, capacidades, aplicaciones, etc.
+Ejemplos de frases entendidas por el robot:
+"¿Cuál es tu función?"
+"¿Qué puedes hacer?"</description>
+    <description lang="es_ES-x-scrald">El robot da una lista de lo que puede hacer: habilidades, capacidades, aplicaciones, etc.
+Ejemplos de frases entendidas por el robot:
+"¿Cuál es tu función?"
+"¿Qué puedes hacer?"</description>
+    <description lang="fr_FR">Le robot liste ce qu'il peut faire : capacités, applications...
+
+Exemples de ce qu'il est possible de dire au robot: "Que sais-tu faire ?", "Quelles sont tes applications ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot liste ce qu'il peut faire : capacités, applications...
+
+Exemples de ce qu'il est possible de dire au robot: "Que sais-tu faire ?", "Quelles sont tes applications ?"</description>
+    <description lang="it_IT">Il robot fornisce una lista di ciò che può fare: abilità, applicazioni...</description>
+    <description lang="it_IT-x-scrald">Il robot fornisce una lista di ciò che può fare: abilità, applicazioni...</description>
+    <description lang="ja_JP">ロボットは、可能な動作すべてのリストを提供することができます。
+サポートされる入力の例:
+「何ができますか？」
+「可能なすべての動作を教えてください」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、可能な動作すべてのリストを提供することができます。
+サポートされる入力の例:
+「何ができますか？」
+「可能なすべての動作を教えてください」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="show_tablet/Show_tablet_1">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_2">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_3">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_4">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="show_tablet/Show_tablet_5">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_what_can_you_do" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_what_can_you_do/dlg_what_can_you_do_ged.top"/>
+      <topic language="en_US" path="dlg_what_can_you_do/dlg_what_can_you_do_enu.top"/>
+      <topic language="es_ES" path="dlg_what_can_you_do/dlg_what_can_you_do_spe.top"/>
+      <topic language="fr_FR" path="dlg_what_can_you_do/dlg_what_can_you_do_frf.top"/>
+      <topic language="it_IT" path="dlg_what_can_you_do/dlg_what_can_you_do_iti.top"/>
+      <topic language="ja_JP" path="dlg_what_can_you_do/dlg_what_can_you_do_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

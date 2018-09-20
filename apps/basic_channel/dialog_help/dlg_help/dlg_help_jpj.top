@@ -1,0 +1,11 @@
+topic: ~dlg_help()
+language: jpj
+
+include:lexicon_jpj.top
+
+#==================================================================#
+# User can request assistance from the robot
+#==================================================================#
+
+u:(~help)
+\vct=130\できる限りのお手伝いはさせて頂きます！

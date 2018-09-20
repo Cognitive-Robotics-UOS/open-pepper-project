@@ -1,0 +1,36 @@
+topic: ~dlg_touch_head()
+language: iti
+
+#==================================================================#
+# Touch the robot's head
+#==================================================================#
+
+u:(e:FrontTactilTouched $FrontTactilTouched==1)
+^rand[
+    "ummmmmm! ^rand[
+        "Mi sento come un gatto!"
+        "Mi piace quando mi tocchi la testa!"
+        "Miao!"
+    ]"
+    "^runBehavior(dialog_touch/animations/head_touched) ^rand[
+        "Mi solletica!"
+        "Sono solleticoso oggi!"
+    ]"
+]
+^stayInScope
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(_[toccare accarezzare]) Puoi $1 la mia testa o le mie mani, per esempio.
+
+u:([
+    "[tocco accarezzo] [la tua] mano"
+    "[tocco accarezzo] [le tue] mani"
+    "[tocco accarezzo] [la tua] testa"
+    "posso toccarti"
+])
+[
+    "Ovviamente!"
+    "Nessun problema."
+]

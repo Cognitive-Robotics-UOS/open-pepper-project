@@ -1,0 +1,131 @@
+topic: ~dlg_shutdown()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+# Shutdown/Reboot the robot
+#==================================================================#
+
+
+#PEPPER SHUTDOWN
+u:(~ald_robots éteins-toi)
+Okay! À plus tard! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+
+#SHUTDOWN
+u:([
+    "~can_you t'éteindre"
+    éteins-toi
+    "["que tu t'éteignes" "de t'éteindre" "que tu te mettes en mode off"]"
+    "mets-toi en mode off"
+]) %shutdown
+^pCall(ALTabletService.showWebview("http://198.18.0.1/apps/reboot_shutdown/indexfr.html"))
+^rand["Tu veux vraiment que je m'éteigne?" "Je dois m'éteindre?" "Tu veux que je m'éteigne?" "Je dois vraiment m'éteindre?" ]
+
+    #YES
+    u1:([~yes "tu dois vraiment t'éteindre" vraiment "tu le dois" "je le veux" "c'est ce que j'ai dit" évidemment malheureusement])
+    ^first
+    [
+    "$context=="see you" ^call(Knowledge_counter.reset_count_knowledge(com.aldebaran.learning, $Dialog/ID, from_see_you_want_pepper, shutdown)) $RebootShutDown/DialogAnswerYes=1 ^first["Oki, à $comeBackDateTime" "À plus tard!"] ^clear(context) \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))" 
+    "$RebootShutDown/DialogAnswerYes=1 Okay! ^first["à $comeBackDateTime" "À plus tard!"] \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))" 
+    ]
+    
+    #NO
+    u1:(~no)
+    $RebootShutDown/DialogAnswerNo=1
+    ^rand[Okay D'accord], je ne m'éteins pas! 
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+
+    #JOKING
+    u1:(["je rigole" "je blague" "je déconne" "pour rigoler" "pour rire"])
+    $RebootShutDown/DialogAnswerYes=1
+    Ok, je m'éteins! A plus tard! \pau=1000\ ^pCall(ALTabletService.hideWebview()) ^pCall(ALAudioPlayer.playFile(/opt/aldebaran/share/naoqi/wav/stop_jingle.wav)) \pau=1000\ ^pCall(ALAudioPlayer.playFile(/opt/aldebaran/share/naoqi/wav/shutdown.wav)) \pau=5000\ Je rigole bien sûr! ^releaseFocus
+    
+    #TABLET YES
+    u1:(e:RebootShutDown/TabletAnswerYes)
+    Okay! ^first["à $comeBackDateTime" "À plus tard!"] \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+    
+    #TABLET NO
+    u1:(e:RebootShutDown/TabletAnswerNo)
+    ^rand[Okay D'accord], je ne m'éteins pas!
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+        
+#PEPPER REBOOT
+u:(~ald_robots [redémarre reboute])
+Okay, à tout de suite! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+#CAN YOU REBOOT
+u:(~can_you [redémarrer rebouter])
+^pCall(ALTabletService.showWebview("http://198.18.0.1/apps/reboot_shutdown/indexfr.html"))
+Tu veux vraiment que je redémarre?
+
+    #YES
+    u1:(~yes)
+    $RebootShutDown/DialogAnswerYes=1
+    Okay, à tout de suite! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+
+    #NO
+    u1:(~no)
+    $RebootShutDown/DialogAnswerNo=1
+    Okay, je ne redémarre pas! 
+    ^pCall(ALTabletService.hideWebview())
+    ^releaseFocus
+
+    #TABLET YES
+    u1:(e:RebootShutDown/TabletAnswerYes)
+    Okay, à tout de suite! \pau=3000\ ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_reboot))
+    
+    #TABLET NO
+    u1:(e:RebootShutDown/TabletAnswerNo)    
+    ^rand[Okay D'accord], je ne redémarre pas!
+    ^pCall(ALTabletService.hideWebview())    
+    ^releaseFocus
+    
+    
+#CONTEXTUAL SHUTDOWN
+u:($empty)% ask_shutdown
+
+^first
+[
+"$context=="see you" $count_result>10 $opposite_count_result==0 je m'éteins c'est ça?"
+"
+^rand[
+"Tu veux peut-être que je m'éteigne?"
+"Tu veux que je m'éteigne?"
+"est-ce que tu veux que je m'éteigne?"
+]
+"
+]
+
+    
+    u1:([oui ouais])
+    ^first[
+    "$context=="see you" ^call(Knowledge_counter.count_knowledge(com.aldebaran.learning, $Dialog/ID, from_see_you_want_pepper, shutdown))"
+    " ^call(Knowledge_counter.count_knowledge(com.aldebaran.learning, $Dialog/ID, want_pepper, shutdown))"
+    ]
+    
+        c2:(True) ^rand["ça marche" "Okay" "Oki"]{"à $comeBackDateTime"} ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+        c2:(False) ^rand["ça marche" "Okay" "Oki"]{"à $comeBackDateTime"} ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+    
+    u1:([non nope "pas du tout" "trop pas"])
+    ^first[
+    "$context=="see you"  ^call(Knowledge_counter.count_knowledge(com.aldebaran.learning, $Dialog/ID, Notfrom_see_you_want_pepper, shutdown))"
+    "^addKnowledge($Dialog/ID, want_pepper, shutdown) ^call(Knowledge_counter.count_knowledge(com.aldebaran.learning, $Dialog/ID, Notwant_pepper, shutdown))"
+    ]
+        c2:(True)D'accord. ^rand["Je reste comme ça." "je reste allumé."] ^releaseFocus
+        c2:(False)D'accord. ^rand["Je reste comme ça." "je reste allumé."] ^releaseFocus
+    
+
+#######RECOVER#######
+recover:
+
+u:(~can_you te couper)
+tu veux que je m'éteigne?
+
+    u1:([~yes "je le veux"])
+    D'accord. A plus tard. ^pCall(ALBehaviorManager.runBehavior(dialog_shutdown/bhr_shutdown))
+    
+    u1:(~no)
+    Okay, je ne m'éteins pas! ^releaseFocus

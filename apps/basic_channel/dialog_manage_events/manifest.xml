@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.1" uuid="dialog_manage_events">
+  <names>
+    <name lang="de_DE">dialog_manage_events</name>
+    <name lang="de_DE-x-scrald">dialog_manage_events</name>
+    <name lang="en_US">dialog_manage_events</name>
+    <name lang="en_US-x-scrald">dialog_manage_events</name>
+    <name lang="es_ES">dialog_manage_events</name>
+    <name lang="es_ES-x-scrald">dialog_manage_events</name>
+    <name lang="fr_FR">dialog_manage_events</name>
+    <name lang="fr_FR-x-scrald">dialog_manage_events</name>
+    <name lang="it_IT">dialog_manage_events</name>
+    <name lang="it_IT-x-scrald">dialog_manage_events</name>
+    <name lang="ja_JP">dialog_manage_events</name>
+    <name lang="ja_JP-x-scrald">dialog_manage_events</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Dienstanwendung: verwaltet spezifische Ereignisse, die von der Dialogmaschine zurückgegeben werden.</description>
+    <description lang="de_DE-x-scrald">Dienstanwendung: verwaltet spezifische Ereignisse, die von der Dialogmaschine zurückgegeben werden.</description>
+    <description lang="en_US">Utility application: manages specific events returned by the dialog engine.</description>
+    <description lang="en_US-x-scrald">Utility application: manages specific events returned by the dialog engine.</description>
+    <description lang="es_ES">Aplicación de utilidad: gestiona eventos específicos devueltos por el motor de diálogo. </description>
+    <description lang="es_ES-x-scrald">Aplicación de utilidad: gestiona eventos específicos devueltos por el motor de diálogo. </description>
+    <description lang="fr_FR">Application utilitaire : gère des événenents spécifiques retournés par le moteur de dialogue.</description>
+    <description lang="fr_FR-x-scrald">Application utilitaire : gère des événenents spécifiques retournés par le moteur de dialogue.</description>
+    <description lang="it_IT">
+Applicazione di utilità: gestisce eventi specifici restituiti dal motore della finestra di dialogo.
+</description>
+    <description lang="it_IT-x-scrald">
+Applicazione di utilità: gestisce eventi specifici restituiti dal motore della finestra di dialogo.
+</description>
+    <description lang="ja_JP">ユーティリティアプリケーション: ダイアログエンジンによって返された、特定のイベントに応答します。</description>
+    <description lang="ja_JP-x-scrald">ユーティリティアプリケーション: ダイアログエンジンによって返された、特定のイベントに応答します。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_manage_events">
+      <topic path="dlg_manage_events/dlg_manage_events_ged.top" language="de_DE"/>
+      <topic path="dlg_manage_events/dlg_manage_events_enu.top" language="en_US"/>
+      <topic path="dlg_manage_events/dlg_manage_events_spe.top" language="es_ES"/>
+      <topic path="dlg_manage_events/dlg_manage_events_frf.top" language="fr_FR"/>
+      <topic path="dlg_manage_events/dlg_manage_events_iti.top" language="it_IT"/>
+      <topic path="dlg_manage_events/dlg_manage_events_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

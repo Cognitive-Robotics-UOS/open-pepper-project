@@ -1,0 +1,72 @@
+topic: ~dlg_adjust_volume ^noPick()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+# Adjust the robot's volume
+#==================================================================#
+
+u:([
+    "["~can_you parler" parle] {"un peu" encore} moins fort"
+    "["~can_you [réduire baisser diminuer]" réduit baisse diminue] {"un peu" encore} le [volume son]"
+    "tu parles !pas {trop} fort"
+    "{fais} moins de bruit"
+])
+^gotoReactivate(decrease_volume)
+    
+    
+u:($empty) %decrease_volume
+^call(ALVolumeSlider.decreaseVolume())
+    c1:(false) désolé, je ne peux pas baisser plusse! je suis au minimum.
+    c1:(true) J'ai baissé le volume, ça te va comme ça? 
+
+        u2:([
+            "encore {un peu}"
+            "un peu plus"
+            "plusse"
+            "{encore} moins [fort haut]"
+            "plus bas"
+            "{toujours encore} trop fort"
+            ])
+        ^gotoReactivate(decrease_volume)
+
+
+        u2:([merci "{c'est} parfait" impéc "{c'est} impeccable" "{c'est} nickel" "{c'est} niquel crome" "{c'est} très bien" oui "on va dire que oui" "ça va" "c'est bon" cool ouais])
+        ^rand["Parfai alors! N'hésites pas à me demander quand tu veux changer le volume!" "OKi." "parfai alors." "Cool."]
+        ^pCall(ALVolumeSlider.hideTablet())
+    
+    
+    
+#speak louder#
+u:([
+    "["~can_you parler" parle] {"un peu" encore} plus fort"
+    "["~can_you [remonter amplifier intensifier monter augmenter]" remonte amplifie intensifie monte augmente] {"un peu" encore} le [volume son]"
+    "tu {ne} parles pas {assez} fort"
+    "je t'entends mal"
+    "je {ne} t'entends pas"
+])
+^gotoReactivate(increase_volume)
+
+u:($empty) %increase_volume
+^call(ALVolumeSlider.increaseVolume())
+    c1:(false) Je suis déjà au maximum, je ne peux pas monter plusse!
+    c1:(true) J'ai monté le volume. ça te va?
+    
+        u2:([
+            "encore {un peu}"
+            plusse
+            "un peu plus"
+            "plus [fort haut]"
+            "t'entends {toujours} pas"
+            "toujours pas {"assez fort"}"
+            ])
+            ^gotoReactivate(increase_volume)
+        
+        u2:([merci "{c'est} parfait" impéc "{c'est} impeccable" "{c'est} nickel" "{c'est} niquel crome" "{c'est} très bien" oui "on va dire que oui" "ça va" "c'est bon" cool ouais])
+        ^rand["Parfai alors! N'hésites pas à me demander quand tu veux changer le volume!" "OKi." "parfai alors." "Cool."]
+        ^pCall(ALVolumeSlider.hideTablet())
+        
+    
+proposal: %SAYVOLUME
+    Mon volume est maintenant réglé à $dialog_adjust_volume/currentVolume

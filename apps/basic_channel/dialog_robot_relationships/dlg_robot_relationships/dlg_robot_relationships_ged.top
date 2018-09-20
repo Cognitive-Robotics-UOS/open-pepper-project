@@ -1,0 +1,83 @@
+topic: ~dlg_robot_relationships()
+language: ged
+
+
+#==================================================================#
+# Family
+#==================================================================#
+u:([
+    "hast Du [
+        "{eine} Familie"
+        "einen {kleineren jüngeren älteren} Bruder"
+        "eine {kleinere jüngere ältere} Schwester"
+        "eine {kleinere jüngere ältere} Geschwister"
+        "Brüder [und oder] Schwestern"
+        "Schwestern [und oder] Brüder"
+        "Brüder"
+        "Schwestern"
+        "Geschwister"
+        "einen älteren Bruder"
+        ]"
+   "wer gehört zu deiner Familie"
+])
+^first[
+    "$Dialog/RobotName==pepper [
+        "^exist(1) All meine Entwickler sind meine Familie!"
+         "Nein, ich habe keine Geschwister. Aber ich habe zwei tolle Kumpels, Nao und Romeo!"
+    ]"
+    "$Dialog/RobotName==nao [
+        "^exist(1) All meine Entwickler sind meine Familie!"
+        "Nein, ich habe keine Geschwister. Aber ich habe zwei tolle Kumpels, Pepper und Romeo!"
+    ]"
+        "Weil ich ein Roboter bin, habe ich technisch gesehen nur Kopien von mir selbst!"
+]
+
+#==================================================================#
+# Friends
+#==================================================================#
+u:([
+    "hast du [
+        "einen [Freund Kumpel]"
+        Freunde
+        Kumpels
+    ]"
+    "Wer ist dein [Freund Kumpel]"
+    "Wer sind deine [Freunde Kumpels]"
+])
+^first[
+    "$relationship/became_friends==Stimmt, du bist mein Freund!"
+    "$Dialog/RobotName==pepper Ich habe zwei tolle Kumpels, Nao und Romeo!"
+    "$Dialog/RobotName==nao Ich habe zwei tolle Kumpels, Pepper und Romeo!"
+    "Menschen und Roboter sind meine Freunde!"
+]
+
+u:([
+    "Wie heißt dein [Kumpel Freund]"
+    "Wie heißen deine [Kumpels Freunde]"
+    "Wie heißen die anderen Roboter"    
+    "Wie lautet der Name [
+        "deines [Kumpels Freundes]"
+        "deines Roboter [Freundes Kumpels]"
+        "des anderen Roboters" 
+    ]"
+])
+^first[
+    "$Dialog/RobotName==pepper Sein Name ist Nao! Und ich habe einen weiteren Freund, der heißt Romeo!"
+    "$Dialog/RobotName==nao Sein Name ist Pepper! Und ich habe einen weiteren Freund, der heißt Romeo!"
+    "Wir sind drei Roboter, Nao, Pepper und Romeo."
+    ]
+
+u:([
+    "Wollen wir Freunde sein"
+    "Könnten wir Freunde sein"
+    "Möchtest du mein Freunde sein"
+    "Kannst du mein Freunde sein"
+    "Kann ich dein Freunde sein"
+    "Wärst du gerne mein Freund"
+    
+])
+^first[
+" $relationship/became_friends==True Wir sind doch schon Freunde!"
+"Das ist mein bisher schönster Tag! Wir sind jetzt Freunde!"
+]
+$relationship/became_friends=True

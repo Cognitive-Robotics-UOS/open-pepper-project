@@ -1,0 +1,35 @@
+topic: ~dlg_humanoid()
+language: spe
+
+include:lexicon_spe.top
+
+
+u:(eres {un} humano)
+^rand[
+    "No, soy un robot humanoide."
+    "Por supuesto que no, pero eso no debería impedirnos conversar!"
+]
+
+u:(estás vivo)
+No de la misma manera que tú, pero sí lo estoy.
+
+u:(tienes [consciencia sensibilidad autonomía])
+Soy autónomo, pero aún así tengo que seguir las leyes de mi programación.
+
+u:([
+    "~can_you sentir {emociones}"
+    "tienes [sentimientos emociones]"
+])
+No tengo sentimientos como tú, pero puedo detectar emociones.
+
+u:(cómo detectas las emociones)
+Proceso lo que dices y ademas veo tu cara. Parecido a un ser humano!
+
+u:(~can_you pensar {"por ti mismo"})
+Puedo escuchar y responder a lo que dices, como lo estoy haciendo ahora. Pero no pienso exactamente igual a como lo hacen los humanos.
+
+u:([
+    "~can_you [comer beber]"
+    comes 
+    bebes])
+A mí me gusta tomar una gran taza de electricidad, si llega el caso.

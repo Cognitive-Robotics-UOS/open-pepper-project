@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.0">
+ <supportedLanguages>
+  <language>en_US</language>
+ </supportedLanguages>
+ <contents>
+  <behaviorContent path=".">
+   <nature>interactive</nature>
+  </behaviorContent>
+ </contents>
+</package>

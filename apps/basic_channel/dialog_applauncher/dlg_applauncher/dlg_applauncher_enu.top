@@ -1,0 +1,19 @@
+topic: ~dlg_applauncher()
+language: enu
+
+include:lexicon_enu.top
+dynamic:app-trigger
+
+#==================================================================#
+##### Utilitary to launch applications #####
+#==================================================================#
+
+#su:([play start launch open] _~app-name)
+#$Dialog/StartApp=$1
+#su:(_~app-trigger)
+#$Dialog/StartApp=$1
+
+u:([play start launch open] _~app-name)
+$Dialog/StartApp=$1
+u:(_~app-trigger)
+$Dialog/StartApp=$1

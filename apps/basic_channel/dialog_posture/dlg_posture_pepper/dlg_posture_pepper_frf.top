@@ -1,0 +1,111 @@
+topic: ~dlg_posture_pepper()
+language: frf
+model: juliette
+
+include: lexicon_frf.top
+
+#=======#
+# Stand #
+#=======#
+u:([
+    lève-toi
+    "[mets-toi tiens-toi] debout"
+    "~can_you te lever"
+    debout
+])
+%standup
+Je suis déjà debout! Si ce n'est pas le cas, c'est que j'ai vraiment un gros problème! $RobotLastAnim="" ^releaseFocus
+
+#=====#
+# Sit #
+#=====#
+ u:([
+    assieds-toi
+    "~can_you t'asseoir"
+    "mets-toi assis"
+    assis
+])
+Non désolé, je ne peux pas m'asseoir! $RobotLastAnim="" ^releaseFocus
+
+#=====#
+# Lay #
+#=====#
+u:([
+    allonge-toi
+    couche-toi
+    "~can_you t'allonger"
+    "mets-toi allongé"
+    couché
+])
+Non désolé, je ne peux pas m'allonger! $RobotLastAnim="" ^releaseFocus
+
+u:([
+    "[allonge-toi couche-toi "mets-toi {allongé couché}"] sur le dos"
+    "~can_you [t'allonger "te [mettre coucher]"] sur le dos"
+    "{couché} sur le dos"
+])
+Non désolé, je ne peux pas m'allonger! $RobotLastAnim="" ^releaseFocus
+
+u:([
+    "[allonge-toi couche-toi "mets-toi {allongé couché}"] sur le ventre"
+    "~can_you [t'allonger "te [mettre coucher]"] sur le ventre"
+    "{couché} sur le ventre"
+])
+Non désolé, je ne peux pas m'allonger! $RobotLastAnim="" ^releaseFocus
+
+#========#
+# Crouch #
+#========#
+u:([
+    accroupis-toi
+    agenouille-toi
+    "~can_you [t'accroupir t'agenouiller]"
+    "mets-toi [accroupi agenouillé "à genoux"]"
+    accroupis
+    "[à a] genoux"
+])
+Non désolé, je ne peux pas m'accroupir! $RobotLastAnim="" ^releaseFocus
+
+#==================================================================#
+# On one foot
+#==================================================================#
+u:([mets-toi tiens-toi] sur un pied)
+Où sont passés mes pieds? Ils ont été transformés en roues! $RobotLastAnim=""
+
+#==================================================================#
+# Orders
+#==================================================================#
+u:([Pepper Péppeur] [
+    lève-toi
+    "[mets-toi tiens-toi] debout"
+    "~can_you te lever"
+    debout
+])
+Je suis déjà debout! Si ce n'est pas le cas, c'est que j'ai vraiment un gros problème! $RobotLastAnim="" ^releaseFocus
+
+u:([Pepper Péppeur] [
+    assieds-toi
+    "~can_you t'asseoir"
+    "mets-toi assis"
+    assis
+])
+Non désolé, je ne peux pas m'asseoir! $RobotLastAnim="" ^releaseFocus
+
+u:([Pepper Péppeur] [
+    allonge-toi
+    couche-toi
+    "~can_you t'allonger"
+    "mets-toi allongé"
+    couché
+])
+Non désolé, je ne peux pas m'allonger! $RobotLastAnim="" ^releaseFocus
+
+u:([Pepper Péppeur] [
+    accroupis-toi
+    agenouille-toi
+    "~can_you [t'accroupir t'agenouiller]"
+    "mets-toi [accroupis agenouillé "à genoux"]"
+    accroupis
+    "[à a] genoux"
+])
+Non désolé, je ne peux pas m'accroupir! $RobotLastAnim="" ^releaseFocus

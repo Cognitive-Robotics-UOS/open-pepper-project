@@ -1,0 +1,14 @@
+<div class="modal-header">
+<h3 class="modal-title">Permit Deactivation of the safety reflexes.</h3>
+</div>
+<div class="modal-body">
+  <p><b>Warning</b>: You are about to allow the deactivation of the very critical <b>Safety reflexes</b>. <br></p>
+  <p>These reflexes aim to protect the robot and above all avoid hurting people. <br>
+  Deactivating them should be done cautiously and for very specific reasons such as experimentation or usage in a controlled environment.</p>
+  <p><b>Note</b>: This change will not itself deactivate the safety relexes. Use ALMotion's API to deactivate momentarily one or several safety reflex(es).</p>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-click="ok()">I understand the risks</button>
+    <button class="btn btn-danger" type="button" ng-click="cancel()">No thanks, I prefer to be protected</button>
+</div>

@@ -1,0 +1,47 @@
+topic: ~dlg_can_you_repeat()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+
+#repeat what I said#
+
+u:({nao pepper} [
+    "was habe ich [gesagt "dich gefragt"]"
+    "was hast du [gehört verstanden]"
+    "welche frage habe ich dir gestellt"
+])
+^rand[
+    "Ich glaube, du hast $Dialog/MatchedInput gesagt."
+    "Ich denke, du hast $Dialog/MatchedInput gesagt."
+] ^stayInScope
+
+
+#repeat#
+
+u:({nao pepper} [
+    "wiederhole"
+    "~can_you wiederholen"
+    "ich habe nicht verstanden"
+    "ich habe nicht mitbekommen was du gesagt hast"
+    "ich habe dich nicht gehört"
+    "was hast du gesagt"
+])
+^rand[
+    "Ich werde wiederholen,"
+    "Ich habe gesagt,"
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([~repeat_it ~i_didnt_understand])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "    
+" \rspd=50\ $RobotRepeat \rspd=100\ "       
+" \rspd=300\ $RobotRepeat \rspd=100\ "        
+]        
+^stayInScope        

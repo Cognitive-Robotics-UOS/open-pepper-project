@@ -1,0 +1,195 @@
+topic: ~dlg_move_hands ^noPick()
+language: frf
+
+include: lexicon_frf.top
+
+    
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Demande moi des mouvements plus simples, j'ai encore un peu de mal à bouger comme vous les humains."
+    "Je ne comprends pas très bien ta requête, je n'ai sûrement pas encore appris ce mouvement."
+]
+
+u:^private([
+    "[
+        "comment [
+            "puis-je {"faire pour"}"
+            "{"est-ce que"} je fais pour"
+        ]"
+        "aide-moi à"
+    ] préciser ma demande"
+    "donne-moi ["un exemple" "des exemples"]"
+])
+[
+    "Essaie de me dire \pau=500\ lève le bras, ou bouge la tête, par exemple."
+    "Et bien, tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Je peux bouger, mais il faut que tu sois un peu plus précis."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, je recommence." "C'est reparti!"]
+^runBehavior($RobotLastAnim)
+^stayInScope
+
+#==================================================================#
+# Move - Hands
+#==================================================================#
+
+u:([ouvre "~can_you ouvrir"] [la ta] main gauche)
+Okay.
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:([ouvre "~can_you ouvrir"] [la ta] main droite)
+Okay.
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:([ouvre "~can_you ouvrir"] [les tes] mains)
+Et j'ouvre les mains!
+^runBehavior(dialog_move_hands/animations/OpenBothHands)
+$RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+
+u:([ouvre "~can_you ouvrir"] {la ta} main)
+[
+    "Quelle main?"
+    "Laquelle?"
+]
+
+    u1:({la ta} {main} gauche)
+    D'accord!
+    ^runBehavior(dialog_move_hands/animations/OpenLHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+    u1:({la ta} {main} droite)
+    D'accord!
+    ^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+    u1:(les deux)
+    Et j'ouvre les mains!
+    ^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+
+    u1:(~its_up_to_you)
+    ^rand[
+        "Alors, ce sera la gauche!
+        ^runBehavior(dialog_move_hands/animations/OpenLHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenLHand"
+        "Alors, ce sera la droite! 
+        ^runBehavior(dialog_move_hands/animations/OpenRHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    ]
+    
+u:([ferme "~can_you fermer"] [la ta] main gauche)
+^rand[
+    "Pas de problème."
+    "Si tu veux."
+    "Okay."
+]
+^runBehavior(dialog_move_hands/animations/CloseLHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+u:([ferme "~can_you fermer"] [la ta] main droite)
+^rand[
+    "Pas de problème."
+    "Si tu veux."
+    "Okay."
+]
+^runBehavior(dialog_move_hands/animations/CloseRHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+u:([ferme "~can_you fermer"] [les tes] mains)
+Et je ferme les mains!
+^runBehavior(dialog_move_hands/animations/CloseBothHands)
+$RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+u:([ferme "~can_you fermer"] {la ta} main)
+[
+    "Quelle main?"
+    "Laquelle?"
+]
+
+    u1:({la ta} {main} gauche)
+    D'accord!
+    ^runBehavior(dialog_move_hands/animations/CloseLHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+    u1:({la ta} {main} droite)
+    D'accord!
+    ^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+    u1:(les deux)
+    Et je ferme les mains!
+    ^runBehavior(dialog_move_hands/animations/CloseBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+    
+    u1:(~its_up_to_you)
+    ^rand[
+        "Alors, ce sera la gauche!
+        ^runBehavior(dialog_move_hands/animations/CloseLHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseLHand"
+        "Alors, ce sera la droite!
+        ^runBehavior(dialog_move_hands/animations/CloseRHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+    ]
+    
+u:(["[bouge "~can_you bouger"] [les tes]" "[fais fait "~can_you faire"] bouger tes"] mains)
+[
+    "Oui d'accord!"
+    "Si tu veux!"
+    "Okay!"
+]
+^rand[
+    "^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands"
+    "^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    "^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+]
+
+u:(["[bouge "~can_you bouger"] [la ta]" "[fais fait "~can_you faire"] bouger ta"] main gauche)
+Et hop!
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:(["[bouge "~can_you bouger"] [la ta]" "[fais fait "~can_you faire"] bouger ta"] main droite)
+Et tac!
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:([
+    "{les} mains en l'air"
+    "haut les mains"
+])
+Je me rends!
+^runBehavior(dialog_move_hands/animations/UpBothArms)
+$RobotLastAnim=dialog_move_hands/animations/UpBothArms
+
+u:(mets [les tes] mains ["derrière {"le dos"}" "en arrière"])
+Et voilà.
+^runBehavior(dialog_move_hands/animations/HandsBack)
+$RobotLastAnim=dialog_move_hands/animations/HandsBack
+
+u:([
+    "[fais fais-moi fais-nous fais-lui fais-leur]"
+    "~can_you {me lui nous leur} faire"
+] {un} _[
+    coucou
+    "au revoir"
+    salut
+    "bye bye"
+])
+$1 !
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+u:(["cache-toi les" "cache tes" "mets [tes les] mains devant [tes les]"] yeux)
+Okay! ^runBehavior(dialog_move_hands/animations/HandsOnEyes)
+$RobotLastAnim=dialog_move_hands/animations/HandsOnEyes

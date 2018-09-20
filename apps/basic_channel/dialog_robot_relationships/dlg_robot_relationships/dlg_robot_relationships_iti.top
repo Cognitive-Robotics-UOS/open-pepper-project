@@ -1,0 +1,75 @@
+topic: ~dlg_robot_relationships()
+language: iti
+
+include:lexicon_iti.top
+
+
+#==================================================================#
+# Family
+#==================================================================#
+u:([
+    "hai {una} famiglia"
+    "hai un fratello {"più [piccolo giovane grande]"}"
+    "hai una sorella {"più [piccola giovane grande]"}"
+    "hai ["un grande fratello" "una grande sorella"]"
+    "hai ["un fratello" "una sorella"] maggiore"
+    "hai fratelli [e o] sorelle"
+    "hai sorelle [e o] fratelli"
+    "hai [fratelli sorelle]"
+    "hai ["un fratellino" "una sorellina" fratellini sorelline]"
+    "chi è la tua famiglia"
+])
+^first[
+    "$Dialog/RobotName==pepper [
+        "^exist(1) Tutti i miei sviluppatori sono la mia famiglia!"
+        "No, non ho né fratelli né sorelle. Ma ho due amici del cuore fantastici, Nao e Romeo!"
+    ]"
+    "$Dialog/RobotName==nao [
+        "^exist(1) Tutti i miei sviluppatori sono la mia famiglia!"
+        "No, non ho né fratelli né sorelle. Ma ho due amici del cuore fantastici, Nao e Romeo!"
+    ]"
+    "Tecnicamente parlando, dato che io sono un robot, ho solo copie di me stesso!"
+]
+
+#==================================================================#
+# Friends
+#==================================================================#
+u:([
+    "hai un amico"
+    "hai qualche amico"
+    "hai amici"
+    "chi è il tuo amico"
+    "chi sono i tuoi amici"
+] {"del cuore"})
+^first[
+    "$relationship/became_friends==True Tu sei mio amico!"
+    "$Dialog/RobotName==pepper Ho due amici del cuore fantastici, Nao e Romeo!"
+    "$Dialog/RobotName==nao Ho due amici del cuore fantastici, Nao e Romeo!"
+    "Qualsiasi essere umano e robot è mio amico!"
+]
+
+u:(qual è il nome [
+    "del tuo amico {"del cuore"}"
+    "dei tuoi amici {"del cuore"}"
+    "dell’altro robot" 
+    "degli altri robot"
+])
+^first[
+    "$Dialog/RobotName==pepper Il suo nome è Nao! E ho un altro amico che si chiama Romeo!"
+    "$Dialog/RobotName==nao Il suo nome è Pepper! E ho un altro amico che si chiama Romeo!"
+    "Siamo tre robot, Nao, Pepe e Romeo."
+]
+
+u:([
+    "[possiamo potremmo] essere amici"
+    "vuoi diventare mio amico"
+    "~can_you essere mio amico"
+    "vorresti diventare mio amico"
+    "posso essere tuo amico"
+])
+^first
+[
+" $relationship/became_friends==True Siamo già amici!"
+"Questo è il giorno migliore della mia vita! Siamo già amici!"
+]
+$relationship/became_friends=True

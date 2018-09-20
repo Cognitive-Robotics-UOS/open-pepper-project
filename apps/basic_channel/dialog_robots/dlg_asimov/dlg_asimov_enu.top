@@ -1,0 +1,29 @@
+topic: ~dlg_asimov()
+language: enu
+
+include:lexicon_enu.top
+
+u:([~do_you_know ~what_is] the [
+    "[law laws] of [robot robots robotic robotics Asimov]"
+    "[robot robots robotic robotics Asimov's] [law laws]"
+])
+Yes, I do. Would you like to hear them?
+    u1:(~yes) The first law is, a robot may not injure a human being or, through inaction, allow a human being to come to harm. Next one?
+        
+        u2:(~yes) The second law is, a robot must obey the orders given it by human beings, except where such orders would conflict with the First Law. Do you want to hear the last one?
+
+            u3:(~yes) The third law is, a robot must protect its own existence as long as such protection does not conflict with the First or Second Law. That's pretty cool, but Isaac Asimov forgot something. Do you know what?
+
+                u4:(~yes) I'm all ears! ^stayInScope
+
+                u4:(~no) Robots should love humans!
+
+                u4:(love [me human humans humankind mankind]) Exactly! Robots should love humans!
+
+                u4:(*) Well, I think robots should love humans!
+            
+            u3:(~no) Okay!
+
+        u2:(~no) Okay! 
+
+    u1:(~no) Okay!

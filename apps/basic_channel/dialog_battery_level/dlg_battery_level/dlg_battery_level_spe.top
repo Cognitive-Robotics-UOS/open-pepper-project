@@ -1,0 +1,83 @@
+topic: ~dlg_battery_level()
+language: spe
+
+include:lexicon_spe.top
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+u:([
+    "~what_is el nivel de tu batería"
+    "~what_is tu nivel de batería"
+    "cuánta ["energía de la batería" energía batería] tienes"
+    "qué cantidad de [batería energía] tienes"
+    "cuánta [batería energía] te queda"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Mi batería está completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Mi batería está casi completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Mi batería está casi completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Mi batería está cargada a la mitad."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Mi batería está cargada a la mitad."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Mi batería se está agotando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Mi batería se está agotando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Mi batería está prácticamente agotada, por favor conecta mi cargador."
+    "Mi sensor está desactivado, no te puedo dar esa información."
+]
+
+
+
+u:([
+    "~do_you_need cargar tu batería"
+    "~do_you_need [enchufarte conectarte cargarte]"
+    "~do_you_need [utilizar "ir a"] tu estación de carga"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 No, gracias, mi batería está completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 No, gracias, mi batería está completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 No, gracias, mi batería está completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Aún no, mi batería está cargada a la mitad."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Todavía no, mi batería está cargada a la mitad."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Sí por favor, mi batería se está agotando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Sí por favor, mi batería se está agotando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Sí por favor, mi batería está prácticamente agotada, por favor conecta mi cargador."
+    "Mi sensor está desactivado, no te puedo dar esa información."
+]
+
+u:(["tienes hambre" "estás hambriento"])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 No tengo nada de hambre, gracias. Mi batería está completamente cargada."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 No por el momento, mi batería está bien cargada!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 No por el momento, mi batería está bien cargada!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Estoy bien, todavía tengo mucha energía."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Estoy bien, todavía tengo mucha energía."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 Estoy empezando a sentir hambre, podrías conectar mi cargador?"
+    "No sé, lo siento."
+]
+
+u:(~what_is el nivel exacto de tu batería)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "Mi batería se encuentra actualmente en un $BatteryChargeChanged por ciento."
+    "No sé, lo siento."
+]
+
+
+u:(estás enchufado)
+^first[
+    "[$BatteryPowerPluggedChanged==true $BatteryChargingFlagChanged==true $ALBattery/ConnectedToChargingStation==true] Sí, me estoy cargando."
+    "$BatteryPowerPluggedChanged==false $BatteryFullChargedFlagChanged==false $BatteryChargingFlagChanged==false  No, no me estoy cargando."
+    "Lo siento, no te puedo dar esa información."
+]
+
+u:(~are_you cargando)
+^first[
+    "$BatteryChargingFlagChanged==true Sí, me estoy cargando."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==true No, he dejado de cargar porque mi batería está llena."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==false No, no me estoy cargando."
+    "Lo siento,no te puedo dar esa información."
+]

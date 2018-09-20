@@ -1,0 +1,5 @@
+topic: ~dlg_suggest_app ^noPick()
+language: frf
+
+proposal: %suggestapp
+Petite astuce: tu peux aussi lancer $Dialog/AppName en me disant $Dialog/Trigger !

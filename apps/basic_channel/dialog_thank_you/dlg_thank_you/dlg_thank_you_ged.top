@@ -1,0 +1,25 @@
+topic: ~dlg_thank_you()
+language: ged
+
+include:lexicon_ged.top
+
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+
+u:([
+    "danke {sehr}"
+    "vielen dank"
+] {~ald_robots})
+^rand[
+    "Bitte sehr {$user/name} !"
+    "Gern geschehen {$user/name} !"
+]
+
+#==================================================================#
+recover:
+#==================================================================#
+u:([~you_are ~it_is] [süß nett freundlich]) Danke sehr {$user/name}!
+u:({~you_are ~it_is} [großartig wunderbar erstaunlich]) Danke sehr {$user/name}!
+u:(bravo) Danke sehr {$user/name}!

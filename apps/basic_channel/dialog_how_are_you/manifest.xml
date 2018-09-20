@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.3" uuid="dialog_how_are_you">
+  <names>
+    <name lang="de_DE">dialog_how_are_you</name>
+    <name lang="de_DE-x-scrald">dialog_how_are_you</name>
+    <name lang="en_US">dialog_how_are_you</name>
+    <name lang="en_US-x-scrald">dialog_how_are_you</name>
+    <name lang="es_ES">dialog_how_are_you</name>
+    <name lang="es_ES-x-scrald">dialog_how_are_you</name>
+    <name lang="fr_FR">dialog_how_are_you</name>
+    <name lang="fr_FR-x-scrald">dialog_how_are_you</name>
+    <name lang="it_IT">dialog_how_are_you</name>
+    <name lang="it_IT-x-scrald">dialog_how_are_you</name>
+    <name lang="ja_JP">dialog_how_are_you</name>
+    <name lang="ja_JP-x-scrald">dialog_how_are_you</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann auf Fragen, wie z.B.
+Beispiele für unterstützte Eingaben :
+"Wie geht es dir?" oder
+"Wie geht's?" antworten. </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann auf Fragen, wie z.B.
+Beispiele für unterstützte Eingaben :
+"Wie geht es dir?" oder
+"Wie geht's?" antworten. </description>
+    <description lang="en_US">The robot can answer to how are you typed questions.
+Examples of supported inputs:
+"How are you?"
+"How goes it?"</description>
+    <description lang="en_US-x-scrald">The robot can answer to how are you typed questions.
+Examples of supported inputs:
+"How are you?"
+"How goes it?"</description>
+    <description lang="es_ES">El robot puede responder a preguntas como "¿qué tal?" 
+Ejemplos de frases entendidas por el robot :
+¿ Qué tal ?</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a preguntas como "¿qué tal?" 
+Ejemplos de frases entendidas por el robot :
+¿ Qué tal ?</description>
+    <description lang="fr_FR">Le robot peut répondre à des questions du type "comment ça va ?".
+Exemples de phrases comprises par le robot :
+"Comment ça va ?"
+"Comment vas-tu ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des questions du type "comment ça va ?".
+Exemples de phrases comprises par le robot :
+"Comment ça va ?"
+"Comment vas-tu ?"</description>
+    <description lang="it_IT">
+Il robot è in grado di rispondere mentre si digitano le domande.
+Esempi di input supportati:
+"Come stai?"
+"Come va?"
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot è in grado di rispondere mentre si digitano le domande.
+Esempi di input supportati:
+"Come stai?"
+"Come va?"
+</description>
+    <description lang="ja_JP">ロボットは、単純な会話を交わすことができます。
+サポートされる入力の例:
+「お元気ですか？」
+「調子はどう？」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、単純な会話を交わすことができます。
+サポートされる入力の例:
+「お元気ですか？」
+「調子はどう？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_how_are_you">
+      <topic path="dlg_how_are_you/dlg_how_are_you_ged.top" language="de_DE"/>
+      <topic path="dlg_how_are_you/dlg_how_are_you_enu.top" language="en_US"/>
+      <topic path="dlg_how_are_you/dlg_how_are_you_spe.top" language="es_ES"/>
+      <topic path="dlg_how_are_you/dlg_how_are_you_frf.top" language="fr_FR"/>
+      <topic path="dlg_how_are_you/dlg_how_are_you_iti.top" language="it_IT"/>
+      <topic path="dlg_how_are_you/dlg_how_are_you_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+  <services>
+    <service name="user_mood" autorun="true" execStart="/usr/bin/python2 user_mood.py"/>
+  </services>
+</package>

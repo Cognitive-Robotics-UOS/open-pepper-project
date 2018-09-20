@@ -1,0 +1,69 @@
+topic: ~dlg_ade()
+language: frf
+
+include:lexicon_frf.top
+
+
+concept:(show_tablet) ^rand[
+    "^run(dialog_store/show_tablet/Show_tablet_1)"
+    "^run(dialog_store/show_tablet/Show_tablet_2)"
+    "^run(dialog_store/show_tablet/Show_tablet_3)"
+    "^run(dialog_store/show_tablet/Show_tablet_4)"
+    "^run(dialog_store/show_tablet/Show_tablet_5)"
+]
+
+###########################################################################################
+# How do I install an application?
+###########################################################################################
+u:([
+    "comment {"["je fais" "on fait" faire] pour" "{"est-ce que"} je peux" puis-je "est-ce qu'on peut" "on peut" peut-on} installer une {nouvelle autre} [~apps_sing_fem activité]"
+    "comment ["on installe" j'installe] ["une {nouvelle autre} [~apps_sing_fem activité]" "[les des] [~apps_plur activités]"]"
+])
+C'est facile, il faut juste aller sur le store Aldébaran et choisir les activités à installer.
+#C'est facile, je vais ouvrir la page du store aldébaran sur ton ordinateur. $webpage=ade_allapps ^runBehavior(abilities_split-285472/webpage)
+#Voilà, tu peux choisir les applications que tu veux installer.
+#messageIN: open store page
+
+#u:(je [veux voudrais] installer une {nouvelle autre} danse)
+#Ok, allons sur la page des danses alors. $webpage=ade_dances ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+#u:(je [veux voudrais] installer un {nouveau autre} jeu)
+#Ok, allons sur la page des jeux alors. $webpage=ade_games ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+#u:(je [veux voudrais] installer une {nouvelle autre} histoire)
+#Ok, allons sur la page des histoires alors. $webpage=ade_stories ^runBehavior(abilities_split-285472/webpage)
+##messageIN: open store page
+
+###########################################################################################
+# How do I delete an application?
+###########################################################################################
+u:([
+    "comment {"["je fais" "on fait" faire] pour" "{"est-ce que"} je peux" puis-je "est-ce qu'on peut" "on peut" peut-on} [supprimer désinstaller retirer effacer] une [~apps_sing_fem activité]"
+    "comment [on je] [supprime désinstalle retire efface] ["une [~apps_sing_fem activité]" "[les des] [~apps_plur activités]"]"
+    "je [veux voudrais] [supprimer désinstaller retirer effacer] ["une [~apps_sing_fem activité]" "[les des] [~apps_plur activités]"]"
+])
+^first[
+    "$rundialogInstalled==1
+    C'est facile, il faut juste aller sur le store Aldébaran, onglet manage, et me sélectionner dans la liste de robots. Ensuite, va dans installations, clique sur l'icône de l'activité et choisis supprimer. Si l'option ne s'affiche pas, c'est qu'il s'agit d'une activité installée par défaut, qui ne peut donc pas être supprimée."
+    
+    "^pCall(_ALAutonomousTablet.setMode(DisplayApplications))
+    ~show_tablet
+    C'est facile, il te suffit d'appuyer quelques secondes sur l'icône de l'activité que tu veux supprimer. Entre tes identifiants et valide, et voilà!"
+]
+
+u:(["je [veux voudrais] [supprimer désinstaller retirer]" supprime désinstalle retire] _~app-name)
+$delete_app=$1
+Tu es sûr que tu veux supprimer $delete_app ?
+    u1:(~yes)
+    ^first[
+        "$rundialogInstalled==1
+        Pour supprimer $delete_app , il faut juste aller sur le store Aldébaran, onglet manage, et me sélectionner dans la liste de robots. Ensuite, va dans installations, clique sur l'icône de $delete_app et choisis supprimer. Si l'option ne s'affiche pas, c'est qu'il s'agit d'une activité installée par défaut, qui ne peut donc pas être supprimée."
+        
+        "^call(ALRALManagerModule.removeApp($delete_app))
+        Okay, entre juste tes identifiants s'il te plaît!"
+    ]
+    
+    u1:(~no)
+    Okay! ^releaseFocus

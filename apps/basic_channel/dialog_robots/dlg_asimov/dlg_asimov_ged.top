@@ -1,0 +1,28 @@
+topic: ~dlg_asimov()
+language: ged
+
+include:lexicon_ged.top
+
+concept:(robotic_law) [robotergesetze "gesetze für roboter" "grundregeln des roboterdienstes" "asimovs gesetze" "gesetze der robotik" "gesetze asimovs"]
+
+u:([~do_you_know ~what_is "wie lauten"] die ~robotic_law )
+Ja, kenne ich. Möchtest du sie hören? 
+    u1:(~yes) Das erste Gesetz lautet, ein Roboter darf einen Menschen niemals verletzen oder durch Untätigkeit zulassen, dass ein Mensch Schaden nimmt. Das nächste?
+        
+        u2:(~yes) Das zweite Gesetz lautet, ein Roboter muss den ihm von einem Menschen gegebenen Befehlen gehorchen, es sei denn, ein solcher Befehl würde mit dem ersten Gesetz kollidieren. Möchtest du das letzte hören?
+
+            u3:(~yes) Das dritte Gesetz lautet, ein Roboter muss seine Existenz beschützen, solange dieser Schutz nicht mit dem ersten oder zweiten Gesetz kollidiert. Weißt du was?
+
+                u4:(~yes) Ich bin ganz Ohr! ^stayInScope
+
+                u4:(~no) Roboter sollten Menschen lieben!
+
+                u4:([mich "{den} Menschen" "die menschheit" "menschliche wesen"] lieben) Genau! Roboter sollten Menschen lieben!
+
+                u4:(*) Also, ich glaube, Roboter sollten Menschen lieben!
+            
+            u3:(~no) Okay!
+
+        u2:(~no) Okay! 
+
+    u1:(~no) Okay!

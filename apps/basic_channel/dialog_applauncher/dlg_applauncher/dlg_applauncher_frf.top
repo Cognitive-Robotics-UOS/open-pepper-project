@@ -1,0 +1,19 @@
+topic: ~dlg_applauncher()
+language: frf
+
+include:lexicon_frf.top
+dynamic:app-trigger
+
+#==================================================================#
+##### Utilitary to launch applications #####
+#==================================================================#
+
+#su:([lance démarre] _~app-name)
+#$Dialog/StartApp=$1
+#su:(_~app-trigger)
+#$Dialog/StartApp=$1
+
+u:([lance démarre] _~app-name)
+$Dialog/StartApp=$1
+u:(_~app-trigger)
+$Dialog/StartApp=$1

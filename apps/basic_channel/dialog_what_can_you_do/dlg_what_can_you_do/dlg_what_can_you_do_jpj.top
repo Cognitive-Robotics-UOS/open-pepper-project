@@ -1,0 +1,225 @@
+topic: ~dlg_what_can_you_do()
+language: jpj
+
+include:lexicon_jpj.top
+
+
+concept:(roboappli) [アプリ ロボアプリ]
+
+concept:(show_tablet) ^rand[
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_1)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_2)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_3)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_4)"
+    "^run(dialog_what_can_you_do/show_tablet/Show_tablet_5)"
+]
+
+###########################################################################################
+# Robot's function
+###########################################################################################
+u:([
+    "{あなたの}存在意義は何{ですか}"
+    "{あなたに}存在意義は[ありますか あるの]"
+])
+^rand[
+    "僕はフレンドリーなロボットです。"
+    "僕は人助けをするために作られました。"
+] ^gotoReactivate(display_store_oncondition)
+
+###########################################################################################
+# What can you not do
+###########################################################################################
+u:(出来ない事は[ありますか あるの　"何{ですか}"])
+ええと、逆立ちができません。
+
+###########################################################################################
+# What can you do: private
+###########################################################################################
+u:^private([
+    他には
+    "何か他の ~roboappli を見せて{下さい}"
+    "他の ~roboappli {は}[あったりしますか　あったりする　ありますか あるの]"
+    "もっと見せて{下さい}"
+    "{例えば}どのような ~roboappli があるのか見せて{下さい}"
+])
+$askedbyuser=1
+^gotoReactivate(display_store)
+
+###########################################################################################
+# Utility: display store on tablet
+###########################################################################################
+u:($empty) %display_store
+^pCall(_ALAutonomousTablet.setMode(DisplayApplications))
+~show_tablet
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps<5 \vct=180\派い！\vct=130\これが僕の出きることです！好きなのを選んでください！"
+    "このとおりたくさんあるので、この中から僕と一緒にやりたいロボアプリを選んでください！"
+]
+
+u:($empty) %display_store_oncondition
+^call(PackageManager.hasPackage("applauncher"))
+    c1:(true)
+    ^gotoReactivate(display_store)
+    
+    c1:(false)
+    ^first[
+    "$askedbyuser==1 アップランチャーがインス斗ールされて無いので、タブレットにアプリを表示出来ないです！すみません！ ^clear(askedbyuser)"
+    " \pau=1\ "
+    ]
+
+###########################################################################################
+# Shortcut to display store on tablet
+###########################################################################################
+u:([
+    "[ロボアプリ アプリケーション　アプリ]{を}[全部　全て][見せて　見せてよ　見せてちょ　見せてちょうだい　見せてください　見せてほしいです　見せてくれない　見せてくれないか　見せてくんない　見せてもらえる　見せてもらえるかな　見せてもらえませんか　みして　みしてよ　みしてちょ　みしてちょうだい　みしてください　みしてほしいです　みしてくれない　みしてくれないか　みしてくんない　みしてもらえる　みしてもらえるかな　みしてもらえませんか]"
+    "[ロボアプリ アプリケーション　アプリ]{の}一覧{を}[見せて　見せてよ　見せてちょ　見せてちょうだい　見せてください　見せてほしいです　見せてくれない　見せてくれないか　見せてくんない　見せてもらえる　見せてもらえるかな　見せてもらえませんか　みして　みしてよ　みしてちょ　みしてちょうだい　みしてください　みしてほしいです　みしてくれない　みしてくれないか　みしてくんない　みしてもらえる　みしてもらえるかな　みしてもらえませんか]"
+    "ペッパータブレット"
+])
+$askedbyuser=1
+^gotoReactivate(display_store_oncondition)
+
+###########################################################################################
+# What can you do: app categories
+###########################################################################################
+u:([
+    "何が[できる　できるの できるん　できますか　できるのかな できるんですか]" 
+    "[どういう どんな]ことが[できる　できるの できるん　できますか　できるのかな できるんですか]"
+    "[なにする なにをする　なんのための]ロボット[なの　ですか　なんですか　なんでしょうか]"　
+    "できる事{を}{全て}教えて{下さい}"
+]) %abilitieslist
+$size_apps="^size(~app-name)"
+$size_dance="^size(~app-dance)"
+$size_game="^size(~app-game)"
+$size_story="^size(~app-story)"
+^first[
+    "$size_apps>0
+    ^first[
+        "$size_apps==1 ^gotoReactivate(listoneapp)"
+        "$size_apps<6 ^gotoReactivate(listapps)"
+        "^gotoReactivate(listapps) $hazmoarapps=1"
+    ]"
+    "まだロボアプリが何もインストールされていないため、踊ったり遊んだり物語を語る事ができません。"
+]
+
+#only 1 app
+u:($empty) %listoneapp
+$AppTmp="~app-name"
+^rand["まだ大したことはできないんですが、" "大したことじゃないんですけど、"]
+今の所、 ["~app-dance を踊ること" "~app-game で遊ぶこと" "~app-story をお話しすること" "~app-name"]が出来ます。試してみますか？
+    u1:(~yes)
+    やったね！ $Dialog/StartApp=$AppTmp
+    ^clear(AppTmp)
+    u1:(~no)
+    わかりました。よかったらアルデバランストアーに沢山のロボアプリがあるからじゃんじゃんインス斗ールし茶ってネ？
+
+#more than 1 app
+u:($empty) %listapps
+#えっっっ戸ですねぇぇ、
+^first["[$size_dance>0 $size_game>0 $size_story>0]
+    ^first[
+        "$size_dance>0 ^enumerate(~app-dance , 3)　を踊ったり、"
+        "$NoDanceInstalled=1"
+    ]
+    ^first[
+        "$size_game>0 ^enumerate(~app-game , 3)　で遊んだり、"
+        "$NoGameInstalled=1"
+    ]
+    ^first[
+        "$size_story>0 ^enumerate(~app-story , 3)　をお話しする事ができます。"
+        "$NoStoryInstalled=1"
+    ]"
+"^enumerate(~app-name , 5)　ができます。"
+]
+\pau=500\
+^first[
+    "$hazmoarapps==1 ^rand["まぁ実は他にもあるんですけど、全部言っテたらキリが無いんでこんなもんにしておきますね？" "本当の事を言うと他にもあるんですけど、全部言っテたらキリが無いんでこんなもんにしておきますね？"] \pau=500\ "
+    " \pau=1\ "
+]
+やって観たいロボアプリがあれば、奈ニ奈にを起動して、って言ってください！　例えば、^rand[~app-name]　を起動して、という感じにね？ \pau=500\
+^first[
+    "$hazcategories==1 後は、何が踊れるのお？という感じに聞いてもらうと、踊れるダンスをリストアップしますよ？ゲームや物語も同じ要領です！ \pau=500\ "
+    " \pau=1\ "
+]
+ロボアプリをお勧めすることや、ランダムに選ぶことも出来るので、要望があれば言ってくださいね？ \pau=500\
+アプリの一覧を僕のタブレットに表示したい場合は、タブレットをタッチしてもらうか、ペッパー田ぶれっとと言ってください！
+
+
+    u1:(["選んで下さい" "好きなの選んで"　"なんでもいい"　"かわりに選んで"　"ランダム{で}"])
+    ^gotoReactivate(randlaunch)
+    u1:([
+    "[欲しい 試してみたい　やってみたい　興味ある　興味のある　試したい] ~roboappli [がありません がない　はない　はありません]"
+    "[欲しい 試してみたい　やってみたい　興味ある　興味のある　試したい][の　もん　もの　やつ]{は　が}[ない ありません]"
+    "[どれも なにも　なんも　全然　まったく]興味ない{です　や　わ}"
+    "[やならい　いらない　興味ない　いやいいや　結構です　やりたくない]"
+    ])
+    わかりました。
+    ^gotoReactivate(display_store_oncondition)
+    u1:(お勧め{の}{やつ　で　~roboappli}) %suggestapp
+    $size_apps="^size(~app-name)"
+    ^first[
+        "$size_apps>0 ^gotoReactivate(try_app)"
+        "残念ながらまだロボアプリがインス斗ールされていないので、踊ったり、遊んだり、物語をお聞かせすることができないんです。"
+    ]
+    u1:("[最初に言った　はじめに言った][~roboappli　やつ　で]")
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/1
+    u1:([一番 一番目　一番最初の　最初の]{~roboappli　やつ　で})
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/1
+    u1:("二番目に言った[~roboappli　やつ　ので]")
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/2
+    u1:([二番 二番目])
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/2 　　
+    u1:("[三番目　三番目に言った]{~roboappli　やつ　ので}")
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/3
+    u1:(三番)
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/3
+    u1:("最後に言った[~roboappli　やつ　で]")
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/Last
+    u1:(最後の)
+    了解です。$Dialog/StartApp=$Dialog/Enumerate/Last
+    u1:(e:Dialog/NotSpeaking5)
+    \pau=1\
+    
+###########################################################################################
+# What can you do: suggest an app
+###########################################################################################
+u:(お勧め ["の ~roboappli を教えて{下さい　くれ　ちょうだい　ほしいです　ほしい　ちょ　もらえますか}" "は{何 なんですか　なんでしょうか}"]) %suggestapp
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 ^gotoReactivate(try_app)"
+    "残念ながらまだロボアプリがインス斗ールされていないので、踊ったり、遊んだり、物語をお聞かせすることができないんです。"
+]
+
+u:($empty) %try_app
+$RandDance="^rand[~app-dance]"
+$RandGame="^rand[~app-game]"
+$RandStory="^rand[~app-story]"
+$randapp="^rand[~app-name]"
+
+^first[
+    "^rand[
+    "$RandDance　が踊れます。試してみますか？ $AppTmp=$RandDance"
+    "$RandGame で遊べます。試してみますか？ $AppTmp=$RandGame"
+    "$RandStory　をお聞かせすることができます。試してみますか？  $AppTmp=$RandStory"
+    ]"
+    "$randapp　ができます。試してみますか？ $AppTmp=$randapp"
+]
+    u1:(~yes)
+    やったね！ $Dialog/StartApp=$AppTmp
+    ^clear(AppTmp)
+    u1:(~no)
+    わかりました。
+    ^gotoReactivate(display_store_oncondition)
+    
+u:(~roboappli をランダムに選んで{下さい}) %randlaunch
+$size_apps="^size(~app-name)"
+^first[
+    "$size_apps>0 本当に僕が選んでも良いんですか？"
+    "申し訳ありませんが、今の所利用できるロボアプリがありません。^releaseFocus"
+]
+    u1:(~yes)
+    $choose_app="^rand[~app-name]"
+    了解です！ $Dialog/StartApp=$choose_app
+    u1:(~no)
+    わかりました。
+    ^gotoReactivate(display_store_oncondition)

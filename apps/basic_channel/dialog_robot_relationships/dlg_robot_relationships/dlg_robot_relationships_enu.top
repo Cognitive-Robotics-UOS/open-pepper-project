@@ -1,0 +1,77 @@
+topic: ~dlg_robot_relationships()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Family
+#==================================================================#
+u:([
+    "~do_you_have [
+        "_[a any] family"
+        "{a} {little younger elder} [brother sister sibling]"
+        "brothers [and or] sisters"
+        "sisters [and or] brothers"
+        brothers
+        sisters
+        siblings
+        ]"
+    "~who_is your family"
+])
+^first[
+    "$Dialog/RobotName==pepper [
+        "^exist(1) All my developpers are my family!"
+        "No, I don't have any siblings. But I have two cool buddies, Nao and Romeo!"
+    ]"
+    "$Dialog/RobotName==nao [
+        "^exist(1) All my developpers are my family!"
+        "No, I don't have any siblings. But I have two cool buddies, Pepper and Romeo!"
+    ]"
+    "Technically speaking, since I'm a robot, I only have copies of myself!"
+]
+
+#==================================================================#
+# Friends
+#==================================================================#
+u:([
+    "~do_you_have [
+        "a  [friend buddy]"
+        "{any} [friends buddies]"
+    ]"
+    "~who_is your [friend buddy]"
+    "~who_are your [friends buddies]"
+])
+^first[
+    "$relationship/became_friends==True You are my friend! "
+    "$Dialog/RobotName==pepper I have two cool buddies, Nao and Romeo!"
+    "$Dialog/RobotName==nao I have two cool buddies, Pepper and Romeo!"
+    "Any humans and robots are my friends!"
+]
+
+u:([
+    "~what_is your [buddy's friend's] name"
+    "what are your [buddies' friends'] names"
+    "~what_is the name of [
+        "your {robot} [buddy friend]"
+        "the other [robot robots]"
+    ]"
+])
+^first[
+    "$Dialog/RobotName==pepper His name is Nao ! And I have another friend called Romeo !"
+    "$Dialog/RobotName==nao His name is Pepper ! And I have another friend called Romeo !"
+    "We are three robots, Nao, Pepper and Romeo."
+]
+
+u:([
+    "[can could] we be friends"
+    "do you want to be my friend"
+    "[~can_you "do you want to" "would you like to"] be my friend"
+    "~can_i be your friend"
+])
+^first
+[
+" $relationship/became_friends==True We are already friends! "
+"This is my best day ever! We are now friends! "
+]
+$relationship/became_friends=True

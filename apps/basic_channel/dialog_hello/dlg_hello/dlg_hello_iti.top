@@ -1,0 +1,31 @@
+topic: ~dlg_hello()
+language: iti
+
+#==================================================================#
+#### Robot greets back when it matches one of the inputs ####
+#==================================================================#
+
+u:(ciao)
+Ciao {$user/name} !
+
+
+u:(ciao Pepper)
+Arrivederci {$user/name} !
+
+u:(buongiorno)
+^first[
+    "$Dialog/Hour<12 Buongiorno {$user/name} !"
+    "È ancora mattina {$user/name} ? Buona giornata, allora!"
+]
+
+u:(buon pomeriggio)
+^first[
+    "$Dialog/Hour>11 $Dialog/Hour<19 Buon pomeriggio {$user/name} !"
+    "Non lo è? Buon pomeriggio, allora!"
+]
+
+u:(buonasera)
+^first[
+    "$Dialog/Hour>16 Buonasera {$user/name} !"
+    "È già sera {$user/name} ? Buona sera, allora!"
+]

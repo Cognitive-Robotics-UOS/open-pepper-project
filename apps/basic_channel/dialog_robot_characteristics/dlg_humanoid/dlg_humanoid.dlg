@@ -1,0 +1,6 @@
+multilanguage:dlg_humanoid
+  ged:dlg_humanoid_ged.top
+  enu:dlg_humanoid_enu.top
+  spe:dlg_humanoid_spe.top
+  frf:dlg_humanoid_frf.top
+  iti:dlg_humanoid_iti.top

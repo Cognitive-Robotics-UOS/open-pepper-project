@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.2" uuid="dialog_touch">
+  <names>
+    <name lang="de_DE">dialog_touch</name>
+    <name lang="de_DE-x-scrald">dialog_touch</name>
+    <name lang="en_US">dialog_touch</name>
+    <name lang="en_US-x-scrald">dialog_touch</name>
+    <name lang="es_ES">dialog_touch</name>
+    <name lang="es_ES-x-scrald">dialog_touch</name>
+    <name lang="fr_FR">dialog_touch</name>
+    <name lang="fr_FR-x-scrald">dialog_touch</name>
+    <name lang="it_IT">dialog_touch</name>
+    <name lang="it_IT-x-scrald">dialog_touch</name>
+    <name lang="ja_JP">タッチ対話</name>
+    <name lang="ja_JP-x-scrald">タッチ対話</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann bei Berührung über seine Tastsensoren reagieren. 
+Beipiele für unterstützte Eingaben: 
+"Darf ich dich berühren?" 
+Berühre meinen Kopfsensor </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann bei Berührung über seine Tastsensoren reagieren. 
+Beipiele für unterstützte Eingaben: 
+"Darf ich dich berühren?" 
+Berühre meinen Kopfsensor </description>
+    <description lang="en_US">The robot can react to his tactile sensors being touched.
+Examples of supported inputs:
+"Can I touch you?" 
+Touch head bumper</description>
+    <description lang="en_US-x-scrald">The robot can react to his tactile sensors being touched.
+Examples of supported inputs:
+"Can I touch you?" 
+Touch head bumper</description>
+    <description lang="es_ES">El robot puede reaccionar a sus sensores táctiles cuando lo tocan. 
+Ejemplos de frases entendidas por el robot :
+"¿Puedo tocarte?"
+Toca la parte superior de la cabeza</description>
+    <description lang="es_ES-x-scrald">El robot puede reaccionar a sus sensores táctiles cuando lo tocan. 
+Ejemplos de frases entendidas por el robot :
+"¿Puedo tocarte?"
+Toca la parte superior de la cabeza</description>
+    <description lang="fr_FR">Le robot peut réagir lorsque l'on touche ses capteurs tactiles.
+Exemples de phrases comprises par le robot :
+"Je peux te toucher?"
+Toucher le capteur tactile de la tête</description>
+    <description lang="fr_FR-x-scrald">Le robot peut réagir lorsque l'on touche ses capteurs tactiles.
+Exemples de phrases comprises par le robot :
+"Je peux te toucher?"
+Toucher le capteur tactile de la tête</description>
+    <description lang="it_IT">
+Il robot è in grado di reagire al tocco dei suoi sensori tattili.
+Esempi di input supportati:
+"Posso toccarti?" 
+Tocco la protezione della testa
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot è in grado di reagire al tocco dei suoi sensori tattili.
+Esempi di input supportati:
+"Posso toccarti?" 
+Tocco la protezione della testa
+</description>
+    <description lang="ja_JP">ロボットは、知覚センサーに触れられると反応します。
+サポートされる入力の例:
+「さわってもいいですか？」
+ヘッドバンパーに触るなど。</description>
+    <description lang="ja_JP-x-scrald">ロボットは、知覚センサーに触れられると反応します。
+サポートされる入力の例:
+「さわってもいいですか？」
+ヘッドバンパーに触るなど。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="headster_egg">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/head_touched">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_touch_head" typeVersion="1.0">
+      <topic path="dlg_touch_head/dlg_touch_head_ged.top" language="de_DE"/>
+      <topic path="dlg_touch_head/dlg_touch_head_enu.top" language="en_US"/>
+      <topic path="dlg_touch_head/dlg_touch_head_spe.top" language="es_ES"/>
+      <topic path="dlg_touch_head/dlg_touch_head_frf.top" language="fr_FR"/>
+      <topic path="dlg_touch_head/dlg_touch_head_iti.top" language="it_IT"/>
+      <topic path="dlg_touch_head/dlg_touch_head_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

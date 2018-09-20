@@ -1,0 +1,38 @@
+topic: ~dlg_hello()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+#### Robot greets back when it matches one of the inputs ####
+#==================================================================#
+
+
+u:(_[hello yo "was geht" hi "he du" huhu hey hallo])
+$1 {$user/name} !
+
+
+u:(_[hello yo "was geht" hi "he du" huhu hey hallo] ~ald_robots)
+$1 [$user/name Mensch] !
+
+u:(guten morgen {~ald_robots})
+^first[
+    "$Dialog/Hour<12 Guten Morgen {$user/name} !"
+    "Ist es noch morgens, {$user/name}? Dann guten Morgen!"
+]
+
+u:(guten tag {~ald_robots})
+^first[
+    "$Dialog/Hour>11 $Dialog/Hour<19 Guten Tag {$user/name} !"
+    "Ist das so? Dann guten Tag!"
+]
+
+u:(guten abend {~ald_robots})
+^first[
+    "$Dialog/Hour>16 Guten Abend {$user/name} !"
+    "Ist es schon abends, {$user/name}? Dann guten Abend!"
+]
+
+
+
+

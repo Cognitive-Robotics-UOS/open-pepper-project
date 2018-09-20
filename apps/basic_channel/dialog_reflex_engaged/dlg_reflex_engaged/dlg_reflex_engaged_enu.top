@@ -1,0 +1,18 @@
+topic: ~dlg_reflex_engaged ^fallback()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Robot reacts to its name
+#==================================================================#
+u:({hey} [Pepper PepperSan Peppa])
+[
+    "^first[$user/name Human] ?"
+    "Yes?"
+    "How can I help you?"
+]
+
+#u:(["~ald_robots stop" "stop ~ald_robots"])
+#Okay. $Dialog/Stop=1

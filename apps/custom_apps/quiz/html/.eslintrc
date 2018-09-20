@@ -1,0 +1,9 @@
+{
+  "extends": "eslint-config-google",
+  "env": {
+    "es6": true
+  },
+  "rules": {
+    "no-var": 0
+  }
+}

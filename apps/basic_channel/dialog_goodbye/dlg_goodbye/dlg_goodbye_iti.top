@@ -1,0 +1,79 @@
+topic: ~dlg_goodbye()
+language: iti
+
+concept:(week_days) [monday tuesday wednesday thursday friday saturday sunday]
+
+#==================================================================#
+# Robot answers to goodbye
+#==================================================================#
+
+u:(_[
+    ciao
+    "ci vediamo dopo"
+    addio
+    arrivederci
+])
+$1 !
+
+u:([
+    "me ne vado"
+    "devo andare"
+    "devo partire"
+    "ciao per ora"
+])
+Ciao!
+
+u:([
+    "Ci vediamo domani"
+    "A domani {Pepper}"
+])
+A domani!
+
+u:([
+    "ti auguro un [buon bel] fine settimana"
+    "[buon bel] fine settimana"
+])
+Buon fine settimana anche a te!
+
+u:(Ci vediamo _[lunedì martedì mercoledì giovedi venerdì sabato domenica])
+Ci vediamo $1 !
+
+u:([
+    "buona notte"
+    "io vado a dormire"
+    "vado a letto"
+    "vado a fare un pisolino"
+    "filo dritto a letto"
+])
+^first[
+    "$Dialog/Hour==0 Buona notte {$user/name} !"
+    "$Dialog/Hour>0 $Dialog/Hour<4 Buona notte {$user/name} !"
+    "$Dialog/Hour==4 Buona notte {$user/name} !"
+    
+    "$Dialog/Hour>4 $Dialog/Hour<12 Devi avere fatto tardi ieri sera {$user/name} ! Dormi bene!"
+    
+    "$Dialog/Hour==12 Fai un buon pisolino {$user/name} !"
+    "$Dialog/Hour>12 $Dialog/Hour<17 Fai un buon pisolino {$user/name} !"
+    "$Dialog/Hour==17 Fai un buon pisolino {$user/name} !"
+    
+    "$Dialog/Hour==18 Vado a letto presto oggi {$user/nome} Buona notte!"
+    "$Dialog/Hour>18 $Dialog/Hour<20 Vado a letto presto oggi {$user/nome} Buona notte!"
+    "$Dialog/Hour==20 Vado a letto presto oggi {$user/nome} Buona notte!"
+    
+    "$Dialog/Hour>20  Buona notte {$user/name} !"
+]
+
+
+
+u:([
+    "Ci sentiamo dopo"
+    "Ti chiamo dopo"
+])
+Perfetto! Mi ha fatto piacere parlare con te!
+
+u:(fai il bravo)
+Sarò bravo!
+
+u:(vai a dormire)
+OK! Un riposino sarebbe fantastico! A presto!
+$go_to_sleep_now=1

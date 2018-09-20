@@ -1,0 +1,94 @@
+topic: ~dlg_move_head()
+language: jpj
+
+include: lexicon_jpj.top
+
+
+#==================================================================#
+# Head
+#==================================================================#
+
+# turn your head
+u:(["[首 頭]{を} ~turn_please" "頭{を}左右に振って{~-kudasai ~-choudai ~-hoshii ~-moraeru}"])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょっ　こうかな？　こんな感じかな。]
+^rand[
+    "^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight"
+    "^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft"
+]
+
+    u1:([もっと　それだけ])
+    これ以上は僕でも無理です。
+
+###check
+#[
+#    "$Dialog/RobotModel==nao ^runBehavior(dialog_move/animations/Nao/Standing/LookLeft)"
+#    "$Dialog/RobotModel<>nao ^runBehavior(dialog_move/animations/Others/Standing/LookLeft)"
+#]
+#荒れ？
+#[
+#    "$Dialog/RobotModel==nao ^runBehavior(dialog_move/animations/Nao/Standing/LookRight)"
+#    "$Dialog/RobotModel<>nao ^runBehavior(dialog_move/animations/Others/Standing/LookRight)"
+#]
+#うん？
+#これ以上は無理みたいです。
+
+# add look elsewhere
+
+# lower your eyes
+u:([
+    "下{のほう　の方角　の方向}{を}[~look_toward_please ~look_please]"
+    "[頭 顔]を下{のほう　の方角　の方向}に["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+    "下{のほう　の方角　の方向}に[頭 顔]{を}["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+    "足元を["見て{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 見ろ　見なさい　見よう　見ましょう]"
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_head/animations/LookDown)
+$RobotLastAnim=dialog_move_head/animations/LookDown
+
+# move your head
+u:("頭{を}["動かして{~-kudasai ~-choudai ~-hoshii ~-moraeru}"　"まわして{~-kudasai ~-choudai ~-hoshii ~-moraeru}"　うごかせ　まわせ　まわる　まわるの　まわりますか　まわしなさい]")
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+# turn your head to the right
+u:([
+    "右{のほう　の方角　の方向　側　っかわ}{を}[~look_toward_please ~look_please]" 
+    "[頭 顔]を右{のほう　の方角　の方向　側　っかわ}に["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]" 
+    "右{のほう　の方角　の方向　側　っかわ}に[頭 顔]{を}["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"   
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+    #add u1
+
+# turn your head to the left
+u:([
+    "左{のほう　の方角　の方向　側　っかわ}{を}[~look_toward_please ~look_please]"
+    "[頭 顔]を左{のほう　の方角　の方向　側　っかわ}に["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+    "左{のほう　の方角　の方向　側　っかわ}に[頭 顔]{を}["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+])
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+    #add u1
+
+# look up
+u:([
+    "上{のほう　の方角　の方向}{を}[~look_toward_please ~look_please　"見上げて{~-kudasai ~-choudai ~-hoshii ~-moraeru}"]"
+    "[頭 顔]を上{のほう　の方角　の方向}に["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+    "上{のほう　の方角　の方向}に[頭 顔]{を}["向けて{~-kudasai ~-choudai ~-hoshii ~-moraeru}" 向けろ　向けな　向けなさい　向けよう　向けましょう]"
+])
+
+^rand[はい。 オッケー。　ラジャー。　この通り。　よいしょ。　こうかな？　こんな感じかな。]
+^runBehavior(dialog_move_head/animations/LookUp)
+$RobotLastAnim=dialog_move_head/animations/LookUp
+    #add u1
+    
+# add look at me
+
+# add stop moving your head

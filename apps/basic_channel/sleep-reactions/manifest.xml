@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.15" uuid="sleep-reactions">
+ <names>
+  <name lang="en_US">Sleep Reactions</name>
+ </names>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>fr_FR</language>
+  <language>ja_JP</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="Animations/Start_ShakeHead">
+   <nature></nature>
+   <triggerSentences/>
+   <loadingResponses/>
+   <autonomous/>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="Animations/End_ShakeHead">
+   <nature></nature>
+   <permissions/>
+  </behaviorContent>
+  <behaviorContent path="TouchHand">
+   <nature>interactive</nature>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA['AutonomousLife/Asleep' && ('HandRightBackTouched' || 'HandLeftBackTouched')]]></condition>
+   </autonomous>
+   <permissions>
+    <canRunOnPod/>
+    <canRunInSleep/>
+   </permissions>
+  </behaviorContent>
+  <behaviorContent path="RandomHand">
+   <nature>solitary</nature>
+   <triggerSentences/>
+   <loadingResponses/>
+   <autonomous>
+    <condition purpose="launchTrigger"><![CDATA['AutonomousLife/Asleep' ~ 5 && int('_SleepReactions/NextHandTime') < 'Launchpad/LifeTime']]></condition>
+   </autonomous>
+   <permissions>
+    <canRunOnPod/>
+    <canRunInSleep/>
+   </permissions>
+  </behaviorContent>
+ </contents>
+</package>

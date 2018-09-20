@@ -1,0 +1,37 @@
+topic: ~dlg_touch_head()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Touch the robot's head
+#==================================================================#
+
+u:(e:FrontTactilTouched $FrontTactilTouched==1)
+^rand[
+    "oummmmmmmmmmmmm! ^rand[
+        "J'ai l'impression d'être un chat!"
+        "J'aime bien quand tu me touches la tête!"
+        "Miaou!"
+    ]"
+    "^runBehavior(dialog_touch/animations/head_touched) ^rand[
+        "Ça chatouille!"
+        "Je suis chatouilleux aujourd'hui!"]"
+]
+^stayInScope
+
+u:(~can_i te toucher {*}) Bien sûr.
+
+    u1:(e:FrontTactilTouched $FrontTactilTouched==1) ^runBehavior(dialog_touch/headster_egg) Désolé, ça m'arrive parfois quand on me touche la tête.
+
+    u1:(e:Dialog/Notspeaking5) ^releaseFocus
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(_[toucher caresser]) Tu peux me $1 la tête ou les mains par exemple.
+u:(toucher [la ta] [main tête]) [
+    "Bien sûr, vas-y!"
+    "Je t'en prie."
+]

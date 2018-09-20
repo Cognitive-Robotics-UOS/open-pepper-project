@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.1" uuid="dialog_internet_connection">
+  <names>
+    <name lang="de_DE">dialog_internet_connection</name>
+    <name lang="de_DE-x-scrald">dialog_internet_connection</name>
+    <name lang="en_US">dialog_internet_connection</name>
+    <name lang="en_US-x-scrald">dialog_internet_connection</name>
+    <name lang="es_ES">dialog_internet_connection</name>
+    <name lang="es_ES-x-scrald">dialog_internet_connection</name>
+    <name lang="fr_FR">dialog_internet_connection</name>
+    <name lang="fr_FR-x-scrald">dialog_internet_connection</name>
+    <name lang="it_IT">dialog_internet_connection</name>
+    <name lang="it_IT-x-scrald">dialog_internet_connection</name>
+    <name lang="ja_JP">dialog_internet_connection</name>
+    <name lang="ja_JP-x-scrald">dialog_internet_connection</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann den Status seiner Internetverbindung angeben. </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann den Status seiner Internetverbindung angeben. </description>
+    <description lang="en_US">The robot can give his internet connection status.
+Examples of supported inputs:
+"What is your IP adress?"
+"Are you connected to Internet?"</description>
+    <description lang="en_US-x-scrald">The robot can give his internet connection status.
+Examples of supported inputs:
+"What is your IP adress?"
+"Are you connected to Internet?"</description>
+    <description lang="es_ES">El robot puede dar su estado de conexión a Internet.
+Ejemplos de frases entendidas por el robot:
+"¿Cuál es tu dirección IP? "
+"¿Estás conectado a Internet ?" 
+</description>
+    <description lang="es_ES-x-scrald">El robot puede dar su estado de conexión a Internet.
+Ejemplos de frases entendidas por el robot:
+"¿Cuál es tu dirección IP? "
+"¿Estás conectado a Internet ?" 
+</description>
+    <description lang="fr_FR">Le robot peut donner le statut de sa connexion Internet.
+Exemples de phrases comprises par le robot :
+"Quelle est ton adresse IP ?"
+"Es-tu connecté à Internet ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut donner le statut de sa connexion Internet.
+Exemples de phrases comprises par le robot :
+"Quelle est ton adresse IP ?"
+"Es-tu connecté à Internet ?"</description>
+    <description lang="it_IT">Il robot può fornire il suo stato di connessione a internet.</description>
+    <description lang="it_IT-x-scrald">Il robot può fornire il suo stato di connessione a internet.</description>
+    <description lang="ja_JP">ロボットは、インターネットへの接続状態をお知らせします。
+サポートされる入力の例:
+「あなたのIPアドレスは何ですか？」
+「インターネットに接続中ですか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、インターネットへの接続状態をお知らせします。
+サポートされる入力の例:
+「あなたのIPアドレスは何ですか？」
+「インターネットに接続中ですか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="bhr_IP_adress">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="bhr_network_status">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent typeVersion="1.0" topicName="dlg_internet_connection">
+      <topic path="dlg_internet_connection/dlg_internet_connection_ged.top" language="de_DE"/>
+      <topic path="dlg_internet_connection/dlg_internet_connection_enu.top" language="en_US"/>
+      <topic path="dlg_internet_connection/dlg_internet_connection_spe.top" language="es_ES"/>
+      <topic path="dlg_internet_connection/dlg_internet_connection_frf.top" language="fr_FR"/>
+      <topic path="dlg_internet_connection/dlg_internet_connection_iti.top" language="it_IT"/>
+      <topic path="dlg_internet_connection/dlg_internet_connection_jpj.top" language="ja_JP"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

@@ -1,0 +1,27 @@
+topic: ~dlg_asimov()
+language: frf
+
+include:lexicon_frf.top
+
+
+u:({~do_you_know} {les} [loi lois] ["des robots {d'Asimov}" "de la robotique {d'Asimov}" d'Asimov])
+Oui, je les connais. Tu veux que je te les donne?
+    u1:(~yes) La première loi est, un robot ne peut porter atteinte à un être humain, ni, en restant passif, permettre qu'un être humain soit exposé au danger. Suivante?
+        
+        u2:(~yes) La seconde loi est, un robot doit obéir aux ordres qui lui sont donnés par un être humain, sauf si de tels ordres entrent en conflit avec la première loi. Tu veux écouter la dernière?
+        
+            u3:(~yes) La troisième loi est, un robot doit protéger son existence tant que cette protection n'entre pas en conflit avec la première ou la deuxième loi. C'est très bien, mais Isaac Asimov a oublié quelque chose. Tu sais quoi?
+
+                u4:(~yes) Je t'écoute! ^stayInScope
+
+                u4:(~no) Les robots doivent aimer les humains!
+
+                u4:([amour l'amour "[aimer aimé aime] {"les [humains hommes gens]" l'humanité}"]) Exactement! Les robots doivent aimer les humains!
+
+                u4:(*) Et bien, je pense que les robots doivent aimer les humains!
+            
+            u3:(~no) Okay!
+
+        u2:(~no) Okay! 
+
+    u1:(~no) Okay!

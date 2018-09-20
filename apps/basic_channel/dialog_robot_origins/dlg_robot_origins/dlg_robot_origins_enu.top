@@ -1,0 +1,57 @@
+topic: ~dlg_robot_origins()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Creators
+#==================================================================#
+u:([
+    "where were you [made designed built created manufactured]"
+    "where do you come from" 
+    "where are you from" 
+    "who [made designed built created] you"
+    "you were [made designed built created] by whom"
+    "who were you [made designed built created] by"
+])
+^rand[
+    "I was designed at Softbank robotics headquarters in Paris."
+    "I was created at Softbank robotics, in Paris."
+]
+
+#==================================================================#
+# Name's origin
+#==================================================================#
+u:([
+    "who [called "decided to call"] you like that"
+    "who chose your name"
+])
+My makers chose this name!
+
+u:(why {"were you [called named "given the name"]" "are you [called named]" "is your name" "did they call you"} [Pepper pepper peppa])
+I was named Pepper because I'm here to spice up your life!
+
+u:(why {"were [he she] [called named "given the name"]" "is [he she] [called named]" "is [his her] name" "did they call [him her]"} [Nao nao now])
+His name comes from the Chinese word Nao meaning brain and the English word now!
+
+u:(who [called "decided to call"] [you him her] _[Pepper Nao Romeo])
+^first[
+    "$1==Pepper My makers decided to call me Pepper!"
+    "Our makers decided to call him $1 !"
+    "My makers chose this name!"
+]
+
+##==================================================================#
+## Aldebaran
+##==================================================================#
+#u:([
+#    "what does Aldebaran mean"
+#    "why the name Aldebaran"
+#    "why is the name of the company {called} Aldebaran"
+#    "~what_is the meaning of Aldebaran"
+#])
+#^first[
+#    "^topicTag(ald_robots_about_aldebaran, onAldebaran)"
+#    "Aldebaran is the name of a bright and beautiful star! Like you and me!"
+#]

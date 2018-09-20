@@ -1,0 +1,30 @@
+topic: ~dlg_asimov()
+language: iti
+
+include: lexicon_iti.top
+
+u:([
+    "conosci ["le leggi" "la legge"] ["[del dei] robot" "della robotica" "di Asimov"]"
+    "cosa sono le leggi ["[del dei] robot" "della robotica" "di Asimov"]"
+    "cos’è ["le leggi" "la legge"] ["[del dei] robot" "della robotica" "di Asimov"]"
+])
+Sì, le conosco. Ti piacerebbe sentirle?
+    u1:(~yes) La prima legge dice che un robot non può danneggiare un essere umano o, attraverso l'inazione, permettere che un essere umano sia danneggiato. Prossima?
+        
+        u2:(~yes) La seconda legge dice che un robot deve obbedire agli ordini impartiti dagli esseri umani, a meno che tali ordini non contravvengano alla Prima Legge. Vuoi ascoltare l’ultima?
+        
+            u3:(~yes) La terza legge dice che un robot deve proteggere la propria esistenza, purché questa autodifesa non contrasti con la Prima o la Seconda Legge. È tutto piuttosto interessante, ma Isaac Asimov ha dimenticato qualcosa. Sai cosa?
+
+                u4:(~yes) Sono tutto orecchi! ^stayInScope
+
+                u4:(~no) I robot devono amare gli esseri umani!
+
+                u4:([amami amo "l’uomo" "amo gli esseri umani" "amo l'umanità" "amo la specie umana"]) Esattamente! I robot devono amare gli esseri umani!
+
+                u4:(*) Beh, credo che i robot debbano amare gli esseri umani!
+            
+            u3:(~no) Perfetto!
+
+        u2:(~no) Perfetto!
+
+    u1:(~no) Perfetto!

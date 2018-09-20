@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_adjust_volume" version="2.5.3">
+  <names>
+    <name lang="en_US">dialog_adjust_volume</name>
+    <name lang="en_US-x-scrald">dialog_adjust_volume</name>
+    <name lang="fr_FR">dialog_adjust_volume</name>
+    <name lang="fr_FR-x-scrald">dialog_adjust_volume</name>
+    <name lang="ja_JP">dialog_adjust_volume</name>
+    <name lang="ja_JP-x-scrald">dialog_adjust_volume</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can change the volume of his speakers if asked to.
+Examples of supported inputs:
+"Speak softer."
+"Speak louder."</description>
+    <description lang="en_US-x-scrald">The robot can change the volume of his speakers if asked to.
+Examples of supported inputs:
+"Speak softer."
+"Speak louder."</description>
+    <description lang="fr_FR">Le robot peut changer le volume de ses haut-parleurs selon les instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Parle moins fort."
+"Parle plus fort."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut changer le volume de ses haut-parleurs selon les instructions de l'utilisateur.
+Exemples de phrases comprises par le robot :
+"Parle moins fort."
+"Parle plus fort."</description>
+    <description lang="ja_JP">要求することで、ロボットのスピーカー音量を調整できます。
+サポートされる入力の例:
+「もうすこし小さく」
+「もう少し大きな声で」</description>
+    <description lang="ja_JP-x-scrald">要求することで、ロボットのスピーカー音量を調整できます。
+サポートされる入力の例:
+「もうすこし小さく」
+「もう少し大きな声で」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_adjust_volume" typeVersion="1.0">
+      <topic language="en_US" path="dlg_adjust_volume/dlg_adjust_volume_enu.top"/>
+      <topic language="fr_FR" path="dlg_adjust_volume/dlg_adjust_volume_frf.top"/>
+      <topic language="ja_JP" path="dlg_adjust_volume/dlg_adjust_volume_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.5" maxVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+  <services>
+    <service name="alvolumeslider" autorun="true" execStart="/usr/bin/python2 scripts/alvolumeslider.py"/>
+  </services>
+</package>

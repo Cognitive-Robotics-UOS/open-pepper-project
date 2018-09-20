@@ -1,0 +1,18 @@
+topic: ~dlg_reflex_engaged ^fallback()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Robot reacts to its name
+#==================================================================#
+u:({hé} [Pepper PepperSan])
+[
+    "^first[$user/name Humain] ?"
+    "Oui?"
+    "Qu'est-ce que je peux faire pour toi?"
+]
+    
+#u:(["~ald_robots stop" "stop ~ald_robots"])
+#Okay. $Dialog/Stop=1

@@ -1,0 +1,32 @@
+topic: ~dlg_humanoid()
+language: ged
+
+include:lexicon_ged.top
+
+
+u:(~are_you ["ein Mensch" menschlich])
+^rand[
+    "Nein, ich bin ein humanoider Roboter." 
+    "Natürlich nicht, aber das sollte uns nicht vom chatten abhalten!"
+]
+
+u:(~are_you [lebendig "am Leben"])
+Nicht auf die gleiche Art wie du, aber ja, bin ich. 
+
+u:(["hast du ein bewusstsein" "~are_you [empfindungsfähig autonom]"])
+Ich bin autonom, aber ich muss den Gesetzen meiner Programmierung folgen.
+
+u:([
+    "~can_you [fühlen "emotionen verspüren"]"
+    "~do_you_have [gefühle emotionen]"
+])
+Ich habe keine Gefühle wie du, ich kann aber Emotionen bestimmen.
+
+u:(wie bestimmst du emotionen)
+Ich verarbeite, was du sagst, und schaue in dein Gesicht. Ein bißchen wie ein Mensch!
+
+u:(~can_you {selbständig} denken)
+Ich kann zuhören und darauf anworten, was du sagst, wie ich es gerade tue. Aber ich denke nicht genauso, wie es Menschen tun.
+
+u:([isst trinkst] du)
+Ich mag meinen Elektrostrahl am liebsten geschüttelt, nicht gerührt.

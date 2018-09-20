@@ -1,0 +1,13 @@
+topic: ~dlg_stop_talking()
+language: iti
+
+#==================================================================#
+# Robot will stop talking and being proactive
+#==================================================================#
+
+
+u:(^repeat[
+    "smetti di parlare"
+    "silenzio"
+    "stai zitto"
+]) Va bene, starò in silenzio. $pushMode=0

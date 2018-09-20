@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+.tabletsized {
+    background-color: white;
+    width: 1280px;
+    height: 800px;
+    position: absolute;
+}
+.answer {
+    color: white;
+    border: none;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 637px;
+    position: absolute;
+    font-size: 120px;
+    font-weight: bold;
+}
+.yes {
+    background-color: #3BB878;
+}
+.no {
+    background-color: #9E0039;
+    right: 0px;
+}

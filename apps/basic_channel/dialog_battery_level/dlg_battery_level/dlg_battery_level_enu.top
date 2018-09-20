@@ -1,0 +1,74 @@
+topic: ~dlg_battery_level()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+u:([
+    "~what_is your battery level"
+    "how much [battery energy] {life} do you have {left}"
+    "how much energy do you have {left}"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 My battery is fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 My battery is nearly fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 My battery is nearly fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 My battery is half charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 My battery is half charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 My battery is getting low."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 My battery is getting low."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 My battery is nearly empty, please plug in my charger."
+    "My sensor is deactivated, I cannot give you this information."
+]
+
+u:(~do_you_need [charging "to be plugged in" "to be charged" "to ["go to" use] your {charging} [station pod]"])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 No thanks, my battery is fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 No thanks, my battery is nearly fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 No thanks, my battery is nearly fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Not yet, my battery is half charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Not yet, my battery is half charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Yes please, my battery is getting low."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Yes please, my battery is getting low."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Yes please, my battery is nearly empty, please plug in my charger."
+    "My sensor is deactivated, I cannot give you this information."
+]
+
+u:([~are_you "do you feel"] hungry)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 I'm not hungry at all, thank you. My battery is fully charged."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Not at the moment, my battery is well charged!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Not at the moment, my battery is well charged!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 It's all right, I still have lots of energy."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 It's all right, I still have lots of energy."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 I'm starting to feel hungry, please could you plug my charger in?"
+    "I don't know, sorry."
+]
+
+u:(~what_is your exact battery level)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "My battery is currently at $BatteryChargeChanged per cent."
+    "I don't know, sorry."
+]
+
+u:(~are_you plugged in)
+^first[
+    "[$BatteryPowerPluggedChanged==true $BatteryChargingFlagChanged==true $ALBattery/ConnectedToChargingStation==true] Yes, I'm charging."
+    "$BatteryPowerPluggedChanged==false $BatteryFullChargedFlagChanged==false $BatteryChargingFlagChanged==false  No, I'm not charging."
+    "I can't get the information, sorry."
+]
+
+u:(~are_you charging)
+^first[
+    "$BatteryChargingFlagChanged==true Yes, I'm charging."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==true No, I've stopped charging because my battery is full."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==false No, I'm not charging."
+    "Sorry, I can't get the information."
+]

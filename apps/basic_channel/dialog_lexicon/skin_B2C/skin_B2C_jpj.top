@@ -1,0 +1,7 @@
+topic: ~skin_B2C()
+language: jpj
+
+s:({*} pepper {*}) ^replace(pepper, ぺっぱー,1)
+s:({*}孫さん{*}) ^replace(孫, そん, 1)
+s:({*}お孫さん{*}) ^replace(お孫さん, おまご三, 1)
+s:({*}孫正義{*}) ^replace(孫正義, ソンま差よし, 1)

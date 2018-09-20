@@ -1,0 +1,102 @@
+topic: ~dlg_say_something_else()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Makes the robot switch to another topic
+#==================================================================#
+
+u:^private(e:Dialog/NothingToSay)
+^rand[
+    "Tu peux me poser des questions."
+    "Choisis le sujet de conversation."
+    "Je préfère que tu me poses des questions."
+] ^releaseFocus
+
+u:([
+    #"c'est tout"
+    "{"et sinon"} quoi [encore d'autre]"
+    "{"et sinon"} autre chose"
+    "et sinon quoi"
+])
+Et bien,
+$pushMode=1
+^topicRandom
+
+u:({pourquoi} [
+    "tu {ne} parles [plus pas]"
+    "tu {ne} dis {plus} rien"
+    "[t'as "tu n'as"] {plus} rien à dire"
+    "tu [veux voudrais peux pourrais] pas changer de [sujet conversation]"
+    "[propose propose-moi] un {autre} sujet {"de [discussion conversation]"}"
+])
+Je préfère que tu me poses des questions. ^releaseFocus
+
+u:([
+    ~proposition_next
+    "[change changeons] de [sujet conversation]"
+    "passons à autre chose"
+    "dis-moi autre chose"
+    "~can_you me ["dire autre" "parler d'autre"] chose"
+    "{non} je veux parler d'autre chose"
+    "on peut {"continuer à" encore} [parler discuter]"
+    "parle-moi d'autre chose"
+#    "arrête de parler de *"
+#    "{non} je {ne} veux [pas plus] parler de *"
+#    "je n'ai [pas plus] envie de parler de *"
+#    "ne parlons plus de *"
+#    "ne {me} parle [pas plus] de *"
+])
+^rand[
+    "Okay, passons à autre chose alors."
+    "Parlons d'autre chose,"
+]
+$pushMode=1
+^topicRandom
+
+
+#==================================================================#
+##### Ask the robot for a new subject #####
+#==================================================================#
+
+u:([
+    "de quoi est-ce qu'on [peut pourrait] [parler discuter]"
+    "de quoi {d'autre} ["on peut" peut-on "{"est-ce que"} tu [peux pourrais]" peux-tu pourrais-tu "{"est-ce que"} tu [sais saurais]" sais-tu saurais-tu] [parler discuter]"
+    "on peut [parler discuter] de quoi"
+    "qu'est-ce que je peux {te} dire"
+    "je peux {te} dire quoi"
+    "qu'est-ce que tu sais dire"
+    "tu sais dire quoi"
+    "que sais-tu dire"
+    "tu peux parler de quoi"
+    "qu'est-ce que tu [connais sais]"
+]) %topicslist
+$size_descriptions="^size(~all_descriptions)"
+^first[
+"$size_descriptions==0 Je ne suis pas sûr, tu peux me poser des questions générales."
+"{"Pour l'instant"} je [peux sais] parler de ^enumerate(~all_descriptions). Dis-moi ce que tu préfères!"
+]
+    u1:(["le premier" "la première"])
+    Ok! ^interpret($Dialog/Enumerate/1)
+    
+    u1:([le la] deuxième)
+    Ok! ^interpret($Dialog/Enumerate/2)
+    
+    u1:([le la] troisième)
+    Ok! ^interpret($Dialog/Enumerate/3)
+    
+    u1:(["le dernier" "la dernière"])
+    Ok! ^interpret($Dialog/Enumerate/Last)
+
+##==================================================================#
+#recover:
+##==================================================================#
+#u:(change sujet)
+#Okay, passons à autre chose alors.
+#$pushMode=1
+#^topicRandom
+
+#u:(pose question)
+#Je préfère que ce soit toi qui pose les questions.

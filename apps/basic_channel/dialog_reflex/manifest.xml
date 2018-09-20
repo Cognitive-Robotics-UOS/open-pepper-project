@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_reflex" version="2.5.4">
+  <names>
+    <name lang="en_US">dialog_reflex</name>
+    <name lang="en_US-x-scrald">dialog_reflex</name>
+    <name lang="fr_FR">dialog_reflex</name>
+    <name lang="fr_FR-x-scrald">dialog_reflex</name>
+    <name lang="ja_JP">dialog_reflex</name>
+    <name lang="ja_JP-x-scrald">dialog_reflex</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">Listen to essential triggers anytime.</description>
+    <description lang="en_US-x-scrald">Listen to essential triggers anytime.</description>
+    <description lang="fr_FR">Triggers essentiels écoutés en permanence.</description>
+    <description lang="fr_FR-x-scrald">Triggers essentiels écoutés en permanence.</description>
+    <description lang="ja_JP">ロボットが挨拶に常時反応します。</description>
+    <description lang="ja_JP-x-scrald">ロボットが挨拶に常時反応します。</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="test/kpilogsend">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.2.0"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+</package>

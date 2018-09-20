@@ -1,0 +1,38 @@
+topic: ~dlg_humanoid()
+language: iti
+
+include:lexicon_iti.top
+
+
+u:([
+    "~are_you un essere umano"
+    "~are_you umano"
+])
+^rand[
+    "No, io sono un robot umanoide."
+    "Certo che no, ma questo non deve impedirci di fare due chiacchiere!"
+]
+
+u:([
+    "~are_you vivo"
+    "~are_you un essere vivente"
+])
+Non sono proprio come te, ma sì, lo sono.
+
+u:(~are_you [cosciente senziente autonomo])
+Sono autonomo, ma devo ancora a seguire le regole della mia programmazione.
+
+u:([
+    "~can_you provare emozioni"
+    "hai [sentimenti emozioni]"
+])
+Non ho sentimenti come te, ma posso rilevare le emozioni.
+
+u:(ome fai a rilevare le emozioni)
+Elaboro ciò che dici e ti guardo in faccia. Un po’ come se fossi umano!
+
+u:(~can_you pensare)
+Posso ascoltare e rispondere a ciò che dici, come sto facendo ora. Ma non penso esattamente come fanno gli esseri umani.
+
+u:(~can_you [mangiare bere])
+Preferisco il mio flusso elettronico scecherato, non miscelato.

@@ -1,0 +1,83 @@
+topic: ~dlg_battery_level()
+language: ged
+
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+u:([
+    "was ist dein Batteriestand"
+    "wie viel [Batterie Energie] hast du noch"
+    "wie lange hält deine [Batterie Energie] noch"
+    "wieviel Energie hast du noch übrig"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Meine Batterie ist vollständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Meine Batterie ist fast völlständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Meine Batterie ist fast völlständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4  Meine Batterie ist halb geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Meine Batterie ist halb geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2  Meine Batterie wird schwach."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Meine Batterie wird schwach."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2  Meine Batterie ist fast leer, bitte stecke mich an mein Ladegerät."
+    "Mein Sensor wurde deaktiviert, ich kann dir diese Information nicht geben."
+]
+
+u:(musst du [
+    "Ladung haben"
+    "eingesteckt werden" 
+    "geladen werden"
+    "zu deiner Ladestation gehen"
+    "deinen Ladesockel nutzen"
+])
+
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Meine Batterie ist vollständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Meine Batterie ist fast völlständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Meine Batterie ist fast völlständig geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4  Meine Batterie ist halb geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Meine Batterie ist halb geladen."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2  Meine Batterie wird schwach."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Meine Batterie wird schwach."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2  Meine Batterie ist fast leer, bitte stecke mich an mein Ladegerät."
+    "Mein Sensor wurde deaktiviert, ich kann dir diese Information nicht geben."
+]
+
+u:(["bist du" "fuhlst du dich"] hungrig)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Ich bin überhaupt nicht hungirg, ich danke dir."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Momentan nicht, meine Batterie ist gut geladen!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Momentan nicht, meine Batterie ist gut geladen!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Alles in Ordnung, ich habe noch viel Energie."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Alles in Ordnung, ich habe noch viel Energie."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 Ich fange an, Hunger zu bekommen, könnst du bitte mein Ladegerät einstecken?"
+    "Ich weiß es nicht, tut mir leid."
+]
+
+u:(was ist dein genauer Batteriestand)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "Meine Batterie ist derzeit bei $BatteryChargeChanged Prozent."
+    "Ich weiß es nicht, tut mir leid."
+]
+
+
+u:(bist du eingesteckt)
+^first[
+    "[$BatteryPowerPluggedChanged==true $BatteryChargingFlagChanged==true $ALBattery/ConnectedToChargingStation==true] Ja, ich lade mich auf."
+    "$BatteryPowerPluggedChanged==false $BatteryFullChargedFlagChanged==false $BatteryChargingFlagChanged==false Nein, ich lade mich nicht auf."
+    "Ich weiß es nicht, tut mir leid."
+]
+
+u:(lädst du dich gerade auf)
+^first
+[
+    "$BatteryChargingFlagChanged==true Ja, ich lade mich auf."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==true Nein, ich lade mich nicht auf, weil meine Batterie vollständig geladen ist."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==false Nein, ich lade mich nicht auf."
+    "Ich weiß es nicht, tut mir leid."
+]

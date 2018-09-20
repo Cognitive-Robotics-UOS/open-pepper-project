@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_thank_you" version="2.5.4">
+  <names>
+    <name lang="de_DE">dialog_thank_you</name>
+    <name lang="de_DE-x-scrald">dialog_thank_you</name>
+    <name lang="en_US">dialog_thank_you</name>
+    <name lang="en_US-x-scrald">dialog_thank_you</name>
+    <name lang="es_ES">dialog_thank_you</name>
+    <name lang="es_ES-x-scrald">dialog_thank_you</name>
+    <name lang="fr_FR">dialog_thank_you</name>
+    <name lang="fr_FR-x-scrald">dialog_thank_you</name>
+    <name lang="it_IT">dialog_thank_you</name>
+    <name lang="it_IT-x-scrald">dialog_thank_you</name>
+    <name lang="ja_JP">dialog_thank_you</name>
+    <name lang="ja_JP-x-scrald">dialog_thank_you</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann auf einfache Höflichkeitsfloskeln antworten
+Beispiele für unterstützte Eingaben:
+"Danke sehr."
+"Das ist nett." </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann auf einfache Höflichkeitsfloskeln antworten
+Beispiele für unterstützte Eingaben:
+"Danke sehr."
+"Das ist nett." </description>
+    <description lang="en_US">The robot can answer simple salutations.
+Examples of supported inputs:
+"Thank you."
+"That's nice."</description>
+    <description lang="en_US-x-scrald">The robot can answer simple salutations.
+Examples of supported inputs:
+"Thank you."
+"That's nice."</description>
+    <description lang="es_ES">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas por el robot :
+"Gracias"
+"Muchas gracias"</description>
+    <description lang="es_ES-x-scrald">El robot puede responder saludos simples. 
+Ejemplos de frases entendidas por el robot :
+"Gracias"
+"Muchas gracias"</description>
+    <description lang="fr_FR">Le robot peut répondre à de simples formules de politesse.
+Exemples de phrases comprises par le robot :
+"Merci."
+"C'est gentil."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à de simples formules de politesse.
+Exemples de phrases comprises par le robot :
+"Merci."
+"C'est gentil."</description>
+    <description lang="it_IT">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia:
+Esempi di input supportati:
+"Grazie."
+"Bello."
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot è in grado di rispondere a forme semplici di saluto e cortesia:
+Esempi di input supportati:
+"Grazie."
+"Bello."
+</description>
+    <description lang="ja_JP">"ありがとう"や簡単なお礼にロボットが反応してくれます。
+ボイスコマンド例：
+ありがとう
+やさしいね</description>
+    <description lang="ja_JP-x-scrald">"ありがとう"や簡単なお礼にロボットが反応してくれます。
+ボイスコマンド例：
+ありがとう
+やさしいね</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>de_DE</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_thank_you" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_thank_you/dlg_thank_you_ged.top"/>
+      <topic language="en_US" path="dlg_thank_you/dlg_thank_you_enu.top"/>
+      <topic language="es_ES" path="dlg_thank_you/dlg_thank_you_spe.top"/>
+      <topic language="fr_FR" path="dlg_thank_you/dlg_thank_you_frf.top"/>
+      <topic language="it_IT" path="dlg_thank_you/dlg_thank_you_iti.top"/>
+      <topic language="ja_JP" path="dlg_thank_you/dlg_thank_you_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

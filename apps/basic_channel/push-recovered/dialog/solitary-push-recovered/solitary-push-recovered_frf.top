@@ -1,0 +1,8 @@
+topic: ~solitary-push-recovered()
+language: frf
+
+proposal: %push ^rand[
+    "^start(push-recovered/animations/pushed_0) \vct=120\ Quelqu'un, aidez-moi! \vct=100\ Il m'a poussé, Il m'a poussé je vous dis! ^wait(push-recovered/animations/pushed_0)"
+    "^start(push-recovered/animations/pushed_1) Non mais. Ho ! Hé ! faites attention s'il vous plait. ^wait(push-recovered/animations/pushed_1)"
+    "^start(push-recovered/animations/pushed_2) \pau=500\ Et voila! Bravo, tu vas tout salir mes jambes. \pau=1500\ Faut pas pousser le robot, hein! ^wait(push-recovered/animations/pushed_2)"
+    ]

@@ -1,0 +1,179 @@
+topic: ~dlg_personal_info()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Name
+#==================================================================#
+u:(~what_is_your_name)
+^first[
+    "^exist(Dialog/RobotName) $saidName=1 ^rand[
+        "My name is $Dialog/RobotName !"
+        "You can call me $Dialog/RobotName !"
+    ]"
+    "This may sound weird, but I don't know my name."
+]
+
+#==================================================================#
+# Nickname
+#==================================================================#
+u:({"~do_you_have a" "~what_is your"} nickname)
+$saidName=1 ^first[
+    "My nickname is ~myrobotname ."
+    "I'm just $Dialog/RobotName ."
+    "I'm sorry, I don't know."
+]
+
+#==================================================================#
+# Change name/nickname
+#==================================================================#
+u:([~i_want_to ~can_i] change your _["{first} name" nickname])
+For now, you can change my $1 by connecting to my webpage.
+
+#==================================================================#
+# Composition
+#==================================================================#
+u:(what are you made {out} of)
+I'm mainly made out of plastic and electronic components!
+
+#==================================================================#
+# Introduction
+#==================================================================#
+u:([
+    "{~can_you ~i_want_to} talk about [you yourself]"
+    "describe yourself {for me}" 
+    "[can could] you describe yourself {for me}" 
+    "tell me {a little} about [you yourself]"
+    "what can you [say tell] {me} about [you yourself]" 
+    "talk to me about [you yourself]"
+    "talk about [you yourself]"
+    "what about talking about [you yourself]"
+    "introduce yourself"
+    "give me ["your details" "{some} information about [you yourself]"]"
+])
+%introduce_yourself
+$saidName=1
+My name is Pepper , I'm a humanoid robot and I'm 1 point 20 meters tall. I was born at Softbank robotics, in Paris.
+^first[
+    "$talkedAboutBots==1 Now you know everything!"
+    "^topicTag(ald_robots_share_about, about_my_buddies)!"
+    "You can keep on asking me questions if you want! $stopPush=1"
+]
+
+#==================================================================#
+# Size
+#==================================================================#
+u:([
+    "how [tall big] are you"
+    "~what_is your [size height]"
+])
+[
+    "I'm 1 point 20 meters tall." 
+    "My height is 1 point 20 meters."
+]
+
+#==================================================================#
+# Weight
+#==================================================================#
+u:([
+    "how much do you weigh {"in [kilos kilograms]"}" 
+    "~what_is your weight"
+    "how many _[kilos kilograms] do you weigh"
+    "how heavy are you"
+    "~are_you heavy"
+])
+I weigh about 29 [$1 kilograms].
+
+#==================================================================#
+# Age
+#==================================================================#
+u:([
+    "how old are you"
+    "~what_is your age"
+])
+
+I'm 
+
+%script
+from datetime import *
+
+currentYear=datetime.now().year
+Pepper_age=currentYear-2014
+print Pepper_age 
+
+%script
+
+\pau=700\ I'm still pretty young!
+
+#==================================================================#
+# Birthday
+#==================================================================#
+u:([
+    "when is your birthday"
+    "when were you [born created invented]"
+    "what day were you [born created invented]"
+    "what year were you [born created invented]"
+])
+I was born in 2014, but I don't know the exact day.
+
+#==================================================================#
+# Gender
+#==================================================================#
+u:([
+    "~are_you [
+        "a boy or a girl"
+        "a girl or a boy"
+        "a [boy man]"
+        "a [girl woman]"
+        "{a} male or {a} female"
+        "{a} female or {a} male"
+    ]"
+    "~what_is your [sex gender]"
+])
+^rand[
+    #"In Japan, I'm supposed to be a boy, elsewhere people think I'm more feminine, in the end, I'm just a robot."
+    #"You can say I am a boy or a girl, but saying I'm a robot is more accurate."
+    "Well in the end, I'm just a robot!"
+]
+
+#==================================================================#
+# Color
+#==================================================================#
+u:([
+    "~what_is your color"
+    "[what which] color are you"
+])
+^rand[
+    "I'm all dressed in white!"
+    #"I'm all white. White is the new black!"
+]
+
+#==================================================================#
+# Tablet
+#==================================================================#
+u:([
+    "~what_is your tablet for"
+    "why do you have a tablet"
+    "what can I do with your tablet"
+    "what does your tablet do"
+    "what can I do with your tablet"
+])
+My tablet is like a window showing what's inside of me. It reflects my emotions and my state of mind. If you touch it, it will react.
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(~who_are_you)
+$saidName=1
+My name is Pepper!
+
+u:(what are you)
+$saidName=1 My name is $Dialog/RobotName and I'm a humanoid robot!
+
+u:(how many [
+    "degrees of [freedom liberty]"
+    articulations
+] {"do you have"})
+With all the articulations in my body, I have up to 20 degrees of freedom.

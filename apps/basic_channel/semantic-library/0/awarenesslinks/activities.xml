@@ -1,0 +1,59 @@
+<activities>
+
+ <activity name="StandUp"
+           description="I stand up"
+           behavior='^mode(disabled) ^call(ALRobotPosture.goToPosture("Stand", 0.8))' />
+
+ <activity name="SitDown"
+           description="I sit down"
+           behavior='^mode(disabled) ^call(ALRobotPosture.goToPosture("Sit", 0.8))' />
+
+ <activity name="RobotOnTheFloor"
+           description="I raise my head"
+           condition="I am on the floor."
+           behavior='^call(ALAutonomousLife.setRobotOffsetFromFloor(0.0))' />
+
+ <activity name="RobotInHighPosition"
+	   description="I lower my head"
+           condition="I am on a table."
+           behavior='^call(ALAutonomousLife.setRobotOffsetFromFloor(1.0))' />
+
+ <activity name="SaySomething"
+           description="I say something"
+           behavior='{generic1}' />
+
+ <activity name="CallSomebody"
+           description="I call {agent1} by phone"
+           behavior='{agent1}' />
+
+
+ <activity name="WhiteEyes"
+           description="I have white eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "white", 1))' />
+
+ <activity name="RedEyes"
+           description="I have red eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "red", 1))' />
+
+ <activity name="GreenEyes"
+           description="I have green eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "green", 1))' />
+
+ <activity name="BlueEyes"
+           description="I have blue eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "blue", 1))' />
+
+ <activity name="YellowEyes"
+           description="I have yellow eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "yellow", 1))' />
+
+ <activity name="MagentaEyes"
+           description="I have magenta eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "magenta", 1))' />
+
+ <activity name="CyanEyes"
+           description="I have cyan eyes"
+           behavior='^call(ALLeds.fadeRGB("FaceLeds", "cyan", 1))' />
+
+
+</activities>

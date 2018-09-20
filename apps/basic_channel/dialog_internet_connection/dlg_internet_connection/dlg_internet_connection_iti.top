@@ -1,0 +1,49 @@
+topic: ~dlg_internet_connection()
+language: iti
+
+#==================================================================#
+##### IP adress #####
+#==================================================================#
+u:([
+    "["qual è" dammi] il tuo indirizzo [IP "di protocollo internet"]"
+    "qual è ["la tua pagina" "il tuo sito"] web"
+])
+^run(dialog_internet_connection/bhr_IP_adress)
+
+u:(e:Dialog/sayIP)
+^first[
+    "È $Dialog/IP ."
+    "Non conosco il mio indirizzo IP, mi dispiace."
+]
+
+#==================================================================#
+##### WiFi Connection status #####
+#==================================================================#
+
+u:(["voglio che" "mi aiuti"] a [
+    "configurare ["la rete" "il [wifi wi-fi web]" internet]"
+    "connettermi ["alla rete" "al [wifi wi-fi web]" "a internet"]"
+])
+Mi dispiace, ancora non so come si fa. Usa la mia pagina web, per favore.
+
+u:([
+    "{non} hai il [wifi wi-fi web]?" 
+    "{non} hai internet"
+    "[connettimi connetti "sei connesso"] ["alla rete" "al [wifi wi-fi web]" "a internet"]"
+])
+^run(dialog_internet_connection/bhr_network_status)
+
+u:(e:Dialog/Network/NoNetwork)
+Non sono connesso a internet in questo momento. Puoi connettermi a internet tramite un cavo Ethernet o WiFi.
+
+u:(e:Dialog/Network/Ethernet)
+Sono connesso a internet tramite un cavo Ethernet.
+
+u:(e:Dialog/Network/BlueTooth)
+Sono connesso a internet tramite una connessione BlueTooth.
+
+u:(e:Dialog/Network/WiFi)
+^first[
+     "Sono connesso a Internet tramite WiFi su una rete denominata $Dialog/Network/WiFiSSID ."
+    "Sono connesso a Internet tramite WiFi su una rete nascosta".
+]

@@ -1,0 +1,39 @@
+topic: ~dlg_hello()
+language: spe
+
+#include:lexicon_spe.top
+
+concept:(hello) hola
+concept:(ald_robots) [Pepper Peppersan]
+
+#==================================================================#
+#### Robot greets back when it matches one of the inputs ####
+#==================================================================#
+
+u:(_~hello)
+$1 {$user/name} !
+
+
+u:(_~hello ~ald_robots)
+$1 [$user/name humano] !
+
+u:(buenos días {~ald_robots})
+^first[
+    "$Dialog/Hour<12 Buenos días {$user/name} !"
+    "Aún es por la mañana, {$user/name}? Entonces, buenos días!
+"
+]
+
+u:(buenas tardes {~ald_robots})
+^first[
+    "$Dialog/Hour>11 $Dialog/Hour<19 Buenas tardes {$user/name} !"
+    "Es por la tarde? Entonces, buenas tardes!"
+]
+
+u:(buenas noches {~ald_robots})
+^first[
+    "$Dialog/Hour>16 Buenas noches {$user/name} !"
+    "Es de noche ya {$user/name} ? Entonces, buenas noches!"
+]
+
+

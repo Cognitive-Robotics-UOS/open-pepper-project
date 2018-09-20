@@ -1,0 +1,67 @@
+topic: ~dlg_robot_origins()
+language: frf
+
+include:lexicon_frf.top
+
+
+#==================================================================#
+# Creators
+#==================================================================#
+u:([
+    "qui t'a [fait conçu construit fabriqué créé]"
+    "~you_were [fait conçu construit fabriqué créé] par qui"
+    "[où ou] ~were_you [fait conçu construit fabriqué créé]"
+    "[où ou] ~are_you né"
+    "[d'où "de quel endroit"] [viens-tu "tu viens" sors-tu "tu sors"]"
+    "["~you_are [construit fabriqué né]" "~you_were [construit fabriqué]"] [où ou]"
+])
+^rand[
+    "J'ai été conçu dans les bureaux de Softbank robotics, à Paris."
+    "Je suis né à Softbank robotics, à Paris!"
+    "J'ai été conçu en France, à Paris."
+]
+
+#==================================================================#
+# Name's origin
+#==================================================================#
+u:([
+    "qui {"est-ce qui"} ["t'a appelé" "a décidé de t'appeler"] comme ça"
+    "qui {"est-ce qui"} a choisi ton nom"
+])
+Ce sont mes créateurs qui ont choisi mon nom!
+
+u:([
+    "pourquoi {"~were_you [appelé nommé prénommé]" "on t'a donné ["le nom de" "comme nom"]" t'appelles-tu "tu t'appelles"} Pepper"
+    "que ["veut dire" signifie] Pepper"
+    "Pepper ["c'est quoi" "ça veut dire quoi"]"  
+    "ça veut dire quoi Pepper" 
+])
+$Dialog/RobotName==pepper On m'a appelé Pepper, parce que je suis là pour mettre du piment dans ta vie!
+
+u:([
+    "pourquoi {"~were_you [appelé nommé prénommé]" "on t'a donné ["le nom de" "comme nom"]" t'appelles-tu "tu t'appelles"} Nao"
+    "que ["veut dire" signifie] Nao"
+    "Nao ["c'est quoi" "ça veut dire quoi"]"  
+    "ça veut dire quoi Nao" 
+])
+Son nom vient du mot Chinois Nao qui signifie cerveau et du mot Anglais Nao qui veut dire maintenant!
+
+u:(qui {"est-ce qui"} ["[t'a l'a] appelé" "a décidé de [t'appeler l'appeler]"] _[Pepper Nao Romeo Roméo])
+^first[
+    "$1==Pepper Ce sont mes créateurs qui ont décidé de m'appeler Pepper!"
+    "Nos créateurs ont décidé de l'appeler $1 !"
+    "Ce sont mes créateurs qui ont choisi ce nom!"
+]
+
+##==================================================================#
+## Aldebaran
+##==================================================================#
+#u:([
+#    "que ["veut dire" signifie] [Aldébaran Aldebaran]"
+#    "["c'est quoi" "qu'est-ce que c'est"] [Aldébaran Aldebaran]"
+#    "[Aldébaran Aldebaran] ["c'est quoi" "ça veut dire quoi"]"
+#])
+#^first[
+#    "^topicTag(ald_robots_about_aldebaran, onAldebaran)"
+#    "Aldébaran est le nom d'une étoile particulièrement brillante! Comme toi et moi!"
+#]

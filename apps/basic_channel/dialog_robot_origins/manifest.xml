@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.2" uuid="dialog_robot_origins">
+  <names>
+    <name lang="de_DE">dialog_robot_origins</name>
+    <name lang="de_DE-x-scrald">dialog_robot_origins</name>
+    <name lang="en_US">dialog_robot_origins</name>
+    <name lang="en_US-x-scrald">dialog_robot_origins</name>
+    <name lang="es_ES">dialog_robot_origins</name>
+    <name lang="es_ES-x-scrald">dialog_robot_origins</name>
+    <name lang="fr_FR">dialog_robot_origins</name>
+    <name lang="fr_FR-x-scrald">dialog_robot_origins</name>
+    <name lang="it_IT">dialog_robot_origins</name>
+    <name lang="it_IT-x-scrald">dialog_robot_origins</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann verschiedene Fragen über seine Herkunft beantworten.
+Beispiele für unterstützte Eingaben:
+"Wer gab dir den namen Pepper ?"
+"Wer hat dir diesen namen gegeben ?" </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann verschiedene Fragen über seine Herkunft beantworten.
+Beispiele für unterstützte Eingaben:
+"Wer gab dir den namen Pepper ?"
+"Wer hat dir diesen namen gegeben ?" </description>
+    <description lang="en_US">The robot can answer several questions about his origins.
+Examples of supported inputs:
+"Who made you?"
+"Who decided to call you like that?"</description>
+    <description lang="en_US-x-scrald">The robot can answer several questions about his origins.
+Examples of supported inputs:
+"Who made you?"
+"Who decided to call you like that?"</description>
+    <description lang="es_ES">El robot puede responder a preguntas sobre sus origenes.
+Ejemplos de frases entendidas por el robot :
+- "¿ De dónde vienes ?"
+- "¿ Por qué te han llamado Pepper ?"</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a preguntas sobre sus origenes.
+Ejemplos de frases entendidas por el robot :
+- "¿ De dónde vienes ?"
+- "¿ Por qué te han llamado Pepper ?"</description>
+    <description lang="fr_FR">Le robot peut répondre à des question sur ses origines.
+Exemples de phrases comprises par le robot :
+"Qui t'a fabriqué ?"
+"Qui t'a appelé comme ça ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des question sur ses origines.
+Exemples de phrases comprises par le robot :
+"Qui t'a fabriqué ?"
+"Qui t'a appelé comme ça ?"</description>
+    <description lang="it_IT">
+Il robot può rispondere ad alcune domande sulle proprie origini.
+Esempi di input supportati:
+"Chi ti ha realizzato?"
+"Chi ha deciso di chiamarti così?"
+</description>
+    <description lang="it_IT-x-scrald">
+Il robot può rispondere ad alcune domande sulle proprie origini.
+Esempi di input supportati:
+"Chi ti ha realizzato?"
+"Chi ha deciso di chiamarti così?"
+</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_robot_origins">
+      <topic path="dlg_robot_origins/dlg_robot_origins_ged.top" language="de_DE"/>
+      <topic path="dlg_robot_origins/dlg_robot_origins_enu.top" language="en_US"/>
+      <topic path="dlg_robot_origins/dlg_robot_origins_spe.top" language="es_ES"/>
+      <topic path="dlg_robot_origins/dlg_robot_origins_frf.top" language="fr_FR"/>
+      <topic path="dlg_robot_origins/dlg_robot_origins_iti.top" language="it_IT"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

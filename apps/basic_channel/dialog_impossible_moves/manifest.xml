@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="2.5.4" uuid="dialog_impossible_moves">
+  <names>
+    <name lang="de_DE">dialog_impossible_moves</name>
+    <name lang="de_DE-x-scrald">dialog_impossible_moves</name>
+    <name lang="en_US">dialog_impossible_moves</name>
+    <name lang="en_US-x-scrald">dialog_impossible_moves</name>
+    <name lang="es_ES">dialog_impossible_moves</name>
+    <name lang="es_ES-x-scrald">dialog_impossible_moves</name>
+    <name lang="fr_FR">dialog_impossible_moves</name>
+    <name lang="fr_FR-x-scrald">dialog_impossible_moves</name>
+    <name lang="it_IT">dialog_impossible_moves</name>
+    <name lang="it_IT-x-scrald">dialog_impossible_moves</name>
+    <name lang="ja_JP">dialog_impossible_moves</name>
+    <name lang="ja_JP-x-scrald">dialog_impossible_moves</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann auf Benutzerwünsche, die unmöglich sind, reagieren. </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann auf Benutzerwünsche, die unmöglich sind, reagieren. </description>
+    <description lang="en_US">The robot can react to impossible moves requests from the user.
+Example of supported input:
+"Can you do a backflip?"</description>
+    <description lang="en_US-x-scrald">The robot can react to impossible moves requests from the user.
+Example of supported input:
+"Can you do a backflip?"</description>
+    <description lang="es_ES">El robot puede responder a solicitudes de movimientos imposibles del usuario.
+Ejemplos de frases entididas por el robot :
+"¿Puedes hacer un salto mortal?"</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a solicitudes de movimientos imposibles del usuario.
+Ejemplos de frases entididas por el robot :
+"¿Puedes hacer un salto mortal?"</description>
+    <description lang="fr_FR">Le robot peut réagir à des demandes de mouvements impossibles à accomplir de la part de l'utilisateur.
+Exemple de phrase comprise par le robot :
+"Fais un salto arrière."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut réagir à des demandes de mouvements impossibles à accomplir de la part de l'utilisateur.
+Exemple de phrase comprise par le robot :
+"Fais un salto arrière."</description>
+    <description lang="it_IT">Il robot può reagire alle richieste di movimenti impossibili da parte dell'utente.</description>
+    <description lang="it_IT-x-scrald">Il robot può reagire alle richieste di movimenti impossibili da parte dell'utente.</description>
+    <description lang="ja_JP">ロボットは、ユーザーからの難しい動きへのリクエストに応えることができます。
+サポートされる入力の例：
+「バック転はできますか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、ユーザーからの難しい動きへのリクエストに応えることができます。
+サポートされる入力の例：
+「バック転はできますか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>it_IT</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <behaviorContent path="animations/CrossArms">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/TurnHead360">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/Backflip">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <behaviorContent path="animations/Wave01">
+      <nature>interactive</nature>
+      <permissions/>
+    </behaviorContent>
+    <dialogContent topicName="dlg_impossible_moves" typeVersion="1.0">
+      <topic language="de_DE" path="dlg_impossible_moves/dlg_impossible_moves_ged.top"/>
+      <topic language="en_US" path="dlg_impossible_moves/dlg_impossible_moves_enu.top"/>
+      <topic language="es_ES" path="dlg_impossible_moves/dlg_impossible_moves_spe.top"/>
+      <topic language="fr_FR" path="dlg_impossible_moves/dlg_impossible_moves_frf.top"/>
+      <topic language="it_IT" path="dlg_impossible_moves/dlg_impossible_moves_iti.top"/>
+      <topic language="ja_JP" path="dlg_impossible_moves/dlg_impossible_moves_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

@@ -1,0 +1,38 @@
+topic: ~dlg_set_offset ^noPick()
+language: enu
+
+include: lexicon_enu.top
+
+#==================================================================#
+##### Set the robot's offset #####
+#==================================================================#
+
+proposal: %offset
+^first[
+    "$Dialog/RobotName==nao Hey! Am I on the floor or higher up?"
+    "^releaseFocus"
+]
+
+    u1:(floor)
+    Okay, thanks! ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0))
+
+    u1:([
+        "higher up"
+        table
+        desk
+    ])
+    Okay thanks! ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0.90))
+
+#==================================================================#
+
+u:({~ald_robots} ~you_are on the [floor ground])
+Okay, thanks! ^first[
+    "$Dialog/RobotName==nao ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0))"
+    "^releaseFocus"
+] ^releaseFocus
+
+u:({~ald_robots} ~you_are on a [table desk])
+Okay, thanks! ^first[
+    "$Dialog/RobotName==nao ^pCall(ALAutonomousLife.setRobotOffsetFromFloor(0.90))"
+    "But I'm meant to be on the floor!"
+] ^releaseFocus

@@ -1,0 +1,19 @@
+topic: ~dlg_thank_you()
+language: spe
+
+#==================================================================#
+##### The robot answers to thank you and kind words #####
+#==================================================================#
+
+u:([
+    "te {lo} agradezco"
+    "{muchas} gracias"
+] {~ald_robots})
+De nada {$user/name} !
+
+#==================================================================#
+recover:
+#==================================================================#
+u:([eres "{eso} es"] [dulce agradable amable]) Gracias {$user/name}!
+u:({eres "{eso} es"} [estupendo maravilloso increíble]) Gracias {$user/name}!
+u:(bravo) Gracias {$user/name}!

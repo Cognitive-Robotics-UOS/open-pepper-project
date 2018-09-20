@@ -1,0 +1,55 @@
+topic: ~dlg_internet_connection()
+language: ged
+
+include:lexicon_ged.top
+
+#==================================================================#
+##### IP adress #####
+#==================================================================#
+u:([
+    "~what_is deine IP adresse"
+    "~what_is die adresse deines internet protokolls"
+    "gib mir deine ["IP adresse" "internet protokoll adresse"]"
+    "~what_is deine Web [seite site]"
+    "wo ist deine Web [seite site]"
+])
+^run(dialog_internet_connection/bhr_IP_adress)
+
+u:(e:Dialog/sayIP)
+^first[
+    "Sie ist $Dialog/IP ."
+    "Ich kenne meine IP-Adresse nicht, tut mir leid."
+]
+
+#==================================================================#
+##### WiFi Connection status #####
+#==================================================================#
+
+u:([
+    "["~i_want dass" "du mir hilfst"] das [wifi wi-fi internet web] zu konfigurieren"
+    "["~i_want dass" "du mir hilfst"] mich mit dem [wifi wi-fi internet web] zu verbinden"
+])
+Tut mir leid, ich weiß bisher noch nicht, wie man das macht. Bitte nutze meine Webseite.
+
+u:([
+    "bist du mit dem [wifi wi-fi internet web] verbunden"
+    "~do_you_have [wifi wi-fi web internet]" 
+    "verbinde ["mich mit" zum] [wifi wi-fi web]"
+    "verbinde {mich} mit dem  Internet"
+])
+^run(dialog_internet_connection/bhr_network_status)
+
+u:(e:Dialog/Network/NoNetwork)
+Ich bin momentan nicht mit dem Internet verbunden. Du kannst mich via Ethernet-Kabel oder WiFi mit dem Internet verbinden.
+
+u:(e:Dialog/Network/Ethernet)
+Ich bin mit dem Internet über ein Ethernet-Kabel verbunden.
+
+u:(e:Dialog/Network/BlueTooth)
+Ich bin mit dem Internet über eine BlueTooth-Verbindung verbunden.
+
+u:(e:Dialog/Network/WiFi)
+^first[
+    "Ich bin mit dem über WiFi auf einem Netzwerk namens $Dialog/Network/WiFiSSID verbunden"
+    "Ich bin über das Internet über WiFi auf verborgenen Netzwerk verbunden."
+]

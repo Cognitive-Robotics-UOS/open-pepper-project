@@ -1,0 +1,100 @@
+topic: ~dlg_move_head ^noPick()
+language: enu
+
+include: lexicon_enu.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Ask me to do simpler moves, I can't move exactly like you humans do."
+    "I don't understand what you're asking, I probably don't know that movement yet."
+]
+
+u:^private([
+    "{what} {"kind of"} movements"
+    "["how can I" "help me"] be more [precise specific]"
+    "{"give me an"} example"
+])
+^rand[
+    "You can tell me to open my hands, or lift my arm, for example."
+    "You can ask me to move my head or move my hands."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, I'll do it again." "Here I go again!"]
+^runBehavior($RobotLastAnim)
+^stayInScope
+
+#==================================================================#
+# Head
+#==================================================================#
+u:({~can_you} turn your head)
+Okay, if you want.
+^rand[
+    "^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight"
+    "^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft"
+]
+
+u:({~can_you} look ["somewhere else" elsewhere])
+Okay.
+^runBehavior(dialog_move_head/animations/TurnHead360)
+$RobotLastAnim=dialog_move_head/animations/TurnHead360
+
+u:([
+    "{~can_you} look down"
+    "don't look at me"
+    "stop looking at me"
+])
+Yes Sir.
+^runBehavior(dialog_move_head/animations/LookDown)
+$RobotLastAnim=dialog_move_head/animations/LookDown
+
+u:({~can_you} [move shake] your head)
+Moving my head!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:({~can_you} ["[turn move] your head {"to the"} right" "look {"on the"} right"])
+To the right!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+
+    u1:(["{"to the"} other side" "to your left" left])
+    Alright.
+    ^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:({~can_you} ["[turn move] your head {"to the"} left" "look {"on the"} left"])"    "
+To the left!
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+    u1:(["{"to the"} other side" "to your right" "right"])
+    Alright.
+    ^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight
+
+u:({~can_you} look up)
+Okay.
+^runBehavior(dialog_move_head/animations/LookUp)
+$RobotLastAnim=dialog_move_head/animations/LookUp
+
+    u1:(["that's [all it]" "can't you look higher up" "higher" more])
+    No sorry, that's the best I can do for the moment. $RobotLastAnim=""
+
+u:({~can_you} look [at towards] me {"in the eyes"})
+I'm looking at you. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:({~can_you} stop [moving shaking] your head {"like that" "all the time"})
+Sorry. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:(you shake your head {"too much"})
+Sorry, I get so excited when I talk with you! $Dialog/LookAtMe=1 $RobotLastAnim=""

@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_clock" version="2.5.3">
+  <names>
+    <name lang="de_DE">dialog_cloc</name>
+    <name lang="de_DE-x-scrald">dialog_cloc</name>
+    <name lang="en_US">dialog_clock</name>
+    <name lang="en_US-x-scrald">dialog_clock</name>
+    <name lang="es_ES">dialog_clock</name>
+    <name lang="es_ES-x-scrald">dialog_clock</name>
+    <name lang="fr_FR">dialog_clock</name>
+    <name lang="fr_FR-x-scrald">dialog_clock</name>
+    <name lang="it_IT">dialog_clock</name>
+    <name lang="it_IT-x-scrald">dialog_clock</name>
+    <name lang="ja_JP">dialog_clock</name>
+    <name lang="ja_JP-x-scrald">dialog_clock</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Dear Roboter kann die Uhrzeit und sagen und das Tagesdatum nennen.</description>
+    <description lang="de_DE-x-scrald">Dear Roboter kann die Uhrzeit und sagen und das Tagesdatum nennen.</description>
+    <description lang="en_US">The robot can say what time is it and also what today's date is.
+Examples of supported inputs:
+"What time is it?"
+"What day are we?"</description>
+    <description lang="en_US-x-scrald">The robot can say what time is it and also what today's date is.
+Examples of supported inputs:
+"What time is it?"
+"What day are we?"</description>
+    <description lang="es_ES">El robot puede decir qué hora es y también qué fecha es hoy.
+Ejemplos de frases entendidas por el robot:
+"¿Qué hora es?"
+"Dime la hora"
+"¿Sabes la fecha de hoy?"
+"¿Qué día es hoy?"</description>
+    <description lang="es_ES-x-scrald">El robot puede decir qué hora es y también qué fecha es hoy.
+Ejemplos de frases entendidas por el robot:
+"¿Qué hora es?"
+"Dime la hora"
+"¿Sabes la fecha de hoy?"
+"¿Qué día es hoy?"</description>
+    <description lang="fr_FR">Le robot peut dire l'heure qu'il est, ainsi que la date du jour.
+Exemples de phrases comprises par le robot :
+"Quelle heure est-il ?"
+"Quel jour on est ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut dire l'heure qu'il est, ainsi que la date du jour.
+Exemples de phrases comprises par le robot :
+"Quelle heure est-il ?"
+"Quel jour on est ?"</description>
+    <description lang="it_IT">Il robot può dire che ore sono e anche la data odierna.</description>
+    <description lang="it_IT-x-scrald">Il robot può dire che ore sono e anche la data odierna.</description>
+    <description lang="ja_JP">ロボットが、日付や時刻をお知らせします。
+サポートされる入力の例:
+「何時ですか？」
+「今日は何日ですか？」</description>
+    <description lang="ja_JP-x-scrald">ロボットが、日付や時刻をお知らせします。
+サポートされる入力の例:
+「何時ですか？」
+「今日は何日ですか？」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>it_IT</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent typeVersion="1.0" topicName="dlg_clock">
+      <topic language="de_DE" path="dlg_clock/dlg_clock_ged.top"/>
+      <topic language="en_US" path="dlg_clock/dlg_clock_enu.top"/>
+      <topic language="es_ES" path="dlg_clock/dlg_clock_spe.top"/>
+      <topic language="fr_FR" path="dlg_clock/dlg_clock_frf.top"/>
+      <topic language="it_IT" path="dlg_clock/dlg_clock_iti.top"/>
+      <topic language="ja_JP" path="dlg_clock/dlg_clock_jpj.top"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

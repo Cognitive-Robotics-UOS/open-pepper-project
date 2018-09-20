@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="quiz_test-f454e2" version="0.0.1">
+ <names>
+  <name lang="en_US">Quiz</name>
+ </names>
+ <descriptionLanguages>
+  <language>en_US</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="behavior_1">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <triggerSentences>
+    <sentence lang="de_DE">start quiz</sentence>
+    <sentence lang="en_US">start quiz</sentence>
+   </triggerSentences>
+   <permissions>
+    <canRunOnPod/>
+   </permissions>
+  </behaviorContent>
+ </contents>
+</package>

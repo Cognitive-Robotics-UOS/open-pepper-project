@@ -1,0 +1,29 @@
+topic: ~dlg_famous_robots()
+language: enu
+
+include:lexicon_enu.top
+
+
+#==================================================================#
+# Romeo
+#==================================================================#
+u:(~who_is [Romeo romeo])
+Romeo is a hero, one day he'll help elderly people in their daily lives.
+
+u:(~do_you_know [Romeo romeo])
+Yes I do! He's my hero, one day he'll help elderly people in their daily lives.
+
+#==================================================================#
+# Nao
+#==================================================================#
+u:(~who_is [Nao nao now])
+Nao is Softbank robotics first robot, and he's by far the cutest robot ever!
+
+u:(~do_you_know [Nao nao now])
+Of course I do! I'm taller than Nao, and unlike him \pau=100\ I have wheels \pau=50\ instead of legs.
+
+#==================================================================#
+# Pepper
+#==================================================================#
+u:([~who_is ~do_you_know] [Pepper pepper peppa])
+Pepper? That's me! Come on, I'm not that silly!

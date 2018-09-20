@@ -1,0 +1,43 @@
+topic: ~dlg_can_you_repeat()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+##### Make the robot repeat #####
+#==================================================================#
+
+u:({~ald_robots} [
+    "qu'est-ce que j'ai dit"
+    "qu'est-ce que je viens de dire"
+    "j'ai dit quoi"
+    "je viens de dire quoi"
+    "qu'est-ce que ["tu as compris" "je t'ai demandé" "je t'ai posé comme question"]"
+    "["tu as" t'as] compris quoi"
+])
+^rand[
+    "Il me semble que tu as dis $Dialog/MatchedInput ."
+    "J'ai entendu $Dialog/MatchedInput ."
+] ^stayInScope
+
+
+#repeat
+u:({~ald_robots} [
+    ~repeat_it
+    ~i_didnt_understand
+    ~what_were_you_saying
+])
+^rand[
+    "Okay, je répète,"
+    "Je disais,"
+]
+$RobotRepeat=$Dialog/Answered $RobotRepeat ^stayInScope
+
+u:^private([~repeat_it ~i_didnt_understand ~what_were_you_saying])
+[
+" \rspd=80\ $RobotRepeat \rspd=100\ "
+" \rspd=70\ $RobotRepeat \rspd=100\ "
+" \rspd=50\ $RobotRepeat \rspd=100\ "
+" \rspd=300\ $RobotRepeat \rspd=100\ "
+]
+^stayInScope

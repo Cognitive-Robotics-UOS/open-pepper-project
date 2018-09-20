@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+
+# main file
+# for example, run python signs_and_feedback.py --url=tcp://<ip>:9559
+
+import qi
+import sys
+import os
+
+from signs_and_feedback.signs_and_feedback_service import SignsAndFeedback
+
+
+if __name__ == "__main__":
+    app = qi.Application(sys.argv)
+    app.start()
+    session = app.session
+
+    #get the logs
+    mod = qi.module("qicore")
+    provider = mod.initializeLogging(app.session)
+
+    try:
+        signs_and_feedback_service = SignsAndFeedback(session)
+        presets_id = session.registerService(SignsAndFeedback.service_name,
+                                             signs_and_feedback_service)
+        app.run()
+    except RuntimeError, e:
+        pass

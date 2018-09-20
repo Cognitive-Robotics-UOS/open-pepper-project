@@ -1,0 +1,145 @@
+topic: ~dlg_move_head()
+language: frf
+
+include: lexicon_frf.top
+
+    
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Demande moi des mouvements plus simples, j'ai encore un peu de mal à bouger comme vous les humains."
+    "Je ne comprends pas très bien ta requête, je n'ai sûrement pas encore appris ce mouvement."
+]
+
+u:^private([
+    "[
+        "comment [
+            "puis-je {"faire pour"}"
+            "{"est-ce que"} je fais pour"
+        ]"
+        "aide-moi à"
+    ] préciser ma demande"
+    "donne-moi ["un exemple" "des exemples"]"
+])
+[
+    "Essaie de me dire \pau=500\ lève le bras, ou bouge la tête, par exemple."
+    "Et bien, tu peux me demander d'ouvrir ou de fermer les mains, ou encore de lever le bras."
+    "Je peux bouger, mais il faut que tu sois un peu plus précis."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, je recommence." "C'est reparti!"]
+^runBehavior($RobotLastAnim)
+^stayInScope    
+
+#==================================================================#
+# Head
+#==================================================================#
+u:(["tourne [la ta]" "fais tourner ta"] tête)
+Okay, si tu veux.
+^rand[
+    "^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight"
+    "^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft"
+]
+
+u:(regarde ailleurs)
+[
+    "Okay!"
+    "Si tu veux."
+    "D'accord."
+]
+^runBehavior(dialog_move_head/animations/TurnHead360)
+$RobotLastAnim=dialog_move_head/animations/TurnHead360
+
+u:([
+    "baisse [tes les] yeux"
+    "regarde [en "vers le"] bas"
+    "baisse [la ta] tête"
+    "{ne} me regarde pas"
+])
+Oui chef.
+^runBehavior(dialog_move_head/animations/LookDown)
+$RobotLastAnim=dialog_move_head/animations/LookDown
+
+u:([
+    "bouge [la ta]"
+    "~can_you faire bouger ta"
+    "~can_you bouger la"
+    "[fais fait] bouger ta"
+    ] tête)
+Et je fais bouger ma tête!
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:([regarde "tourne [la ta] tête"] ["vers la" à] droite)
+^rand[
+    "Et voici."
+    "Et voilà."
+    "Okay!"
+    "Si tu veux."
+]
+^runBehavior(dialog_move_head/animations/LookRight)
+$RobotLastAnim=dialog_move_head/animations/LookRight
+
+    u1:({pardon "je voulais dire"} ["de l'autre coté" "{vers} ma droite"])
+    ^rand[
+        "Et voici."
+        "Et voilà."
+        "Okay!"
+        "Si tu veux."
+    ]
+    ^runBehavior(dialog_move_head/animations/LookLeft)
+    $RobotLastAnim=dialog_move_head/animations/LookLeft
+
+u:([regarde "tourne [la ta] tête"] ["vers la" à] gauche)
+^rand[
+    "Et voici."
+    "Et voilà."
+    "Okay!"
+    "Si tu veux."
+]
+^runBehavior(dialog_move_head/animations/LookLeft)
+$RobotLastAnim=dialog_move_head/animations/LookLeft
+
+    u1:({pardon "je voulais dire"} ["de l'autre coté" "{vers} ma gauche"])
+    ^rand[
+        "Et voici."
+        "Et voilà."
+        "Okay!"
+        "Si tu veux."
+    ]
+    ^runBehavior(dialog_move_head/animations/LookRight)
+    $RobotLastAnim=dialog_move_head/animations/LookRight
+
+u:([
+    "regarde [en "vers le"] haut"
+    "lève [la ta] tête"
+])
+D'accord!
+^runBehavior(dialog_move_head/animations/LookUp)
+$RobotLastAnim=dialog_move_head/animations/LookUp
+
+    u1:([
+        "c'est tout"
+        "~can_you {pas} {regarder aller} plus {haut}"
+        "plus haut"
+        plus
+    ])
+    Je ne peux pas aller plus haut! $RobotLastAnim=""
+
+u:([regarde-moi "regarde vers moi" "~can_you me regarder"])
+Okay, je te regarde. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:(arrête de [bouger remuer] la tête)
+Désolé. $Dialog/LookAtMe=1 $RobotLastAnim=""
+
+u:(tu [bouges remues] trop la tête)
+Désolé, c'est l'impatience de te parler. $Dialog/LookAtMe=1 $RobotLastAnim=""
+

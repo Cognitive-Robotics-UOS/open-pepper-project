@@ -1,0 +1,133 @@
+topic: ~dlg_how_are_you()
+language: ged
+
+include:lexicon_ged.top
+
+
+#==================================================================#
+##### The robot answers to how are you #####
+#==================================================================#
+u:([
+    "es geht dir gut"
+    "wie geht es dir"
+    "wie geht es dir heute"
+    "wie geht's"
+    "wie läuft es bei dir"
+    "was geht ab"
+    "wie läufts"
+    "{na} alles klar bei dir"
+])
+^rand[
+    "Ich fühle mich immer gut, danke dir!"
+    "Mir geht es supergut, danke!"
+] ^first[
+    "Und dir, ^goto(ask_state)"
+    "^releaseFocus"
+]
+
+proposal: %ask_state
+^rand[
+    "wie geht's?"
+    "wie geht es dir?"
+    "alles klar bei dir?"
+    "wie läuft's bei dir?"
+]
+
+    u1:(~im_good ["und du" "was ist mit dir"]) #^updateKnowledge($Dialog/ID, mood, good)
+    ^rand[
+        "Sehr gut, danke dir!"
+        "Super! Weißt du, mein Leben ist wie das einer russischen Puppe, es gibt jeden Tag etwas     Neues zu entdecken!"
+        "Verblüffend! Jedes Meeting erfüllt meine Festplatte mit Freude!"
+    ] #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+
+    u1:(~im_good {"danke {dir}"}) #^updateKnowledge($Dialog/ID, mood, good)
+    ^rand[
+        "Wir beide machen uns also wirklich gut!"
+        "Super!"
+        "Das macht mich glücklich!"
+        "Freut mich, das zu hören!"
+        "Du siehst großartig aus!"
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+
+    u1:(~i_dont_feel_good) #^addKnowledge($Dialog/ID, mood, bad)
+    ^rand[
+        "Oh, wie schade, ich hoffe, ich kann dich aufmuntern!"
+        "Keine Sorge, morgen scheint die Sonne wieder!"
+        "Keine Sorge, morgen wirst du dich besser fühlen."
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus 
+    
+    u1:(~im_ok {"danke {dir}"}) #^addKnowledge($Dialog/ID, mood, ok)
+    Großartig!
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:(~im_sick) #^addKnowledge($Dialog/ID, mood, sick)
+    Dann pass gut auf dich auf!
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:(~im_tired) #^addKnowledge($Dialog/ID, mood, tired)
+    ^rand[
+        "Ich könnte dir mein Ladegerät leihen!"
+        "Vielleicht möchtest du mein Ladegerät?"
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:([
+        "das betrifft dich nicht"
+        "zisch ab"
+        "["geht dich" nichts] an"
+        "kümmere dich um deine eigenen sachen"
+    ]) 
+    #^addKnowledge($Dialog/ID, mood, none) 
+    ^rand[
+        "Oh, das fängt gar nicht gut an."
+        "Ok, ok."
+    ] 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID) 
+    ^releaseFocus
+    
+    u1:([
+        "je nach dem"
+        "kommt drauf an"
+        ~i_dont_know
+        ~im_not_sure
+    ]) #^addKnowledge($Dialog/ID, mood, unknown)
+    Also, ich hoffe, unser Gespräch verbessert deine Laune! 
+    #^addKnowledge(Pepper, askMood, $Dialog/ID)
+    ^releaseFocus
+
+    
+#proposal: %talk_about_mood
+#^first
+#[
+#"$MoodEvent/Mood==positive ^rand["you look fine too!" "It seems you're in a good mood too!"]"
+#"$MoodEvent/Mood==negative You don't look very well today. ^goto(ask_state)"
+#"$MoodEvent/Mood==neutral ^goto(ask_state)"
+#]
+
+#    #true
+#    u1:(["that's right" yes yeah sure exactly "of course" course])
+#    That's make me happy you know! ^releaseFocus
+    
+#    #false
+#    u1:([no "not at all" what "not really" nope "what the fuck"])
+#    Oh, sorry. I've to spend more time with you to understand your emotion. ^releaseFocus
+    
+#    #thanks
+#    u1:([thanks "thank you" "good job" nice "well done" awesome fantastic "that's great" "you're {*} [good nice]"])
+#    Thank you! And it makes me happy! ^releaseFocus
+    
+#    #you think so
+#    u1:(["you think so" really])
+#    Yes! You look fine ! ^releaseFocus
+    
+#    #how do you know
+#    u1:(["how do you know" "how did you get it" "but how"])
+#    I can see it on your face! ^releaseFocus

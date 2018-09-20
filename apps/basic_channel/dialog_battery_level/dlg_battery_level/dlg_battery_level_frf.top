@@ -1,0 +1,82 @@
+topic: ~dlg_battery_level()
+language: frf
+
+include:lexicon_frf.top
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+u:([
+    "il te reste combien ["de batterie" d'énergie]"
+    "~you_have combien ["de batterie" d'énergie]"
+    "combien ["{"est-ce que"} ~you_have" "il te reste" "te reste t'il" "est-ce qu'il te reste"] ["de batterie" d'énergie]"
+    "["quel est" "c'est quoi"] ton niveau ["de batterie" d'énergie]"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Ma batterie est entièrement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Ma batterie est presque entièrement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Ma batterie est presque entièrement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Ma batterie est à moitié chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Ma batterie est à moitié chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Ma batterie commence sérieusement à faiblir."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Ma batterie commence sérieusement à faiblir."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Je vais bientot m'éteindre si tu ne fais rien."
+    "Ma sonde est actuellement désactivée. Je ne peux pas te donner cette information."
+]
+
+u:([~do_you_need ~do_you_want] ["te mettre ["à charger" "en charge"]" "[aller d'aller] sur ["ton pod {"de chargement"}" "ta station de chargement"]" "te [recharger charger]" "recharger ["ta batterie" "tes batteries"]"])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Non merci, je suis en pleine forme."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Non merci, ma batterie est presque entièrement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Non merci, ma batterie est presque entièrement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Non ça ira, ma batterie est à moitié chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Non ça ira, ma batterie est à moitié chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Oui s'il te plait, ma batterie commence sérieusement à faiblir."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Oui s'il te plait, ma batterie commence sérieusement à faiblir."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Oui s'il te plait, je vais bientot m'éteindre si tu ne fais rien."
+    "Ma sonde est actuellement désactivée. Je ne peux pas te donner cette information."
+]
+
+u:(~do_you_have faim)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Merci, mais je n'ai pas faim du tout, ma batterie est complètement chargée."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Ça va merci, il me reste encore des réserves."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Ça va merci, il me reste encore des réserves."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Pas vraiment, mais ça ne va pas tarder!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Pas vraiment, mais ça ne va pas tarder!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 J'ai un peu faim, tu pourrais me mettre à charger?"
+    "Je ne sais pas trop."
+]
+
+u:([
+    "quel est ton [pourcentage niveau] {exact} ["de batterie" d'énergie]"
+    "il te reste quel pourcentage ["de batterie" d'énergie]"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "Mon niveau de batterie est de $BatteryChargeChanged pour cent."
+    "Je ne sais pas exactement, désolé."
+]
+
+u:(~are_you branché {"[au "sur le"] secteur"})
+^first[
+    "[$BatteryPowerPluggedChanged==true $BatteryChargingFlagChanged==true $ALBattery/ConnectedToChargingStation==true] Oui, je suis branché."
+    "$BatteryPowerPluggedChanged==false $BatteryFullChargedFlagChanged==false $BatteryChargingFlagChanged==false  Non, je ne suis pas branché."
+    "Désolé, je n'arrive pas à savoir."
+]
+
+u:(["
+    es-tu en train de ["te recharger" charger]"
+    "{"est-ce que"} [t'es "tu es"] en train de ["te recharger" charger]"
+    "[es-tu "tu es"] en charge"
+])
+^first[
+    "$BatteryChargingFlagChanged==true Oui, je suis en train de me recharger."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==true Non, comme ma batterie est pleine, j'ai arrêté de me recharger."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==false Non, je ne suis pas en train de recharger."
+    "Désolé, je n'arrive pas à savoir."
+]

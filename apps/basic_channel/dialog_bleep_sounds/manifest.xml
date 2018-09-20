@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.9" uuid="dialog_bleep_sounds">
+  <names>
+    <name lang="en_US">dialog_bleep_sounds</name>
+    <name lang="en_US-x-scrald">dialog_bleep_sounds</name>
+    <name lang="fr_FR">dialog_bleep_sounds</name>
+    <name lang="fr_FR-x-scrald">dialog_bleep_sounds</name>
+  </names>
+  <descriptions>
+    <description lang="en_US">The robot can activate or deactivate the bleep sound he makes when it stops listening according to the user's request.
+Examples of supported inputs:
+"Stop beeping."
+"Resume beeping."</description>
+    <description lang="en_US-x-scrald">The robot can activate or deactivate the bleep sound he makes when it stops listening according to the user's request.
+Examples of supported inputs:
+"Stop beeping."
+"Resume beeping."</description>
+    <description lang="fr_FR">Le robot peut activer ou désactiver le bip qu'il produit lorsqu'il arrête d'écouter.
+Exemples de phrases comprises par le robot :
+"Arrête de bipper."
+"Recommence à bipper."</description>
+    <description lang="fr_FR-x-scrald">Le robot peut activer ou désactiver le bip qu'il produit lorsqu'il arrête d'écouter.
+Exemples de phrases comprises par le robot :
+"Arrête de bipper."
+"Recommence à bipper."</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_bleep_sounds" typeVersion="1.0">
+      <topic path="dlg_bleep_sounds/dlg_bleep_sounds_enu.top" language="en_US"/>
+      <topic path="dlg_bleep_sounds/dlg_bleep_sounds_frf.top" language="fr_FR"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement minVersion="2.1"/>
+    <robotRequirement model="JULIETTE"/>
+    <robotRequirement model="NAO"/>
+  </requirements>
+</package>

@@ -1,0 +1,39 @@
+<form name="tethering" ng-submit="ok()" novalidate>
+    <div class="modal-header">
+    <h3 class="modal-title">Tethering!</h3>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            When enabled, the tethering mode allows the robot to act as a Network Access Point. If the robot is connected to Internet through another technology, he will share internet connectivity to other devices connected to it.
+            <br><br>This mode can affect seriously the security of your network.
+        </div>
+        <br>
+        <div class="row">
+            <label for="name" class="col-md-3 text-right">Name:</label>
+            <input class="col-md-3" type="text" id="name" name="name" ng-model="params.name" ng-minlength="1" maxlength="32" required>
+            <div class="col-md-6 error"
+                    ng-show="tethering.name.$dirty && tethering.name.$invalid">
+                <small>Must be from 1 to 32 symbols long...</small>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <label for="passphrase" class="col-md-3 text-right">Passphrase:</label>
+            <input ng-show="formFlags.showpass" class="col-md-3" type="text" id="passphrase" name="passphrase" ng-model="params.passphrase" maxlength="63" ng-required validate-pass />
+            <input ng-hide="formFlags.showpass" class="col-md-3" type="password" id="passphrase" name="passphrase" ng-model="params.passphrase" maxlength="63" ng-required validate-pass />
+            <div class="col-md-6 error"
+                    ng-show="!tethering.name.$invalid && !tethering.$valid">
+                <small>Must be from 8 to 63 symbols long...</small>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6"><input type="checkbox" ng-model="formFlags.showpass"/> Show passphrase</div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success" ng-disabled="!tethering.$valid" type="submit">Enable</button>
+        <button class="btn btn-danger" type="button" ng-click="cancel()">Cancel</button>
+    </div>
+</form>

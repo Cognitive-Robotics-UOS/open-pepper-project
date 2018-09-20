@@ -1,0 +1,81 @@
+topic: ~dlg_battery_level()
+language: iti
+
+#==================================================================#
+# Ask the robot its battery level
+#==================================================================#
+
+u:([
+    "qual è il livello di carica della tua batteria"
+    "quanta energia hai"
+    "quanta durata utile di batteria hai"
+    "quanta durata utile di energia hai"
+    "quanta energia ti rimane"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 La mia batteria è completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 La mia batteria è quasi completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 La mia batteria è quasi completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 La mia batteria è a metà carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 La mia batteria è a metà carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 La mia batteria si sta scaricando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 La mia batteria si sta scaricando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 La mia batteria è quasi scarica, collega il mio caricabatterie."
+    "Il mio sensore è disattivato, non posso dare queste informazioni."
+]
+
+u:([
+    "hai bisogno di essere ["messo in carica" collegato caricato]"
+    "hai bisogno di andare alla tua stazione di ricarica"
+    "hai bisogno di utilizzare la tua base di ricarica"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 No, grazie. La mia batteria è completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 No, grazie. La mia batteria è quasi completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 No, grazie. La mia batteria è quasi completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Non ancora. La mia batteria è a metà carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Non ancora. La mia batteria è a metà carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.2 Sì, grazie. La mia batteria si sta scaricando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.2 Sì, grazie. La mia batteria si sta scaricando."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.2 Sì, grazie. La mia batteria è quasi scarica, collega il mio caricabatterie."
+    "Il mio sensore è disattivato, non posso dare queste informazioni."
+]
+
+u:([
+    "hai fame"
+    "sei affamato"
+])
+^pCall(ALBatteryDisplay.show())
+^first[
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==1 Non ho per niente fame, grazie. La mia batteria è completamente carica."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.8 Non al momento, la mia batteria è ben carica!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.8 Non al momento, la mia batteria è ben carica!"
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value>0.4 Va tutto bene, ho ancora parecchia energia."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value==0.4 Va tutto bene, ho ancora parecchia energia."
+    "$Device/SubDeviceList/Battery/Charge/Sensor/Value<0.4 Sto iniziando ad avere fame, potresti collegarmi al mio caricabatterie?"
+    "Non so, mi dispiace."
+]
+
+u:(qual è il livello di carica esatto della tua batteria)
+^pCall(ALBatteryDisplay.show())
+^first[
+    "La mia batteria è attualmente al $BatteryChargeChanged percento."
+    "Non so, mi dispiace."
+]
+
+u:(sei collegato)
+^first[
+    "[$BatteryPowerPluggedChanged==true $BatteryChargingFlagChanged==true $ALBattery/ConnectedToChargingStation==true] Sì, sono in carica."
+    "$BatteryPowerPluggedChanged==false $BatteryFullChargedFlagChanged==false $BatteryChargingFlagChanged==false  No, non sono in carica."
+    "Non so, mi dispiace."
+]
+
+u:(sei in carica)
+^first[
+    "$BatteryChargingFlagChanged==true Sì, sono in carica."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==true No, ho smesso di ricarica perché la mia batteria è carica."
+    "$BatteryChargingFlagChanged==false $BatteryFullChargedFlagChanged==false No, non sono in carica."
+    "Non so, mi dispiace."
+]

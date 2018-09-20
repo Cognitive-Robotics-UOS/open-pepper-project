@@ -1,0 +1,7 @@
+multilanguage:dlg_hello
+  ged:dlg_hello_ged.top
+  enu:dlg_hello_enu.top
+  spe:dlg_hello_spe.top
+  frf:dlg_hello_frf.top
+  iti:dlg_hello_iti.top
+  jpj:dlg_hello_jpj.top

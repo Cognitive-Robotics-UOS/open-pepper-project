@@ -1,0 +1,108 @@
+topic: ~dlg_say_something_else()
+language: enu
+
+include:lexicon_enu.top
+
+#==================================================================#
+##### Makes the robot switch to another topic #####
+#==================================================================#
+
+u:^private(e:Dialog/NothingToSay)
+^rand[
+    "I'd rather you asked the questions."
+    "Your turn asking questions."
+    "You can choose the subject."
+] ^releaseFocus
+
+u:([
+    #"is that [all it]"
+    "what else"
+])
+Well,
+$pushMode=1
+^topicRandom
+
+u:([
+    "why don't you [talk speak] {"any [more longer]"}"
+    "why aren't you talking"
+    "why [don't can't] you keep talking"
+]) 
+I prefer when you ask the questions.
+
+u:([
+    "[change "let's change"] the [subject conversation topic]"
+    "stop talking about that"
+    "~dont talk {"about that"} anymore"
+    "that doesn't interest me"
+    "["talk {"to me"}" "let's talk"] about something else"
+    "let's move on"
+    "["[can could] we" let's] keep [chatting speaking talking]"
+    "{no} I don't want to talk about that {"any more" "any longer"}"
+])
+Let's talk about something else then.
+$pushMode=1
+^topicRandom
+
+u:(~proposition_next)
+Let's talk about something else,
+$pushMode=1
+^topicRandom
+
+u:({please "I want you to" "I'd like you to"} [say "tell me"] something {else})
+^rand[Ok "No problem"],
+$pushMode=1
+^topicRandom
+
+
+#==================================================================#
+##### Ask the robot for a new subject #####
+#==================================================================#
+
+u:([
+    "what can we [discuss "[chat talk] about"]"
+    "what [should can could] we ["[chat talk] about" discuss]"
+    "what [can could] you ["[chat talk] about" discuss]"
+    "what can I tell you"
+    "what do you have to say"
+    "what do you know"
+    "what [subject subjects] do you know"
+    "suggest a subject"
+]) %topicslist
+$size_descriptions="^size(~all_descriptions)"
+^first[
+"$size_descriptions==0 Many different topics, but I prefer that you ask me some general questions!"
+"Right now, I can talk about ^enumerate(~all_descriptions). Tell me what you'd prefer!"
+]
+    
+    u1:(the first {one})
+    Ok! ^interpret($Dialog/Enumerate/1)
+    
+    u1:(the second {one})
+    Ok! ^interpret($Dialog/Enumerate/2)
+    
+    u1:(the third {one})
+    Ok! ^interpret($Dialog/Enumerate/3)
+    
+    u1:(the last {one})
+    Ok! ^interpret($Dialog/Enumerate/Last)
+
+    u1:([
+        anything
+        whatever
+        that
+        "you [decide choose]"
+        "pick up"
+        "up to you"
+    ])
+    Alright! ^releaseFocus
+
+##==================================================================#
+#recover:
+##==================================================================#
+#u:(change {the} subject)
+#Ok, let's change the subject then,
+#$pushMode=1
+#^topicRandom
+
+#u:(["ask {me} a question" "ask {me} questions"])
+#I prefer when you ask the questions.

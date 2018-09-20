@@ -1,0 +1,497 @@
+topic: ~lexicon_names()
+language: frf
+
+include:lexicon_frf.top
+#==================================================================#
+# Male names fix
+#==================================================================#
+pronunciation:(Aaron) [Aarone]
+pronunciation:(Abd) [Abde]
+pronunciation:(Achraf) [Ashraf]
+pronunciation:(Adem) [Adème]
+#pronunciation:(Adrian) [Adriane]
+pronunciation:(Aidan) [Aïdane]
+pronunciation:(Alan) [Alane]
+pronunciation:(Alexander) [Alexandeur]
+pronunciation:(Alois) [Aloïsse]
+pronunciation:(Alvin) [Alvine]
+pronunciation:(Anas) [Anass]
+pronunciation:(Andrew) [Androu]
+pronunciation:(Andy) [Anndi]
+pronunciation:(Anton) [Anetone]
+pronunciation:(Ayman) [Aillemane]
+pronunciation:(Aymen) [Aillemene]
+pronunciation:(Azzedine) [Azédine]
+pronunciation:(Badis) [Badisse]
+pronunciation:(Ben) [Bènne]
+pronunciation:(Billy) [Bili]
+pronunciation:(Brandon) [Branndone]
+pronunciation:(Brendan) [Brénndane]
+pronunciation:(Brieuc) [Brieu]
+pronunciation:(Bruce) [Brousse]
+pronunciation:(Bryan) [Brayane]
+pronunciation:(Calvin) [Calvine]
+pronunciation:(Cameron) [Camerone]
+pronunciation:(Carmelo) [Carmélo]
+pronunciation:(Charles-Henri) [Charlanri]
+pronunciation:(Christopher) [Christopheur]
+pronunciation:(Dave) [Daive]
+pronunciation:(Davy) [Dévi]
+pronunciation:(Demba) [Dèmba]
+pronunciation:(Donatien) [Donassien]
+pronunciation:(Donovan) [Donovane]
+pronunciation:(Doryan) [Doriane]
+pronunciation:(Eden) [Édène]
+pronunciation:(Edwin) [Edwine]
+pronunciation:(Elian) [Éliane]
+pronunciation:(Élias) [Éliasse]
+pronunciation:(Elies) [Éliesse]
+pronunciation:(Elliot) [Éliote]
+pronunciation:(Emré) [Aimeré]
+pronunciation:(Enès) [Énèsse]
+pronunciation:(Enrique) [Èneriqué]
+pronunciation:(Eren) [Érène]
+pronunciation:(Erwin) [Erwine]
+pronunciation:(Esteban) [Éstébane]
+pronunciation:(Ethan) [Étane]
+pronunciation:(Ewan) [Éwane]
+pronunciation:(Fayçal) [Féssal]
+pronunciation:(Filipe) [Filipé]
+pronunciation:(Francesco) [Frannchesco]
+pronunciation:(Gatien) [Gassien]
+pronunciation:(Gianni) [Djiani]
+pronunciation:(Giuseppe) [Giousséppé]
+pronunciation:(Goulven) [Goulvène]
+pronunciation:(Gurvan) [Gurvane]
+pronunciation:(Hacene) [Hassène]
+pronunciation:(Hakan) [Hakane]
+pronunciation:(Hassan) [Hasane]
+pronunciation:(Hermann) [Hermane]
+pronunciation:(Iban) [Ibane]
+pronunciation:(Ilan) [Ilane]
+pronunciation:(Ilias) [Iliasse]
+pronunciation:(Ilies) [Iliesse]
+pronunciation:(Imran) [Imerane]
+pronunciation:(Jack) [Djack]
+pronunciation:(Jad) [Djade]
+pronunciation:(Jarod) [Jarode]
+pronunciation:(Jayson) [Djézone]
+pronunciation:(Jerry) [Djéri]
+pronunciation:(Jim) [Djim]
+pronunciation:(Joao) [Johaho]
+pronunciation:(Jocelyn) [Josselin]
+pronunciation:(Jolan) [Jolane]
+pronunciation:(Jorge) [Iorgué]
+pronunciation:(Joshua) [Jochua]
+#pronunciation:(Josian) [Josiane]
+pronunciation:(Juan) [Rouane]
+pronunciation:(Kader) [Kadère]
+pronunciation:(Kelvin) [Kelvine]
+pronunciation:(Kelyan) [Kelyane]
+pronunciation:(Ken) [Kène]
+pronunciation:(Kenan) [Kénane]
+pronunciation:(Kenjy) [Kènnji]
+pronunciation:(Kenzo) [Kènnzo]
+pronunciation:(Keran) [Kérane]
+pronunciation:(Kevin) [Kévine]
+pronunciation:(Khaled) [Kalède]
+pronunciation:(Khalid) [Kalide]
+pronunciation:(Kilian) [Kiliane]
+pronunciation:(Léopold) [Léopolde]
+pronunciation:(Loan) [Lan]
+pronunciation:(Logan) [Logane]
+pronunciation:(Lohan) [Loane]
+pronunciation:(Loris) [Lorisse]
+pronunciation:(Loucas) [Loucasse]
+pronunciation:(Lounes) [Lounèsse]
+pronunciation:(Lubin) [Loubine]
+pronunciation:(Lucas) [Lucasse]
+pronunciation:(Luciano) [Loutchiano]
+pronunciation:(Luigi) [Louidji]
+pronunciation:(Luis) [Louisse]
+pronunciation:(Lyes) [Liesse]
+pronunciation:(Marley) [Marlé]
+pronunciation:(Marlon) [Marlone]
+pronunciation:(Marvin) [Marvine]
+pronunciation:(Matthew) [Mattiou]
+pronunciation:(Melvin) [Melvine]
+pronunciation:(Merwan) [Merwane]
+pronunciation:(Mohand) [Mohande]
+#pronunciation:(Morgan) [Morgane]
+pronunciation:(Mouloud) [Mouloude]
+pronunciation:(Mylan) [Milane]
+pronunciation:(Nans) [Nannse]
+pronunciation:(Nacer) [Nassère]
+pronunciation:(Noan) [Nan]
+pronunciation:(Nohan) [Noane]
+pronunciation:(Nolan) [Nolane]
+pronunciation:(Norman) [Normane]
+pronunciation:(Oualid) [Oualide]
+pronunciation:(Owen) [Owène]
+pronunciation:(Patxi) [Patchi]
+pronunciation:(Ramzi) [Ramezi]
+pronunciation:(Redouane) [Rédouane]
+pronunciation:(Rhaled) [Ralède]
+pronunciation:(Rhalid) [Ralide]
+pronunciation:(Rohan) [Rohane]
+#pronunciation:(Roman) [Romane]
+pronunciation:(Rosan) [Rosane]
+pronunciation:(Ruben) [Rubène]
+pronunciation:(Ryan) [Raillane]
+pronunciation:(Sean) [Cheune]
+pronunciation:(Sevan) [Sévane]
+pronunciation:(Sofien) [Sofiène]
+#pronunciation:(Sohan) [Sohane]
+pronunciation:(Soren) [Sorène]
+pronunciation:(Souleymane) [Soulémane]
+pronunciation:(Stan) [Stane]
+pronunciation:(Stéphen) [Stéfene]
+pronunciation:(Steven) [Stivene]
+pronunciation:(Stevens) [Stiveunse]
+pronunciation:(Sullivan) [Sulivane]
+pronunciation:(Tao) [Taho]
+pronunciation:(Vianney) [Viané]
+pronunciation:(Warren) [Waréne]
+pronunciation:(Walid) [Oualide]
+pronunciation:(Wilson) [Wilsone]
+pronunciation:(Yanis) [Yanisse]
+pronunciation:(Yann) [Yane]
+pronunciation:(Zachary) [Zakari]
+
+#==================================================================#
+# Female names fix
+#==================================================================#
+pronunciation:(Aïcha) [Aillcha]
+pronunciation:(Aïché) [Aillché]
+pronunciation:(Aïda) [Aillda]
+pronunciation:(Aïssata) [Aillssata]
+pronunciation:(Aïssatou) [Aillssatou]
+pronunciation:(Alison) [Alissone]
+pronunciation:(Amy) [Émi]
+pronunciation:(Anne) [Ann]
+pronunciation:(Angela) [Andjéla]
+pronunciation:(Angelina) [Andjélina]
+pronunciation:(Angie) [Enndji]
+pronunciation:(Anouk) [Anouque]
+pronunciation:(Athénaïs) [Athénaïsse]
+pronunciation:(Aya) [Ailla]
+pronunciation:(Aylin) [Aillelynn]
+pronunciation:(Brenda) [Brénnda]
+pronunciation:(Chayma) [Chaïma]
+pronunciation:(Cynthia) [Sinntia]
+pronunciation:(Eden) [Edène]
+pronunciation:(Edwige) [Edvige]
+pronunciation:(Erin) [Érine]
+pronunciation:(Francesca) [Frannchesca]
+pronunciation:(Gina) [Djina]
+pronunciation:(Giulia) [Djioulia]
+pronunciation:(Gwenaelle) [Gwenaèle]
+pronunciation:(Heidi) [Ailldi]
+pronunciation:(Ingrid) [Inngride]
+pronunciation:(Jennifer) [Djénifeur]
+pronunciation:(Jessy) [Djessi]
+pronunciation:(Karen) [Karéne]
+pronunciation:(Kathleen) [Catline]
+pronunciation:(Kimberley) [Kimmbeurlé]
+pronunciation:(Leelou) [Lélou]
+pronunciation:(Lénaïg) [Lénahigue]
+pronunciation:(Lindsay) [Linndssé]
+pronunciation:(Line) [Lynne]
+pronunciation:(Loan) [Lan]
+pronunciation:(Madison) [Madissone]
+pronunciation:(Maggy) [Magui]
+pronunciation:(Maëlis) [Mahélisse]
+pronunciation:(Maïlys) [Mahilisse]
+pronunciation:(Maimouna) [Maillmouna]
+pronunciation:(Maissane) [Maillsané]
+pronunciation:(Mandy) [Ménndi]
+pronunciation:(Maryam) [Mariam]
+pronunciation:(Maureen) [Morine]
+pronunciation:(Mayssa) [Maïssa]
+pronunciation:(Megan) [Mégane]
+pronunciation:(Naila) [Nahila]
+pronunciation:(Naïs) [Nahisse]
+pronunciation:(Nancy) [Nannci]
+pronunciation:(Noa) [Noha]
+pronunciation:(Peggy) [Pégui]
+pronunciation:(Perrine) [Périne]
+pronunciation:(Prescillia) [Préssilia]
+pronunciation:(Priscilla) [Prissila]
+pronunciation:(Priscille) [Prissile]
+pronunciation:(Priscillia) [Prissilia]
+pronunciation:(Ruth) [Rousse]
+pronunciation:(Sharon) [Sharone]
+pronunciation:(Shayna) [Shaïna]
+pronunciation:(Shirley) [Cheurlé]
+pronunciation:(Soazig) [Soizigue]
+pronunciation:(Soledad) [Solédade]
+pronunciation:(Stacy) [Stéci]
+pronunciation:(Thaïs) [Taïsse]
+pronunciation:(Wassila) [Vassila]
+
+#==================================================================#
+# Male names skin
+#==================================================================#
+s:({*} Aaron {*}) ^replace(Aaron, Aarone, 1)
+s:({*} Abd {*}) ^replace(Abd, Abde, 1)
+s:({*} Achraf {*}) ^replace(Achraf, Ashraf, 1)
+s:({*} Adem {*}) ^replace(Adem, Adème, 1)
+#s:({*} Adrian {*}) ^replace(Adrian, Adriane, 1)
+s:({*} Aidan {*}) ^replace(Aidan, Aïdane, 1)
+s:({*} Alan {*}) ^replace(Alan, Alane, 1)
+s:({*} Alexander {*}) ^replace(Alexander, Alexandeur, 1)
+s:({*} Alois {*}) ^replace(Alois, Aloïsse, 1)
+s:({*} Alvin {*}) ^replace(Alvin, Alvine, 1)
+s:({*} Anas {*}) ^replace(Anas, Anass, 1)
+s:({*} Andrew {*}) ^replace(Andrew, Androu, 1)
+s:({*} Andy {*}) ^replace(Andy, Anndi, 1)
+s:({*} Anton {*}) ^replace(Anton, Anetone, 1)
+s:({*} Ayman {*}) ^replace(Ayman, Aillemane, 1)
+s:({*} Aymen {*}) ^replace(Aymen, Aillemène, 1)
+s:({*} Azzedine {*}) ^replace(Azzedine, Azédine, 1)
+s:({*} Badis {*}) ^replace(Badis, Badisse, 1)
+s:({*} Ben {*}) ^replace(Ben, Bène, 1)
+s:({*} Billy {*}) ^replace(Billy, Bili, 1)
+s:({*} Brandon {*}) ^replace(Brandon, Branndone, 1)
+s:({*} Brendan {*}) ^replace(Brendan, Brénndane, 1)
+s:({*} Brieuc {*}) ^replace(Brieuc, Brieu, 1)
+s:({*} Bruce {*}) ^replace(Bruce, Brousse, 1)
+s:({*} Bryan {*}) ^replace(Bryan, Brayane, 1)
+s:({*} Calvin {*}) ^replace(Calvin, Calvine, 1)
+s:({*} Cameron {*}) ^replace(Cameron, Camerone, 1)
+s:({*} Carmelo {*}) ^replace(Carmelo, Carmélo, 1)
+s:({*} Charles-Henri {*}) ^replace(Charles-Henri, Charlanri, 1)
+s:({*} Christopher {*}) ^replace(Christopher, Christopheur, 1)
+s:({*} Dave {*}) ^replace(Dave, Daive, 1)
+s:({*} Davy {*}) ^replace(Davy, Dévi, 1)
+s:({*} Demba {*}) ^replace(Demba, Dèmba, 1)
+s:({*} Donatien {*}) ^replace(Donatien, Donassien, 1)
+s:({*} Donovan {*}) ^replace(Donovan, Donovane, 1)
+s:({*} Doryan {*}) ^replace(Doryan, Doriane, 1)
+s:({*} Eden {*}) ^replace(Eden, Édenne, 1)
+s:({*} Edwin {*}) ^replace(Edwin, Edwine, 1)
+s:({*} Elian {*}) ^replace(Elian, Éliane, 1)
+s:({*} Élias {*}) ^replace(Élias, Éliasse, 1)
+s:({*} Elies {*}) ^replace(Elies, Éliesse, 1)
+s:({*} Elliot {*}) ^replace(Elliot, Elliotte, 1)
+s:({*} Emré {*}) ^replace(Emré, Aimeré, 1)
+s:({*} Enès {*}) ^replace(Enès, Énèsse, 1)
+s:({*} Enrique {*}) ^replace(Enrique, Èneriqué, 1)
+s:({*} Eren {*}) ^replace(Eren, Érène, 1)
+s:({*} Erwin {*}) ^replace(Erwin, Erwine, 1)
+s:({*} Esteban {*}) ^replace(Esteban, Éstébane, 1)
+s:({*} Ethan {*}) ^replace(Ethan, Étane, 1)
+s:({*} Ewan {*}) ^replace(Ewan, Éwane, 1)
+s:({*} Fayçal {*}) ^replace(Fayçal, Féssal, 1)
+s:({*} Filipe {*}) ^replace(Filipe, Filipé, 1)
+s:({*} Francesco {*}) ^replace(Francesco, Frannchesco, 1)
+s:({*} Gatien {*}) ^replace(Gatien, Gassien, 1)
+s:({*} Gianni {*}) ^replace(Gianni, Djiani, 1)
+s:({*} Giuseppe {*}) ^replace(Giuseppe, Giousséppé, 1)
+s:({*} Goulven {*}) ^replace(Goulven, Goulvène, 1)
+s:({*} Gurvan {*}) ^replace(Gurvan, Gurvane, 1)
+s:({*} Hacene {*}) ^replace(Hacene, Hassène, 1)
+s:({*} Hakan {*}) ^replace(Hakan, Hakane, 1)
+s:({*} Hassan {*}) ^replace(Hassan, Hassane, 1)
+s:({*} Hermann {*}) ^replace(Hermann, Hermane, 1)
+s:({*} Iban {*}) ^replace(Iban, Ibane, 1)
+s:({*} Ilan {*}) ^replace(Ilan, Ilane, 1)
+s:({*} Ilias {*}) ^replace(Ilias, Iliasse, 1)
+s:({*} Ilies {*}) ^replace(Ilies, Iliesse, 1)
+s:({*} Imran {*}) ^replace(Imran, Imerane, 1)
+s:({*} Jack {*}) ^replace(Jack, Djack, 1)
+s:({*} Jad {*}) ^replace(Jad, Djade, 1)
+s:({*} Jarod {*}) ^replace(Jarod, Jarode, 1)
+s:({*} Jayson {*}) ^replace(Jayson, Djézone, 1)
+s:({*} Jerry {*}) ^replace(Jerry, Djéri, 1)
+s:({*} Jim {*}) ^replace(Jim, Djim, 1)
+s:({*} Joao {*}) ^replace(Joao, Johaho, 1)
+s:({*} Jocelyn {*}) ^replace(Jocelyn, Josselin, 1)
+s:({*} Jolan {*}) ^replace(Jolan, Jolane, 1)
+s:({*} Jorge {*}) ^replace(Jorge, Iorgué, 1)
+s:({*} Joshua {*}) ^replace(Joshua, Jochua, 1)
+#s:({*} Josian {*}) ^replace(Josian, Josiane, 1)
+s:({*} Juan {*}) ^replace(Juan, Rouane, 1)
+s:({*} Kader {*}) ^replace(Kader, Kadère, 1)
+s:({*} Kelvin {*}) ^replace(Kelvin, Kelvine, 1)
+s:({*} Kelyan {*}) ^replace(Kelyan, Kelyane, 1)
+s:({*} Ken {*}) ^replace(Ken, Kènne, 1)
+s:({*} Kenan {*}) ^replace(Kenan, Kénane, 1)
+s:({*} Kenjy {*}) ^replace(Kenjy, Kènnji, 1)
+s:({*} Kenzo {*}) ^replace(Kenzo, Kènnzo, 1)
+s:({*} Keran {*}) ^replace(Keran, Kérane, 1)
+s:({*} Kevin {*}) ^replace(Kevin, Kévine, 1)
+s:({*} Khaled {*}) ^replace(Khaled, Kalède, 1)
+s:({*} Khalid {*}) ^replace(Khalid, Kalide, 1)
+s:({*} Kilian {*}) ^replace(Kilian, Kiliane, 1)
+s:({*} Léopold {*}) ^replace(Léopold, Léopolde, 1)
+s:({*} Loan {*}) ^replace(Loan, Lan, 1)
+s:({*} Logan {*}) ^replace(Logan, Logane, 1)
+s:({*} Lohan {*}) ^replace(Lohan, Loane, 1)
+s:({*} Loris {*}) ^replace(Loris, Lorisse, 1)
+s:({*} Loucas {*}) ^replace(Loucas, Loucasse, 1)
+s:({*} Lounes {*}) ^replace(Lounes, Lounèsse, 1)
+s:({*} Lubin {*}) ^replace(Lubin, Loubine, 1)
+s:({*} Lucas {*}) ^replace(Lucas, Lucasse, 1)
+s:({*} Luciano {*}) ^replace(Luciano, Loutchiano, 1)
+s:({*} Luigi {*}) ^replace(Luigi, Louidji, 1)
+s:({*} Luis {*}) ^replace(Luis, Louisse, 1)
+s:({*} Lyes {*}) ^replace(Lyes, Liesse, 1)
+s:({*} Marley {*}) ^replace(Marley, Marlé, 1)
+s:({*} Marlon {*}) ^replace(Marlon, Marlone, 1)
+s:({*} Marvin {*}) ^replace(Marvin, Marvine, 1)
+s:({*} Matthew {*}) ^replace(Matthew, Mattiou, 1)
+s:({*} Melvin {*}) ^replace(Melvin, Melvine, 1)
+s:({*} Merwan {*}) ^replace(Merwan, Merwane, 1)
+s:({*} Mohand {*}) ^replace(Mohand, Mohande, 1)
+#s:({*} Morgan {*}) ^replace(Morgan, Morgane, 1)
+s:({*} Mouloud {*}) ^replace(Mouloud, Mouloude, 1)
+s:({*} Mylan {*}) ^replace(Mylan, Milane, 1)
+s:({*} Nans {*}) ^replace(Nans, Nannse, 1)
+s:({*} Nacer {*}) ^replace(Nacer, Nassère, 1)
+s:({*} Noan {*}) ^replace(Noan, Nan, 1)
+s:({*} Nohan {*}) ^replace(Nohan, Noane, 1)
+s:({*} Nolan {*}) ^replace(Nolan, Nolane, 1)
+s:({*} Norman {*}) ^replace(Norman, Normane, 1)
+s:({*} Oualid {*}) ^replace(Oualid, Oualide, 1)
+s:({*} Owen {*}) ^replace(Owen, Owène, 1)
+s:({*} Patxi {*}) ^replace(Patxi, Patchi, 1)
+s:({*} Ramzi {*}) ^replace(Ramzi, Ramezi, 1)
+s:({*} Redouane {*}) ^replace(Redouane, Rédouane, 1)
+s:({*} Rhaled {*}) ^replace(Rhaled, Rhalède, 1)
+s:({*} Rhalid {*}) ^replace(Rhalid, Rhalide, 1)
+s:({*} Rohan {*}) ^replace(Rohan, Rohane, 1)
+#s:({*} Roman {*}) ^replace(Roman, Romane, 1)
+s:({*} Rosan {*}) ^replace(Rosan, Rosane, 1)
+s:({*} Ruben {*}) ^replace(Ruben, Rubène, 1)
+s:({*} Ryan {*}) ^replace(Ryan, Raillane, 1)
+s:({*} Sean {*}) ^replace(Sean, Cheune, 1)
+s:({*} Sevan {*}) ^replace(Sevan, Sévane, 1)
+s:({*} Sofien {*}) ^replace(Sofien, Sofiène, 1)
+#s:({*} Sohan {*}) ^replace(Sohan, Sohane, 1)
+s:({*} Soren {*}) ^replace(Soren, Sorène, 1)
+s:({*} Souleymane {*}) ^replace(Souleymane, Soulémane, 1)
+s:({*} Stan {*}) ^replace(Stan, Stanne, 1)
+s:({*} Stéphen {*}) ^replace(Stéphen, Stéfene, 1)
+s:({*} Steven {*}) ^replace(Steven, Stivene, 1)
+s:({*} Stevens {*}) ^replace(Stevens, Stiveunse, 1)
+s:({*} Sullivan {*}) ^replace(Sullivan, Sulivane, 1)
+s:({*} Tao {*}) ^replace(Tao, Taho, 1)
+s:({*} Vianney {*}) ^replace(Vianney, Viané, 1)
+s:({*} Warren {*}) ^replace(Warren, Warène, 1)
+s:({*} Walid {*}) ^replace(Walid, Oualide, 1)
+s:({*} Wilson {*}) ^replace(Wilson, Wilsone, 1)
+s:({*} Yanis {*}) ^replace(Yanis, Yanisse, 1)
+s:({*} Yann {*}) ^replace(Yann, Yane, 1)
+s:({*} Ylies {*}) ^replace(Ylies, Iliesse, 1)
+s:({*} Zachary {*}) ^replace(Zachary, Zakari, 1)
+
+#==================================================================#
+# Female names skin
+#==================================================================#
+s:({*} Aïcha {*}) ^replace(Aïcha, Aillcha, 1)
+s:({*} Aïché {*}) ^replace(Aïché, Aillché, 1)
+s:({*} Aïda {*}) ^replace(Aïda, Aillda, 1)
+s:({*} Aïssata {*}) ^replace(Aïssata, Aillssata, 1)
+s:({*} Aïssatou {*}) ^replace(Aïssatou, Aillssatou, 1)
+s:({*} Alison {*}) ^replace(Alison, Alissone, 1)
+s:({*} Amy {*}) ^replace(Amy, Émi, 1)
+s:({*} Anne {*}) ^replace(Anne, Ann, 1)
+s:({*} Angela {*}) ^replace(Angela, Anndjéla, 1)
+s:({*} Angelina {*}) ^replace(Angelina, Anndjélina, 1)
+s:({*} Angie {*}) ^replace(Angie, Enndji, 1)
+s:({*} Anouk {*}) ^replace(Anouk, Anouque, 1)
+s:({*} Athénaïs {*}) ^replace(Athénaïs, Athénaïsse, 1)
+s:({*} Aya {*}) ^replace(Aya, Ailla, 1)
+s:({*} Aylin {*}) ^replace(Aylin, Aillelynn, 1)
+s:({*} Brenda {*}) ^replace(Brenda, Brènnda, 1)
+s:({*} Chayma {*}) ^replace(Chayma, Chaïma, 1)
+s:({*} Cynthia {*}) ^replace(Cynthia, Sinntia, 1)
+s:({*} Eden {*}) ^replace(Eden, Edène, 1)
+s:({*} Edwige {*}) ^replace(Edwige, Edvige, 1)
+s:({*} Erin {*}) ^replace(Erin, Érine, 1)
+s:({*} Francesca {*}) ^replace(Francesca, Frannchesca, 1)
+s:({*} Gina {*}) ^replace(Gina, Djina, 1)
+s:({*} Giulia {*}) ^replace(Giulia, Djioulia, 1)
+s:({*} Gwenaelle {*}) ^replace(Gwenaelle, Gwenaèlle, 1)
+s:({*} Heidi {*}) ^replace(Heidi, Ailldi, 1)
+s:({*} Ingrid {*}) ^replace(Ingrid, Inngride, 1)
+s:({*} Jennifer {*}) ^replace(Jennifer, Djénifeur, 1)
+s:({*} Jessy {*}) ^replace(Jessy, Djessi, 1)
+s:({*} Karen {*}) ^replace(Karen, Karéne, 1)
+s:({*} Kathleen {*}) ^replace(Kathleen, Catline, 1)
+s:({*} Kimberley {*}) ^replace(Kimberley, Kimmbeurlé, 1)
+s:({*} Leelou {*}) ^replace(Leelou, Lélou, 1)
+s:({*} Lénaïg {*}) ^replace(Lénaïg, Lénahigue, 1)
+s:({*} Lindsay {*}) ^replace(Lindsay, Linndssé, 1)
+s:({*} Line {*}) ^replace(Line, Lynne, 1)
+s:({*} Loan {*}) ^replace(Loan, Lan, 1)
+s:({*} Madison {*}) ^replace(Madison, Madissone, 1)
+s:({*} Maggy {*}) ^replace(Maggy, Magui, 1)
+s:({*} Maimouna {*}) ^replace(Maimouna, Maillmouna, 1)
+s:({*} Maëlis {*}) ^replace(Maëlis, Mahélisse, 1)
+s:({*} Maïlys {*}) ^replace(Maïlys, Mahilisse, 1)
+s:({*} Maissane {*}) ^replace(Maissane, Maillsané, 1)
+s:({*} Mandy {*}) ^replace(Mandy, Menndi, 1)
+s:({*} Maryam {*}) ^replace(Maryam, Mariam, 1)
+s:({*} Maureen {*}) ^replace(Maureen, Morine, 1)
+s:({*} Mayssa {*}) ^replace(Mayssa, Maïssa, 1)
+s:({*} Megan {*}) ^replace(Megan, Mégane, 1)
+s:({*} Naila {*}) ^replace(Naila, Nahila, 1)
+s:({*} Naïs {*}) ^replace(Naïs, Nahisse, 1)
+s:({*} Nancy {*}) ^replace(Nancy, Nannci, 1)
+s:({*} Noa {*}) ^replace(Noa, Noha, 1)
+s:({*} Peggy {*}) ^replace(Peggy, Pégui, 1)
+s:({*} Perrine {*}) ^replace(Perrine, Périne, 1)
+s:({*} Prescillia {*}) ^replace(Prescillia, Préssilia, 1)
+s:({*} Priscilla {*}) ^replace(Priscilla, Prissila, 1)
+s:({*} Priscille {*}) ^replace(Priscille, Prissile, 1)
+s:({*} Priscillia {*}) ^replace(Priscillia, Prissilia, 1)
+s:({*} Ruth {*}) ^replace(Ruth, Rousse, 1)
+s:({*} Sharon {*}) ^replace(Sharon, Sharone, 1)
+s:({*} Shayna {*}) ^replace(Shayna, Shaïna, 1)
+s:({*} Shirley {*}) ^replace(Shirley, Cheurlé, 1)
+s:({*} Soazig {*}) ^replace(Soazig, Sohazigue, 1)
+s:({*} Soledad {*}) ^replace(Soledad, Solédade, 1)
+s:({*} Stacy {*}) ^replace(Stacy, Stéci, 1)
+s:({*} Thaïs {*}) ^replace(Thaïs, Taïsse, 1)
+s:({*} Wassila {*}) ^replace(Wassila, Vassila, 1)
+
+#==================================================================#
+##### Human names #####
+#------------------------------------------------------------------#
+concept:(names_masc) [
+    Aaron Abd Abdallah Abdel Abdelaziz Abdelhakim Abdelkader Abdelkrim Abdellah Abdoul Abdoulaye Abel Aboubacar Achille Achraf Adam Adama Adamé Adel Adem Adil Adriane Adriano Adrien Ahmed Ahmet Aidan Aimé Akim Akram Alain Alan Alban Albert Alberto Albin Aldo Alessandro Alessio Alex Alexander Alexandre Alexis Alfred Ali Alix Alois Alphonse Alvin Amadou Amar Amaury Ambroise Amine Amir Anaël Anas Anatole André Andréa Andreas Andrew Andy Ange Angel Angélo Anis Anselme Antoine Anton Antonin Antonio Antony Arda Ariel Aristide Armand Armel Arnaud Arnold Arsène Arthur Aubin Audric Auguste Augustin Aurélien Axel Ayman Aymen Aymeric Ayoub Aziz Azzedine Bachir Badis Bakary Balthazar Baptiste Barnabé Barthélémy Basile Bastian Bastien Belkacem Ben Benjamin Benoit Bernard Bertrand Bilal Bilel Billy Blaise Boris Boubacar Bradley Brahim Brandon Brendan Briac Brian Brice Brieuc Bruce Bruno Bryan Calogéro Calvin Cameron Camil Camille Carl Carlo Carlos Carmelo Casimir Cédric Célestin Célian César Chahine Charles Charles-Henri Charly Chérif Chris Christian Christophe Christopher Clarence Claude Claudio Claudy Clément Clovis Colin Côme Constant Constantin Corentin Curtis Cyprien Cyrille Damien Dan Daniel Danny Daouda Dario Daryl Dave David Davy Demba Denis Désiré Didier Diégo Dimitri Djamal Djamel Djibril Dominique Donald Donatien Donovan Dorian Doryan Driss Dylan Eddy Eden Edgard Edmond Édouard Edward Edwin El Elian Élias Élie Elies Elijah Élio Elliot Eloi Élouan Elvis Émile Émilien Emilio Emir Emmanuel Emré Enès Enrique Enzo Eren Éric Ernest Erwann Erwin Esteban Ethan Étienne Eugène Evann Ewan Ewen Expédit Fabian Fabien Fabio Fabrice Faouzi Farès Farid Farouk Fatih Fayçal Félicien Félix Ferdinand Fernand Fernando Filipe Firmin Flavien Flavio Florent Florentin Florian Fouad Francesco Francis Francisco Franck Francky Franco François François-Xavier Frantz Fred Freddy Frédéric Gabin Gabriel Gaël Gaétan Gary Gaspard Gaston Gatien Gauthier Gaylord Geoffrey Geoffroy Georges Georget Gérald Gérard Géraud Germain Gervais Géry Ghislain Gianni Gilbert Gildas Gilles Gino Giovanni Giuseppe Glenn Gonzague Goulven Grégoire Grégory Guénaël Guilhem Guillaume Gurvan Gustave Guy Gwénaël Gwendal Gwénolé Habib Hacene Hakan Hakim Hamed Hamid Hamza Harold Harry Hassan Hector Henri Hermann Hervé Hicham Hichem Hilaire Hippolyte Hocine Honoré Hubert Hugo Hugues Iban Ibrahim Idriss Igor Ilan Ilmo Ilyan Ilias Ilies Imad Imrane Isaac Ismaël Ismaïl Issa Issam Ivan Jack Jacky Jacques Jad Jamal Jamel James Jany Jarod Jason Jayson Jawad Jean Jean-Baptiste Jean-Bernard Jean-Charles Jean-Christophe Jean-Claude Jean-Daniel Jean-David Jean-Denis Jean-Dominique Jean-François Jean-Guy Jean-Hugues Jean-Jacques Jean-Laurent Jean-Louis Jean-Loup Jean-Luc Jean-Marc Jean-Marie Jean-Max Jean-Michel Jean-Noël Jean-Pascal Jean-Patrick Jean-Paul Jean-Philippe Jean-Pierre Jean-René Jean-Robert Jean-Sébastien Jean-Yves Jeannot Jeff Jefferson Jeffrey Jérémy Jérôme Jerry Jessim Jessy Jésus Jibril Jim Jimmy Joachim Joao Jocelyn Joé Joël Joffrey Johan John Johnny Jolan Jonas Jonathan Jordan Jordy Jorge Joris José Joseph Joshua Josiann Josué Juan Jude Judicaël Jules Julian Julien Julio Junior Justin Kader Kaïs Kamal Kamel Kamil Karim Karl Kelvin Kelyan Ken Kenan Kenjy Kenny Kenzo Keran Kevin Khaled Khalid Khalil Kilian Lambert Lamine Lancelot Landry Larbi Lassana Laurent Léandre Léandro Lenny Léo Léo-Paul Léon Léonard Léonardo Léopold Liam Lilian Lino Lionel Lisandru Livio Loan Logan Lohan Loïc Lorenzo Loris Lotfi Lou Louca Loucas Louis Louis-Marie Louison Lounes Lubin Luc Luca Lucas Luciano Lucien Ludovic Ludwig Luigi Luis Lyam Lyes Macéo Madjid Maé Maël Mahamadou Mahdi Malcolm Malek Malik Malo Malone Mamadou Manuel Marc Marc-Antoine Marceau Marcel Marco Marcus Marin Mario Marius Marley Marlon Marouane Martial Martin Marvin Mathéo Matthew Mathias Mathieu Mathurin Matisse Matt Maurice Max Maxence Maxime Maximilien Maximin Mayeul Médéric Mehdi Mehmet Melvin Merlin Merwan Michel Miguel Mikaïl Mike Milo Miloud Mirhaïl Mohamed Mohamed-Ali Mohamed-Amine Mohammad Mohand Moïse Morad Morgann Mouloud Mounir Mourad Moussa Moustapha Murat Mylan Nabil Nacer Nacim Nadir Nahel Naïl Naïm Nans Nathaël Nathan Nathanaël Nathaniel Nawfel Neil Nelson Néo Nicolas Nils Nino Nizar Noah Noam Noan Noé Noël Nohan Nolan Norbert Nordine Norman Nourdine Octave Olivier Omar Omer Oscar Othman Oualid Oumar Ousmane Oussama Owen Pablo Paco Pacôme Paolo Pascal Patrice Patrick Patxi Paul Paulin Paulo Pédro Peter Philippe Pierre Pierre-Alexandre Pierre-Antoine Pierre-Emmanuel Pierre-François Pierre-Henri Pierre-Jean Pierre-Louis Pierre-Marie Pierre-Olivier Pierre-Yves Pierrick Pierrot Quentin Rabah Rachid Rafik Ralph Rami Ramzi Randy Raoul Raphaël Raymond Raynald Réda Redouane Régis Rémi Renald Renan Renaud René Reynald Rhaled Rhalid Ricardo Richard Riyad Robert Roberto Robin Rodolphe Rodrigue Roger Rohan Roland Romain Romane Romaric Roméo Romuald Ronald Ronan Rony Rosaire Rosan Ruben Rudy Rui Ryan Saad Sabri Sacha Said Salah Salem Salim Salvatore Sam Samba Sami Samir Samuel Sandro Sandy Sasha Sauveur Sean Sébastien Sékou Sélim Semih Serge Sergio Sevan Sidi Sidney Siméon Simon Slimane Smaïl Sofiane Sofien Sohann Solal Sonny Soren Soufiane Souleymane Stan Stanislas Stanley Stéfan Stéphane Stéphen Steve Steven Stevens Sullivan Sully Swann Sylvain Sylvestre Sylvio Tahar Tanguy Tao Tarek Tarik Teddy Térence Terry Théo Théodore Théophile Théotimé Thibaut Thierry Thomas Tiago Tim Timéo Timoté Timothy Tino Titouan Tom Tommy Tony Toufik Toussaint Tristan Ugo Ulrich Ulrick Ulysse Vadim Valentin Valère Valérian Valéry Vianney Victor Victorien Vincent Vincenzo Virgile Vivien Vladimir Waël Walid Walter Warren Wassim Wesley Wilfried Willem William Williams Willy Wilson Wissam Wissem Xavier Yaël Yanis Yann Yannick Yasser Yassine Yazid Ylan Yohan Yoland Yoni Youenn Younès Youri Youssef Youssouf Yvan Yvann Yves Yves-Marie Yvon Yvonnick Zachary Zakaria Zinédine
+]$Dialog/name=1
+#------------------------------------------------------------------#
+concept:(names_fem) [
+    Adélaïde Adèle Adeline Adriana Adrienne Agathe Agnès Aïcha Aïché Aïda Aimée Aïssata Aïssatou Albane Alberte Alexandra Alexandrine Alexane Alexia Alexiane Aleyna Alice Alicia Aliénor Aline Alison Alix Aliya Alizée Alyssa Amal Amanda Amandine Ambre Ambrine Amel Amélia Amélie Ameline Amina Aminata Amira Amy Ana Anaé Anaëlle Anaïs Anastasia Andréa Andrée Angela Angèle Angelina Angéline Angélique Angie Anissa Anita Anna Annabelle Anne Anne-Catherine Anne-Cécile Anne-Charlotte Anne-Claire Anne-Françoise Anne-Gaëlle Anne-Laure Anne-Lise Anne-Marie Anne-Sophie Annette Annick Annie Annie-Claude Anouk Antoinette Antonia Apolline Ariane Arielle Arlette Armande Armelle Ashley Asma Assa Assia Astrid Athénaïs Aude Audrey Augustine Aurélia Aurélie Auriane Aurore Ava Awa Axelle Aya Aylin Barbara Béatrice Bélinda Bénédicte Bérangère Bérénice Bernadette Berthe Bertille Bettina Betty Bintou Blanche Blandine Bouchra Brenda Brigitte Camélia Camille Candice Candy Capucine Carine Carla Carmen Carole Caroline Cassandra Cassandre Cassie Catherine Cathia Cathy Cécile Cécilia Céleste Célestine Célia Célina Céline Chantal Charlène Charlie Charline Charlotte Chérine Cheyenne Chiara Chloé Christelle Christiane Christina Christine Cindy Claire Clara Clarisse Claude Claudette Claudia Claudie Claudine Cléa Clélia Clémence Clémentine Cléo Clotilde Colette Coline Constance Coralie Coraline Corine Coumba Cynthia Cyrielle Daisy Dalila Dana Daniella Danielle Dany Daphné Davina Déborah Delphine Denise Diana Diane Dina Djamila Dolorès Dominique Domitille Donia Doriane Dorine Doris Dorothée Dounia Eden Édith Edwige Églantine Éléa Éléonore Élia Éliane Éliette Élif Élina Éline Élisa Élisabeth Élise Ella Éloane Élodie Éloïse Élona Élora Elsa Elvire Élyne Émeline Émilia Émilie Émilienne Emma Emmanuelle Énola Énora Érika Érine Estelle Esther Eugénie Eulalie Éva Ève Évelyne Fabienne Fabiola Fadila Faïza Fanny Fanta Fantine Farah Farida Fatiha Fatima Fatimata Fatma Fatou Fatoumata Faustine Félicia Félicie Fernande Fiona Flavie Fleur Flora Flore Florence Floriane Florie Florine Fouzia France Francesca Francette Franciane Francine Françoise Frédérique Gabrielle Gaëlle Gaétane Garance Geneviève Georgette Géraldine Germaine Ghislaine Gilberte Gilda Gina Ginette Gisèle Giulia Gladys Gloria Grace Graziella Guénaëlle Guilaine Guillemette Gwenaelle Gwendoline Gwénola Habiba Hafida Hajar Hakima Halima Hanané Harmonie Heidi Héléna Hélène Héloïse Henriette Hind Honorine Hortense Houda Houria Huguette Ida Ikram Ilana Ilham Iliana Ilona Imane Imèn Inaya Inès Ingrid Irène Iris Isabelle Isaline Isaure Jacqueline Jade Jamila Jasmine Jeanne Jeanne-Marie Jeannette Jeanine Jenna Jennifer Jenny Jessica Jessy Jihane Jocelyne Joëlle Johana Johanne Josée Joselyne Joséphine Josette Josiane Joy Joyce Judith Julia Juliana Juliane Julie Julienne Juliette Juline Justine Kahina Karen Karima Karina Katell Kathleen Kelly Kélya Kenza Ketty Khadija Kheira Kim Kimberley Laeticia Laïla Lalie Lamia Lana Lara Larissa Latifa Laura Laurane Laure Laureline Laurence Laurène Laurette Lauriane Laurie Laurine Léa Léana Léane Leelou Léia Leila Léna Lénaïg Léona Léone Léonie Leslie Lia Lila Lilia Liliane Lilou Lily Lily-Rose Lina Linda Lindsay Line Lisa Lise Lisette Lisiane Lison Livia Loan Loïs Lola Lolita Loréna Lorraine Lou Lou-Anne Louane Loubna Louisa Louise Louisette Louison Louna Luce Lucette Lucia Lucie Lucienne Lucile Ludivine Luna Lydia Lydie Madeleine Madeline Madison Maé Maëla Maélie Maéline Maëlis Maelle Maëly Maélyne Maéva Magali Magdaléna Maggy Maïlys Maimouna Maïna Maïssa Maissane Maïté Maïwenn Malika Mallaury Malvina Mandy Manelle Manon Manuella Marceline Marcelle Margaret Margot Marguerite Maria Mariam Mariama Mariamé Marianne Mariannick Marie Marie-Agnès Marie-Amélie Marie-Andrée Marie-Ange Marie-Anne Marie-Annick Marie-Antoinette Marie-Bernadette Marie-Caroline Marie-Catherine Marie-Cécile Marie-Céline Marie-Chantal Marie-Charlotte Marie-Christine Marie-Claire Marie-Claude Marie-Dominique Marie-Élisabeth Marie-France Marie-Françoise Marie-Hélène Marie-Jeanne Marie-Joëlle Marie-José Marie-Josèphe Marie-Laure Marie-Laurence Marie-Line Marie-Lise Marie-Lou Marie-Louise Marie-Luce Marie-Madeleine Marie-Noëlle Marie-Odile Marie-Pascale Marie-Paule Marie-Pierre Marie-Reine Marie-Renée Marie-Rose Marie-Sophie Marie-Thérèse Marielle Mariette Marilou Marilyn Marina Marine Marinette Marion Marjolaine Marjorie Marlène Marthe Martine Marwa Marylène Marylise Marylou Maryse Maryvonne Mathilda Mathilde Maud Maurane Maureen Mauricette Maya Mégane Mélanie Mélina Mélinda Méline Mélissa Mélody Mercedes Merve Meryem Méryl Mia Micheline Michelle Mila Milena Mina Mireille Mirella Mona Monia Monica Monique Morgane Mouna Mounia Muguette Murielle Mylène Myriam Nabila Nada Nadège Nadia Nadiège Nadine Naëlle Naïla Naïma Naïs Nancy Naomi Nassera Nassima Natacha Natalia Nathalie Nawal Nawel Neïla Nell Nelly Nesrine Nicaise Nicole Nina Ninon Nisrine Noa Noélie Noëline Noëlla Noëlle Noémie Nolwenn Nora Nour Noura Océane Odette Odile Olga Olivia Ombeline Ophélie Orane Orlane Ornella Oumou Paloma Paméla Paola Pascale Pascaline Patricia Paula Paule Paulette Pauline Peggy Pénélope Perrine Philippine Philomène Pierrette Prescillia Prisca Priscilla Priscille Priscillia Prune Rachel Rachida Rahma Raïssa Rania Raphaelle Raymonde Rébecca Régine Reine Réjane Renée Rhadija Rita Roberte Rolande Romane Romy Rosa Rosalie Rose Rose-Marie Roseline Rosette Rosine Rosita Roxane Rozenn Ruth Sabah Sabine Sabrina Sabrine Sacha Sadia Safa Safia Saïda Sakina Saliha Salima Salma Salomé Samantha Samia Samira Sana Sandie Sandra Sandrine Sarah Ségolène Séléna Selma Séphora Séréna Sergine Servane Sèverine Shaïma Shaïna Shana Shannon Sharon Shérine Shirel Shirley Sibylle Sidonie Siham Sihem Silvia Simone Sirine Sixtine Soazig Sohane Soizic Solange Soledad Solène Soline Sonia Sophia Sophie Soraya Souad Soumaya Stacy Stella Stéphanie Suzanne Suzette Suzie Sylvaine Sylvette Sylviane Sylvie Taïna Tamara Tania Tara Tatiana Tess Tessa Thaïs Thalia Théa Thelma Thérèse Tina Tiphaine Tiphanie Tracy Valentine Valérie Vanessa Vanina Véronique Victoire Victoria Victorine Violaine Violette Virginia Virginie Viviane Wassila Wendy Yaëlle Yamina Yannick Yasmina Yasmine Yolaine Yolande Yona Youna Yousra Youfo Yveline Yvelise Yvette Yvonne Zahra Zélie Zineb Zoé Zohra
+]$Dialog/name=1
+
+concept:(names) [~names_masc ~names_fem]
+#==================================================================#
+
+#==================================================================#
+##### Human inputs #####
+#------------------------------------------------------------------#
+concept:(my_name_is) [
+    "mon [nom prénom] est"
+    "je m'appelle"
+    "appelle-moi"
+    "on m'appelle"
+    "{moi} c'est"
+    "je suis"
+]
+concept:(my_name_is_not) [
+    "tu ["as mal [compris entendu]" "n'as pas [compris capté]"] ["mon nom" "["ce qu'est" "quel est"] mon nom"]"
+    "{non} [c'est "ce n'est"] pas {ça} mon nom"
+    "[~names_masc ~names_fem] [n'est est] pas mon nom"
+    "je {ne} m'appelle pas"
+    "mon nom [est n'est] pas [~names_masc ~names_fem ça]"
+    "~i_want_to [changer modifier] mon nom"
+]
+concept:(your_name_is) [
+    "ton nom est"
+    "tu t'appelles"
+]
+#==================================================================#

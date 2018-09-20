@@ -1,0 +1,178 @@
+topic: ~dlg_move_hands ^noPick()
+language: enu
+
+include: lexicon_enu.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Ask me to do simpler moves, I can't move exactly like you humans do."
+    "I don't understand what you're asking, I probably don't know that movement yet."
+]
+
+u:^private([
+    "{what} {"kind of"} movements"
+    "["how can I" "help me"] be more [precise specific]"
+    "{"give me an"} example"
+])
+^rand[
+    "You can tell me to open my hands, or lift my arm, for example."
+    "You can ask me to move my head or move my hands."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, I'll do it again." "Here I go again!"]
+^runBehavior($RobotLastAnim)
+^stayInScope
+
+#==================================================================#
+# Move - Hands
+#==================================================================#
+
+u:({~can_you} open {up} {only} your left hand)
+Okay.
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:({~can_you} open {up} {only} your right hand)    
+Okay.
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:({~can_you} open {up} your hands)
+Opening my hands!
+^runBehavior(dialog_move_hands/animations/OpenBothHands)
+$RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+
+u:({~can_you} open {up} your hand)
+Which hand?
+
+    u1:({the your} left {hand})
+    Alright.   
+    ^runBehavior(dialog_move_hands/animations/OpenLHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+    u1:({the your} right {hand})
+    Alright.
+    ^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand
+    
+    u1:(both {"your hands" "of them"})
+    Opening my hands!
+    ^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands
+    
+    u1:(~its_up_to_you)
+    ^rand[
+        "So, I choose my left hand! 
+        ^runBehavior(dialog_move_hands/animations/OpenLHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenLHand"
+        "So, I choose my right hand! 
+        ^runBehavior(dialog_move_hands/animations/OpenRHand)
+        $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    ]
+
+u:({~can_you} close your left hand)
+No problem.
+^runBehavior(dialog_move_hands/animations/CloseLHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+u:({~can_you} close your right hand)
+No problem.
+^runBehavior(dialog_move_hands/animations/CloseRHand)
+$RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+u:({~can_you} close your hands)
+Closing my hands!
+^runBehavior(dialog_move_hands/animations/CloseBothHands)
+$RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+u:({~can_you} close your hand)
+Which one?
+
+    u1:({the your} left {hand})
+    Alright.
+    ^runBehavior(dialog_move_hands/animations/CloseLHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseLHand
+
+    u1:({the your} right {hand})
+    Alright.
+    ^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand
+
+    u1:(both {"your hands" "of them"})
+    Closing my hands!
+    ^runBehavior(dialog_move_hands/animations/CloseBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/CloseBothHands
+
+    u1:(~its_up_to_you)
+    ^rand[
+        "Okay, my left hand then!
+        ^runBehavior(dialog_move_hands/animations/CloseLHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseLHand"
+        "Okay, my right hand then!
+        ^runBehavior(dialog_move_hands/animations/CloseRHand)
+        $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+    ]
+    
+u:({~can_you} [
+    "move your hands"
+    "make your hands move"
+])
+Alright, as you wish.
+^rand[
+    "^runBehavior(dialog_move_hands/animations/OpenBothHands)
+    $RobotLastAnim=dialog_move_hands/animations/OpenBothHands"
+    "^runBehavior(dialog_move_hands/animations/OpenRHand)
+    $RobotLastAnim=dialog_move_hands/animations/OpenRHand"
+    "^runBehavior(dialog_move_hands/animations/CloseRHand)
+    $RobotLastAnim=dialog_move_hands/animations/CloseRHand"
+]
+
+u:({~can_you} [
+    "move your left hand"
+    "make your left hand move"
+])
+Of course!
+^runBehavior(dialog_move_hands/animations/OpenLHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenLHand
+
+u:({~can_you} [
+    "move your right hand"
+    "make your right hand move"
+])
+Of course!
+^runBehavior(dialog_move_hands/animations/OpenRHand)
+$RobotLastAnim=dialog_move_hands/animations/OpenRHand
+
+u:(hands up)
+I surrender!
+^runBehavior(dialog_move_hands/animations/UpBothArms)
+$RobotLastAnim=dialog_move_hands/animations/UpBothArms
+
+u:({~can_you} put your hands behind {"your back"})
+There it is.
+^runBehavior(dialog_move_hands/animations/HandsBack)
+$RobotLastAnim=dialog_move_hands/animations/HandsBack
+
+u:({~can_you} [hold shake] my hand)
+I don't know how to do that yet. We can wave hello to each other!
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+u:({~can_you} [say wave] _[bye byebye "good bye" farewell "see you"])
+$1 !
+^runBehavior(dialog_move_hands/animations/Wave01)
+$RobotLastAnim=dialog_move_hands/animations/Wave01
+
+u:([
+    "hide yourself"
+    "put your hands in front of your eyes"
+    "cover your eyes"
+])
+Okay! ^runBehavior(dialog_move_hands/animations/HandsOnEyes)
+$RobotLastAnim=dialog_move_hands/animations/HandsOnEyes

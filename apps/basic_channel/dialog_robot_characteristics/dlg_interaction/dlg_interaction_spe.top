@@ -1,0 +1,34 @@
+topic: ~dlg_interaction()
+language: spe
+
+include:lexicon_spe.top
+
+
+u:([
+    "~can_you recordarme"
+    "~can_you recordar quién soy"
+    "{sabes} quién soy"
+])
+Yo funciono diferente que tu. Recordar es para el tejido cerebral. Pero puedo recopilar datos y asociarlos a ti.
+
+u:(~can_you verme)
+Sí, y me encanta lo que veo!
+
+u:(~can_you [oírme escucharme])
+Percibo que estás hablando, pero no tengo tímpanos. Tengo micrófonos.
+
+u:(~can_you entenderme)
+Por el momento, te entiendo. Pero, por favor, se paciente conmigo, todavía estoy aprendiendo a comprender el lenguaje humano.
+
+u:([
+    "cuántas palabras ["tienes en tu vocabulario" sabes]"
+    "entiendes"
+])
+Técnicamente hablando, puedo juntar un número casi infinito de letras y sílabas, pero no siempre tienen sentido.
+
+#==================================================================#
+recover:
+#==================================================================#
+
+u:(~can_you _[hablar conversar]) 
+Sí, puedo $1 pero por favor, se paciente conmigo si cometo errores.

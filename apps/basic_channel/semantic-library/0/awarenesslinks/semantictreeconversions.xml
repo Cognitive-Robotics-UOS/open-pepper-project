@@ -1,0 +1,198 @@
+<semantictreeconversions formalism="1">
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" concept="gender_male" />
+    </tree>
+    <tree mind="true">
+      <root id="1" concept="predicate_hasGender" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" concept="gender_female" />
+    </tree>
+    <tree mind="true">
+      <root id="1" concept="predicate_hasGender" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree outText="true">
+      <root id="1" grounding="statement" concept="structure_equality" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="predicate_hasGender" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true" outText="true">
+      <root id="1" grounding="statement" concept="have">
+        <object concept="agent_sibling" />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="predicate_hasSibling" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" concept="agent_sibling">
+        <owner />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" concept="predicate_hasSibling" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" concept="agent_sibling">
+        <owner grounding="list" />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" concept="predicate_hasSibling" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" concept="structure_equality">
+        <subject concept="name">
+          <owner id="2" />
+        </subject>
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement">
+        <subject id="2" />
+      </root>
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" concept="predicate_hasName">
+        <object concept="predicate_hasName" />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="structure_equality" notConcept="predicate_hasName" />
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" request="agent" concept="structure_equality" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" request="object" concept="predicate_hasName" />
+    </tree>
+  </conversion>
+
+  <!-- This one is only for english -->
+  <conversion>
+    <tree outText="true">
+      <root id="1" grounding="statement" concept="structure_equality">
+        <object id="2" />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="predicate_hasName">
+        <object id="2" />
+      </root>
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" concept="close.v">
+        <object concept="mouth">
+          <owner />
+	</object>
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="stopTalking" notConcept="close.v" notLemma="true">
+	<notobject />
+      </root>
+    </tree>
+  </conversion>
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" concept="stopTalking" request="action" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="sentiment_positive,-3"/>
+    </tree>
+  </conversion>
+
+
+  <conversion>
+    <tree inText="true" outText="true">
+      <root id="1" grounding="statement" concept="have" >
+        <object id="2" concept="duration_year" />
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="predicate_hasAge">
+        <object id="2" />
+      </root>
+    </tree>
+  </conversion>
+
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" concept="structure_equality" request="object" notRequest="time">
+        <subject concept="birthdate" >
+          <owner id="2" />
+        </subject>
+      </root>
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="born" request="time" notConcept="structure_equality" notRequest="object" notLemma="true">
+        <subject id="2" />
+      </root>
+    </tree>
+  </conversion>
+
+
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" request="action" concept="goaway" notConcept="sentiment_positive" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="sentiment_positive,-3" />
+    </tree>
+  </conversion>
+
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" request="action" concept="stopTalking" notConcept="sentiment_positive" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="sentiment_positive,-3" />
+    </tree>
+  </conversion>
+
+
+  <conversion>
+    <tree inText="true">
+      <root id="1" grounding="statement" request="action" concept="comeHere" notConcept="sentiment_positive" />
+    </tree>
+    <tree mind="true">
+      <root id="1" grounding="statement" concept="sentiment_positive,2" />
+    </tree>
+  </conversion>
+
+
+</semantictreeconversions>

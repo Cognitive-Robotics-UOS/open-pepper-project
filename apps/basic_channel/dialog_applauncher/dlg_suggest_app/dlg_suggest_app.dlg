@@ -1,0 +1,9 @@
+multilanguage:dlg_suggest_app
+  ged:dlg_suggest_app_ged.top
+  enu:dlg_suggest_app_enu.top
+  spe:dlg_suggest_app_spe.top
+  frf:dlg_suggest_app_frf.top
+  iti:dlg_suggest_app_iti.top
+  jpj:dlg_suggest_app_jpj.top
+  kok:dlg_suggest_app_kok.top
+  mnc:dlg_suggest_app_mnc.top

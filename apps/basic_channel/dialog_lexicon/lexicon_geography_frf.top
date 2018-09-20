@@ -1,0 +1,107 @@
+topic: ~lexicon_geography()
+language: frf
+
+include:lexicon_frf.top
+
+#------------------------------------------------------------------#
+concept:(countries) [
+    "antigua et barbuda" bahreïn chypre cuba djibouti haïti israël kiribati madagascar malte maurice monaco nauru nioué "saint cristophe et niévès" "sainte lucie" "saint marin" "saint vincent et les grenadines" "sao tomé et principe" singapour
+    "l'afghanistan" "l'afrique {"du sud"}" "l'albanie" "l'algérie" "l'allemagne" "l'andorre" "l'angleterre" "l'angola" "l'arabie saoudite" "l'argentine" "l'arménie" "l'australie" "l'autriche" "l'azerbaïdjan" "l'égypte" "l'équateur" l'érythrée" l'espagne" "l'estonie" "l'éthiopie" "l'inde" "l'indonésie" "l'irak" "l'iran" "l'irlande" "l'islande" "l'italie" "l'oman" "l'ouganda" "l'ouzbékistan" "l'ukraine" "l'uruguay" 
+    "la ["principauté d'andorre" barbade belgique biélorussie birmanie bolivie "bosnie {herzégovine}" bulgarie "république centafricaine" centrafrique colombie "corée {"du [nord sud]"}" "côte d'ivoire" croatie "république dominicaine" dominique finlande gambie géorgie grèce grenade "guinée {bissau équatoriale}" hongrie jamaïque jordanie kirghizie lettonie lybie lituanie macédoine malaisie mauritanie micronésie moldavie mongolie namibie norvège "nouvelle zélande" palestine "papouasie {"nouvelle guinée"}" pologne roumanie russie serbie "sierra léone" slovaquie slovénie somalie suède suisse syrie tanzanie "république tchèque" tchéquie thaïlande "trinité et tobago" tunisie turquie]"
+    "le [bangladesh belize bélize bénin bhoutan belarus bélarus myanmar botswana brésil brunei "burkina {faso}" burundi cambodge cameroun canada "cap vert" chili congo "costa rica" danemark gabon ghana guatémala guyana honduras kazakhstan kenya koweït laos laesotho liban libéria lichtensein luxembourg malawi mali maroc mexique monténégro mozambique népal nicaragua niger nigéria pakistan panama paraguay pérou portugal qatar rwanda salvador samoa sénégal "soudan {"du sud"}" "sri lanka" surinam swaziland tadjikistan tchad "timor oriental" togo turkménistan vanuatu vatican vénézuéla vietnam yémen zimbabwe]"
+    "les [bahamas comores "îles cook" "émirats arabes unis" "{îles} [fidji maldives marshall salomon]" palaos "pays bas" philippines seychelles tonga tuvalu zambie]"
+    
+    bahreïn chypre cuba djibouti kiribati madagascar malte maurice monaco nauru nioué "saint cristophe et niévès" "sainte lucie" "saint marin" "saint vincent et les grenadines" "sao tomé et principe" singapour
+    
+    afghanistan "afrique {"du sud"}" albanie algérie allemagne andorre angleterre angola "antigua et barbuda" "arabie saoudite" argentine arménie australie autriche azerbaïdjan égypte équateur érythrée espagne estonie éthiopie haïti inde indonésie irak iran irlande islande israël italie oman ouganda ouzbékistan ukraine uruguay
+    
+    "principauté d'andorre" barbade belgique biélorussie birmanie bolivie "bosnie {herzégovine}" bulgarie "république centafricaine" centrafrique colombie "corée {"du [nord sud]"}" "côte d'ivoire" croatie "république dominicaine" dominique finlande gambie géorgie grèce grenade "guinée {bissau équatoriale}" hongrie jamaïque jordanie kirghizie lettonie lybie lituanie macédoine malaisie mauritanie micronésie moldavie mongolie namibie norvège "nouvelle zélande" palestine "papouasie {"nouvelle guinée"}" pologne roumanie russie serbie "sierra léone" slovaquie slovénie somalie suède suisse syrie tanzanie "république tchèque" tchéquie thaïlande "trinité et tobago" tunisie turquie
+    
+    bangladesh belize bélize bénin bhoutan belarus bélarus myanmar botswana brésil brunei "burkina {faso}" burundi cambodge cameroun canada "cap vert" chili congo "costa rica" danemark gabon ghana guatémala guyana honduras kazakhstan kenya koweït laos laesotho liban libéria lichtensein luxembourg malawi mali maroc mexique monténégro mozambique népal nicaragua niger nigéria pakistan panama paraguay pérou portugal qatar rwanda salvador samoa sénégal "soudan {"du sud"}" "sri lanka" surinam swaziland tadjikistan tchad "timor oriental" togo turkménistan vanuatu vatican vénézuéla vietnam yémen zimbabwe
+    
+    bahamas comores "îles cook" "émirats arabes unis" "{îles} [fidji maldives marshall salomon]" palaos "pays bas" philippines seychelles tonga tuvalu zambie
+]
+#------------------------------------------------------------------#
+concept:(countries_det)[
+    "antigua et barbuda" bahreïn chypre cuba djibouti haïti israël kiribati madagascar malte maurice monaco nauru nioué "saint cristophe et niévès" "sainte lucie" "saint marin" "saint vincent et les grenadines" "sao tomé et principe" singapour
+    "l'afghanistan" "l'afrique {"du sud"}" "l'albanie" "l'algérie" "l'allemagne" "l'andorre" "l'angleterre" "l'angola" "l'arabie saoudite" "l'argentine" "l'arménie" "l'australie" "l'autriche" "l'azerbaïdjan" "l'égypte" "l'équateur" l'érythrée" l'espagne" "l'estonie" "l'éthiopie" "l'inde" "l'indonésie" "l'irak" "l'iran" "l'irlande" "l'islande" "l'italie" "l'oman" "l'ouganda" "l'ouzbékistan" "l'ukraine" "l'uruguay" 
+    "la ["principauté d'andorre" barbade belgique biélorussie birmanie bolivie "bosnie {herzégovine}" bulgarie "république centafricaine" centrafrique colombie "corée {"du [nord sud]"}" "côte d'ivoire" croatie "république dominicaine" dominique finlande gambie géorgie grèce grenade "guinée {bissau équatoriale}" hongrie jamaïque jordanie kirghizie lettonie lybie lituanie macédoine malaisie mauritanie micronésie moldavie mongolie namibie norvège "nouvelle zélande" palestine "papouasie {"nouvelle guinée"}" pologne roumanie russie serbie "sierra léone" slovaquie slovénie somalie suède suisse syrie tanzanie "république tchèque" tchéquie thaïlande "trinité et tobago" tunisie turquie]"
+    "le [bangladesh belize bélize bénin bhoutan belarus bélarus myanmar botswana brésil brunei "burkina {faso}" burundi cambodge cameroun canada "cap vert" chili congo "costa rica" danemark gabon ghana guatémala guyana honduras kazakhstan kenya koweït laos laesotho liban libéria lichtensein luxembourg malawi mali maroc mexique monténégro mozambique népal nicaragua niger nigéria pakistan panama paraguay pérou portugal qatar rwanda salvador samoa sénégal "soudan {"du sud"}" "sri lanka" surinam swaziland tadjikistan tchad "timor oriental" togo turkménistan vanuatu vatican vénézuéla vietnam yémen zimbabwe]"
+    "les [bahamas comores "îles cook" "émirats arabes unis" "{îles} [fidji maldives marshall salomon]" palaos "pays bas" philippines seychelles tonga tuvalu zambie]"
+]
+#------------------------------------------------------------------#
+concept:(countries_de) [
+    bahreïn chypre cuba djibouti kiribati madagascar malte maurice monaco nauru nioué "saint cristophe et niévès" "sainte lucie" "saint marin" "saint vincent et les grenadines" "sao tomé et principe" singapour
+]
+#------------------------------------------------------------------#
+concept:(countries_d)
+[afghanistan "afrique {"du sud"}" albanie algérie allemagne andorre angleterre angola "antigua et barbuda" "arabie saoudite" argentine arménie australie autriche azerbaïdjan égypte équateur érythrée espagne estonie éthiopie haïti inde indonésie irak iran irlande islande israël italie oman ouganda ouzbékistan ukraine uruguay]
+#------------------------------------------------------------------#
+concept:(countries_de_la) [
+    "principauté d'andorre" barbade belgique biélorussie birmanie bolivie "bosnie {herzégovine}" bulgarie "république centafricaine" centrafrique colombie "corée {"du [nord sud]"}" "côte d'ivoire" croatie "république dominicaine" dominique finlande gambie géorgie grèce grenade "guinée {bissau équatoriale}" hongrie jamaïque jordanie kirghizie lettonie lybie lituanie macédoine malaisie mauritanie micronésie moldavie mongolie namibie norvège "nouvelle zélande" palestine "papouasie {"nouvelle guinée"}" pologne roumanie russie serbie "sierra léone" slovaquie slovénie somalie suède suisse syrie tanzanie "république tchèque" tchéquie thaïlande "trinité et tobago" tunisie turquie
+    ]
+#------------------------------------------------------------------#
+concept:(countries_du) [
+    bangladesh belize bélize bénin bhoutan belarus bélarus myanmar botswana brésil brunei "burkina {faso}" burundi cambodge cameroun canada "cap vert" chili congo "costa rica" danemark gabon ghana guatémala guyana honduras kazakhstan kenya koweït laos laesotho liban libéria lichtensein luxembourg malawi mali maroc mexique monténégro mozambique népal nicaragua niger nigéria pakistan panama paraguay pérou portugal qatar rwanda salvador samoa sénégal "soudan {"du sud"}" "sri lanka" surinam swaziland tadjikistan tchad "timor oriental" togo turkménistan vanuatu vatican vénézuéla vietnam yémen zimbabwe
+]
+#------------------------------------------------------------------#
+concept:(countries_des) [
+    bahamas comores "îles cook" "émirats arabes unis" "{îles} [fidji maldives marshall salomon]" palaos "pays bas" philippines seychelles tonga tuvalu zambie
+]
+#------------------------------------------------------------------#
+concept:(american_cities) [
+    Montgomery
+    Juneau
+    Phoenix
+    "Little Rock"
+    Sacramento
+    Denver
+    Hartford
+    Dover
+    Tallahassee
+    Atlanta
+    Honolulu
+    Boise
+    Springfield
+    Indianapolis
+    Des Moines
+    Topeka
+    Frankfort
+    Baton Rouge
+    Augusta
+    Annapolis
+    Boston
+    Lansing
+    Saint Paul
+    Jackson
+    "Jefferson City"
+    Helena
+    Lincoln
+    Carson City
+    Concord
+    Trenton
+    Santa Fe
+    Albany
+    Raleigh
+    Bismarck
+    Columbus
+    "Oklahoma City"
+    Salem
+    Harrisburg
+    Providence
+    Columbia
+    Pierre
+    Nashville
+    Austin
+    "Salt Lake City"
+    Montpelier
+    Richmond
+    Olympia
+    Charleston
+    Madison
+    Cheyenne
+    Washington
+    "New York {City}"
+    Seattle
+    Chicago
+]

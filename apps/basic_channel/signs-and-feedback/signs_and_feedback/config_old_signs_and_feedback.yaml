@@ -1,0 +1,118 @@
+# Configuration file for signs and feedback
+# -----------------------------------------
+# an expressive bit is an action (movemements, LEDs, sounds) to be played by the robot
+# an expressive recipe makes an expressive bit be triggered when some event happens
+# for full explanation, see:
+# gitlab.aldebaran.lan/naoqi/signs-and-feedback/blob/team/monkey/dev/README.md
+---
+
+# ASR/TTS Signs and Feedbacks - deprecated style!
+
+# For the legacy sounds/leds, we use triggerBit's put inside the ASR
+
+- expressive_bit: EarsOn
+  lib_call: setEarsOn
+
+- expressive_bit: BeginSpeechRecognitionBip
+  lib_call: playSoundStartReco
+
+- expressive_bit: EndSpeechRecognitionBip
+  lib_call: playSoundStopReco
+
+- expressive_bit: BeginSpeechRecognitionEars
+  lib_call: startBlueEyesRotation
+
+- expressive_bit: EndSpeechRecognitionEars
+  lib_call: stopBlueEyesRotation
+
+- expressive_bit: BeginSpeechRecognitionEyes
+  lib_call: startEarsRotation
+
+- expressive_bit: EndSpeechRecognitionEyes
+  lib_call: stopEarsRotation
+
+- expressive_bit: InitSpeechRecognitionEyes
+  lib_call: setEyesBlack
+
+#  resetting -------------------------------------------------------------------
+
+- expressive_bit: ResetShoulderLeds
+  lib_call: setShoulderWhite
+
+- expressive_bit: ResetNormalBlink
+  lib_call: resetNormalBlink
+
+- expressive_bit: EyesWhite
+  lib_call: setEyesWhite
+
+- expressive_bit: ResetEyesAndEars
+  simultaneous:
+    - EyesWhite
+    - EarsOn
+
+- expressive_bit: AllLedsReset
+  serialize:
+    - ResetEyesAndEars
+    - ResetShoulderLeds
+    - ResetNormalBlink
+
+# For the legacy eyye shadow, we use triggerBit put inside ALLeds
+- expressive_bit: BlinkWithShadow
+  lib_call: blinkWithShadow
+
+- expressive_recipe: DialogReset
+  trigger: ALSignsAndFeedback/ASRStop
+  bit: AllLedsReset
+
+# in Dialog start, there is triggerBit(DialogStartBit)
+- expressive_bit: DialogStartBit
+  lib_call: stopBlink
+
+# Life states changes
+
+# in naoqicore, there is a triggerBit(NAOqiReadyLedsReset)
+- expressive_bit: NAOqiReadyLedsReset
+  serialize:
+    - AllLedsReset
+
+- expressive_recipe: LedsResetInitialization
+  trigger: ALSignsAndFeedback/Initialization
+  bit: AllLedsReset
+
+  # In AutonmousLife config, the bit: AllLedsReset is triggered
+  # via triggerBit when an app finishes.
+
+- expressive_recipe: ResetShoulderDefaultManualAppStop
+  trigger: ALSignsAndFeedback/ManualStopReleased
+  bit: ResetShoulderLeds
+
+# Notifications
+
+- expressive_bit: setShoulderInfoBit
+  lib_call: setShoulderInfo
+
+- expressive_bit: setShoulderWarningBit
+  lib_call: setShoulderWarning
+
+- expressive_bit: setShoulderErrorBit
+  lib_call: setShoulderError
+
+- expressive_recipe: StartNotificationBlinkInfo
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Info
+  bit: setShoulderInfoBit
+
+- expressive_recipe: StartNotificationBlinkWarning
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Warning
+  bit: setShoulderWarningBit
+
+- expressive_recipe: StartNotificationBlinkError
+  trigger: ALSignsAndFeedback/StartNotificationBlink/Error
+  bit: setShoulderErrorBit
+
+- expressive_recipe: StopNotificationBlinkListening
+  trigger: ALSignsAndFeedback/StopNotificationBlink/Listening
+  bit: ResetShoulderLeds
+
+- expressive_recipe: StopNotificationBlinkNotListening
+  trigger: ALSignsAndFeedback/StopNotificationBlink/NotListening
+  bit: ResetShoulderLeds

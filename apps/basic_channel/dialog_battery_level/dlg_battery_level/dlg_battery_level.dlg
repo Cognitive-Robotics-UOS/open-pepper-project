@@ -1,0 +1,7 @@
+multilanguage:dlg_battery_level
+  ged:dlg_battery_level_ged.top
+  enu:dlg_battery_level_enu.top
+  spe:dlg_battery_level_spe.top
+  frf:dlg_battery_level_frf.top
+  iti:dlg_battery_level_iti.top
+  jpj:dlg_battery_level_jpj.top

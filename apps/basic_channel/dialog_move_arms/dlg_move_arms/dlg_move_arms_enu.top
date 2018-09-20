@@ -1,0 +1,102 @@
+topic: ~dlg_move_arms()
+language: enu
+
+include: lexicon_enu.top
+
+
+#==================================================================#
+# Various move commands the robot can respond to
+#==================================================================#
+
+u:^private(e:Dialog/NotUnderstood2)
+[
+    "Ask me to do simpler moves, I can't move exactly like you humans do."
+    "I don't understand what you're asking, I probably don't know how to do that movement yet."
+]
+
+u:^private([
+    "{what} {"kind of"} movements"
+    "["how can I" "help me"] be more [precise specific]"
+    "{"give me an"} example"
+])
+^rand[
+    "You can tell me to open my hands, or lift my arm, for example."
+    "You can ask me to move my head or move my hands."
+]
+
+u:^private (~do_it_again)
+^rand["Okay, I'll do it again." "Here I go again!"]
+^runBehavior($RobotLastAnim)
+^stayInScope
+
+#==================================================================#
+# Move - Arms
+#==================================================================#
+
+u:({~can_you} raise your arm)
+Which arm should I raise?
+
+    u1:([
+         "{the} left {one}"
+         "your left arm"
+    ])
+    Like this?
+    ^runBehavior(dialog_move_arms/animations/UpLArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpLArm
+    
+    u1:([
+         "{the} right {one}"
+         "your right arm"
+    ])
+    Here I go!
+    ^runBehavior(dialog_move_arms/animations/UpRArm)
+    $RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+    u1:([
+        both
+        "left and right"
+        "right and left"
+    ])
+    And there it is!
+    ^runBehavior(dialog_move_arms/animations/UpBothArms)
+    $RobotLastAnim=dialog_move_arms/animations/UpBothArms
+    
+     u1:(~its_up_to_you)
+    ^rand[
+        "So, it will be the left!
+        ^runBehavior(dialog_move_arms/animations/UpLArm)
+        $RobotLastAnim=dialog_move_arms/animations/UpLArm"
+        "So, it will be the right!
+        ^runBehavior(dialog_move_arms/animations/UpRArm)
+        $RobotLastAnim=dialog_move_arms/animations/UpRArm"
+    ]
+
+u:({~can_you} raise your left arm)
+Raising my left arm!
+^runBehavior(dialog_move_arms/animations/UpLArm)
+$RobotLastAnim=dialog_move_arms/animations/UpLArm
+
+u:({~can_you} raise your right arm)
+Raising my right arm!
+^runBehavior(dialog_move_arms/animations/UpRArm)
+$RobotLastAnim=dialog_move_arms/animations/UpRArm
+
+u:({~can_you} [raise lift] {both} your arms)
+And there it is!
+^runBehavior(dialog_move_arms/animations/UpBothArms)
+$RobotLastAnim=dialog_move_arms/animations/UpBothArms
+
+u:({~can_you} "[stretch "open wide"] your arms")
+Alright!
+^runBehavior(dialog_move_arms/animations/StretchBothArms)
+$RobotLastAnim=dialog_move_arms/animations/StretchBothArms
+
+u:({~can_you} "[stretch open] your left arm")
+There it is!
+^runBehavior(dialog_move_arms/animations/StretchLArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchLArm
+
+u:({~can_you} "[stretch "open"] your right arm")
+There it is!
+^runBehavior(dialog_move_arms/animations/StretchRArm)
+$RobotLastAnim=dialog_move_arms/animations/StretchRArm

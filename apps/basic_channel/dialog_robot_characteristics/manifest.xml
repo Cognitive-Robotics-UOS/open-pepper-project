@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package uuid="dialog_robot_characteristics" version="2.5.5">
+  <names>
+    <name lang="de_DE">dialog_robot_characteristics</name>
+    <name lang="de_DE-x-scrald">dialog_robot_characteristics</name>
+    <name lang="en_US">dialog_robot_characteristics</name>
+    <name lang="en_US-x-scrald">dialog_robot_characteristics</name>
+    <name lang="es_ES">dialog_robot_characteristics</name>
+    <name lang="es_ES-x-scrald">dialog_robot_characteristics</name>
+    <name lang="fr_FR">dialog_robot_characteristics</name>
+    <name lang="fr_FR-x-scrald">dialog_robot_characteristics</name>
+    <name lang="it_IT">dialog_robot_characteristics</name>
+    <name lang="it_IT-x-scrald">dialog_robot_characteristics</name>
+    <name lang="ja_JP">dialog_robot_characteristics</name>
+    <name lang="ja_JP-x-scrald">dialog_robot_characteristics</name>
+  </names>
+  <descriptions>
+    <description lang="de_DE">Der Roboter kann verschiedene Fragen über sich selbst beantworten.
+Beispiele für unterstützte Eingaben :
+"Bist du lebendig?"
+"Wer bin ich?"
+"Beschreibe dich?" </description>
+    <description lang="de_DE-x-scrald">Der Roboter kann verschiedene Fragen über sich selbst beantworten.
+Beispiele für unterstützte Eingaben :
+"Bist du lebendig?"
+"Wer bin ich?"
+"Beschreibe dich?" </description>
+    <description lang="en_US">The robot can answer several questions about himself.
+Examples of supported inputs:
+"What's your name?"
+"Are you sentient?"
+"Can you see me?"</description>
+    <description lang="en_US-x-scrald">The robot can answer several questions about himself.
+Examples of supported inputs:
+"What's your name?"
+"Are you sentient?"
+"Can you see me?"</description>
+    <description lang="es_ES">El robot puede responder a preguntas sobre sus características.
+Ejemplos de frases entendidas por el robot :
+"¿ Cómo te llamas ?"
+"¿ Puedes pensar ?"
+"¿ Puedes verme ?"</description>
+    <description lang="es_ES-x-scrald">El robot puede responder a preguntas sobre sus características.
+Ejemplos de frases entendidas por el robot :
+"¿ Cómo te llamas ?"
+"¿ Puedes pensar ?"
+"¿ Puedes verme ?"</description>
+    <description lang="fr_FR">Le robot peut répondre à des questions sur ses caractéristiques.
+Exemples de phrases comprises par le robot :
+"Comment tu t'appelles ?"
+"Es-tu conscient ?"
+"Est-ce que tu peux me voir ?"</description>
+    <description lang="fr_FR-x-scrald">Le robot peut répondre à des questions sur ses caractéristiques.
+Exemples de phrases comprises par le robot :
+"Comment tu t'appelles ?"
+"Es-tu conscient ?"
+"Est-ce que tu peux me voir ?"</description>
+    <description lang="it_IT">Il robot può rispondere ad alcune domande su se stesso.
+Esempi di input supportati:
+"Come ti chiami?"
+"Sei senziente?"
+"Mi vedi?"
+</description>
+    <description lang="it_IT-x-scrald">Il robot può rispondere ad alcune domande su se stesso.
+Esempi di input supportati:
+"Come ti chiami?"
+"Sei senziente?"
+"Mi vedi?"
+</description>
+    <description lang="ja_JP">ロボットは、彼自身について話すことができます。
+サポートされる入力の例:
+「あなたの名前は？」
+「あなたに感覚はありますか?」
+「私が見えますか?」</description>
+    <description lang="ja_JP-x-scrald">ロボットは、彼自身について話すことができます。
+サポートされる入力の例:
+「あなたの名前は？」
+「あなたに感覚はありますか?」
+「私が見えますか?」</description>
+  </descriptions>
+  <supportedLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </supportedLanguages>
+  <descriptionLanguages>
+    <language>en_US</language>
+    <language>fr_FR</language>
+    <language>ja_JP</language>
+    <language>es_ES</language>
+    <language>de_DE</language>
+    <language>it_IT</language>
+  </descriptionLanguages>
+  <contents>
+    <dialogContent topicName="dlg_character" typeVersion="1.0">
+      <topic path="dlg_character/dlg_character_ged.top" language="de_DE"/>
+      <topic path="dlg_character/dlg_character_enu.top" language="en_US"/>
+      <topic path="dlg_character/dlg_character_spe.top" language="es_ES"/>
+      <topic path="dlg_character/dlg_character_frf.top" language="fr_FR"/>
+      <topic path="dlg_character/dlg_character_iti.top" language="it_IT"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_personal_info" typeVersion="1.0">
+      <topic path="dlg_personal_info/dlg_personal_info_ged.top" language="de_DE"/>
+      <topic path="dlg_personal_info/dlg_personal_info_enu.top" language="en_US"/>
+      <topic path="dlg_personal_info/dlg_personal_info_spe.top" language="es_ES"/>
+      <topic path="dlg_personal_info/dlg_personal_info_frf.top" language="fr_FR"/>
+      <topic path="dlg_personal_info/dlg_personal_info_iti.top" language="it_IT"/>
+      <topic path="dlg_personal_info/dlg_personal_info_jpj.top" language="ja_JP"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_humanoid" typeVersion="1.0">
+      <topic path="dlg_humanoid/dlg_humanoid_ged.top" language="de_DE"/>
+      <topic path="dlg_humanoid/dlg_humanoid_enu.top" language="en_US"/>
+      <topic path="dlg_humanoid/dlg_humanoid_spe.top" language="es_ES"/>
+      <topic path="dlg_humanoid/dlg_humanoid_frf.top" language="fr_FR"/>
+      <topic path="dlg_humanoid/dlg_humanoid_iti.top" language="it_IT"/>
+    </dialogContent>
+    <dialogContent topicName="dlg_interaction" typeVersion="1.0">
+      <topic path="dlg_interaction/dlg_interaction_ged.top" language="de_DE"/>
+      <topic path="dlg_interaction/dlg_interaction_enu.top" language="en_US"/>
+      <topic path="dlg_interaction/dlg_interaction_spe.top" language="es_ES"/>
+      <topic path="dlg_interaction/dlg_interaction_frf.top" language="fr_FR"/>
+      <topic path="dlg_interaction/dlg_interaction_iti.top" language="it_IT"/>
+    </dialogContent>
+  </contents>
+  <requirements>
+    <naoqiRequirement maxVersion="2.5" minVersion="2.5"/>
+    <robotRequirement model="JULIETTE"/>
+  </requirements>
+</package>

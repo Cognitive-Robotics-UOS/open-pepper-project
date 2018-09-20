@@ -1,0 +1,32 @@
+topic: ~dlg_touch_head()
+language: spe
+
+#include:lexicon_spe.top
+
+
+#==================================================================#
+# Touch the robot's head
+#==================================================================#
+
+u:(e:FrontTactilTouched $FrontTactilTouched==1)
+^rand[
+    " aaa! ^rand[
+        "¡Me siento como un gato!"
+        "¡Me gusta cuando me tocas la cabeza!"
+        "¡Miau!"
+    ]"
+    "^runBehavior(dialog_touch/animations/head_touched) ^rand[
+        "¡Me hace cosquillas!"
+        "¡Hoy tengo muchas cosquillas!"
+    ]"
+]
+^stayInScope
+
+#==================================================================#
+recover:
+#==================================================================#
+u:(_[tocar acaraciar]) Puedes $1 mi cabeza o mis manos, por ejemplo.
+u:(["[tocar acaraciar] [la tu las tus] [mano manos cabeza]" "puedo tocarte"]) [
+    "Por supuesto!"
+    "No hay problema."
+]
