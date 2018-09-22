@@ -1,0 +1,137 @@
+
+############# flowers use case
+
+## Case-1- mobileNet-0.50, image size-224x224
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/tf_files/bottlenecks \
+	--how_many_training_steps=500 \
+	--model_dir=/Volumes/Study/GitHub/data/tf_files/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/tf_files/training_summaries/"mobilenet_0.50_224" \
+  	--output_graph=/Volumes/Study/GitHub/data/tf_files/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/tf_files/retrained_labels.txt \
+  	--architecture="mobilenet_0.50_224" \
+  	--image_dir=/Volumes/Study/GitHub/data/tf_files/flower_photos
+
+
+############# Cats and dogs use case
+
+## Case-1- mobileNet-0.50, image size-224x224
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/animals/bottlenecks \
+	--how_many_training_steps=500 \
+	--model_dir=/Volumes/Study/GitHub/data/animals/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/animals/training_summaries/"mobilenet_0.50_224" \
+  	--output_graph=/Volumes/Study/GitHub/data/animals/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/animals/retrained_labels.txt \
+  	--architecture="mobilenet_0.50_224" \
+  	--image_dir=/Volumes/Study/GitHub/data/animals/dataset
+
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/animals/bottlenecks \
+	--how_many_training_steps=500 \
+	--model_dir=/Volumes/Study/GitHub/data/animals/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/animals/training_summaries/"mobilenet_0.50_224" \
+  	--output_graph=/Volumes/Study/GitHub/data/animals/retrained_graph.pb \
+  	--architecture="mobilenet_0.50_224" \
+  	--image_dir=/Volumes/Study/GitHub/data/animals/dataset
+
+
+
+python -m label_image \
+    --graph=/Volumes/Study/GitHub/data/animals/retrained_graph.pb  \
+    --labels=/tmp/output_labels.txt \
+    --image=/Volumes/Study/GitHub/data/animals/single_prediction/cat_or_dog_1.jpg
+
+
+
+############# Rock-Paper-Scissors use case
+
+## Case-1- mobileNet-0.50, image size-224x224
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/Pepper/bottlenecks \
+	--how_many_training_steps=500 \
+	--model_dir=/Volumes/Study/GitHub/data/Pepper/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/Pepper/training_summaries/"mobilenet_0.50_224" \
+  	--output_graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+  	--architecture="mobilenet_0.50_224" \
+  	--image_dir=/Volumes/Study/GitHub/data/Pepper/dataset
+
+
+# predictions
+
+python -m label_image \
+    --graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb  \
+    --labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+    --image=/Volumes/Study/GitHub/data/Pepper/single_prediction/what_is_it-1.jpg
+
+
+## Case-2- mobileNet-1.0, image size-224x224
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/Pepper/bottlenecks \
+	--how_many_training_steps=1000 \
+	--model_dir=/Volumes/Study/GitHub/data/Pepper/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/Pepper/training_summaries/"mobilenet_1.0_224" \
+  	--output_graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+  	--architecture="mobilenet_1.0_224" \
+  	--image_dir=/Volumes/Study/GitHub/data/Pepper/dataset
+
+
+# predictions
+
+python -m label_image \
+    --graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb  \
+    --labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+    --image=/Volumes/Study/GitHub/data/Pepper/single_prediction/what_is_it-1.jpg
+
+
+
+## Case-3 - mobileNet-0.75, image size-160x160
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/Pepper/bottlenecks \
+	--how_many_training_steps=1000 \
+	--model_dir=/Volumes/Study/GitHub/data/Pepper/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/Pepper/training_summaries/"mobilenet_0.75_160" \
+  	--output_graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+  	--architecture="mobilenet_0.75_160" \
+  	--image_dir=/Volumes/Study/GitHub/data/Pepper/dataset
+
+
+# predictions
+
+python -m label_image \
+    --graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb  \
+    --labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+    --input_height=160 \
+    --input_width=160 \
+    --image=/Volumes/Study/GitHub/data/Pepper/single_prediction/what_is_it-1.jpg
+
+
+## Case- 4 - inception_v3, image size-160x160
+#########################
+
+python -m retrain --bottleneck_dir=/Volumes/Study/GitHub/data/Pepper/bottlenecks \
+	--how_many_training_steps=1000 \
+	--model_dir=/Volumes/Study/GitHub/data/Pepper/models/ \
+	--summaries_dir=/Volumes/Study/GitHub/data/Pepper/training_summaries/"inception_v3" \
+  	--output_graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb \
+  	--output_labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+  	--architecture="inception_v3" \
+  	--image_dir=/Volumes/Study/GitHub/data/Pepper/dataset
+
+
+# predictions
+
+python -m label_image \
+    --graph=/Volumes/Study/GitHub/data/Pepper/retrained_graph.pb  \
+    --labels=/Volumes/Study/GitHub/data/Pepper/retrained_labels.txt \
+    --image=/Volumes/Study/GitHub/data/Pepper/single_prediction/what_is_it-1.jpg
+
+
