@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<package uuid="digitalisierung-quiz" version="0.0.1">
+<package version="0.0.1" uuid="digitalisierung-quiz">
  <names>
   <name lang="en_US">Digitalisierung Quiz</name>
  </names>
@@ -23,8 +23,6 @@
     <sentence lang="de_DE">start neues quiz</sentence>
     <sentence lang="en_US">start new quiz</sentence>
    </triggerSentences>
-   <loadingResponses/>
-   <autonomous/>
    <permissions/>
   </behaviorContent>
  </contents>

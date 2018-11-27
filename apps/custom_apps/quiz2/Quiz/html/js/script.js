@@ -452,8 +452,14 @@ function menuClickListeners() {
       tts.setLanguage('English');
     });
     chosenQuiz = QUIZZES.about;
-    $('#menu').hide('slow');
+    $('#menu').hide('fast');
     $('#about-me').show('fast');
+    cStatus.about = true;
+  });
+  $('#more').on('click', function() {
+    chosenQuiz = QUIZZES.about;
+    $('#menu').hide('fast');
+    $('#more-info').show('fast');
     cStatus.about = true;
   });
 }
@@ -463,7 +469,7 @@ function menuClickListeners() {
  * a menu item is clicked.
  */
 function startGame() {
-  $('#menu').hide('slow');
+  $('#menu').hide('fast');
   var selectedQs;
   var german;
   switch (chosenQuiz) {
@@ -864,10 +870,10 @@ function openingFX(fx) {
       $('#quiz').show('fast');
       break;
     case 'fadeToggle':
-      $('#quiz').fadeIn('slow');
+      $('#quiz').fadeIn('fast');
       break;
     case 'slideToggle':
-      $('#quiz').slideDown('slow');
+      $('#quiz').slideDown('fast');
       break;
   }
 }
@@ -881,13 +887,13 @@ function openingFX(fx) {
 function closingFX(fx) {
   switch (fx) {
     case 'toggle':
-      return $('#quiz').hide('slow');
+      return $('#quiz').hide('fast');
       break;
     case 'fadeToggle':
-      return $('#quiz').fadeOut('slow');
+      return $('#quiz').fadeOut('fast');
       break;
     case 'slideToggle':
-      return $('#quiz').slideUp('slow');
+      return $('#quiz').slideUp('fast');
       break;
   }
 }
@@ -1032,8 +1038,8 @@ function goToMenu() {
   stopTTS();
   cStatus = undefined;
   cStatus = new CurrentStatus();
-  $('#quiz').hide('slow');
-  $('#game').hide('slow');
+  $('#quiz').hide('fast');
+  $('#game').hide('fast');
   $('#menu').show('fast');
 }
 
@@ -1251,7 +1257,29 @@ $(document).ready(function() {
         $('#ibm-icon').attr('src', MEDIA_URL + 'ibm.png');
         $('#digital-icon').attr('src', MEDIA_URL + 'digitalisierung.png');
         $('#ghcampus-icon').attr('src', MEDIA_URL + 'gc.png');
+        $('#ghcampus-icon2').attr('src', MEDIA_URL + 'gc.png');
         $('#pepper-icon').attr('src', MEDIA_URL + 'pepper.png');
+        $('#a_video').attr('src', MEDIA_URL + 'A_FRAME.jpg');
+        $('#b_video').attr('src', MEDIA_URL + 'B_FRAME.jpg');
+        $('#c_video').attr('src', MEDIA_URL + 'C_FRAME.jpg');
+        $('#d_video').attr('src', MEDIA_URL + 'D_FRAME.jpg');
+        $('#e_video').attr('src', MEDIA_URL + 'E_FRAME.jpg');
+        $('#header-ghc').attr('src', MEDIA_URL + 'ghcampus-header.png');
+        $('#a_video').on('click', function() {
+          displayMedia('A_VIDEO.mp4');
+        });
+        $('#b_video').on('click', function() {
+          displayMedia('B_VIDEO.mp4');
+        });
+        $('#c_video').on('click', function() {
+          displayMedia('C_VIDEO.mp4');
+        });
+        $('#d_video').on('click', function() {
+          displayMedia('D_VIDEO.mp4');
+        });
+        $('#e_video').on('click', function() {
+          displayMedia('E_VIDEO.mp4');
+});
         $('#general').attr('src', MEDIA_URL + 'general.png');
         $('#features').attr('src', MEDIA_URL + 'features.png');
         $('#study-project').attr('src', MEDIA_URL + 'group.png');
@@ -1272,7 +1300,11 @@ $(document).ready(function() {
           goToMenu();
         });
         $('#go-back').on('click', function() {
-          $('#about-me').hide('slow');
+          $('#about-me').hide('fast');
+          $('#menu').show('fast');
+        });
+        $('#go-back2').on('click', function() {
+          $('#more-info').hide('fast');
           $('#menu').show('fast');
         });
         $('#close-app').on('click', function() {
