@@ -1,0 +1,127 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(MaterialIcons-Regular.woff2) format('woff2'),
+       url(MaterialIcons-Regular.woff) format('woff'),
+       url(MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu'),
+         local('Ubuntu-Regular'),
+         url(Ubuntu-Regular.woff2) format('woff2'),
+         url(Ubuntu-Regular.woff) format('woff'),
+         url(Ubuntu-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'),
+         local('Roboto-Regular'),
+         url(Roboto-Regular.woff2) format('woff2'),
+         url(Roboto-Regular.woff) format('woff'),
+         url(Roboto-Regular.ttf) format('truetype');
+}
+.btn-large.icon {
+  height: 30vh;
+  width: 60vh;
+  font-size: x-large;
+  line-height: normal;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-size: 24px;  /* Preferred icon size */
+  font-style: normal;
+  font-weight: normal;
+  direction: ltr;
+  display: inline-block;
+  letter-spacing: normal;
+  line-height: 1;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  /* background-color: #EDECE8;
+  color: #A3A28C; */
+  font-family: 'Ubuntu', sans-serif;
+  font-size: large;
+}
+
+.col.s12.h50w100 { /* 50% of the screen height */
+  min-height: 42.5vh;
+  min-width: 100vh;
+}
+
+.row.padding { /* 100% of the screen height */
+  padding: 5vh;
+}
+
+.ghc-blue {
+  color: #98B0C4;
+}
+
+.ghc-bg-blue {
+  background-color: #98B0C4;
+}
+
+.ghc-red {
+  color: #D2C2BD;
+}
+
+.ghc-bg-red {
+  background-color: #D2C2BD;
+}
+
+.ghc-green {
+  color: #B4C391;
+}
+
+.ghc-bg-green {
+  background-color: #B4C391;
+}
+
+.ghc-yellow {
+  color: #F3E18D;
+}
+
+.ghc-bg-yellow {
+  background-color: #F3E18D;
+}
+
+.ghc-bg-grey {
+  background-color: #A3A28C;
+}
+
+.ghc-grey {
+  color: #A3A28C;
+}
+
+.ghc-white {
+  color: #ffffff;
+}
+
+
+.waves-effect.waves-red .waves-ripple {
+  background-color: #E57373;
+}
+
+.waves-effect.waves-green .waves-ripple {
+  background-color: #B2FF59;
+}
