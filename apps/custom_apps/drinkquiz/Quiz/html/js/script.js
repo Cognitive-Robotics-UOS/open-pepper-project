@@ -27,94 +27,13 @@ var QUIZZES = {
   deutsch: 'deutsch.tsv',
   digitalisierung: 'digitalisierung.tsv',
 };
-var NQUESTIONS = 5;
-//var GENERAL_INFO = '...';
-//var TECHNICAL_INFO = '...';
-//var SP_INFO = '...';
+
+
 
 //insert new intro about pepper helping person with drink
 var INTRO = '...';
 var INTROD = '...';
 
-/*var RIGHT_INTRO = [
-  '...',
-  '...',
-];
-var rightIntro = RIGHT_INTRO.slice(); */
-/*var NEXT_QUESTION = [
-  'Ok, get ready for the next question',
-  'Next question is coming up',
-];
-var NEXT_QUESTIOND = [
-  'Ok, bereit für die nächste Frage?',
-  'Hier kommt die nächste Frage',
-];
-var nextQuestion = NEXT_QUESTION.slice();
-var nextQuestionD = NEXT_QUESTIOND.slice(); */
-/**
-var CONGRATS = [
-  'Good choice!',
-  'Ok, that\'s what I will bring you',
-];
-var CONGRATSD = [
-  'Eine gute Wahl!',
-  'Ok, diese Bestellung werde ich Ihnen bringen.'
-];
-var congrats = CONGRATS.slice();
-var congratsD = CONGRATSD.slice();
-var CONGRATS_5 = [
-  '...',
-];
-var CONGRATS_5D = [
-  '...,
-];
-var congrats5 = CONGRATS_5.slice();
-var congrats5D = CONGRATS_5D.slice();
-var CONGRATS_4 = [
-  ...,
-];
-var CONGRATS_4D = [
-  '...',
-];
-var congrats4 = CONGRATS_4.slice();
-var congrats4D = CONGRATS_4D.slice();
-var CONGRATS_3 = [
-  '...',
-];
-var CONGRATS_3D = [
-  '...',
-];
-var CONGRATS_3DD = [
-  '...',
-];
-var congrats3 = CONGRATS_3.slice();
-var congrats3D = CONGRATS_3D.slice();
-var congrats3DD = CONGRATS_3DD.slice();
-var CONGRATS_2 = [
-  '...',
-];
-var CONGRATS_2D = [
-  '...',
-];
-var congrats2 = CONGRATS_2.slice();
-var congrats2D = CONGRATS_2D.slice();
-var CONGRATS_1 = [
-  '...',
-];
-var CONGRATS_1D = [
-  '...',
-];
-var congrats1 = CONGRATS_1.slice();
-var congrats1D = CONGRATS_1D.slice();
-var CONGRATS_0 = [
-  '...',
-];
-var CONGRATS_0D = [
-  '...',
-];
-var congrats0 = CONGRATS_0.slice();
-var congrats0D = CONGRATS_0D.slice();
-*/
 
 // Set of jokes to use after a certain period if the user is not answering
 var JOKES = [
@@ -123,36 +42,7 @@ var JOKES = [
 ];
 var jokes = JOKES.slice(); // Future copy by value of JOKES
 // Set of positive feedback reactions in case of right answer
-var RIGHT_SET = [
-  'Well done! This is the right answer!',
-  'Well done!',
-  'Good choice! You’re quite clever.',
-  'Exactly! You picked the right answer!',
-  'Excellent! You are doing great!',
-  'Good job! You made the right choice!',
-  'Good job!',
-  'Great! This is correct!',
-  'Awesome! That’s true!',
-  'Perfect!',
-  'You are completely right!',
-  'Nice! I love doing this quiz with you!',
-];
-var rightSet = RIGHT_SET.slice(); // Future copy by value of RIGHT_SET
-// Set of negative feedback reactions in case of wrong answer
-var WRONG_SET = [
-  'Sorry, this is incorrect.',
-  'Too bad, that wasn’t the correct answer.',
-  'What a pity! Next time you’ll do better.',
-  'I\'m afraid this is the wrong answer.',
-  'That’s incorrect but I know you can do better!',
-  'Too bad, you didn’t choose correctly. More luck with the next question!',
-  'Sadly this is wrong, but learning new things is also fun, right?',
-  'This was a close one! More luck next time.',
-  'I\'m sorry, this is not the right answer.',
-  'I\'m afraid you made the wrong choice. Cheer up! I know you can do better!',
-  'Oh, this is not correct. But keep going, I’m sure you know the next one!',
-];
-var wrongSet = WRONG_SET.slice(); // Future copy by value of WRONG_SET
+
 var ROBOT_IP = '198.18.0.1';
 var MEDIA_URL = 'http://' + ROBOT_IP + '/apps/.media/';
 var AUDIO_PATH = '/home/nao/.local/share/PackageManager/apps/.media/html/';
