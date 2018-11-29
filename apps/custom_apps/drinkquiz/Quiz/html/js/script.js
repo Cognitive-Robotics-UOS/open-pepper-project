@@ -36,208 +36,90 @@ var NQUESTIONS = 5;
 var INTRO = '...';
 var INTROD = '...';
 
-var RIGHT_INTRO = [
-  'The right answer is',
-  'The correct answer is',
-  'Actually the answer is',
+/*var RIGHT_INTRO = [
+  '...',
+  '...',
 ];
-var rightIntro = RIGHT_INTRO.slice();
-var NEXT_QUESTION = [
+var rightIntro = RIGHT_INTRO.slice(); */
+/*var NEXT_QUESTION = [
   'Ok, get ready for the next question',
   'Next question is coming up',
-  'The next question is:',
-  'Can you answer the following',
-  'Ready for the next question you should be',
-  'Do you know this?',
-  'Next question',
 ];
 var NEXT_QUESTIOND = [
   'Ok, bereit für die nächste Frage?',
   'Hier kommt die nächste Frage',
-  'Die nächste Frage lautet',
-  'Können Sie folgendes beantworten?',
-  'Sind Sie bereit für die nächste Frage?',
-  'Wissen Sie das hier?',
-  'Nächste Frage',
 ];
 var nextQuestion = NEXT_QUESTION.slice();
-var nextQuestionD = NEXT_QUESTIOND.slice();
+var nextQuestionD = NEXT_QUESTIOND.slice(); */
+/**
 var CONGRATS = [
-  'Congratulations, you finished the quiz',
-  'Awesome, you finished the quiz',
-  'Great Work, you finished the quiz.',
-  'Congratulations, you mastered this quiz',
-  'That was fun! You finished this quiz',
+  'Good choice!',
+  'Ok, that\'s what I will bring you',
 ];
 var CONGRATSD = [
-  'Gratulation, Sie haben das Quiz beendet',
-  'Klasse, Sie haben das Quiz beendet.',
-  'Gute Arbeit, Sie haben das Quiz beendet.',
-  'Gratuliere, Sie haben das Quiz gemeistert',
-  'Das war spaßig! Sie haben dieses Quiz geschafft',
+  'Eine gute Wahl!',
+  'Ok, diese Bestellung werde ich Ihnen bringen.'
 ];
 var congrats = CONGRATS.slice();
 var congratsD = CONGRATSD.slice();
 var CONGRATS_5 = [
-  'And you achieved a perfect score! Five out of five questions were correct. \
-   If you want to learn even more,talk to my humans!',
-  'You answered everything correctly. Five out of five questions were right. \
-   You are the perfect candidate for our study program',
-  'And you achieved a perfect score! Five out of five questions were correct. \
-   We Robots really have to evolve a lot to achieve your level of \
-   intelligence!',
-  'You answered everything correctly. Five out of five questions were right. \
-   Do you know Watson? He is a great quiz champion, just like you. Maybe you \
-   should meet some time and talk about strategies',
-  'Five out of Five, that is really impressive. Did you got help by Watson or \
-   did you achieve this perfect score by yourself?',
+  '...',
 ];
 var CONGRATS_5D = [
-  'Und Sie haben die volle Punktzahl! Wenn Sie noch mehr erfahren wollen, \
-   sprechen Sie einfach meine Menschen an.',
-  'Sie haben alles richtig beantwortet, Sie sollten Pharmazie studieren.',
-  'Sie haben alles richtig beantwortet. Wir Roboter müssen wirklich noch viel \
-   lernen, ehe wir Ihr Level an Intelligenz erreichen!',
-  'Sie haben fünf der fünf Fragen richtig beantwortet. Kennen Sie IBM Watson? \
-   Er ist ein grandioser Quizspieler, genau wie Sie. Vielleicht sollten Sie \
-   beide sich einmal treffen und Strategien austauschen?',
-  'Fünf von fünf, haben Sie das Quiz selber geschrieben?',
+  '...,
 ];
 var congrats5 = CONGRATS_5.slice();
 var congrats5D = CONGRATS_5D.slice();
 var CONGRATS_4 = [
-  'You answered four questions correctly. That\'s a great result! If you have \
-   open questions, you can talk to my humans',
-  'Four correct answers, that is fantastic! If you have open questions, you \
-   can talk to my humans',
-  'Four correct answers, that is fantastic! You are a great candidate for our \
-   study program',
-  'You answered four questions correctly. You are nearly as good as Watson \
-   himself',
+  ...,
 ];
 var CONGRATS_4D = [
-  'Sie haben vier Fragen richtig beantwortet. Das ist ein sehr gutes Ergebnis! \
-   Wenn Sie noch Fragen haben, können sie sich an meine Menschen wenden',
-  'Vier richtige Antworten, fantastisch! Wenn Sie noch Fragen haben, können \
-   sie sich an meine Menschen wenden',
-  'Vier richtige Antworten! Sie könnten sicherlich Pharmazie studieren. Wenn \
-   Sie noch Fragen haben, können sie sich an meine Menschen wenden',
-  'Sie hatten vier der fünf Fragen richtig. Sie sind fast so gut, als hätten \
-   Sie das Quiz selber geschrieben',
+  '...',
 ];
 var congrats4 = CONGRATS_4.slice();
 var congrats4D = CONGRATS_4D.slice();
 var CONGRATS_3 = [
-  'You answered three out of the five questions correctly. That\'s a great \
-   start. If you have more questions, you \
-   can talk to my humans.',
-  'Three of the five questions were correct. Maybe you should ask Watson for \
-   help next time.',
-  'Three right answers, you did a great job. If you have more questions, you \
-   can talk to my humans.',
-  'Three of the five questions were correct. Do you want to play again?',
+  '...',
 ];
 var CONGRATS_3D = [
-  'Sie haben drei Fragen richtig beantwortet, ganz gut für den Anfang.',
-  'Drei der fünf Antworten waren richtig. Vielleicht sollten Sie nächstes Mal \
-   einen Apotheker um Hilfe bitten.',
-  'Drei richtige Antworten, gut gemacht. Bei weiteren Fragen wenden Sie sich \
-   einfach an meine Menschen.',
-  'Drei der fünf Antworten waren korrekt. Wollen Sie noch einmal spielen?',
+  '...',
 ];
 var CONGRATS_3DD = [
-  'Sie haben drei Fragen richtig beantwortet, ganz gut für den Anfang.',
-  'Drei der drei Antworten waren richtig. Sehr gut gemacht!',
-  'Drei richtige Antworten, gut gemacht. Bei weiteren Fragen wenden Sie sich \
-   einfach an meine Menschen.',
-  'Drei der drei Antworten waren korrekt. Sehr gut!',
+  '...',
 ];
 var congrats3 = CONGRATS_3.slice();
 var congrats3D = CONGRATS_3D.slice();
 var congrats3DD = CONGRATS_3DD.slice();
 var CONGRATS_2 = [
-  'You answered two questions correctly, better luck next time. Maybe you \
-   should have asked Watson for help',
-  'You had two answers correct. Maybe you should have asked Watson for help',
-  'You answered two questions correctly. I am sure, next time you will win \
-   this thing',
+  '...',
 ];
 var CONGRATS_2D = [
-  'Sie haben zwei Fragen richtig beantwortet, vielleicht haben Sie ja nächstes \
-   Mal mehr Glück.',
-  'Sie hatten zwei richtige Antworten. Vielleicht hätten Sie besser einen \
-   Apotheker um Hilfe gebeten',
-  'Sie haben zwei Fragen richtig beantwortet. Ich bin mir sicher, dass Sie \
-   nächstes Mal alle schaffen',
+  '...',
 ];
 var congrats2 = CONGRATS_2.slice();
 var congrats2D = CONGRATS_2D.slice();
 var CONGRATS_1 = [
-  'Only one answer was correct. Maybe you should have asked Watson for help',
-  'Only one answer was correct. Better luck next time. If you have questions, \
-   you can ask to my humans.',
-  'Unfortunately you only answered one question correctly. But luckily I am an \
-   emotional support robot and I can cheer you right up: You are great and I \
-   bet you know a lot of other things',
-  'Unfortunately you only answered one question correctly. I will tell you a \
-   Joke to cheer you up: Three statisticians go hunting for deer. They spot \
-   one off in the distance. The first one shoots about a meter too high, the \
-   second one, about a meter too low, the third one yells, We got it!',
+  '...',
 ];
 var CONGRATS_1D = [
-  'Nur eine richtige Antwort. Vielleicht hätten Sie besser einen Apotheker um \
-   Hilfe gebeten.',
-  'Nur eine richtige Antwort. Vielleicht haben Sie nächstes Mal ja mehr Glück?',
-  'Leider haben Sie nur eine Frage richtig beantwortet. Zum Glück bin ich ein \
-   Roboter für emotionale Unterstützung und kann Sie gleich wieder aufmuntern: \
-   Sie sind toll und ich wette, dass Sie eine Menge anderer Dinge wissen!',
-  'Leider haben Sie nur eine Frage richtig beantwortet. Ein Witz zur \
-   Aufmunterung: Drei Statistiker gehen jagen. Bald sehen sie ein Reh am \
-   Waldrand. Der erste schießt, aber einen Meter zu hoch. Der zweite versucht \
-   sein Glück, trifft aber einen Meter zu tief. Der dritte ruft: Wir haben es \
-   erwischt!',
+  '...',
 ];
 var congrats1 = CONGRATS_1.slice();
 var congrats1D = CONGRATS_1D.slice();
 var CONGRATS_0 = [
-  'You did not answer the questions correctly. If you want to learn more, you \
-   can talk to my humans',
-  'But maybe you did not understood the game. You were supposed to select the \
-   correct answers, not the wrong one',
-  'Non of the answers were correct. But we can\'t all be Watsons. I hope the \
-   next time you\'ll have better luck',
-  'Unfortunately you didn\'t answer correctly. But luckily I am an emotional \
-   support robot and I can cheer you right up: You are great and I bet you \
-   know a lot of other things',
+  '...',
 ];
 var CONGRATS_0D = [
-  'Sie haben die Fragen leider falsch beantwortet. Wenn Sie Fragen haben, \
-   wenden Sie sich doch einfach an meine Menschen.',
-  'Vielleicht haben Sie das Spiel falsch verstanden: Sie sollen die richtige \
-   Antwort auswählen, nicht die falschen...',
-  'Keine der Antworten war richtig, aber wir können ja nicht alle Einstein \
-   sein. Vielleicht haben Sie beim nächsten Mal ja mehr Glück.',
-  'Leider haben Sie keine Frage richtig beantwortet. Zum Glück bin ich ein \
-   Roboter für emotionale Unterstützung und kann Sie gleich wieder aufmuntern: \
-   Sie sind toll und ich wette, dass Sie eine Menge anderer Dinge wissen!',
+  '...',
 ];
 var congrats0 = CONGRATS_0.slice();
 var congrats0D = CONGRATS_0D.slice();
+*/
+
 // Set of jokes to use after a certain period if the user is not answering
 var JOKES = [
-  'I didn\'t think the question would be that difficult, human...',
-  'Should I lower the difficulty, noob?',
-  'Tick-tock, time is running!',
-  'If you take this long, my battery will run out soon...',
-  'Hey, are you still there?',
-  'Anyone still there?',
-  'Do you need some time on Yahoo Answers to figure my question out?',
-  'If you don\'t know, you could ask Siri for help...',
-  'Do you need help from Watson?',
-  'Do you need help from Google Assistant?',
-  'Hey, what\'s with the silent treatment, human?',
-  'Hey, what\'s with the silent treatment?',
-  'Did I steal your breath away or is the question just too hard?',
+  'You don\'t like decisions, huh?',
+  '...',
 ];
 var jokes = JOKES.slice(); // Future copy by value of JOKES
 // Set of positive feedback reactions in case of right answer
