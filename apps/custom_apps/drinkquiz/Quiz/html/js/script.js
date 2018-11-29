@@ -28,62 +28,12 @@ var QUIZZES = {
   digitalisierung: 'digitalisierung.tsv',
 };
 var NQUESTIONS = 5;
-var GENERAL_INFO = 'I am Lou, a humanoid robot. You probably know me as Pepper,\
-                    but that is just my model name. I was first introduced by \
-                    Softbank Robotics in 2015. I was designed to be great at \
-                    interacting with humans, thus I can recognize faces, reed \
-                    people\'s emotions and have a little chat with them. Many \
-                    Peppers all across the world are being used as robotic \
-                    employees in restaurants, banks, offices, and medical \
-                    facilities. Or they are, like me, used to research \
-                    human-robot-interaction and cognitive robotics at schools \
-                    and universities.';
-var TECHNICAL_INFO = 'I am 120 centimeters tall and 28 kilograms heavy. I can \
-                      use the 2 cameras and 4 microphones on my head to \
-                      experience my surroundings in 3 dimensions. I get easily \
-                      confused in busy environments though, that\'s why you \
-                      mostly have to interact with me through the 10 inch \
-                      touchscreen tablet on my chest. I have touch sensors on \
-                      my head and arms as well as gyro sensors in my chest and \
-                      legs. The sonar, laser, and bumper sensors in my legs \
-                      help me navigate. I\'m not supposed to move around right \
-                      now but if I was allowed to, I could move with a speed \
-                      of up to 3 kilometers per hour.';
-var SP_INFO = 'Thanks for being interested in me and the humans who work on \
-               me! I\'ve been with the Cognitive Science students in \
-               Osnabrueck since August 2017. Last year, my humans trained me \
-               as part of the Cognitive Robotics study project to become a \
-               neuroscience tutor. This semester, their goals have broadened \
-               even more: They\'re working very hard to make me have small \
-               talk with you humans in a natural way. Hopefully, I can then \
-               act as a university guide to new students soon. This will \
-               include giving them directions, teaching them about the \
-               university and Cognitive Science and of course entertaining \
-               them with games and magic tricks!';
-var INTRO = 'Hi Human, I am Lou, from the Institute of Cognitive Science at \
-             Osnabrueck University. Usually, I am happy to listen to all the \
-             things you say. But at the moment, I can\'t hear you. There is \
-             just too much going and I can\'t follow conversations as good as \
-             you humans can. So for now, you have to use the touch screen \
-             while I do the talking. I will ask you five questions about \
-             cognitive science, IBM, and cognitive computing. Lets see if you \
-             are as smart as Watson. Have fun and good luck!';
-var INTROD = 'Guten Tag! Ich bin Lou, der Roboter des Instituts für \
-              Kognitionswissenschaft der Universität Osnabrück. Normalerweise \
-              rede ich gerne direkt mit Menschen, aber derzeit habe ich leider \
-              eine Mittelohrentzündung, sodass ich Sie nicht verstehen kann. \
-              Nutzen Sie doch stattdessen einfach den Bildschirm auf meiner \
-              Brust. Die Fragen, die Sie dort beantworten können, stammen vom \
-              Gesundheitscampus Osnabrück. Zu Risiken und Nebenwirkungen lesen \
-              Sie die Packungsbeilage und fragen Sie Ihren Arzt oder \
-              Apotheker.';
-var INTRODD = 'Guten Tag! Ich bin Lou, der Roboter des Instituts für \
-              Kognitionswissenschaft der Universität Osnabrück. Normalerweise \
-              rede ich gerne direkt mit Menschen, aber derzeit habe ich leider \
-              eine Mittelohrentzündung, sodass ich Sie nicht verstehen kann. \
-              Nutzen Sie doch stattdessen einfach den Bildschirm auf meiner \
-              Brust. Zu Risiken und Nebenwirkungen lesen Sie die \
-              Packungsbeilage und fragen Sie Ihren Arzt oder Apotheker.';
+//var GENERAL_INFO = '...';
+//var TECHNICAL_INFO = '...';
+//var SP_INFO = '...';
+var INTRO = '(insert new intro about pepper helping person with drink)';
+var INTROD = '(insert new intro in German)';
+
 var RIGHT_INTRO = [
   'The right answer is',
   'The correct answer is',
