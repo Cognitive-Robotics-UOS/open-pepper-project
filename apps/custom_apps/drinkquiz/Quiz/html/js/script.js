@@ -31,8 +31,10 @@ var NQUESTIONS = 5;
 //var GENERAL_INFO = '...';
 //var TECHNICAL_INFO = '...';
 //var SP_INFO = '...';
-var INTRO = '(insert new intro about pepper helping person with drink)';
-var INTROD = '(insert new intro in German)';
+
+//insert new intro about pepper helping person with drink
+var INTRO = '...';
+var INTROD = '...';
 
 var RIGHT_INTRO = [
   'The right answer is',
