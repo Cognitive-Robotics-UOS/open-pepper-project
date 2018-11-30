@@ -30,15 +30,17 @@ var QUIZZES = {
 
 
 
-//insert new intro about pepper helping person with drink
-var INTRO = '...';
-var INTROD = '...';
+var INTRO = 'If you don\'t know what to drink, I can help you pick something!';
+var INTROD = 'Wenn du nicht weißt, was du trinken möchtest, helfe ich dir \
+              gerne bei der Auswahl!';
 
 
 // Set of jokes to use after a certain period if the user is not answering
+// TODO:  What about German jokes?
 var JOKES = [
   'You don\'t like decisions, huh?',
-  '...',
+  'I bet you also take this long to pick a pizza.',
+  '...'
 ];
 var jokes = JOKES.slice(); // Future copy by value of JOKES
 // Set of positive feedback reactions in case of right answer
