@@ -5,4 +5,4 @@ This public repository aims to collect different knowledge, code and recommendat
 
 This is originally a project started by the Cognitive Robotics Study Project of the M.Sc. in Cognitive Science of the University of Osnabrück.
 
-https://cognitive-robotics-uos.github.io/open-pepper-project/index.html
+https://cognitive-robotics-uos.github.io/open-pepper-project/
