@@ -25,14 +25,12 @@
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="spatialnav.html">Spatial Navigation</a></li>
-											<li><a href="robovision.html">Robot Vision</a></li>
-											<li><a href="speechrecogn.html">Speech Recognition</a></li>
-											<li><a href="convcontextmem.html">Conversation & Memory</a></li>
-											<li><a href="index.html#contactus">Contact</a></li>
-										</ul>
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="WS2018.html">Winter semester 2018/19</a></li>
+                                            <li><a href="SS2019.html">Summer semester 2019</a></li>
+                                            <li><a href="index.html#contactus">Contact</a></li>
+                                        </ul>
 									</div>
 								</li>
 							</ul>
@@ -43,15 +41,47 @@
 					<article id="main">
 						<header>
 							<h2>Spatial Navigation</h2>
-							<p>Our focus is on movement & object avoidance.</p>
+							<p>Our focus is on movement & navigation.</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 								<header>
-								<h3>Still a work in progress...</h3>
+                                    <h2>
+                                        Navigating a robot waiter at a cocktail party
+                                    </h2>
+								<h3>Goal</h3>
 								</header>
-								<p>We will have updates soon!</p>
+                                <p>
+                                    For the Cocktail Party task we need two differnt kinds of navigation: The explorative search for humans at the party and the directed navigation to a guest or to the bar.
+                                    The exploration will be achieved in cooperation with the Robot Vision Group as it is their part to detect humans in the room. Pepper should be able to detect a waving human in the room and to move into her/his direction.
+                                </p>
+                                <h3>Detection of guests</h3>
+                                <p>
+                                    We decided to not search for any human, but for waving human trying to get Pepper’s attention. The detection of a waving movement will be reported by the Robot Vision Group. We get an input of the relative angle the presumed human is located to Pepper.
+                                    After receiving the angle, we turn Peppers 'base' in that angle.
+                                </p>
+                                <h3>Navigation to a given location</h3>
+                                <h4>
+                                    Creating a map
+                                </h4>
+                                <p>
+                                    Before our Cocktail Party starts, we map the room with Pepper. We use a SLAM Algorithm (Simultaneous Localization And Mapping): gmapping.
+                                    The party location should be a room that is not too big, it should have some obstacles, but not too confusing or narrow paths. We decided to have a room of the size approximately 6x6 meters. We use Pepper’s laser sensors (to improve the quality of the map, you can use the depth camera), which are directed to only a few centimeters above the floor, so the obstacles used don’t have to be very high, but they should be placed directly on the ground.
+                                    The map we receive has a lot of noise and often when exploring an area for a second time, wrong information overwrites the previously correct information. Also, Pepper often localizes itself wrong and jumps to a completely different corner of the map.
+                                </p>
+                                <img src="images/Map_original.png" alt="The original map we created with Pepper using gmapping." id="responsive-image">
+                                <img src="images/Map_corrected.png" alt="The corrected map using Gimp." id="responsive-image">
+                                <p>
+                                    The map is saved with the package map_server. The recieved image is very small and still full of noise.
+                                    To archieve a better result, we correct the map with the free graphic editor Gimp. We correct noise, make lines straight and corners right-angled.
+                                </p>
 
+                                <h4>
+                                    Navigating in the map 
+                                </h4>
+                                <p>
+                                    Still in process ...
+                                </p>
 								<!-- <hr />
 
 								<header>
