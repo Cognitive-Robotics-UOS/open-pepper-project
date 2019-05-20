@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Robot Vision</title>
+		<title>Speech Recognition</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -25,14 +25,12 @@
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="spatialnav.html">Spatial Navigation</a></li>
-											<li><a href="robovision.html">Robot Vision</a></li>
-											<li><a href="speechrecogn.html">Speech Recognition</a></li>
-											<li><a href="convcontextmem.html">Conversation & Memory</a></li>
-											<li><a href="index.html#contactus">Contact</a></li>
-										</ul>
+                                        <ul>
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="WS2018.html">Winter semester 2018/19</a></li>
+                                            <li><a href="SS2019.html">Summer semester 2019</a></li>
+                                            <li><a href="index.html#contactus">Contact</a></li>
+                                        </ul>
 									</div>
 								</li>
 							</ul>
@@ -42,29 +40,21 @@
 				<!-- Main -->
 					<article id="main">
 						<header>
-							<h2>Robot Vision</h2>
-							<p>Documentation of our insights</p>
+							<h2>Winter Semester 2018</h2>
+							<p>Robocup Cocktail Party task</p>
 						</header>
 						<section class="wrapper style5">
 							<div class="inner">
 								<header>
-								<h3>Face Recognition & Feature Detection</h3>
+								<h3><a href="spatialnav.html">Spatial Navigation</a></h3>
+								<h3><a href="robovision.html">Robot Vision</a></h3>
+								<h3><a href="convcontextmem.html">Conversation & Contextual Memory</a></h3>
+								<h3><a href="speechrecogn.html">Speech Recognition</a></h3>
 								</header>
-								<p>The goal of the robot vision group was to detect and recognize a person, as well as some descriptor features of the person.
-									We used Pepper's front camera images and ROS-wrapped packages from TU/e Robotics for various tasks.
-									The ROS-wrapped packages we used includes Openface for face recognition,
-									Skybiometry for feature description, and PoseNet for detecting waving person (someone with a raised arm).
-									In the end, we used in a single script which worked in conjunction with other groups for the Robocup Cocktail Party Task. </p>
-
-								<p>We managed to implement face detection, face recognition, autonomous learning of unknown faces,
-									extraction of facial properties (age, gender, glasses) and the detection of a waving person in a room. </p>
-
-								<p> The image below shows the RQT Graph with the topics (rectangular) and nodes (round).
-
-								<br> <br> <br>
-
-									<img src="images/rosgraph.png" alt="The RQT Graph showing the topics and nodes." id="responsive-image">
-
+                                <p>
+                                    The cocktail party task is a slightly modified task from the RoboCup@Home contest, which assumes Pepper being a waiter at a cocktail party.
+                                    Pepper's job at the party is to talk to the guests, take their order, go to the bartender and tell him the order, then find his way back to the guest who ordered the drink.
+                                </p>
 
 								<!-- <hr />
 
