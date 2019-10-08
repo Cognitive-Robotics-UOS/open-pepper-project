@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<package version="0.0.1" uuid="comco-2019">
+ <names>
+  <name lang="en_US">ComCo-2019</name>
+ </names>
+ <supportedLanguages>
+  <language>en_US</language>
+  <language>de_DE</language>
+ </supportedLanguages>
+ <descriptionLanguages>
+  <language>en_US</language>
+  <language>de_DE</language>
+ </descriptionLanguages>
+ <contents>
+  <behaviorContent path="comco">
+   <userRequestable/>
+   <nature>interactive</nature>
+   <names>
+    <name lang="de_DE">quiz</name>
+    <name lang="en_US">comco</name>
+   </names>
+   <triggerSentences>
+    <sentence lang="de_DE">konferenz modus</sentence>
+    <sentence lang="en_US">conference mode</sentence>
+   </triggerSentences>
+   <permissions/>
+  </behaviorContent>
+ </contents>
+</package>

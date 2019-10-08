@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Computational Cognition Workshop 2019</title>
+		<meta charset="utf-8" />
+
+		<!--<link href="https://fonts.googleapis.com/css?family=Dosis:400,600|Muli:300,400,600,700,800&display=swap" rel="stylesheet" />-->
+		<link href="css/styles.css" rel="stylesheet" />
+		<style>
+			.abstract {
+				font-size: 1vw;
+			}
+			/* muli-200 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 200;
+  src: url('fonts/muli-v16-latin-200.eot'); /* IE9 Compat Modes */
+  src: local('Muli ExtraLight'), local('Muli-ExtraLight'),
+       url('fonts/muli-v16-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-200.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-300 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/muli-v16-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Muli Light'), local('Muli-Light'),
+       url('fonts/muli-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-300.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-regular - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/muli-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Muli Regular'), local('Muli-Regular'),
+       url('fonts/muli-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-regular.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-600 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/muli-v16-latin-600.eot'); /* IE9 Compat Modes */
+  src: local('Muli SemiBold'), local('Muli-SemiBold'),
+       url('fonts/muli-v16-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-600.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-700 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/muli-v16-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Muli Bold'), local('Muli-Bold'),
+       url('fonts/muli-v16-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-700.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-800 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 800;
+  src: url('fonts/muli-v16-latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Muli ExtraBold'), local('Muli-ExtraBold'),
+       url('fonts/muli-v16-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-800.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* muli-900 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/muli-v16-latin-900.eot'); /* IE9 Compat Modes */
+  src: local('Muli Black'), local('Muli-Black'),
+       url('fonts/muli-v16-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/muli-v16-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/muli-v16-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('fonts/muli-v16-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/muli-v16-latin-900.svg#Muli') format('svg'); /* Legacy iOS */
+}
+/* dosis-200 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 200;
+  src: url('fonts/dosis-v14-latin-200.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-200.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-300 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/dosis-v14-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-300.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-regular - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/dosis-v14-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-regular.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-500 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/dosis-v14-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-500.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-600 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/dosis-v14-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-600.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-700 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/dosis-v14-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-700.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+/* dosis-800 - latin */
+@font-face {
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 800;
+  src: url('fonts/dosis-v14-latin-800.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/dosis-v14-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/dosis-v14-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/dosis-v14-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('fonts/dosis-v14-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/dosis-v14-latin-800.svg#Dosis') format('svg'); /* Legacy iOS */
+}
+		</style>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	</head>
+
+	<body>
+
+		<div id="pattern-background"></div>
+		<div id="pepper-outline" style="opacity: 1"></div>
+
+		<div class="main-block" id="agenda">
+			<div class="block-wrapper" style="padding-left: 1.5vw; padding-top: 4vw !important;">
+				<h2>Agenda</h2>
+				<h3>Day 1, Tuesday</h3>
+				<div class="timeline" style="width: 75%">
+					<div class="entry">
+						<time>08:00</time>
+						<div class="event">Registration</div>
+					</div>
+
+					<div class="entry">
+						<time>08:45</time>
+						<div class="event">Welcoming</div>
+					</div>
+
+					<div class="entry talk">
+						<time>09:00</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/karl_friston_small.jpg" alt="Karl Friston" /></span>
+							<h4><span>Active inference &amp; deep generative models</span></h4>
+							<b>Speaker</b>: Karl Friston, Professor of Neuroscience<br />
+							<b>Affiliation</b>: University College London, UK
+
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>10:00</time>
+						<div class="event">Coffee break</div>
+					</div>
+
+					<div class="entry talk">
+						<time>10:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/dieuwke_hupkes_small.jpg" alt="Dieuwke Hupkes" /></span>
+							<h4><span>What do they learn? Neural Networks, compositionality and interpretability</span></h4>
+							<b>Speaker</b>: Dieuwke Hupkes, PhD student with Willem Zuidema<br />
+							<b>Affiliation</b>: University of Amsterdam, the Netherlands
+						</div>
+					</div>
+<!-- Introduction to research topics in the University of Osnabrück -->
+					<div class="entry">
+						<time>11:30</time>
+						<div class="event">Poster session</div>
+					</div>
+
+					<div class="entry">
+						<time>12:30</time>
+						<div class="event">Lunch break</div>
+					</div>
+
+					<div class="entry talk">
+						<time>13:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/terry_stewart_small.jpg" alt="Terrence Stewart" /></span>
+							<h4><span>Cognitive Computing with Neurons: Large-scale Functional Brain Modelling with the Neural Engineering Framework</span></h4>
+							<b>Speaker</b>: Terrence Stewart, Post-doctoral research associate working with Chris Eliasmith<br />
+							<b>Affiliation</b>: University of Waterloo, Canada
+						</div>
+					</div>
+
+					<div class="entry talk">
+						<time>14:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/pascal_nieters_small.png" alt="Pascal Nieters" /></span>
+							<h4><span>Contributed talk: Active dendrites implement probabilistic temporal logic gates</span></h4>
+							<b>Speaker</b>: Pascal Nieters, PhD student<br />
+							<b>Affiliation</b>: University of Osnabrück, Germany<br /><br />
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>15:00</time>
+						<div class="event">Poster Session + coffee break</div>
+					</div>
+
+					<div class="entry talk">
+						<time>16:00</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/sebastian_kahl_small.png" alt="Sebastian Kahl" /></span>
+							<h4><span>Contributed talk: Modeling reciprocal belief coordination in social interaction based on free energy minimization</span></h4>
+							<b>Speaker</b>: Sebastian Kahl, Research Assistant<br />
+							<b>Affiliation</b>: University of Bielefeld, Germany<br /><br />
+						</div>
+					</div>
+
+					<div class="entry talk">
+						<time>16:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/colin_phillips_small.jpg" alt="Colin Phillips" /></span>
+							<h4><span>The role of time in misunderstanding</span></h4>
+							<b>Speaker</b>: Colin Phillips, Professor of Linguistics<br />
+							<b>Affiliation</b>: University of Maryland, USA
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>17:30</time>
+						<div class="event">Botanical garden tour</div>
+					</div>
+
+					<div class="entry">
+						<time>18:30</time>
+						<div class="event">Dinner</div>
+					</div>
+				</div>
+
+				<h3>Day 2, Wednesday</h3>
+				<div class="timeline">
+					<div class="entry talk">
+						<time>09:00</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/tim_kietzmann_small.jpg" alt="Tim Kietzmann" /></span>
+							<h4><span>Understanding vision at the interface of computational neuroscience and artificial intelligence</span></h4>
+							<b>Speaker</b>: Tim Kietzmann<br />
+							<b>Affiliation</b>: Donders Institute and University of Cambridge
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>10:00</time>
+						<div class="event">Coffee break</div>
+					</div>
+
+					<div class="entry talk">
+						<time>10:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/will_monroe_new_small.jpg" alt="Will Monroe" /></span>
+							<h4><span>Leveraging the speaker-listener symmetry</span></h4>
+							<b>Speaker</b>: Will Monroe, Research scientist at Duolingo<br />
+							<b>Affiliation</b>: Duolingo, Stanford University, USA
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>11:30</time>
+						<div class="event">Poster session</div>
+					</div>
+
+					<div class="entry">
+						<time>12:30</time>
+						<div class="event">Lunch</div>
+					</div>
+
+					<div class="entry talk">
+						<time>13:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/viviane_clay_small.png" alt="Viviane Clay" /></span>
+							<h4><span>Contributed talk: Learning semantically meaningful world representations through embodiment</span></h4>
+							<b>Speaker</b>: Viviane Clay, PhD student<br />
+							<b>Affiliation</b>: University of Osnabrück, Germany<br /><br />
+						</div>
+					</div>
+					<div class="entry talk">
+						<time>14:00</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/alex_garcia_small.png" alt="Alex Hernández-García" /></span>
+							<h4><span>Contributed talk: Learning robust visual representations using data augmentation invariance</span></h4>
+							<b>Speaker</b>: Alex Hernández-García, PhD student<br />
+							<b>Affiliation</b>: University of Osnabrück, Germany<br /><br />
+						</div>
+					</div>
+					<div class="entry talk">
+						<time>14:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/dimitrios_pinotsis_small.png" alt="Dimitrios Pinotsis" /></span>
+							<h4><span>Contributed talk: A new approach to characterizing sensory and abstract representations in the brain</span></h4>
+							<b>Speaker</b>: Dimitrios Pinotsis, Associate Professor<br />
+							<b>Affiliation</b>: City, University of London, UK and MIT, USA<br /><br />
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>15:00</time>
+						<div class="event">Coffee break</div>
+					</div>
+
+					<div class="entry talk">
+						<time>15:30</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/pieter_vries_small.png" alt="Pieter de Vries" /></span>
+							<h4><span>Contributed talk: Mechanisms of self-organisation bridging the gap between low- and high-level cognition</span></h4>
+							<b>Speaker</b>: Pieter de Vries, Assistant Professor<br />
+							<b>Affiliation</b>: University of Groningen, Netherlands<br /><br />
+						</div>
+					</div>
+
+
+					<div class="entry talk">
+						<time>16:00</time>
+						<div class="event">
+							<span class="photo"><img src="images/people/roger_levy_small.jpg" alt="Roger Levy" /></span>
+							<h4><span>Expectation-based language processing in minds and machines</span></h4>
+							<b>Speaker</b>: Roger Levy, Associate Professor in the Department of Brain and Cognitive Sciences<br />
+							<b>Affiliation</b>: Massachusetts Institute of Technology, USA
+						</div>
+					</div>
+
+					<div class="entry">
+						<time>17:00</time>
+						<div class="event">Best poster award of 250€ kindly sponsored by <a href="https://salt-and-pepper.eu/en/aboutus/" target="_blank">Salt and Pepper</a></div>
+					</div>
+
+					<div class="entry">
+						<time>17:15</time>
+						<div class="event">Session close</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function $( id ) {
+				return document.getElementById( id );
+			};
+
+			function viewport() {
+				var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+				var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+				return { width: w, height: h };
+			};
+
+			var isInViewport = function (elem) {
+			    var bounding = elem.getBoundingClientRect();
+			    return (
+			        bounding.top >= 0 &&
+			        bounding.left >= 0 &&
+			        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+			    );
+			};
+		</script>
+		<!--JavaScript at end of body for optimized loading-->
+		<script src="/libs/qi/2/qi.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<!--Customized Javascript-->
+		<script type="text/javascript" src="js/script.js"></script>
+	</body>
+</html>
